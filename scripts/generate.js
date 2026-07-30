@@ -85,8 +85,14 @@ async function callModel() {
     },
     body: JSON.stringify({
       model: 'claude-sonnet-5',
-      max_tokens: 8000,
-      tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 8 }],
+      // Sonnet 5 는 thinking 파라미터를 생략하면 adaptive thinking 이 켜진다.
+      // max_tokens 는 thinking + 응답 텍스트 합계의 상한이므로, effort 로
+      // thinking 깊이를 제한하고 max_tokens 에 여유를 둬야 JSON 이 잘리지 않는다.
+      max_tokens: 16000,
+      output_config: { effort: 'medium' },
+      // _20260209 버전은 dynamic filtering 내장 — 검색 결과를 컨텍스트에 넣기 전에
+      // 걸러내므로 입력 토큰이 크게 줄어든다 (Sonnet 5 이상에서만 사용 가능).
+      tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: 8 }],
       messages: [{ role: 'user', content: prompt }]
     })
   });
