@@ -1,1 +1,7 @@
 .claude/settings.local.json
+
+# run-app 스킬이 로컬에 까는 브라우저 구동 의존성·산출물 (커밋 대상 아님)
+.claude/skills/*/node_modules/
+.claude/skills/*/package-lock.json
+.claude/skills/*/package.json
+app.png
