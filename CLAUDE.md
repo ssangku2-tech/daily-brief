@@ -40,5 +40,5 @@ There is no build/lint/test tooling. To work on it locally, serve the directory 
 
 ## Known gaps
 
-- `manifest.json` references `icon-192.png` and `icon-512.png`, which are not in the repo yet. Until they are added, install prompts and the notification icon will be degraded.
 - `sw.js` has a `notificationclick` handler, but nothing in the app requests notification permission or schedules a notification yet.
+- `briefings/` does not exist yet; `loadBriefing()` is still a stub, so the app always renders the empty state.
