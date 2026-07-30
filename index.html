@@ -99,6 +99,12 @@
   .refresh:active{background:#232c50}
 
   .footnote{text-align:center;font-size:11px;color:var(--tx-dim);margin-top:20px}
+
+  /* ===== 카드 하단 안내 문구 (지난 브리핑·샘플 데이터 등) ===== */
+  .note{
+    font-size:12px;color:var(--tx-faint);line-height:1.5;
+    margin-top:12px;padding-top:12px;border-top:1px solid var(--line)
+  }
 </style>
 </head>
 <body>
@@ -126,10 +132,12 @@
 
 <script>
 // ====== 상태 ======
-// 1단계에서는 실제 데이터가 없다. briefing = null 이 정상 (빈 상태 확인이 이번 목표).
-// 이후 단계에서 briefings/YYYY-MM-DD.json 을 fetch 해서 이 자리에 채운다.
+// briefing = null 은 정상 상태다 (오늘 브리핑이 아직 생성되지 않은 경우).
 let state = {
-  briefing: null,   // { generatedAt, indices:[...], news:[...], stocks:[...] } 형태로 채울 예정
+  briefing: null,   // briefings/YYYY-MM-DD.json 의 내용
+  shownDate: null,  // 실제로 화면에 띄운 브리핑의 날짜 (오늘이 아닐 수 있다)
+  loading: false,
+  error: null,
 };
 
 // ====== 유틸 ======
@@ -155,6 +163,11 @@ function fmtDate(key){
   const wd = ['일','월','화','수','목','금','토'][new Date(key+'T00:00:00+09:00').getDay()];
   return `${y}년 ${+m}월 ${+d}일 (${wd})`;
 }
+// '2026-07-29' → '7/29'
+function fmtMD(key){
+  const [,m,d] = key.split('-');
+  return `${+m}/${+d}`;
+}
 function esc(s){
   return String(s??'').replace(/[&<>"']/g, c => (
     {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
@@ -167,9 +180,24 @@ function esc(s){
 
 function renderUSBriefing(b){
   // b: 미국 브리핑 데이터 (없으면 null)
-  let inner;
-  if(!b){
-    // === 1단계의 핵심: 빈 상태 ===
+  let inner, sub = '';
+  if(state.loading){
+    // === 불러오는 중 ===
+    inner = `
+      <div class="empty">
+        <div class="big">⏳</div>
+        <div class="msg">브리핑을 불러오는 중…</div>
+      </div>`;
+  } else if(state.error){
+    // === 네트워크 실패 등 ===
+    inner = `
+      <div class="empty">
+        <div class="big">⚠️</div>
+        <div class="msg">${esc(state.error)}</div>
+        <div class="hint">연결을 확인한 뒤 새로고침을 눌러주세요.</div>
+      </div>`;
+  } else if(!b){
+    // === 빈 상태: 오늘 것도, 지난 것도 없음 ===
     inner = `
       <div class="empty">
         <div class="big">🌙</div>
@@ -177,7 +205,7 @@ function renderUSBriefing(b){
         <div class="hint">생성 파이프라인은 다음 단계에서 연결합니다.</div>
       </div>`;
   } else {
-    // === 데이터가 있을 때 (이후 단계에서 실제로 채움) ===
+    // === 데이터가 있을 때 ===
     const idxRows = (b.indices||[]).map(i => `
       <div class="idx-row">
         <span class="idx-name">${esc(i.name)}</span>
@@ -186,7 +214,19 @@ function renderUSBriefing(b){
           <div class="idx-chg ${i.change>=0?'up':'down'}">${i.change>=0?'▲':'▼'} ${esc(i.changePct)}</div>
         </span>
       </div>`).join('');
-    inner = idxRows || '<div class="empty"><div class="msg">데이터 형식 준비 중</div></div>';
+
+    // 안내가 필요한 상황들 — 카드 하단에 모아 보여준다.
+    const notes = [];
+    if(state.shownDate && state.shownDate !== todayKST()){
+      notes.push(`오늘 브리핑이 아직 없어 ${fmtDate(state.shownDate)} 브리핑을 보여드립니다.`);
+    }
+    if(b.source === 'sample'){
+      notes.push('샘플 데이터입니다 — 실제 시세가 아닙니다.');
+    }
+
+    inner = (idxRows || '<div class="empty"><div class="msg">데이터 형식 준비 중</div></div>')
+      + notes.map(n => `<div class="note">${esc(n)}</div>`).join('');
+    sub = b.sessionDate ? `${fmtMD(b.sessionDate)} 뉴욕장 종가` : '어젯밤 뉴욕장';
   }
 
   return `
@@ -194,7 +234,7 @@ function renderUSBriefing(b){
       <div class="card-head">
         <span class="ico">🇺🇸</span>
         <span class="title">미국 시장 브리핑</span>
-        <span class="sub">${b ? '어젯밤 뉴욕장' : ''}</span>
+        <span class="sub">${esc(sub)}</span>
       </div>
       <div class="card-body">${inner}</div>
     </section>`;
@@ -224,14 +264,58 @@ function render(){
   document.getElementById('sections').innerHTML = sections.join('');
 }
 
-// ====== 데이터 로드 (다음 단계에서 구현) ======
+// ====== 데이터 로드 ======
+// 브리핑 한 건을 읽는다. 아직 생성되지 않은 날이면(404) null 을 돌려준다.
+async function fetchBriefing(key){
+  const res = await fetch(`briefings/${key}.json`, {cache:'no-store'});
+  if(res.status === 404) return null;
+  if(!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+// 사용 가능한 날짜 목록 (오름차순). 없거나 깨져 있으면 빈 배열.
+// 미국장은 주말·휴일에 쉬므로 '오늘 파일이 없다'가 정상인 날이 많다.
+async function fetchAvailableDates(){
+  try{
+    const res = await fetch('briefings/index.json', {cache:'no-store'});
+    if(!res.ok) return [];
+    const list = await res.json();
+    return Array.isArray(list) ? list.slice().sort() : [];
+  }catch(e){
+    return [];
+  }
+}
+
 async function loadBriefing(){
-  // 다음 단계 예정:
-  //   const key = todayKST();
-  //   const res = await fetch(`briefings/${key}.json`, {cache:'no-store'});
-  //   state.briefing = await res.json();
-  // 지금은 아무것도 안 하고 빈 상태를 그대로 보여준다.
+  state.loading = true;
+  state.error = null;
   render();
+
+  const today = todayKST();
+  try{
+    let key = today;
+    let data = await fetchBriefing(key);
+
+    // 오늘 것이 없으면 가장 최근 브리핑으로 내려간다 (주말·휴일·생성 지연).
+    if(!data){
+      const dates = await fetchAvailableDates();
+      const latest = dates.filter(d => d <= today).pop();
+      if(latest && latest !== today){
+        key = latest;
+        data = await fetchBriefing(key);
+      }
+    }
+
+    state.briefing = data;
+    state.shownDate = data ? key : null;
+  }catch(e){
+    state.briefing = null;
+    state.shownDate = null;
+    state.error = '브리핑을 불러오지 못했어요.';
+  }finally{
+    state.loading = false;
+    render();
+  }
 }
 
 // ====== 이벤트 ======

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 "데일리 브리프" — a single-page PWA (no build step, no framework, no package.json) that shows a Korean user one screen of daily briefing: overnight US market moves, and later their own assets, news, schedule, and mail. It is served as static files (GitHub Pages). Everything the app needs lives in three files: `index.html` (markup + CSS + JS in one file), `sw.js` (service worker), `manifest.json` (PWA manifest).
 
-The app is at an early stage (v0.1). `state.briefing` is intentionally `null` — the empty state ("아직 오늘 브리핑이 없어요") is the current, correct behavior, not a bug. The data pipeline does not exist yet.
+The app is at an early stage (v0.1). The client reads briefings from `briefings/*.json`, but **nothing generates those files yet** — the only one in the repo is hand-written sample data. Wiring up generation (a data source for US index quotes + a scheduled job that commits a new `briefings/YYYY-MM-DD.json` and updates `briefings/index.json`) is the next step.
 
 ## Commands
 
@@ -20,7 +20,17 @@ There is no build/lint/test tooling. To work on it locally, serve the directory 
 - A single `render()` that fills the header, toggles the "갱신" timestamp, then joins the section strings into `#sections`.
 - `loadBriefing()` is the sole data entry point, currently a stub that just calls `render()`. The refresh button and startup both go through it.
 
-**Planned data flow (not yet implemented):** `loadBriefing()` fetches `briefings/${todayKST()}.json` with `cache:'no-store'` into `state.briefing`, shaped `{ generatedAt, indices:[{name,price,change,changePct}], news:[], stocks:[] }`. `renderUSBriefing`'s non-empty branch already expects `indices` in that shape.
+**Data flow:** `loadBriefing()` is the sole data entry point (startup + refresh button). It sets `state.loading`, renders, then fetches `briefings/${todayKST()}.json` with `cache:'no-store'` via `fetchBriefing()`. A 404 is a normal outcome, not an error — it means today's briefing doesn't exist yet, so `fetchBriefing` returns `null` rather than throwing. In that case `loadBriefing` reads `briefings/index.json` (a sorted array of available date keys) and falls back to the most recent key `<= today`, recording it in `state.shownDate` so the card can say which day it's showing. Any real failure (non-404 HTTP status, network error) sets `state.error`. Every path ends in `render()`.
+
+**Briefing file shape** (`briefings/YYYY-MM-DD.json`):
+```json
+{ "date": "2026-07-30", "sessionDate": "2026-07-29", "generatedAt": "2026-07-30 06:30 KST",
+  "source": "sample", "indices": [{"name":"S&P 500","price":"6,432.10","change":0.62,"changePct":"0.62%"}],
+  "news": [], "stocks": [] }
+```
+`price` and `changePct` are pre-formatted display strings (the client does no number formatting); `changePct` is unsigned because the renderer supplies the ▲/▼ arrow from the sign of `change`. `sessionDate` is the US trading session the numbers came from, shown in the card header. `source: "sample"` makes the card render a "샘플 데이터입니다" note — the generator must NOT set it, so real briefings render without the disclaimer. `news` and `stocks` are reserved for later cards and currently unused.
+
+**`state`** carries `{ briefing, shownDate, loading, error }`. Renderers read this global directly rather than taking it as an argument (only `renderUSBriefing(b)` takes the briefing itself), so a new card's empty/loading/error branches should follow the same four-way `if` shape.
 
 **Time handling:** all date/time logic is KST, computed by offsetting UTC by +9h (`todayKST`, `hourKST`) rather than using `toLocaleString` with a timezone. `greetingKST()` maps the KST hour to one of five greetings. Keep new time logic on the same +9h-offset approach so the whole app agrees on what "today" is.
 
@@ -41,4 +51,5 @@ There is no build/lint/test tooling. To work on it locally, serve the directory 
 ## Known gaps
 
 - `sw.js` has a `notificationclick` handler, but nothing in the app requests notification permission or schedules a notification yet.
-- `briefings/` does not exist yet; `loadBriefing()` is still a stub, so the app always renders the empty state.
+- No generation pipeline. `briefings/2026-07-30.json` is hand-written placeholder data carrying `source: "sample"`; the numbers are not real quotes. `briefings/index.json` is maintained by hand and must be updated whenever a briefing file is added.
+- Only the US market card exists. `news` / `stocks` in the briefing JSON, and the 자산/뉴스/일정/메일 cards, are not built.

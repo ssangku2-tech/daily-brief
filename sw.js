@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v2';
+const CACHE='daily-brief-v3';
 // 앱 셸 — 이 파일들이 없으면 앱이 뜨지 않으므로 설치 단계에서 반드시 캐시한다.
 const CORE=['./','./index.html','./manifest.json'];
 // 아이콘은 아직 저장소에 없을 수 있다. addAll 은 하나만 404 나도 전체가 실패해
@@ -39,7 +39,10 @@ self.addEventListener('fetch',e=>{
       fetch(e.request).then(resp=>{
         if(resp.ok){const cl=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,cl))}
         return resp;
-      }).catch(()=>caches.match(e.request))
+      }).catch(()=>caches.match(e.request).then(r=>
+        // 캐시에도 없으면 undefined 가 되어 respondWith 가 깨진다 → 앱이 에러 상태를 그리도록 504 를 준다.
+        r||new Response('{}',{status:504,headers:{'Content-Type':'application/json'}})
+      ))
     );
     return;
   }

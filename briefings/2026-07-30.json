@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-30",
+  "sessionDate": "2026-07-29",
+  "generatedAt": "2026-07-30 06:30 KST",
+  "source": "sample",
+  "indices": [
+    { "name": "S&P 500",        "price": "6,432.10",  "change":  0.62, "changePct": "0.62%" },
+    { "name": "나스닥",          "price": "21,845.30", "change":  1.04, "changePct": "1.04%" },
+    { "name": "다우",            "price": "45,120.88", "change": -0.18, "changePct": "0.18%" },
+    { "name": "필라델피아 반도체", "price": "6,010.55",  "change":  1.72, "changePct": "1.72%" }
+  ],
+  "news": [],
+  "stocks": []
+}
