@@ -75,52 +75,126 @@ JSON 구성:
 형식:
 {"summary":"","indices":[{"name":"","price":"","changePct":"","up":true}],"news":[{"title":"","body":""}],"stocks":[{"name":"","ticker":"","price":"","changePct":"","up":true,"note":""}],"highlights":[{"topic":"","body":""}]}`;
 
+// ── 스트리밍으로 호출한다 ────────────────────────────────────────
+// 비스트리밍으로 부르면 응답 헤더가 생성이 끝난 뒤에야 오는데, Node 의 fetch(undici)
+// 는 헤더를 5분 이상 기다리면 UND_ERR_HEADERS_TIMEOUT 으로 끊는다. 웹 검색 8회 +
+// thinking 이 붙으면 5분을 넘기므로 새벽 자동 실행이 통째로 실패했다.
+// 스트리밍은 헤더가 즉시 오고 이후 이벤트가 계속 흐르므로 이 타임아웃에 걸리지 않는다.
+async function streamOnce() {
+  // 무한 대기 방지용 상한 (스트림이 아예 멈추는 경우 대비)
+  const abort = new AbortController();
+  const guard = setTimeout(() => abort.abort(), 15 * 60 * 1000);
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      signal: abort.signal,
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': KEY,
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-5',
+        stream: true,
+        // Sonnet 5 는 thinking 파라미터를 생략하면 adaptive thinking 이 켜진다.
+        // max_tokens 는 thinking + 응답 텍스트 합계의 상한이므로, effort 로
+        // thinking 깊이를 제한하고 max_tokens 에 여유를 둬야 JSON 이 잘리지 않는다.
+        max_tokens: 16000,
+        output_config: { effort: 'medium' },
+        // _20260209 버전은 dynamic filtering 내장 — 검색 결과를 컨텍스트에 넣기 전에
+        // 걸러내므로 입력 토큰이 크게 줄어든다 (Sonnet 5 이상에서만 사용 가능).
+        tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: 8 }],
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    if (!res.ok) {
+      const body = await res.text();
+      const err = new Error(`API 오류 ${res.status}: ${body}`);
+      // 4xx 는 재시도해도 그대로 실패하므로 구분해둔다 (429 제외)
+      err.retryable = res.status === 429 || res.status >= 500;
+      throw err;
+    }
+
+    // SSE 를 줄 단위로 파싱하면서 text 델타만 이어붙인다.
+    let txt = '';
+    let searchCount = 0;
+    let stopReason = null;
+    let usage = null;
+    let buf = '';
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+
+      // 완결된 줄만 처리하고 나머지는 버퍼에 남겨둔다.
+      const lines = buf.split('\n');
+      buf = lines.pop();
+
+      for (const line of lines) {
+        if (!line.startsWith('data:')) continue;
+        const payload = line.slice(5).trim();
+        if (!payload) continue;
+
+        let ev;
+        try { ev = JSON.parse(payload); } catch { continue; }
+
+        if (ev.type === 'content_block_start') {
+          const b = ev.content_block || {};
+          if (b.type === 'server_tool_use' && b.name === 'web_search') searchCount++;
+        } else if (ev.type === 'content_block_delta') {
+          if (ev.delta && ev.delta.type === 'text_delta') txt += ev.delta.text;
+        } else if (ev.type === 'message_delta') {
+          if (ev.delta && ev.delta.stop_reason) stopReason = ev.delta.stop_reason;
+          if (ev.usage) usage = ev.usage;
+        } else if (ev.type === 'error') {
+          const err = new Error(`스트림 오류: ${JSON.stringify(ev.error)}`);
+          err.retryable = true;
+          throw err;
+        }
+      }
+    }
+
+    // 검색 결과도 출력 토큰 예산을 소모하므로, 최종 text 가 비는 경우를 진단할 수 있게
+    // 검색 횟수·종료 사유·토큰 사용량을 로그로 남긴다.
+    console.log(`웹 검색 실행 횟수: ${searchCount}, 종료 사유: ${stopReason}, 토큰 사용량: ${JSON.stringify(usage)}`);
+
+    // 코드블록 표시를 제거한 뒤 첫 { 부터 마지막 } 까지만 잘라 JSON으로 파싱한다.
+    txt = txt.replace(/```json|```/g, '').trim();
+    const start = txt.indexOf('{');
+    const end = txt.lastIndexOf('}');
+    if (start === -1 || end === -1 || end < start) {
+      const err = new Error(`응답에서 JSON을 찾지 못했습니다 (종료 사유: ${stopReason}, 받은 텍스트 ${txt.length}자)`);
+      err.retryable = true;
+      throw err;
+    }
+    return JSON.parse(txt.slice(start, end + 1));
+  } finally {
+    clearTimeout(guard);
+  }
+}
+
+// 네트워크·과부하 등 일시적 실패는 몇 번 다시 시도한다.
+// 하루 한 번뿐인 실행이라, 한 번 실패로 그날 브리핑이 통째로 비는 걸 막는다.
 async function callModel() {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': KEY,
-      'anthropic-version': '2023-06-01'
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-5',
-      // Sonnet 5 는 thinking 파라미터를 생략하면 adaptive thinking 이 켜진다.
-      // max_tokens 는 thinking + 응답 텍스트 합계의 상한이므로, effort 로
-      // thinking 깊이를 제한하고 max_tokens 에 여유를 둬야 JSON 이 잘리지 않는다.
-      max_tokens: 16000,
-      output_config: { effort: 'medium' },
-      // _20260209 버전은 dynamic filtering 내장 — 검색 결과를 컨텍스트에 넣기 전에
-      // 걸러내므로 입력 토큰이 크게 줄어든다 (Sonnet 5 이상에서만 사용 가능).
-      tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: 8 }],
-      messages: [{ role: 'user', content: prompt }]
-    })
-  });
-  if (!res.ok) {
-    console.error('API 오류:', res.status, await res.text());
-    process.exit(1);
+  const MAX_TRIES = 3;
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await streamOnce();
+    } catch (e) {
+      const retryable = e.retryable !== false;   // 네트워크 오류 등은 기본 재시도
+      if (!retryable || attempt >= MAX_TRIES) throw e;
+      const waitSec = 30 * attempt;
+      console.error(`시도 ${attempt}/${MAX_TRIES} 실패: ${e.message}`);
+      console.error(`${waitSec}초 후 재시도합니다.`);
+      await new Promise(r => setTimeout(r, waitSec * 1000));
+    }
   }
-  const data = await res.json();
-  const content = data.content || [];
-
-  // web_search 사용 시 응답에 server_tool_use(검색 호출)·web_search_tool_result(검색 결과)·
-  // text(최종 답변) 블록이 섞여 온다. 검색 결과도 출력 토큰 예산을 소모하므로
-  // 검색 횟수·종료 사유·토큰 사용량을 로그로 남겨 최종 text 가 비는 경우를 진단할 수 있게 한다.
-  const searchCount = content.filter(c => c.type === 'server_tool_use' && c.name === 'web_search').length;
-  console.log(`웹 검색 실행 횟수: ${searchCount}, 종료 사유: ${data.stop_reason}, 토큰 사용량: ${JSON.stringify(data.usage)}`);
-
-  // text 블록만 모아 이어붙이고, 코드블록 표시를 제거한 뒤
-  // 첫 { 부터 마지막 } 까지만 잘라 JSON으로 파싱한다.
-  let txt = content.filter(c => c.type === 'text').map(c => c.text).join('');
-  txt = txt.replace(/```json|```/g, '').trim();
-  const start = txt.indexOf('{');
-  const end = txt.lastIndexOf('}');
-  if (start === -1 || end === -1 || end < start) {
-    console.error('응답에서 JSON을 찾지 못했습니다. content 블록 구성:',
-      content.map(c => c.type).join(', ') || '(없음)');
-    process.exit(1);
-  }
-  return JSON.parse(txt.slice(start, end + 1));
 }
 
 async function main() {

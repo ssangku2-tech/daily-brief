@@ -83,6 +83,13 @@
     padding:12px 14px;margin-bottom:4px
   }
 
+  /* ===== 지난 날짜 브리핑을 대신 띄웠을 때의 안내 ===== */
+  .stale{
+    font-size:12px;line-height:1.5;color:var(--amber);
+    background:var(--bg-card-2);border-radius:var(--radius-sm);
+    padding:10px 12px;margin-bottom:10px
+  }
+
   /* ===== 블록(지수/뉴스/종목/하이라이트 묶음) ===== */
   .block{margin-top:18px}
   .block:first-child{margin-top:8px}
@@ -169,6 +176,7 @@
 // 이후 단계에서 briefings/YYYY-MM-DD.json 을 fetch 해서 이 자리에 채운다.
 let state = {
   briefing: null,   // { generatedAt, indices:[...], news:[...], stocks:[...] } 형태로 채울 예정
+  shownDate: null,  // 실제로 화면에 띄운 브리핑의 날짜 (오늘 것이 없으면 과거 날짜가 들어온다)
 };
 
 // ====== 유틸 ======
@@ -194,6 +202,16 @@ function fmtDate(key){
   const wd = ['일','월','화','수','목','금','토'][new Date(key+'T00:00:00+09:00').getDay()];
   return `${y}년 ${+m}월 ${+d}일 (${wd})`;
 }
+// "2026-07-30" → "7월 30일"
+function fmtShortDate(key){
+  if(!key) return '';
+  const [,m,d] = key.split('-');
+  return `${+m}월 ${+d}일`;
+}
+// 지금 띄운 브리핑이 오늘(KST) 것이 아닌지
+function isStale(){
+  return !!state.shownDate && state.shownDate !== todayKST();
+}
 function esc(s){
   return String(s??'').replace(/[&<>"']/g, c => (
     {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
@@ -217,6 +235,12 @@ function renderUSBriefing(b){
       </div>`;
   } else {
     // === 데이터가 있을 때 ===
+    // 0) 오늘 것이 아니면 먼저 밝힌다.
+    //    새벽 생성이 실패하면 직전 브리핑이 대신 뜨는데, 그걸 오늘 시세로 오해하면 안 된다.
+    const stale = isStale()
+      ? `<div class="stale">오늘 브리핑이 아직 없어 ${esc(fmtShortDate(state.shownDate))}자 브리핑을 대신 보여주고 있어요. 아래 시세는 오늘 것이 아닙니다.</div>`
+      : '';
+
     // 1) 한 줄 총평
     const summary = b.summary
       ? `<div class="summary">${esc(b.summary)}</div>` : '';
@@ -264,15 +288,19 @@ function renderUSBriefing(b){
     const highlights = hiItems
       ? `<div class="block"><div class="block-label">주목할 점</div>${hiItems}</div>` : '';
 
-    inner = summary + indices + news + stocks + highlights;
+    inner = stale + summary + indices + news + stocks + highlights;
   }
+
+  // 지난 브리핑을 띄운 상태라면 헤더도 "어젯밤"이라고 말하면 안 된다.
+  let sub = '';
+  if(b) sub = isStale() ? `${fmtShortDate(state.shownDate)}자` : '어젯밤 뉴욕장';
 
   return `
     <section class="card">
       <div class="card-head">
         <span class="ico">🇺🇸</span>
         <span class="title">미국 시장 브리핑</span>
-        <span class="sub">${b ? '어젯밤 뉴욕장' : ''}</span>
+        <span class="sub">${esc(sub)}</span>
       </div>
       <div class="card-body">${inner}</div>
     </section>`;
@@ -329,9 +357,11 @@ function render(){
 // 그것도 없으면 빈 상태로 둔다.
 async function loadBriefing(){
   const key = todayKST();
+  state.shownDate = null;
   try{
     // 1) 오늘 브리핑 시도
     let res = await fetch(`briefings/${key}.json`, {cache:'no-store'});
+    let shown = key;
     if(!res.ok){
       // 2) 오늘 게 아직 없으면 index.json에서 가장 최근 날짜를 찾아 시도
       const idx = await fetch('briefings/index.json', {cache:'no-store'});
@@ -340,13 +370,17 @@ async function loadBriefing(){
         const latest = dates[dates.length - 1];
         if(latest){
           res = await fetch(`briefings/${latest}.json`, {cache:'no-store'});
+          shown = latest;
         }
       }
     }
     state.briefing = res.ok ? await res.json() : null;
+    // 어느 날짜의 브리핑을 띄웠는지 기록해둔다 — 오늘 것이 아니면 화면에 그대로 밝힌다.
+    state.shownDate = state.briefing ? (state.briefing.date || shown) : null;
   }catch(e){
     // 네트워크 오류 등 — 빈 상태로 처리
     state.briefing = null;
+    state.shownDate = null;
   }
   render();
 }
