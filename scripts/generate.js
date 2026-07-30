@@ -1,9 +1,5 @@
-// 매일 미국 시장 브리핑을 Claude로 생성해 briefings/YYYY-MM-DD.json 으로 저장한다.
+// 매일 미국 시장 브리핑을 Claude(웹 검색 포함)로 생성해 briefings/YYYY-MM-DD.json 으로 저장한다.
 // GitHub Actions에서 실행됨. API 키는 ANTHROPIC_API_KEY 시크릿으로 주입.
-//
-// [2-A단계] 아직 웹 검색을 붙이지 않은 버전.
-//   목적: 크론 → 생성 → 저장 → 커밋 → 앱 표시 까지의 "배관"이 새지 않는지 검증.
-//   한계: Claude가 학습 데이터 범위로만 답하므로 최신 실데이터가 아님 (다음 단계에서 web_search 추가).
 const fs = require('fs');
 const path = require('path');
 
@@ -27,7 +23,7 @@ if (fs.existsSync(outFile)) {
   process.exit(0);
 }
 
-// ── 관심 종목(Cowork 브리핑 구성 그대로) ──────────────────────────
+// ── 관심 종목 ──────────────────────────
 // 프롬프트에 넣어 "이 종목들의 주가·등락을 반드시 포함"하도록 지시한다.
 const WATCH = [
   { name: '엔비디아',      ticker: 'NVDA' },
@@ -40,27 +36,31 @@ const WATCH = [
 ];
 const watchList = WATCH.map(s => `${s.name}(${s.ticker})`).join(', ');
 
-// ── 프롬프트: 미국 시장 브리핑을 순수 JSON으로만 ─────────────────
+// ── 프롬프트: 먼저 웹 검색으로 실데이터를 조사한 뒤, 그 데이터로 순수 JSON만 출력 ──
 const prompt = `너는 한국인 개인투자자를 위한 "미국 시장 아침 브리핑" 생성기다.
-어젯밤 뉴욕장(가장 최근 미국 정규장) 기준으로 브리핑을 JSON으로만 출력하라.
-설명·코드블록·마크다운 없이 순수 JSON만.
+
+먼저 웹 검색으로 가장 최근 미국 정규장(어젯밤 뉴욕장) 기준 아래 내용을 실제로 조사하라:
+1. S&P 500, 나스닥종합, 다우존스의 종가와 등락률
+2. 시장을 움직인 주요 뉴스 (연준·금리, 반도체 섹터, AI 밸류체인 등)
+3. 다음 관심 종목들의 주가와 등락률: ${watchList}
+4. 앤트로픽(Anthropic), 팔란티어(Palantir) 관련 특이 동향
+
+조사가 끝나면, 그 실제 데이터를 바탕으로 브리핑을 순수 JSON으로만 출력하라.
+설명·코드블록·마크다운 없이 JSON 객체 하나만 출력한다.
 
 날짜: ${dateKey} (한국 시간 기준 오늘 아침에 보는 브리핑)
 
-구성:
-- summary: 한 줄 총평(오늘 시장 분위기를 압축한 한국어 한 문장).
-- indices: 미국 주요 지수 3개(S&P 500, 나스닥종합, 다우존스).
-  각 항목 {name, price(종가 문자열), changePct(등락률 %, 부호 포함 문자열 예 "-1.52%"), up(상승이면 true 하락이면 false)}
+JSON 구성:
+- summary: 한 줄 총평(오늘 시장 분위기를 압축한 한국어 한 문장)
+- indices: 위 지수 3개. 각 항목 {name, price(종가 문자열), changePct(등락률 %, 부호 포함 문자열 예 "-1.52%"), up(상승이면 true 하락이면 false)}
 - news: 주요 뉴스 3~5개. 각 항목 {title(핵심을 담은 한국어 헤드라인), body(2~3문장 한국어 요약)}
-  * 연준/금리, 반도체 섹터 흐름, AI 밸류체인 등 시장 전체를 움직인 이슈 위주.
-- stocks: 아래 관심 종목들의 가격·등락. 반드시 이 종목들을 포함하라: ${watchList}
-  각 항목 {name, ticker, price(가격 문자열), changePct(등락률 문자열), up(true/false), note(있으면 한 줄 코멘트, 없으면 "")}
-- highlights: 특별히 주목할 종목/테마 코멘트 1~3개(앤트로픽 관련 동향, 팔란티어 이슈 등). 각 항목 {topic, body(한국어 2~3문장)}. 없으면 빈 배열.
+- stocks: 관심 종목 전부(${watchList}). 각 항목 {name, ticker, price(가격 문자열), changePct(등락률 문자열), up(true/false), note(있으면 한 줄 코멘트, 없으면 "")}
+- highlights: 앤트로픽·팔란티어 등 특별히 주목할 종목/테마 코멘트 1~3개. 각 항목 {topic, body(한국어 2~3문장)}. 없으면 빈 배열.
 
 형식:
 {"summary":"","indices":[{"name":"","price":"","changePct":"","up":true}],"news":[{"title":"","body":""}],"stocks":[{"name":"","ticker":"","price":"","changePct":"","up":true,"note":""}],"highlights":[{"topic":"","body":""}]}`;
 
-async function callModel(extra) {
+async function callModel() {
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -69,9 +69,10 @@ async function callModel(extra) {
       'anthropic-version': '2023-06-01'
     },
     body: JSON.stringify({
-      model: 'claude-haiku-4-5',
-      max_tokens: 2500,
-      messages: [{ role: 'user', content: prompt + (extra || '') }]
+      model: 'claude-sonnet-5',
+      max_tokens: 4000,
+      tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 8 }],
+      messages: [{ role: 'user', content: prompt }]
     })
   });
   if (!res.ok) {
@@ -79,10 +80,24 @@ async function callModel(extra) {
     process.exit(1);
   }
   const data = await res.json();
-  // 텍스트 블록만 모아 JSON 파싱 (혹시 붙은 코드블록 표시는 제거)
-  let txt = (data.content || []).filter(c => c.type === 'text').map(c => c.text).join('');
+  const content = data.content || [];
+
+  // web_search 사용 시 응답에 server_tool_use(검색 호출)·web_search_tool_result(검색 결과)·
+  // text(최종 답변) 블록이 섞여 온다. 몇 번 검색했는지 로그로 남긴다.
+  const searchCount = content.filter(c => c.type === 'server_tool_use' && c.name === 'web_search').length;
+  console.log(`웹 검색 실행 횟수: ${searchCount}`);
+
+  // text 블록만 모아 이어붙이고, 코드블록 표시를 제거한 뒤
+  // 첫 { 부터 마지막 } 까지만 잘라 JSON으로 파싱한다.
+  let txt = content.filter(c => c.type === 'text').map(c => c.text).join('');
   txt = txt.replace(/```json|```/g, '').trim();
-  return JSON.parse(txt);
+  const start = txt.indexOf('{');
+  const end = txt.lastIndexOf('}');
+  if (start === -1 || end === -1 || end < start) {
+    console.error('응답에서 JSON을 찾지 못했습니다:', txt);
+    process.exit(1);
+  }
+  return JSON.parse(txt.slice(start, end + 1));
 }
 
 async function main() {
