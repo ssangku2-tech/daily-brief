@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<title>My Agent</title>
+<link rel="manifest" href="manifest.json">
+<style>
+  /* ===== 디자인 토큰 ===== */
+  :root{
+    --bg:#0b1020;          /* 딥 네이비-블랙 배경 */
+    --bg-card:#141a2e;     /* 카드 배경 */
+    --bg-card-2:#1b2340;   /* 카드 내부 강조 영역 */
+    --line:#242d4a;        /* 구분선 */
+    --tx:#e8ecf7;          /* 기본 텍스트 */
+    --tx-dim:#8b93ad;      /* 흐린 텍스트 */
+    --tx-faint:#5a627a;    /* 아주 흐린 텍스트 (placeholder 대비 확보용) */
+    --up:#ff5a5a;          /* 상승 = 빨강 (한국 관습) */
+    --down:#4d8dff;        /* 하락 = 파랑 */
+    --amber:#f0b429;       /* 포인트 (갱신 시각·강조) */
+    --radius:16px;
+    --radius-sm:10px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--tx);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;
+    line-height:1.5;
+    padding:env(safe-area-inset-top) 0 calc(env(safe-area-inset-bottom) + 24px);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:520px;margin:0 auto;padding:0 16px}
+
+  /* ===== 헤더 ===== */
+  header{padding:24px 0 12px}
+  .greeting{font-size:22px;font-weight:700;letter-spacing:-.3px}
+  .date-row{
+    display:flex;align-items:center;gap:8px;
+    margin-top:4px;font-size:13px;color:var(--tx-dim)
+  }
+  .app-ver{
+    margin-left:auto;font-size:11px;color:var(--tx-dim);
+    border:1px solid var(--line);border-radius:20px;padding:2px 8px
+  }
+  .updated{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:12px;color:var(--amber);margin-top:2px
+  }
+  .updated .dot{width:6px;height:6px;border-radius:50%;background:var(--amber)}
+
+  /* ===== 섹션 카드 ===== */
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin-top:14px;
+    overflow:hidden;
+  }
+  .card-head{
+    display:flex;align-items:center;gap:8px;
+    padding:14px 16px;border-bottom:1px solid var(--line)
+  }
+  .card-head .ico{font-size:18px}
+  .card-head .title{font-size:15px;font-weight:600}
+  .card-head .sub{margin-left:auto;font-size:12px;color:var(--tx-dim)}
+  .card-body{padding:16px}
+
+  /* ===== 빈 상태 (1단계 핵심) ===== */
+  .empty{
+    text-align:center;padding:28px 16px;color:var(--tx-dim)
+  }
+  .empty .big{font-size:30px;margin-bottom:8px;opacity:.7}
+  .empty .msg{font-size:14px;line-height:1.6}
+  .empty .hint{font-size:12px;color:var(--tx-faint);margin-top:10px}
+
+  /* ===== 한 줄 총평 ===== */
+  .summary{
+    font-size:14px;line-height:1.6;color:var(--tx);
+    background:var(--bg-card-2);border-radius:var(--radius-sm);
+    padding:12px 14px;margin-bottom:4px
+  }
+
+  /* ===== 블록(지수/뉴스/종목/하이라이트 묶음) ===== */
+  .block{margin-top:18px}
+  .block:first-child{margin-top:8px}
+  .block-label{
+    font-size:12px;font-weight:600;color:var(--tx-dim);
+    text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px
+  }
+
+  /* ===== 지수·종목 표 ===== */
+  .idx-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:10px 0;border-bottom:1px solid var(--line);gap:12px
+  }
+  .idx-row:last-child{border-bottom:none}
+  .idx-name{font-size:14px;color:var(--tx)}
+  .idx-name .tkr{font-size:11px;color:var(--tx-dim);margin-left:2px}
+  .idx-vals{text-align:right;white-space:nowrap;display:flex;gap:8px;align-items:baseline}
+  .idx-price{font-size:14px;font-weight:600}
+  .idx-chg{font-size:12px;min-width:64px;text-align:right}
+  .up{color:var(--up)}
+  .down{color:var(--down)}
+  .stock-note{
+    font-size:12px;color:var(--amber);
+    padding:0 0 8px 0;margin-top:-4px
+  }
+
+  /* ===== 뉴스·하이라이트 항목 ===== */
+  .news-item{padding:10px 0;border-bottom:1px solid var(--line)}
+  .news-item:last-child{border-bottom:none}
+  .news-title{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:4px}
+  .news-body{font-size:13px;line-height:1.6;color:var(--tx-dim)}
+
+  /* ===== 새로고침 버튼 ===== */
+  .refresh{
+    display:block;width:100%;margin-top:18px;
+    background:var(--bg-card-2);color:var(--tx);
+    border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:13px;font-size:14px;font-weight:600;cursor:pointer
+  }
+  .refresh:active{background:#232c50}
+
+  .footnote{text-align:center;font-size:11px;color:var(--tx-dim);margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="greeting" id="greeting">안녕하세요 👋</div>
+    <div class="date-row">
+      <span id="date">—</span>
+      <span class="app-ver">v0.1</span>
+    </div>
+    <div class="updated" id="updated" style="display:none">
+      <span class="dot"></span><span id="updated-txt"></span>
+    </div>
+  </header>
+
+  <!-- 섹션들이 여기에 렌더링됨 -->
+  <main id="sections"></main>
+
+  <button class="refresh" id="refresh">새로고침</button>
+
+  <div class="footnote">브리핑은 매일 새벽 자동으로 갱신됩니다.</div>
+
+</div>
+
+<script>
+// ====== 상태 ======
+// 1단계에서는 실제 데이터가 없다. briefing = null 이 정상 (빈 상태 확인이 이번 목표).
+// 이후 단계에서 briefings/YYYY-MM-DD.json 을 fetch 해서 이 자리에 채운다.
+let state = {
+  briefing: null,   // { generatedAt, indices:[...], news:[...], stocks:[...] } 형태로 채울 예정
+};
+
+// ====== 유틸 ======
+function todayKST(){
+  const now = new Date(Date.now() + 9*3600*1000);
+  return now.toISOString().slice(0,10);
+}
+// 한국 시간(KST) 기준 현재 '시(hour)'
+function hourKST(){
+  return new Date(Date.now() + 9*3600*1000).getUTCHours();
+}
+// 시간대에 맞는 인사 문구 + 이모지
+function greetingKST(){
+  const h = hourKST();
+  if(h >= 5  && h < 11) return '좋은 아침이에요 ☕';   // 05~10시
+  if(h >= 11 && h < 14) return '점심 잘 챙기세요 🍚';  // 11~13시
+  if(h >= 14 && h < 18) return '좋은 오후예요 🌤️';    // 14~17시
+  if(h >= 18 && h < 23) return '좋은 저녁이에요 🌆';   // 18~22시
+  return '늦은 시간이네요 🌙';                          // 23~04시
+}
+function fmtDate(key){
+  const [y,m,d] = key.split('-');
+  const wd = ['일','월','화','수','목','금','토'][new Date(key+'T00:00:00+09:00').getDay()];
+  return `${y}년 ${+m}월 ${+d}일 (${wd})`;
+}
+function esc(s){
+  return String(s??'').replace(/[&<>"']/g, c => (
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
+  ));
+}
+
+// ====== 섹션 렌더러 ======
+// 각 섹션은 "카드 하나"를 반환하는 함수로 분리해둔다.
+// 이후 자산/뉴스/일정/메일 섹션도 같은 패턴으로 추가하면 된다.
+
+function renderUSBriefing(b){
+  // b: 미국 브리핑 데이터 (없으면 null)
+  let inner;
+  if(!b){
+    // === 브리핑이 아직 없을 때: 빈 상태 ===
+    inner = `
+      <div class="empty">
+        <div class="big">🌙</div>
+        <div class="msg">아직 오늘 브리핑이 없어요.<br>매일 새벽 자동 생성되면 여기에 표시됩니다.</div>
+        <div class="hint">미국 정규장 마감 이후 갱신됩니다.</div>
+      </div>`;
+  } else {
+    // === 데이터가 있을 때 ===
+    // 1) 한 줄 총평
+    const summary = b.summary
+      ? `<div class="summary">${esc(b.summary)}</div>` : '';
+
+    // 2) 지수 표
+    const idxRows = (b.indices||[]).map(i => `
+      <div class="idx-row">
+        <span class="idx-name">${esc(i.name)}</span>
+        <span class="idx-vals">
+          <span class="idx-price">${esc(i.price)}</span>
+          <span class="idx-chg ${i.up?'up':'down'}">${i.up?'▲':'▼'} ${esc(i.changePct)}</span>
+        </span>
+      </div>`).join('');
+    const indices = idxRows
+      ? `<div class="block"><div class="block-label">주요 지수</div>${idxRows}</div>` : '';
+
+    // 3) 주요 뉴스
+    const newsItems = (b.news||[]).map(n => `
+      <div class="news-item">
+        <div class="news-title">${esc(n.title)}</div>
+        <div class="news-body">${esc(n.body)}</div>
+      </div>`).join('');
+    const news = newsItems
+      ? `<div class="block"><div class="block-label">주요 뉴스</div>${newsItems}</div>` : '';
+
+    // 4) 관심 종목 주가
+    const stockRows = (b.stocks||[]).map(s => `
+      <div class="idx-row">
+        <span class="idx-name">${esc(s.name)} <span class="tkr">${esc(s.ticker)}</span></span>
+        <span class="idx-vals">
+          <span class="idx-price">${esc(s.price)}</span>
+          <span class="idx-chg ${s.up?'up':'down'}">${s.up?'▲':'▼'} ${esc(s.changePct)}</span>
+        </span>
+      </div>
+      ${s.note ? `<div class="stock-note">${esc(s.note)}</div>` : ''}`).join('');
+    const stocks = stockRows
+      ? `<div class="block"><div class="block-label">관심 종목</div>${stockRows}</div>` : '';
+
+    // 5) 하이라이트
+    const hiItems = (b.highlights||[]).map(h => `
+      <div class="news-item">
+        <div class="news-title">${esc(h.topic)}</div>
+        <div class="news-body">${esc(h.body)}</div>
+      </div>`).join('');
+    const highlights = hiItems
+      ? `<div class="block"><div class="block-label">주목할 점</div>${hiItems}</div>` : '';
+
+    inner = summary + indices + news + stocks + highlights;
+  }
+
+  return `
+    <section class="card">
+      <div class="card-head">
+        <span class="ico">🇺🇸</span>
+        <span class="title">미국 시장 브리핑</span>
+        <span class="sub">${b ? '어젯밤 뉴욕장' : ''}</span>
+      </div>
+      <div class="card-body">${inner}</div>
+    </section>`;
+}
+
+// ====== 전체 렌더 ======
+function render(){
+  const key = todayKST();
+  document.getElementById('greeting').textContent = greetingKST();
+  document.getElementById('date').textContent = fmtDate(key);
+
+  // 갱신 시각 표시 (브리핑 있을 때만)
+  const upd = document.getElementById('updated');
+  if(state.briefing && state.briefing.generatedAt){
+    upd.style.display = 'inline-flex';
+    document.getElementById('updated-txt').textContent =
+      state.briefing.generatedAt + ' 갱신';
+  } else {
+    upd.style.display = 'none';
+  }
+
+  // 섹션 조립 (지금은 미국 브리핑 하나. 이후 배열에 push)
+  const sections = [
+    renderUSBriefing(state.briefing),
+    // renderAssets(...), renderKRNews(...), renderSchedule(...) ... 이후 추가
+  ];
+  document.getElementById('sections').innerHTML = sections.join('');
+}
+
+// ====== 데이터 로드 ======
+// 오늘 날짜의 브리핑 JSON을 불러온다. 없으면(아직 생성 전) 최신 것을 시도,
+// 그것도 없으면 빈 상태로 둔다.
+async function loadBriefing(){
+  const key = todayKST();
+  try{
+    // 1) 오늘 브리핑 시도
+    let res = await fetch(`briefings/${key}.json`, {cache:'no-store'});
+    if(!res.ok){
+      // 2) 오늘 게 아직 없으면 index.json에서 가장 최근 날짜를 찾아 시도
+      const idx = await fetch('briefings/index.json', {cache:'no-store'});
+      if(idx.ok){
+        const dates = await idx.json();
+        const latest = dates[dates.length - 1];
+        if(latest){
+          res = await fetch(`briefings/${latest}.json`, {cache:'no-store'});
+        }
+      }
+    }
+    state.briefing = res.ok ? await res.json() : null;
+  }catch(e){
+    // 네트워크 오류 등 — 빈 상태로 처리
+    state.briefing = null;
+  }
+  render();
+}
+
+// ====== 이벤트 ======
+document.getElementById('refresh').addEventListener('click', () => {
+  loadBriefing();
+});
+
+// ====== 시작 ======
+loadBriefing();
+</script>
+</body>
+</html>
