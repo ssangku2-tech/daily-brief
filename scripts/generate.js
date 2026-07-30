@@ -70,7 +70,7 @@ async function callModel() {
     },
     body: JSON.stringify({
       model: 'claude-sonnet-5',
-      max_tokens: 4000,
+      max_tokens: 8000,
       tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 8 }],
       messages: [{ role: 'user', content: prompt }]
     })
@@ -83,9 +83,10 @@ async function callModel() {
   const content = data.content || [];
 
   // web_search 사용 시 응답에 server_tool_use(검색 호출)·web_search_tool_result(검색 결과)·
-  // text(최종 답변) 블록이 섞여 온다. 몇 번 검색했는지 로그로 남긴다.
+  // text(최종 답변) 블록이 섞여 온다. 검색 결과도 출력 토큰 예산을 소모하므로
+  // 검색 횟수·종료 사유·토큰 사용량을 로그로 남겨 최종 text 가 비는 경우를 진단할 수 있게 한다.
   const searchCount = content.filter(c => c.type === 'server_tool_use' && c.name === 'web_search').length;
-  console.log(`웹 검색 실행 횟수: ${searchCount}`);
+  console.log(`웹 검색 실행 횟수: ${searchCount}, 종료 사유: ${data.stop_reason}, 토큰 사용량: ${JSON.stringify(data.usage)}`);
 
   // text 블록만 모아 이어붙이고, 코드블록 표시를 제거한 뒤
   // 첫 { 부터 마지막 } 까지만 잘라 JSON으로 파싱한다.
@@ -94,7 +95,8 @@ async function callModel() {
   const start = txt.indexOf('{');
   const end = txt.lastIndexOf('}');
   if (start === -1 || end === -1 || end < start) {
-    console.error('응답에서 JSON을 찾지 못했습니다:', txt);
+    console.error('응답에서 JSON을 찾지 못했습니다. content 블록 구성:',
+      content.map(c => c.type).join(', ') || '(없음)');
     process.exit(1);
   }
   return JSON.parse(txt.slice(start, end + 1));
