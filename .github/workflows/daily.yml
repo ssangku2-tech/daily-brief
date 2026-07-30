@@ -1,0 +1,40 @@
+name: Daily Market Briefing
+
+on:
+  schedule:
+    # 미국 정규장 마감(동부 16:00 = 대략 UTC 20:00~21:00) 이후 생성되도록.
+    # 한국 아침에 이미 준비돼 있게 KST 06:00 = UTC 21:00 (전날)로 잡는다.
+    - cron: '0 21 * * *'
+  workflow_dispatch:        # 버튼으로 수동 실행도 가능 (테스트용)
+
+permissions:
+  contents: write           # 생성된 JSON을 저장소에 커밋
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Generate today's briefing
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate.js
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add briefings/
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "briefing: $(date -u +%Y-%m-%d)"
+            git push
+          fi

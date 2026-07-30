@@ -1,6 +1,6 @@
 {
-  "name": "데일리 브리프",
-  "short_name": "브리프",
+  "name": "My Agent",
+  "short_name": "My Agent",
   "description": "매일 아침 나만의 시장·자산·일정 브리핑",
   "start_url": "./index.html",
   "display": "standalone",

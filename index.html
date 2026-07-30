@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0b1020">
-<title>데일리 브리프</title>
+<title>My Agent</title>
 <link rel="manifest" href="manifest.json">
 <style>
   /* ===== 디자인 토큰 ===== */
@@ -76,18 +76,44 @@
   .empty .msg{font-size:14px;line-height:1.6}
   .empty .hint{font-size:12px;color:var(--tx-faint);margin-top:10px}
 
-  /* ===== 지수 표 (나중에 채울 자리 — 스타일 미리 준비) ===== */
+  /* ===== 한 줄 총평 ===== */
+  .summary{
+    font-size:14px;line-height:1.6;color:var(--tx);
+    background:var(--bg-card-2);border-radius:var(--radius-sm);
+    padding:12px 14px;margin-bottom:4px
+  }
+
+  /* ===== 블록(지수/뉴스/종목/하이라이트 묶음) ===== */
+  .block{margin-top:18px}
+  .block:first-child{margin-top:8px}
+  .block-label{
+    font-size:12px;font-weight:600;color:var(--tx-dim);
+    text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px
+  }
+
+  /* ===== 지수·종목 표 ===== */
   .idx-row{
     display:flex;justify-content:space-between;align-items:center;
-    padding:10px 0;border-bottom:1px solid var(--line)
+    padding:10px 0;border-bottom:1px solid var(--line);gap:12px
   }
   .idx-row:last-child{border-bottom:none}
   .idx-name{font-size:14px;color:var(--tx)}
-  .idx-vals{text-align:right}
+  .idx-name .tkr{font-size:11px;color:var(--tx-dim);margin-left:2px}
+  .idx-vals{text-align:right;white-space:nowrap;display:flex;gap:8px;align-items:baseline}
   .idx-price{font-size:14px;font-weight:600}
-  .idx-chg{font-size:12px}
+  .idx-chg{font-size:12px;min-width:64px;text-align:right}
   .up{color:var(--up)}
   .down{color:var(--down)}
+  .stock-note{
+    font-size:12px;color:var(--amber);
+    padding:0 0 8px 0;margin-top:-4px
+  }
+
+  /* ===== 뉴스·하이라이트 항목 ===== */
+  .news-item{padding:10px 0;border-bottom:1px solid var(--line)}
+  .news-item:last-child{border-bottom:none}
+  .news-title{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:4px}
+  .news-body{font-size:13px;line-height:1.6;color:var(--tx-dim)}
 
   /* ===== 새로고침 버튼 ===== */
   .refresh{
@@ -201,19 +227,57 @@ function renderUSBriefing(b){
     inner = `
       <div class="empty">
         <div class="big">🌙</div>
-        <div class="msg">아직 오늘 브리핑이 없어요.<br>밤사이 자동 생성되면 여기에 표시됩니다.</div>
-        <div class="hint">생성 파이프라인은 다음 단계에서 연결합니다.</div>
+        <div class="msg">아직 오늘 브리핑이 없어요.<br>매일 새벽 자동 생성되면 여기에 표시됩니다.</div>
+        <div class="hint">미국 정규장 마감 이후 갱신됩니다.</div>
       </div>`;
   } else {
     // === 데이터가 있을 때 ===
+    // 1) 한 줄 총평
+    const summary = b.summary
+      ? `<div class="summary">${esc(b.summary)}</div>` : '';
+
+    // 2) 지수 표
     const idxRows = (b.indices||[]).map(i => `
       <div class="idx-row">
         <span class="idx-name">${esc(i.name)}</span>
         <span class="idx-vals">
-          <div class="idx-price">${esc(i.price)}</div>
-          <div class="idx-chg ${i.change>=0?'up':'down'}">${i.change>=0?'▲':'▼'} ${esc(i.changePct)}</div>
+          <span class="idx-price">${esc(i.price)}</span>
+          <span class="idx-chg ${i.up?'up':'down'}">${i.up?'▲':'▼'} ${esc(i.changePct)}</span>
         </span>
       </div>`).join('');
+    const indices = idxRows
+      ? `<div class="block"><div class="block-label">주요 지수</div>${idxRows}</div>` : '';
+
+    // 3) 주요 뉴스
+    const newsItems = (b.news||[]).map(n => `
+      <div class="news-item">
+        <div class="news-title">${esc(n.title)}</div>
+        <div class="news-body">${esc(n.body)}</div>
+      </div>`).join('');
+    const news = newsItems
+      ? `<div class="block"><div class="block-label">주요 뉴스</div>${newsItems}</div>` : '';
+
+    // 4) 관심 종목 주가
+    const stockRows = (b.stocks||[]).map(s => `
+      <div class="idx-row">
+        <span class="idx-name">${esc(s.name)} <span class="tkr">${esc(s.ticker)}</span></span>
+        <span class="idx-vals">
+          <span class="idx-price">${esc(s.price)}</span>
+          <span class="idx-chg ${s.up?'up':'down'}">${s.up?'▲':'▼'} ${esc(s.changePct)}</span>
+        </span>
+      </div>
+      ${s.note ? `<div class="stock-note">${esc(s.note)}</div>` : ''}`).join('');
+    const stocks = stockRows
+      ? `<div class="block"><div class="block-label">관심 종목</div>${stockRows}</div>` : '';
+
+    // 5) 하이라이트
+    const hiItems = (b.highlights||[]).map(h => `
+      <div class="news-item">
+        <div class="news-title">${esc(h.topic)}</div>
+        <div class="news-body">${esc(h.body)}</div>
+      </div>`).join('');
+    const highlights = hiItems
+      ? `<div class="block"><div class="block-label">주목할 점</div>${hiItems}</div>` : '';
 
     // 안내가 필요한 상황들 — 카드 하단에 모아 보여준다.
     const notes = [];
@@ -224,7 +288,7 @@ function renderUSBriefing(b){
       notes.push('샘플 데이터입니다 — 실제 시세가 아닙니다.');
     }
 
-    inner = (idxRows || '<div class="empty"><div class="msg">데이터 형식 준비 중</div></div>')
+    inner = summary + indices + news + stocks + highlights
       + notes.map(n => `<div class="note">${esc(n)}</div>`).join('');
     sub = b.sessionDate ? `${fmtMD(b.sessionDate)} 뉴욕장 종가` : '어젯밤 뉴욕장';
   }
