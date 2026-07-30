@@ -36,6 +36,17 @@ const WATCH = [
 ];
 const watchList = WATCH.map(s => `${s.name}(${s.ticker})`).join(', ');
 
+// ── 신선도 기준: 직전 브리핑 날짜 이후만 (없으면 24시간 이내) ──────
+// 같은 이슈(예: 몇 달 전 발언)가 매일 재활용되는 것을 막는다.
+const indexFile = path.join(BRIEF_DIR, 'index.json');
+const priorDates = fs.existsSync(indexFile)
+  ? JSON.parse(fs.readFileSync(indexFile, 'utf8')).filter(d => d < dateKey).sort()
+  : [];
+const lastDate = priorDates[priorDates.length - 1];
+const freshnessRule = lastDate
+  ? `직전 브리핑 날짜는 ${lastDate} 이다. 그 이후에 새로 나온 뉴스·발언·이벤트만 포함하라. ${lastDate} 이전에 있었던 일(과거 발언, 이전 실적 발표 등)은 직전 브리핑에서 이미 다뤘을 수 있으니, 그 이후 새로 보도된 게 아니면 제외하라.`
+  : `최근 24시간 이내에 새로 나온 뉴스·발언·이벤트만 포함하라.`;
+
 // ── 프롬프트: 먼저 웹 검색으로 실데이터를 조사한 뒤, 그 데이터로 순수 JSON만 출력 ──
 const prompt = `너는 한국인 개인투자자를 위한 "미국 시장 아침 브리핑" 생성기다.
 
@@ -45,6 +56,10 @@ const prompt = `너는 한국인 개인투자자를 위한 "미국 시장 아침
 3. 다음 관심 종목들의 주가와 등락률: ${watchList}
 4. 앤트로픽(Anthropic), 팔란티어(Palantir) 관련 특이 동향
 
+뉴스·하이라이트 신선도 기준: ${freshnessRule}
+지수·주가는 최신 시세를 그대로 쓰되, news/highlights 항목은 반드시 위 기준을 만족하는 것만 넣어라.
+기준을 만족하는 새 소식이 부족하면 억지로 채우지 말고 news는 개수를 줄이고 highlights는 빈 배열로 두어라.
+
 조사가 끝나면, 그 실제 데이터를 바탕으로 브리핑을 순수 JSON으로만 출력하라.
 설명·코드블록·마크다운 없이 JSON 객체 하나만 출력한다.
 
@@ -53,9 +68,9 @@ const prompt = `너는 한국인 개인투자자를 위한 "미국 시장 아침
 JSON 구성:
 - summary: 한 줄 총평(오늘 시장 분위기를 압축한 한국어 한 문장)
 - indices: 위 지수 3개. 각 항목 {name, price(종가 문자열), changePct(등락률 %, 부호 포함 문자열 예 "-1.52%"), up(상승이면 true 하락이면 false)}
-- news: 주요 뉴스 3~5개. 각 항목 {title(핵심을 담은 한국어 헤드라인), body(2~3문장 한국어 요약)}
+- news: 주요 뉴스 최대 5개(신선도 기준을 만족하는 것만). 각 항목 {title(핵심을 담은 한국어 헤드라인), body(2~3문장 한국어 요약)}
 - stocks: 관심 종목 전부(${watchList}). 각 항목 {name, ticker, price(가격 문자열), changePct(등락률 문자열), up(true/false), note(있으면 한 줄 코멘트, 없으면 "")}
-- highlights: 앤트로픽·팔란티어 등 특별히 주목할 종목/테마 코멘트 1~3개. 각 항목 {topic, body(한국어 2~3문장)}. 없으면 빈 배열.
+- highlights: 앤트로픽·팔란티어 등 특별히 주목할 종목/테마 코멘트 최대 3개(신선도 기준을 만족하는 것만). 각 항목 {topic, body(한국어 2~3문장)}. 없으면 빈 배열.
 
 형식:
 {"summary":"","indices":[{"name":"","price":"","changePct":"","up":true}],"news":[{"title":"","body":""}],"stocks":[{"name":"","ticker":"","price":"","changePct":"","up":true,"note":""}],"highlights":[{"topic":"","body":""}]}`;
