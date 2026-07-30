@@ -2,13 +2,27 @@ name: Daily Market Briefing
 
 on:
   schedule:
-    # 미국 정규장 마감(동부 16:00 = 대략 UTC 20:00~21:00) 이후 생성되도록.
-    # 한국 아침에 이미 준비돼 있게 KST 06:00 = UTC 21:00 (전날)로 잡는다.
-    - cron: '0 21 * * *'
+    # 미국 정규장 마감(동부 16:00)은 서머타임에 따라 UTC 20:00(EDT) ~ 21:00(EST).
+    # 겨울에도 마감 뒤에 돌도록 첫 실행은 UTC 21:00(= KST 06:00)으로 잡는다.
+    #
+    # 아래 세 개는 재시도용이다. GitHub Actions 의 예약 실행은 부하에 따라
+    # 수십 분씩 밀리거나 아예 건너뛰고, 실행 자체가 실패할 수도 있다.
+    # generate.js 는 그날 파일이 이미 있으면 바로 건너뛰므로, 여러 번 걸어둬도
+    # 실제로 생성하는 건 처음 성공한 한 번뿐이다.
+    - cron: '0 21 * * *'    # KST 06:00
+    - cron: '40 21 * * *'   # KST 06:40
+    - cron: '20 22 * * *'   # KST 07:20
+    - cron: '0 23 * * *'    # KST 08:00
   workflow_dispatch:        # 버튼으로 수동 실행도 가능 (테스트용)
 
 permissions:
   contents: write           # 생성된 JSON을 저장소에 커밋
+
+# 재시도 스케줄이 앞 실행과 겹치면 둘 다 "파일 없음"으로 보고 동시에 생성해
+# push 가 충돌한다. 큐에 세워 한 번에 하나씩만 돌린다.
+concurrency:
+  group: daily-briefing
+  cancel-in-progress: false
 
 jobs:
   generate:
@@ -23,6 +37,7 @@ jobs:
           node-version: 24
 
       - name: Generate today's briefing
+        id: gen
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/generate.js
@@ -35,6 +50,13 @@ jobs:
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 생략"
           else
-            git commit -m "briefing: $(date -u +%Y-%m-%d)"
+            # generate.js 가 넘겨준 KST 날짜를 쓴다. 못 받았을 때만 직접 계산한다.
+            DATE="${{ steps.gen.outputs.date }}"
+            if [ -z "$DATE" ]; then
+              DATE=$(TZ=Asia/Seoul date +%Y-%m-%d)
+            fi
+            git commit -m "briefing: $DATE"
+            # 재시도 실행이 앞 실행과 겹쳤을 때를 대비해 원격을 먼저 반영한다.
+            git pull --rebase --autostash
             git push
           fi

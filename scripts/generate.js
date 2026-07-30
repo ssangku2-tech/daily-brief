@@ -18,6 +18,12 @@ fs.mkdirSync(BRIEF_DIR, { recursive: true });
 const dateKey = process.argv[2] || todayKST();
 const outFile = path.join(BRIEF_DIR, `${dateKey}.json`);
 
+// 워크플로가 커밋 메시지에 쓸 수 있게 KST 기준 날짜를 넘겨준다.
+// (워크플로에서 date -u 를 쓰면 새벽 실행 때 UTC 기준이라 하루가 어긋난다)
+if (process.env.GITHUB_OUTPUT) {
+  fs.appendFileSync(process.env.GITHUB_OUTPUT, `date=${dateKey}\n`);
+}
+
 if (fs.existsSync(outFile)) {
   console.log(`이미 존재: ${dateKey}.json — 건너뜀`);
   process.exit(0);
