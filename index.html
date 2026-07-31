@@ -16,8 +16,8 @@
     --tx:#e8ecf7;          /* 기본 텍스트 */
     --tx-dim:#8b93ad;      /* 흐린 텍스트 */
     --tx-faint:#5a627a;    /* 아주 흐린 텍스트 (placeholder 대비 확보용) */
-    --up:#ff5a5a;          /* 상승 = 빨강 (한국 관습) */
-    --down:#4d8dff;        /* 하락 = 파랑 */
+    --up:#ff7a6e;          /* 상승 = 빨강 (한국 관습). 어두운 네이비 위에서 읽히도록 밝게 */
+    --down:#6aa4ff;        /* 하락 = 파랑. --up 과 밝기를 맞춘다 */
     --amber:#f0b429;       /* 포인트 (갱신 시각·강조) */
     --radius:16px;
     --radius-sm:10px;
@@ -108,12 +108,26 @@
   .idx-name .tkr{font-size:11px;color:var(--tx-dim);margin-left:2px}
   .idx-vals{text-align:right;white-space:nowrap;display:flex;gap:8px;align-items:baseline}
   .idx-price{font-size:14px;font-weight:600}
-  .idx-chg{font-size:12px;min-width:64px;text-align:right}
+  /* 등락률은 색만으로 버티기엔 작고 얇아서 잘 안 읽힌다 — 크기·굵기도 함께 준다 */
+  .idx-chg{font-size:13px;font-weight:600;min-width:64px;text-align:right}
   .up{color:var(--up)}
   .down{color:var(--down)}
+
+  /* ===== 관심 종목 (왼쪽: 종목명·주가 / 오른쪽: 코멘트) ===== */
+  .stock-row{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:10px 0;border-bottom:1px solid var(--line)
+  }
+  .stock-row:last-child{border-bottom:none}
+  .stock-main{flex:0 0 46%;min-width:0}
+  .stock-name{font-size:14px;color:var(--tx)}
+  .stock-name .tkr{font-size:11px;color:var(--tx-dim);margin-left:2px}
+  .stock-vals{
+    display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-top:2px
+  }
   .stock-note{
-    font-size:12px;color:var(--amber);
-    padding:0 0 8px 0;margin-top:-4px
+    flex:1 1 auto;min-width:0;
+    font-size:12px;line-height:1.5;color:var(--tx)
   }
 
   /* ===== 뉴스·하이라이트 항목 ===== */
@@ -266,16 +280,18 @@ function renderUSBriefing(b){
     const news = newsItems
       ? `<div class="block"><div class="block-label">주요 뉴스</div>${newsItems}</div>` : '';
 
-    // 4) 관심 종목 주가
+    // 4) 관심 종목 — 왼쪽에 종목명·주가, 오른쪽에 코멘트를 나란히 둔다
     const stockRows = (b.stocks||[]).map(s => `
-      <div class="idx-row">
-        <span class="idx-name">${esc(s.name)} <span class="tkr">${esc(s.ticker)}</span></span>
-        <span class="idx-vals">
-          <span class="idx-price">${esc(s.price)}</span>
-          <span class="idx-chg ${s.up?'up':'down'}">${s.up?'▲':'▼'} ${esc(s.changePct)}</span>
-        </span>
-      </div>
-      ${s.note ? `<div class="stock-note">${esc(s.note)}</div>` : ''}`).join('');
+      <div class="stock-row">
+        <div class="stock-main">
+          <div class="stock-name">${esc(s.name)} <span class="tkr">${esc(s.ticker)}</span></div>
+          <div class="stock-vals">
+            <span class="idx-price">${esc(s.price)}</span>
+            <span class="idx-chg ${s.up?'up':'down'}">${s.up?'▲':'▼'} ${esc(s.changePct)}</span>
+          </div>
+        </div>
+        ${s.note ? `<div class="stock-note">${esc(s.note)}</div>` : ''}
+      </div>`).join('');
     const stocks = stockRows
       ? `<div class="block"><div class="block-label">관심 종목</div>${stockRows}</div>` : '';
 

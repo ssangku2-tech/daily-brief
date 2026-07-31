@@ -67,7 +67,8 @@ const fakeDate = di !== -1 ? process.argv[di + 1] : null;
       staleBanner: document.querySelector('.stale')?.textContent.trim() || null,
       summary: t('.summary'),
       indices: block('주요 지수')?.querySelectorAll('.idx-row').length || 0,
-      stockRows: block('관심 종목')?.querySelectorAll('.idx-row').length || 0,
+      stockRows: block('관심 종목')?.querySelectorAll('.stock-row').length || 0,
+      stockNotes: block('관심 종목')?.querySelectorAll('.stock-note').length || 0,
       newsCount: block('주요 뉴스')?.querySelectorAll('.news-item').length || 0,
       // state·todayKST·isStale 은 스크립트 스코프에만 있다 (window 로는 안 잡힘)
       shownDate: typeof state !== 'undefined' ? state.shownDate : null,

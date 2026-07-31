@@ -19,18 +19,39 @@ description: daily-brief PWA를 실제 브라우저로 띄워 화면을 확인�
 (CLAUDE.md 에 명시돼 있다). 로컬 서버는 다 쓰고 반드시 내린다:
 
 ```powershell
-# npx.cmd 로 불러야 한다. Start-Process 는 npx(.cmd 심)를 직접 못 띄운다
-#   → "%1 is not a valid Win32 application"
-Start-Process npx.cmd -ArgumentList '--yes','serve','.','-l','3000' -WindowStyle Hidden
+$log = "$env:TEMP\daily-brief-serve.log"; Remove-Item $log -EA SilentlyContinue
 
-# 포트가 실제로 응답할 때까지 기다린다 (sleep 로 때우지 말 것). 첫 실행은 serve 를
-# 내려받느라 20초 넘게 걸릴 수 있으니 넉넉히 준다.
-$ok=$false; 1..40 | ForEach-Object { if(-not $ok){ try { Invoke-WebRequest http://localhost:3000 -TimeoutSec 1 -UseBasicParsing | Out-Null; $ok=$true } catch { Start-Sleep 1 } } }
-if(-not $ok){ throw '서버가 안 떴다' }
+# 세 가지가 전부 필요하다 (아래 "실제로 걸린 것들" 참고):
+#   npx.cmd        — Start-Process 는 npx(.cmd 심)를 직접 못 띄운다
+#   -WorkingDirectory — 안 주면 '.' 이 C:\Windows\System32 로 잡힌다
+#   -RedirectStandardOutput — serve 가 실제로 쓴 포트를 여기서 읽는다
+Start-Process npx.cmd -ArgumentList '--yes','serve','.','-l','3000' `
+  -WorkingDirectory 'C:\Users\user\documents\daily-brief' `
+  -WindowStyle Hidden -RedirectStandardOutput $log
 
-# 정리 — 다 쓰면 반드시 내린다
-Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue |
-  ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }
+# 요청한 포트가 막혀 있으면 serve 는 조용히 임의 포트로 넘어간다.
+# 3000 을 가정하지 말고 stdout 이 알려주는 포트를 쓴다.
+$port=$null
+1..40 | ForEach-Object {
+  if(-not $port){
+    if(((Get-Content $log -EA SilentlyContinue) -join "`n") -match 'http://localhost:(\d+)'){ $port=$Matches[1] }
+    else { Start-Sleep 1 }
+  }
+}
+if(-not $port){ throw '서버가 안 떴다' }
+
+# 루트가 맞는지 반드시 확인한다. index.html 이 200 이어도 엉뚱한 폴더일 수 있다
+# (디렉터리 목록도 200 이다). 브리핑 JSON 이 나와야 진짜 저장소 루트다.
+(Invoke-WebRequest "http://localhost:$port/briefings/index.json" -UseBasicParsing).StatusCode
+"http://localhost:$port"
+```
+
+정리 — 다 쓰면 반드시 내린다. `Stop-Process` 가 "Access is denied" 로 거부되면 WMI 로 죽인다:
+
+```powershell
+Get-NetTCPConnection -LocalPort $port -State Listen -EA SilentlyContinue | ForEach-Object {
+  Get-CimInstance Win32_Process -Filter "ProcessId=$($_.OwningProcess)" | Invoke-CimMethod -MethodName Terminate
+}
 ```
 
 배포본을 볼 때는 Pages 배포가 끝났는지 먼저 확인한다 — push 직후엔 아직 옛 파일이 나온다:
@@ -84,6 +105,13 @@ node .claude/skills/run-app/drive.js https://ssangku2-tech.github.io/daily-brief
   맨 이름 그대로(`state.shownDate`) 써야 한다. 이걸로 한 번 헛다리를 짚었다.
 - **서비스워커 캐시.** 매번 새 컨텍스트로 열어 캐시를 피한다. 반대로 실기기에서 옛 화면이
   남는다면 `sw.js` 의 `CACHE` 버전을 올렸는지 확인한다 (CLAUDE.md 규칙).
+- **`Start-Process` 는 PowerShell 의 현재 위치를 물려받지 않는다.** `Set-Location`(cd)은
+  PowerShell 의 위치만 바꾸고 프로세스의 실제 작업 디렉터리는 그대로다. `-WorkingDirectory`
+  없이 `serve .` 를 띄우면 `C:\Windows\System32` 를 서빙한다 — 심지어 `/` 는 200 을 주므로
+  (디렉터리 목록) 뜬 줄 알고 넘어가기 쉽다. 그래서 `briefings/index.json` 으로 루트를 확인한다.
+  실제로 이걸로 한 번 System32 목록을 LAN 에 열어놓을 뻔했다.
+- **serve 는 요청한 포트가 막히면 조용히 임의 포트로 넘어간다.** "3000 이겠지" 하고 붙으면
+  이전에 떠 있던 엉뚱한 서버에 접속하게 된다. stdout 의 `http://localhost:<포트>` 를 읽어 쓴다.
 - **브리핑 JSON 의 404 는 오류가 아니다.** "그날 브리핑이 아직 없다"는 정상 신호이고,
   앱은 이걸 받아 지난 브리핑으로 넘어간다 (CLAUDE.md). `drive.js` 는 `briefings/*.json` 404 만
   정상으로 치고 `got404` 에 따로 적는다. 그 밖의 404 는 실패로 잡는다.
