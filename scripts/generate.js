@@ -54,13 +54,29 @@ const freshnessRule = lastDate
   : `최근 24시간 이내에 새로 나온 뉴스·발언·이벤트만 포함하라.`;
 
 // ── 프롬프트: 먼저 웹 검색으로 실데이터를 조사한 뒤, 그 데이터로 순수 JSON만 출력 ──
+// 지수 3개 + 종목 7개 = 시세 항목이 10개인데 검색 예산이 부족하면(과거 max_uses:8) 일부
+// 항목은 검색 없이 학습 데이터로 채워지거나, 다른 종목의 등락률을 그대로 복사해버린다
+// (실제로 인텔이 AMD 의 +13.00%를 그대로 가져간 사고가 있었다). 그래서 각 시세 항목마다
+// 개별 검색을 요구하고, 항목 간 값 재사용·어림짐작을 명시적으로 금지한다.
 const prompt = `너는 한국인 개인투자자를 위한 "미국 시장 아침 브리핑" 생성기다.
 
-먼저 웹 검색으로 가장 최근 미국 정규장(어젯밤 뉴욕장) 기준 아래 내용을 실제로 조사하라:
-1. S&P 500, 나스닥종합, 다우존스의 종가와 등락률
+먼저 웹 검색으로 가장 최근 미국 정규장(어젯밤 뉴욕장) 기준 아래 내용을 실제로 조사하라.
+아래 시세 항목은 총 10개(지수 3개 + 종목 7개)이며, 각 항목마다 반드시 최소 1회 이상
+개별 검색으로 확인하라 — 한 번의 검색 결과로 여러 항목을 뭉뚱그려 채우지 마라:
+1. S&P 500, 나스닥종합, 다우존스의 종가와 등락률 (지수마다 개별 검색)
 2. 시장을 움직인 주요 뉴스 (연준·금리, 반도체 섹터, AI 밸류체인 등)
-3. 다음 관심 종목들의 주가와 등락률: ${watchList}
+3. 다음 관심 종목들의 주가와 등락률: ${watchList} (종목마다 개별 검색)
 4. 앤트로픽(Anthropic), 팔란티어(Palantir) 관련 특이 동향
+
+시세 정확성 규칙 (반드시 지킬 것):
+- price·changePct 는 이번에 실제로 검색해서 확인한 숫자만 써라. 학습 데이터 기억이나
+  어림짐작으로 채우지 마라. 확인 못 한 숫자를 그럴듯하게 만들어내지 마라.
+- 서로 다른 지수·종목의 changePct 를 재사용하지 마라. 두 항목의 changePct 가 우연이
+  아니라 값을 복사해서 똑같아지는 일이 있어서는 안 된다. 각 항목은 그 항목 자신을
+  검색한 결과에서만 가져와라.
+- 검색해도 특정 항목의 수치를 끝내 확인하지 못했다면, 다른 항목의 수치를 빌려 채우지
+  말고 그 항목의 note 에 "실시간 확인 실패"라고 명시한 뒤 마지막으로 확인된(반드시 그
+  항목 자신에 대한) 수치를 써라.
 
 뉴스·하이라이트 신선도 기준: ${freshnessRule}
 지수·주가는 최신 시세를 그대로 쓰되, news/highlights 항목은 반드시 위 기준을 만족하는 것만 넣어라.
@@ -87,9 +103,10 @@ JSON 구성:
 // thinking 이 붙으면 5분을 넘기므로 새벽 자동 실행이 통째로 실패했다.
 // 스트리밍은 헤더가 즉시 오고 이후 이벤트가 계속 흐르므로 이 타임아웃에 걸리지 않는다.
 async function streamOnce() {
-  // 무한 대기 방지용 상한 (스트림이 아예 멈추는 경우 대비)
+  // 무한 대기 방지용 상한 (스트림이 아예 멈추는 경우 대비).
+  // 검색 예산을 늘린 만큼 정상 실행 시간도 길어질 수 있어 여유를 더 둔다.
   const abort = new AbortController();
-  const guard = setTimeout(() => abort.abort(), 15 * 60 * 1000);
+  const guard = setTimeout(() => abort.abort(), 20 * 60 * 1000);
 
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -106,11 +123,18 @@ async function streamOnce() {
         // Sonnet 5 는 thinking 파라미터를 생략하면 adaptive thinking 이 켜진다.
         // max_tokens 는 thinking + 응답 텍스트 합계의 상한이므로, effort 로
         // thinking 깊이를 제한하고 max_tokens 에 여유를 둬야 JSON 이 잘리지 않는다.
-        max_tokens: 16000,
+        // 검색 결과를 더 많이 읽고 정리해야 해서 여유를 늘렸다 (16000 → 20000).
+        max_tokens: 20000,
         output_config: { effort: 'medium' },
         // _20260209 버전은 dynamic filtering 내장 — 검색 결과를 컨텍스트에 넣기 전에
         // 걸러내므로 입력 토큰이 크게 줄어든다 (Sonnet 5 이상에서만 사용 가능).
-        tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: 8 }],
+        //
+        // max_uses 를 8→20 으로 올렸다. 시세 항목이 10개(지수 3+종목 7)인데 8회로는
+        // 전부 개별 검색하기 빠듯해서, 예산이 바닥나면 일부 항목이 검색 없이 채워지거나
+        // (마이크론이 학습 데이터 시절 가격으로 채워짐) 다른 종목 값을 그대로 복사하는
+        // (인텔이 AMD 의 +13.00%를 그대로 가져감) 사고로 이어졌다. 10개 항목 각각 최소
+        // 1회 + 뉴스/하이라이트 조사용 여유를 감안해 20으로 잡는다.
+        tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: 20 }],
         messages: [{ role: 'user', content: prompt }]
       })
     });
@@ -209,6 +233,16 @@ async function main() {
   // 최소 형식 검증
   if (!Array.isArray(brief.indices) || !Array.isArray(brief.stocks)) {
     throw new Error('형식이 올바르지 않습니다 (indices/stocks 배열 없음).');
+  }
+
+  // 정합성 경고: 서로 다른 종목이 등락률을 그대로 복사한 흔적이 있으면 알려준다.
+  // (실제로 인텔이 AMD 의 +13.00%를 그대로 가져간 사고가 있었다.) 막지는 않는다 —
+  // 실적 발표 직후 여러 종목이 우연히 같은 등락률을 보이는 경우도 있어서다. 다만
+  // 실행 로그에 남겨두면 다음 사람이 바로 의심하고 확인할 수 있다.
+  const changePcts = brief.stocks.map(s => s.changePct);
+  const dupePcts = [...new Set(changePcts.filter((v, i) => changePcts.indexOf(v) !== i))];
+  if (dupePcts.length) {
+    console.warn(`⚠️  종목 등락률 중복 발견 — 다른 종목 값을 복사했을 가능성이 있다: ${dupePcts.join(', ')}`);
   }
 
   // 생성 시각(한국 시간) 기록 — 앱 헤더의 "○○ 갱신" 표시에 사용
