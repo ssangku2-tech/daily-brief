@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-02",
+  "generatedAt": "2026-08-02 06:52",
+  "events": [
+    {
+      "title": "화산CC 13:00",
+      "start": "2026-08-02T12:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 201,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (1327948)",
+      "summary": "Daily Market Briefing 워크플로우 작업이 실패했습니다."
+    },
+    {
+      "from": "Slack <feedback@slack.com>",
+      "subject": "새 기기에서의 Slack 계정 로그인",
+      "summary": "새 기기(Android)에서 Slack 계정에 로그인되어 보안 확인이 필요합니다."
+    },
+    {
+      "from": "Notion Team <notify@updates.notion.so>",
+      "subject": "새 기기로 계정에 로그인했습니다.",
+      "summary": "새로운 기기(Android)에서 Notion 계정에 로그인되었습니다."
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "보안 알림",
+      "summary": "Windows 기기에서 Google 계정에 새로 로그인했습니다."
+    },
+    {
+      "from": "Anthropic, PBC <invoice+statements@mail.anthropic.com>",
+      "subject": "Your receipt from Anthropic, PBC #2146-1646-8942",
+      "summary": "Anthropic 결제 영수증입니다."
+    }
+  ]
+}
