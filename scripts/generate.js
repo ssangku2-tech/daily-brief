@@ -10,6 +10,15 @@
 // 반복됨)이 web_search 예산을 앞에서 다 써버려 순서상 맨 뒤인 aiNews가 "검색 자원 한도"로
 // 통째로 비는 사고가 났다. 그래서 시장 데이터 요청과 aiNews 요청을 예산이 서로 침범할 수 없는
 // 별도의 API 호출로 분리하고, 두 요청을 병렬로 실행해 결과만 합친다.
+//
+// 4단계 비용 절감(2026-08-01): 검색 예산을 market 24→18, aiNews 15→8→6으로 낮췄다(총 39→24).
+// 스키마·검증 단계(0~3단계)와 요청 분리 구조는 그대로 유지한다 — 이 두 요청을 다시 하나로
+// 합치면 위에서 고친 예산 잠식 문제가 재발하므로 절대 합치지 말 것. market은 지수·종목
+// 교차검증에 필요한 최소치에 가까워 덜 줄였다. aiNews는 회사 2곳×2~3회 검색이면 충분해
+// 예산 여유가 컸고, 숫자 검증처럼 깊은 추론이 필요 없는 작업이라 output_config.effort도
+// medium→low로 낮췄다(비용의 주된 축은 검색 결과가 컨텍스트에 쌓이는 입력 토큰과 사고
+// 토큰이라, effort를 낮추면 사고 토큰이 함께 줄어든다). market은 반복돼온 "거래일 혼동"
+// 버그와 직결된 수치 검증 섹션이라 medium을 유지한다.
 const fs = require('fs');
 const path = require('path');
 
@@ -144,7 +153,7 @@ ${freshnessRule}
 감사에서 고친 내용은 최종 JSON에만 조용히 반영하고, 별도로 설명하지 마라.`;
 
 // ── 스트리밍으로 호출한다 ────────────────────────────────────────
-async function streamOnce(prompt, maxUses, label) {
+async function streamOnce(prompt, maxUses, label, effort) {
   const abort = new AbortController();
   const guard = setTimeout(() => abort.abort(), 20 * 60 * 1000);
 
@@ -161,7 +170,7 @@ async function streamOnce(prompt, maxUses, label) {
         model: 'claude-sonnet-5',
         stream: true,
         max_tokens: 20000,
-        output_config: { effort: 'medium' },
+        output_config: { effort },
         tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: maxUses }],
         messages: [{ role: 'user', content: prompt }]
       })
@@ -231,11 +240,11 @@ async function streamOnce(prompt, maxUses, label) {
   }
 }
 
-async function callModel(prompt, maxUses, label) {
+async function callModel(prompt, maxUses, label, effort) {
   const MAX_TRIES = 3;
   for (let attempt = 1; ; attempt++) {
     try {
-      return await streamOnce(prompt, maxUses, label);
+      return await streamOnce(prompt, maxUses, label, effort);
     } catch (e) {
       const retryable = e.retryable !== false;
       if (!retryable || attempt >= MAX_TRIES) throw e;
@@ -250,8 +259,8 @@ async function callModel(prompt, maxUses, label) {
 async function main() {
   // 시장 데이터와 aiNews를 예산이 서로 침범할 수 없는 별도 요청으로 병렬 실행한다.
   const [market, aiNewsResult] = await Promise.all([
-    callModel(marketPrompt, 24, 'market'),
-    callModel(aiNewsPrompt, 15, 'aiNews'),
+    callModel(marketPrompt, 18, 'market', 'medium'),
+    callModel(aiNewsPrompt, 6, 'aiNews', 'low'),
   ]);
 
   const brief = market;
