@@ -41,6 +41,10 @@
     display:flex;align-items:center;gap:8px;
     margin-top:4px;font-size:13px;color:var(--tx-dim)
   }
+  .weather{
+    display:inline-flex;align-items:center;gap:3px;
+    font-size:13px;color:var(--tx-dim)
+  }
   .app-ver{
     margin-left:auto;font-size:11px;color:var(--tx-dim);
     border:1px solid var(--line);border-radius:20px;padding:2px 8px
@@ -166,6 +170,31 @@
   .refresh:active{background:#232c50}
 
   .footnote{text-align:center;font-size:11px;color:var(--tx-dim);margin-top:20px}
+
+  /* ===== 오늘의 학습 ===== */
+  .study-row{
+    display:flex;align-items:center;gap:12px;
+    padding:10px 0;border-bottom:1px solid var(--line)
+  }
+  .study-row:last-child{border-bottom:none}
+  .study-link{
+    flex:1;min-width:0;display:flex;align-items:center;gap:10px;
+    text-decoration:none;color:inherit
+  }
+  .study-ico{font-size:22px;flex-shrink:0}
+  .study-info{min-width:0;display:flex;flex-direction:column;gap:2px}
+  .study-name{font-size:14px;font-weight:600;color:var(--tx);display:flex;align-items:center;gap:6px}
+  .study-status{font-size:12px;color:var(--tx-dim)}
+  .study-status.done{color:var(--up)}
+  .streak{font-size:11px;font-weight:600;color:var(--amber)}
+  .study-check{
+    flex-shrink:0;width:34px;height:34px;border-radius:50%;
+    border:1px solid var(--line);background:var(--bg-card-2);
+    color:var(--tx);font-size:16px;font-weight:700;cursor:pointer;
+    display:flex;align-items:center;justify-content:center
+  }
+  .study-check.done{background:var(--up);border-color:var(--up);color:var(--bg)}
+  .study-check:active{opacity:.8}
 </style>
 </head>
 <body>
@@ -175,6 +204,7 @@
     <div class="greeting" id="greeting">안녕하세요 👋</div>
     <div class="date-row">
       <span id="date">—</span>
+      <span class="weather" id="weather"></span>
       <span class="app-ver">v0.2</span>
     </div>
     <div class="updated" id="updated" style="display:none">
@@ -235,6 +265,90 @@ function esc(s){
   return String(s??'').replace(/[&<>"']/g, c => (
     {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
   ));
+}
+
+// ====== 상단 날씨 (Open-Meteo, API 키 불필요) ======
+// 위치 권한을 거부하거나 얻지 못하면 서울 좌표로 대신한다.
+const SEOUL_COORDS = {lat:37.5665, lon:126.9780};
+const WEATHER_ICON = {
+  0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',
+  51:'🌦️',53:'🌦️',55:'🌦️',56:'🌧️',57:'🌧️',
+  61:'🌧️',63:'🌧️',65:'🌧️',66:'🌧️',67:'🌧️',
+  71:'❄️',73:'❄️',75:'❄️',77:'🌨️',
+  80:'🌦️',81:'🌦️',82:'🌦️',85:'🌨️',86:'🌨️',
+  95:'⛈️',96:'⛈️',99:'⛈️',
+};
+function weatherIcon(code){
+  return WEATHER_ICON[code] || '🌡️';
+}
+function getPosition(){
+  return new Promise(resolve => {
+    if(!navigator.geolocation){ resolve(SEOUL_COORDS); return; }
+    navigator.geolocation.getCurrentPosition(
+      pos => resolve({lat:pos.coords.latitude, lon:pos.coords.longitude}),
+      () => resolve(SEOUL_COORDS),
+      {timeout:5000, maximumAge:3600000}
+    );
+  });
+}
+async function loadWeather(){
+  const el = document.getElementById('weather');
+  try{
+    const {lat, lon} = await getPosition();
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto`;
+    const res = await fetch(url);
+    if(!res.ok) throw new Error('weather fetch failed');
+    const d = await res.json();
+    const code = d.daily.weathercode[0];
+    const max = Math.round(d.daily.temperature_2m_max[0]);
+    const min = Math.round(d.daily.temperature_2m_min[0]);
+    el.textContent = `${weatherIcon(code)} ${max}° / ${min}°`;
+  }catch(e){
+    el.textContent = '';
+  }
+}
+
+// ====== 오늘의 학습 (localStorage 기반 체크인) ======
+const STUDY_APPS = [
+  { lang: 'en', name: '영어', icon: '🇺🇸', url: 'https://ssangku2-tech.github.io/English39/' },
+  { lang: 'jp', name: '일본어', icon: '🇯🇵', url: 'https://ssangku2-tech.github.io/japanese/' }
+];
+const STUDY_KEY = 'mystudy_log_v1'; // { "2026-07-30": {en:true, jp:false}, ... } 형태로 localStorage에 저장
+
+function loadStudyLog(){
+  try{
+    return JSON.parse(localStorage.getItem(STUDY_KEY)) || {};
+  }catch(e){
+    return {};
+  }
+}
+function saveStudyLog(log){
+  localStorage.setItem(STUDY_KEY, JSON.stringify(log));
+}
+// 한국시간 기준 "오늘로부터 offset일"의 날짜 키 (YYYY-MM-DD)
+function kstDateKeyOffset(offset){
+  return new Date(Date.now() + 9*3600*1000 + offset*86400000).toISOString().slice(0,10);
+}
+function toggleStudyDone(lang){
+  const log = loadStudyLog();
+  const key = kstDateKeyOffset(0);
+  const day = log[key] || {};
+  day[lang] = !day[lang];
+  log[key] = day;
+  saveStudyLog(log);
+  render();
+}
+// 연속 일수: 오늘이 완료 상태면 오늘부터, 아직이면 어제부터 거슬러 올라가며 센다
+// (오늘 체크를 아직 안 했다는 이유만으로 스트릭이 0으로 보이는 걸 막기 위함)
+function studyStreak(lang){
+  const log = loadStudyLog();
+  let offset = (log[kstDateKeyOffset(0)]||{})[lang] ? 0 : -1;
+  let streak = 0;
+  while((log[kstDateKeyOffset(offset)]||{})[lang]){
+    streak++;
+    offset--;
+  }
+  return streak;
 }
 
 // ====== 섹션 렌더러 ======
@@ -378,6 +492,38 @@ function renderAssets(){
       </div>
     </section>`;
 }
+
+// ====== 오늘의 학습 섹션 ======
+function renderLearning(){
+  const log = loadStudyLog();
+  const todayLog = log[kstDateKeyOffset(0)] || {};
+
+  const rows = STUDY_APPS.map(app => {
+    const done = !!todayLog[app.lang];
+    const streak = studyStreak(app.lang);
+    const badge = streak > 0 ? `<span class="streak">🔥${streak}</span>` : '';
+    return `
+      <div class="study-row">
+        <a class="study-link" href="${esc(app.url)}" target="_blank" rel="noopener">
+          <span class="study-ico">${app.icon}</span>
+          <div class="study-info">
+            <span class="study-name">${esc(app.name)}${badge}</span>
+            <span class="study-status${done?' done':''}">${done?'오늘 완료':'아직 안 함'}</span>
+          </div>
+        </a>
+        <button class="study-check${done?' done':''}" onclick="toggleStudyDone('${app.lang}')" aria-label="${esc(app.name)} 학습 완료 체크">${done?'✓':''}</button>
+      </div>`;
+  }).join('');
+
+  return `
+    <section class="card">
+      <div class="card-head">
+        <span class="ico">📚</span>
+        <span class="title">오늘의 학습</span>
+      </div>
+      <div class="card-body">${rows}</div>
+    </section>`;
+}
 function render(){
   const key = todayKST();
   document.getElementById('greeting').textContent = greetingKST();
@@ -393,11 +539,12 @@ function render(){
     upd.style.display = 'none';
   }
 
-  // 섹션 조립: 미국 시장 브리핑 → 앤트로픽/팔란티어 → 자산
+  // 섹션 조립: 미국 시장 브리핑 → 앤트로픽/팔란티어 → 자산 → 오늘의 학습
   const sections = [
     renderUSBriefing(state.briefing),
     renderAiNews(state.briefing),
     renderAssets(),
+    renderLearning(),
   ];
   document.getElementById('sections').innerHTML = sections.join('');
 }
@@ -434,10 +581,12 @@ async function loadBriefing(){
 // ====== 이벤트 ======
 document.getElementById('refresh').addEventListener('click', () => {
   loadBriefing();
+  loadWeather();
 });
 
 // ====== 시작 ======
 loadBriefing();
+loadWeather();
 </script>
 </body>
 </html>
