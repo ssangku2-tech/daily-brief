@@ -525,9 +525,10 @@ function renderLearning(){
       <div class="card-body">${rows}</div>
     </section>`;
 }
-// ====== 일정 · 메일 섹션 ======
-// events[].start 는 "14:00" 같은 HH:MM 문자열, 또는 타임존이 포함된 ISO 시각 둘 다 지원한다.
-// ISO면 나머지 시간 유틸과 동일한 +9h 오프셋 방식으로 KST 시:분을 뽑아낸다.
+// ====== 일정 섹션 ======
+// events[].start 는 "14:00" 같은 HH:MM 문자열, allDay 날짜 문자열("2026-08-02"),
+// 또는 타임존이 포함된 ISO 시각 세 가지를 다 지원한다. ISO면 나머지 시간 유틸과
+// 동일한 +9h 오프셋 방식으로 KST 시:분/날짜를 뽑아낸다.
 function fmtEventTime(ev){
   if(ev.allDay) return '종일';
   const s = String(ev.start||'');
@@ -537,58 +538,103 @@ function fmtEventTime(ev){
   const kst = new Date(d.getTime() + 9*3600*1000);
   return `${String(kst.getUTCHours()).padStart(2,'0')}:${String(kst.getUTCMinutes()).padStart(2,'0')}`;
 }
-// 종일 일정은 맨 앞, 나머지는 시간순
-function eventSortKey(ev){
-  if(ev.allDay) return -1;
-  const m = /^(\d{1,2}):(\d{2})$/.exec(fmtEventTime(ev));
-  return m ? (+m[1])*60 + (+m[2]) : Infinity;
+// 이벤트가 속한 KST 날짜 키(YYYY-MM-DD). allDay는 이미 날짜만 담겨있고, 시간이 있으면
+// +9h 오프셋으로 KST 날짜를 계산한다. 판단 불가하면 빈 문자열.
+function eventDateKey(ev){
+  const s = String(ev.start||'');
+  if(/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+  const d = new Date(s);
+  if(isNaN(d)) return '';
+  return new Date(d.getTime() + 9*3600*1000).toISOString().slice(0,10);
 }
-function renderAgenda(a){
+// "오늘"/"내일" 라벨. 그 외 날짜는 짧은 날짜로 표기(생성 스크립트가 오늘·내일만
+// 가져오지만, 방어적으로 처리).
+function eventDayLabel(ev){
+  const key = eventDateKey(ev);
+  if(!key) return '';
+  if(key === todayKST()) return '오늘';
+  if(key === kstDateKeyOffset(1)) return '내일';
+  return fmtShortDate(key);
+}
+// 날짜 → (종일 우선) 시간 순으로 정렬하기 위한 문자열 키
+function eventSortKey(ev){
+  const dateKey = eventDateKey(ev) || '9999-99-99';
+  let timeRank;
+  if(ev.allDay){
+    timeRank = -1;
+  } else {
+    const m = /^(\d{1,2}):(\d{2})$/.exec(fmtEventTime(ev));
+    timeRank = m ? (+m[1])*60 + (+m[2]) : 9999;
+  }
+  return `${dateKey}|${String(timeRank + 1).padStart(5,'0')}`;
+}
+function renderSchedule(a){
   let inner;
   if(!a){
     inner = `
       <div class="empty">
         <div class="big">🌙</div>
-        <div class="msg">아직 일정·메일 정보가 없어요</div>
+        <div class="msg">아직 일정 정보가 없어요</div>
       </div>`;
   } else {
-    // 1) 오늘·내일 일정
-    const events = [...(a.events||[])].sort((x,y) => eventSortKey(x) - eventSortKey(y));
-    const eventItems = events.map(ev => `
+    const events = [...(a.events||[])].sort((x,y) => {
+      const kx = eventSortKey(x), ky = eventSortKey(y);
+      return kx < ky ? -1 : kx > ky ? 1 : 0;
+    });
+    const items = events.map(ev => {
+      const label = eventDayLabel(ev);
+      return `
       <div class="news-item">
-        <div class="news-title">${esc(fmtEventTime(ev))} · ${esc(ev.title)}</div>
+        <div class="news-title">${esc(fmtEventTime(ev))} · ${esc(ev.title)}${label ? ` <span class="tkr">${esc(label)}</span>` : ''}</div>
         ${ev.location ? `<div class="news-date">${esc(ev.location)}</div>` : ''}
-      </div>`).join('');
-    const eventsBlock = `
-      <div class="block">
-        <div class="block-label">오늘·내일 일정</div>
-        ${eventItems || '<div class="subnote">예정된 일정이 없어요</div>'}
       </div>`;
+    }).join('');
+    inner = items || `
+      <div class="empty">
+        <div class="big">📅</div>
+        <div class="msg">예정된 일정이 없어요</div>
+      </div>`;
+  }
+  return `
+    <section class="card">
+      <div class="card-head">
+        <span class="ico">📅</span>
+        <span class="title">일정</span>
+      </div>
+      <div class="card-body">${inner}</div>
+    </section>`;
+}
 
-    // 2) 중요 메일 — 안읽음 총계는 한 줄로, 개별 항목은 뉴스 항목과 같은 톤으로
+// ====== 메일 섹션 ======
+function renderMail(a){
+  let inner;
+  if(!a){
+    inner = `
+      <div class="empty">
+        <div class="big">🌙</div>
+        <div class="msg">아직 메일 정보가 없어요</div>
+      </div>`;
+  } else {
+    const unreadNote = (typeof a.unreadCount === 'number')
+      ? `<div class="subnote">안읽음 ${a.unreadCount}통</div>` : '';
     const mails = a.importantMails || [];
     const mailItems = mails.map(m => `
       <div class="news-item">
         <div class="news-title">${esc(m.from)} — ${esc(m.subject)}</div>
         <div class="news-body">${esc(m.summary)}</div>
       </div>`).join('');
-    const unreadNote = (typeof a.unreadCount === 'number')
-      ? `<div class="subnote">안읽음 ${a.unreadCount}통 중 중요 ${mails.length}통</div>` : '';
-    const mailBlock = `
-      <div class="block">
-        <div class="block-label">중요 메일</div>
-        ${unreadNote}
-        ${mailItems || '<div class="subnote">안읽은 중요 메일이 없어요</div>'}
+    const body = mailItems || `
+      <div class="empty">
+        <div class="big">📧</div>
+        <div class="msg">안읽은 중요 메일이 없어요</div>
       </div>`;
-
-    inner = eventsBlock + mailBlock;
+    inner = unreadNote + body;
   }
-
   return `
     <section class="card">
       <div class="card-head">
-        <span class="ico">📅</span>
-        <span class="title">일정 · 메일</span>
+        <span class="ico">📧</span>
+        <span class="title">메일</span>
       </div>
       <div class="card-body">${inner}</div>
     </section>`;
@@ -608,13 +654,14 @@ function render(){
     upd.style.display = 'none';
   }
 
-  // 섹션 조립: 미국 시장 브리핑 → 앤트로픽/팔란티어 → 자산 → 오늘의 학습 → 일정·메일
+  // 섹션 조립: 미국 시장 브리핑 → 앤트로픽/팔란티어 → 자산 → 오늘의 학습 → 일정 → 메일
   const sections = [
     renderUSBriefing(state.briefing),
     renderAiNews(state.briefing),
     renderAssets(),
     renderLearning(),
-    renderAgenda(state.agenda),
+    renderSchedule(state.agenda),
+    renderMail(state.agenda),
   ];
   document.getElementById('sections').innerHTML = sections.join('');
 }
