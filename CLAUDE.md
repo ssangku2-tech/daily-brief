@@ -73,5 +73,5 @@ Defaults to today in KST if no date given; skips if `briefings/YYYY-MM-DD.json` 
 ## Known gaps
 
 - `sw.js` has a `notificationclick` handler, but nothing in the app requests notification permission or schedules a notification yet.
-- Only the US market card and the Anthropic/Palantier news card exist. The 자산/일정/메일 cards are not built (자산 is currently a link-out to a separate portfolio app).
+- The US market card, the Anthropic/Palantier news card, 오늘의 학습 (localStorage check-in), and 일정·메일 (reads `agenda/YYYY-MM-DD.json`, no fallback to a prior day if today's file is missing — a missing file just renders the empty state) exist. 자산 is still a link-out placeholder to a separate portfolio app rather than an in-app card.
 - `briefings/2026-07-30.json` may still contain data from the pre-4섹션 schema (no `sessionDate`/`semiconductorNote`/`aiNews`) — the renderers tolerate this by treating missing fields as empty, but don't expect old files to show the new sections.

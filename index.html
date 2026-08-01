@@ -226,6 +226,7 @@
 let state = {
   briefing: null,   // briefings/YYYY-MM-DD.json 의 내용을 그대로 담는다
   shownDate: null,  // 실제로 화면에 띄운 브리핑의 날짜 (오늘 것이 없으면 과거 날짜가 들어온다)
+  agenda: null,     // agenda/YYYY-MM-DD.json 의 내용을 그대로 담는다 (오늘 것이 없으면 null)
 };
 
 // ====== 유틸 ======
@@ -524,6 +525,74 @@ function renderLearning(){
       <div class="card-body">${rows}</div>
     </section>`;
 }
+// ====== 일정 · 메일 섹션 ======
+// events[].start 는 "14:00" 같은 HH:MM 문자열, 또는 타임존이 포함된 ISO 시각 둘 다 지원한다.
+// ISO면 나머지 시간 유틸과 동일한 +9h 오프셋 방식으로 KST 시:분을 뽑아낸다.
+function fmtEventTime(ev){
+  if(ev.allDay) return '종일';
+  const s = String(ev.start||'');
+  if(/^\d{1,2}:\d{2}$/.test(s)) return s;
+  const d = new Date(s);
+  if(isNaN(d)) return s;
+  const kst = new Date(d.getTime() + 9*3600*1000);
+  return `${String(kst.getUTCHours()).padStart(2,'0')}:${String(kst.getUTCMinutes()).padStart(2,'0')}`;
+}
+// 종일 일정은 맨 앞, 나머지는 시간순
+function eventSortKey(ev){
+  if(ev.allDay) return -1;
+  const m = /^(\d{1,2}):(\d{2})$/.exec(fmtEventTime(ev));
+  return m ? (+m[1])*60 + (+m[2]) : Infinity;
+}
+function renderAgenda(a){
+  let inner;
+  if(!a){
+    inner = `
+      <div class="empty">
+        <div class="big">🌙</div>
+        <div class="msg">아직 일정·메일 정보가 없어요</div>
+      </div>`;
+  } else {
+    // 1) 오늘·내일 일정
+    const events = [...(a.events||[])].sort((x,y) => eventSortKey(x) - eventSortKey(y));
+    const eventItems = events.map(ev => `
+      <div class="news-item">
+        <div class="news-title">${esc(fmtEventTime(ev))} · ${esc(ev.title)}</div>
+        ${ev.location ? `<div class="news-date">${esc(ev.location)}</div>` : ''}
+      </div>`).join('');
+    const eventsBlock = `
+      <div class="block">
+        <div class="block-label">오늘·내일 일정</div>
+        ${eventItems || '<div class="subnote">예정된 일정이 없어요</div>'}
+      </div>`;
+
+    // 2) 중요 메일 — 안읽음 총계는 한 줄로, 개별 항목은 뉴스 항목과 같은 톤으로
+    const mails = a.importantMails || [];
+    const mailItems = mails.map(m => `
+      <div class="news-item">
+        <div class="news-title">${esc(m.from)} — ${esc(m.subject)}</div>
+        <div class="news-body">${esc(m.summary)}</div>
+      </div>`).join('');
+    const unreadNote = (typeof a.unreadCount === 'number')
+      ? `<div class="subnote">안읽음 ${a.unreadCount}통 중 중요 ${mails.length}통</div>` : '';
+    const mailBlock = `
+      <div class="block">
+        <div class="block-label">중요 메일</div>
+        ${unreadNote}
+        ${mailItems || '<div class="subnote">안읽은 중요 메일이 없어요</div>'}
+      </div>`;
+
+    inner = eventsBlock + mailBlock;
+  }
+
+  return `
+    <section class="card">
+      <div class="card-head">
+        <span class="ico">📅</span>
+        <span class="title">일정 · 메일</span>
+      </div>
+      <div class="card-body">${inner}</div>
+    </section>`;
+}
 function render(){
   const key = todayKST();
   document.getElementById('greeting').textContent = greetingKST();
@@ -539,12 +608,13 @@ function render(){
     upd.style.display = 'none';
   }
 
-  // 섹션 조립: 미국 시장 브리핑 → 앤트로픽/팔란티어 → 자산 → 오늘의 학습
+  // 섹션 조립: 미국 시장 브리핑 → 앤트로픽/팔란티어 → 자산 → 오늘의 학습 → 일정·메일
   const sections = [
     renderUSBriefing(state.briefing),
     renderAiNews(state.briefing),
     renderAssets(),
     renderLearning(),
+    renderAgenda(state.agenda),
   ];
   document.getElementById('sections').innerHTML = sections.join('');
 }
@@ -578,15 +648,28 @@ async function loadBriefing(){
   render();
 }
 
+// briefing과 독립적인 별도 fetch — 하나가 없거나 실패해도 다른 하나는 정상 표시된다.
+async function loadAgenda(){
+  try{
+    const res = await fetch(`agenda/${todayKST()}.json`, {cache:'no-store'});
+    state.agenda = res.ok ? await res.json() : null;
+  }catch(e){
+    state.agenda = null;
+  }
+  render();
+}
+
 // ====== 이벤트 ======
 document.getElementById('refresh').addEventListener('click', () => {
   loadBriefing();
   loadWeather();
+  loadAgenda();
 });
 
 // ====== 시작 ======
 loadBriefing();
 loadWeather();
+loadAgenda();
 </script>
 </body>
 </html>
