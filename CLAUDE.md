@@ -38,7 +38,7 @@ Same defaulting/skip behavior as `generate.js`, against `agenda/YYYY-MM-DD.json`
 
 **`index.html`** is the entire application: inline `<style>` for all CSS, inline `<script>` for all logic. There is no router or component framework. The structure is:
 - A single `state` object: `{ briefing, shownDate }`.
-- One renderer function per card — `renderUSBriefing(b)` (지수/뉴스/반도체 종목) and `renderAiNews(b)` (앤트로픽·팔란티어). Each returns an HTML string for one `<section class="card">` and handles its own loading/empty state internally.
+- One renderer function per card — `renderUSBriefing(b)` (지수/뉴스/반도체 종목) and `renderAiNews(b)` (앤트로픽·팔란티어). Each computes its own body HTML (handling its own loading/empty state) and hands it to `cardShell(id, icon, title, sub, bodyHtml, defaultOpen)`, which wraps it in the accordion header (clickable, chevron) and the collapsible `.card-body`. Open/closed state per card id is remembered in `localStorage` (`mycard_open_v1`) via `isCardOpen`/`toggleCard`, overriding `defaultOpen` once the user has toggled a card at least once.
 - A single `render()` that fills the header, toggles the "갱신" timestamp, then joins the section strings into `#sections`.
 - `loadBriefing()` is the sole data entry point (startup + refresh button both call it) — see **Data flow** below.
 
@@ -65,7 +65,7 @@ Same defaulting/skip behavior as `generate.js`, against `agenda/YYYY-MM-DD.json`
 
 **Time handling:** all date/time logic is KST, computed by offsetting UTC by +9h (`todayKST`, `hourKST`) rather than using `toLocaleString` with a timezone. `greetingKST()` maps the KST hour to one of five greetings. Keep new time logic on the same +9h-offset approach so the whole app agrees on what "today" is. `sessionDate`/`sessionDateLabel`, by contrast, describe the US trading day and are produced server-side by `generate.js` — the client never computes them.
 
-**Service worker (`sw.js`)** uses a versioned cache name (`daily-brief-vN` — bump on asset changes to bust old caches; currently v7). Fetch handling: non-GET and external API/font hosts bypass the cache entirely; `/briefings/*` is network-first with a cache fallback (so an offline user still sees the last briefing they received); everything else is cache-first with a background network fill and an `index.html` fallback. The app shell (`./`, `index.html`, `manifest.json`) is precached with `addAll` at install; the icons are precached separately with `allSettled` because `addAll` fails the entire install if any one URL 404s.
+**Service worker (`sw.js`)** uses a versioned cache name (`daily-brief-vN` — bump on asset changes to bust old caches; currently v12). Fetch handling: non-GET and external API/font hosts bypass the cache entirely; `/briefings/*` is network-first with a cache fallback (so an offline user still sees the last briefing they received); everything else is cache-first with a background network fill and an `index.html` fallback. The app shell (`./`, `index.html`, `manifest.json`) is precached with `addAll` at install; the icons are precached separately with `allSettled` because `addAll` fails the entire install if any one URL 404s.
 
 ## Conventions specific to this codebase
 
@@ -76,7 +76,8 @@ Same defaulting/skip behavior as `generate.js`, against `agenda/YYYY-MM-DD.json`
 - UI 문구와 코드 주석은 한국어로 작성한다.
 - `esc()` must wrap any data-supplied string interpolated into an HTML template string — this app has no framework-level auto-escaping, and briefing content will come from network JSON.
 - All colors go through the CSS custom properties in `:root`; don't hardcode hex values in rules. Note the Korean market convention baked into the tokens: `--up` is red, `--down` is blue.
-- 새 카드를 추가할 때는 `renderXxx()` 함수 하나를 만들어 `render()`의 `sections` 배열에 push 하는 패턴을 따른다 — 카드마다 자기 빈 상태를 직접 처리한다.
+- 새 카드를 추가할 때는 `renderXxx()` 함수 하나를 만들어 본문 HTML을 계산한 뒤 `cardShell(id, icon, title, sub, bodyHtml, defaultOpen)`에 넘기고, 그 결과를 `render()`의 `sections` 배열에 push 하는 패턴을 따른다 — 카드마다 자기 빈 상태는 직접 처리하되, 헤더·접기/펼치기(아코디언)는 `cardShell`에 위임한다. `id`는 다른 카드와 겹치지 않는 짧은 문자열(예: `'us'`, `'mail'`)이어야 한다.
+- 날씨 위젯은 Open-Meteo(예보) + BigDataCloud의 클라이언트용 역지오코딩(`reverse-geocode-client`, API 키 불필요)을 함께 쓴다. 새 외부 API를 붙일 때는 `sw.js`의 캐시 우회 목록(`api.anthropic.com`/`open-meteo.com`/`bigdatacloud.net`/...)에도 호스트를 추가해야 한다 — 안 그러면 서비스워커가 그 응답을 캐시-우선으로 가로챈다.
 - `generate.js`의 프롬프트를 건드릴 때는 0단계(거래일 확정) → 1단계(수치 검증 규칙) → 2단계(4섹션 JSON) → 3단계(자체 감사) 구조를 유지한다. 이 구조를 허물면 이 사용자가 이미 겪었던 "T-1일 수치를 T일로 착각" 사고가 재발할 수 있다.
 - Mobile-first: the layout is capped at `max-width:520px` and uses `env(safe-area-inset-*)` padding. Test at phone widths, and keep tap targets full-width like `.refresh`.
 
