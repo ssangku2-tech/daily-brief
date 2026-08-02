@@ -160,6 +160,26 @@
   .news-body{font-size:13px;line-height:1.6;color:var(--tx-dim)}
   .news-date{font-size:11px;color:var(--tx-faint);margin-top:4px}
 
+  /* ===== 일정 항목 ===== */
+  /* 시간을 별도 칸으로 떼어내 제목과 섞이지 않게 한다 — 제목 자체에 시각이
+     들어있는 이벤트("화산CC 13:00" 등)와 겹쳐 보이는 걸 막기 위함 */
+  .event-row{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:10px 0;border-bottom:1px solid var(--line)
+  }
+  .event-row:last-child{border-bottom:none}
+  .event-time{
+    flex:0 0 44px;font-size:13px;font-weight:600;color:var(--tx-dim);
+    white-space:nowrap;padding-top:1px
+  }
+  .event-main{flex:1;min-width:0}
+  .event-title{font-size:14px;color:var(--tx);line-height:1.4}
+  .event-loc{font-size:12px;color:var(--tx-dim);margin-top:2px}
+  .event-day{
+    flex:0 0 auto;font-size:11px;font-weight:600;color:var(--amber);
+    background:var(--bg-card-2);border-radius:20px;padding:2px 8px;white-space:nowrap
+  }
+
   /* ===== 링크 점프 (다른 앱으로 이동) ===== */
   .jump{
     display:flex;align-items:center;gap:12px;
@@ -625,9 +645,13 @@ function renderSchedule(a){
     const items = events.map(ev => {
       const label = eventDayLabel(ev);
       return `
-      <div class="news-item">
-        <div class="news-title">${esc(fmtEventTime(ev))} · ${esc(ev.title)}${label ? ` <span class="tkr">${esc(label)}</span>` : ''}</div>
-        ${ev.location ? `<div class="news-date">${esc(ev.location)}</div>` : ''}
+      <div class="event-row">
+        <div class="event-time">${esc(fmtEventTime(ev))}</div>
+        <div class="event-main">
+          <div class="event-title">${esc(ev.title)}</div>
+          ${ev.location ? `<div class="event-loc">📍 ${esc(ev.location)}</div>` : ''}
+        </div>
+        ${label ? `<div class="event-day">${esc(label)}</div>` : ''}
       </div>`;
     }).join('');
     inner = items || `
