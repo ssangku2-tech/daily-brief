@@ -50,11 +50,12 @@
     margin-left:auto;font-size:11px;color:var(--tx-dim);
     border:1px solid var(--line);border-radius:20px;padding:2px 8px
   }
+  /* 갱신 시각은 참고 정보일 뿐이라 눈에 띄지 않도록 우측 정렬 + 흐린 색으로 둔다 */
   .updated{
-    display:inline-flex;align-items:center;gap:5px;
-    font-size:12px;color:var(--amber);margin-top:2px
+    display:flex;justify-content:flex-end;align-items:center;gap:5px;
+    font-size:11px;color:var(--tx-faint);margin-top:4px
   }
-  .updated .dot{width:6px;height:6px;border-radius:50%;background:var(--amber)}
+  .updated .dot{width:5px;height:5px;border-radius:50%;background:var(--tx-faint)}
 
   /* ===== 섹션 카드 ===== */
   .card{
@@ -80,7 +81,8 @@
     font-size:12px;color:var(--tx-dim);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis
   }
-  .card-head .chevron{font-size:12px;color:var(--tx-dim);flex-shrink:0}
+  /* 접기/펼치기 상태를 한눈에 알아볼 수 있도록 화살표를 크게 둔다 */
+  .card-head .chevron{font-size:20px;line-height:1;color:var(--tx-dim);flex-shrink:0}
   .card-body{padding:16px}
 
   /* ===== 빈 상태 (1단계 핵심) ===== */
@@ -496,7 +498,7 @@ function renderUSBriefing(b){
     else subRaw = '어젯밤 뉴욕장';
   }
 
-  return cardShell('us', '🇺🇸', '미국 시장 브리핑', esc(subRaw), inner, true);
+  return cardShell('us', '🇺🇸', '미국 시장 브리핑', esc(subRaw), inner, false);
 }
 
 // ====== 앤트로픽 · 팔란티어 뉴스 섹션 ======
@@ -523,7 +525,7 @@ function renderAiNews(b){
         ${n.date ? `<div class="news-date">${esc(n.date)}</div>` : ''}
       </div>`).join('');
   }
-  return cardShell('ainews', '🧭', '앤트로픽 · 팔란티어', '', inner, true);
+  return cardShell('ainews', '🧭', '앤트로픽 · 팔란티어', '', inner, false);
 }
 
 // ====== 자산 변화 섹션 (현재: 링크 점프형) ======
@@ -634,7 +636,7 @@ function renderSchedule(a){
         <div class="msg">예정된 일정이 없어요</div>
       </div>`;
   }
-  return cardShell('schedule', '📅', '일정', '', inner, true);
+  return cardShell('schedule', '📅', '일정', '', inner, false);
 }
 
 // ====== 메일 섹션 ======
@@ -672,7 +674,7 @@ function render(){
   // 갱신 시각 표시 (브리핑 있을 때만)
   const upd = document.getElementById('updated');
   if(state.briefing && state.briefing.generatedAt){
-    upd.style.display = 'inline-flex';
+    upd.style.display = 'flex';
     document.getElementById('updated-txt').textContent =
       state.briefing.generatedAt + ' 갱신';
   } else {

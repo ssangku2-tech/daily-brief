@@ -48,6 +48,17 @@ if (fs.existsSync(outFile)) {
   process.exit(0);
 }
 
+// dateKey(KST)가 토·일요일이면 미국 증시가 열리지 않아 새로 마감되는 거래일이 없다.
+// (KST 토·일요일 아침 실행은 둘 다 같은 직전 금요일 세션을 중복 조사·과금하게 된다 —
+// 실제로 이미 그렇게 생성된 사례가 있었다. 반대로 KST 월요일 아침은 아직 미국 동부
+// 시간으로 일요일 밤이라 "지금이 미국 기준 무슨 요일인가"로 판단하면 월요일 실행까지
+// 잘못 건너뛰게 되므로, 반드시 dateKey 자체의 요일로 판단해야 한다.)
+const kstWeekday = new Date(`${dateKey}T00:00:00+09:00`).getDay(); // 0=일 ... 6=토
+if (kstWeekday === 0 || kstWeekday === 6) {
+  console.log(`${dateKey}은 ${kstWeekday === 0 ? '일' : '토'}요일이라 생성을 건너뜁니다 (미국 증시 휴장, 새 거래일 없음).`);
+  process.exit(0);
+}
+
 // ── 관심 종목 ──────────────────────────
 const WATCH = [
   { name: '엔비디아',      ticker: 'NVDA' },
