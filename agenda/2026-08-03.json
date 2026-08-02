@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-03",
+  "generatedAt": "2026-08-03 06:53",
+  "events": [
+    {
+      "title": "지민",
+      "start": "2026-08-04T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 201,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (1327948)",
+      "summary": "GitHub 워크플로우 Daily Market Briefing 작업이 실패했습니다."
+    },
+    {
+      "from": "Slack <feedback@slack.com>",
+      "subject": "새 기기에서의 Slack 계정 로그인",
+      "summary": "새 기기에서 Slack 계정에 로그인되었으며 보안 확인이 필요합니다."
+    },
+    {
+      "from": "Notion Team <notify@updates.notion.so>",
+      "subject": "새 기기로 계정에 로그인했습니다.",
+      "summary": "Windows 기기에서 Notion 계정의 새로운 로그인이 감지되었습니다."
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Windows 기기에서 Google 계정에 새로 로그인되었습니다."
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 8. 2.)",
+      "summary": "Google AI Pro 구독이 갱신되어 요금이 청구되었습니다."
+    }
+  ]
+}
