@@ -35,25 +35,27 @@
   .wrap{max-width:520px;margin:0 auto;padding:0 16px}
 
   /* ===== 헤더 ===== */
-  header{padding:24px 0 12px}
-  .greeting{font-size:22px;font-weight:700;letter-spacing:-.3px}
-  .date-row{
+  header{padding:20px 0 10px}
+  /* 오늘 날짜가 헤더에서 가장 먼저 눈에 들어와야 하므로 가장 큰 글씨로 둔다 */
+  .date-big{font-size:28px;font-weight:800;letter-spacing:-.5px}
+  .greeting-row{
     display:flex;align-items:center;gap:8px;
     margin-top:4px;font-size:13px;color:var(--tx-dim)
-  }
-  /* 날씨는 인사말의 시간대 이모지와 헷갈리지 않도록 별도 줄 + 큰 글씨로 강조 */
-  .weather-row{
-    display:flex;align-items:center;gap:6px;
-    margin-top:6px;font-size:20px;font-weight:700;color:var(--tx)
   }
   .app-ver{
     margin-left:auto;font-size:11px;color:var(--tx-dim);
     border:1px solid var(--line);border-radius:20px;padding:2px 8px
   }
+  /* 날씨는 알약형 배지로 감싸 인사말 줄과 분리하고 시각적으로 정돈한다 */
+  .weather-pill{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:8px;font-size:13px;font-weight:600;color:var(--tx);
+    background:var(--bg-card-2);border-radius:20px;padding:5px 12px
+  }
   /* 갱신 시각은 참고 정보일 뿐이라 눈에 띄지 않도록 우측 정렬 + 흐린 색으로 둔다 */
   .updated{
     display:flex;justify-content:flex-end;align-items:center;gap:5px;
-    font-size:11px;color:var(--tx-faint);margin-top:4px
+    font-size:11px;color:var(--tx-faint);margin-top:6px
   }
   .updated .dot{width:5px;height:5px;border-radius:50%;background:var(--tx-faint)}
 
@@ -62,12 +64,12 @@
     background:var(--bg-card);
     border:1px solid var(--line);
     border-radius:var(--radius);
-    margin-top:14px;
+    margin-top:10px;
     overflow:hidden;
   }
   .card-head{
     display:flex;align-items:center;gap:8px;flex-wrap:nowrap;
-    padding:14px 16px;border-bottom:1px solid var(--line);
+    padding:12px 16px;border-bottom:1px solid var(--line);
     cursor:pointer;user-select:none
   }
   .card-head .ico{font-size:18px;flex-shrink:0}
@@ -82,8 +84,8 @@
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis
   }
   /* 접기/펼치기 상태를 한눈에 알아볼 수 있도록 화살표를 크게 둔다 */
-  .card-head .chevron{font-size:20px;line-height:1;color:var(--tx-dim);flex-shrink:0}
-  .card-body{padding:16px}
+  .card-head .chevron{font-size:26px;line-height:1;color:var(--tx-dim);flex-shrink:0}
+  .card-body{padding:14px 16px}
 
   /* ===== 빈 상태 (1단계 핵심) ===== */
   .empty{
@@ -114,8 +116,8 @@
   }
 
   /* ===== 블록(지수/뉴스/종목/하이라이트 묶음) ===== */
-  .block{margin-top:18px}
-  .block:first-child{margin-top:8px}
+  .block{margin-top:14px}
+  .block:first-child{margin-top:6px}
   .block-label{
     font-size:12px;font-weight:600;color:var(--tx-dim);
     text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px
@@ -124,7 +126,7 @@
   /* ===== 지수·종목 표 ===== */
   .idx-row{
     display:flex;justify-content:space-between;align-items:center;
-    padding:10px 0;border-bottom:1px solid var(--line);gap:12px
+    padding:8px 0;border-bottom:1px solid var(--line);gap:12px
   }
   .idx-row:last-child{border-bottom:none}
   .idx-name{font-size:14px;color:var(--tx)}
@@ -139,7 +141,7 @@
   /* ===== 관심 종목 (왼쪽: 종목명·주가 / 오른쪽: 코멘트) ===== */
   .stock-row{
     display:flex;align-items:flex-start;gap:12px;
-    padding:10px 0;border-bottom:1px solid var(--line)
+    padding:8px 0;border-bottom:1px solid var(--line)
   }
   .stock-row:last-child{border-bottom:none}
   .stock-main{flex:0 0 46%;min-width:0}
@@ -154,7 +156,7 @@
   }
 
   /* ===== 뉴스·하이라이트 항목 ===== */
-  .news-item{padding:10px 0;border-bottom:1px solid var(--line)}
+  .news-item{padding:8px 0;border-bottom:1px solid var(--line)}
   .news-item:last-child{border-bottom:none}
   .news-title{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:4px}
   .news-body{font-size:13px;line-height:1.6;color:var(--tx-dim)}
@@ -165,7 +167,7 @@
      들어있는 이벤트("화산CC 13:00" 등)와 겹쳐 보이는 걸 막기 위함 */
   .event-row{
     display:flex;align-items:flex-start;gap:12px;
-    padding:10px 0;border-bottom:1px solid var(--line)
+    padding:8px 0;border-bottom:1px solid var(--line)
   }
   .event-row:last-child{border-bottom:none}
   .event-time{
@@ -207,7 +209,7 @@
   /* ===== 오늘의 학습 ===== */
   .study-row{
     display:flex;align-items:center;gap:12px;
-    padding:10px 0;border-bottom:1px solid var(--line)
+    padding:8px 0;border-bottom:1px solid var(--line)
   }
   .study-row:last-child{border-bottom:none}
   .study-link{
@@ -234,12 +236,12 @@
 <div class="wrap">
 
   <header>
-    <div class="greeting" id="greeting">안녕하세요 👋</div>
-    <div class="date-row">
-      <span id="date">—</span>
+    <div class="date-big" id="date">—</div>
+    <div class="greeting-row">
+      <span id="greeting">안녕하세요 👋</span>
       <span class="app-ver">v0.2</span>
     </div>
-    <div class="weather-row" id="weather-row" style="display:none">
+    <div class="weather-pill" id="weather-row" style="display:none">
       <span id="weather"></span>
     </div>
     <div class="updated" id="updated" style="display:none">
@@ -354,7 +356,7 @@ async function loadWeather(){
     const max = Math.round(d.daily.temperature_2m_max[0]);
     const min = Math.round(d.daily.temperature_2m_min[0]);
     el.textContent = `${weatherIcon(code)} ${place ? place + ' ' : ''}${max}° / ${min}°`;
-    row.style.display = 'flex';
+    row.style.display = 'inline-flex';
   }catch(e){
     row.style.display = 'none';
   }
@@ -507,7 +509,17 @@ function renderUSBriefing(b){
     const stocks = stockRows
       ? `<div class="block"><div class="block-label">반도체 관심 종목</div>${secNote}${stockRows}</div>` : '';
 
-    inner = stale + summary + indices + news + stocks;
+    // 5) 앤트로픽·팔란티어 뉴스 — 별도 카드 대신 이 카드의 마지막 블록으로 포함
+    const aiNewsItems = (b.aiNews||[]).map(n => `
+      <div class="news-item">
+        <div class="news-title">${n.company ? `<span class="tkr">[${esc(n.company)}]</span> ` : ''}${esc(n.title)}</div>
+        <div class="news-body">${esc(n.body)}</div>
+        ${n.date ? `<div class="news-date">${esc(n.date)}</div>` : ''}
+      </div>`).join('');
+    const aiNews = aiNewsItems
+      ? `<div class="block"><div class="block-label">앤트로픽 · 팔란티어</div>${aiNewsItems}</div>` : '';
+
+    inner = stale + summary + indices + news + stocks + aiNews;
   }
 
   // 카드 헤더 서브텍스트: sessionDateLabel(신규) 우선, 없으면(과거 파일) 기존 방식으로 폴백
@@ -519,33 +531,6 @@ function renderUSBriefing(b){
   }
 
   return cardShell('us', '🇺🇸', '미국 시장 브리핑', esc(subRaw), inner, false);
-}
-
-// ====== 앤트로픽 · 팔란티어 뉴스 섹션 ======
-function renderAiNews(b){
-  const items = (b && Array.isArray(b.aiNews)) ? b.aiNews : [];
-  let inner;
-  if(!b){
-    inner = `
-      <div class="empty">
-        <div class="big">🧭</div>
-        <div class="msg">아직 오늘 브리핑이 없어요.</div>
-      </div>`;
-  } else if(items.length === 0){
-    inner = `
-      <div class="empty">
-        <div class="big">🧭</div>
-        <div class="msg">최근 1주일 내 새 소식이 없어요.</div>
-      </div>`;
-  } else {
-    inner = items.map(n => `
-      <div class="news-item">
-        <div class="news-title">${n.company ? `<span class="tkr">[${esc(n.company)}]</span> ` : ''}${esc(n.title)}</div>
-        <div class="news-body">${esc(n.body)}</div>
-        ${n.date ? `<div class="news-date">${esc(n.date)}</div>` : ''}
-      </div>`).join('');
-  }
-  return cardShell('ainews', '🧭', '앤트로픽 · 팔란티어', '', inner, false);
 }
 
 // ====== 자산 변화 섹션 (현재: 링크 점프형) ======
@@ -705,10 +690,9 @@ function render(){
     upd.style.display = 'none';
   }
 
-  // 섹션 조립: 미국 시장 브리핑 → 앤트로픽/팔란티어 → 자산 → 오늘의 학습 → 일정 → 메일
+  // 섹션 조립: 미국 시장 브리핑(앤트로픽/팔란티어 포함) → 자산 → 오늘의 학습 → 일정 → 메일
   const sections = [
     renderUSBriefing(state.briefing),
-    renderAiNews(state.briefing),
     renderAssets(),
     renderLearning(),
     renderSchedule(state.agenda),
