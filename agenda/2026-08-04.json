@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-04",
+  "generatedAt": "2026-08-04 07:06",
+  "events": [
+    {
+      "title": "지민",
+      "start": "2026-08-04T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "송,박",
+      "start": "2026-08-05T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 201,
+  "importantMails": [
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Claude 앱에 Google 계정 로그인 정보가 공유되었으며 현재 별도 조치 불필요함"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Notion에 공유하셨습니다",
+      "summary": "Notion 앱에 Google 계정 로그인 정보가 공유되었으며 현재 별도 조치 불필요함"
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Windows 기기에서 Google 계정에 새로 로그인했으니 이상이 없는지 확인 필요"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (c7b2839)",
+      "summary": "Daily Market Briefing 워크플로우 작업이 실패하여 확인 및 수정 필요함"
+    }
+  ]
+}
