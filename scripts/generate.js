@@ -19,6 +19,20 @@
 // medium→low로 낮췄다(비용의 주된 축은 검색 결과가 컨텍스트에 쌓이는 입력 토큰과 사고
 // 토큰이라, effort를 낮추면 사고 토큰이 함께 줄어든다). market은 반복돼온 "거래일 혼동"
 // 버그와 직결된 수치 검증 섹션이라 medium을 유지한다.
+//
+// 5단계 구조 변경(2026-08-04): 지수·종목의 price/changePct를 더 이상 Claude의 web_search로
+// 찾고 검증하지 않는다. 대신 이 스크립트가 직접 Cloudflare Worker(다른 개인 프로젝트인
+// "내 주식 현황" 포트폴리오 앱이 쓰는 stock-proxy.ssangku2.workers.dev — 이 레포에는 소스가
+// 없고 외부 계약으로 취급한다. Yahoo Finance를 프록시한다)에서 실시간 시세를 받아와 그 값을
+// 그대로 쓴다. 이유: 이 크론은 미국 정규장 마감 몇 시간 뒤(KST 06:30)에 도는데, 그 시점의
+// Yahoo `regularMarketPrice`는 이미 그날 정규장 종가로 고정돼 시간외 거래로 더 움직이지
+// 않는다 — 즉 "T일 정규장 마감가"와 "지금 이 순간 시세"가 이 타이밍에서는 같은 값이다.
+// 이렇게 하면 (a) "확인 실패"가 나던 주된 원인(위젯성 스냅샷과 날짜 있는 기사 종가가 서로
+// 상충하는 문제)이 구조적으로 사라지고, (b) market 요청의 web_search 예산이 숫자 교차검증
+// 없이 "무슨 뉴스가 있었나" 조사에만 쓰이므로 크게 줄일 수 있다. Claude는 이제 sessionDate
+// 확정·뉴스 조사·반도체 섹터 코멘트(정성적 한 줄, stockNotes)만 담당한다. Worker 호출이
+// 실패하면(전부 또는 개별 종목) 기존 관례대로 해당 필드에 "확인 실패"를 넣는다 — 하루 4번
+// 재시도 크론이 안전망이다.
 const fs = require('fs');
 const path = require('path');
 
@@ -59,16 +73,85 @@ if (kstWeekday === 0 || kstWeekday === 6) {
   process.exit(0);
 }
 
-// ── 관심 종목 ──────────────────────────
+// ── 관심 종목·지수 (Worker에서 직접 시세를 받아올 대상) ─────────────
 const WATCH = [
   { name: '엔비디아',      ticker: 'NVDA' },
   { name: 'AMD',          ticker: 'AMD'  },
   { name: '인텔',          ticker: 'INTC' },
   { name: 'TSMC',         ticker: 'TSM'  },
   { name: '마이크론',      ticker: 'MU'   },
-  { name: 'SK하이닉스 ADR', ticker: 'SKHY' },
+  { name: 'SK하이닉스 ADR', ticker: 'SKHY' }, // 실제 Yahoo 티커로 확인됨(코스피 000660과는 다른 미국 OTC ADR)
 ];
 const watchList = WATCH.map(s => `${s.name}(${s.ticker})`).join(', ');
+
+const INDICES = [
+  { name: 'S&P 500',   symbol: '^GSPC' },
+  { name: '나스닥종합', symbol: '^IXIC' },
+  { name: '다우존스',   symbol: '^DJI'  },
+];
+
+// ── Worker에서 실시간 시세 받아오기 ──────────────────────────────
+// stock-proxy.ssangku2.workers.dev/?symbol= 는 {price, prev, currency, source, realtime}을 반환한다.
+// 소스가 없는 외부 API이므로 실패는 흔한 일로 취급하고 개별 심볼 단위로 조용히 "확인 실패" 처리한다.
+const WORKER_URL = 'https://stock-proxy.ssangku2.workers.dev';
+
+async function fetchWorkerQuote(symbol) {
+  try {
+    const res = await fetch(`${WORKER_URL}/?symbol=${encodeURIComponent(symbol)}`, {
+      signal: AbortSignal.timeout(12000)
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data.price == null || data.prev == null) return null;
+    return data;
+  } catch (e) {
+    console.warn(`[worker] ${symbol} 조회 실패: ${e.message}`);
+    return null;
+  }
+}
+
+function formatPrice(price, currency) {
+  const num = price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return currency === 'USD' ? `$${num}` : num;
+}
+
+function formatChangePct(price, prev) {
+  const pct = ((price - prev) / prev) * 100;
+  return `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`;
+}
+
+async function fetchLiveIndicesAndStocks() {
+  const [indexQuotes, stockQuotes] = await Promise.all([
+    Promise.all(INDICES.map(i => fetchWorkerQuote(i.symbol))),
+    Promise.all(WATCH.map(s => fetchWorkerQuote(s.ticker))),
+  ]);
+
+  const indices = INDICES.map((i, idx) => {
+    const q = indexQuotes[idx];
+    if (!q) return { name: i.name, price: '확인 실패', changePct: '확인 실패', up: null };
+    return {
+      // 지수는 기존 관례상 "$" 표기 없이 지수 값 그대로 표시한다(종목만 통화 기호를 붙인다).
+      name: i.name,
+      price: formatPrice(q.price, null),
+      changePct: formatChangePct(q.price, q.prev),
+      up: q.price >= q.prev,
+    };
+  });
+
+  const stocks = WATCH.map((s, idx) => {
+    const q = stockQuotes[idx];
+    if (!q) return { name: s.name, ticker: s.ticker, price: '확인 실패', changePct: '확인 실패', up: null, note: 'Worker 조회 실패' };
+    return {
+      name: s.name,
+      ticker: s.ticker,
+      price: formatPrice(q.price, q.currency),
+      changePct: formatChangePct(q.price, q.prev),
+      up: q.price >= q.prev,
+    };
+  });
+
+  return { indices, stocks };
+}
 
 // ── 신선도 기준: 직전 브리핑 날짜 이후만 (없으면 24시간 이내) ──────
 const indexFile = path.join(BRIEF_DIR, 'index.json');
@@ -80,57 +163,45 @@ const freshnessRule = lastDate
   ? `직전 브리핑 날짜는 ${lastDate} 이다. 그 이후에 새로 나온 뉴스·발언·이벤트만 포함하라. ${lastDate} 이전에 있었던 일은 직전 브리핑에서 이미 다뤘을 수 있으니, 그 이후 새로 보도된 게 아니면 제외하라.`
   : `최근 24시간 이내에 새로 나온 뉴스·발언·이벤트만 포함하라.`;
 
-// ── 프롬프트 1: 시장 데이터(지수/뉴스/반도체 종목) ──────────────────
-// 0단계(거래일 확정) → 1단계(수치 검증 규칙) → 2단계(3섹션 작성) → 3단계(자체 감사).
-// 지금까지 반복된 유일한 오류 유형은 "어느 거래일 수치인지 혼동"이었으므로,
-// 그 방지 규칙을 최우선으로 명시한다.
+// ── 프롬프트 1: 시장 데이터(거래일 확정/뉴스/반도체 섹터 코멘트) ────
+// 지수·종목의 price/changePct는 더 이상 여기서 다루지 않는다 — main()이 Worker에서 직접
+// 받아온다(5단계 구조 변경, 위 주석 참고). 그래서 예전의 "1단계 수치 검증 규칙"과
+// indices/stocks JSON 필드는 빠졌고, Claude는 거래일 확정 → 뉴스 조사 → 반도체 섹터
+// 정성적 코멘트(stockNotes) → 자체 감사만 담당한다.
 const marketPrompt = `너는 한국인 개인투자자를 위한 "데일리 마켓 브리핑" 생성기다. 오늘은 한국 시간(KST) 기준 ${dateKey} 아침이다.
 
 ## 0단계. 대상 거래일(T) 확정 — 가장 먼저, 생략 금지
-지금까지 발생한 오류는 전부 "어느 거래일 수치인지 혼동한 것" 하나였다. 조사를 시작하기 전에 반드시 T를 확정하라.
 - T = 직전에 정규장이 마감된 미국 거래일이다. KST 새벽 실행이면 보통 T는 미국 기준 전일, 토·일·월요일이면 직전 금요일, 미국 공휴일이면 그 전 영업일이다.
 - 결과 JSON의 sessionDate(T의 ISO 날짜, 예 "2026-07-31")와 sessionDateLabel("YYYY년 M월 D일(요일) 미국 동부시간 정규장 마감" 형식의 한국어 문장)에 반드시 명시하라.
-- 이후 모든 가격·등락률은 오직 이 T일 것만 써라. T-1일 수치를 T일로 옮겨 적는 것이 유일한 반복 오류 유형이므로 계속 경계하라.
 
-## 1단계. 수치 검증 규칙 — 모든 가격·등락률에 예외 없이 적용
-- 실시간 시세 스냅샷을 그대로 쓰지 마라. "현재가/전일종가" 형태의 위젯성 데이터는 프리마켓·애프터마켓·주말 잔여 호가일 수 있다. 반드시 날짜가 명시된 기사·히스토리 데이터로 확인하라.
+## 1단계. 뉴스 검증 규칙 — 가격은 다루지 않으니 날짜만 신경 쓰면 된다
 - "today"/"Friday"/"this week"/"오늘"/"이번 주" 같은 상대적 시간 표현은 무효로 간주하고, 기사의 절대 날짜(YYYY-MM-DD)로 환산하라. 환산이 안 되면 그 소스는 폐기하라.
-- 종가·등락률은 T일이 명시된 서로 다른 소스 2곳이 일치할 때 확정하라. 1곳뿐이면 note에 "(단일 출처)"를 병기하라.
-- T-1 종가 × (1 + T일 등락률) ≈ T일 종가 가 성립하는지 검산하라(오차 0.5%p 초과면 불일치 — 재조사).
-- 값이 일간 등락률이 아니라 52주 범위·연초 대비·주간 등락 등일 수 있다. 무엇에 대한 %인지 확정되지 않으면 쓰지 마라.
-- 확인 불가 시 추정·근사 금지: 끝까지 확정 못 하면 price/changePct 필드에 "확인 실패"라고 쓰고 note에 사유를 남겨라. 근사치나 빈칸으로 얼버무리지 마라.
-- 서로 다른 지수·종목의 changePct 를 재사용하지 마라(각 항목은 그 항목 자신을 검색한 결과에서만).
-- 뉴스에도 같은 규칙: 기사의 요일·"최근"은 절대 날짜로 환산해 news[].date 에 채워라. 1~2주 전 사건을 T일 사건으로 옮겨 적지 마라.
-- 검색 예산은 넉넉하지만 무한하지 않다. 한 종목에서 소스가 계속 상충하면 무한정 파고들지 말고 2~3회 재검색 후에도 안 맞으면 "확인 실패"로 정리하고 다음 항목으로 넘어가라 — 뒤 항목을 아예 조사 못 하는 것보다 낫다.
+- 1~2주 전 사건을 T일 사건으로 옮겨 적지 마라.
+- 검색 예산은 넉넉하지만 무한하지 않다. 한 주제에서 소스가 계속 상충하면 2~3회 재검색 후에도 안 맞으면 다음 항목으로 넘어가라.
 
 ## 조사 대상
-1. S&P 500, 나스닥종합, 다우존스의 T일 종가·등락률 (지수마다 개별 검색)
-2. T일 미국·글로벌 증시에 영향을 준 핵심 뉴스 2~4개 (유가·금리·지정학 등 원인 포함)
-3. 다음 반도체 관련 종목의 T일 종가·등락률: ${watchList} (종목마다 개별 검색). SK하이닉스는 반드시 미국 ADR 티커 SKHY 기준(코스피 000660 아님). 섹터 전반 동향도 한 줄(semiconductorNote) 파악하라 — 종목별 방향이 크게 엇갈리면(일부 급등·일부 급락) 날짜 혼동 신호일 수 있으니 그 종목들을 재확인하라.
+1. T일 미국·글로벌 증시에 영향을 준 핵심 뉴스 2~4개 (유가·금리·지정학 등 원인 포함)
+2. 다음 반도체 관련 종목들의 T일 주가 흐름과 그 이유를 조사해 종목별로 한 줄 코멘트(stockNotes)를 남겨라 — 정확한 가격은 이미 확보돼 있으니 정확한 수치를 조사할 필요는 없고, "왜 그렇게 움직였는가"만 파악하면 된다: ${watchList}. 섹터 전반 동향도 한 줄(semiconductorNote)로 남겨라.
 
 뉴스 신선도 기준: ${freshnessRule}
 
 ## 2단계. 순수 JSON 출력
-조사가 끝나면 그 실제 데이터로만 아래 형식의 JSON 객체 하나만 출력하라. 설명·코드블록·마크다운 없이 JSON만.
+조사가 끝나면 그 실제 데이터로만 아래 형식의 JSON 객체 하나만 출력하라. 설명·코드블록·마크다운 없이 JSON만. stockNotes는 위 종목 리스트의 티커를 key로 쓰고, 코멘트가 없으면 빈 문자열로 둔다.
 
 {
   "sessionDate": "T의 ISO 날짜",
   "sessionDateLabel": "YYYY년 M월 D일(요일) 미국 동부시간 정규장 마감",
   "summary": "한 줄 총평 — 지수 동향과 주요 변동 원인을 압축한 한국어 한 문장",
-  "indices": [{"name":"S&P 500","price":"","changePct":"","up":true}],
   "news": [{"title":"","body":"2~3문장 한국어 요약","date":"YYYY-MM-DD"}],
   "semiconductorNote": "반도체 섹터 전반 동향 한 줄",
-  "stocks": [{"name":"","ticker":"","price":"","changePct":"","up":true,"note":""}]
+  "stockNotes": {"NVDA":"","AMD":"","INTC":"","TSM":"","MU":"","SKHY":""}
 }
 
 ## 3단계. 출력 전 자체 감사 — 생략 금지
-JSON을 확정하기 전, 표의 모든 숫자를 한 줄씩 다시 훑으며 스스로 확인하라(하나라도 "아니오"면 그 항목을 재조사하거나 "확인 실패"로 수정할 것):
-- 이 숫자의 출처에 T일 날짜가 명시적으로 적혀 있는가?
-- T-1일 급등/급락 기사를 T일 수치로 착각한 것은 아닌가?
-- T-1 종가 × (1+등락률) ≈ T일 종가 검산이 맞는가?
-- changePct 부호와 up 필드가 서로 일치하는가?
+JSON을 확정하기 전 스스로 확인하라(하나라도 "아니오"면 재조사하거나 수정할 것):
+- sessionDate/sessionDateLabel이 실제로 정규장이 마감된 거래일을 가리키는가?
 - news 의 date 가 실제 사건 발생일인가(T일 근처 상대 표현을 그대로 옮기지 않았는가)?
-- 확인 불가인데 근사치나 빈칸으로 넘어간 필드는 없는가?
+- stockNotes의 각 코멘트가 실제로 조사한 내용에 근거하는가(추측으로 지어내지 않았는가)?
 감사에서 고친 내용은 최종 JSON에만 조용히 반영하고, 별도로 설명하지 마라.`;
 
 // ── 프롬프트 2: 앤트로픽·팔란티어 뉴스 ──────────────────────────────
@@ -268,30 +339,33 @@ async function callModel(prompt, maxUses, label, effort) {
 }
 
 async function main() {
-  // 시장 데이터와 aiNews를 예산이 서로 침범할 수 없는 별도 요청으로 병렬 실행한다.
-  const [market, aiNewsResult] = await Promise.all([
-    callModel(marketPrompt, 18, 'market', 'medium'),
+  // 시장 데이터(뉴스·코멘트)와 aiNews를 예산이 서로 침범할 수 없는 별도 요청으로 병렬 실행하고,
+  // 지수·종목 시세는 Claude와 별개로 Worker에서 직접 받아온다.
+  const [market, aiNewsResult, liveQuotes] = await Promise.all([
+    callModel(marketPrompt, 10, 'market', 'medium'),
     callModel(aiNewsPrompt, 6, 'aiNews', 'low'),
+    fetchLiveIndicesAndStocks(),
   ]);
 
   const brief = market;
   brief.aiNews = aiNewsResult.aiNews;
+  brief.indices = liveQuotes.indices;
+  // 시세 조회 자체가 실패한 항목은 "Worker 조회 실패" 사유를 그대로 두고, 성공한 항목만
+  // Claude가 조사한 정성적 코멘트로 note를 채운다.
+  brief.stocks = liveQuotes.stocks.map(s => s.price === '확인 실패'
+    ? s
+    : { ...s, note: (market.stockNotes && market.stockNotes[s.ticker]) || '' });
+  delete brief.stockNotes;
 
   // 최소 형식 검증
-  if (!Array.isArray(brief.indices) || !Array.isArray(brief.stocks)) {
-    throw new Error('형식이 올바르지 않습니다 (indices/stocks 배열 없음).');
-  }
   if (!Array.isArray(brief.news)) brief.news = [];
   if (!Array.isArray(brief.aiNews)) brief.aiNews = [];
-
-  // 정합성 경고: 서로 다른 종목이 등락률을 그대로 복사한 흔적이 있으면 로그로 남긴다(막지는 않음).
-  const changePcts = brief.stocks.map(s => s.changePct);
-  const dupePcts = [...new Set(changePcts.filter((v, i) => changePcts.indexOf(v) !== i))];
-  if (dupePcts.length) {
-    console.warn(`⚠️  종목 등락률 중복 발견 — 다른 종목 값을 복사했을 가능성이 있다: ${dupePcts.join(', ')}`);
-  }
   if (!brief.sessionDate || !brief.sessionDateLabel) {
     console.warn('⚠️  sessionDate/sessionDateLabel 이 비어 있습니다 — 거래일 확정 단계가 누락됐을 수 있습니다.');
+  }
+  const failedSymbols = [...brief.indices, ...brief.stocks].filter(x => x.price === '확인 실패').map(x => x.name);
+  if (failedSymbols.length) {
+    console.warn(`⚠️  Worker에서 시세를 못 받아온 항목: ${failedSymbols.join(', ')}`);
   }
 
   brief.generatedAt = new Date(Date.now() + 9 * 3600 * 1000)
