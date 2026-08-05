@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v21';
+const CACHE='daily-brief-v22';
 // 앱 셸 — 이 파일들이 없으면 앱이 뜨지 않으므로 설치 단계에서 반드시 캐시한다.
 const CORE=['./','./index.html','./manifest.json'];
 // 아이콘은 아직 저장소에 없을 수 있다. addAll 은 하나만 404 나도 전체가 실패해
@@ -17,6 +17,42 @@ self.addEventListener('install',e=>{
 self.addEventListener('activate',e=>{
   e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));
   self.clients.claim();
+});
+// 푸시 수신 → 알림 표시.
+// send-push.js 는 내용 없는 푸시만 보낸다(암호화 없이 보내려고). 그래서 문구는 여기서
+// 만든다 — 오늘자 브리핑·일정 JSON 을 직접 읽어 조립하므로 "보낸 시점"이 아니라
+// "받는 시점"의 데이터가 들어간다.
+// userVisibleOnly:true 로 구독했기 때문에 푸시를 받고 알림을 안 띄우면 브라우저가
+// 경고를 띄우거나 구독을 해지한다 — 무슨 일이 있어도 showNotification 은 호출해야 한다.
+self.addEventListener('push',e=>{
+  e.waitUntil((async()=>{
+    let body='앱을 열어 확인하세요';
+    try{
+      const key=new Date(Date.now()+9*3600*1000).toISOString().slice(0,10); // KST 오늘
+      const get=async u=>{ try{ const r=await fetch(u,{cache:'no-store'}); return r.ok?await r.json():null; }catch(_){ return null; } };
+      const [b,a]=await Promise.all([get(`briefings/${key}.json`),get(`agenda/${key}.json`)]);
+      const lines=[];
+      if(b&&b.summary) lines.push(b.summary);
+      else if(b&&b.indices&&b.indices.length){
+        lines.push(b.indices.filter(i=>i.price!=='확인 실패').map(i=>`${i.name} ${i.changePct}`).join(' · '));
+      }
+      if(a){
+        const bits=[];
+        const today=(a.events||[]).filter(ev=>String(ev.start||'').slice(0,10)===key).length;
+        if(today) bits.push(`일정 ${today}건`);
+        if(a.importantMails&&a.importantMails.length) bits.push(`중요 메일 ${a.importantMails.length}건`);
+        if(bits.length) lines.push(bits.join(' · '));
+      }
+      if(lines.length) body=lines.join('\n');
+    }catch(_){ /* 문구 조립에 실패해도 알림 자체는 반드시 띄운다 */ }
+    await self.registration.showNotification('☀️ 오늘의 브리핑',{
+      body,
+      icon:'./icon-192.png',
+      badge:'./icon-192.png',
+      tag:'daily-brief',   // 같은 tag 는 덮어쓴다 — 재시도 크론이 여러 번 쏴도 알림이 쌓이지 않는다
+      renotify:false,
+    });
+  })());
 });
 // 알림 클릭 → 앱 열기/포커스
 self.addEventListener('notificationclick',e=>{

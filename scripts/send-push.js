@@ -1,0 +1,88 @@
+// 아침 브리핑이 새로 생성됐을 때 폰으로 웹 푸시를 한 번 쏜다. GitHub Actions 에서 실행됨.
+//
+// 알림 "내용"은 보내지 않는다. 페이로드를 실으려면 ECDH + HKDF + AES-GCM 암호화를 직접
+// 짜야 하는데(이 레포는 package.json 을 두지 않아 web-push 패키지를 쓸 수 없다), 내용 없는
+// 푸시는 VAPID JWT 서명만 하면 되고 그건 node:crypto 로 충분하다.
+// 대신 sw.js 의 push 핸들러가 깨어나서 briefings/agenda JSON 을 직접 읽어 문구를 만든다 —
+// 덕분에 알림 문구가 "발송 시점"이 아니라 "받는 시점"의 데이터로 만들어지는 이점도 있다.
+//
+// 필요한 환경변수 (모두 GitHub Secret):
+//   VAPID_PRIVATE_KEY  — setup-push.js 가 출력한 비밀키 (base64url d 값)
+//   VAPID_PUBLIC_KEY   — 같은 스크립트가 출력한 공개키 (index.html 에 넣은 것과 같은 값)
+//   PUSH_SUBSCRIPTION  — 앱에서 구독 후 복사한 JSON
+const crypto = require('crypto');
+
+const { VAPID_PRIVATE_KEY, VAPID_PUBLIC_KEY, PUSH_SUBSCRIPTION } = process.env;
+
+// 알림은 이 앱의 필수 기능이 아니다 — 설정이 없으면 조용히 넘어가고 브리핑 생성은 그대로 성공시킨다.
+if (!VAPID_PRIVATE_KEY || !VAPID_PUBLIC_KEY || !PUSH_SUBSCRIPTION) {
+  console.log('푸시 설정(VAPID_*/PUSH_SUBSCRIPTION)이 없어 알림을 건너뜁니다.');
+  process.exit(0);
+}
+
+const b64url = buf => buf.toString('base64')
+  .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const fromB64url = s => Buffer.from(s.replace(/-/g, '+').replace(/_/g, '/'), 'base64');
+
+// 원본 VAPID 키(공개키 65바이트 + 비밀키 d)를 JWK 로 조립해 KeyObject 를 만든다.
+// PEM 을 따로 보관하지 않아도 되고, 표준 VAPID 키 형식을 그대로 쓸 수 있다.
+function privateKeyFromVapid(publicB64, privateB64) {
+  const pub = fromB64url(publicB64);
+  if (pub.length !== 65 || pub[0] !== 4) throw new Error('VAPID_PUBLIC_KEY 형식이 올바르지 않습니다 (65바이트 비압축 EC 포인트여야 함)');
+  return crypto.createPrivateKey({
+    format: 'jwk',
+    key: {
+      kty: 'EC', crv: 'P-256',
+      x: b64url(pub.subarray(1, 33)),
+      y: b64url(pub.subarray(33, 65)),
+      d: privateB64,
+    },
+  });
+}
+
+function makeVapidJwt(endpoint, key) {
+  const aud = new URL(endpoint).origin;
+  const header = b64url(Buffer.from(JSON.stringify({ typ: 'JWT', alg: 'ES256' })));
+  const payload = b64url(Buffer.from(JSON.stringify({
+    aud,
+    exp: Math.floor(Date.now() / 1000) + 12 * 3600, // 푸시 서비스는 24시간 넘는 exp 를 거부한다
+    sub: 'https://github.com/ssangku2-tech/daily-brief',
+  })));
+  // JWS 는 r||s 64바이트(P1363)를 요구한다. Node 의 기본 출력은 DER 이라 그대로 쓰면 거부된다.
+  const sig = crypto.sign('sha256', Buffer.from(`${header}.${payload}`), {
+    key, dsaEncoding: 'ieee-p1363',
+  });
+  return `${header}.${payload}.${b64url(sig)}`;
+}
+
+async function main() {
+  const sub = JSON.parse(PUSH_SUBSCRIPTION);
+  if (!sub.endpoint) throw new Error('PUSH_SUBSCRIPTION 에 endpoint 가 없습니다.');
+
+  const key = privateKeyFromVapid(VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY);
+  const jwt = makeVapidJwt(sub.endpoint, key);
+
+  const res = await fetch(sub.endpoint, {
+    method: 'POST',
+    headers: {
+      Authorization: `vapid t=${jwt}, k=${VAPID_PUBLIC_KEY}`,
+      TTL: '3600',            // 폰이 꺼져 있으면 1시간까지 보관 후 폐기
+      'Content-Length': '0',  // 페이로드 없음
+    },
+    signal: AbortSignal.timeout(15000),
+  });
+
+  if (res.status === 404 || res.status === 410) {
+    // 구독이 만료됐거나 사용자가 알림을 껐다. 새로 구독해 Secret 을 갱신해야 한다.
+    console.warn(`⚠️  구독이 더 이상 유효하지 않습니다 (${res.status}). 앱에서 알림을 다시 켜고 PUSH_SUBSCRIPTION 을 갱신하세요.`);
+    return;
+  }
+  if (!res.ok) {
+    console.warn(`⚠️  푸시 발송 실패: ${res.status} ${await res.text()}`);
+    return;
+  }
+  console.log(`푸시 발송 완료 (${res.status})`);
+}
+
+// 알림 실패가 브리핑 워크플로 전체를 빨갛게 만들지 않도록 항상 정상 종료한다.
+main().catch(e => { console.warn(`⚠️  푸시 건너뜀: ${e.message}`); });

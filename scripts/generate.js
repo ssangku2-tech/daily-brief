@@ -460,6 +460,12 @@ async function main() {
   brief.date = dateKey;
 
   fs.writeFileSync(outFile, JSON.stringify(brief, null, 2), 'utf8');
+  // 워크플로가 "이번에 실제로 새로 만들었는가"를 알아야 한다 — 하루 네 번 도는 재시도
+  // 실행은 위쪽 skip-if-exists 에서 이미 빠져나가므로, 여기까지 왔다는 건 진짜 생성이다.
+  // 이 플래그로 알림 발송을 하루 한 번으로 묶는다.
+  if (process.env.GITHUB_OUTPUT) {
+    fs.appendFileSync(process.env.GITHUB_OUTPUT, 'generated=true\n');
+  }
   const stockNewsCount = brief.stocks.reduce((n, s) => n + (s.news ? s.news.length : 0), 0);
   console.log(`생성 완료: ${dateKey}.json (지수 ${brief.indices.length} · 종목 ${brief.stocks.length} · 뉴스 ${brief.news.length} · 종목뉴스 ${stockNewsCount} · 앤트로픽 ${brief.aiNews.length})`);
 

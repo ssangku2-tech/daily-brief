@@ -62,3 +62,14 @@ jobs:
             git pull --rebase --autostash
             git push
           fi
+
+      # 커밋·푸시가 끝난 뒤에 쏜다 — 알림을 받고 앱을 열었을 때 새 브리핑이 이미
+      # 배포돼 있어야 하기 때문. 새로 생성한 실행에서만 보내므로 재시도 크론이
+      # 네 번 돌아도 알림은 하루 한 번이다.
+      - name: Send push notification
+        if: steps.gen.outputs.generated == 'true'
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
+          PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+        run: node scripts/send-push.js

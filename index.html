@@ -280,6 +280,24 @@
   .refresh:disabled{opacity:.6;cursor:default}
   .refresh .rf-sub{display:block;font-size:11px;font-weight:500;color:var(--tx-dim);margin-top:2px}
 
+  /* ===== 알림 구독 ===== */
+  .push-row{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+  .push-btn{
+    width:100%;background:var(--bg-card-2);color:var(--tx);
+    border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:11px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer
+  }
+  .push-btn:active{background:#232c50}
+  .push-msg{font-size:11px;line-height:1.5;color:var(--tx-dim)}
+  .push-msg code{background:var(--bg-card-2);border-radius:4px;padding:1px 4px;font-size:10px}
+  /* 구독 JSON 은 한 번 복사하면 끝이라 넓게 둘 이유가 없다 — 접힌 느낌으로 작게 */
+  .push-sub{
+    width:100%;height:56px;resize:vertical;
+    background:var(--bg-card-2);color:var(--tx-dim);
+    border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:8px;font-size:10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace
+  }
+
   /* ===== 오늘의 학습 ===== */
   .study-row{
     display:flex;align-items:center;gap:12px;
@@ -313,7 +331,7 @@
     <div class="date-big" id="date">—</div>
     <div class="greeting-row">
       <span id="greeting">안녕하세요 👋</span>
-      <span class="app-ver">v0.4</span>
+      <span class="app-ver">v0.5</span>
     </div>
     <div class="weather-pill" id="weather-row" style="display:none">
       <span class="weather-ico" id="weather-ico"></span>
@@ -337,6 +355,9 @@
     <span class="rf-sub" id="refresh-sub"></span>
   </button>
 
+  <!-- 알림 구독 (VAPID 공개키가 채워져 있을 때만 나타난다) -->
+  <div id="push-slot"></div>
+
 </div>
 
 <script>
@@ -352,6 +373,9 @@ let state = {
   refreshing: false,
   assetForm: {ticker:'', qty:'', avg:''}, // 자산 카드 입력 폼 (render 가 DOM 을 다시 그려도 값이 남도록)
   assetError: '',
+  pushSub: null,    // 웹 푸시 구독 JSON (GitHub Secret 에 넣을 값)
+  pushError: '',
+  pushCopied: false,
 };
 
 // ====== 유틸 ======
@@ -1137,6 +1161,7 @@ function render(){
     renderAssets(),
   ];
   document.getElementById('sections').innerHTML = sections.join('');
+  document.getElementById('push-slot').innerHTML = renderPushRow();
 }
 
 // ====== 데이터 로드 ======
@@ -1236,6 +1261,85 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
+// ====== 아침 브리핑 알림 (웹 푸시) ======
+// 공개키는 공개돼도 안전한 값이라 그대로 커밋한다(비밀키는 GitHub Secret 에만 둔다).
+// 비어 있으면 알림 기능 전체가 조용히 숨겨진다 — scripts/setup-push.js 로 만들어 채운다.
+const VAPID_PUBLIC_KEY = '';
+
+const pushSupported = () =>
+  'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+
+function b64urlToUint8(s){
+  const pad = '='.repeat((4 - s.length % 4) % 4);
+  const raw = atob((s + pad).replace(/-/g, '+').replace(/_/g, '/'));
+  return Uint8Array.from(raw, c => c.charCodeAt(0));
+}
+
+// 이미 구독돼 있으면 그 정보를 state 에 담아둔다 (Secret 에 붙여넣을 수 있도록 다시 보여주기 위함)
+async function refreshPushState(){
+  if(!pushSupported() || !VAPID_PUBLIC_KEY) return;
+  try{
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.getSubscription();
+    state.pushSub = sub ? JSON.stringify(sub.toJSON()) : null;
+  }catch(e){
+    state.pushSub = null;
+  }
+  render();
+}
+
+async function enablePush(){
+  state.pushError = '';
+  try{
+    // 권한 요청은 반드시 사용자의 클릭 직후여야 한다 — 자동 호출하면 브라우저가 무시한다.
+    const perm = await Notification.requestPermission();
+    if(perm !== 'granted'){
+      state.pushError = '알림 권한이 허용되지 않았어요.';
+      render();
+      return;
+    }
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.subscribe({
+      userVisibleOnly: true, // 크롬은 이 옵션 없이는 구독을 거부한다
+      applicationServerKey: b64urlToUint8(VAPID_PUBLIC_KEY),
+    });
+    state.pushSub = JSON.stringify(sub.toJSON());
+  }catch(e){
+    state.pushError = `구독에 실패했어요: ${e.message}`;
+  }
+  render();
+}
+
+function copyPushSub(){
+  if(!state.pushSub) return;
+  navigator.clipboard.writeText(state.pushSub)
+    .then(() => { state.pushCopied = true; render(); })
+    .catch(() => { state.pushError = '복사에 실패했어요. 아래 상자에서 직접 선택해 복사해 주세요.'; render(); });
+}
+
+function renderPushRow(){
+  if(!VAPID_PUBLIC_KEY) return '';           // 아직 키를 안 넣었으면 아예 감춘다
+  if(!pushSupported()) return '';            // 지원 안 하는 브라우저
+  const perm = Notification.permission;
+
+  if(perm === 'denied'){
+    return `<div class="push-row"><span class="push-msg">알림이 차단돼 있어요. 브라우저 설정에서 이 사이트의 알림을 허용해 주세요.</span></div>`;
+  }
+  if(!state.pushSub){
+    return `<div class="push-row">
+      <button class="push-btn" onclick="enablePush()">🔔 아침 브리핑 알림 받기</button>
+      ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
+    </div>`;
+  }
+  // 구독 완료 — 이 JSON 을 GitHub Secret(PUSH_SUBSCRIPTION)에 넣어야 실제로 발송된다
+  return `<div class="push-row">
+    <span class="push-msg">🔔 알림 켜짐 — 아래 구독 정보를 GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣으면 발송이 시작됩니다.</span>
+    <textarea class="push-sub" readonly onclick="this.select()">${esc(state.pushSub)}</textarea>
+    <button class="push-btn" onclick="copyPushSub()">${state.pushCopied ? '복사됨 ✓' : '구독 정보 복사'}</button>
+    ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
+  </div>`;
+}
+
 // ====== 서비스워커 등록 ======
 // v0.3 까지 sw.js 는 저장소에 파일로만 있고 이 등록 코드가 없어서 한 번도 동작하지
 // 않았다 — 오프라인 지원도, 캐시 버전(daily-brief-vN) 도 실제로는 아무 효과가 없었다.
@@ -1243,7 +1347,9 @@ document.addEventListener('visibilitychange', () => {
 // 매번 한 박자 늦게 반영됐을 것이다.
 if('serviceWorker' in navigator){
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(() => {}); // 실패해도 앱 동작에는 지장 없다
+    navigator.serviceWorker.register('sw.js')
+      .then(() => refreshPushState())  // 이미 구독돼 있으면 그 상태를 반영한다
+      .catch(() => {});                // 실패해도 앱 동작에는 지장 없다
   });
 }
 
