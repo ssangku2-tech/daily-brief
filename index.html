@@ -246,6 +246,24 @@
     padding:9px;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer
   }
   .asset-reveal:active{background:var(--bg-card-2);color:var(--tx)}
+  /* 금액 보기 PIN 입력 — 포트폴리오 앱의 잠금과 같은 비밀번호를 받는다 */
+  .pin-box{margin-top:10px;padding:10px 12px;background:var(--bg-card-2);border-radius:var(--radius-sm)}
+  .pin-label{font-size:11px;color:var(--tx-dim);margin-bottom:8px}
+  .pin-row{display:flex;gap:6px}
+  .pin-in{
+    min-width:0;flex:1;background:var(--bg);color:var(--tx);
+    border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:9px 10px;font-size:16px;letter-spacing:8px;text-align:center;font-family:inherit
+  }
+  .pin-in::placeholder{color:var(--tx-faint);letter-spacing:8px}
+  .pin-in:focus{outline:none;border-color:var(--amber)}
+  .pin-cancel{
+    flex-shrink:0;background:transparent;color:var(--tx-dim);
+    border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:9px 14px;font-size:13px;font-family:inherit;cursor:pointer
+  }
+  .pin-cancel:active{background:var(--bg-card);color:var(--tx)}
+  .pin-err{margin-top:8px;font-size:11px;color:var(--amber)}
   .asset-form{display:flex;gap:6px;margin-top:12px}
   .asset-in{
     min-width:0;flex:1;background:var(--bg-card-2);color:var(--tx);
@@ -394,6 +412,9 @@ let state = {
   pushCopied: false,
   pushShowSub: false, // 구독 JSON 을 펼쳐 보고 있는지 (설정 끝나면 접어둔다)
   assetsRevealed: false, // 자산 금액을 펼쳐 보고 있는지. 일부러 localStorage 에 두지 않는다
+  pinPrompt: false,      // 금액 보기 전에 PIN 입력창을 띄운 상태인지
+  pinInput: '',          // 입력 중인 PIN (render 가 DOM 을 다시 그려도 값이 남도록 state 에 둔다)
+  pinError: '',
   alertCopied: false,    // 급변동 알림 종목 목록을 복사했는지
 };
 
@@ -844,25 +865,35 @@ function toQuoteSymbol(code){
   // 포트폴리오 앱의 규칙 그대로: 국내 6자리 종목코드는 .KS 를 붙이고 해외는 티커 그대로
   return /^\d{6}$/.test(code) ? code + '.KS' : code;
 }
+// 계좌 전체가 아니라 포트폴리오 앱의 '종합' 탭과 같은 범위만 가져온다 — 그 앱의
+// aggregateAllStocks() 가 mirae1·mirae2 만 합산하고 mirae3·삼성증권은 일부러 뺀다.
+// 여기서도 같은 계좌만 보고, 같은 종목이 두 계좌에 걸쳐 있으면 한 줄로 합친다(평단은 가중평균).
+// 그쪽 앱이 합산 대상 계좌를 바꾸면 이 목록도 같이 고쳐야 한다.
+const AGG_ACCOUNTS = ['mirae1', 'mirae2'];
 function portfolioHoldings(){
   try{
     const d = JSON.parse(localStorage.getItem(PORTFOLIO_KEY));
     if(!d || !d.accounts) return [];
-    const out = [];
-    for(const acc of Object.values(d.accounts)){
+    const map = new Map();
+    for(const key of AGG_ACCOUNTS){
+      const acc = d.accounts[key];
+      if(!acc) continue;
       for(const s of (acc.stocks || [])){
         if(!s.code || !(s.qty > 0)) continue;
-        out.push({
-          symbol: toQuoteSymbol(s.code),
-          label: s.name || s.code,
-          code: s.code,
-          qty: s.qty,
-          avg: s.avgPrice > 0 ? s.avgPrice : null,
-          account: acc.name || '',
-        });
+        const cur = map.get(s.code) || {
+          symbol: toQuoteSymbol(s.code), label: s.code, code: s.code, qty: 0, cost: 0,
+        };
+        cur.qty += s.qty;
+        if(s.avgPrice > 0) cur.cost += s.avgPrice * s.qty;  // 평단이 없는 물량은 0원으로 친다(종합 탭과 동일)
+        if(s.name) cur.label = s.name;
+        map.set(s.code, cur);
       }
     }
-    return out;
+    return [...map.values()].map(h => ({
+      symbol: h.symbol, label: h.label, code: h.code, qty: h.qty,
+      avg: h.cost > 0 ? h.cost / h.qty : null,
+      account: '',  // 합쳐진 줄이라 계좌 이름을 붙이면 오히려 틀린 정보가 된다
+    }));
   }catch(e){ return []; }
 }
 // 포트폴리오 앱 데이터가 있으면 그걸 쓰고, 없을 때만 수동 입력분을 쓴다.
@@ -932,9 +963,67 @@ function exportAlertSymbols(){
 }
 
 // 금액 펼치기/가리기. state 에만 두어 앱을 다시 열면 자동으로 다시 가려진다.
-function toggleAssets(){
-  state.assetsRevealed = !state.assetsRevealed;
+// 펼치기 전에는 포트폴리오 앱과 같은 PIN 을 받는다 — 그 앱은 PIN 잠금이 걸려 있는데
+// 여기서 탭 한 번에 금액이 보이면 그 잠금이 무의미해진다.
+const PIN_KEY = 'app_pin_hash_v1';  // 포트폴리오 앱이 쓰는 키 (같은 origin 이라 그대로 읽힌다)
+// 해시 함수는 포트폴리오 앱의 simpleHash 와 반드시 같아야 한다 — 저장된 값은 그 앱이 만든 것이다.
+// 암호학적으로 안전한 해시가 아니라는 점도 그쪽과 같다(남이 슬쩍 보는 걸 막는 수준).
+function pinHash(str){
+  let hash = 0;
+  for(let i = 0; i < str.length; i++){
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return hash.toString() + '_' + str.length;
+}
+function storedPinHash(){
+  try{ return localStorage.getItem(PIN_KEY) || ''; }catch(e){ return ''; }
+}
+function focusPin(){
+  setTimeout(() => { const el = document.getElementById('pin-in'); if(el) el.focus(); }, 0);
+}
+function closePin(){
+  state.pinPrompt = false;
+  state.pinInput = '';
+  state.pinError = '';
   render();
+}
+function toggleAssets(){
+  if(state.assetsRevealed){        // 이미 보고 있으면 다시 가린다 (PIN 불필요)
+    state.assetsRevealed = false;
+    closePin();
+    return;
+  }
+  if(!storedPinHash()){            // 포트폴리오 앱에서 PIN 을 설정한 적이 없으면 대조할 값이 없다
+    state.assetsRevealed = true;
+    render();
+    return;
+  }
+  state.pinPrompt = true;
+  state.pinInput = '';
+  state.pinError = '';
+  render();
+  focusPin();
+}
+// 4자리가 채워지면 바로 대조한다. 그전에는 일부러 render() 를 부르지 않는다 —
+// render() 가 innerHTML 을 통째로 갈아끼워서 한 글자마다 입력 포커스가 날아가기 때문.
+function onPinInput(el){
+  const v = String(el.value || '').replace(/\D/g, '').slice(0, 4);
+  if(v !== el.value) el.value = v;
+  state.pinInput = v;
+  if(v.length < 4) return;
+  if(pinHash(v) === storedPinHash()){
+    state.assetsRevealed = true;
+    state.pinPrompt = false;
+    state.pinInput = '';
+    state.pinError = '';
+    render();
+  } else {
+    state.pinInput = '';
+    state.pinError = '비밀번호가 올바르지 않습니다.';
+    render();
+    focusPin();
+  }
 }
 function removeHolding(ticker){
   saveHoldings(loadHoldings().filter(h => h.ticker !== ticker));
@@ -1025,15 +1114,24 @@ function renderAssets(){
   }
 
   const empty = '<div class="empty"><div class="big">💰</div>'
-    + '<div class="msg">보유 종목이 없어요.<br>포트폴리오 앱에 등록하면 자동으로 여기 나타납니다.</div>'
+    + '<div class="msg">보유 종목이 없어요.<br>포트폴리오 앱 <b>종합</b> 탭의 종목이 여기 나타납니다.</div>'
     + '<div class="hint">같은 기기에서 포트폴리오 앱을 한 번 열어주세요.</div></div>';
 
-  // 금액 가리기 — 포트폴리오 앱에는 PIN 잠금이 있는데 여기서 그냥 보여주면 그 잠금이
-  // 무의미해진다. 그렇다고 매번 PIN 을 받으면 아침에 훑어보는 앱 성격과 안 맞아, 기본은
-  // 가리고 탭할 때만 펼친다. 펼침 상태는 localStorage 에 남기지 않는다 — 앱을 다시 열면
-  // 다시 가려져야 의미가 있다.
-  const revealBtn = holdings.length
-    ? '<button class="asset-reveal" onclick="toggleAssets()">' + (masked ? '금액 보기' : '가리기') + '</button>' : '';
+  // 금액 가리기 — 기본은 가려두고, 펼칠 때는 포트폴리오 앱과 같은 PIN 을 받는다(toggleAssets).
+  // 펼침 상태는 localStorage 에 남기지 않는다 — 앱을 다시 열면 다시 가려져야 의미가 있다.
+  // 가릴 때는 PIN 을 묻지 않고, 다시 펼치려면 또 입력해야 한다(설치형 PWA 는 며칠씩 떠 있어서
+  // "이번 세션은 통과" 로 두면 잠금이 사실상 풀린 채로 남는다).
+  const revealBtn = !holdings.length || state.pinPrompt ? ''
+    : '<button class="asset-reveal" onclick="toggleAssets()">' + (masked ? '🔒 금액 보기' : '가리기') + '</button>';
+  const pinBox = state.pinPrompt
+    ? '<div class="pin-box"><div class="pin-label">포트폴리오 앱 비밀번호 4자리</div>'
+      + '<div class="pin-row">'
+      + '<input class="pin-in" id="pin-in" type="password" inputmode="numeric" autocomplete="off" maxlength="4"'
+      + ' placeholder="••••" value="' + esc(state.pinInput) + '" oninput="onPinInput(this)">'
+      + '<button class="pin-cancel" onclick="closePin()">취소</button></div>'
+      + (state.pinError ? '<div class="pin-err">' + esc(state.pinError) + '</div>' : '')
+      + '</div>'
+    : '';
 
   // 급변동 알림용 종목 목록 내보내기. 종목을 추가·삭제하면 다시 내보내야 한다.
   const alertBtn = holdings.length
@@ -1052,13 +1150,14 @@ function renderAssets(){
     : '';
 
   const jumpSub = source === 'portfolio' ? '계좌별 현황 · 종목 추가·수정' : '계좌별 현황 · 전체 내역';
-  const inner = (holdings.length ? totalRows + rows + revealBtn + alertBtn : empty) + err + form
+  const inner = (holdings.length ? totalRows + rows + revealBtn + pinBox + alertBtn : empty) + err + form
     + '<a class="jump" href="' + PORTFOLIO_URL + '" target="_blank" rel="noopener" style="margin-top:12px">'
     + '<div class="jump-main"><div class="jump-title">포트폴리오 앱에서 자세히 보기</div>'
     + '<div class="jump-sub">' + jumpSub + '</div></div><span class="jump-arrow">→</span></a>';
 
   // 부제에는 금액을 절대 넣지 않는다 — 카드를 접어둬도 보이는 자리다
-  const sub = holdings.length ? holdings.length + '종목' : '';
+  const sub = holdings.length
+    ? (source === 'portfolio' ? '종합 ' : '') + holdings.length + '종목' : '';
   return cardShell('assets', '💰', '내 자산', esc(sub), inner, holdings.length > 0);
 }
 
