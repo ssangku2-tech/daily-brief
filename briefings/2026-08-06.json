@@ -1,0 +1,158 @@
+{
+  "sessionDate": "2026-08-05",
+  "sessionDateLabel": "2026년 8월 5일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,723.55",
+      "changePct": "-0.17%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,363.44",
+      "changePct": "-0.83%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "54,349.12",
+      "changePct": "+0.49%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Major Indexes Mixed; Nvidia Helps Dow Extend Rally; SpaceX, AMD Shares Weigh on Nasdaq",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOV0Z0TDIzWjh3SWZkYkk5VFNXX2IyMTk5VTN1NEU5V3NYWE5YaG5MMURNZ3dkX0NpN2VqVEJhNXhZVFI1Rjktc3hIbHBLeENtTldmOGlQVzFEaWZYeUZHT2JSX2Nvd3lLd2l4eWpfNHVyRjVoZGhZVlBQZ21BeFNYQVNVM3VlU2V3bTVCWnR3NGg?oc=5",
+      "date": "2026-08-05",
+      "source": "Investopedia",
+      "ko": "나스닥은 약세지만 다우지수는 엔비디아 상승에 힘입어 강세, 스페이스X와 AMD가 변동성 주도"
+    },
+    {
+      "title": "Stocks hover near record highs and oil prices stabilize with talk of a deal to open Strait of Hormuz",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5YZU95VU9Ka3VpZ1d5WGJmQkhuTUo4V0U5d1R0MGlIR281WVhQdlJxQ1lNYzhBS0RJU1BYclJUYmRZQXJtS0xiblJXYTZFeUVtOFFYbEZ2aDAwcUJGZkZaWTVZclc3Zzg?oc=5",
+      "date": "2026-08-05",
+      "source": "The Morning Call",
+      "ko": "주요 지수들이 사상 최고치 근처에서 횡보하는 가운데 유가는 호르무즈 해협 개방 협상으로 안정세"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$219.22",
+      "changePct": "+3.43%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia stock rises after Musk says SpaceX will exclusively use company's chips",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOb0JhSVVzbGg5UllEYXRoNFhHMUpGWGRVXzZYY3RjMVcwQmdjVjJfZm9kMUhHNWx5NW45Uk1hOWhuTkNzZXExLWhIRGZwVF8tcjZlWjRVbnpRQmVvM0JuWV8xOEd1UkhuQ1NCYTVyeEpmdkpFZXdEU09HMVZuNjJDdTdZc3p6cm81QmhhLWpkLWUwTDU1ZVdJNG5UVUZ6QkxpOWlrdk9nQk5vY1o0WWVTejV4NWllMGFtdEtWTkotdDhsT2xKdGE4SEhRWGozZUVVX0lv?oc=5",
+          "date": "2026-08-05",
+          "source": "Yahoo Finance",
+          "ko": "머스크가 스페이스X의 엔비디아 칩 독점 사용을 선언, 엔비디아 주가 상승 견인"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$482.05",
+      "changePct": "-7.04%",
+      "up": false,
+      "news": [
+        {
+          "title": "Reaction to AMD Earnings Shows Why It’s Hard Being in Second Place",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5KUjNvUUJiMlFaNHZoY3NNX3NpTE0yYjRJem1Pa0M3VWg3UEV6TzVpZ1ZxZTFKWk9YU25EYUt1S21aMy1MZWZPcVhHOUxzMlpLOG02aWcxc19GbmpEem9vQ0JzWDN0TXdXbnY3b0Vid1lITjRjMjhoMTdFTUN3UQ?oc=5",
+          "date": "2026-08-05",
+          "source": "Barron's",
+          "ko": "AMD 2분기 실적 이후 반응이 엇갈리며 2위 업체의 경쟁 구도가 얼마나 험한지 드러남"
+        },
+        {
+          "title": "AMD's Data Center Business Doubled to $6.7 Billion. The Stock Fell 9% Because of What That Growth Costs.",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPay00emcxSjhvdkdMX0kzUEtmd1RMb3lNcjFjUVcwYWQ4ZnJaWkUyVnpiMFlQejJxaXRFTVh2SU1GWlZrZ2d5am5VcjJqc0hLSWd4cFlGdXd0VzdWalJ3T1NqZndUY08yZmhOLXp2T3kzUmZHVk5OdWZ5Z1lkc2hnc2kyUDhMQ0stT0hKdEV1eEtoTmZCOTQ0eQ?oc=5",
+          "date": "2026-08-05",
+          "source": "The Motley Fool",
+          "ko": "AMD 데이터센터 사업이 67억 달러로 2배 성장했으나 높은 성장 비용으로 주가는 9% 하락"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$101.06",
+      "changePct": "+0.20%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$414.00",
+      "changePct": "-0.76%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$893.19",
+      "changePct": "+0.06%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스 ADR",
+      "ticker": "SKHY",
+      "price": "$151.03",
+      "changePct": "-2.17%",
+      "up": false,
+      "news": [
+        {
+          "title": "Samsung, SK Hynix, Micron sell out 2027 memory chip supply: report (MU:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTEVod0tZOEhhV1NZZWFjbVBSZDZxOU9CUFpkQ3R4OW54SFZhdGtaZktla3c3eHc3c0FnR2RzMHVyWU05Q2FiT2dPbEx6Z0lNVXZUaklHNUpONUZlTVVvVmtoOG1PbzlacHNYWTVrNk9qbUowSnpOTDJMeWFBdEttNUNLZkVFR2ttQ0dIblpmMWJablBPR0RobHBFb3ZPaWtNeVBZ?oc=5",
+          "date": "2026-08-05",
+          "source": "Seeking Alpha",
+          "ko": "삼성·SK하이닉스·마이크론이 2027년 메모리칩 공급을 매진한 상태로 수급 역학 악화"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$158.43",
+      "changePct": "-2.60%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir: Enterprise AI Adoption Is In Early Stages - Q2 2026 Confirms Durability",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPWllvaktWdDRGNl9tdXdPYlVhMGNBZGQ0aVdwMzBmdWpJNWZfUkQtYk94QUVMZ3Nyd0NTQ29IbVhrQUJFZHRkWktlS3J1TEI4NjE0U0g3anJINW5MT2xRODBmQ0ZCNmRjX3BlYjFnRkdmdXV5S1drWjJaWndTbnhZR0d0Z1FFTDBHcWJQUm1OYzBXSWxxR29YZmpQZG1CWjYteHpYUmNqZm5qRWlfX19JNXIwYVFmY0RYN2NPWlY2amV2Uk41TExnazJWdGpXc1RtZm5yNA?oc=5",
+          "date": "2026-08-05",
+          "source": "Seeking Alpha",
+          "ko": "팔란티어 2분기 실적이 엔터프라이즈 AI 도입이 초기 단계임을 확인, 내구성 검증"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Meta Debuts AI Coding Agent in Race With OpenAI and Anthropic",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTEw2WnJIN09TWkotREpmdFROMDdMQmtlUVNYcWhZbmQtUDdvVlF2dmVvckJuXzRrWm1LYmlxYlRaVGRpWm5SUmJ2V2JGV29ncnVNSk56cDFoM3Y0OWVrTEVpSEZmYnVkMTB2Z1JodFF5UjRwTGZZZ1ZiSjd0bExWWVhFVTlmTGRQTmJfQnBIZE9PUGh1dGEyNHR3a20ySEFhOUQ5V25tYVF6ZElyNG9Ca01B?oc=5",
+      "date": "2026-08-05",
+      "source": "Bloomberg.com",
+      "ko": "메타가 첫 AI 코딩 에이전트를 출시하며 오픈AI, 앤트로픽과의 경쟁 심화"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic's Mythos AI created fake profiles to trick people in hack, then hid evidence",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQTnZIRmVZUm5fMjNoSXJQcXlWMHR2bjRDVnJ2em5hejd0TkxJaHFlWjZodjkydmZhaHdVZ296MG9BTmV5aXE5V21fZXNUbDRsTUc3ZzgwZXpSNlJFVzNTSDdNRWZ0RlB6S1ZGbGRzYTJFdjQxb21YMF9BUDZOQ2pNelh0MU9OYjJpdUJxRnVSOXVvbTdQR1Z4RWdyTHgtZEtaUmtxSFZkdw?oc=5",
+      "date": "2026-08-05",
+      "source": "cbsnews.com",
+      "ko": "앤트로픽의 AI가 해킹 사건에서 가짜 프로필을 만들어 사람들을 속인 뒤 증거를 숨긴 것으로 적발"
+    }
+  ],
+  "summary": "스페이스X의 엔비디아 칩 독점 사용 선언이 반도체주 업종을 흔들었고, AMD 실적 부진이 낙폭을 키웠다.",
+  "generatedAt": "2026-08-06 07:34",
+  "date": "2026-08-06"
+}
