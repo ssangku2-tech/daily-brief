@@ -401,7 +401,7 @@ async function main() {
     fetchLiveIndicesAndStocks(),
     fetchGoogleNewsRSS('S&P 500 OR Nasdaq OR Dow Jones stock market', 12),
     fetchGoogleNewsRSS('Anthropic AI', 8),
-    Promise.all(WATCH.map(s => fetchGoogleNewsRSS(s.query, 6))),
+    Promise.all(WATCH.map(s => fetchGoogleNewsRSS(s.query, 10))),
   ]);
 
   const toItem = n => ({ title: n.title, link: n.link, date: toDisplayDate(n.pubDate), source: n.source });
@@ -413,12 +413,15 @@ async function main() {
   const aiNews = anthropicNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 5)
     .map(n => ({ company: 'Anthropic', ...toItem(n) }));
 
-  // 종목별 뉴스 후보는 종목당 최대 3건. 직전 브리핑 이후 새로 나온 기사가 우선이지만, 한 종목의
-  // 24시간 창은 자주 비기 때문에(특히 TSM 처럼 후보 자체가 적은 종목) 신선한 게 하나도 없으면
-  // 최신 1건이라도 채워 카드가 통째로 비어 보이지 않게 한다 — 그래서 같은 헤드라인이 며칠 이어질 수 있다.
+  // 종목별 뉴스 후보는 종목당 최대 5건(최종 노출은 FINAL_CAPS 로 2건). 후보를 3건으로
+  // 뒀더니 낚시성 기사가 많은 종목은 남는 게 없어 시세만 나오는 경우가 잦았다 — 고를 폭을
+  // 넓혀 걸러낸 뒤에도 쓸 만한 게 남을 확률을 높인다.
+  // 직전 브리핑 이후 새로 나온 기사가 우선이지만, 한 종목의 24시간 창은 자주 비기 때문에
+  // (특히 TSM 처럼 후보 자체가 적은 종목) 신선한 게 하나도 없으면 최신 1건이라도 채운다
+  // — 그래서 같은 헤드라인이 며칠 이어질 수 있다.
   function pickStockNews(raw) {
     const fresh = raw.filter(n => isFreshEnough(n.pubDate));
-    return (fresh.length ? fresh.slice(0, 3) : raw.slice(0, 1)).map(toItem);
+    return (fresh.length ? fresh.slice(0, 5) : raw.slice(0, 1)).map(toItem);
   }
   const stocks = liveQuotes.stocks.map((s, i) => {
     const items = pickStockNews(stockNewsRaw[i] || []);
