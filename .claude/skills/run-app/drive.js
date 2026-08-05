@@ -73,6 +73,13 @@ const fakeDate = di !== -1 ? process.argv[di + 1] : null;
       newsCount: block('주요 뉴스')?.querySelectorAll('.news-item').length || 0,
       anthropicCount: block('앤트로픽')?.querySelectorAll('.news-item').length || 0,
       refreshSub: t('#refresh-sub'),
+      // 일정·메일 (2026-08-05: 지난 날짜 폴백 + 헤더 부제 + 내용 있으면 기본 펼침)
+      cardSubs: [...document.querySelectorAll('.card-head')].map(h =>
+        `${h.querySelector('.title')?.textContent.trim()}=${h.querySelector('.sub')?.textContent.trim() || '-'}`),
+      eventRows: document.querySelectorAll('.event-row').length,
+      staleNotes: [...document.querySelectorAll('.stale')].map(s => s.textContent.trim().slice(0, 40)),
+      agendaDate: typeof state !== 'undefined' ? state.agendaDate : null,
+      isAgendaStale: typeof isAgendaStale === 'function' ? isAgendaStale() : null,
       // state·todayKST·isStale 은 스크립트 스코프에만 있다 (window 로는 안 잡힘)
       shownDate: typeof state !== 'undefined' ? state.shownDate : null,
       todayKST: typeof todayKST === 'function' ? todayKST() : null,

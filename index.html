@@ -117,12 +117,6 @@
   .empty .msg{font-size:14px;line-height:1.6}
   .empty .hint{font-size:12px;color:var(--tx-faint);margin-top:10px}
 
-  /* ===== 섹션 한 줄 설명(안읽음 통수 등) ===== */
-  .subnote{
-    font-size:12px;line-height:1.6;color:var(--tx-dim);
-    margin-bottom:8px
-  }
-
   /* ===== 지난 날짜 브리핑을 대신 띄웠을 때의 안내 ===== */
   .stale{
     font-size:12px;line-height:1.5;color:var(--amber);
@@ -298,7 +292,8 @@
 let state = {
   briefing: null,   // briefings/YYYY-MM-DD.json 의 내용을 그대로 담는다
   shownDate: null,  // 실제로 화면에 띄운 브리핑의 날짜 (오늘 것이 없으면 과거 날짜가 들어온다)
-  agenda: null,     // agenda/YYYY-MM-DD.json 의 내용을 그대로 담는다 (오늘 것이 없으면 null)
+  agenda: null,     // agenda/YYYY-MM-DD.json 의 내용을 그대로 담는다
+  agendaDate: null, // 실제로 띄운 일정·메일의 날짜 (오늘 것이 없으면 과거 날짜가 들어온다)
   live: null,       // 접속 시점에 Worker에서 직접 받아온 시세 {indices, stocks, at}
   quoteStatus: 'idle', // 'idle' | 'loading' | 'ok' | 'fail' — 시세만의 상태 (뉴스와 별개)
   refreshedAt: 0,   // 마지막 갱신 완료 시각 (epoch ms)
@@ -802,6 +797,7 @@ function eventSortKey(ev){
 }
 function renderSchedule(a){
   let inner;
+  let events = [];
   if(!a){
     inner = `
       <div class="empty">
@@ -809,10 +805,19 @@ function renderSchedule(a){
         <div class="msg">아직 일정 정보가 없어요</div>
       </div>`;
   } else {
-    const events = [...(a.events||[])].sort((x,y) => {
+    // 낡은 파일로 폴백했다면 이미 지난 날짜의 일정이 섞여 있다 — 오늘 이후만 남긴다.
+    // (날짜를 판단할 수 없는 항목은 버리지 않고 그대로 둔다.)
+    const today = todayKST();
+    events = (a.events||[]).filter(ev => {
+      const k = eventDateKey(ev);
+      return !k || k >= today;
+    }).sort((x,y) => {
       const kx = eventSortKey(x), ky = eventSortKey(y);
       return kx < ky ? -1 : kx > ky ? 1 : 0;
     });
+    const stale = isAgendaStale()
+      ? `<div class="stale">오늘 일정이 아직 생성되지 않아 ${esc(fmtShortDate(state.agendaDate))}자 정보를 보여주고 있어요. 그 이후에 추가·변경된 일정은 빠져 있습니다.</div>`
+      : '';
     const items = events.map(ev => {
       const label = eventDayLabel(ev);
       return `
@@ -825,13 +830,19 @@ function renderSchedule(a){
         ${label ? `<div class="event-day">${esc(label)}</div>` : ''}
       </div>`;
     }).join('');
-    inner = items || `
+    inner = stale + (items || `
       <div class="empty">
         <div class="big">📅</div>
         <div class="msg">예정된 일정이 없어요</div>
-      </div>`;
+      </div>`);
   }
-  return cardShell('schedule', '📅', '일정', '', inner, false);
+
+  // 카드를 펼치지 않아도 "오늘 몇 건인지"는 알 수 있어야 한다.
+  const todayCount = events.filter(ev => eventDateKey(ev) === todayKST()).length;
+  let sub = '';
+  if(a) sub = todayCount ? `오늘 ${todayCount}건` : (events.length ? '오늘 일정 없음' : '');
+  // 보여줄 게 있을 때만 펼친 채로 시작한다 (빈 카드를 열어둘 이유가 없다)
+  return cardShell('schedule', '📅', '일정', esc(sub), inner, events.length > 0);
 }
 
 // ====== 메일 섹션 ======
@@ -844,8 +855,12 @@ function renderMail(a){
         <div class="msg">아직 메일 정보가 없어요</div>
       </div>`;
   } else {
-    const unreadNote = (typeof a.unreadCount === 'number')
-      ? `<div class="subnote">안읽음 ${a.unreadCount}통</div>` : '';
+    // 메일은 일정과 달리 낡은 파일에 오늘 정보가 들어있을 수 없다 — 안읽음 통수도,
+    // 중요 메일 목록도 그날 아침 기준이므로 낡았다는 걸 먼저 밝힌다.
+    const stale = isAgendaStale()
+      ? `<div class="stale">${esc(fmtShortDate(state.agendaDate))}자 메일 정보입니다. 그 이후에 온 메일은 반영되지 않았어요.</div>`
+      : '';
+    // 안읽음 통수는 카드 헤더 부제(아래 sub)가 항상 들고 있으므로 본문에서 되풀이하지 않는다
     const mails = a.importantMails || [];
     const mailItems = mails.map(m => `
       <div class="news-item">
@@ -857,9 +872,18 @@ function renderMail(a){
         <div class="big">📧</div>
         <div class="msg">안읽은 중요 메일이 없어요</div>
       </div>`;
-    inner = unreadNote + body;
+    inner = stale + body;
   }
-  return cardShell('mail', '📧', '메일', '', inner, false);
+
+  const mails = (a && a.importantMails) || [];
+  let sub = '';
+  if(a){
+    const parts = [];
+    if(mails.length) parts.push(`중요 ${mails.length}건`);
+    if(typeof a.unreadCount === 'number') parts.push(`안읽음 ${a.unreadCount}`);
+    sub = parts.join(' · ');
+  }
+  return cardShell('mail', '📧', '메일', esc(sub), inner, mails.length > 0);
 }
 // 헤더 우측 상단 한 줄 — 시세와 뉴스는 갱신 주기가 다르므로(시세=접속 시점, 뉴스=매일 06:30)
 // 둘을 한 덩어리로 뭉뚱그리지 않고 각각의 기준 시각을 밝힌다.
@@ -939,14 +963,38 @@ async function loadBriefing(){
 }
 
 // briefing과 독립적인 별도 fetch — 하나가 없거나 실패해도 다른 하나는 정상 표시된다.
+// 오늘 파일이 없으면(크론이 아직 안 돌았거나 실패) 브리핑과 같은 방식으로 가장 최근
+// 날짜로 되돌아간다. 일정에 한해서는 이 폴백이 꽤 쓸모 있다 — generate-agenda.js가
+// 매번 "오늘+내일"을 담기 때문에, 어제자 파일에도 오늘 일정이 들어있다.
+// (메일 쪽은 그렇지 않아서 낡은 값임을 화면에 분명히 밝힌다.)
 async function loadAgenda(){
+  const key = todayKST();
+  state.agendaDate = null;
   try{
-    const res = await fetch(`agenda/${todayKST()}.json`, {cache:'no-store'});
+    let res = await fetch(`agenda/${key}.json`, {cache:'no-store'});
+    let shown = key;
+    if(!res.ok){
+      const idx = await fetch('agenda/index.json', {cache:'no-store'});
+      if(idx.ok){
+        const dates = (await idx.json()).filter(d => d <= key).sort();
+        const latest = dates[dates.length - 1];
+        if(latest){
+          res = await fetch(`agenda/${latest}.json`, {cache:'no-store'});
+          shown = latest;
+        }
+      }
+    }
     state.agenda = res.ok ? await res.json() : null;
+    state.agendaDate = state.agenda ? (state.agenda.date || shown) : null;
   }catch(e){
     state.agenda = null;
+    state.agendaDate = null;
   }
   render();
+}
+// 지금 띄운 일정·메일이 오늘(KST) 것이 아닌지
+function isAgendaStale(){
+  return !!state.agendaDate && state.agendaDate !== todayKST();
 }
 
 // ====== 갱신 오케스트레이션 ======

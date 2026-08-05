@@ -208,6 +208,16 @@ async function main() {
   console.log(
     `agenda 생성 완료: 일정 ${events.length}건 · 안읽음 ${unreadCount}통 · 중요메일 ${importantMails.length}통`
   );
+
+  // briefings/index.json 과 같은 역할 — 클라이언트가 "오늘 것이 없을 때 언제 것으로
+  // 되돌아갈지" 알려면 어떤 날짜가 있는지 알아야 한다. 디렉터리를 매번 다시 훑어
+  // 만들기 때문에 파일을 손으로 지워도 목록이 어긋나지 않는다.
+  const dates = fs.readdirSync(AGENDA_DIR)
+    .filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .map(f => f.replace('.json', ''))
+    .sort();
+  fs.writeFileSync(path.join(AGENDA_DIR, 'index.json'), JSON.stringify(dates, null, 2), 'utf8');
+  console.log(`index.json 갱신: ${dates.length}일치`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
