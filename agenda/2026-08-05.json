@@ -1,0 +1,36 @@
+{
+  "date": "2026-08-05",
+  "generatedAt": "2026-08-05 14:46",
+  "events": [
+    {
+      "title": "송,박",
+      "start": "2026-08-05T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "서서울 10:46",
+      "start": "2026-08-06T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 201,
+  "importantMails": [
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 8. 5.)",
+      "summary": "Claude Pro 구독이 갱신되었습니다."
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Windows 기기에서 Google 계정에 새로 로그인되었습니다."
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (c7b2839)",
+      "summary": "Daily Market Briefing 워크플로우 실행이 실패했습니다."
+    }
+  ]
+}
