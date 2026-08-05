@@ -121,6 +121,26 @@ Two things about the shell branch are load-bearing and easy to undo by accident:
 - `generate.js`는 (2026-08-05부터) Claude API를 전혀 호출하지 않는다 — `marketPrompt`/`aiNewsPrompt` 같은 프롬프트 구조는 더 이상 없다. 지수·종목의 price/changePct는 `fetchLiveIndicesAndStocks()`가 Cloudflare Worker에서, 뉴스(`news`/`aiNews`/`stocks[].news`)는 `fetchGoogleNewsRSS()`가 Google News RSS에서 받아온다. 이 두 데이터 소스에 다시 Claude 검증·요약을 끼워 넣지 말 것 — 비용 때문에 일부러 뺀 것이다(위 "No Claude in the market pipeline" 참고). Worker 호출을 건드릴 때는 `WORKER_URL`이 이 레포 소유가 아닌 외부 계약(포트폴리오 앱의 개인 Cloudflare Worker)이라는 점을, RSS 호출을 건드릴 때는 이 레포에 `package.json`이 없어 XML 파서를 정규식(`parseRssItems`)으로 직접 짰다는 점을 유의한다.
 - Mobile-first: the layout is capped at `max-width:520px` and uses `env(safe-area-inset-*)` padding. Test at phone widths, and keep tap targets full-width like `.refresh`.
 
+## 다음에 할 일 (2026-08-05 기준)
+
+며칠 실제로 써봐야 판단이 되는 것들이라 일부러 미뤄둔 항목이다. 하루치 데이터로 더 손보면
+그날 시장에만 맞춘 설정이 된다.
+
+**설정만 하면 되는 것 (코드 수정 없음)**
+- `ALERT_SYMBOLS` 시크릿이 아직 비어 있다 → 지금은 `WATCH` 7종목만 급변동 감시 중. 보유 종목까지 넣으려면 앱의 내 자산 카드 → `급변동 알림 종목 내보내기` → 시크릿 등록. 종목을 추가·삭제하면 다시 내보내야 한다.
+- `ALERT_THRESHOLD` (Variables, 기본 5) → 2026-08-05 시세로는 7종목 중 5종목이 걸렸다. 반도체 변동성을 보면 8~10이 적당할 가능성이 높다. 며칠 받아보고 조정.
+- `VAPID_PUBLIC_KEY` 시크릿은 이제 안 쓰인다(`send-push.js`가 `index.html`에서 읽는다). 지워도 되고 둬도 무해하다.
+
+**며칠 지켜보고 판단할 것**
+- 종목 뉴스가 특정 종목에서 계속 비는지. 2026-08-05에는 7종목 중 3종목이 시세만 나왔다(후보 5건이 전부 투자 권유형이라 전멸). 계속 그러면 `pickStockNews`의 후보 수를 5→8로 올리거나 낚시성 판정을 완화한다. 단, 후보를 30→41건으로 늘렸을 때 오히려 선별 결과가 줄어든 전례가 있다 — 병목은 후보 수가 아니라 필터 기준이었다.
+- 아침 알림이 매일 제때 오는지. Actions 크론은 수십 분 밀린다.
+- 급변동 알림이 실제로 얼마나 자주 울리는지.
+
+**아직 안 만든 것**
+- 일정 시작 전 리마인더. Actions 크론이 수십 분 밀려 "30분 전 알림"이 성립하지 않는다. 하려면 Cloudflare Worker의 Cron Trigger로 옮겨야 한다(정확하지만 구조가 하나 늘어난다).
+- 자산 기준 알림(보유 평가액이 N% 변할 때). 보유 수량이 기기에만 있어 서버가 계산할 수 없다. 지금의 종목 단위 급변동 알림이 현실적인 대체재다.
+- 워크플로 실패 알림. 브리핑 생성이 실패하면 GitHub 기본 메일로만 알 수 있는데, 그 메일이 앱의 메일 카드에 뜨긴 한다. 푸시로도 받고 싶으면 `daily.yml`에 `if: failure()` 스텝을 하나 붙이면 된다.
+
 ## Known gaps
 
 **Push notifications (2026-08-05):** one notification a morning, fired by `daily.yml` right after the briefing is committed. Three pieces:
