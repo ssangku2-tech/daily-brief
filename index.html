@@ -1030,6 +1030,17 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
+// ====== 서비스워커 등록 ======
+// v0.3 까지 sw.js 는 저장소에 파일로만 있고 이 등록 코드가 없어서 한 번도 동작하지
+// 않았다 — 오프라인 지원도, 캐시 버전(daily-brief-vN) 도 실제로는 아무 효과가 없었다.
+// 앱 셸을 네트워크 우선으로 바꾼 뒤에야 켜는 게 맞다. 캐시 우선인 채로 켰다면 배포가
+// 매번 한 박자 늦게 반영됐을 것이다.
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {}); // 실패해도 앱 동작에는 지장 없다
+  });
+}
+
 // ====== 시작 ======
 refreshAll();
 </script>

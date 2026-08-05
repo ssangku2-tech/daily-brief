@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v19';
+const CACHE='daily-brief-v20';
 // 앱 셸 — 이 파일들이 없으면 앱이 뜨지 않으므로 설치 단계에서 반드시 캐시한다.
 const CORE=['./','./index.html','./manifest.json'];
 // 아이콘은 아직 저장소에 없을 수 있다. addAll 은 하나만 404 나도 전체가 실패해
@@ -45,6 +45,24 @@ self.addEventListener('fetch',e=>{
         // 캐시에도 없으면 undefined 가 되어 respondWith 가 깨진다 → 앱이 에러 상태를 그리도록 504 를 준다.
         r||new Response('{}',{status:504,headers:{'Content-Type':'application/json'}})
       ))
+    );
+    return;
+  }
+  // 앱 셸(index.html)도 네트워크 우선 — 캐시 우선으로 두면 새 버전을 배포해도 항상 한
+  // 박자 늦게(다음 실행 때) 반영돼, 고친 화면이 안 보인다는 착각을 부른다.
+  // 오프라인 대비는 catch 쪽 캐시 폴백이 그대로 맡는다.
+  // 응답은 요청 URL이 아니라 './index.html' 키로 저장한다 — '/' 로 들어오든
+  // '/index.html' 로 들어오든 오프라인 폴백이 같은 항목을 찾게 하기 위함.
+  if(e.request.mode==='navigate'||url.endsWith('/')||url.endsWith('/index.html')){
+    e.respondWith(
+      // cache:'no-store' 가 핵심이다. GitHub Pages 가 index.html 에 Cache-Control: max-age=600
+      // 을 붙이기 때문에, 그냥 fetch(e.request) 하면 서비스워커를 거치고도 브라우저 HTTP
+      // 캐시가 최대 10분 묵은 HTML 을 그대로 준다. URL 문자열로 부르는 이유는 mode 가
+      // 'navigate' 인 Request 로는 new Request(...) 를 만들 수 없기 때문.
+      fetch(url,{cache:'no-store'}).then(resp=>{
+        if(resp.ok){const cl=resp.clone();caches.open(CACHE).then(c=>c.put('./index.html',cl))}
+        return resp;
+      }).catch(()=>caches.match('./index.html').then(r=>r||caches.match('./')))
     );
     return;
   }
