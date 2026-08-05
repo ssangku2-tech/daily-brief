@@ -286,18 +286,19 @@ async function enrichKorean(brief) {
   }
 
   // 모든 뉴스를 한 배열로 펴서 번호를 매긴다. 응답도 이 번호로 받아 되꽂는다.
+  // label 은 프롬프트에 노출해 모델이 섹션별 목표 건수를 지킬 수 있게 하기 위한 것이다.
   const flat = [];
-  const push = (n, bucket) => flat.push({ n, bucket });
-  brief.news.forEach(n => push(n, 'news'));
-  brief.stocks.forEach(s => (s.news || []).forEach(n => push(n, `stock:${s.ticker}`)));
-  brief.aiNews.forEach(n => push(n, 'ai'));
+  const push = (n, bucket, label) => flat.push({ n, bucket, label });
+  brief.news.forEach(n => push(n, 'news', '주요뉴스'));
+  brief.stocks.forEach(s => (s.news || []).forEach(n => push(n, `stock:${s.ticker}`, s.name)));
+  brief.aiNews.forEach(n => push(n, 'ai', '앤트로픽'));
   if (!flat.length) return;
 
   const idxLine = brief.indices.filter(i => i.price !== '확인 실패')
     .map(i => `${i.name} ${i.changePct}`).join(', ');
   const stkLine = brief.stocks.filter(s => s.price !== '확인 실패')
     .map(s => `${s.name} ${s.changePct}`).join(', ');
-  const list = flat.map((f, i) => `${i}. [${f.n.source || '출처미상'}] ${f.n.title}`).join('\n');
+  const list = flat.map((f, i) => `${i}. [${f.label}][${f.n.source || '출처미상'}] ${f.n.title}`).join('\n');
 
   const prompt = `미국 증시 브리핑에 쓸 자료다. 아래 지수·종목 등락과 뉴스 헤드라인을 보고 JSON으로만 답하라.
 
@@ -310,11 +311,14 @@ ${list}
 요구사항:
 1) summary: 오늘 시장을 한 문장(60자 이내)으로. 숫자를 나열하지 말 것 — 등락률은 화면에 이미 표시된다.
    무엇이 시장을 움직였는지를 헤드라인에서 읽어내 쓴다. 근거가 부족하면 담백하게 쓰고 지어내지 않는다.
-2) items: 헤드라인마다 하나씩. ko 는 한국어 한 줄 요약(45자 이내, 제목 번역이 아니라 내용 요약).
-   keep 은 읽을 가치가 있으면 true. 다음은 false: "지금 사야 할까?" 같은 낚시성 제목,
-   광고·홍보성 기사, 같은 사건을 다룬 중복 기사(가장 나은 것 하나만 true).
+2) items: 위 목록에서 읽을 가치가 있는 것만 골라 담는다. 고르지 않은 번호는 아예 넣지 않는다.
+   섹션별 목표 건수(대괄호 안 라벨 기준): 주요뉴스 4건, 종목별 각 2건, 앤트로픽 3건.
+   후보가 목표보다 많으니 그중 나은 것을 고르면 된다.
+   제외 대상: "지금 사야 할까?" 같은 낚시성 제목, 광고·홍보성 기사,
+   같은 사건을 다룬 중복 기사(가장 나은 것 하나만 남긴다).
+   ko 는 한국어 한 줄 요약(45자 이내, 제목 번역이 아니라 내용 요약).
 3) 설명·마크다운 없이 JSON만. 형식:
-{"summary":"","items":[{"i":0,"ko":"","keep":true}]}`;
+{"summary":"","items":[{"i":0,"ko":""}]}`;
 
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -349,28 +353,34 @@ ${list}
     if (typeof parsed.summary === 'string' && parsed.summary.trim()) {
       brief.summary = parsed.summary.trim();
     }
-    const drop = new Set();
-    for (const it of parsed.items || []) {
+    // 모델은 "고른 것만" 돌려준다 — 목록에 없는 번호가 곧 탈락이다.
+    const items = Array.isArray(parsed.items) ? parsed.items : [];
+    if (!items.length) {
+      // 응답이 비었으면 필터를 아예 걸지 않는다. 전부 탈락시키는 것보다 원문이라도 보이는 게 낫다.
+      console.warn('[claude] 고른 헤드라인이 없어 필터를 건너뜁니다 (원문 그대로 노출).');
+      return;
+    }
+    const keep = new Set();
+    for (const it of items) {
       const f = flat[it.i];
       if (!f) continue;
+      keep.add(it.i);
       if (typeof it.ko === 'string' && it.ko.trim()) f.n.ko = it.ko.trim();
-      if (it.keep === false) drop.add(it.i);
     }
 
-    // keep=false 를 실제로 반영한다. 단 한 종목의 뉴스가 통째로 사라지면 그 종목만
-    // 허전해지므로, 버킷별로 최소 1건은 남긴다.
-    const survivors = b => flat.map((f, i) => ({ f, i })).filter(x => x.f.bucket === b && !drop.has(x.i));
+    // 섹션이 통째로 비면 그 자리만 허전해지므로, 버킷별로 최소 1건은 살려둔다.
     for (const b of new Set(flat.map(f => f.bucket))) {
-      if (!survivors(b).length) {
+      if (!flat.some((f, i) => f.bucket === b && keep.has(i))) {
         const first = flat.findIndex(f => f.bucket === b);
-        if (first !== -1) drop.delete(first);
+        if (first !== -1) keep.add(first);
       }
     }
-    const kept = n => !drop.has(flat.findIndex(f => f.n === n));
+
+    const kept = n => keep.has(flat.findIndex(f => f.n === n));
     brief.news = brief.news.filter(kept);
     brief.aiNews = brief.aiNews.filter(kept);
     brief.stocks.forEach(s => { if (s.news) s.news = s.news.filter(kept); });
-    if (drop.size) console.log(`[claude] 낚시성·중복으로 걸러낸 헤드라인 ${drop.size}건`);
+    console.log(`[claude] 후보 ${flat.length}건 중 ${keep.size}건 선별 (낚시성·중복 제외)`);
   } catch (e) {
     console.warn(`[claude] 한국어 요약 건너뜀: ${e.message}`);
   }
@@ -383,22 +393,26 @@ async function main() {
   // 나간다 — WATCH에 이미 들어있으므로 아래 종목별 RSS가 그 몫을 대신한다. aiNews는 앤트로픽 전용.
   const [liveQuotes, marketNewsRaw, anthropicNewsRaw, stockNewsRaw] = await Promise.all([
     fetchLiveIndicesAndStocks(),
-    fetchGoogleNewsRSS('S&P 500 OR Nasdaq OR Dow Jones stock market', 8),
-    fetchGoogleNewsRSS('Anthropic AI', 6),
+    fetchGoogleNewsRSS('S&P 500 OR Nasdaq OR Dow Jones stock market', 12),
+    fetchGoogleNewsRSS('Anthropic AI', 8),
     Promise.all(WATCH.map(s => fetchGoogleNewsRSS(s.query, 6))),
   ]);
 
   const toItem = n => ({ title: n.title, link: n.link, date: toDisplayDate(n.pubDate), source: n.source });
-  const news = marketNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 4).map(toItem);
-  const aiNews = anthropicNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 3)
+  // 여기서 만드는 건 "후보"다. 최종 건수로 자르는 건 enrichKorean 뒤(FINAL_CAPS)에 한다 —
+  // 순서가 뒤집히면(먼저 자르고 나중에 거르면) 낚시성 기사가 걸러진 자리가 빈 채로 끝나
+  // 뒤에 대기 중인 멀쩡한 후보로 채워지지 않는다. 실제로 그렇게 만들었다가 주요 뉴스가
+  // 4건에서 2건으로 줄어든 적이 있다.
+  const news = marketNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 8).map(toItem);
+  const aiNews = anthropicNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 5)
     .map(n => ({ company: 'Anthropic', ...toItem(n) }));
 
-  // 종목별 뉴스는 종목당 최대 2건. 직전 브리핑 이후 새로 나온 기사가 우선이지만, 한 종목의
-  // 24시간 창은 자주 비기 때문에(특히 SKHY 같은 종목) 신선한 게 하나도 없으면 최신 1건이라도
-  // 채워 카드가 통째로 비어 보이지 않게 한다 — 그래서 같은 헤드라인이 며칠 이어질 수 있다.
+  // 종목별 뉴스 후보는 종목당 최대 3건. 직전 브리핑 이후 새로 나온 기사가 우선이지만, 한 종목의
+  // 24시간 창은 자주 비기 때문에(특히 TSM 처럼 후보 자체가 적은 종목) 신선한 게 하나도 없으면
+  // 최신 1건이라도 채워 카드가 통째로 비어 보이지 않게 한다 — 그래서 같은 헤드라인이 며칠 이어질 수 있다.
   function pickStockNews(raw) {
     const fresh = raw.filter(n => isFreshEnough(n.pubDate));
-    return (fresh.length ? fresh.slice(0, 2) : raw.slice(0, 1)).map(toItem);
+    return (fresh.length ? fresh.slice(0, 3) : raw.slice(0, 1)).map(toItem);
   }
   const stocks = liveQuotes.stocks.map((s, i) => {
     const items = pickStockNews(stockNewsRaw[i] || []);
@@ -416,6 +430,13 @@ async function main() {
 
   // 뉴스·시세가 다 모인 뒤에 한 번만 호출한다 (실패해도 브리핑 자체는 그대로 저장된다)
   await enrichKorean(brief);
+
+  // 최종 노출 건수. 반드시 enrichKorean 뒤에 적용한다 — 걸러지고 남은 것 중에서 고르기
+  // 위해서다. 요약이 실패해 필터가 안 걸렸을 때도 후보가 그대로 다 나가지 않도록 막아준다.
+  const FINAL_CAPS = { news: 4, aiNews: 3, stock: 2 };
+  brief.news = brief.news.slice(0, FINAL_CAPS.news);
+  brief.aiNews = brief.aiNews.slice(0, FINAL_CAPS.aiNews);
+  brief.stocks.forEach(s => { if (s.news) s.news = s.news.slice(0, FINAL_CAPS.stock); });
 
   const failedSymbols = [...brief.indices, ...brief.stocks].filter(x => x.price === '확인 실패').map(x => x.name);
   if (failedSymbols.length) {
