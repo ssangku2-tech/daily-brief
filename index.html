@@ -159,6 +159,8 @@
   .news-item{padding:8px 0;border-bottom:1px solid var(--line)}
   .news-item:last-child{border-bottom:none}
   .news-title{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:4px}
+  .news-title a{color:inherit;text-decoration:none}
+  .news-title a:hover,.news-title a:focus{text-decoration:underline}
   .news-body{font-size:13px;line-height:1.6;color:var(--tx-dim)}
   .news-date{font-size:11px;color:var(--tx-faint);margin-top:4px}
 
@@ -482,17 +484,22 @@ function renderUSBriefing(b){
     const indices = idxRows
       ? `<div class="block"><div class="block-label">주요 지수</div>${idxRows}</div>` : '';
 
-    // 3) 미국·글로벌 증시 동향 및 주요 뉴스 (날짜 병기)
+    // 3) 미국·글로벌 증시 동향 및 주요 뉴스 — 2026-08-05부터 Google News RSS 원문 그대로
+    // (요약·번역 없음, title을 원문 기사로 가는 링크로 걸고 출처·발행일을 병기한다). 그 이전
+    // 파일은 link/source 없이 Claude가 쓴 한국어 요약(body)만 있으므로, link 유무로 분기해
+    // 두 스키마를 모두 그대로 보여준다(다른 필드가 없어졌다고 낡은 파일을 깨뜨리지 않는다).
     const newsItems = (b.news||[]).map(n => `
       <div class="news-item">
-        <div class="news-title">${esc(n.title)}</div>
-        <div class="news-body">${esc(n.body)}</div>
-        ${n.date ? `<div class="news-date">${esc(n.date)}</div>` : ''}
+        <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
+        ${n.body ? `<div class="news-body">${esc(n.body)}</div>` : ''}
+        ${(n.source || n.date) ? `<div class="news-date">${esc([n.source, n.date].filter(Boolean).join(' · '))}</div>` : ''}
       </div>`).join('');
     const news = newsItems
       ? `<div class="block"><div class="block-label">주요 뉴스</div>${newsItems}</div>` : '';
 
-    // 4) 반도체 관련 관심 종목 — 섹터 전반 동향 한 줄(semiconductorNote) + 종목별 표
+    // 4) 관심 종목 — 반도체 종목 + 팔란티어(PLTR). semiconductorNote/stock.note는
+    // 2026-08-05부터 generate.js가 채우지 않는다(Claude 없이는 "왜 움직였는지" 코멘트를
+    // 만들 수 없어 필드 자체를 없앴다) — 필드가 있으면 보여주고 없으면 조용히 생략한다.
     const secNote = b.semiconductorNote
       ? `<div class="subnote">${esc(b.semiconductorNote)}</div>` : '';
     const stockRows = (b.stocks||[]).map(s => `
@@ -507,14 +514,16 @@ function renderUSBriefing(b){
         ${s.note ? `<div class="stock-note">${esc(s.note)}</div>` : ''}
       </div>`).join('');
     const stocks = stockRows
-      ? `<div class="block"><div class="block-label">반도체 관심 종목</div>${secNote}${stockRows}</div>` : '';
+      ? `<div class="block"><div class="block-label">관심 종목</div>${secNote}${stockRows}</div>` : '';
 
-    // 5) 앤트로픽·팔란티어 뉴스 — 별도 카드 대신 이 카드의 마지막 블록으로 포함
+    // 5) 앤트로픽·팔란티어 뉴스 — 별도 카드 대신 이 카드의 마지막 블록으로 포함.
+    // 3)과 동일하게 2026-08-05부터 RSS 원문(link 있음), 그 이전은 Claude 요약(body 있음) —
+    // link 유무로 분기해 두 스키마 모두 지원한다.
     const aiNewsItems = (b.aiNews||[]).map(n => `
       <div class="news-item">
-        <div class="news-title">${n.company ? `<span class="tkr">[${esc(n.company)}]</span> ` : ''}${esc(n.title)}</div>
-        <div class="news-body">${esc(n.body)}</div>
-        ${n.date ? `<div class="news-date">${esc(n.date)}</div>` : ''}
+        <div class="news-title">${n.company ? `<span class="tkr">[${esc(n.company)}]</span> ` : ''}${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
+        ${n.body ? `<div class="news-body">${esc(n.body)}</div>` : ''}
+        ${(n.source || n.date) ? `<div class="news-date">${esc([n.source, n.date].filter(Boolean).join(' · '))}</div>` : ''}
       </div>`).join('');
     const aiNews = aiNewsItems
       ? `<div class="block"><div class="block-label">앤트로픽 · 팔란티어</div>${aiNewsItems}</div>` : '';

@@ -1,5 +1,5 @@
-// 매일 미국 시장 브리핑을 Claude(웹 검색 포함)로 생성해 briefings/YYYY-MM-DD.json 으로 저장한다.
-// GitHub Actions에서 실행됨. API 키는 ANTHROPIC_API_KEY 시크릿으로 주입.
+// 매일 미국 시장 브리핑을 생성해 briefings/YYYY-MM-DD.json 으로 저장한다.
+// GitHub Actions에서 실행됨.
 //
 // 2단계(4섹션) 버전: Cowork에서 매일 Notion으로 보내던 "데일리 마켓 브리핑" 리포트와
 // 동일한 구조·검증 규칙을 이 파이프라인에 이식했다. 4개 섹션(지수 요약 / 글로벌 동향·뉴스 /
@@ -12,32 +12,30 @@
 // 별도의 API 호출로 분리하고, 두 요청을 병렬로 실행해 결과만 합친다.
 //
 // 4단계 비용 절감(2026-08-01): 검색 예산을 market 24→18, aiNews 15→8→6으로 낮췄다(총 39→24).
-// 스키마·검증 단계(0~3단계)와 요청 분리 구조는 그대로 유지한다 — 이 두 요청을 다시 하나로
-// 합치면 위에서 고친 예산 잠식 문제가 재발하므로 절대 합치지 말 것. market은 지수·종목
-// 교차검증에 필요한 최소치에 가까워 덜 줄였다. aiNews는 회사 2곳×2~3회 검색이면 충분해
-// 예산 여유가 컸고, 숫자 검증처럼 깊은 추론이 필요 없는 작업이라 output_config.effort도
-// medium→low로 낮췄다(비용의 주된 축은 검색 결과가 컨텍스트에 쌓이는 입력 토큰과 사고
-// 토큰이라, effort를 낮추면 사고 토큰이 함께 줄어든다). market은 반복돼온 "거래일 혼동"
-// 버그와 직결된 수치 검증 섹션이라 medium을 유지한다.
 //
 // 5단계 구조 변경(2026-08-04): 지수·종목의 price/changePct를 더 이상 Claude의 web_search로
 // 찾고 검증하지 않는다. 대신 이 스크립트가 직접 Cloudflare Worker(다른 개인 프로젝트인
 // "내 주식 현황" 포트폴리오 앱이 쓰는 stock-proxy.ssangku2.workers.dev — 이 레포에는 소스가
 // 없고 외부 계약으로 취급한다. Yahoo Finance를 프록시한다)에서 실시간 시세를 받아와 그 값을
-// 그대로 쓴다. 이유: 이 크론은 미국 정규장 마감 몇 시간 뒤(KST 06:30)에 도는데, 그 시점의
-// Yahoo `regularMarketPrice`는 이미 그날 정규장 종가로 고정돼 시간외 거래로 더 움직이지
-// 않는다 — 즉 "T일 정규장 마감가"와 "지금 이 순간 시세"가 이 타이밍에서는 같은 값이다.
-// 이렇게 하면 (a) "확인 실패"가 나던 주된 원인(위젯성 스냅샷과 날짜 있는 기사 종가가 서로
-// 상충하는 문제)이 구조적으로 사라지고, (b) market 요청의 web_search 예산이 숫자 교차검증
-// 없이 "무슨 뉴스가 있었나" 조사에만 쓰이므로 크게 줄일 수 있다. Claude는 이제 sessionDate
-// 확정·뉴스 조사·반도체 섹터 코멘트(정성적 한 줄, stockNotes)만 담당한다. Worker 호출이
-// 실패하면(전부 또는 개별 종목) 기존 관례대로 해당 필드에 "확인 실패"를 넣는다 — 하루 4번
-// 재시도 크론이 안전망이다.
+// 그대로 쓴다.
+//
+// 6단계 구조 변경(2026-08-05): marketPrompt/aiNewsPrompt(3~4단계에서 설명한 두 Claude
+// 요청) 자체를 없앴다. 포트폴리오 앱(위 5단계와 동일한 레포)이 Claude를 전혀 호출하지 않고
+// 순수 클라이언트/Worker 조합으로 API 비용이 0에 가깝다는 점에 착안해, 이 스크립트도 뉴스
+// 섹션을 Claude 요약 대신 Google News RSS(news.google.com/rss/search — 키 불필요, 무료)에서
+// 받아온 원문 제목·링크·출처·발행일 그대로 쓰도록 바꿨다. 그 결과:
+//   - marketPrompt/aiNewsPrompt, streamOnce/callModel, ANTHROPIC_API_KEY 요구사항을 모두
+//     삭제했다 — 이 스크립트는 이제 Claude API를 전혀 호출하지 않는다(3~4단계에서 다뤘던
+//     "검색 예산 분리" 문제는 더 이상 이 스크립트에 적용되지 않는 역사적 기록이다).
+//   - sessionDate/sessionDateLabel(T 확정)은 Claude 조사 대신 날짜 산수로 계산한다
+//     (computeSessionDate). 미국 공휴일은 인지하지 못한다는 한계가 있지만, Worker가 주는
+//     가격 자체는 항상 정확한 최신 종가라 틀려도 라벨 문구만 하루 어긋나는 정도다.
+//   - semiconductorNote/stockNotes("왜 그렇게 움직였는가" 코멘트)는 AI 추론 없이는 만들 수
+//     없으므로 완전히 제거했다. stocks에는 이제 Worker 시세만 있고 코멘트가 없다.
+//   - news/aiNews의 각 항목은 더 이상 "2~3문장 한국어 요약"이 아니라 원문 title/link 그대로다
+//     (한국어 번역·요약 없음) — 사용자가 이 트레이드오프(비용 0 vs AI 요약 포기)를 직접 선택했다.
 const fs = require('fs');
 const path = require('path');
-
-const KEY = process.env.ANTHROPIC_API_KEY;
-if (!KEY) { console.error('ANTHROPIC_API_KEY 가 없습니다.'); process.exit(1); }
 
 // 한국 시간(KST) 기준 오늘 날짜
 function todayKST() {
@@ -62,18 +60,23 @@ if (fs.existsSync(outFile)) {
   process.exit(0);
 }
 
-// dateKey(KST)가 토·일요일이면 미국 증시가 열리지 않아 새로 마감되는 거래일이 없다.
-// (KST 토·일요일 아침 실행은 둘 다 같은 직전 금요일 세션을 중복 조사·과금하게 된다 —
-// 실제로 이미 그렇게 생성된 사례가 있었다. 반대로 KST 월요일 아침은 아직 미국 동부
-// 시간으로 일요일 밤이라 "지금이 미국 기준 무슨 요일인가"로 판단하면 월요일 실행까지
-// 잘못 건너뛰게 되므로, 반드시 dateKey 자체의 요일로 판단해야 한다.)
-const kstWeekday = new Date(`${dateKey}T00:00:00+09:00`).getDay(); // 0=일 ... 6=토
+// dateKey(KST)의 요일 — UTC 메서드로 고정 계산한다. `.getDay()`는 프로세스의 로컬
+// 타임존을 따르는데, GitHub Actions 러너(UTC)에서는 `T00:00:00+09:00` 인스턴트가
+// 전날 오후로 해석돼 요일이 하루 밀리는 버그가 있었다(로컬 KST 환경에서만 우연히 맞았다).
+// `T00:00:00Z`+`getUTCDay()`는 러너의 타임존과 무관하게 dateKey 문자열 그대로의 요일을 준다.
+function weekdayOf(dateStr) {
+  return new Date(`${dateStr}T00:00:00Z`).getUTCDay(); // 0=일 ... 6=토
+}
+
+const kstWeekday = weekdayOf(dateKey);
 if (kstWeekday === 0 || kstWeekday === 6) {
   console.log(`${dateKey}은 ${kstWeekday === 0 ? '일' : '토'}요일이라 생성을 건너뜁니다 (미국 증시 휴장, 새 거래일 없음).`);
   process.exit(0);
 }
 
 // ── 관심 종목·지수 (Worker에서 직접 시세를 받아올 대상) ─────────────
+// SKHY까지는 반도체 종목, 팔란티어(PLTR)는 반도체가 아니라 앤트로픽·팔란티어 뉴스 섹션과
+// 연동되는 관심 종목이라 별도로 붙였다.
 const WATCH = [
   { name: '엔비디아',      ticker: 'NVDA' },
   { name: 'AMD',          ticker: 'AMD'  },
@@ -81,8 +84,8 @@ const WATCH = [
   { name: 'TSMC',         ticker: 'TSM'  },
   { name: '마이크론',      ticker: 'MU'   },
   { name: 'SK하이닉스 ADR', ticker: 'SKHY' }, // 실제 Yahoo 티커로 확인됨(코스피 000660과는 다른 미국 OTC ADR)
+  { name: '팔란티어',      ticker: 'PLTR' },
 ];
-const watchList = WATCH.map(s => `${s.name}(${s.ticker})`).join(', ');
 
 const INDICES = [
   { name: 'S&P 500',   symbol: '^GSPC' },
@@ -153,216 +156,141 @@ async function fetchLiveIndicesAndStocks() {
   return { indices, stocks };
 }
 
-// ── 신선도 기준: 직전 브리핑 날짜 이후만 (없으면 24시간 이내) ──────
+// ── 거래일(T) 계산 — Claude 조사 대신 날짜 산수 ─────────────────────
+// 이 크론은 KST 06:30(미국 정규장 마감 몇 시간 뒤)에 도니, 대부분 T = dateKey - 1일이다.
+// dateKey가 월요일이면 토·일요일은 거래일이 아니므로 지난 금요일이 T다. 미국 공휴일은
+// 감안하지 못한다 — 위 6단계 주석 참고.
+function computeSessionDate(dateKey) {
+  const backDays = weekdayOf(dateKey) === 1 ? 3 : 1; // 월요일 → 지난 금요일, 그 외 → 하루 전
+  const t = new Date(new Date(`${dateKey}T00:00:00Z`).getTime() - backDays * 86400000);
+  return t.toISOString().slice(0, 10);
+}
+
+const WEEKDAY_KO = ['일', '월', '화', '수', '목', '금', '토'];
+function sessionDateLabel(sessionDate) {
+  const [y, mo, day] = sessionDate.split('-').map(Number);
+  return `${y}년 ${mo}월 ${day}일(${WEEKDAY_KO[weekdayOf(sessionDate)]}) 미국 동부시간 정규장 마감`;
+}
+
+// ── 지수 한 줄 요약 — Claude 없이 지수 등락률만으로 기계적으로 조합 ────
+function buildSummary(indices) {
+  const parts = indices.filter(i => i.price !== '확인 실패').map(i => `${i.name} ${i.changePct}`);
+  return parts.length ? `${parts.join(', ')}로 마감` : '';
+}
+
+// ── Google News RSS (무료, API 키 불필요) ────────────────────────
+// news.google.com/rss/search 는 인증 없이 쓸 수 있는 비공식 엔드포인트다. 이 레포는
+// package.json이 없어(빌드 단계를 두지 않는다는 규칙) XML 파서 의존성을 추가하지 않고,
+// RSS 아이템이 항상 <item><title>/<link>/<pubDate>/<source> 형태라는 점에 기대어
+// 정규식으로 직접 뽑는다.
+function decodeXmlEntities(s) {
+  return s
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&');
+}
+
+function parseRssItems(xml) {
+  const items = [];
+  const itemRe = /<item>([\s\S]*?)<\/item>/g;
+  let m;
+  while ((m = itemRe.exec(xml))) {
+    const block = m[1];
+    const rawTitle = (block.match(/<title>([\s\S]*?)<\/title>/) || [])[1];
+    const rawLink = (block.match(/<link>([\s\S]*?)<\/link>/) || [])[1];
+    const rawPubDate = (block.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1];
+    const rawSource = (block.match(/<source[^>]*>([\s\S]*?)<\/source>/) || [])[1];
+    if (!rawTitle || !rawLink) continue;
+
+    const source = rawSource ? decodeXmlEntities(rawSource).trim() : '';
+    let title = decodeXmlEntities(rawTitle).trim();
+    if (source && title.endsWith(` - ${source}`)) {
+      title = title.slice(0, -(source.length + 3)).trim(); // Google이 붙이는 " - 출처명" 접미사 제거
+    }
+
+    // pubDate는 Date 객체로 들고 있다가 신선도 비교에 쓰고, 마지막에만 YYYY-MM-DD로
+    // 납작하게 편다 — 시각 정보를 버리면(문자열 비교) 신선도 컷오프가 어긋난다(아래 참고).
+    const d = rawPubDate ? new Date(rawPubDate) : null;
+    items.push({
+      title,
+      link: decodeXmlEntities(rawLink).trim(),
+      pubDate: d && !isNaN(d.getTime()) ? d : null,
+      source,
+    });
+  }
+  return items;
+}
+
+async function fetchGoogleNewsRSS(query, maxItems) {
+  try {
+    const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=en-US&gl=US&ceid=US:en`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+    if (!res.ok) return [];
+    const xml = await res.text();
+    return parseRssItems(xml).slice(0, maxItems);
+  } catch (e) {
+    console.warn(`[rss] "${query}" 조회 실패: ${e.message}`);
+    return [];
+  }
+}
+
+// ── 신선도 기준: 직전 브리핑 "생성 시각" 이후만 (없으면 48시간 이내) ──────
+// 반드시 실제 시각(Date)끼리 비교해야 한다 — 이 크론은 KST 06:30에 도는데 그 순간의 UTC
+// 날짜는 아직 전날이라, "YYYY-MM-DD" 문자열만 비교하면(예: pubDate가 UTC로 dateKey-1일에
+// 찍힌 경우) 방금 나온 진짜 새 뉴스까지 "너무 이르다"며 걸러지는 버그가 있었다.
 const indexFile = path.join(BRIEF_DIR, 'index.json');
 const priorDates = fs.existsSync(indexFile)
   ? JSON.parse(fs.readFileSync(indexFile, 'utf8')).filter(d => d < dateKey).sort()
   : [];
 const lastDate = priorDates[priorDates.length - 1];
-const freshnessRule = lastDate
-  ? `직전 브리핑 날짜는 ${lastDate} 이다. 그 이후에 새로 나온 뉴스·발언·이벤트만 포함하라. ${lastDate} 이전에 있었던 일은 직전 브리핑에서 이미 다뤘을 수 있으니, 그 이후 새로 보도된 게 아니면 제외하라.`
-  : `최근 24시간 이내에 새로 나온 뉴스·발언·이벤트만 포함하라.`;
 
-// ── 프롬프트 1: 시장 데이터(거래일 확정/뉴스/반도체 섹터 코멘트) ────
-// 지수·종목의 price/changePct는 더 이상 여기서 다루지 않는다 — main()이 Worker에서 직접
-// 받아온다(5단계 구조 변경, 위 주석 참고). 그래서 예전의 "1단계 수치 검증 규칙"과
-// indices/stocks JSON 필드는 빠졌고, Claude는 거래일 확정 → 뉴스 조사 → 반도체 섹터
-// 정성적 코멘트(stockNotes) → 자체 감사만 담당한다.
-const marketPrompt = `너는 한국인 개인투자자를 위한 "데일리 마켓 브리핑" 생성기다. 오늘은 한국 시간(KST) 기준 ${dateKey} 아침이다.
-
-## 0단계. 대상 거래일(T) 확정 — 가장 먼저, 생략 금지
-- T = 직전에 정규장이 마감된 미국 거래일이다. KST 새벽 실행이면 보통 T는 미국 기준 전일, 토·일·월요일이면 직전 금요일, 미국 공휴일이면 그 전 영업일이다.
-- 결과 JSON의 sessionDate(T의 ISO 날짜, 예 "2026-07-31")와 sessionDateLabel("YYYY년 M월 D일(요일) 미국 동부시간 정규장 마감" 형식의 한국어 문장)에 반드시 명시하라.
-
-## 1단계. 뉴스 검증 규칙 — 가격은 다루지 않으니 날짜만 신경 쓰면 된다
-- "today"/"Friday"/"this week"/"오늘"/"이번 주" 같은 상대적 시간 표현은 무효로 간주하고, 기사의 절대 날짜(YYYY-MM-DD)로 환산하라. 환산이 안 되면 그 소스는 폐기하라.
-- 1~2주 전 사건을 T일 사건으로 옮겨 적지 마라.
-- 검색 예산은 넉넉하지만 무한하지 않다. 한 주제에서 소스가 계속 상충하면 2~3회 재검색 후에도 안 맞으면 다음 항목으로 넘어가라.
-
-## 조사 대상
-1. T일 미국·글로벌 증시에 영향을 준 핵심 뉴스 2~4개 (유가·금리·지정학 등 원인 포함)
-2. 다음 반도체 관련 종목들의 T일 주가 흐름과 그 이유를 조사해 종목별로 한 줄 코멘트(stockNotes)를 남겨라 — 정확한 가격은 이미 확보돼 있으니 정확한 수치를 조사할 필요는 없고, "왜 그렇게 움직였는가"만 파악하면 된다: ${watchList}. 섹터 전반 동향도 한 줄(semiconductorNote)로 남겨라.
-
-뉴스 신선도 기준: ${freshnessRule}
-
-## 2단계. 순수 JSON 출력
-조사가 끝나면 그 실제 데이터로만 아래 형식의 JSON 객체 하나만 출력하라. 설명·코드블록·마크다운 없이 JSON만. stockNotes는 위 종목 리스트의 티커를 key로 쓰고, 코멘트가 없으면 빈 문자열로 둔다.
-
-{
-  "sessionDate": "T의 ISO 날짜",
-  "sessionDateLabel": "YYYY년 M월 D일(요일) 미국 동부시간 정규장 마감",
-  "summary": "한 줄 총평 — 지수 동향과 주요 변동 원인을 압축한 한국어 한 문장",
-  "news": [{"title":"","body":"2~3문장 한국어 요약","date":"YYYY-MM-DD"}],
-  "semiconductorNote": "반도체 섹터 전반 동향 한 줄",
-  "stockNotes": {"NVDA":"","AMD":"","INTC":"","TSM":"","MU":"","SKHY":""}
-}
-
-## 3단계. 출력 전 자체 감사 — 생략 금지
-JSON을 확정하기 전 스스로 확인하라(하나라도 "아니오"면 재조사하거나 수정할 것):
-- sessionDate/sessionDateLabel이 실제로 정규장이 마감된 거래일을 가리키는가?
-- news 의 date 가 실제 사건 발생일인가(T일 근처 상대 표현을 그대로 옮기지 않았는가)?
-- stockNotes의 각 코멘트가 실제로 조사한 내용에 근거하는가(추측으로 지어내지 않았는가)?
-감사에서 고친 내용은 최종 JSON에만 조용히 반영하고, 별도로 설명하지 마라.`;
-
-// ── 프롬프트 2: 앤트로픽·팔란티어 뉴스 ──────────────────────────────
-// 반도체 종목 검증과 검색 예산을 공유하면 뒤 순서인 이 섹션이 예산 고갈로 통째로
-// 비어버리는 사고가 실제로 있었다(2026-08-01). 그래서 완전히 독립된 요청·예산으로 조사한다.
-const aiNewsPrompt = `너는 한국인 개인투자자를 위한 "데일리 마켓 브리핑"의 앤트로픽(Anthropic)·팔란티어(Palantir, PLTR) 뉴스 섹션 담당자다. 오늘은 한국 시간(KST) 기준 ${dateKey} 아침이다. 이 요청은 오직 이 섹션만 담당하며, 검색 예산은 이 작업 전용으로 확보돼 있다 — 다른 섹션 걱정 없이 충분히 검색해도 된다.
-
-## 0단계. 조사 기준 시점
-${freshnessRule}
-날짜 계산은 위 기준을 그대로 따르고, "최근"/"이번 주" 같은 상대 표현은 절대 날짜(YYYY-MM-DD)로 환산해서만 date 필드에 채워라.
-
-## 1단계. 검증 규칙
-- 앤트로픽(Anthropic), 팔란티어(Palantir) 각각에 대해 위 기준 시점 이후 새로 보도된 뉴스·주가 동향·주요 발표를 찾아라(회사당 최대 2개).
-- 뉴스 본문에 날짜가 명시된 기사만 사용하라. 날짜 미상 기사, 상대 시간 표현만 있는 기사는 폐기하라.
-- 기준 시점 이전 사건을 날짜만 바꿔서 새 사건인 것처럼 쓰지 마라.
-- 두 회사 모두 검색했는데도 기준 시점 이후의 신뢰 가능한 뉴스가 없다면, 없는 대로 두는 게 맞다(억지로 지어내지 마라) — 다만 실제로 검색을 충분히 시도한 뒤에만 그렇게 결론 내려라(회사당 최소 2~3회 검색 없이 "확인 실패"로 넘어가지 마라).
-- 확인 못 한 항목은 title/date에 "확인 실패"라고 쓰고 body에 사유(정말 뉴스가 없었는지, 날짜 특정이 안 됐는지)를 남겨라.
-
-## 2단계. 순수 JSON 출력
-조사가 끝나면 그 실제 데이터로만 아래 형식의 JSON 객체 하나만 출력하라. 설명·코드블록·마크다운 없이 JSON만.
-
-{
-  "aiNews": [{"company":"Anthropic 또는 Palantir","title":"","body":"2~3문장 한국어 요약","date":"YYYY-MM-DD"}]
-}
-
-## 3단계. 출력 전 자체 감사 — 생략 금지
-- 각 항목의 company가 Anthropic/Palantir 중 정확한 쪽인가?
-- date가 실제 사건 발생일인가(상대 표현을 그대로 옮기지 않았는가)?
-- 기준 시점 이전 사건은 아닌가?
-- "확인 실패"로 처리한 항목이 있다면, 정말 충분히 검색한 뒤인가(단순히 검색을 안 해보고 넘어간 것은 아닌가)?
-감사에서 고친 내용은 최종 JSON에만 조용히 반영하고, 별도로 설명하지 마라.`;
-
-// ── 스트리밍으로 호출한다 ────────────────────────────────────────
-async function streamOnce(prompt, maxUses, label, effort) {
-  const abort = new AbortController();
-  const guard = setTimeout(() => abort.abort(), 20 * 60 * 1000);
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      signal: abort.signal,
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': KEY,
-        'anthropic-version': '2023-06-01'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-5',
-        stream: true,
-        max_tokens: 20000,
-        output_config: { effort },
-        tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: maxUses }],
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    if (!res.ok) {
-      const body = await res.text();
-      const err = new Error(`[${label}] API 오류 ${res.status}: ${body}`);
-      err.retryable = res.status === 429 || res.status >= 500;
-      throw err;
-    }
-
-    let txt = '';
-    let searchCount = 0;
-    let stopReason = null;
-    let usage = null;
-    let buf = '';
-
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder();
-
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      buf += decoder.decode(value, { stream: true });
-
-      const lines = buf.split('\n');
-      buf = lines.pop();
-
-      for (const line of lines) {
-        if (!line.startsWith('data:')) continue;
-        const payload = line.slice(5).trim();
-        if (!payload) continue;
-
-        let ev;
-        try { ev = JSON.parse(payload); } catch { continue; }
-
-        if (ev.type === 'content_block_start') {
-          const b = ev.content_block || {};
-          if (b.type === 'server_tool_use' && b.name === 'web_search') searchCount++;
-        } else if (ev.type === 'content_block_delta') {
-          if (ev.delta && ev.delta.type === 'text_delta') txt += ev.delta.text;
-        } else if (ev.type === 'message_delta') {
-          if (ev.delta && ev.delta.stop_reason) stopReason = ev.delta.stop_reason;
-          if (ev.usage) usage = ev.usage;
-        } else if (ev.type === 'error') {
-          const err = new Error(`[${label}] 스트림 오류: ${JSON.stringify(ev.error)}`);
-          err.retryable = true;
-          throw err;
-        }
-      }
-    }
-
-    console.log(`[${label}] 웹 검색 실행 횟수: ${searchCount}/${maxUses}, 종료 사유: ${stopReason}, 토큰 사용량: ${JSON.stringify(usage)}`);
-
-    txt = txt.replace(/```json|```/g, '').trim();
-    const start = txt.indexOf('{');
-    const end = txt.lastIndexOf('}');
-    if (start === -1 || end === -1 || end < start) {
-      const err = new Error(`[${label}] 응답에서 JSON을 찾지 못했습니다 (종료 사유: ${stopReason}, 받은 텍스트 ${txt.length}자)`);
-      err.retryable = true;
-      throw err;
-    }
-    return JSON.parse(txt.slice(start, end + 1));
-  } finally {
-    clearTimeout(guard);
+let freshnessCutoff = new Date(Date.now() - 48 * 3600 * 1000); // 기본값: 최근 48시간
+if (lastDate) {
+  const lastFile = path.join(BRIEF_DIR, `${lastDate}.json`);
+  if (fs.existsSync(lastFile)) {
+    const prior = JSON.parse(fs.readFileSync(lastFile, 'utf8'));
+    // generatedAt은 "YYYY-MM-DD HH:MM" 형식의 KST 시각이다 — UTC 인스턴트로 바꿔 컷오프로 쓴다.
+    const kst = prior.generatedAt ? new Date(`${prior.generatedAt.replace(' ', 'T')}:00+09:00`) : null;
+    if (kst && !isNaN(kst.getTime())) freshnessCutoff = kst;
   }
 }
 
-async function callModel(prompt, maxUses, label, effort) {
-  const MAX_TRIES = 3;
-  for (let attempt = 1; ; attempt++) {
-    try {
-      return await streamOnce(prompt, maxUses, label, effort);
-    } catch (e) {
-      const retryable = e.retryable !== false;
-      if (!retryable || attempt >= MAX_TRIES) throw e;
-      const waitSec = 30 * attempt;
-      console.error(`[${label}] 시도 ${attempt}/${MAX_TRIES} 실패: ${e.message}`);
-      console.error(`[${label}] ${waitSec}초 후 재시도합니다.`);
-      await new Promise(r => setTimeout(r, waitSec * 1000));
-    }
-  }
+function isFreshEnough(pubDate) {
+  if (!pubDate) return true; // 발행일 파싱 실패 시 배제하지 않고 일단 보여준다
+  return pubDate >= freshnessCutoff;
+}
+
+function toDisplayDate(pubDate) {
+  return pubDate ? pubDate.toISOString().slice(0, 10) : '';
 }
 
 async function main() {
-  // 시장 데이터(뉴스·코멘트)와 aiNews를 예산이 서로 침범할 수 없는 별도 요청으로 병렬 실행하고,
-  // 지수·종목 시세는 Claude와 별개로 Worker에서 직접 받아온다.
-  const [market, aiNewsResult, liveQuotes] = await Promise.all([
-    callModel(marketPrompt, 10, 'market', 'medium'),
-    callModel(aiNewsPrompt, 6, 'aiNews', 'low'),
+  const sessionDate = computeSessionDate(dateKey);
+
+  const [liveQuotes, marketNewsRaw, anthropicNewsRaw, palantirNewsRaw] = await Promise.all([
     fetchLiveIndicesAndStocks(),
+    fetchGoogleNewsRSS('S&P 500 OR Nasdaq OR Dow Jones stock market', 8),
+    fetchGoogleNewsRSS('Anthropic AI', 4),
+    fetchGoogleNewsRSS('Palantir Technologies PLTR', 4),
   ]);
 
-  const brief = market;
-  brief.aiNews = aiNewsResult.aiNews;
-  brief.indices = liveQuotes.indices;
-  // 시세 조회 자체가 실패한 항목은 "Worker 조회 실패" 사유를 그대로 두고, 성공한 항목만
-  // Claude가 조사한 정성적 코멘트로 note를 채운다.
-  brief.stocks = liveQuotes.stocks.map(s => s.price === '확인 실패'
-    ? s
-    : { ...s, note: (market.stockNotes && market.stockNotes[s.ticker]) || '' });
-  delete brief.stockNotes;
+  const toItem = n => ({ title: n.title, link: n.link, date: toDisplayDate(n.pubDate), source: n.source });
+  const news = marketNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 4).map(toItem);
+  const aiNews = [
+    ...anthropicNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 2).map(n => ({ company: 'Anthropic', ...toItem(n) })),
+    ...palantirNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 2).map(n => ({ company: 'Palantir', ...toItem(n) })),
+  ];
 
-  // 최소 형식 검증
-  if (!Array.isArray(brief.news)) brief.news = [];
-  if (!Array.isArray(brief.aiNews)) brief.aiNews = [];
-  if (!brief.sessionDate || !brief.sessionDateLabel) {
-    console.warn('⚠️  sessionDate/sessionDateLabel 이 비어 있습니다 — 거래일 확정 단계가 누락됐을 수 있습니다.');
-  }
+  const brief = {
+    sessionDate,
+    sessionDateLabel: sessionDateLabel(sessionDate),
+    summary: buildSummary(liveQuotes.indices),
+    indices: liveQuotes.indices,
+    news,
+    stocks: liveQuotes.stocks,
+    aiNews,
+  };
+
   const failedSymbols = [...brief.indices, ...brief.stocks].filter(x => x.price === '확인 실패').map(x => x.name);
   if (failedSymbols.length) {
     console.warn(`⚠️  Worker에서 시세를 못 받아온 항목: ${failedSymbols.join(', ')}`);
