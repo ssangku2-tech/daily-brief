@@ -1,0 +1,31 @@
+{
+  "at": "2026-08-05T13:16:30.174Z",
+  "threshold": 5,
+  "items": [
+    {
+      "symbol": "AMD",
+      "name": "AMD",
+      "pct": 7
+    },
+    {
+      "symbol": "INTC",
+      "name": "인텔",
+      "pct": 10.84
+    },
+    {
+      "symbol": "MU",
+      "name": "마이크론",
+      "pct": 7.62
+    },
+    {
+      "symbol": "SKHY",
+      "name": "SK하이닉스 ADR",
+      "pct": 8.17
+    },
+    {
+      "symbol": "PLTR",
+      "name": "팔란티어",
+      "pct": 29.45
+    }
+  ]
+}
