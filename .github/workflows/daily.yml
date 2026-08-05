@@ -38,6 +38,10 @@ jobs:
 
       - name: Generate today's briefing
         id: gen
+        env:
+          # 뉴스 한국어 요약·선별용 (haiku 1회). 없으면 요약 없이 원문 그대로 생성된다 —
+          # 즉 키가 빠져도 워크플로가 깨지지는 않는다.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/generate.js
 
       - name: Commit & push

@@ -270,6 +270,112 @@ function toDisplayDate(pubDate) {
   return pubDate ? pubDate.toISOString().slice(0, 10) : '';
 }
 
+// ── 한국어 요약·선별 (haiku, 하루 1회 단 한 번의 호출) ──────────────
+// 2026-08-05에 Claude를 걷어낸 이유는 "요약"이 아니라 web_search 서버 툴이었다.
+// 검색은 이제 RSS가 대신하므로, 이미 손에 든 헤드라인을 번역·선별하는 것만 haiku에
+// 맡기면 비용이 하루 1센트 이하다. 반드시 지킬 것:
+//   - 호출은 하루 딱 1회. 뉴스 종류별로 쪼개면 프롬프트가 그만큼 중복 과금된다.
+//   - 검색·리서치 툴을 다시 붙이지 말 것. 예전 $1/일의 원인이 그것이었다.
+//   - 실패하면 조용히 건너뛴다. 한국어 요약은 있으면 좋은 것이지 브리핑의 필수 요소가 아니다.
+const ENRICH_MODEL = 'claude-haiku-4-5';
+
+async function enrichKorean(brief) {
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.warn('[claude] ANTHROPIC_API_KEY 없음 — 한국어 요약 없이 진행합니다.');
+    return;
+  }
+
+  // 모든 뉴스를 한 배열로 펴서 번호를 매긴다. 응답도 이 번호로 받아 되꽂는다.
+  const flat = [];
+  const push = (n, bucket) => flat.push({ n, bucket });
+  brief.news.forEach(n => push(n, 'news'));
+  brief.stocks.forEach(s => (s.news || []).forEach(n => push(n, `stock:${s.ticker}`)));
+  brief.aiNews.forEach(n => push(n, 'ai'));
+  if (!flat.length) return;
+
+  const idxLine = brief.indices.filter(i => i.price !== '확인 실패')
+    .map(i => `${i.name} ${i.changePct}`).join(', ');
+  const stkLine = brief.stocks.filter(s => s.price !== '확인 실패')
+    .map(s => `${s.name} ${s.changePct}`).join(', ');
+  const list = flat.map((f, i) => `${i}. [${f.n.source || '출처미상'}] ${f.n.title}`).join('\n');
+
+  const prompt = `미국 증시 브리핑에 쓸 자료다. 아래 지수·종목 등락과 뉴스 헤드라인을 보고 JSON으로만 답하라.
+
+지수: ${idxLine || '없음'}
+종목: ${stkLine || '없음'}
+
+헤드라인:
+${list}
+
+요구사항:
+1) summary: 오늘 시장을 한 문장(60자 이내)으로. 숫자를 나열하지 말 것 — 등락률은 화면에 이미 표시된다.
+   무엇이 시장을 움직였는지를 헤드라인에서 읽어내 쓴다. 근거가 부족하면 담백하게 쓰고 지어내지 않는다.
+2) items: 헤드라인마다 하나씩. ko 는 한국어 한 줄 요약(45자 이내, 제목 번역이 아니라 내용 요약).
+   keep 은 읽을 가치가 있으면 true. 다음은 false: "지금 사야 할까?" 같은 낚시성 제목,
+   광고·홍보성 기사, 같은 사건을 다룬 중복 기사(가장 나은 것 하나만 true).
+3) 설명·마크다운 없이 JSON만. 형식:
+{"summary":"","items":[{"i":0,"ko":"","keep":true}]}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: ENRICH_MODEL,
+        max_tokens: 2000,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+      signal: AbortSignal.timeout(60000),
+    });
+    if (!res.ok) {
+      console.warn(`[claude] 한국어 요약 실패: ${res.status} ${await res.text()}`);
+      return;
+    }
+    const data = await res.json();
+    const u = data.usage || {};
+    const cost = ((u.input_tokens || 0) / 1e6) * 1 + ((u.output_tokens || 0) / 1e6) * 5;
+    console.log(`[claude] ${ENRICH_MODEL} 입력 ${u.input_tokens ?? '?'} · 출력 ${u.output_tokens ?? '?'} 토큰 ≈ $${cost.toFixed(5)}`);
+
+    let txt = (data.content || []).filter(c => c.type === 'text').map(c => c.text).join('');
+    txt = txt.replace(/```json|```/g, '').trim();
+    const start = txt.indexOf('{'), end = txt.lastIndexOf('}');
+    if (start === -1 || end === -1) throw new Error('JSON 형태가 아님');
+    const parsed = JSON.parse(txt.slice(start, end + 1));
+
+    if (typeof parsed.summary === 'string' && parsed.summary.trim()) {
+      brief.summary = parsed.summary.trim();
+    }
+    const drop = new Set();
+    for (const it of parsed.items || []) {
+      const f = flat[it.i];
+      if (!f) continue;
+      if (typeof it.ko === 'string' && it.ko.trim()) f.n.ko = it.ko.trim();
+      if (it.keep === false) drop.add(it.i);
+    }
+
+    // keep=false 를 실제로 반영한다. 단 한 종목의 뉴스가 통째로 사라지면 그 종목만
+    // 허전해지므로, 버킷별로 최소 1건은 남긴다.
+    const survivors = b => flat.map((f, i) => ({ f, i })).filter(x => x.f.bucket === b && !drop.has(x.i));
+    for (const b of new Set(flat.map(f => f.bucket))) {
+      if (!survivors(b).length) {
+        const first = flat.findIndex(f => f.bucket === b);
+        if (first !== -1) drop.delete(first);
+      }
+    }
+    const kept = n => !drop.has(flat.findIndex(f => f.n === n));
+    brief.news = brief.news.filter(kept);
+    brief.aiNews = brief.aiNews.filter(kept);
+    brief.stocks.forEach(s => { if (s.news) s.news = s.news.filter(kept); });
+    if (drop.size) console.log(`[claude] 낚시성·중복으로 걸러낸 헤드라인 ${drop.size}건`);
+  } catch (e) {
+    console.warn(`[claude] 한국어 요약 건너뜀: ${e.message}`);
+  }
+}
+
 async function main() {
   const sessionDate = computeSessionDate(dateKey);
 
@@ -307,6 +413,9 @@ async function main() {
     stocks,
     aiNews,
   };
+
+  // 뉴스·시세가 다 모인 뒤에 한 번만 호출한다 (실패해도 브리핑 자체는 그대로 저장된다)
+  await enrichKorean(brief);
 
   const failedSymbols = [...brief.indices, ...brief.stocks].filter(x => x.price === '확인 실패').map(x => x.name);
   if (failedSymbols.length) {

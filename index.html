@@ -117,6 +117,13 @@
   .empty .msg{font-size:14px;line-height:1.6}
   .empty .hint{font-size:12px;color:var(--tx-faint);margin-top:10px}
 
+  /* ===== 오늘의 한 줄 (haiku가 쓴 한 문장) ===== */
+  .summary{
+    font-size:14px;line-height:1.6;font-weight:600;color:var(--tx);
+    background:var(--bg-card-2);border-radius:var(--radius-sm);
+    padding:12px 14px;margin-bottom:12px
+  }
+
   /* ===== 지난 날짜 브리핑을 대신 띄웠을 때의 안내 ===== */
   .stale{
     font-size:12px;line-height:1.5;color:var(--amber);
@@ -201,6 +208,51 @@
     background:var(--bg-card-2);border-radius:20px;padding:2px 8px;white-space:nowrap
   }
 
+  /* ===== 자산 (보유 종목 · 평가액 · 손익) ===== */
+  .asset-total{
+    display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+    background:var(--bg-card-2);border-radius:var(--radius-sm);
+    padding:11px 13px;margin-bottom:8px
+  }
+  .asset-total-label{font-size:12px;color:var(--tx-dim);white-space:nowrap}
+  .asset-total-vals{text-align:right;min-width:0}
+  .asset-total-value{font-size:17px;font-weight:700;letter-spacing:-.3px}
+  .asset-total-pl{display:block;font-size:12px;font-weight:600;margin-top:2px}
+  .asset-total-note{display:block;font-size:10px;color:var(--tx-faint);margin-top:2px}
+  .asset-row{
+    display:flex;align-items:center;gap:10px;
+    padding:9px 0;border-bottom:1px solid var(--line)
+  }
+  .asset-row:last-of-type{border-bottom:none}
+  .asset-main{flex:1;min-width:0}
+  .asset-name{font-size:14px;font-weight:600}
+  .asset-sub{font-size:11px;color:var(--tx-dim);margin-top:2px}
+  .asset-vals{text-align:right;white-space:nowrap;flex-shrink:0}
+  .asset-value{font-size:14px;font-weight:600}
+  .asset-pl{font-size:12px;font-weight:600;margin-top:1px}
+  .asset-pct{font-size:11px;font-weight:600;margin-top:1px}
+  /* 삭제는 실수로 누르기 쉬운 자리라 평소엔 눈에 띄지 않게 두고 탭 영역만 확보한다 */
+  .asset-del{
+    flex-shrink:0;width:30px;height:30px;border-radius:50%;
+    border:none;background:transparent;color:var(--tx-faint);
+    font-size:14px;cursor:pointer;line-height:1
+  }
+  .asset-del:active{background:var(--bg-card-2);color:var(--tx)}
+  .asset-form{display:flex;gap:6px;margin-top:12px}
+  .asset-in{
+    min-width:0;flex:1;background:var(--bg-card-2);color:var(--tx);
+    border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:9px 10px;font-size:13px;font-family:inherit
+  }
+  .asset-in::placeholder{color:var(--tx-faint)}
+  .asset-in:focus{outline:none;border-color:var(--amber)}
+  .asset-add{
+    flex-shrink:0;background:var(--amber);color:var(--bg);border:none;
+    border-radius:var(--radius-sm);padding:9px 14px;
+    font-size:13px;font-weight:700;font-family:inherit;cursor:pointer
+  }
+  .asset-add:active{opacity:.85}
+
   /* ===== 링크 점프 (다른 앱으로 이동) ===== */
   .jump{
     display:flex;align-items:center;gap:12px;
@@ -261,7 +313,7 @@
     <div class="date-big" id="date">—</div>
     <div class="greeting-row">
       <span id="greeting">안녕하세요 👋</span>
-      <span class="app-ver">v0.3</span>
+      <span class="app-ver">v0.4</span>
     </div>
     <div class="weather-pill" id="weather-row" style="display:none">
       <span class="weather-ico" id="weather-ico"></span>
@@ -298,6 +350,8 @@ let state = {
   quoteStatus: 'idle', // 'idle' | 'loading' | 'ok' | 'fail' — 시세만의 상태 (뉴스와 별개)
   refreshedAt: 0,   // 마지막 갱신 완료 시각 (epoch ms)
   refreshing: false,
+  assetForm: {ticker:'', qty:'', avg:''}, // 자산 카드 입력 폼 (render 가 DOM 을 다시 그려도 값이 남도록)
+  assetError: '',
 };
 
 // ====== 유틸 ======
@@ -404,7 +458,11 @@ function fmtQuotePct(price, prev){
 
 async function loadQuotes(){
   state.quoteStatus = 'loading';
-  const symbols = [...INDICES.map(i => i.symbol), ...WATCH.map(s => s.ticker)];
+  // 보유 종목 중 WATCH 에 없는 티커도 같이 받아온다 — 자산 카드가 쓸 시세다.
+  // Worker 호출이라 몇 개 늘어도 비용은 0이고, 한 번에 묶어 받아야 요청이 흩어지지 않는다.
+  const base = [...INDICES.map(i => i.symbol), ...WATCH.map(s => s.ticker)];
+  const extra = loadHoldings().map(h => h.ticker).filter(t => !base.includes(t));
+  const symbols = [...base, ...new Set(extra)];
   const quotes = await Promise.all(symbols.map(fetchQuote));
   const toRow = (q, extra) => ({
     ...extra,
@@ -423,8 +481,12 @@ async function loadQuotes(){
     if(q) stocks.push(toRow(q, {name:s.name, ticker:s.ticker}));
   });
 
+  // 자산 계산은 서식이 붙은 문자열("$211.94")이 아니라 원본 숫자가 필요하므로 따로 담아둔다
+  const bySymbol = {};
+  symbols.forEach((sym, n) => { if(quotes[n]) bySymbol[sym] = quotes[n]; });
+
   if(indices.length || stocks.length){
-    state.live = {indices, stocks, at: Date.now()};
+    state.live = {indices, stocks, bySymbol, at: Date.now()};
     state.quoteStatus = 'ok';
   } else {
     state.quoteStatus = 'fail'; // 직전에 받아둔 state.live 는 지우지 않는다 (있으면 그거라도 보여준다)
@@ -645,6 +707,10 @@ function renderUSBriefing(b){
           state.quoteStatus === 'ok' ? ' 시세는 방금 받아온 값입니다.' : ' 시세도 그날 종가입니다.'}</div>`
       : '';
 
+    // 0) 오늘의 한 줄 — generate.js가 haiku로 만든 한 문장. 지수 등락률은 위 스트립이
+    // 이미 보여주므로, 여기엔 "무엇이 움직였는가"만 온다. 없으면 조용히 생략.
+    const summary = b.summary ? `<div class="summary">${esc(b.summary)}</div>` : '';
+
     // 1) 관심 종목 — 시세(접속 시점 실시간, 실패 시 브리핑 값) + 종목별 관련 뉴스 최대 2건.
     // 주요 지수는 헤더 아래 스트립이 항상 띄우므로 카드 안에서 또 반복하지 않는다.
     // 팔란티어(PLTR)도 WATCH 에 들어있어 여기서 자기 뉴스를 달고 나온다(별도 섹션 아님).
@@ -653,8 +719,10 @@ function renderUSBriefing(b){
       const q = quoteFor(liveStocks, 'ticker', s.ticker, s);
       const cls = q.up === true ? 'up' : q.up === false ? 'down' : 'flat';
       const mark = q.up === true ? '▲' : q.up === false ? '▼' : '·';
+      // ko(한국어 한 줄 요약)가 있으면 그걸 보여준다 — 영문 원문보다 훨씬 빨리 읽히고,
+      // 원문 제목은 링크를 눌러 들어가면 어차피 보인다. 없으면 원문 제목으로 폴백.
       const newsLinks = (s.news||[]).map(n => `
-        <a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}${
+        <a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.ko || n.title)}${
           n.source ? `<span class="src">${esc(n.source)}</span>` : ''}</a>`).join('');
       return `
       <div class="stk">
@@ -679,7 +747,7 @@ function renderUSBriefing(b){
     const newsItems = (b.news||[]).map(n => `
       <div class="news-item">
         <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
-        ${n.body ? `<div class="news-body">${esc(n.body)}</div>` : ''}
+        ${(n.ko || n.body) ? `<div class="news-body">${esc(n.ko || n.body)}</div>` : ''}
         ${(n.source || n.date) ? `<div class="news-date">${esc([n.source, n.date].filter(Boolean).join(' · '))}</div>` : ''}
       </div>`).join('');
     const news = newsItems
@@ -693,13 +761,13 @@ function renderUSBriefing(b){
       .map(n => `
       <div class="news-item">
         <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
-        ${n.body ? `<div class="news-body">${esc(n.body)}</div>` : ''}
+        ${(n.ko || n.body) ? `<div class="news-body">${esc(n.ko || n.body)}</div>` : ''}
         ${(n.source || n.date) ? `<div class="news-date">${esc([n.source, n.date].filter(Boolean).join(' · '))}</div>` : ''}
       </div>`).join('');
     const aiNews = aiNewsItems
       ? `<div class="block"><div class="block-label">앤트로픽</div>${aiNewsItems}</div>` : '';
 
-    inner = stale + stocks + news + aiNews;
+    inner = stale + summary + stocks + news + aiNews;
   }
 
   // 카드 헤더 서브텍스트: sessionDateLabel(신규) 우선, 없으면(과거 파일) 기존 방식으로 폴백
@@ -714,18 +782,156 @@ function renderUSBriefing(b){
   return cardShell('us', '🇺🇸', '미국 시장 브리핑', esc(subRaw), inner, true);
 }
 
-// ====== 자산 변화 섹션 (현재: 링크 점프형) ======
+// ====== 자산 섹션 ======
+// 보유 종목은 localStorage 에만 둔다 — 저장소에 커밋되지 않으므로 공개 레포에 보유
+// 내역이 남지 않는다. 시세는 이미 받아둔 Worker 값을 재사용하므로 추가 비용이 없다.
 const PORTFOLIO_URL = 'https://ssangku2-tech.github.io/portfolio/';
+const HOLDINGS_KEY = 'myassets_v1'; // [{ticker, qty, avg}]
+
+function loadHoldings(){
+  try{
+    const v = JSON.parse(localStorage.getItem(HOLDINGS_KEY));
+    return Array.isArray(v) ? v : [];
+  }catch(e){ return []; }
+}
+function saveHoldings(list){
+  localStorage.setItem(HOLDINGS_KEY, JSON.stringify(list));
+}
+// 폼 입력값을 state 에 들고 있는다 — render() 가 innerHTML 을 통째로 다시 그리기 때문에
+// DOM 에만 있으면 자동 갱신이 한 번 돌 때 입력하던 값이 날아간다.
+function onAssetInput(field, value){
+  state.assetForm[field] = value;
+}
+function addHolding(){
+  const t = (state.assetForm.ticker || '').trim().toUpperCase();
+  const qty = parseFloat(state.assetForm.qty);
+  const avg = parseFloat(state.assetForm.avg);
+  if(!t || !isFinite(qty) || qty <= 0){
+    state.assetError = '티커와 수량은 반드시 입력해야 해요.';
+    render();
+    return;
+  }
+  const list = loadHoldings().filter(h => h.ticker !== t); // 같은 티커는 덮어쓴다
+  list.push({ticker: t, qty, avg: isFinite(avg) && avg > 0 ? avg : null});
+  saveHoldings(list);
+  state.assetForm = {ticker:'', qty:'', avg:''};
+  state.assetError = '';
+  loadQuotes().then(render); // 새로 추가한 티커의 시세를 받아온다
+  render();
+}
+function removeHolding(ticker){
+  saveHoldings(loadHoldings().filter(h => h.ticker !== ticker));
+  render();
+}
+// 통화에 맞춘 금액 표기. 원화는 소수점이 의미 없어 반올림한다.
+function fmtMoney(v, cur){
+  if(cur === 'KRW') return `${Math.round(v).toLocaleString('en-US')}원`;
+  return `$${v.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+}
+
 function renderAssets(){
-  const inner = `
-    <a class="jump" href="${PORTFOLIO_URL}" target="_blank" rel="noopener">
+  const holdings = loadHoldings();
+  const bySymbol = (state.live && state.live.bySymbol) || {};
+
+  // 통화가 섞이면 단순 합계가 의미를 잃는다 — 통화별로 따로 집계한다.
+  const totals = {};
+  const rows = holdings.map(h => {
+    const q = bySymbol[h.ticker];
+    if(!q){
+      return `
+        <div class="asset-row">
+          <div class="asset-main">
+            <div class="asset-name">${esc(h.ticker)}</div>
+            <div class="asset-sub">${esc(String(h.qty))}주 · 시세 확인 실패</div>
+          </div>
+          <button class="asset-del" onclick="removeHolding('${esc(h.ticker)}')" aria-label="${esc(h.ticker)} 삭제">✕</button>
+        </div>`;
+    }
+    const cur = q.currency || 'USD';
+    const value = q.price * h.qty;
+    const t = totals[cur] || (totals[cur] = {value:0, cost:0, valueCosted:0, missingAvg:0});
+    t.value += value;
+    // 손익률은 반드시 "평단이 있는 종목의 평가액 ÷ 그 종목들의 매입액"으로만 계산한다.
+    // 전체 평가액을 일부 종목의 매입액과 비교하면 수익률이 터무니없이 부풀려진다.
+    if(h.avg){ t.cost += h.avg * h.qty; t.valueCosted += value; }
+    else { t.missingAvg++; }
+
+    // 손익은 평단이 있을 때만. 없으면 전일 대비 등락으로 대신 보여준다.
+    let deltaHtml;
+    if(h.avg){
+      const pl = (q.price - h.avg) * h.qty;
+      const pct = ((q.price / h.avg) - 1) * 100;
+      const cls = pl >= 0 ? 'up' : 'down';
+      deltaHtml = `<div class="asset-pl ${cls}">${pl >= 0 ? '+' : '−'}${esc(fmtMoney(Math.abs(pl), cur))}</div>
+                   <div class="asset-pct ${cls}">${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%</div>`;
+    } else {
+      const pct = ((q.price / q.prev) - 1) * 100;
+      const cls = pct >= 0 ? 'up' : 'down';
+      deltaHtml = `<div class="asset-pct ${cls}">전일 ${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%</div>`;
+    }
+    return `
+      <div class="asset-row">
+        <div class="asset-main">
+          <div class="asset-name">${esc(h.ticker)}</div>
+          <div class="asset-sub">${esc(String(h.qty))}주 · ${esc(fmtMoney(q.price, cur))}${
+            h.avg ? ` · 평단 ${esc(fmtMoney(h.avg, cur))}` : ''}</div>
+        </div>
+        <div class="asset-vals">
+          <div class="asset-value">${esc(fmtMoney(value, cur))}</div>
+          ${deltaHtml}
+        </div>
+        <button class="asset-del" onclick="removeHolding('${esc(h.ticker)}')" aria-label="${esc(h.ticker)} 삭제">✕</button>
+      </div>`;
+  }).join('');
+
+  const totalRows = Object.entries(totals).map(([cur, t]) => {
+    const hasCost = t.cost > 0;
+    const pl = hasCost ? t.valueCosted - t.cost : null;
+    const pct = hasCost ? ((t.valueCosted / t.cost) - 1) * 100 : null;
+    const cls = pl === null ? '' : (pl >= 0 ? 'up' : 'down');
+    // 평단을 안 넣은 종목이 섞여 있으면 손익이 전체 기준이 아니라는 걸 밝힌다
+    const partial = hasCost && t.missingAvg ? `<span class="asset-total-note">평단 입력분 기준</span>` : '';
+    return `
+      <div class="asset-total">
+        <span class="asset-total-label">총 평가액${Object.keys(totals).length > 1 ? ` (${esc(cur)})` : ''}</span>
+        <span class="asset-total-vals">
+          <span class="asset-total-value">${esc(fmtMoney(t.value, cur))}</span>
+          ${pl === null ? '' : `<span class="asset-total-pl ${cls}">${pl >= 0 ? '+' : '−'}${esc(fmtMoney(Math.abs(pl), cur))} (${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%)</span>`}
+          ${partial}
+        </span>
+      </div>`;
+  }).join('');
+
+  const empty = `
+    <div class="empty">
+      <div class="big">💰</div>
+      <div class="msg">보유 종목을 추가하면<br>평가액과 손익이 여기 표시됩니다.</div>
+      <div class="hint">기기에만 저장되고 어디로도 전송되지 않아요.</div>
+    </div>`;
+
+  const err = state.assetError ? `<div class="stale">${esc(state.assetError)}</div>` : '';
+  const form = `
+    <div class="asset-form">
+      <input class="asset-in" placeholder="티커" value="${esc(state.assetForm.ticker)}"
+        oninput="onAssetInput('ticker', this.value)" autocapitalize="characters">
+      <input class="asset-in" placeholder="수량" inputmode="decimal" value="${esc(state.assetForm.qty)}"
+        oninput="onAssetInput('qty', this.value)">
+      <input class="asset-in" placeholder="평단(선택)" inputmode="decimal" value="${esc(state.assetForm.avg)}"
+        oninput="onAssetInput('avg', this.value)">
+      <button class="asset-add" onclick="addHolding()">추가</button>
+    </div>`;
+
+  const inner = (holdings.length ? totalRows + rows : empty) + err + form + `
+    <a class="jump" href="${PORTFOLIO_URL}" target="_blank" rel="noopener" style="margin-top:12px">
       <div class="jump-main">
-        <div class="jump-title">포트폴리오에서 오늘 자산 확인</div>
-        <div class="jump-sub">총자산·계좌별 현황·오늘 변동 보기</div>
+        <div class="jump-title">포트폴리오 앱에서 자세히 보기</div>
+        <div class="jump-sub">계좌별 현황·전체 내역</div>
       </div>
       <span class="jump-arrow">→</span>
     </a>`;
-  return cardShell('assets', '💰', '내 자산', '', inner, false);
+
+  const sub = holdings.length ? `${holdings.length}종목` : '';
+  return cardShell('assets', '💰', '내 자산', esc(sub), inner, holdings.length > 0);
 }
 
 // ====== 오늘의 학습 섹션 ======
