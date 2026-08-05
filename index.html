@@ -238,6 +238,14 @@
     font-size:14px;cursor:pointer;line-height:1
   }
   .asset-del:active{background:var(--bg-card-2);color:var(--tx)}
+  /* 금액 펼치기 — 눈에 띄되 주된 행동은 아니므로 테두리만 있는 얌전한 버튼 */
+  .asset-reveal{
+    display:block;width:100%;margin-top:10px;
+    background:transparent;color:var(--tx-dim);
+    border:1px dashed var(--line);border-radius:var(--radius-sm);
+    padding:9px;font-size:12px;font-weight:600;font-family:inherit;cursor:pointer
+  }
+  .asset-reveal:active{background:var(--bg-card-2);color:var(--tx)}
   .asset-form{display:flex;gap:6px;margin-top:12px}
   .asset-in{
     min-width:0;flex:1;background:var(--bg-card-2);color:var(--tx);
@@ -385,6 +393,7 @@ let state = {
   pushError: '',
   pushCopied: false,
   pushShowSub: false, // 구독 JSON 을 펼쳐 보고 있는지 (설정 끝나면 접어둔다)
+  assetsRevealed: false, // 자산 금액을 펼쳐 보고 있는지. 일부러 localStorage 에 두지 않는다
 };
 
 // ====== 유틸 ======
@@ -494,7 +503,10 @@ async function loadQuotes(){
   // 보유 종목 중 WATCH 에 없는 티커도 같이 받아온다 — 자산 카드가 쓸 시세다.
   // Worker 호출이라 몇 개 늘어도 비용은 0이고, 한 번에 묶어 받아야 요청이 흩어지지 않는다.
   const base = [...INDICES.map(i => i.symbol), ...WATCH.map(s => s.ticker)];
-  const extra = loadHoldings().map(h => h.ticker).filter(t => !base.includes(t));
+  const held = effectiveHoldings().list;
+  const extra = held.map(h => h.symbol).filter(s => s && !base.includes(s));
+  // 원화 환산이 필요한 경우에만 환율 심볼을 끼워 넣는다 (해외 종목이 하나도 없으면 불필요)
+  if(held.some(h => !/^\d{6}\.KS$/.test(h.symbol))) extra.push('KRW=X');
   const symbols = [...base, ...new Set(extra)];
   const quotes = await Promise.all(symbols.map(fetchQuote));
   const toRow = (q, extra) => ({
@@ -819,7 +831,61 @@ function renderUSBriefing(b){
 // 보유 종목은 localStorage 에만 둔다 — 저장소에 커밋되지 않으므로 공개 레포에 보유
 // 내역이 남지 않는다. 시세는 이미 받아둔 Worker 값을 재사용하므로 추가 비용이 없다.
 const PORTFOLIO_URL = 'https://ssangku2-tech.github.io/portfolio/';
-const HOLDINGS_KEY = 'myassets_v1'; // [{ticker, qty, avg}]
+const HOLDINGS_KEY = 'myassets_v1';     // 수동 입력 폴백 [{ticker, qty, avg}]
+const PORTFOLIO_KEY = 'portfolio_v2';   // "내 주식 현황" 앱이 쓰는 키
+
+// 포트폴리오 앱과 이 앱은 경로만 다를 뿐 같은 origin(ssangku2-tech.github.io)이라
+// localStorage 를 공유한다 — 그래서 보유 종목을 따로 입력받거나 어딘가로 내보낼 필요 없이
+// 그대로 읽으면 된다. 저장 구조는 그 앱의 소스 기준:
+//   { accounts: { mirae1:{name,stocks:[{id,name,code,qty,avgPrice,...}],cash}, ... }, fxRate }
+// 이 구조가 바뀌면 여기도 같이 바뀌어야 한다 — 남의 앱 내부 형식에 기대는 부분이다.
+function toQuoteSymbol(code){
+  // 포트폴리오 앱의 규칙 그대로: 국내 6자리 종목코드는 .KS 를 붙이고 해외는 티커 그대로
+  return /^\d{6}$/.test(code) ? code + '.KS' : code;
+}
+function portfolioHoldings(){
+  try{
+    const d = JSON.parse(localStorage.getItem(PORTFOLIO_KEY));
+    if(!d || !d.accounts) return [];
+    const out = [];
+    for(const acc of Object.values(d.accounts)){
+      for(const s of (acc.stocks || [])){
+        if(!s.code || !(s.qty > 0)) continue;
+        out.push({
+          symbol: toQuoteSymbol(s.code),
+          label: s.name || s.code,
+          code: s.code,
+          qty: s.qty,
+          avg: s.avgPrice > 0 ? s.avgPrice : null,
+          account: acc.name || '',
+        });
+      }
+    }
+    return out;
+  }catch(e){ return []; }
+}
+// 포트폴리오 앱 데이터가 있으면 그걸 쓰고, 없을 때만 수동 입력분을 쓴다.
+// (같은 기기에서 포트폴리오 앱을 한 번도 안 열었으면 비어 있다 — 그때가 수동 입력 차례)
+function effectiveHoldings(){
+  const p = portfolioHoldings();
+  if(p.length) return { source: 'portfolio', list: p };
+  return {
+    source: 'manual',
+    list: loadHoldings().map(h => ({
+      symbol: h.ticker, label: h.ticker, code: h.ticker, qty: h.qty, avg: h.avg, account: '',
+    })),
+  };
+}
+// 포트폴리오 앱이 캐시해 둔 환율. 없으면 Worker 에서 받은 값을 쓰고, 그것도 없으면 표기를 포기한다.
+function usdKrwRate(){
+  const q = (state.live && state.live.bySymbol && state.live.bySymbol['KRW=X']) || null;
+  if(q && q.price > 0) return q.price;
+  try{
+    const d = JSON.parse(localStorage.getItem(PORTFOLIO_KEY));
+    if(d && d.fxRate > 0) return d.fxRate;
+  }catch(e){}
+  return null;
+}
 
 function loadHoldings(){
   try{
@@ -852,6 +918,11 @@ function addHolding(){
   loadQuotes().then(render); // 새로 추가한 티커의 시세를 받아온다
   render();
 }
+// 금액 펼치기/가리기. state 에만 두어 앱을 다시 열면 자동으로 다시 가려진다.
+function toggleAssets(){
+  state.assetsRevealed = !state.assetsRevealed;
+  render();
+}
 function removeHolding(ticker){
   saveHoldings(loadHoldings().filter(h => h.ticker !== ticker));
   render();
@@ -863,107 +934,112 @@ function fmtMoney(v, cur){
 }
 
 function renderAssets(){
-  const holdings = loadHoldings();
+  const { source, list: holdings } = effectiveHoldings();
   const bySymbol = (state.live && state.live.bySymbol) || {};
+  const fx = usdKrwRate();
+  const masked = !state.assetsRevealed;
+  // 금액 자리는 길이로도 짐작되지 않게 고정 폭으로 가린다
+  const hide = txt => masked ? '●●●●●' : txt;
+  const hidePl = txt => masked ? '●●●' : txt;
 
-  // 통화가 섞이면 단순 합계가 의미를 잃는다 — 통화별로 따로 집계한다.
   const totals = {};
   const rows = holdings.map(h => {
-    const q = bySymbol[h.ticker];
+    const q = bySymbol[h.symbol];
     if(!q){
-      return `
-        <div class="asset-row">
-          <div class="asset-main">
-            <div class="asset-name">${esc(h.ticker)}</div>
-            <div class="asset-sub">${esc(String(h.qty))}주 · 시세 확인 실패</div>
-          </div>
-          <button class="asset-del" onclick="removeHolding('${esc(h.ticker)}')" aria-label="${esc(h.ticker)} 삭제">✕</button>
-        </div>`;
+      return '<div class="asset-row"><div class="asset-main">'
+        + '<div class="asset-name">' + esc(h.label) + '</div>'
+        + '<div class="asset-sub">' + esc(String(h.qty)) + '주 · 시세 확인 실패</div></div>'
+        + (source === 'manual' ? '<button class="asset-del" onclick="removeHolding(\'' + esc(h.code) + '\')" aria-label="' + esc(h.label) + ' 삭제">✕</button>' : '')
+        + '</div>';
     }
     const cur = q.currency || 'USD';
     const value = q.price * h.qty;
     const t = totals[cur] || (totals[cur] = {value:0, cost:0, valueCosted:0, missingAvg:0});
     t.value += value;
-    // 손익률은 반드시 "평단이 있는 종목의 평가액 ÷ 그 종목들의 매입액"으로만 계산한다.
+    // 손익률은 "평단이 있는 종목의 평가액 ÷ 그 종목들의 매입액"으로만 계산한다.
     // 전체 평가액을 일부 종목의 매입액과 비교하면 수익률이 터무니없이 부풀려진다.
     if(h.avg){ t.cost += h.avg * h.qty; t.valueCosted += value; }
     else { t.missingAvg++; }
 
-    // 손익은 평단이 있을 때만. 없으면 전일 대비 등락으로 대신 보여준다.
     let deltaHtml;
     if(h.avg){
       const pl = (q.price - h.avg) * h.qty;
       const pct = ((q.price / h.avg) - 1) * 100;
       const cls = pl >= 0 ? 'up' : 'down';
-      deltaHtml = `<div class="asset-pl ${cls}">${pl >= 0 ? '+' : '−'}${esc(fmtMoney(Math.abs(pl), cur))}</div>
-                   <div class="asset-pct ${cls}">${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%</div>`;
+      deltaHtml = '<div class="asset-pl ' + cls + '">' + hidePl((pl >= 0 ? '+' : '−') + esc(fmtMoney(Math.abs(pl), cur))) + '</div>'
+        + '<div class="asset-pct ' + cls + '">' + (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%</div>';
     } else {
       const pct = ((q.price / q.prev) - 1) * 100;
       const cls = pct >= 0 ? 'up' : 'down';
-      deltaHtml = `<div class="asset-pct ${cls}">전일 ${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%</div>`;
+      deltaHtml = '<div class="asset-pct ' + cls + '">전일 ' + (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%</div>';
     }
-    return `
-      <div class="asset-row">
-        <div class="asset-main">
-          <div class="asset-name">${esc(h.ticker)}</div>
-          <div class="asset-sub">${esc(String(h.qty))}주 · ${esc(fmtMoney(q.price, cur))}${
-            h.avg ? ` · 평단 ${esc(fmtMoney(h.avg, cur))}` : ''}</div>
-        </div>
-        <div class="asset-vals">
-          <div class="asset-value">${esc(fmtMoney(value, cur))}</div>
-          ${deltaHtml}
-        </div>
-        <button class="asset-del" onclick="removeHolding('${esc(h.ticker)}')" aria-label="${esc(h.ticker)} 삭제">✕</button>
-      </div>`;
+    return '<div class="asset-row"><div class="asset-main">'
+      + '<div class="asset-name">' + esc(h.label) + '</div>'
+      + '<div class="asset-sub">' + (masked ? '●●' : esc(String(h.qty))) + '주 · ' + esc(fmtMoney(q.price, cur))
+      + (h.account ? ' · ' + esc(h.account) : '') + '</div></div>'
+      + '<div class="asset-vals"><div class="asset-value">' + hide(esc(fmtMoney(value, cur))) + '</div>' + deltaHtml + '</div>'
+      + (source === 'manual' ? '<button class="asset-del" onclick="removeHolding(\'' + esc(h.code) + '\')" aria-label="' + esc(h.label) + ' 삭제">✕</button>' : '')
+      + '</div>';
   }).join('');
 
-  const totalRows = Object.entries(totals).map(([cur, t]) => {
-    const hasCost = t.cost > 0;
-    const pl = hasCost ? t.valueCosted - t.cost : null;
-    const pct = hasCost ? ((t.valueCosted / t.cost) - 1) * 100 : null;
+  // 통화가 섞여도 환율이 있으면 원화 한 줄로 합친다. 못 구하면 통화별로 따로 보여준다.
+  const curs = Object.keys(totals);
+  const canMerge = fx && curs.every(c => c === 'KRW' || c === 'USD');
+  const totalBlock = (label, value, cost, valueCosted, missing, cur) => {
+    const pl = cost > 0 ? valueCosted - cost : null;
+    const pct = cost > 0 ? ((valueCosted / cost) - 1) * 100 : null;
     const cls = pl === null ? '' : (pl >= 0 ? 'up' : 'down');
-    // 평단을 안 넣은 종목이 섞여 있으면 손익이 전체 기준이 아니라는 걸 밝힌다
-    const partial = hasCost && t.missingAvg ? `<span class="asset-total-note">평단 입력분 기준</span>` : '';
-    return `
-      <div class="asset-total">
-        <span class="asset-total-label">총 평가액${Object.keys(totals).length > 1 ? ` (${esc(cur)})` : ''}</span>
-        <span class="asset-total-vals">
-          <span class="asset-total-value">${esc(fmtMoney(t.value, cur))}</span>
-          ${pl === null ? '' : `<span class="asset-total-pl ${cls}">${pl >= 0 ? '+' : '−'}${esc(fmtMoney(Math.abs(pl), cur))} (${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%)</span>`}
-          ${partial}
-        </span>
-      </div>`;
-  }).join('');
+    return '<div class="asset-total"><span class="asset-total-label">' + label + '</span>'
+      + '<span class="asset-total-vals">'
+      + '<span class="asset-total-value">' + hide(esc(fmtMoney(value, cur))) + '</span>'
+      + (pl === null ? '' : '<span class="asset-total-pl ' + cls + '">'
+          + hidePl((pl >= 0 ? '+' : '−') + esc(fmtMoney(Math.abs(pl), cur)))
+          + ' (' + (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%)</span>')
+      + (missing ? '<span class="asset-total-note">평단 입력분 기준</span>' : '')
+      + '</span></div>';
+  };
+  let totalRows = '';
+  if(canMerge && curs.length){
+    const k = c => (c === 'USD' ? fx : 1);
+    totalRows = totalBlock('총 평가액',
+      curs.reduce((a,c) => a + totals[c].value * k(c), 0),
+      curs.reduce((a,c) => a + totals[c].cost * k(c), 0),
+      curs.reduce((a,c) => a + totals[c].valueCosted * k(c), 0),
+      curs.reduce((a,c) => a + totals[c].missingAvg, 0), 'KRW');
+  } else {
+    totalRows = curs.map(c => totalBlock('총 평가액' + (curs.length > 1 ? ' (' + esc(c) + ')' : ''),
+      totals[c].value, totals[c].cost, totals[c].valueCosted, totals[c].missingAvg, c)).join('');
+  }
 
-  const empty = `
-    <div class="empty">
-      <div class="big">💰</div>
-      <div class="msg">보유 종목을 추가하면<br>평가액과 손익이 여기 표시됩니다.</div>
-      <div class="hint">기기에만 저장되고 어디로도 전송되지 않아요.</div>
-    </div>`;
+  const empty = '<div class="empty"><div class="big">💰</div>'
+    + '<div class="msg">보유 종목이 없어요.<br>포트폴리오 앱에 등록하면 자동으로 여기 나타납니다.</div>'
+    + '<div class="hint">같은 기기에서 포트폴리오 앱을 한 번 열어주세요.</div></div>';
 
-  const err = state.assetError ? `<div class="stale">${esc(state.assetError)}</div>` : '';
-  const form = `
-    <div class="asset-form">
-      <input class="asset-in" placeholder="티커" value="${esc(state.assetForm.ticker)}"
-        oninput="onAssetInput('ticker', this.value)" autocapitalize="characters">
-      <input class="asset-in" placeholder="수량" inputmode="decimal" value="${esc(state.assetForm.qty)}"
-        oninput="onAssetInput('qty', this.value)">
-      <input class="asset-in" placeholder="평단(선택)" inputmode="decimal" value="${esc(state.assetForm.avg)}"
-        oninput="onAssetInput('avg', this.value)">
-      <button class="asset-add" onclick="addHolding()">추가</button>
-    </div>`;
+  // 금액 가리기 — 포트폴리오 앱에는 PIN 잠금이 있는데 여기서 그냥 보여주면 그 잠금이
+  // 무의미해진다. 그렇다고 매번 PIN 을 받으면 아침에 훑어보는 앱 성격과 안 맞아, 기본은
+  // 가리고 탭할 때만 펼친다. 펼침 상태는 localStorage 에 남기지 않는다 — 앱을 다시 열면
+  // 다시 가려져야 의미가 있다.
+  const revealBtn = holdings.length
+    ? '<button class="asset-reveal" onclick="toggleAssets()">' + (masked ? '금액 보기' : '가리기') + '</button>' : '';
 
-  const inner = (holdings.length ? totalRows + rows : empty) + err + form + `
-    <a class="jump" href="${PORTFOLIO_URL}" target="_blank" rel="noopener" style="margin-top:12px">
-      <div class="jump-main">
-        <div class="jump-title">포트폴리오 앱에서 자세히 보기</div>
-        <div class="jump-sub">계좌별 현황·전체 내역</div>
-      </div>
-      <span class="jump-arrow">→</span>
-    </a>`;
+  const err = state.assetError ? '<div class="stale">' + esc(state.assetError) + '</div>' : '';
+  // 수동 입력 폼은 포트폴리오 데이터가 없을 때만 — 있으면 그쪽이 원본이라 여기서 고칠 일이 없다
+  const form = source === 'manual'
+    ? '<div class="asset-form">'
+      + '<input class="asset-in" placeholder="티커" value="' + esc(state.assetForm.ticker) + '" oninput="onAssetInput(\'ticker\', this.value)" autocapitalize="characters">'
+      + '<input class="asset-in" placeholder="수량" inputmode="decimal" value="' + esc(state.assetForm.qty) + '" oninput="onAssetInput(\'qty\', this.value)">'
+      + '<input class="asset-in" placeholder="평단(선택)" inputmode="decimal" value="' + esc(state.assetForm.avg) + '" oninput="onAssetInput(\'avg\', this.value)">'
+      + '<button class="asset-add" onclick="addHolding()">추가</button></div>'
+    : '';
 
-  const sub = holdings.length ? `${holdings.length}종목` : '';
+  const jumpSub = source === 'portfolio' ? '계좌별 현황 · 종목 추가·수정' : '계좌별 현황 · 전체 내역';
+  const inner = (holdings.length ? totalRows + rows + revealBtn : empty) + err + form
+    + '<a class="jump" href="' + PORTFOLIO_URL + '" target="_blank" rel="noopener" style="margin-top:12px">'
+    + '<div class="jump-main"><div class="jump-title">포트폴리오 앱에서 자세히 보기</div>'
+    + '<div class="jump-sub">' + jumpSub + '</div></div><span class="jump-arrow">→</span></a>';
+
+  // 부제에는 금액을 절대 넣지 않는다 — 카드를 접어둬도 보이는 자리다
+  const sub = holdings.length ? holdings.length + '종목' : '';
   return cardShell('assets', '💰', '내 자산', esc(sub), inner, holdings.length > 0);
 }
 
