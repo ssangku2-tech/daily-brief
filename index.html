@@ -225,8 +225,13 @@
   }
   .asset-row:last-of-type{border-bottom:none}
   .asset-main{flex:1;min-width:0}
-  .asset-name{font-size:14px;font-weight:600}
+  /* 이름이 길어도 줄바꿈으로 행이 높아지지 않게 자른다 — 세 칸이 한 줄에 들어가야 한다 */
+  .asset-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .asset-sub{font-size:11px;color:var(--tx-dim);margin-top:2px}
+  /* 가운데 칸: 현재가·전일 대비·당일 손익. 오른쪽 칸과 같은 3줄이라 행 높이는 그대로다 */
+  .asset-mid{text-align:right;white-space:nowrap;flex-shrink:0}
+  .asset-price{font-size:13px;font-weight:600;color:var(--tx-dim)}
+  .asset-day{font-size:11px;font-weight:600;margin-top:1px}
   .asset-vals{text-align:right;white-space:nowrap;flex-shrink:0}
   .asset-value{font-size:14px;font-weight:600}
   .asset-pl{font-size:12px;font-weight:600;margin-top:1px}
@@ -1073,6 +1078,27 @@ function renderAssets(){
     if(h.avg){ t.cost += h.avg * h.qty; t.valueCosted += value; }
     else { t.missingAvg++; }
 
+    // 가운데 칸 — 현재가 / 전일 대비 등락률 / 당일 손익.
+    // 행을 위아래로 늘리지 않으려고 새 줄을 쌓는 대신 이름과 평가액 사이의 빈 가로 공간을 쓴다.
+    // 줄 수(3줄)를 오른쪽 칸과 맞춰 둔 것도 같은 이유다.
+    // 당일 손익 = (현재가 − 전일종가) × 수량. 포트폴리오 앱은 '오늘 매입'한 물량만 매입가를
+    // 기준으로 삼지만 여기는 그 플래그를 읽지 않으므로, 매수한 당일에는 그 앱 숫자와 다를 수 있다.
+    const dayPct = q.prev > 0 ? ((q.price / q.prev) - 1) * 100 : null;
+    // 금액이라 가린다 — 등락률과 나란히 두면 수량이 역산된다
+    const dayPlHtml = dayPct === null ? '' : (() => {
+      const dayPl = (q.price - q.prev) * h.qty;
+      return '오늘 ' + hidePl((dayPl >= 0 ? '+' : '−') + esc(fmtMoney(Math.abs(dayPl), cur)));
+    })();
+    const dayCls = dayPct === null ? '' : (dayPct >= 0 ? 'up' : 'down');
+    const midHtml = '<div class="asset-mid">'
+      + '<div class="asset-price">' + esc(fmtMoney(q.price, cur)) + '</div>'
+      + (dayPct === null ? '' : '<div class="asset-day ' + dayCls + '">전일 ' + (dayPct >= 0 ? '+' : '') + dayPct.toFixed(2) + '%</div>')
+      // 평단이 있으면 오른쪽이 3줄이라 여기도 3줄까지 써도 행이 안 높아진다.
+      // 평단이 없으면 오른쪽이 1줄뿐이라, 당일 손익을 오른쪽으로 내려 양쪽 2줄로 맞춘다.
+      + (dayPct === null || !h.avg ? '' : '<div class="asset-day ' + dayCls + '">' + dayPlHtml + '</div>')
+      + '</div>';
+
+    // 오른쪽 칸 — 평가액 / 누적 손익 / 누적 수익률. 전일 대비는 가운데 칸으로 옮겼다.
     let deltaHtml;
     if(h.avg){
       const pl = (q.price - h.avg) * h.qty;
@@ -1081,14 +1107,13 @@ function renderAssets(){
       deltaHtml = '<div class="asset-pl ' + cls + '">' + hidePl((pl >= 0 ? '+' : '−') + esc(fmtMoney(Math.abs(pl), cur))) + '</div>'
         + '<div class="asset-pct ' + cls + '">' + (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%</div>';
     } else {
-      const pct = ((q.price / q.prev) - 1) * 100;
-      const cls = pct >= 0 ? 'up' : 'down';
-      deltaHtml = '<div class="asset-pct ' + cls + '">전일 ' + (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%</div>';
+      deltaHtml = dayPlHtml ? '<div class="asset-pl ' + dayCls + '">' + dayPlHtml + '</div>' : '';
     }
     return '<div class="asset-row"><div class="asset-main">'
       + '<div class="asset-name">' + esc(h.label) + '</div>'
-      + '<div class="asset-sub">' + (masked ? '●●' : esc(String(h.qty))) + '주 · ' + esc(fmtMoney(q.price, cur))
+      + '<div class="asset-sub">' + (masked ? '●●' : esc(String(h.qty))) + '주'
       + (h.account ? ' · ' + esc(h.account) : '') + '</div></div>'
+      + midHtml
       + '<div class="asset-vals"><div class="asset-value">' + hide(esc(fmtMoney(value, cur))) + '</div>' + deltaHtml + '</div>'
       + (source === 'manual' ? '<button class="asset-del" onclick="removeHolding(\'' + esc(h.code) + '\')" aria-label="' + esc(h.label) + ' 삭제">✕</button>' : '')
       + '</div>';
