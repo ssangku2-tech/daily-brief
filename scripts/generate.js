@@ -34,6 +34,16 @@
 //     없으므로 완전히 제거했다. stocks에는 이제 Worker 시세만 있고 코멘트가 없다.
 //   - news/aiNews의 각 항목은 더 이상 "2~3문장 한국어 요약"이 아니라 원문 title/link 그대로다
 //     (한국어 번역·요약 없음) — 사용자가 이 트레이드오프(비용 0 vs AI 요약 포기)를 직접 선택했다.
+//
+// 7단계 화면 재구성(2026-08-05):
+//   - 관심 종목마다 관련 뉴스 최대 2건(stocks[].news)을 붙인다 — 종목별 RSS 질의를 WATCH에
+//     query 필드로 넣고 병렬로 받아온다(요청 수는 늘지만 RSS는 무료·무인증이라 비용은 0).
+//   - 팔란티어는 aiNews에서 빼고 PLTR 종목 뉴스로만 나간다. aiNews는 앤트로픽 전용.
+//   - summary(지수 등락률 한 줄 조합)는 삭제했다. 클라이언트가 접속 시점에 Worker에서 지수
+//     시세를 직접 받아 헤더 아래 "지수 스트립"으로 항상 띄우므로, 06:30에 박제된 같은 숫자를
+//     한 줄 문장으로 또 보여줄 이유가 없어졌다.
+//   - indices/stocks의 price는 이 파일에도 계속 저장한다 — Worker가 접속 시점에 죽어 있거나
+//     오프라인일 때 클라이언트가 되돌아갈 폴백 값이다.
 const fs = require('fs');
 const path = require('path');
 
@@ -77,14 +87,16 @@ if (kstWeekday === 0 || kstWeekday === 6) {
 // ── 관심 종목·지수 (Worker에서 직접 시세를 받아올 대상) ─────────────
 // SKHY까지는 반도체 종목, 팔란티어(PLTR)는 반도체가 아니라 앤트로픽·팔란티어 뉴스 섹션과
 // 연동되는 관심 종목이라 별도로 붙였다.
+// query 는 종목별 뉴스(stocks[].news)를 뽑을 Google News RSS 검색어다. 티커만 넣으면
+// 동음이의어(MU=대학, AMD=황반변성 등) 기사가 섞여 들어와서 회사명을 함께 넣는다.
 const WATCH = [
-  { name: '엔비디아',      ticker: 'NVDA' },
-  { name: 'AMD',          ticker: 'AMD'  },
-  { name: '인텔',          ticker: 'INTC' },
-  { name: 'TSMC',         ticker: 'TSM'  },
-  { name: '마이크론',      ticker: 'MU'   },
-  { name: 'SK하이닉스 ADR', ticker: 'SKHY' }, // 실제 Yahoo 티커로 확인됨(코스피 000660과는 다른 미국 OTC ADR)
-  { name: '팔란티어',      ticker: 'PLTR' },
+  { name: '엔비디아',      ticker: 'NVDA', query: 'Nvidia NVDA stock' },
+  { name: 'AMD',          ticker: 'AMD',  query: 'AMD "Advanced Micro Devices" stock' },
+  { name: '인텔',          ticker: 'INTC', query: 'Intel INTC stock' },
+  { name: 'TSMC',         ticker: 'TSM',  query: 'TSMC "Taiwan Semiconductor" stock' },
+  { name: '마이크론',      ticker: 'MU',   query: 'Micron Technology MU stock' },
+  { name: 'SK하이닉스 ADR', ticker: 'SKHY', query: '"SK Hynix" memory chip' }, // 실제 Yahoo 티커로 확인됨(코스피 000660과는 다른 미국 OTC ADR)
+  { name: '팔란티어',      ticker: 'PLTR', query: 'Palantir Technologies PLTR' },
 ];
 
 const INDICES = [
@@ -170,12 +182,6 @@ const WEEKDAY_KO = ['일', '월', '화', '수', '목', '금', '토'];
 function sessionDateLabel(sessionDate) {
   const [y, mo, day] = sessionDate.split('-').map(Number);
   return `${y}년 ${mo}월 ${day}일(${WEEKDAY_KO[weekdayOf(sessionDate)]}) 미국 동부시간 정규장 마감`;
-}
-
-// ── 지수 한 줄 요약 — Claude 없이 지수 등락률만으로 기계적으로 조합 ────
-function buildSummary(indices) {
-  const parts = indices.filter(i => i.price !== '확인 실패').map(i => `${i.name} ${i.changePct}`);
-  return parts.length ? `${parts.join(', ')}로 마감` : '';
 }
 
 // ── Google News RSS (무료, API 키 불필요) ────────────────────────
@@ -267,27 +273,38 @@ function toDisplayDate(pubDate) {
 async function main() {
   const sessionDate = computeSessionDate(dateKey);
 
-  const [liveQuotes, marketNewsRaw, anthropicNewsRaw, palantirNewsRaw] = await Promise.all([
+  // 팔란티어는 더 이상 별도 뉴스 섹션(aiNews)이 아니라 관심 종목(PLTR)의 종목별 뉴스로만
+  // 나간다 — WATCH에 이미 들어있으므로 아래 종목별 RSS가 그 몫을 대신한다. aiNews는 앤트로픽 전용.
+  const [liveQuotes, marketNewsRaw, anthropicNewsRaw, stockNewsRaw] = await Promise.all([
     fetchLiveIndicesAndStocks(),
     fetchGoogleNewsRSS('S&P 500 OR Nasdaq OR Dow Jones stock market', 8),
-    fetchGoogleNewsRSS('Anthropic AI', 4),
-    fetchGoogleNewsRSS('Palantir Technologies PLTR', 4),
+    fetchGoogleNewsRSS('Anthropic AI', 6),
+    Promise.all(WATCH.map(s => fetchGoogleNewsRSS(s.query, 6))),
   ]);
 
   const toItem = n => ({ title: n.title, link: n.link, date: toDisplayDate(n.pubDate), source: n.source });
   const news = marketNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 4).map(toItem);
-  const aiNews = [
-    ...anthropicNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 2).map(n => ({ company: 'Anthropic', ...toItem(n) })),
-    ...palantirNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 2).map(n => ({ company: 'Palantir', ...toItem(n) })),
-  ];
+  const aiNews = anthropicNewsRaw.filter(n => isFreshEnough(n.pubDate)).slice(0, 3)
+    .map(n => ({ company: 'Anthropic', ...toItem(n) }));
+
+  // 종목별 뉴스는 종목당 최대 2건. 직전 브리핑 이후 새로 나온 기사가 우선이지만, 한 종목의
+  // 24시간 창은 자주 비기 때문에(특히 SKHY 같은 종목) 신선한 게 하나도 없으면 최신 1건이라도
+  // 채워 카드가 통째로 비어 보이지 않게 한다 — 그래서 같은 헤드라인이 며칠 이어질 수 있다.
+  function pickStockNews(raw) {
+    const fresh = raw.filter(n => isFreshEnough(n.pubDate));
+    return (fresh.length ? fresh.slice(0, 2) : raw.slice(0, 1)).map(toItem);
+  }
+  const stocks = liveQuotes.stocks.map((s, i) => {
+    const items = pickStockNews(stockNewsRaw[i] || []);
+    return items.length ? { ...s, news: items } : s;
+  });
 
   const brief = {
     sessionDate,
     sessionDateLabel: sessionDateLabel(sessionDate),
-    summary: buildSummary(liveQuotes.indices),
     indices: liveQuotes.indices,
     news,
-    stocks: liveQuotes.stocks,
+    stocks,
     aiNews,
   };
 
@@ -301,7 +318,8 @@ async function main() {
   brief.date = dateKey;
 
   fs.writeFileSync(outFile, JSON.stringify(brief, null, 2), 'utf8');
-  console.log(`생성 완료: ${dateKey}.json (지수 ${brief.indices.length} · 종목 ${brief.stocks.length} · 뉴스 ${brief.news.length} · aiNews ${brief.aiNews.length})`);
+  const stockNewsCount = brief.stocks.reduce((n, s) => n + (s.news ? s.news.length : 0), 0);
+  console.log(`생성 완료: ${dateKey}.json (지수 ${brief.indices.length} · 종목 ${brief.stocks.length} · 뉴스 ${brief.news.length} · 종목뉴스 ${stockNewsCount} · 앤트로픽 ${brief.aiNews.length})`);
 
   const dates = fs.readdirSync(BRIEF_DIR)
     .filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))

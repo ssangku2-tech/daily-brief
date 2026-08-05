@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v17';
+const CACHE='daily-brief-v18';
 // 앱 셸 — 이 파일들이 없으면 앱이 뜨지 않으므로 설치 단계에서 반드시 캐시한다.
 const CORE=['./','./index.html','./manifest.json'];
 // 아이콘은 아직 저장소에 없을 수 있다. addAll 은 하나만 404 나도 전체가 실패해
@@ -32,7 +32,9 @@ self.addEventListener('fetch',e=>{
   if(e.request.method!=='GET'){return}
   const url=e.request.url;
   // 외부 API/폰트는 항상 네트워크 (캐시하지 않는다)
-  if(url.includes('api.anthropic.com')||url.includes('open-meteo.com')||url.includes('bigdatacloud.net')||url.includes('fonts.g')||url.includes('gstatic.com')){return}
+  // workers.dev = 시세 프록시(stock-proxy). 접속 시점 시세를 캐시하면 낡은 값이 그대로
+  // 나오므로 반드시 캐시 우회 대상이어야 한다.
+  if(url.includes('workers.dev')||url.includes('open-meteo.com')||url.includes('bigdatacloud.net')||url.includes('fonts.g')||url.includes('gstatic.com')){return}
   // 매일 갱신되는 브리핑/일정·메일은 네트워크 우선(실패 시 캐시) — 오프라인에서 어제 것이라도 보이게
   if(url.includes('/briefings/')||url.includes('/agenda/')){
     e.respondWith(

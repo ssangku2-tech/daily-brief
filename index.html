@@ -46,18 +46,40 @@
     margin-left:auto;font-size:11px;color:var(--tx-dim);
     border:1px solid var(--line);border-radius:20px;padding:2px 8px
   }
-  /* 날씨는 알약형 배지로 감싸 인사말 줄과 분리하고 시각적으로 정돈한다 */
+  /* 날씨는 알약형 배지로 감싸 인사말 줄과 분리한다. 지역명·현재기온은 헤더에서 날짜 다음으로
+     자주 보는 정보라 다른 보조 텍스트보다 확실히 크게 둔다(최고/최저만 한 단계 작게). */
   .weather-pill{
-    display:inline-flex;align-items:center;gap:6px;
-    margin-top:8px;font-size:13px;font-weight:600;color:var(--tx);
-    background:var(--bg-card-2);border-radius:20px;padding:5px 12px
+    display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;
+    margin-top:10px;color:var(--tx);
+    background:var(--bg-card-2);border-radius:22px;padding:9px 16px
   }
-  /* 갱신 시각은 참고 정보일 뿐이라 눈에 띄지 않도록 우측 정렬 + 흐린 색으로 둔다 */
+  .weather-ico{font-size:24px;line-height:1}
+  .weather-place{font-size:17px;font-weight:700;letter-spacing:-.3px}
+  .weather-temp{font-size:17px;font-weight:700}
+  .weather-range{font-size:13px;font-weight:600;color:var(--tx-dim)}
+
+  /* 갱신 상태는 참고 정보일 뿐이라 눈에 띄지 않도록 우측 정렬 + 흐린 색으로 둔다.
+     dot 색으로 실시간 시세를 받았는지(초록)/못 받았는지(회색)를 구분한다. */
   .updated{
     display:flex;justify-content:flex-end;align-items:center;gap:5px;
-    font-size:11px;color:var(--tx-faint);margin-top:6px
+    font-size:11px;color:var(--tx-faint);margin-top:8px
   }
-  .updated .dot{width:5px;height:5px;border-radius:50%;background:var(--tx-faint)}
+  .updated .dot{width:5px;height:5px;border-radius:50%;background:var(--tx-faint);flex-shrink:0}
+  /* --up(빨강)은 이 앱에서 "상승"을 뜻하는 색이라 상태 표시에 쓰면 오독된다 — 포인트색을 쓴다 */
+  .updated .dot.on{background:var(--amber)}
+
+  /* ===== 지수 스트립 (카드를 펼치지 않아도 항상 보이는 3개 지수) ===== */
+  .idx-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+  .idx-chip{
+    background:var(--bg-card);border:1px solid var(--line);
+    border-radius:12px;padding:9px 10px;min-width:0
+  }
+  .idx-chip .nm{
+    font-size:11px;color:var(--tx-dim);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+  }
+  .idx-chip .pr{font-size:15px;font-weight:700;letter-spacing:-.3px;margin-top:2px}
+  .idx-chip .pc{font-size:12px;font-weight:700;margin-top:1px}
 
   /* ===== 섹션 카드 ===== */
   .card{
@@ -95,14 +117,7 @@
   .empty .msg{font-size:14px;line-height:1.6}
   .empty .hint{font-size:12px;color:var(--tx-faint);margin-top:10px}
 
-  /* ===== 한 줄 총평 ===== */
-  .summary{
-    font-size:14px;line-height:1.6;color:var(--tx);
-    background:var(--bg-card-2);border-radius:var(--radius-sm);
-    padding:12px 14px;margin-bottom:4px
-  }
-
-  /* ===== 섹션 한 줄 설명(반도체 섹터 동향 등) ===== */
+  /* ===== 섹션 한 줄 설명(안읽음 통수 등) ===== */
   .subnote{
     font-size:12px;line-height:1.6;color:var(--tx-dim);
     margin-bottom:8px
@@ -123,46 +138,54 @@
     text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px
   }
 
-  /* ===== 지수·종목 표 ===== */
-  .idx-row{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:8px 0;border-bottom:1px solid var(--line);gap:12px
-  }
-  .idx-row:last-child{border-bottom:none}
-  .idx-name{font-size:14px;color:var(--tx)}
-  .idx-name .tkr{font-size:11px;color:var(--tx-dim);margin-left:2px}
-  .idx-vals{text-align:right;white-space:nowrap;display:flex;gap:8px;align-items:baseline}
-  .idx-price{font-size:14px;font-weight:600}
+  /* ===== 등락률 (관심 종목 행에서 공용) ===== */
   /* 등락률은 색만으로 버티기엔 작고 얇아서 잘 안 읽힌다 — 크기·굵기도 함께 준다 */
   .idx-chg{font-size:13px;font-weight:600;min-width:64px;text-align:right}
   .up{color:var(--up)}
   .down{color:var(--down)}
+  /* up 이 true/false 가 아닌 경우(시세 확인 실패) — 빨강/파랑 어느 쪽으로도 읽히면 안 된다 */
+  .flat{color:var(--tx-dim)}
 
-  /* ===== 관심 종목 (왼쪽: 종목명·주가 / 오른쪽: 코멘트) ===== */
-  .stock-row{
-    display:flex;align-items:flex-start;gap:12px;
-    padding:8px 0;border-bottom:1px solid var(--line)
+  /* ===== 관심 종목 (한 종목 = 작은 블록: 위 시세 한 줄 + 아래 관련 뉴스 최대 2건) ===== */
+  /* 구분선으로 나열하면 종목마다 뉴스 2줄이 붙는 순간 어디까지가 한 종목인지 흐려진다.
+     그래서 종목별로 배경을 깐 블록으로 묶고, 뉴스는 점 불릿 + 2줄 말줄임으로 눌러둔다. */
+  .stk{
+    background:var(--bg-card-2);border-radius:var(--radius-sm);
+    padding:10px 12px;margin-top:8px
   }
-  .stock-row:last-child{border-bottom:none}
-  .stock-main{flex:0 0 46%;min-width:0}
-  .stock-name{font-size:14px;color:var(--tx)}
-  .stock-name .tkr{font-size:11px;color:var(--tx-dim);margin-left:2px}
-  .stock-vals{
-    display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-top:2px
+  .stk:first-child{margin-top:0}
+  .stk-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .stk-name{font-size:14px;font-weight:600;min-width:0}
+  .stk-name .tkr{font-size:11px;font-weight:500;color:var(--tx-dim);margin-left:5px}
+  .stk-vals{display:flex;gap:8px;align-items:baseline;white-space:nowrap;flex-shrink:0}
+  .stk-price{font-size:14px;font-weight:600}
+  .stk-news{margin-top:7px;display:flex;flex-direction:column;gap:5px}
+  .stk-news a{
+    position:relative;padding-left:10px;
+    font-size:12px;line-height:1.45;color:var(--tx-dim);text-decoration:none;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
   }
-  .stock-note{
-    flex:1 1 auto;min-width:0;
-    font-size:12px;line-height:1.5;color:var(--tx)
+  .stk-news a::before{
+    content:'';position:absolute;left:0;top:.55em;
+    width:3px;height:3px;border-radius:50%;background:var(--tx-faint)
   }
+  .stk-news a:active{color:var(--tx)}
+  .stk-news .src{color:var(--tx-faint);margin-left:5px}
+  .stk-note{font-size:12px;line-height:1.5;color:var(--tx-faint);margin-top:5px}
 
   /* ===== 뉴스·하이라이트 항목 ===== */
-  .news-item{padding:8px 0;border-bottom:1px solid var(--line)}
+  /* 원문(영문) 헤드라인은 길어서 굵은 14px로 두면 카드 하나가 화면 몇 개 분량이 된다.
+     종목별 뉴스와 위계를 맞춰 한 단계 줄이고 3줄에서 자른다. */
+  .news-item{padding:7px 0;border-bottom:1px solid var(--line)}
   .news-item:last-child{border-bottom:none}
-  .news-title{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:4px}
-  .news-title a{color:inherit;text-decoration:none}
+  .news-title{font-size:13px;font-weight:600;line-height:1.45;color:var(--tx);margin-bottom:3px}
+  .news-title a{
+    color:inherit;text-decoration:none;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden
+  }
   .news-title a:hover,.news-title a:focus{text-decoration:underline}
   .news-body{font-size:13px;line-height:1.6;color:var(--tx-dim)}
-  .news-date{font-size:11px;color:var(--tx-faint);margin-top:4px}
+  .news-date{font-size:11px;color:var(--tx-faint);margin-top:3px}
 
   /* ===== 일정 항목 ===== */
   /* 시간을 별도 칸으로 떼어내 제목과 섞이지 않게 한다 — 제목 자체에 시각이
@@ -197,16 +220,19 @@
   .jump-sub{font-size:12px;color:var(--tx-dim);margin-top:2px}
   .jump-arrow{font-size:18px;color:var(--amber);flex-shrink:0}
 
-  /* ===== 새로고침 버튼 ===== */
+  /* ===== 새로고침 버튼 =====
+     앱을 열 때/다시 앞으로 가져올 때 자동으로 갱신되므로 이 버튼은 "필요할 때 한 번 더"용이다.
+     그래서 버튼 자체가 마지막 갱신 시각을 함께 들고 있어야 눌러야 할지 판단할 수 있다. */
   .refresh{
     display:block;width:100%;margin-top:18px;
     background:var(--bg-card-2);color:var(--tx);
     border:1px solid var(--line);border-radius:var(--radius-sm);
-    padding:13px;font-size:14px;font-weight:600;cursor:pointer
+    padding:11px 13px;font-size:14px;font-weight:600;cursor:pointer;
+    font-family:inherit;line-height:1.35
   }
   .refresh:active{background:#232c50}
-
-  .footnote{text-align:center;font-size:11px;color:var(--tx-dim);margin-top:20px}
+  .refresh:disabled{opacity:.6;cursor:default}
+  .refresh .rf-sub{display:block;font-size:11px;font-weight:500;color:var(--tx-dim);margin-top:2px}
 
   /* ===== 오늘의 학습 ===== */
   .study-row{
@@ -241,22 +267,29 @@
     <div class="date-big" id="date">—</div>
     <div class="greeting-row">
       <span id="greeting">안녕하세요 👋</span>
-      <span class="app-ver">v0.2</span>
+      <span class="app-ver">v0.3</span>
     </div>
     <div class="weather-pill" id="weather-row" style="display:none">
-      <span id="weather"></span>
+      <span class="weather-ico" id="weather-ico"></span>
+      <span class="weather-place" id="weather-place"></span>
+      <span class="weather-temp" id="weather-temp"></span>
+      <span class="weather-range" id="weather-range"></span>
     </div>
     <div class="updated" id="updated" style="display:none">
-      <span class="dot"></span><span id="updated-txt"></span>
+      <span class="dot" id="updated-dot"></span><span id="updated-txt"></span>
     </div>
   </header>
+
+  <!-- 지수 스트립: 카드를 펼치지 않아도 항상 보이는 3개 지수 -->
+  <div class="idx-strip" id="idx-strip"></div>
 
   <!-- 섹션들이 여기에 렌더링됨 -->
   <main id="sections"></main>
 
-  <button class="refresh" id="refresh">새로고침</button>
-
-  <div class="footnote">브리핑은 매일 새벽 자동으로 갱신됩니다.</div>
+  <button class="refresh" id="refresh">
+    <span id="refresh-label">새로고침</span>
+    <span class="rf-sub" id="refresh-sub"></span>
+  </button>
 
 </div>
 
@@ -266,6 +299,10 @@ let state = {
   briefing: null,   // briefings/YYYY-MM-DD.json 의 내용을 그대로 담는다
   shownDate: null,  // 실제로 화면에 띄운 브리핑의 날짜 (오늘 것이 없으면 과거 날짜가 들어온다)
   agenda: null,     // agenda/YYYY-MM-DD.json 의 내용을 그대로 담는다 (오늘 것이 없으면 null)
+  live: null,       // 접속 시점에 Worker에서 직접 받아온 시세 {indices, stocks, at}
+  quoteStatus: 'idle', // 'idle' | 'loading' | 'ok' | 'fail' — 시세만의 상태 (뉴스와 별개)
+  refreshedAt: 0,   // 마지막 갱신 완료 시각 (epoch ms)
+  refreshing: false,
 };
 
 // ====== 유틸 ======
@@ -307,6 +344,102 @@ function esc(s){
     {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]
   ));
 }
+// epoch ms → KST "HH:MM"
+function fmtClockKST(ms){
+  const d = new Date(ms + 9*3600*1000);
+  return `${String(d.getUTCHours()).padStart(2,'0')}:${String(d.getUTCMinutes()).padStart(2,'0')}`;
+}
+// epoch ms → "방금 전" / "12분 전" / "14:05" — 갱신이 얼마나 오래됐는지 감을 주기 위한 표기
+function fmtAgo(ms){
+  if(!ms) return '';
+  const sec = Math.floor((Date.now() - ms)/1000);
+  if(sec < 60) return '방금 전';
+  if(sec < 3600) return `${Math.floor(sec/60)}분 전`;
+  return fmtClockKST(ms);
+}
+
+// ====== 접속 시점 실시간 시세 (Cloudflare Worker) ======
+// 브리핑 JSON(매일 06:30 생성)의 시세는 하루 종일 고정이라, 낮에 열어보면 이미 낡은 값이다.
+// 그래서 "내 주식 현황" 포트폴리오 앱과 같은 방식으로 앱을 열 때마다 이 Worker에서 직접
+// 시세를 받아 덮어쓴다. Worker는 Access-Control-Allow-Origin:* 이라 브라우저에서 바로 호출된다.
+// (뉴스는 같은 방식이 불가능하다 — Google News RSS 는 CORS 헤더가 없어 브라우저에서 못 읽는다.
+//  그래서 뉴스는 계속 generate.js 가 매일 만들어 둔 briefings/*.json 에서 온다.)
+const WORKER_URL = 'https://stock-proxy.ssangku2.workers.dev';
+// name 은 generate.js 의 INDICES/WATCH 와 반드시 같아야 한다 — 브리핑 JSON 과 이름/티커로
+// 짝을 맞춰 시세만 갈아끼우기 때문이다. short 는 스트립 칩에 들어갈 짧은 표기.
+const INDICES = [
+  { name:'S&P 500',   short:'S&P 500', symbol:'^GSPC' },
+  { name:'나스닥종합', short:'나스닥',  symbol:'^IXIC' },
+  { name:'다우존스',   short:'다우',    symbol:'^DJI'  },
+];
+const WATCH = [
+  { name:'엔비디아',      ticker:'NVDA' },
+  { name:'AMD',          ticker:'AMD'  },
+  { name:'인텔',          ticker:'INTC' },
+  { name:'TSMC',         ticker:'TSM'  },
+  { name:'마이크론',      ticker:'MU'   },
+  { name:'SK하이닉스 ADR', ticker:'SKHY' },
+  { name:'팔란티어',      ticker:'PLTR' },
+];
+
+async function fetchQuote(symbol){
+  try{
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);
+    const res = await fetch(`${WORKER_URL}/?symbol=${encodeURIComponent(symbol)}`,
+      {cache:'no-store', signal:ctrl.signal});
+    clearTimeout(timer);
+    if(!res.ok) return null;
+    const d = await res.json();
+    if(d.price == null || d.prev == null) return null;
+    return d;
+  }catch(e){
+    return null; // 개별 심볼 실패는 흔한 일 — 조용히 브리핑 JSON 값으로 폴백한다
+  }
+}
+// 지수는 통화 기호 없이, 종목은 $를 붙여 표기한다 (generate.js 와 동일한 관례)
+function fmtQuotePrice(price, currency){
+  const n = price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  return currency === 'USD' ? `$${n}` : n;
+}
+function fmtQuotePct(price, prev){
+  const pct = ((price - prev) / prev) * 100;
+  return `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`;
+}
+
+async function loadQuotes(){
+  state.quoteStatus = 'loading';
+  const symbols = [...INDICES.map(i => i.symbol), ...WATCH.map(s => s.ticker)];
+  const quotes = await Promise.all(symbols.map(fetchQuote));
+  const toRow = (q, extra) => ({
+    ...extra,
+    price: fmtQuotePrice(q.price, extra.ticker ? q.currency : null),
+    changePct: fmtQuotePct(q.price, q.prev),
+    up: q.price >= q.prev,
+  });
+
+  const indices = [], stocks = [];
+  INDICES.forEach((i, n) => {
+    const q = quotes[n];
+    if(q) indices.push(toRow(q, {name:i.name}));
+  });
+  WATCH.forEach((s, n) => {
+    const q = quotes[INDICES.length + n];
+    if(q) stocks.push(toRow(q, {name:s.name, ticker:s.ticker}));
+  });
+
+  if(indices.length || stocks.length){
+    state.live = {indices, stocks, at: Date.now()};
+    state.quoteStatus = 'ok';
+  } else {
+    state.quoteStatus = 'fail'; // 직전에 받아둔 state.live 는 지우지 않는다 (있으면 그거라도 보여준다)
+  }
+}
+// 실시간 시세가 있으면 그걸, 없으면 브리핑 JSON 값을 쓴다 — 항목 단위로 각각 판단한다.
+function quoteFor(list, keyName, keyValue, fallback){
+  const hit = (list || []).find(x => x[keyName] === keyValue);
+  return hit || fallback;
+}
 
 // ====== 상단 날씨 (Open-Meteo, API 키 불필요) ======
 // 위치 권한을 거부하거나 얻지 못하면 서울 좌표로 대신한다.
@@ -345,22 +478,47 @@ async function reverseGeocodeKo(lat, lon){
     return '';
   }
 }
-async function loadWeather(){
+// 날씨는 몇 분 사이에 바뀌지 않는데 위치 권한 조회(getPosition)까지 매번 타면 앱을 열 때마다
+// 눈에 띄게 느려진다. 그래서 마지막 결과를 localStorage 에 30분간 캐시해 두고, 캐시가 살아
+// 있으면 네트워크를 전혀 건드리지 않는다 (수동 새로고침은 force 로 캐시를 무시한다).
+const WEATHER_KEY = 'myweather_v1';
+const WEATHER_TTL = 30*60*1000;
+function paintWeather(w){
   const row = document.getElementById('weather-row');
-  const el = document.getElementById('weather');
+  if(!w){ row.style.display = 'none'; return; }
+  document.getElementById('weather-ico').textContent = w.icon;
+  document.getElementById('weather-place').textContent = w.place || '';
+  document.getElementById('weather-temp').textContent = `${w.now}°`;
+  document.getElementById('weather-range').textContent = `최고 ${w.max}° · 최저 ${w.min}°`;
+  row.style.display = 'inline-flex';
+}
+async function loadWeather(force){
   try{
+    const cached = JSON.parse(localStorage.getItem(WEATHER_KEY) || 'null');
+    if(cached && !force && Date.now() - cached.at < WEATHER_TTL){ paintWeather(cached); return; }
+    if(cached) paintWeather(cached); // 새로 받아오는 동안 낡은 값이라도 먼저 띄운다
+
     const {lat, lon} = await getPosition();
-    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto`;
+    const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`
+      + `&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto`;
     const [res, place] = await Promise.all([fetch(weatherUrl), reverseGeocodeKo(lat, lon)]);
     if(!res.ok) throw new Error('weather fetch failed');
     const d = await res.json();
-    const code = d.daily.weathercode[0];
-    const max = Math.round(d.daily.temperature_2m_max[0]);
-    const min = Math.round(d.daily.temperature_2m_min[0]);
-    el.textContent = `${weatherIcon(code)} ${place ? place + ' ' : ''}${max}° / ${min}°`;
-    row.style.display = 'inline-flex';
+    const w = {
+      icon: weatherIcon(d.current.weather_code),
+      place,
+      now: Math.round(d.current.temperature_2m),
+      max: Math.round(d.daily.temperature_2m_max[0]),
+      min: Math.round(d.daily.temperature_2m_min[0]),
+      at: Date.now(),
+    };
+    localStorage.setItem(WEATHER_KEY, JSON.stringify(w));
+    paintWeather(w);
   }catch(e){
-    row.style.display = 'none';
+    // 새로 못 받아도 캐시가 있으면 그대로 두고, 아무것도 없을 때만 숨긴다
+    let cached = null;
+    try{ cached = JSON.parse(localStorage.getItem(WEATHER_KEY) || 'null'); }catch(e2){}
+    paintWeather(cached);
   }
 }
 
@@ -450,6 +608,28 @@ function cardShell(id, icon, title, sub, bodyHtml, defaultOpen){
 // cardShell() 에 위임하고, 각 렌더러는 본문(bodyHtml)과 빈 상태만 책임진다.
 // 이후 새 섹션도 같은 패턴으로 추가하면 된다.
 
+// 지수 스트립 — 카드를 펼치지 않아도 헤더 바로 아래에서 3개 지수를 항상 보여준다.
+// 접속 시점 실시간 시세가 있으면 그 값, 없으면 브리핑 JSON 의 종가로 폴백한다.
+function renderIndexStrip(){
+  const live = (state.live && state.live.indices) || [];
+  const fallback = (state.briefing && state.briefing.indices) || [];
+  const rows = INDICES.map(meta => {
+    const row = quoteFor(live, 'name', meta.name, fallback.find(x => x.name === meta.name));
+    return row ? {...row, short: meta.short} : null;
+  }).filter(Boolean);
+  if(!rows.length) return '';
+  return rows.map(r => {
+    const cls = r.up === true ? 'up' : r.up === false ? 'down' : 'flat';
+    const mark = r.up === true ? '▲' : r.up === false ? '▼' : '·';
+    return `
+      <div class="idx-chip">
+        <div class="nm">${esc(r.short || r.name)}</div>
+        <div class="pr">${esc(r.price)}</div>
+        <div class="pc ${cls}">${mark} ${esc(r.changePct)}</div>
+      </div>`;
+  }).join('');
+}
+
 function renderUSBriefing(b){
   // b: 브리핑 데이터 (없으면 null)
   let inner;
@@ -464,27 +644,40 @@ function renderUSBriefing(b){
   } else {
     // === 데이터가 있을 때 ===
     // 0) 오늘 것이 아니면 먼저 밝힌다.
+    // 시세는 접속 시점에 따로 받아오므로, 낡은 건 뉴스뿐이라는 점을 정확히 구분해서 알린다.
     const stale = isStale()
-      ? `<div class="stale">오늘 브리핑이 아직 없어 ${esc(fmtShortDate(state.shownDate))}자 브리핑을 대신 보여주고 있어요. 아래 시세는 오늘 것이 아닙니다.</div>`
+      ? `<div class="stale">오늘 브리핑이 아직 없어 ${esc(fmtShortDate(state.shownDate))}자 뉴스를 대신 보여주고 있어요.${
+          state.quoteStatus === 'ok' ? ' 시세는 방금 받아온 값입니다.' : ' 시세도 그날 종가입니다.'}</div>`
       : '';
 
-    // 1) 한 줄 총평 (지수 요약 섹션)
-    const summary = b.summary
-      ? `<div class="summary">${esc(b.summary)}</div>` : '';
+    // 1) 관심 종목 — 시세(접속 시점 실시간, 실패 시 브리핑 값) + 종목별 관련 뉴스 최대 2건.
+    // 주요 지수는 헤더 아래 스트립이 항상 띄우므로 카드 안에서 또 반복하지 않는다.
+    // 팔란티어(PLTR)도 WATCH 에 들어있어 여기서 자기 뉴스를 달고 나온다(별도 섹션 아님).
+    const liveStocks = (state.live && state.live.stocks) || [];
+    const stockRows = (b.stocks||[]).map(s => {
+      const q = quoteFor(liveStocks, 'ticker', s.ticker, s);
+      const cls = q.up === true ? 'up' : q.up === false ? 'down' : 'flat';
+      const mark = q.up === true ? '▲' : q.up === false ? '▼' : '·';
+      const newsLinks = (s.news||[]).map(n => `
+        <a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}${
+          n.source ? `<span class="src">${esc(n.source)}</span>` : ''}</a>`).join('');
+      return `
+      <div class="stk">
+        <div class="stk-top">
+          <span class="stk-name">${esc(s.name)}<span class="tkr">${esc(s.ticker)}</span></span>
+          <span class="stk-vals">
+            <span class="stk-price">${esc(q.price)}</span>
+            <span class="idx-chg ${cls}">${mark} ${esc(q.changePct)}</span>
+          </span>
+        </div>
+        ${newsLinks ? `<div class="stk-news">${newsLinks}</div>` : ''}
+        ${s.note ? `<div class="stk-note">${esc(s.note)}</div>` : ''}
+      </div>`;
+    }).join('');
+    const stocks = stockRows
+      ? `<div class="block"><div class="block-label">관심 종목</div>${stockRows}</div>` : '';
 
-    // 2) 지수 표
-    const idxRows = (b.indices||[]).map(i => `
-      <div class="idx-row">
-        <span class="idx-name">${esc(i.name)}</span>
-        <span class="idx-vals">
-          <span class="idx-price">${esc(i.price)}</span>
-          <span class="idx-chg ${i.up?'up':'down'}">${i.up?'▲':'▼'} ${esc(i.changePct)}</span>
-        </span>
-      </div>`).join('');
-    const indices = idxRows
-      ? `<div class="block"><div class="block-label">주요 지수</div>${idxRows}</div>` : '';
-
-    // 3) 미국·글로벌 증시 동향 및 주요 뉴스 — 2026-08-05부터 Google News RSS 원문 그대로
+    // 2) 미국·글로벌 증시 동향 및 주요 뉴스 — 2026-08-05부터 Google News RSS 원문 그대로
     // (요약·번역 없음, title을 원문 기사로 가는 링크로 걸고 출처·발행일을 병기한다). 그 이전
     // 파일은 link/source 없이 Claude가 쓴 한국어 요약(body)만 있으므로, link 유무로 분기해
     // 두 스키마를 모두 그대로 보여준다(다른 필드가 없어졌다고 낡은 파일을 깨뜨리지 않는다).
@@ -497,38 +690,21 @@ function renderUSBriefing(b){
     const news = newsItems
       ? `<div class="block"><div class="block-label">주요 뉴스</div>${newsItems}</div>` : '';
 
-    // 4) 관심 종목 — 반도체 종목 + 팔란티어(PLTR). semiconductorNote/stock.note는
-    // 2026-08-05부터 generate.js가 채우지 않는다(Claude 없이는 "왜 움직였는지" 코멘트를
-    // 만들 수 없어 필드 자체를 없앴다) — 필드가 있으면 보여주고 없으면 조용히 생략한다.
-    const secNote = b.semiconductorNote
-      ? `<div class="subnote">${esc(b.semiconductorNote)}</div>` : '';
-    const stockRows = (b.stocks||[]).map(s => `
-      <div class="stock-row">
-        <div class="stock-main">
-          <div class="stock-name">${esc(s.name)} <span class="tkr">${esc(s.ticker)}</span></div>
-          <div class="stock-vals">
-            <span class="idx-price">${esc(s.price)}</span>
-            <span class="idx-chg ${s.up?'up':'down'}">${s.up?'▲':'▼'} ${esc(s.changePct)}</span>
-          </div>
-        </div>
-        ${s.note ? `<div class="stock-note">${esc(s.note)}</div>` : ''}
-      </div>`).join('');
-    const stocks = stockRows
-      ? `<div class="block"><div class="block-label">관심 종목</div>${secNote}${stockRows}</div>` : '';
-
-    // 5) 앤트로픽·팔란티어 뉴스 — 별도 카드 대신 이 카드의 마지막 블록으로 포함.
-    // 3)과 동일하게 2026-08-05부터 RSS 원문(link 있음), 그 이전은 Claude 요약(body 있음) —
-    // link 유무로 분기해 두 스키마 모두 지원한다.
-    const aiNewsItems = (b.aiNews||[]).map(n => `
+    // 3) 앤트로픽 뉴스 — 별도 카드 대신 이 카드의 마지막 블록. 팔란티어는 위 관심 종목의
+    // 종목별 뉴스로 옮겼으므로 여기서는 뺀다(2026-08-05 이전 파일에는 aiNews 안에 Palantir
+    // 항목이 섞여 있어 company 로 걸러낸다). 2)와 동일하게 link 유무로 신·구 스키마를 분기.
+    const aiNewsItems = (b.aiNews||[])
+      .filter(n => !n.company || n.company === 'Anthropic')
+      .map(n => `
       <div class="news-item">
-        <div class="news-title">${n.company ? `<span class="tkr">[${esc(n.company)}]</span> ` : ''}${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
+        <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
         ${n.body ? `<div class="news-body">${esc(n.body)}</div>` : ''}
         ${(n.source || n.date) ? `<div class="news-date">${esc([n.source, n.date].filter(Boolean).join(' · '))}</div>` : ''}
       </div>`).join('');
     const aiNews = aiNewsItems
-      ? `<div class="block"><div class="block-label">앤트로픽 · 팔란티어</div>${aiNewsItems}</div>` : '';
+      ? `<div class="block"><div class="block-label">앤트로픽</div>${aiNewsItems}</div>` : '';
 
-    inner = stale + summary + indices + news + stocks + aiNews;
+    inner = stale + stocks + news + aiNews;
   }
 
   // 카드 헤더 서브텍스트: sessionDateLabel(신규) 우선, 없으면(과거 파일) 기존 방식으로 폴백
@@ -539,7 +715,8 @@ function renderUSBriefing(b){
     else subRaw = '어젯밤 뉴욕장';
   }
 
-  return cardShell('us', '🇺🇸', '미국 시장 브리핑', esc(subRaw), inner, false);
+  // 이 앱의 본문에 해당하는 카드라 기본값을 '펼침'으로 둔다(다른 카드는 접힌 채 시작).
+  return cardShell('us', '🇺🇸', '미국 시장 브리핑', esc(subRaw), inner, true);
 }
 
 // ====== 자산 변화 섹션 (현재: 링크 점프형) ======
@@ -684,28 +861,50 @@ function renderMail(a){
   }
   return cardShell('mail', '📧', '메일', '', inner, false);
 }
+// 헤더 우측 상단 한 줄 — 시세와 뉴스는 갱신 주기가 다르므로(시세=접속 시점, 뉴스=매일 06:30)
+// 둘을 한 덩어리로 뭉뚱그리지 않고 각각의 기준 시각을 밝힌다.
+function updatedText(){
+  const parts = [];
+  if(state.quoteStatus === 'loading') parts.push('시세 받는 중…');
+  else if(state.quoteStatus === 'ok' && state.live) parts.push(`시세 ${fmtClockKST(state.live.at)} 기준`);
+  else if(state.live) parts.push(`시세 ${fmtClockKST(state.live.at)} (갱신 실패)`);
+  else parts.push('시세 브리핑 종가');
+  const gen = state.briefing && state.briefing.generatedAt;
+  // 이 문자열은 textContent 로 들어가므로 esc() 가 필요 없다(HTML 템플릿에 끼워넣지 않는다)
+  if(gen) parts.push(`뉴스 ${String(gen).slice(5)} 브리핑`); // "2026-08-05 06:30" → "08-05 06:30"
+  return parts.join(' · ');
+}
+
 function render(){
   const key = todayKST();
   document.getElementById('greeting').textContent = greetingKST();
   document.getElementById('date').textContent = fmtDate(key);
 
-  // 갱신 시각 표시 (브리핑 있을 때만)
+  // 갱신 상태 (시세/뉴스 각각의 기준 시각)
   const upd = document.getElementById('updated');
-  if(state.briefing && state.briefing.generatedAt){
-    upd.style.display = 'flex';
-    document.getElementById('updated-txt').textContent =
-      state.briefing.generatedAt + ' 갱신';
-  } else {
-    upd.style.display = 'none';
-  }
+  upd.style.display = 'flex';
+  document.getElementById('updated-txt').textContent = updatedText();
+  document.getElementById('updated-dot').className = 'dot' + (state.quoteStatus === 'ok' ? ' on' : '');
 
-  // 섹션 조립: 미국 시장 브리핑(앤트로픽/팔란티어 포함) → 자산 → 오늘의 학습 → 일정 → 메일
+  // 지수 스트립 (항상 노출)
+  document.getElementById('idx-strip').innerHTML = renderIndexStrip();
+
+  // 새로고침 버튼 — 자동 갱신이 기본이라는 걸 버튼 자체가 설명한다
+  document.getElementById('refresh').disabled = state.refreshing;
+  document.getElementById('refresh-label').textContent = state.refreshing ? '갱신 중…' : '지금 새로고침';
+  document.getElementById('refresh-sub').textContent = state.refreshing
+    ? '시세·뉴스·일정을 다시 받아오는 중'
+    : (state.refreshedAt
+        ? `${fmtAgo(state.refreshedAt)} 갱신됨 · 앱을 열면 자동 갱신`
+        : '앱을 열면 자동으로 갱신됩니다');
+
+  // 섹션 조립: 미국 시장(관심 종목·뉴스·앤트로픽) → 오늘 해야 할 일(일정·메일) → 학습 → 자산
   const sections = [
     renderUSBriefing(state.briefing),
-    renderAssets(),
-    renderLearning(),
     renderSchedule(state.agenda),
     renderMail(state.agenda),
+    renderLearning(),
+    renderAssets(),
   ];
   document.getElementById('sections').innerHTML = sections.join('');
 }
@@ -750,17 +949,41 @@ async function loadAgenda(){
   render();
 }
 
+// ====== 갱신 오케스트레이션 ======
+// 갱신 경로는 이 함수 하나뿐이다 — 시작할 때, 앱을 다시 앞으로 가져올 때, 버튼을 눌렀을 때
+// 모두 여기로 들어온다. 어느 경로든 하는 일이 같아야 "새로고침을 눌러야 최신인가?" 하는
+// 의심이 생기지 않는다.
+// 비용: 이 함수가 부르는 건 Worker 시세 10건 + 정적 JSON 2건 + (캐시 만료 시) 날씨 2건뿐이고,
+// LLM API는 한 번도 호출하지 않는다. 그래서 몇 번을 새로고침해도 토큰 비용은 0이다.
+async function refreshAll(force){
+  if(state.refreshing) return;
+  state.refreshing = true;
+  render();
+  await Promise.all([
+    loadBriefing(),
+    loadAgenda(),
+    loadQuotes(),
+    loadWeather(force),
+  ]);
+  state.refreshing = false;
+  state.refreshedAt = Date.now();
+  render();
+}
+
 // ====== 이벤트 ======
-document.getElementById('refresh').addEventListener('click', () => {
-  loadBriefing();
-  loadWeather();
-  loadAgenda();
+document.getElementById('refresh').addEventListener('click', () => refreshAll(true));
+
+// 홈 화면에 설치한 PWA는 한 번 띄우면 며칠씩 살아있는다 — 다시 앞으로 가져왔을 때
+// 화면이 어제 값이면 안 되므로, 마지막 갱신이 3분보다 오래됐으면 자동으로 다시 받아온다.
+const AUTO_REFRESH_AFTER = 3*60*1000;
+document.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'visible' && Date.now() - state.refreshedAt > AUTO_REFRESH_AFTER){
+    refreshAll();
+  }
 });
 
 // ====== 시작 ======
-loadBriefing();
-loadWeather();
-loadAgenda();
+refreshAll();
 </script>
 </body>
 </html>

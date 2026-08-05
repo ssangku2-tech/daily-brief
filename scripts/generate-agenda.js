@@ -138,6 +138,9 @@ async function fetchUnreadMails(accessToken) {
 
 // ── 4) Claude(haiku)로 "중요한 메일"만 골라 한 줄 요약 ────────────
 // 본문 전체가 아니라 제목·발신자·미리보기(snippet)만 넘긴다 — 최소 정보만 사용.
+// 이 프로젝트에 남은 유일한 LLM 호출이다(시장 브리핑 파이프라인은 2026-08-05부터 Claude 미사용).
+// 싸고 빠른 haiku를 일부러 고른 것 — sonnet/opus로 올리지 말 것.
+const MAIL_MODEL = 'claude-haiku-4-5';
 async function summarizeMails(mails) {
   if (mails.length === 0) return [];
   const listText = mails
@@ -161,7 +164,7 @@ ${listText}
       'anthropic-version': '2023-06-01'
     },
     body: JSON.stringify({
-      model: 'claude-haiku-4-5',
+      model: MAIL_MODEL,
       max_tokens: 1000,
       messages: [{ role: 'user', content: prompt }]
     })
@@ -171,6 +174,12 @@ ${listText}
     return [];
   }
   const data = await res.json();
+  // 이 프로젝트에 남은 유일한 LLM 호출이라, 매일 실제 토큰 사용량을 로그에 남겨둔다
+  // (Actions 로그에서 추정치가 아닌 실측 비용을 확인할 수 있게. haiku-4.5 = 입력 $1 / 출력 $5 per 1M)
+  const u = data.usage || {};
+  const cost = ((u.input_tokens || 0) / 1e6) * 1 + ((u.output_tokens || 0) / 1e6) * 5;
+  console.log(`[claude] ${MAIL_MODEL} 입력 ${u.input_tokens ?? '?'} · 출력 ${u.output_tokens ?? '?'} 토큰 ≈ $${cost.toFixed(5)}`);
+
   let txt = (data.content || []).filter(c => c.type === 'text').map(c => c.text).join('');
   txt = txt.replace(/```json|```/g, '').trim();
   const start = txt.indexOf('[');

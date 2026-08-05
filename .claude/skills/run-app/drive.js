@@ -27,9 +27,9 @@ const fakeDate = di !== -1 ? process.argv[di + 1] : null;
 
   const failures = [];
   const notFound = [];
-  // 브리핑 JSON 의 404 는 "아직 그날 게 없다"는 정상 신호다 (CLAUDE.md).
-  // 앱은 이걸 받아 지난 브리핑으로 넘어간다. 실패로 세면 안 된다.
-  const expected404 = /briefings\/\d{4}-\d{2}-\d{2}\.json$/;
+  // 브리핑·일정 JSON 의 404 는 "아직 그날 게 없다"는 정상 신호다 (CLAUDE.md).
+  // 브리핑은 지난 날짜로 폴백하고, 일정·메일은 빈 상태를 그린다. 실패로 세면 안 된다.
+  const expected404 = /(briefings|agenda)\/\d{4}-\d{2}-\d{2}\.json$/;
   page.on('response', r => {
     if (r.status() !== 404) return;
     notFound.push(r.url().split('/').pop());
@@ -65,11 +65,14 @@ const fakeDate = di !== -1 ? process.argv[di + 1] : null;
       cardSub: t('.card .sub'),
       // 오늘 것이 아닐 때만 채워진다
       staleBanner: document.querySelector('.stale')?.textContent.trim() || null,
-      summary: t('.summary'),
-      indices: block('주요 지수')?.querySelectorAll('.idx-row').length || 0,
-      stockRows: block('관심 종목')?.querySelectorAll('.stock-row').length || 0,
-      stockNotes: block('관심 종목')?.querySelectorAll('.stock-note').length || 0,
+      weather: t('#weather-row'),
+      // 지수는 카드 안이 아니라 헤더 아래 스트립에 항상 떠 있다 (2026-08-05 화면 재구성)
+      indices: document.querySelectorAll('#idx-strip .idx-chip').length,
+      stockRows: block('관심 종목')?.querySelectorAll('.stk').length || 0,
+      stockNews: block('관심 종목')?.querySelectorAll('.stk-news a').length || 0,
       newsCount: block('주요 뉴스')?.querySelectorAll('.news-item').length || 0,
+      anthropicCount: block('앤트로픽')?.querySelectorAll('.news-item').length || 0,
+      refreshSub: t('#refresh-sub'),
       // state·todayKST·isStale 은 스크립트 스코프에만 있다 (window 로는 안 잡힘)
       shownDate: typeof state !== 'undefined' ? state.shownDate : null,
       todayKST: typeof todayKST === 'function' ? todayKST() : null,
