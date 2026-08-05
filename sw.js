@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v24';
+const CACHE='daily-brief-v25';
 // 앱 셸 — 이 파일들이 없으면 앱이 뜨지 않으므로 설치 단계에서 반드시 캐시한다.
 const CORE=['./','./index.html','./manifest.json'];
 // 아이콘은 아직 저장소에 없을 수 있다. addAll 은 하나만 404 나도 전체가 실패해
@@ -26,10 +26,27 @@ self.addEventListener('activate',e=>{
 // 경고를 띄우거나 구독을 해지한다 — 무슨 일이 있어도 showNotification 은 호출해야 한다.
 self.addEventListener('push',e=>{
   e.waitUntil((async()=>{
+    const get=async u=>{ try{ const r=await fetch(u,{cache:'no-store'}); return r.ok?await r.json():null; }catch(_){ return null; } };
+
+    // 푸시는 내용이 없으므로 "무슨 알림인지"도 여기서 판단한다. 급변동 알림은 발송 직전에
+    // alerts/latest.json 을 갱신·배포하므로, 그 파일이 방금 쓰인 것이면 급변동 알림이다.
+    // 20분은 크론 간격(30분)보다 짧아 지난 알림을 다시 띄우지 않으면서, 배포·전달 지연은
+    // 충분히 감당하는 값이다.
+    const alert=await get('alerts/latest.json');
+    if(alert&&alert.at&&(Date.now()-new Date(alert.at).getTime())<20*60*1000&&(alert.items||[]).length){
+      const txt=alert.items.map(i=>`${i.name} ${i.pct>0?'+':''}${i.pct}%`).join('\n');
+      await self.registration.showNotification('📈 관심 종목 급변동',{
+        body:txt,
+        icon:'./icon-192.png',
+        badge:'./icon-192.png',
+        tag:'stock-alert',
+      });
+      return;
+    }
+
     let body='앱을 열어 확인하세요';
     try{
       const key=new Date(Date.now()+9*3600*1000).toISOString().slice(0,10); // KST 오늘
-      const get=async u=>{ try{ const r=await fetch(u,{cache:'no-store'}); return r.ok?await r.json():null; }catch(_){ return null; } };
       const [b,a]=await Promise.all([get(`briefings/${key}.json`),get(`agenda/${key}.json`)]);
       const lines=[];
       if(b&&b.summary) lines.push(b.summary);
@@ -71,8 +88,10 @@ self.addEventListener('fetch',e=>{
   // workers.dev = 시세 프록시(stock-proxy). 접속 시점 시세를 캐시하면 낡은 값이 그대로
   // 나오므로 반드시 캐시 우회 대상이어야 한다.
   if(url.includes('workers.dev')||url.includes('open-meteo.com')||url.includes('bigdatacloud.net')||url.includes('fonts.g')||url.includes('gstatic.com')){return}
-  // 매일 갱신되는 브리핑/일정·메일은 네트워크 우선(실패 시 캐시) — 오프라인에서 어제 것이라도 보이게
-  if(url.includes('/briefings/')||url.includes('/agenda/')){
+  // 매일 갱신되는 브리핑/일정·메일·급변동 알림은 네트워크 우선(실패 시 캐시) —
+  // 오프라인에서 어제 것이라도 보이게. (alerts/ 는 지금은 서비스워커가 직접 읽어서
+  // 이 핸들러를 타지 않지만, 나중에 페이지가 읽게 되면 캐시된 낡은 알림을 보게 된다)
+  if(url.includes('/briefings/')||url.includes('/agenda/')||url.includes('/alerts/')){
     e.respondWith(
       fetch(e.request).then(resp=>{
         if(resp.ok){const cl=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,cl))}

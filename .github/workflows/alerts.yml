@@ -1,0 +1,71 @@
+name: Stock Alerts
+
+on:
+  schedule:
+    # 장중에만 돈다. 30분 간격이고 GitHub Actions 예약은 수십 분씩 밀릴 수 있으므로,
+    # 이건 "실시간 트레이딩 알림"이 아니라 "크게 움직였다는 걸 알려주는" 용도다.
+    #
+    # 한국장 KST 09:00~15:30 = UTC 00:00~06:30 (평일)
+    - cron: '*/30 0-6 * * 1-5'
+    # 미국 정규장 KST 22:30~05:00 = UTC 13:30~20:00. 서머타임에 한 시간 밀리므로
+    # 앞뒤로 넉넉히 잡는다 — 장 밖 시간에 돌아도 전일 종가 대비라 값이 안 바뀌어 무해하다.
+    - cron: '*/30 13-20 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 30분 간격이라 앞 실행과 겹칠 일은 드물지만, 겹치면 alerts/ 커밋이 충돌한다.
+concurrency:
+  group: stock-alerts
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Check for big moves
+        id: check
+        env:
+          # 앱의 "알림 종목 내보내기"로 만든 목록. 없으면 WATCH 만 감시한다.
+          ALERT_SYMBOLS: ${{ secrets.ALERT_SYMBOLS }}
+          # 저장소 Variables 에서 조절 (Settings → Secrets and variables → Variables).
+          ALERT_THRESHOLD: ${{ vars.ALERT_THRESHOLD }}
+        run: node scripts/check-alerts.js
+
+      # 서비스워커가 alerts/latest.json 을 읽어 알림 문구를 만들기 때문에,
+      # 반드시 커밋·배포가 끝난 뒤에 푸시를 보내야 한다.
+      - name: Commit alerts
+        if: steps.check.outputs.alerted == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add alerts/
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "alert: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')"
+            git pull --rebase --autostash
+            git push
+          fi
+
+      # Pages 배포가 끝나야 서비스워커가 새 alerts/latest.json 을 읽는다.
+      # 크론 자체가 이미 수십 분 밀리는 마당이라 이 1분 반은 문제가 되지 않는다.
+      - name: Wait for Pages deploy
+        if: steps.check.outputs.alerted == 'true'
+        run: sleep 90
+
+      - name: Send push notification
+        if: steps.check.outputs.alerted == 'true'
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+        run: node scripts/send-push.js

@@ -394,6 +394,7 @@ let state = {
   pushCopied: false,
   pushShowSub: false, // 구독 JSON 을 펼쳐 보고 있는지 (설정 끝나면 접어둔다)
   assetsRevealed: false, // 자산 금액을 펼쳐 보고 있는지. 일부러 localStorage 에 두지 않는다
+  alertCopied: false,    // 급변동 알림 종목 목록을 복사했는지
 };
 
 // ====== 유틸 ======
@@ -918,6 +919,18 @@ function addHolding(){
   loadQuotes().then(render); // 새로 추가한 티커의 시세를 받아온다
   render();
 }
+// 급변동 알림이 감시할 종목 목록을 만든다. 서버(Actions)는 이 기기의 localStorage 를
+// 볼 수 없으므로, 한 번 내보내 GitHub Secret(ALERT_SYMBOLS)에 넣어줘야 한다.
+// 심볼과 표시용 이름만 담는다 — 수량·평단은 알림에 필요 없고, 넣으면 자산 규모가 드러난다.
+function exportAlertSymbols(){
+  const list = effectiveHoldings().list;
+  if(!list.length){ state.assetError = '내보낼 보유 종목이 없어요.'; render(); return; }
+  const txt = list.map(h => `${h.symbol}=${h.label}`).join(',');
+  navigator.clipboard.writeText(txt)
+    .then(() => { state.alertCopied = true; state.assetError = ''; render(); })
+    .catch(() => { state.assetError = `복사 실패 — 직접 복사하세요: ${txt}`; render(); });
+}
+
 // 금액 펼치기/가리기. state 에만 두어 앱을 다시 열면 자동으로 다시 가려진다.
 function toggleAssets(){
   state.assetsRevealed = !state.assetsRevealed;
@@ -1022,6 +1035,12 @@ function renderAssets(){
   const revealBtn = holdings.length
     ? '<button class="asset-reveal" onclick="toggleAssets()">' + (masked ? '금액 보기' : '가리기') + '</button>' : '';
 
+  // 급변동 알림용 종목 목록 내보내기. 종목을 추가·삭제하면 다시 내보내야 한다.
+  const alertBtn = holdings.length
+    ? '<button class="asset-reveal" onclick="exportAlertSymbols()">'
+      + (state.alertCopied ? '복사됨 ✓ — GitHub Secret ALERT_SYMBOLS 에 붙여넣기' : '급변동 알림 종목 내보내기')
+      + '</button>' : '';
+
   const err = state.assetError ? '<div class="stale">' + esc(state.assetError) + '</div>' : '';
   // 수동 입력 폼은 포트폴리오 데이터가 없을 때만 — 있으면 그쪽이 원본이라 여기서 고칠 일이 없다
   const form = source === 'manual'
@@ -1033,7 +1052,7 @@ function renderAssets(){
     : '';
 
   const jumpSub = source === 'portfolio' ? '계좌별 현황 · 종목 추가·수정' : '계좌별 현황 · 전체 내역';
-  const inner = (holdings.length ? totalRows + rows + revealBtn : empty) + err + form
+  const inner = (holdings.length ? totalRows + rows + revealBtn + alertBtn : empty) + err + form
     + '<a class="jump" href="' + PORTFOLIO_URL + '" target="_blank" rel="noopener" style="margin-top:12px">'
     + '<div class="jump-main"><div class="jump-title">포트폴리오 앱에서 자세히 보기</div>'
     + '<div class="jump-sub">' + jumpSub + '</div></div><span class="jump-arrow">→</span></a>';
