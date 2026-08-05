@@ -1264,7 +1264,7 @@ document.addEventListener('visibilitychange', () => {
 // ====== 아침 브리핑 알림 (웹 푸시) ======
 // 공개키는 공개돼도 안전한 값이라 그대로 커밋한다(비밀키는 GitHub Secret 에만 둔다).
 // 비어 있으면 알림 기능 전체가 조용히 숨겨진다 — scripts/setup-push.js 로 만들어 채운다.
-const VAPID_PUBLIC_KEY = '';
+const VAPID_PUBLIC_KEY = 'BDxDlUmSuwXF19pJwhvTsEB0qeGUUgAJ3mcBcocL3qj5Im5W4LK0Vg0O1qkneqTKDaix4OdQRmTBWYT9HIrvwLQ';
 
 const pushSupported = () =>
   'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;

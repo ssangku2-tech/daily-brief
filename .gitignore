@@ -5,3 +5,6 @@
 .claude/skills/*/package-lock.json
 .claude/skills/*/package.json
 app.png
+
+# setup-push.js 가 만드는 VAPID 비밀키. 절대 커밋 금지.
+push-keys.txt

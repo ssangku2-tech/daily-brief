@@ -69,7 +69,7 @@ jobs:
       - name: Send push notification
         if: steps.gen.outputs.generated == 'true'
         env:
+          # 공개키는 시크릿이 아니다 — send-push.js 가 index.html 에서 직접 읽는다.
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
-          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
         run: node scripts/send-push.js

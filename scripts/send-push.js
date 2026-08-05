@@ -12,11 +12,28 @@
 //   PUSH_SUBSCRIPTION  — 앱에서 구독 후 복사한 JSON
 const crypto = require('crypto');
 
-const { VAPID_PRIVATE_KEY, VAPID_PUBLIC_KEY, PUSH_SUBSCRIPTION } = process.env;
+const { VAPID_PRIVATE_KEY, PUSH_SUBSCRIPTION } = process.env;
+
+// 공개키는 index.html 에 이미 공개돼 있으므로 Secret 으로 또 받지 않고 거기서 읽는다
+// (사용자가 등록해야 할 Secret 이 하나 줄고, 두 값이 어긋날 일도 없다).
+function readPublicKey() {
+  if (process.env.VAPID_PUBLIC_KEY) return process.env.VAPID_PUBLIC_KEY; // 있으면 그걸 우선
+  const fs = require('fs');
+  const path = require('path');
+  const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+  const m = html.match(/const VAPID_PUBLIC_KEY = '([^']*)'/);
+  return m ? m[1] : '';
+}
+const VAPID_PUBLIC_KEY = readPublicKey();
 
 // 알림은 이 앱의 필수 기능이 아니다 — 설정이 없으면 조용히 넘어가고 브리핑 생성은 그대로 성공시킨다.
 if (!VAPID_PRIVATE_KEY || !VAPID_PUBLIC_KEY || !PUSH_SUBSCRIPTION) {
-  console.log('푸시 설정(VAPID_*/PUSH_SUBSCRIPTION)이 없어 알림을 건너뜁니다.');
+  const missing = [
+    !VAPID_PRIVATE_KEY && 'VAPID_PRIVATE_KEY(시크릿)',
+    !VAPID_PUBLIC_KEY && 'VAPID_PUBLIC_KEY(index.html)',
+    !PUSH_SUBSCRIPTION && 'PUSH_SUBSCRIPTION(시크릿)',
+  ].filter(Boolean).join(', ');
+  console.log(`푸시 설정이 없어 알림을 건너뜁니다 — 빠진 것: ${missing}`);
   process.exit(0);
 }
 
