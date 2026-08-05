@@ -289,6 +289,14 @@
   }
   .push-btn:active{background:#232c50}
   .push-msg{font-size:11px;line-height:1.5;color:var(--tx-dim)}
+  /* 설정이 끝난 뒤의 기본 모습 — 상태 한 줄과 펼치기 링크만 남는다 */
+  .push-status{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .push-link{
+    flex-shrink:0;background:none;border:none;color:var(--tx-faint);
+    font-size:11px;font-family:inherit;cursor:pointer;
+    padding:4px 6px;text-decoration:underline
+  }
+  .push-link:active{color:var(--tx)}
   .push-msg code{background:var(--bg-card-2);border-radius:4px;padding:1px 4px;font-size:10px}
   /* 구독 JSON 은 한 번 복사하면 끝이라 넓게 둘 이유가 없다 — 접힌 느낌으로 작게 */
   .push-sub{
@@ -376,6 +384,7 @@ let state = {
   pushSub: null,    // 웹 푸시 구독 JSON (GitHub Secret 에 넣을 값)
   pushError: '',
   pushCopied: false,
+  pushShowSub: false, // 구독 JSON 을 펼쳐 보고 있는지 (설정 끝나면 접어둔다)
 };
 
 // ====== 유틸 ======
@@ -1310,6 +1319,12 @@ async function enablePush(){
   render();
 }
 
+function togglePushSub(){
+  state.pushShowSub = !state.pushShowSub;
+  if(!state.pushShowSub) state.pushCopied = false; // 다시 펼쳤을 때 "복사됨"이 남아있지 않도록
+  render();
+}
+
 function copyPushSub(){
   if(!state.pushSub) return;
   navigator.clipboard.writeText(state.pushSub)
@@ -1331,11 +1346,18 @@ function renderPushRow(){
       ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
     </div>`;
   }
-  // 구독 완료 — 이 JSON 을 GitHub Secret(PUSH_SUBSCRIPTION)에 넣어야 실제로 발송된다
+  // 구독 완료 상태. 구독 JSON 은 GitHub Secret 에 한 번 넣고 나면 다시 볼 일이 없으므로
+  // 접어둔다 — 상시 노출하면 설정이 끝난 뒤에도 화면 아래에 계속 남아 거슬린다.
+  // 기기를 바꾸거나 Secret 을 다시 등록할 때만 펼치면 된다.
   return `<div class="push-row">
-    <span class="push-msg">🔔 알림 켜짐 — 아래 구독 정보를 GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣으면 발송이 시작됩니다.</span>
-    <textarea class="push-sub" readonly onclick="this.select()">${esc(state.pushSub)}</textarea>
-    <button class="push-btn" onclick="copyPushSub()">${state.pushCopied ? '복사됨 ✓' : '구독 정보 복사'}</button>
+    <div class="push-status">
+      <span class="push-msg">🔔 아침 브리핑 알림 켜짐</span>
+      <button class="push-link" onclick="togglePushSub()">${state.pushShowSub ? '접기' : '구독 정보'}</button>
+    </div>
+    ${state.pushShowSub ? `
+      <span class="push-msg">GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣을 값입니다. 이미 등록했다면 다시 넣지 않아도 됩니다.</span>
+      <textarea class="push-sub" readonly onclick="this.select()">${esc(state.pushSub)}</textarea>
+      <button class="push-btn" onclick="copyPushSub()">${state.pushCopied ? '복사됨 ✓' : '구독 정보 복사'}</button>` : ''}
     ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
   </div>`;
 }
