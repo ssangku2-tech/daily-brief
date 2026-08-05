@@ -1,0 +1,165 @@
+{
+  "sessionDate": "2026-08-04",
+  "sessionDateLabel": "2026년 8월 4일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,736.52",
+      "changePct": "+1.79%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,584.99",
+      "changePct": "+2.59%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "54,085.88",
+      "changePct": "+1.71%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow surges 900 points, S&P 500 closes above 7,700 for first time in booming Wall Street rally",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5mTVJFdXRwODc0clJoV1JSa1o5YlZlWk42N3NOUUZ0cFBCUS1HYmVoaHAwVUZCYlFMYnNRckQxNnp3NVpoemVvVk1zQ3BHQ1g1ay1ET00ydEVjQWozZXNqWnZnNEdFXzB0UVdqcGt2Y2kyTDlyS1NR0gF8QVVfeXFMTXpxRzNRQW5tbjVzV3Z5OThSRkJydGUwcExfODExQUVKVmM1YW9oR0NzQll6X1dkbTVqZGVoR1ZlTnRybHI5SUtVcFF5R1ZuV08tY3c1cTZqM2VtOEd4cjNDM2xUOHh0SWh1UjNnZGdWUVc5RVZ2LTNLbHNEMg?oc=5",
+      "date": "2026-08-04",
+      "source": "CNBC",
+      "ko": "S&P 500이 7,700을 넘어 사상 최고치 갱신, 다우지수 900포인트 급등"
+    },
+    {
+      "title": "US stock market hits record highs as AI profits pile and oil prices ease",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPYkxGTktpd3RhcFI2bzdDWDc0OU5XdlpQdU4xSWtOaVdzZVgtc3VLbXg0NHM2ZkVocVRLam5rVXFuV1FPYmRoY1hqdGFWdWdWYTFvMUhWVExIbHlXc0tJc2lVVjhIODVaRDhFMHdHU05hSElLQ0dqWHg3ODAtcTloYTl4LVFLSEo4ZHl4QnY2aVF4X1Y4TjNYT1h5T08?oc=5",
+      "date": "2026-08-04",
+      "source": "The Guardian",
+      "ko": "AI 수익 증가와 유가 하락이 시장 강세를 뒷받침"
+    },
+    {
+      "title": "Stocks are surging to fresh records as the US says a deal is close to reopen the Strait of Hormuz",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNZE45bHRqblJ3eDZ4Ykc0VThWUHA1T2dqMTNNVVg1VkN6blhCZ2h1U1NfZ3poNERtNDU5S080Wm4yNHktcXc0SnVXazIzYkF5ZjNjeW11LTRwbFVLWkg4Q0NfN052bERvbFVKSzctUVhIc1dJZjRoLUtMTUc1MkFRbVUyaHJnNVMzN3lsWTlJdzc3MUZHV0t4cUFLOGI3OGR0cWVz?oc=5",
+      "date": "2026-08-04",
+      "source": "Business Insider",
+      "ko": "호르무즈 해협 재개통 협상 진전이 낙관 심리 조성"
+    },
+    {
+      "title": "The stock market soars. 5 reasons behind the big surge Tuesday",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTnoxbUJDSzQ3d1dfR2RzYUpYeXpzc2d3b3VkM3haZ0l1Q0psZFVPS25va2xJNU1ORU5DTlBGX2gwLVowdDMxVDNhdXF5U3E1MkY2eElEaDgwTVBGSGE2WHZxSWswSDFIQXo4TC1held4cXpDeGVQNTAwa1pqdVVnTExXX05Ydjl3X0pKZXEybWRUTVh3aHhwTXBVWUNxaHfSAaQBQVVfeXFMTy1CVURoeE9FSDRPT2pZNVk5MjAtQWN2S3Z4SDlRMzI3b2RXaUpSRFctUk5vQTM0bTlzMnFrZjBfUXRrYnlnSHZmNDBsYU5WYmJNNXBTdFA4NzkzUGVaY1RXZm1zZ2J2cEE3dmJndmFobk5aNF9NSTZjNXFVbjNsT3Vodk82dTEyR3U1dzc2Z2UwQzAwS0FPWkVYaW05aElSb3VfcUc?oc=5",
+      "date": "2026-08-04",
+      "source": "CNBC",
+      "ko": "화요일 급등장의 5가지 배경 요인 분석"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$211.94",
+      "changePct": "+2.56%",
+      "up": true,
+      "news": [
+        {
+          "title": "Musk Praises Vera Rubin Platform on SpaceX Earnings Call, Nvidia Stock Climbs",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNcEkzVVlJb2twNWk1UUItY2IzM2xNZHlRWlFoejBkRlFWUmk2dTdxdnJMWGxHM1FXYUtvWXhkLU1TY0UteHk5eXR0SDViMUwzYV9OZHR6VU9iVHhIU3NmcE1wNmE3dWREWXZINC04ZjN3V09QNGtjTjlMMDZvS1JWSVJDaWlIZUpXcnpuTlJpTHBOTmlUR1h6NnI3QlZwejlDalJnWFNISWJNSl91WkFkNVQxaWlCTWlKcTJNa1R3ZFYtZWVUSmlQYVdiSEtnVmUxdWNv?oc=5",
+          "date": "2026-08-04",
+          "source": "Benzinga",
+          "ko": "머스크가 SpaceX 실적발표에서 베라 루빈 플랫폼 호평, 엔비디아 주가 상승"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$518.58",
+      "changePct": "+7.00%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD's revenue climbs 50% and data center sales doubled, but the stock is down",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1FSkxiYWZwZ3B4SElFOWl3R0tlcUowc0ktU3JLN3lBTG9iSFBoMllXVExVMjR2bHY1NjhkSzZzRE5hdzZjcVBkM2NoMkl1Y3YyT09xd2NSVEx0ODA1NkZSbnh3aGl0ZTJJRVdkS1NLVWl6Z9IBd0FVX3lxTE5DZjZ1S0J3SURPUW8tNlIwbG1CeDIwRDlPY1lRQmN1YW9GQjZ4RjEtMmtQS0tvS0RMS2UxQW5Bc0UxU0hnbUxuYk10MlFxNXFVSWJ5MUc1YWVHRG4zSWEyY3dTS2k1RFA5dW1sWVBCdkNZLTFMRjgw?oc=5",
+          "date": "2026-08-04",
+          "source": "CNBC",
+          "ko": "AMD 매출 50% 증가·데이터센터 매출 2배 증가했으나 주가는 하락"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$100.86",
+      "changePct": "+10.84%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$417.17",
+      "changePct": "+2.72%",
+      "up": true,
+      "news": [
+        {
+          "title": "Stanley Druckenmiller Holds Taiwan Semiconductor After Its Q2 Beat, Betting Chip Demand From Nvidia and AMD Keeps Growing",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNcEM2MU1UdmdPTkMwenNRWG01YWp4c3VheEtySUtsS3ZCd1JoZWlBcWdjMFdGRzJNX0wwaVRKX2Y2QTNodk02RzQzaXB0UlZyVlhkcHJsek9rS2ZFcnJWMDZMOW0xRVBQNlY2RTQxOTR1U0VnR2hRR1dCSGJOWHZqZTREb0E3MEVaN1E?oc=5",
+          "date": "2026-08-04",
+          "source": "fool.com",
+          "ko": "스탠리 드럭케밀러, TSMC Q2 실적 호평 후 보유 지속"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$892.67",
+      "changePct": "+7.62%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스 ADR",
+      "ticker": "SKHY",
+      "price": "$154.38",
+      "changePct": "+8.17%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix Stock Gets a Flurry of Buy Ratings. Why Analysts Love the Memory-Chip Maker.",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQb1J1eWxZOEhjNDJQWE9pQ0hERWVZM2ZuS3RfalhKeTR2R3haUW8wdkFVT2ZOcER5RFl0X2doNVJ2UGxkckJabkFIVy1QbE90X2piWXRadGZ6TzE4RnBkdG9qbmR1UHhDZjdyM0tyemJ1QndaRGNQSlRKZzdUd0lGNlExemR4ZVE?oc=5",
+          "date": "2026-08-04",
+          "source": "Barron's",
+          "ko": "SK하이닉스가 애널리스트들의 매수 평가 쏟아진다"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$162.66",
+      "changePct": "+29.45%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Inks $10 Billion Computing Deal With New Cloud Startup",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSlB6WWhvX0hXc09XN1J3SWJWR0FVVC1lRXJ1LXl4a0hmdXk4THcyek5VNmMyZWtNWjNVVWE5eGYycWo1aktHQTl2RG9pMXU4SGtrOWx6WE85QzgxM2RhMVJKb25IbGxyajVraE9ZXzFzZ3lwdDUyeTM3Rk9jaWFudTI5Q0psQ2tFakNCVkVGdE1HWHdFc2Vhd01ZN0dYeW84eEtkUkV6RUFURTN3bnFXanhNaUg?oc=5",
+      "date": "2026-08-04",
+      "source": "Bloomberg.com",
+      "ko": "앤트로픽, 신규 클라우드 스타트업 볼타와 100억 달러 컴퓨팅 거래 체결"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic names global affairs chief to tackle AI policy as Trump tensions persist",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObGljb1R4TVhDaGJuYS1XLVRCYzBUNWpFOGxwSFJvNGlPemtwWkdrXzhWaDhWemd6WTVod01nSk1OOTRIdEdXWnRsa1RueHdfS1hKWmhTM1ZvbUwzUWZaazJsTy1obFFUYXFWMDJseWQtS0JXSkFuRkp4ZnVvRmFjLWxCdmhRdjNIZ2tRTWRoSlQyb3dpaUk1RUVjNU1Td3Jf0gGmAUFVX3lxTE9qcExhRGdCS3hVclRJSnJhdHdyajdZeUw5ODJjam1EUzlRQnFjNHhjanZ6Q0p6QXl0RnQyM0pUR29iYTZtbEdPVXZNUUQ2VENWNWVWbWc3V2x3TGJNZE5SZzVfUjlQcXlQMC1CT1gwTFRiNmVzV2ItakN4ZTBXbFo0REx3NklUaW5sdnFfUE81RFFRTnROWWdlYW1IZmRVaGN2cU5IWHc?oc=5",
+      "date": "2026-08-04",
+      "source": "CNBC",
+      "ko": "앤트로픽, AI 정책 대응을 위해 글로벌 정무 담당자 신규 임명"
+    }
+  ],
+  "summary": "강한 기업 실적과 이란 핵협상 진전 기대감이 시장을 견인했다.",
+  "generatedAt": "2026-08-05 15:49",
+  "date": "2026-08-05"
+}
