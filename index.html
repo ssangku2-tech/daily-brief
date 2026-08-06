@@ -1059,8 +1059,20 @@ function renderAssets(){
   const hide = txt => masked ? '●●●●●' : txt;
   const hidePl = txt => masked ? '●●●' : txt;
 
+  // 평가금액이 큰 종목부터 내림차순. 통화가 섞여 있으면 환율로 원화 환산해 비교한다 —
+  // 안 그러면 $200 짜리가 20만원짜리보다 위로 온다. 환율을 못 구했을 때(fx null)는 어쩔 수
+  // 없이 원화 종목이 위로 몰리는데, 그때는 총 평가액도 통화별로 나뉘어 나오는 상황이다.
+  // 시세를 못 받은 종목은 비교할 금액이 없으므로 맨 뒤로 보낸다.
+  const sortValue = h => {
+    const q = bySymbol[h.symbol];
+    if(!q) return -1;
+    return q.price * h.qty * ((q.currency || 'USD') === 'USD' ? (fx || 1) : 1);
+  };
+  // 원본 배열은 건드리지 않는다 — effectiveHoldings() 의 결과를 다른 곳(알림 목록)도 쓴다
+  const ordered = holdings.slice().sort((a, b) => sortValue(b) - sortValue(a));
+
   const totals = {};
-  const rows = holdings.map(h => {
+  const rows = ordered.map(h => {
     const q = bySymbol[h.symbol];
     if(!q){
       return '<div class="asset-row"><div class="asset-main">'
