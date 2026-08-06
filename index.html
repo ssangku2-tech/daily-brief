@@ -1071,7 +1071,7 @@ function renderAssets(){
     }
     const cur = q.currency || 'USD';
     const value = q.price * h.qty;
-    const t = totals[cur] || (totals[cur] = {value:0, cost:0, valueCosted:0, missingAvg:0});
+    const t = totals[cur] || (totals[cur] = {value:0, cost:0, valueCosted:0, missingAvg:0, dayPl:0, dayBase:0});
     t.value += value;
     // 손익률은 "평단이 있는 종목의 평가액 ÷ 그 종목들의 매입액"으로만 계산한다.
     // 전체 평가액을 일부 종목의 매입액과 비교하면 수익률이 터무니없이 부풀려진다.
@@ -1084,11 +1084,12 @@ function renderAssets(){
     // 당일 손익 = (현재가 − 전일종가) × 수량. 포트폴리오 앱은 '오늘 매입'한 물량만 매입가를
     // 기준으로 삼지만 여기는 그 플래그를 읽지 않으므로, 매수한 당일에는 그 앱 숫자와 다를 수 있다.
     const dayPct = q.prev > 0 ? ((q.price / q.prev) - 1) * 100 : null;
+    const dayPl = dayPct === null ? null : (q.price - q.prev) * h.qty;
+    // 총 평가액의 당일 합계용. 전일종가를 못 받은 종목은 아예 빼므로, 합계 비율도 받은 종목 기준이다
+    if(dayPct !== null){ t.dayPl += dayPl; t.dayBase += q.prev * h.qty; }
     // 금액이라 가린다 — 등락률과 나란히 두면 수량이 역산된다
-    const dayPlHtml = dayPct === null ? '' : (() => {
-      const dayPl = (q.price - q.prev) * h.qty;
-      return '오늘 ' + hidePl((dayPl >= 0 ? '+' : '−') + esc(fmtMoney(Math.abs(dayPl), cur)));
-    })();
+    const dayPlHtml = dayPct === null ? ''
+      : '오늘 ' + hidePl((dayPl >= 0 ? '+' : '−') + esc(fmtMoney(Math.abs(dayPl), cur)));
     const dayCls = dayPct === null ? '' : (dayPct >= 0 ? 'up' : 'down');
     const midHtml = '<div class="asset-mid">'
       + '<div class="asset-price">' + esc(fmtMoney(q.price, cur)) + '</div>'
@@ -1122,30 +1123,39 @@ function renderAssets(){
   // 통화가 섞여도 환율이 있으면 원화 한 줄로 합친다. 못 구하면 통화별로 따로 보여준다.
   const curs = Object.keys(totals);
   const canMerge = fx && curs.every(c => c === 'KRW' || c === 'USD');
-  const totalBlock = (label, value, cost, valueCosted, missing, cur) => {
-    const pl = cost > 0 ? valueCosted - cost : null;
-    const pct = cost > 0 ? ((valueCosted / cost) - 1) * 100 : null;
+  // t 는 위에서 통화별로 쌓은 {value, cost, valueCosted, missingAvg, dayPl, dayBase} 그대로다.
+  // 두 손익을 나란히 쌓으므로 각 줄에 '오늘'/'누적' 을 붙인다 — 안 붙이면 어느 쪽인지 알 수 없다.
+  const totalBlock = (label, t, cur) => {
+    const pl = t.cost > 0 ? t.valueCosted - t.cost : null;
+    const pct = t.cost > 0 ? ((t.valueCosted / t.cost) - 1) * 100 : null;
     const cls = pl === null ? '' : (pl >= 0 ? 'up' : 'down');
+    const dayPct = t.dayBase > 0 ? (t.dayPl / t.dayBase) * 100 : null;
+    const dayCls = t.dayPl >= 0 ? 'up' : 'down';
     return '<div class="asset-total"><span class="asset-total-label">' + label + '</span>'
       + '<span class="asset-total-vals">'
-      + '<span class="asset-total-value">' + hide(esc(fmtMoney(value, cur))) + '</span>'
-      + (pl === null ? '' : '<span class="asset-total-pl ' + cls + '">'
+      + '<span class="asset-total-value">' + hide(esc(fmtMoney(t.value, cur))) + '</span>'
+      + (dayPct === null ? '' : '<span class="asset-total-pl ' + dayCls + '">오늘 '
+          + hidePl((t.dayPl >= 0 ? '+' : '−') + esc(fmtMoney(Math.abs(t.dayPl), cur)))
+          + ' (' + (dayPct >= 0 ? '+' : '') + dayPct.toFixed(2) + '%)</span>')
+      + (pl === null ? '' : '<span class="asset-total-pl ' + cls + '">누적 '
           + hidePl((pl >= 0 ? '+' : '−') + esc(fmtMoney(Math.abs(pl), cur)))
           + ' (' + (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%)</span>')
-      + (missing ? '<span class="asset-total-note">평단 입력분 기준</span>' : '')
+      + (t.missingAvg ? '<span class="asset-total-note">누적은 평단 입력분 기준</span>' : '')
       + '</span></div>';
   };
   let totalRows = '';
   if(canMerge && curs.length){
     const k = c => (c === 'USD' ? fx : 1);
-    totalRows = totalBlock('총 평가액',
-      curs.reduce((a,c) => a + totals[c].value * k(c), 0),
-      curs.reduce((a,c) => a + totals[c].cost * k(c), 0),
-      curs.reduce((a,c) => a + totals[c].valueCosted * k(c), 0),
-      curs.reduce((a,c) => a + totals[c].missingAvg, 0), 'KRW');
+    const m = {value:0, cost:0, valueCosted:0, missingAvg:0, dayPl:0, dayBase:0};
+    for(const c of curs){
+      const t = totals[c], r = k(c);
+      m.value += t.value * r; m.cost += t.cost * r; m.valueCosted += t.valueCosted * r;
+      m.dayPl += t.dayPl * r; m.dayBase += t.dayBase * r; m.missingAvg += t.missingAvg;
+    }
+    totalRows = totalBlock('총 평가액', m, 'KRW');
   } else {
     totalRows = curs.map(c => totalBlock('총 평가액' + (curs.length > 1 ? ' (' + esc(c) + ')' : ''),
-      totals[c].value, totals[c].cost, totals[c].valueCosted, totals[c].missingAvg, c)).join('');
+      totals[c], c)).join('');
   }
 
   const empty = '<div class="empty"><div class="big">💰</div>'
