@@ -1,11 +1,11 @@
 {
-  "at": "2026-08-05T15:37:39.070Z",
-  "threshold": 5,
+  "at": "2026-08-06T15:12:57.226Z",
+  "threshold": 8,
   "items": [
     {
-      "symbol": "AMD",
-      "name": "AMD",
-      "pct": -6.34
+      "symbol": "009150.KS",
+      "name": "삼성전기",
+      "pct": -9.37
     }
   ]
 }
