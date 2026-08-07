@@ -408,6 +408,11 @@ let state = {
   agendaDate: null, // 실제로 띄운 일정·메일의 날짜 (오늘 것이 없으면 과거 날짜가 들어온다)
   live: null,       // 접속 시점에 Worker에서 직접 받아온 시세 {indices, stocks, at}
   quoteStatus: 'idle', // 'idle' | 'loading' | 'ok' | 'fail' — 시세만의 상태 (뉴스와 별개)
+  liveNews: null,   // 접속 시점에 Worker 프록시로 받아온 뉴스 {news, aiNews, byTicker, at}
+  newsStatus: 'idle',  // 'idle' | 'loading' | 'ok' | 'fail'
+  liveMail: null,   // 접속 시점에 Gmail API 에서 직접 받아온 메일 {unread, mails, at}
+  mailStatus: 'idle',  // 'idle' | 'off' | 'loading' | 'ok' | 'fail' | 'need-auth'
+  mailError: '',
   refreshedAt: 0,   // 마지막 갱신 완료 시각 (epoch ms)
   refreshing: false,
   assetForm: {ticker:'', qty:'', avg:''}, // 자산 카드 입력 폼 (render 가 DOM 을 다시 그려도 값이 남도록)
@@ -480,8 +485,8 @@ function fmtAgo(ms){
 // 브리핑 JSON(매일 06:30 생성)의 시세는 하루 종일 고정이라, 낮에 열어보면 이미 낡은 값이다.
 // 그래서 "내 주식 현황" 포트폴리오 앱과 같은 방식으로 앱을 열 때마다 이 Worker에서 직접
 // 시세를 받아 덮어쓴다. Worker는 Access-Control-Allow-Origin:* 이라 브라우저에서 바로 호출된다.
-// (뉴스는 같은 방식이 불가능하다 — Google News RSS 는 CORS 헤더가 없어 브라우저에서 못 읽는다.
-//  그래서 뉴스는 계속 generate.js 가 매일 만들어 둔 briefings/*.json 에서 온다.)
+// (뉴스도 2026-08-07부터 같은 Worker의 프록시 엔드포인트로 접속 시점에 받아온다 — 아래
+//  "접속 시점 실시간 뉴스" 참고. 브리핑 JSON 은 이제 오프라인·실패 시의 폴백이다.)
 const WORKER_URL = 'https://stock-proxy.ssangku2.workers.dev';
 // name 은 generate.js 의 INDICES/WATCH 와 반드시 같아야 한다 — 브리핑 JSON 과 이름/티커로
 // 짝을 맞춰 시세만 갈아끼우기 때문이다. short 는 스트립 칩에 들어갈 짧은 표기.
@@ -490,14 +495,17 @@ const INDICES = [
   { name:'나스닥종합', short:'나스닥',  symbol:'^IXIC' },
   { name:'다우존스',   short:'다우',    symbol:'^DJI'  },
 ];
+// re 는 종목 뉴스 골라내기용이다 — Worker 의 종목 뉴스는 야후 티커 피드라 같은 섹터의
+// 일반 기사가 그대로 섞여 들어온다(엔비디아 칸에 정유주 기사가 오는 식). 티커만으로는
+// 못 거른다: MU 는 대학, AMD 는 황반변성 기사에 걸린다.
 const WATCH = [
-  { name:'엔비디아',      ticker:'NVDA' },
-  { name:'AMD',          ticker:'AMD'  },
-  { name:'인텔',          ticker:'INTC' },
-  { name:'TSMC',         ticker:'TSM'  },
-  { name:'마이크론',      ticker:'MU'   },
-  { name:'SK하이닉스 ADR', ticker:'SKHY' },
-  { name:'팔란티어',      ticker:'PLTR' },
+  { name:'엔비디아',      ticker:'NVDA', re:/nvidia|nvda/i },
+  { name:'AMD',          ticker:'AMD',  re:/\bamd\b|advanced micro/i },
+  { name:'인텔',          ticker:'INTC', re:/\bintel\b|intc/i },
+  { name:'TSMC',         ticker:'TSM',  re:/tsmc|taiwan semi/i },
+  { name:'마이크론',      ticker:'MU',   re:/micron/i },
+  { name:'SK하이닉스 ADR', ticker:'SKHY', re:/hynix|하이닉스/i },
+  { name:'팔란티어',      ticker:'PLTR', re:/palantir|pltr/i },
 ];
 
 async function fetchQuote(symbol){
@@ -568,6 +576,134 @@ async function loadQuotes(){
 function quoteFor(list, keyName, keyValue, fallback){
   const hit = (list || []).find(x => x[keyName] === keyValue);
   return hit || fallback;
+}
+
+// ====== 접속 시점 실시간 뉴스 (Cloudflare Worker 경유) ======
+// 예전에는 "뉴스는 브라우저에서 못 받는다"고 봤다 — Google News RSS 가 CORS 헤더를 주지
+// 않기 때문이다. 그런데 시세용으로 쓰던 그 Worker 에 범용 프록시(`?url=`)와 종목 뉴스
+// 엔드포인트(`?news=`)가 이미 있었다("내 주식 현황" 앱이 쓰는 것과 같은 것). 그래서 뉴스도
+// 시세와 똑같이 앱을 열 때마다 받아온다. LLM 은 여전히 한 번도 부르지 않으므로 비용은 0이다.
+//
+// 다만 소스는 바뀌었다. Google News 는 Cloudflare 데이터센터 IP 를 봇으로 보고 503("Sorry...")
+// 을 주므로 Worker 로 우회해도 못 읽는다 — 확인 완료. 그래서 CORS 우회가 필요한 두 블록은
+// 직접 RSS 를 주는 곳으로 옮겼다. 새 피드를 넣기 전에 반드시
+// `?url=<인코딩된 주소>` 로 한 번 찔러보고 진짜 XML 이 오는지 볼 것(Bing·Yahoo 뉴스 검색은
+// RSS 를 끊고 HTML 을 준다).
+// 마켓 피드 하나만 쓰면 하루에 몇 건 안 올라와 5건을 채우려다 일주일 전 기사까지 끌려온다.
+// 그래서 갱신이 잦은 CNBC 대문 피드를 같이 받아 최신순으로 섞는다.
+const NEWS_FEEDS = [
+  'https://www.cnbc.com/id/20910258/device/rss/rss.html',    // CNBC 마켓
+  'https://www.cnbc.com/id/100003114/device/rss/rss.html',   // CNBC 주요 뉴스
+];
+const AI_NEWS_FEED = 'https://techcrunch.com/tag/anthropic/feed/';              // TechCrunch 앤트로픽 태그
+const AI_NEWS_RE = /anthropic|claude/i;   // 태그 피드에도 곁가지 기사가 섞여 들어온다
+const NEWS_MAX = 5, AI_NEWS_MAX = 3, STOCK_NEWS_MAX = 2;
+
+// RSS/Atom 을 받아 {title, link, date, source} 배열로. 파싱은 브라우저 내장 DOMParser 로
+// 한다 — generate.js 는 Node 라 정규식 파서를 직접 짰지만, 여기서는 그럴 이유가 없다.
+// 접속 시점에 20건 남짓을 한꺼번에 Worker 로 쏘다 보니 한 건이 조용히 비는 일이 있다.
+// 그러면 그 블록만 어제 브리핑으로 되돌아가는데, 헤더는 "뉴스 지금 기준"이라 말하고 있어
+// 어긋난다. Worker 가 피드를 캐시하므로 한 번 더 부르는 값은 사실상 공짜다.
+async function fetchFeed(url, source){
+  const items = await fetchFeedOnce(url, source);
+  return items.length ? items : fetchFeedOnce(url, source);
+}
+async function fetchFeedOnce(url, source){
+  try{
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 10000);
+    const res = await fetch(`${WORKER_URL}/?url=${encodeURIComponent(url)}`,
+      {cache:'no-store', signal:ctrl.signal});
+    clearTimeout(timer);
+    if(!res.ok) return [];
+    const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
+    if(xml.querySelector('parsererror')) return [];
+    return [...xml.querySelectorAll('item, entry')].map(it => {
+      const get = t => (it.querySelector(t)?.textContent || '').trim();
+      const link = get('link') || it.querySelector('link')?.getAttribute('href') || '';
+      const when = get('pubDate') || get('published') || get('updated');
+      const d = when ? new Date(when) : null;
+      const ok = d && !isNaN(d);
+      return {
+        title: get('title'),
+        link,
+        // date 는 화면 표기용(KST 날짜), ts 는 정렬용 — 같은 날 기사들의 순서까지 지키려면
+        // 날짜 문자열만으로는 부족하다.
+        date: ok ? new Date(d.getTime() + 9*3600*1000).toISOString().slice(0,10) : '',
+        ts: ok ? d.getTime() : 0,
+        source,
+      };
+    }).filter(n => n.title && n.link);
+  }catch(e){
+    return [];   // 뉴스 한 블록이 비는 건 조용히 브리핑 JSON 으로 폴백하면 되는 일이다
+  }
+}
+
+// 종목 뉴스는 Worker 의 전용 엔드포인트를 쓴다 — 미국 티커는 야후, 국내 6자리 코드는
+// 네이버에서 종목별로 골라 준다(포트폴리오 앱이 종목 상세에서 쓰는 것과 같은 경로).
+async function fetchStockNews(ticker, re){
+  try{
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 10000);
+    const res = await fetch(`${WORKER_URL}/?news=${encodeURIComponent(ticker)}`,
+      {cache:'no-store', signal:ctrl.signal});
+    clearTimeout(timer);
+    if(!res.ok) return [];
+    const all = (res.status === 204 ? [] : ((await res.json()).news || []))
+      .filter(n => n.title && n.link)
+      .map(n => ({title: n.titleKo || n.title, link: n.link, source: n.office || '', date: ''}));
+    // 회사 이름이 제목에 있는 기사를 먼저 채우고, 모자라면 나머지로 메운다. 완전히
+    // 걸러내지는 않는다 — 종목별 뉴스가 통째로 비는 날이 잦은 게 원래 문제였다.
+    const hit = re ? all.filter(n => re.test(n.title)) : all;
+    const rest = all.filter(n => !hit.includes(n));
+    return [...hit, ...rest].slice(0, STOCK_NEWS_MAX);
+  }catch(e){
+    return [];
+  }
+}
+
+async function loadNews(){
+  state.newsStatus = 'loading';
+  const results = await Promise.all([
+    ...NEWS_FEEDS.map(u => fetchFeed(u, 'CNBC')),
+    fetchFeed(AI_NEWS_FEED, 'TechCrunch'),
+    ...WATCH.map(s => fetchStockNews(s.ticker, s.re)),
+  ]);
+  const general = results.slice(0, NEWS_FEEDS.length).flat();
+  const ai = results[NEWS_FEEDS.length];
+  const perStock = results.slice(NEWS_FEEDS.length + 1);
+  const byTicker = {};
+  WATCH.forEach((s, n) => { if(perStock[n].length) byTicker[s.ticker] = perStock[n]; });
+
+  // 피드는 발행순이 아니라 편집 순서로 온다 — 접속 시점에 받는 값인 만큼 최신순으로
+  // 세워야 "지금 뉴스"라는 표시와 맞는다. 두 피드에 같은 기사가 겹치므로 링크로 중복 제거.
+  const seen = new Set();
+  const news = general
+    .filter(n => !seen.has(n.link) && seen.add(n.link))
+    .sort((a, b) => b.ts - a.ts)
+    .slice(0, NEWS_MAX);
+  const aiNews = ai.filter(n => AI_NEWS_RE.test(n.title)).slice(0, AI_NEWS_MAX);
+
+  if(news.length || aiNews.length || Object.keys(byTicker).length){
+    state.liveNews = {news, aiNews, byTicker, at: Date.now()};
+    state.newsStatus = 'ok';
+  } else {
+    state.newsStatus = 'fail'; // 직전에 받아둔 state.liveNews 는 지우지 않는다
+  }
+}
+
+// 아침 브리핑에는 haiku 가 붙여둔 한국어 한 줄(ko)이 있다. 실시간으로 받은 항목 중
+// 같은 기사(제목 일치)에는 그 한국어를 그대로 얹어준다 — 새로 들어온 기사만 원문
+// 그대로 나오고, 아침에 이미 요약된 기사는 한국어로 읽힌다. 클라이언트에서 LLM 을
+// 부를 수는 없으므로(접속마다 토큰이 나간다) 이게 붙일 수 있는 한국어의 전부다.
+function koMapOf(b){
+  const map = new Map();
+  const add = list => (list || []).forEach(n => { if(n.title && n.ko) map.set(n.title, n.ko); });
+  if(b){
+    add(b.news); add(b.aiNews);
+    (b.stocks || []).forEach(s => add(s.news));
+  }
+  return map;
 }
 
 // ====== 상단 날씨 (Open-Meteo, API 키 불필요) ======
@@ -761,6 +897,18 @@ function renderIndexStrip(){
 
 function renderUSBriefing(b){
   // b: 브리핑 데이터 (없으면 null)
+  // 뉴스는 접속 시점 값(state.liveNews)이 우선, 못 받았으면 브리핑 JSON 으로 폴백한다.
+  // 블록 단위로 각각 판단하므로 "종목 뉴스만 실시간, 나머지는 아침 것" 같은 조합도 정상이다.
+  const ln = state.liveNews;
+  const ko = koMapOf(b);
+  const withKo = list => (list || []).map(n => (n.ko || !ko.has(n.title)) ? n : {...n, ko: ko.get(n.title)});
+  const newsList  = (ln && ln.news.length)   ? withKo(ln.news)   : ((b && b.news) || []);
+  const aiList    = (ln && ln.aiNews.length) ? withKo(ln.aiNews) : ((b && b.aiNews) || []);
+  const stockNews = t => (ln && ln.byTicker[t]) ? withKo(ln.byTicker[t]) : null;
+  // 브리핑 파일 자체가 없어도 실시간 뉴스만으로 카드를 채울 수 있어야 한다 —
+  // 새벽에 크론이 밀렸을 때 "아무것도 없는 화면" 대신 지금 뉴스라도 보이게.
+  if(!b && ln && (newsList.length || aiList.length)) b = {};
+
   let inner;
   if(!b){
     // === 브리핑이 아직 없을 때: 빈 상태 ===
@@ -772,28 +920,37 @@ function renderUSBriefing(b){
       </div>`;
   } else {
     // === 데이터가 있을 때 ===
-    // 0) 오늘 것이 아니면 먼저 밝힌다.
-    // 시세는 접속 시점에 따로 받아오므로, 낡은 건 뉴스뿐이라는 점을 정확히 구분해서 알린다.
-    const stale = isStale()
-      ? `<div class="stale">오늘 브리핑이 아직 없어 ${esc(fmtShortDate(state.shownDate))}자 뉴스를 대신 보여주고 있어요.${
+    // 0) 낡은 값을 보고 있다면 먼저 밝힌다. 시세도 뉴스도 접속 시점에 따로 받아오므로,
+    // 이 안내가 필요한 건 그 실시간 경로가 실패해 아침 브리핑으로 되돌아갔을 때뿐이다.
+    const liveNewsOk = state.newsStatus === 'ok';
+    const stale = (isStale() && !liveNewsOk)
+      ? `<div class="stale">뉴스를 실시간으로 받지 못해 ${esc(fmtShortDate(state.shownDate))}자 브리핑을 대신 보여주고 있어요.${
           state.quoteStatus === 'ok' ? ' 시세는 방금 받아온 값입니다.' : ' 시세도 그날 종가입니다.'}</div>`
       : '';
 
     // 0) 오늘의 한 줄 — generate.js가 haiku로 만든 한 문장. 지수 등락률은 위 스트립이
     // 이미 보여주므로, 여기엔 "무엇이 움직였는가"만 온다. 없으면 조용히 생략.
-    const summary = b.summary ? `<div class="summary">${esc(b.summary)}</div>` : '';
+    // 이 한 줄만은 아침 브리핑에서 올 수밖에 없다(Claude 가 쓴 문장이라 실시간 생성 불가).
+    // 나머지가 실시간이면 이것만 어제 이야기가 되므로, 어느 장 이야기인지 밝혀 둔다.
+    const summaryCap = (b.summary && liveNewsOk && b.sessionDateLabel)
+      ? `<div class="news-date">${esc(b.sessionDateLabel)}</div>` : '';
+    const summary = b.summary ? `<div class="summary">${esc(b.summary)}${summaryCap}</div>` : '';
 
     // 1) 관심 종목 — 시세(접속 시점 실시간, 실패 시 브리핑 값) + 종목별 관련 뉴스 최대 2건.
     // 주요 지수는 헤더 아래 스트립이 항상 띄우므로 카드 안에서 또 반복하지 않는다.
     // 팔란티어(PLTR)도 WATCH 에 들어있어 여기서 자기 뉴스를 달고 나온다(별도 섹션 아님).
     const liveStocks = (state.live && state.live.stocks) || [];
-    const stockRows = (b.stocks||[]).map(s => {
+    // 브리핑 파일이 아직 없는 시간대에도 관심 종목은 나와야 하므로, 목록의 출처는
+    // 브리핑 JSON → (없으면) WATCH 상수 순이다. 어느 쪽이든 시세는 실시간 값이 덮는다.
+    const stockBase = (b.stocks && b.stocks.length) ? b.stocks : WATCH.map(s => ({name:s.name, ticker:s.ticker}));
+    const stockRows = stockBase.map(s => {
       const q = quoteFor(liveStocks, 'ticker', s.ticker, s);
+      if(q.price == null) return '';   // 브리핑도 시세도 없는 종목은 빈 줄로 남기지 않는다
       const cls = q.up === true ? 'up' : q.up === false ? 'down' : 'flat';
       const mark = q.up === true ? '▲' : q.up === false ? '▼' : '·';
       // ko(한국어 한 줄 요약)가 있으면 그걸 보여준다 — 영문 원문보다 훨씬 빨리 읽히고,
       // 원문 제목은 링크를 눌러 들어가면 어차피 보인다. 없으면 원문 제목으로 폴백.
-      const newsLinks = (s.news||[]).map(n => `
+      const newsLinks = (stockNews(s.ticker) || s.news || []).map(n => `
         <a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.ko || n.title)}${
           n.source ? `<span class="src">${esc(n.source)}</span>` : ''}</a>`).join('');
       return `
@@ -816,7 +973,7 @@ function renderUSBriefing(b){
     // (요약·번역 없음, title을 원문 기사로 가는 링크로 걸고 출처·발행일을 병기한다). 그 이전
     // 파일은 link/source 없이 Claude가 쓴 한국어 요약(body)만 있으므로, link 유무로 분기해
     // 두 스키마를 모두 그대로 보여준다(다른 필드가 없어졌다고 낡은 파일을 깨뜨리지 않는다).
-    const newsItems = (b.news||[]).map(n => `
+    const newsItems = newsList.map(n => `
       <div class="news-item">
         <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
         ${(n.ko || n.body) ? `<div class="news-body">${esc(n.ko || n.body)}</div>` : ''}
@@ -828,7 +985,7 @@ function renderUSBriefing(b){
     // 3) 앤트로픽 뉴스 — 별도 카드 대신 이 카드의 마지막 블록. 팔란티어는 위 관심 종목의
     // 종목별 뉴스로 옮겼으므로 여기서는 뺀다(2026-08-05 이전 파일에는 aiNews 안에 Palantir
     // 항목이 섞여 있어 company 로 걸러낸다). 2)와 동일하게 link 유무로 신·구 스키마를 분기.
-    const aiNewsItems = (b.aiNews||[])
+    const aiNewsItems = aiList
       .filter(n => !n.company || n.company === 'Anthropic')
       .map(n => `
       <div class="news-item">
@@ -842,10 +999,14 @@ function renderUSBriefing(b){
     inner = stale + summary + stocks + news + aiNews;
   }
 
-  // 카드 헤더 서브텍스트: sessionDateLabel(신규) 우선, 없으면(과거 파일) 기존 방식으로 폴백
+  // 카드 헤더 서브텍스트. 뉴스를 실시간으로 받았다면 그 기준 시각이 사실에 맞는 표기다
+  // (sessionDateLabel 은 아침 브리핑이 다룬 '마지막 정규장'이라 뉴스가 실시간이면 어긋난다).
   let subRaw = '';
   if(b){
-    if(isStale()) subRaw = `${fmtShortDate(state.shownDate)}자`;
+    // 기준 시각 자체는 헤더 우측 줄(updatedText)이 이미 말한다 — 여기서 되풀이하지 않고
+    // "이 카드 내용이 지금 값인가"만 알린다.
+    if(state.newsStatus === 'ok' && state.liveNews) subRaw = '시세·뉴스 실시간';
+    else if(isStale()) subRaw = `${fmtShortDate(state.shownDate)}자`;
     else if(b.sessionDateLabel) subRaw = b.sessionDateLabel;
     else subRaw = '어젯밤 뉴욕장';
   }
@@ -1342,45 +1503,230 @@ function renderSchedule(a){
   return cardShell('schedule', '📅', '일정', esc(sub), inner, events.length > 0);
 }
 
+// ====== 접속 시점 실시간 메일 (Gmail API 직접 호출) ======
+// agenda/*.json 의 메일은 그날 아침 06:00 스냅샷이라, 낮에 열면 안읽음 통수부터 틀리다.
+// 그래서 브라우저에서 Gmail API 를 직접 부른다 — Gmail REST 는 CORS 를 허용하므로
+// 프록시가 필요 없다.
+//
+// 반드시 지킬 것 두 가지:
+// 1) GOOGLE_REFRESH_TOKEN(=CI 가 쓰는 값)을 클라이언트로 내려보내지 말 것. 공개 Pages
+//    사이트에 올리는 순간 누구나 이 사람의 메일·캘린더를 읽을 수 있다. 여기서 쓰는 건
+//    브라우저 전용 토큰 플로우라 client_secret 도, refresh token 도 필요 없다.
+//    client_id 는 공개돼도 되는 값이다(허용 출처로 잠긴다) — 그래서 그대로 커밋한다.
+// 2) 중요 메일 한 줄 요약은 여기로 못 옮긴다. 그건 Claude 호출이고, 클라이언트에 API 키를
+//    둘 수 없을 뿐 아니라 접속할 때마다 토큰이 나간다. 요약은 계속 아침 agenda 파일에서
+//    오고, 이 실시간 경로는 "안읽음 통수 + 최근 안 읽은 메일 제목"까지만 맡는다(비용 0).
+//
+// 값이 비어 있으면 이 기능 전체가 조용히 꺼진다 — Google Cloud Console 에서 "웹 애플리케이션"
+// 유형 OAuth 클라이언트를 만들고(승인된 JavaScript 원본에 https://ssangku2-tech.github.io 추가)
+// 그 클라이언트 ID 를 여기 채우면 켜진다. CI 가 쓰는 데스크톱 클라이언트로는 안 된다.
+const GOOGLE_WEB_CLIENT_ID = '';
+const GMAIL_SCOPE = 'https://www.googleapis.com/auth/gmail.metadata'; // CI 와 같은 최소 스코프
+const GMAIL_ON_KEY = 'mygmail_on_v1';   // localStorage: 실시간 메일을 켜 뒀는지
+const GMAIL_TOK_KEY = 'mygmail_tok_v1'; // sessionStorage: 액세스 토큰. 앱을 닫으면 사라진다
+const GMAIL_MAX = 8;
+
+let gisPromise = null;
+function loadGis(){
+  if(gisPromise) return gisPromise;
+  gisPromise = new Promise((resolve, reject) => {
+    if(window.google && window.google.accounts && window.google.accounts.oauth2) return resolve();
+    const s = document.createElement('script');
+    s.src = 'https://accounts.google.com/gsi/client';
+    s.async = true;
+    s.onload = () => resolve();
+    s.onerror = () => { gisPromise = null; reject(new Error('Google 로그인 스크립트를 불러오지 못했어요')); };
+    document.head.appendChild(s);
+  });
+  return gisPromise;
+}
+
+function storedGmailToken(){
+  try{
+    const t = JSON.parse(sessionStorage.getItem(GMAIL_TOK_KEY) || 'null');
+    if(t && t.token && t.exp > Date.now() + 60*1000) return t.token;
+  }catch(e){}
+  return null;
+}
+
+// interactive=false 면 prompt:'' 로 조용히 재발급받는다 — 이미 동의한 계정이고 브라우저에
+// 구글 세션이 살아 있을 때만 성공하고, 아니면 실패한다(동의 화면을 멋대로 띄우지 않는다).
+async function gmailToken(interactive){
+  const cached = storedGmailToken();
+  if(cached) return cached;
+  await loadGis();
+  return new Promise((resolve, reject) => {
+    const client = google.accounts.oauth2.initTokenClient({
+      client_id: GOOGLE_WEB_CLIENT_ID,
+      scope: GMAIL_SCOPE,
+      callback: r => {
+        if(!r || r.error || !r.access_token){
+          const e = new Error(r && (r.error_description || r.error) || '토큰 발급 실패');
+          e.needAuth = true;
+          return reject(e);
+        }
+        const exp = Date.now() + (Number(r.expires_in) || 3600) * 1000;
+        try{ sessionStorage.setItem(GMAIL_TOK_KEY, JSON.stringify({token:r.access_token, exp})); }catch(e){}
+        resolve(r.access_token);
+      },
+      error_callback: err => {
+        const e = new Error((err && err.type === 'popup_closed_by_user') ? '로그인 창이 닫혔어요' : '구글 로그인에 실패했어요');
+        e.needAuth = true;
+        reject(e);
+      },
+    });
+    client.requestAccessToken(interactive ? {prompt:''} : {prompt:'none'});
+  });
+}
+
+async function gmailGet(path, token){
+  const res = await fetch(`https://gmail.googleapis.com/gmail/v1/users/me/${path}`,
+    {headers:{Authorization:`Bearer ${token}`}, cache:'no-store'});
+  if(res.status === 401 || res.status === 403){
+    try{ sessionStorage.removeItem(GMAIL_TOK_KEY); }catch(e){}
+    const e = new Error('메일 접근 권한이 만료됐어요');
+    e.needAuth = true;
+    throw e;
+  }
+  if(!res.ok) throw new Error(`Gmail ${res.status}`);
+  return res.json();
+}
+
+// '"홍길동" <a@b.com>' → '홍길동' / 이름이 없으면 메일 주소 앞부분
+function prettyFrom(v){
+  const m = String(v||'').match(/^\s*"?([^"<]*?)"?\s*<([^>]+)>\s*$/);
+  const name = m ? m[1].trim() : '';
+  const addr = m ? m[2] : String(v||'').trim();
+  return name || addr.split('@')[0] || addr;
+}
+// 오늘 온 메일은 시각으로, 그 전 것은 날짜로 — 목록에서 "언제"를 한눈에 구분하려고
+function fmtMailTime(ms){
+  if(!ms) return '';
+  const d = new Date(ms + 9*3600*1000);
+  const key = d.toISOString().slice(0,10);
+  if(key === todayKST()) return fmtClockKST(ms);
+  return `${d.getUTCMonth()+1}/${d.getUTCDate()}`;
+}
+
+// interactive=true 는 사용자가 "실시간 메일 연결"을 눌렀을 때뿐이다. 자동 갱신 경로는
+// 언제나 조용한(prompt:'none') 재발급만 시도하므로, 앱을 열 때 로그인 창이 튀지 않는다.
+async function loadMail(interactive){
+  if(!GOOGLE_WEB_CLIENT_ID){ state.mailStatus = 'off'; return; }
+  if(!interactive && localStorage.getItem(GMAIL_ON_KEY) !== '1'){ state.mailStatus = 'off'; return; }
+  state.mailStatus = 'loading';
+  state.mailError = '';
+  if(interactive) render();
+  try{
+    const token = await gmailToken(!!interactive);
+    const [count, list] = await Promise.all([
+      gmailGet('messages?q=is:unread&maxResults=1', token),
+      gmailGet(`messages?q=is:unread&maxResults=${GMAIL_MAX}`, token),
+    ]);
+    const ids = (list.messages || []).map(m => m.id);
+    // 개별 조회는 병렬로. 실패한 건은 조용히 빠진다(목록 전체를 날릴 이유가 없다).
+    const details = await Promise.all(ids.map(id => gmailGet(
+      `messages/${id}?format=metadata&metadataHeaders=From&metadataHeaders=Subject`, token
+    ).catch(() => null)));
+    const mails = details.filter(Boolean).map(m => {
+      const hs = (m.payload && m.payload.headers) || [];
+      const pick = n => (hs.find(h => String(h.name).toLowerCase() === n) || {}).value || '';
+      return {from: prettyFrom(pick('from')), subject: pick('subject') || '(제목 없음)', at: Number(m.internalDate) || 0};
+    }).sort((x, y) => y.at - x.at);
+    state.liveMail = {unread: count.resultSizeEstimate || 0, mails, at: Date.now()};
+    state.mailStatus = 'ok';
+    localStorage.setItem(GMAIL_ON_KEY, '1');
+  }catch(e){
+    // 직전에 받아둔 state.liveMail 은 지우지 않는다 — 있으면 그거라도 보여준다.
+    state.mailStatus = (e && e.needAuth) ? 'need-auth' : 'fail';
+    state.mailError = interactive ? String(e && e.message || '') : '';
+  }
+}
+
+function connectMail(){
+  loadMail(true).then(render);
+}
+function disconnectMail(){
+  localStorage.removeItem(GMAIL_ON_KEY);
+  try{ sessionStorage.removeItem(GMAIL_TOK_KEY); }catch(e){}
+  state.liveMail = null;
+  state.mailStatus = 'off';
+  state.mailError = '';
+  render();
+}
+
 // ====== 메일 섹션 ======
 function renderMail(a){
+  const lm = state.liveMail;
+  const liveOk = state.mailStatus === 'ok' && lm;
+  const mails = (a && a.importantMails) || [];
+
+  // 1) 중요 메일 — 한 줄 요약이 붙는 유일한 블록이라 계속 아침 agenda 파일에서 온다.
+  // 실시간 목록이 있으면 "언제 기준인지"만 블록 라벨에 밝히고, 낡음 경고는 띄우지 않는다
+  // (안읽음·최근 메일은 이미 실시간이라 경고할 대상이 요약뿐이라는 게 라벨로 드러난다).
+  // 아침 파일의 from 은 'Google <noreply@…>' 원문이다. 바로 아래 실시간 목록과 표기를
+  // 맞추려고 여기서도 prettyFrom 을 태운다(파일 형식은 그대로 두고 화면에서만 정리).
+  const importantItems = mails.map(m => `
+      <div class="news-item">
+        <div class="news-title">${esc(prettyFrom(m.from))} — ${esc(m.subject)}</div>
+        <div class="news-body">${esc(m.summary)}</div>
+      </div>`).join('');
+  const importantLabel = liveOk
+    ? `중요 메일 (${esc(fmtShortDate(state.agendaDate) || '오늘')} 아침 요약)`
+    : '중요 메일';
+  const important = importantItems
+    ? `<div class="block"><div class="block-label">${importantLabel}</div>${importantItems}</div>` : '';
+
+  // 2) 최근 안 읽은 메일 — 접속 시점에 Gmail 에서 바로 받아온 목록. 요약은 없다(LLM 미호출).
+  const recentItems = liveOk ? lm.mails.map(m => `
+      <div class="news-item">
+        <div class="news-title">${esc(m.subject)}</div>
+        <div class="news-date">${esc([m.from, fmtMailTime(m.at)].filter(Boolean).join(' · '))}</div>
+      </div>`).join('') : '';
+  const recent = liveOk
+    ? `<div class="block"><div class="block-label">안 읽은 메일 · ${esc(fmtClockKST(lm.at))} 기준</div>${
+        recentItems || '<div class="news-body">안 읽은 메일이 없어요</div>'}</div>`
+    : '';
+
+  // 3) 실시간 연결 상태 줄. 클라이언트 ID 가 비어 있으면 이 줄 자체가 없다 = 기능 꺼짐.
+  let connect = '';
+  if(GOOGLE_WEB_CLIENT_ID){
+    if(state.mailStatus === 'loading') connect = '<div class="stale">메일을 받아오는 중…</div>';
+    else if(liveOk) connect = `<button class="asset-reveal" onclick="disconnectMail()">실시간 메일 끄기</button>`;
+    else connect = `<button class="asset-reveal" onclick="connectMail()">실시간 메일 연결</button>`
+      + (state.mailError ? `<div class="stale">${esc(state.mailError)}</div>` : '')
+      + (state.mailStatus === 'fail' ? '<div class="stale">메일을 실시간으로 받지 못했어요. 아래는 오늘 아침 기준입니다.</div>' : '');
+  }
+
   let inner;
-  if(!a){
+  if(!a && !liveOk){
     inner = `
       <div class="empty">
         <div class="big">🌙</div>
         <div class="msg">아직 메일 정보가 없어요</div>
-      </div>`;
+      </div>` + connect;
   } else {
-    // 메일은 일정과 달리 낡은 파일에 오늘 정보가 들어있을 수 없다 — 안읽음 통수도,
-    // 중요 메일 목록도 그날 아침 기준이므로 낡았다는 걸 먼저 밝힌다.
-    const stale = isAgendaStale()
+    // 실시간 목록이 있으면 안읽음 통수도 최근 메일도 지금 값이라, 낡았다고 경고할 게 없다.
+    const stale = (!liveOk && isAgendaStale())
       ? `<div class="stale">${esc(fmtShortDate(state.agendaDate))}자 메일 정보입니다. 그 이후에 온 메일은 반영되지 않았어요.</div>`
       : '';
-    // 안읽음 통수는 카드 헤더 부제(아래 sub)가 항상 들고 있으므로 본문에서 되풀이하지 않는다
-    const mails = a.importantMails || [];
-    const mailItems = mails.map(m => `
-      <div class="news-item">
-        <div class="news-title">${esc(m.from)} — ${esc(m.subject)}</div>
-        <div class="news-body">${esc(m.summary)}</div>
-      </div>`).join('');
-    const body = mailItems || `
+    const body = (important + recent) || `
       <div class="empty">
         <div class="big">📧</div>
         <div class="msg">안읽은 중요 메일이 없어요</div>
       </div>`;
-    inner = stale + body;
+    inner = stale + body + connect;
   }
 
-  const mails = (a && a.importantMails) || [];
+  // 안읽음 통수는 실시간 값이 있으면 그걸 쓴다 — 카드를 접어둔 채로도 지금 통수가 보이도록.
   let sub = '';
-  if(a){
+  if(a || liveOk){
     const parts = [];
     if(mails.length) parts.push(`중요 ${mails.length}건`);
-    if(typeof a.unreadCount === 'number') parts.push(`안읽음 ${a.unreadCount}`);
+    const unread = liveOk ? lm.unread : (a && a.unreadCount);
+    if(typeof unread === 'number') parts.push(`안읽음 ${unread}`);
     sub = parts.join(' · ');
   }
-  return cardShell('mail', '📧', '메일', esc(sub), inner, mails.length > 0);
+  return cardShell('mail', '📧', '메일', esc(sub), inner, mails.length > 0 || liveOk);
 }
 // 헤더 우측 상단 한 줄 — 시세와 뉴스는 갱신 주기가 다르므로(시세=접속 시점, 뉴스=매일 06:30)
 // 둘을 한 덩어리로 뭉뚱그리지 않고 각각의 기준 시각을 밝힌다.
@@ -1390,9 +1736,13 @@ function updatedText(){
   else if(state.quoteStatus === 'ok' && state.live) parts.push(`시세 ${fmtClockKST(state.live.at)} 기준`);
   else if(state.live) parts.push(`시세 ${fmtClockKST(state.live.at)} (갱신 실패)`);
   else parts.push('시세 브리핑 종가');
-  const gen = state.briefing && state.briefing.generatedAt;
   // 이 문자열은 textContent 로 들어가므로 esc() 가 필요 없다(HTML 템플릿에 끼워넣지 않는다)
-  if(gen) parts.push(`뉴스 ${String(gen).slice(5)} 브리핑`); // "2026-08-05 06:30" → "08-05 06:30"
+  if(state.newsStatus === 'loading') parts.push('뉴스 받는 중…');
+  else if(state.newsStatus === 'ok' && state.liveNews) parts.push(`뉴스 ${fmtClockKST(state.liveNews.at)} 기준`);
+  else {
+    const gen = state.briefing && state.briefing.generatedAt;
+    if(gen) parts.push(`뉴스 ${String(gen).slice(5)} 브리핑`); // "2026-08-05 06:30" → "08-05 06:30"
+  }
   return parts.join(' · ');
 }
 
@@ -1414,7 +1764,7 @@ function render(){
   document.getElementById('refresh').disabled = state.refreshing;
   document.getElementById('refresh-label').textContent = state.refreshing ? '갱신 중…' : '지금 새로고침';
   document.getElementById('refresh-sub').textContent = state.refreshing
-    ? '시세·뉴스·일정을 다시 받아오는 중'
+    ? '시세·뉴스·일정·메일을 다시 받아오는 중'
     : (state.refreshedAt
         ? `${fmtAgo(state.refreshedAt)} 갱신됨 · 앱을 열면 자동 갱신`
         : '앱을 열면 자동으로 갱신됩니다');
@@ -1499,8 +1849,10 @@ function isAgendaStale(){
 // 갱신 경로는 이 함수 하나뿐이다 — 시작할 때, 앱을 다시 앞으로 가져올 때, 버튼을 눌렀을 때
 // 모두 여기로 들어온다. 어느 경로든 하는 일이 같아야 "새로고침을 눌러야 최신인가?" 하는
 // 의심이 생기지 않는다.
-// 비용: 이 함수가 부르는 건 Worker 시세 10건 + 정적 JSON 2건 + (캐시 만료 시) 날씨 2건뿐이고,
-// LLM API는 한 번도 호출하지 않는다. 그래서 몇 번을 새로고침해도 토큰 비용은 0이다.
+// 비용: 이 함수가 부르는 건 Worker 시세 10건 + Worker 뉴스 9건(전체 2 + 종목 7) + 정적 JSON
+// 2건 + (실시간 메일을 켰다면) Gmail 10건 + (캐시 만료 시) 날씨 2건이고, LLM API는 한 번도
+// 호출하지 않는다. 그래서 몇 번을 새로고침해도 토큰 비용은 0이다 — 늘려도 되는 건 이렇게
+// 과금이 없는 호출뿐이라는 게 요점이다. 클라이언트에 Claude 를 붙이는 순간 이 계산이 깨진다.
 async function refreshAll(force){
   if(state.refreshing) return;
   state.refreshing = true;
@@ -1509,6 +1861,8 @@ async function refreshAll(force){
     loadBriefing(),
     loadAgenda(),
     loadQuotes(),
+    loadNews(),
+    loadMail(false),
     loadWeather(force),
   ]);
   state.refreshing = false;
