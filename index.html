@@ -708,6 +708,103 @@ function koMapOf(b){
   return map;
 }
 
+// ====== 제목 한국어 번역 (구글 번역 공개 엔드포인트, 키·과금 없음) ======
+// 접속 시점에 받아오는 뉴스는 CNBC·TechCrunch 원문이라 제목이 영어다. 위 koMapOf 로 아침
+// 브리핑의 ko 를 얹을 수 있는 건 그날 아침에 이미 있던 기사뿐이고, 새로 들어온 기사는 그대로
+// 영어로 남는다. 그렇다고 클라이언트에서 Claude 를 부를 수는 없다 — 앱을 열 때마다 토큰이
+// 나간다(generate.js 에서 Claude 를 걷어낸 것과 같은 문제가 접속 횟수만큼 커진다).
+// 그래서 번역만 따로, 과금이 없는 경로로 붙였다. 2026-08-07 확인한 사실:
+//  - `Access-Control-Allow-Origin: *` 라 브라우저에서 바로 부를 수 있다(프록시 불필요).
+//  - `translate_a/t?client=dict-chrome-ex` 는 q 를 여러 개 받아 번역문 배열을 **순서대로**
+//    돌려준다. 흔히 쓰는 `translate_a/single?client=gtx` 는 q 를 여러 개 줘도 첫 번째만
+//    번역하므로 제목 수만큼 호출해야 한다 — 그래서 이쪽을 쓴다. 8건 한 번에 0.7초.
+//  - 실패하면 원문 영어 제목이 그대로 나온다. 번역은 있으면 좋은 것이지 없으면 화면이
+//    깨지는 것이 아니므로, 어떤 실패도 조용히 폴백만 하고 넘어간다.
+const TRANSLATE_URL = 'https://translate.googleapis.com/translate_a/t';
+const TRANS_KEY = 'mytrans_v1';
+const TRANS_MAX = 400;      // localStorage 에 남겨둘 번역 개수
+const TRANS_URL_MAX = 1600; // GET 한 번에 담을 쿼리 길이 상한(넘으면 나눠 보낸다)
+
+function transCache(){
+  try{ return JSON.parse(localStorage.getItem(TRANS_KEY)) || {}; }catch(e){ return {}; }
+}
+function transCacheSave(map){
+  try{
+    const keys = Object.keys(map);
+    // 객체 키 순서 = 넣은 순서이므로, 넘치면 오래된 것부터 잘라낸다.
+    const kept = keys.length > TRANS_MAX ? keys.slice(keys.length - TRANS_MAX) : keys;
+    localStorage.setItem(TRANS_KEY, JSON.stringify(
+      Object.fromEntries(kept.map(k => [k, map[k]]))));
+  }catch(e){}
+}
+// 이미 한국어인 제목은 보내지 않는다 — 국내 종목 뉴스(네이버)와 Worker 가 titleKo 를 붙여준
+// 미국 종목 뉴스가 여기 해당한다. 알파벳이 두 자 이상이고 한글이 없을 때만 번역 대상.
+function needsKo(t){ return !!t && /[A-Za-z]{2}/.test(t) && !/[가-힣]/.test(t); }
+
+// 제목 여러 개 → 번역문 배열(같은 순서). 실패하면 빈 배열.
+async function translateBatch(titles){
+  const qs = titles.map(t => 'q=' + encodeURIComponent(t)).join('&');
+  const url = `${TRANSLATE_URL}?client=dict-chrome-ex&sl=en&tl=ko&${qs}`;
+  // 직접 호출이 막히는 망(또는 일시적 차단)을 대비해 시세·뉴스에 쓰는 Worker 프록시로 한 번
+  // 더 시도한다. 프록시 경로도 실제로 같은 응답을 준다(확인 완료).
+  const out = await translateOnce(url) || await translateOnce(`${WORKER_URL}/?url=${encodeURIComponent(url)}`);
+  return Array.isArray(out) ? out : [];
+}
+async function translateOnce(url){
+  try{
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);
+    const res = await fetch(url, {cache:'no-store', signal:ctrl.signal});
+    clearTimeout(timer);
+    if(!res.ok) return null;
+    return await res.json();
+  }catch(e){
+    return null;
+  }
+}
+
+// 화면에 나갈 뉴스 제목 중 영어인 것을 모아 한 번에 번역해 각 항목의 koT 에 얹는다.
+// 실시간 뉴스(state.liveNews)와 폴백용 브리핑(state.briefing) 양쪽을 함께 훑으므로,
+// 실시간 경로가 실패해 아침 파일로 되돌아간 날에도 제목은 한국어로 보인다.
+async function translateNews(){
+  const items = [];
+  const push = list => (list || []).forEach(n => { if(n && !n.koT && needsKo(n.title)) items.push(n); });
+  const ln = state.liveNews;
+  if(ln){ push(ln.news); push(ln.aiNews); Object.values(ln.byTicker).forEach(push); }
+  const b = state.briefing;
+  if(b){ push(b.news); push(b.aiNews); (b.stocks || []).forEach(s => push(s.news)); }
+  if(!items.length) return;
+
+  // 같은 제목이 두 번 나가지 않게 캐시를 먼저 씌우고, 남은 것만 실제로 번역한다.
+  // 갱신을 눌러도 대개 새 기사 한두 건만 요청이 나간다.
+  const cache = transCache();
+  const todo = [];
+  items.forEach(n => {
+    if(cache[n.title]) n.koT = cache[n.title];
+    else if(!todo.includes(n.title)) todo.push(n.title);
+  });
+  if(!todo.length) return;
+
+  const chunks = [[]];
+  let len = 0;
+  todo.forEach(t => {
+    const q = encodeURIComponent(t).length + 3;
+    if(len + q > TRANS_URL_MAX && chunks[chunks.length - 1].length){ chunks.push([]); len = 0; }
+    chunks[chunks.length - 1].push(t);
+    len += q;
+  });
+  const results = await Promise.all(chunks.map(translateBatch));
+
+  const got = {};
+  chunks.forEach((c, i) => c.forEach((t, j) => {
+    const ko = results[i][j];
+    if(typeof ko === 'string' && ko.trim() && ko.trim() !== t) got[t] = ko.trim();
+  }));
+  if(!Object.keys(got).length) return;
+  items.forEach(n => { if(got[n.title]) n.koT = got[n.title]; });
+  transCacheSave({...cache, ...got});
+}
+
 // ====== 상단 날씨 (Open-Meteo, API 키 불필요) ======
 // 위치 권한을 거부하거나 얻지 못하면 서울 좌표로 대신한다.
 const SEOUL_COORDS = {lat:37.5665, lon:126.9780};
@@ -950,10 +1047,11 @@ function renderUSBriefing(b){
       if(q.price == null) return '';   // 브리핑도 시세도 없는 종목은 빈 줄로 남기지 않는다
       const cls = q.up === true ? 'up' : q.up === false ? 'down' : 'flat';
       const mark = q.up === true ? '▲' : q.up === false ? '▼' : '·';
-      // ko(한국어 한 줄 요약)가 있으면 그걸 보여준다 — 영문 원문보다 훨씬 빨리 읽히고,
-      // 원문 제목은 링크를 눌러 들어가면 어차피 보인다. 없으면 원문 제목으로 폴백.
+      // ko(아침에 haiku 가 쓴 한국어 한 줄) → koT(접속 시점 기계 번역 제목) → 원문 순으로
+      // 보여준다. 영문 원문보다 훨씬 빨리 읽히고, 원문 제목은 링크를 눌러 들어가면 어차피
+      // 보인다. 둘 다 없을 때만(번역까지 실패한 경우) 원문 제목이 그대로 나온다.
       const newsLinks = (stockNews(s.ticker) || s.news || []).map(n => `
-        <a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.ko || n.title)}${
+        <a href="${esc(n.link)}" target="_blank" rel="noopener" title="${esc(n.title)}">${esc(n.ko || n.koT || n.title)}${
           n.source ? `<span class="src">${esc(n.source)}</span>` : ''}</a>`).join('');
       return `
       <div class="stk">
@@ -975,9 +1073,11 @@ function renderUSBriefing(b){
     // (요약·번역 없음, title을 원문 기사로 가는 링크로 걸고 출처·발행일을 병기한다). 그 이전
     // 파일은 link/source 없이 Claude가 쓴 한국어 요약(body)만 있으므로, link 유무로 분기해
     // 두 스키마를 모두 그대로 보여준다(다른 필드가 없어졌다고 낡은 파일을 깨뜨리지 않는다).
+    // 제목은 번역이 있으면 한국어로 건다(koT). 원문은 링크의 title 속성으로 남겨두고,
+    // 링크를 따라가면 어차피 원문이 나온다 — 한 줄에 영문·국문을 같이 쌓으면 카드가 길어진다.
     const newsItems = newsList.map(n => `
       <div class="news-item">
-        <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
+        <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener" title="${esc(n.title)}">${esc(n.koT || n.title)}</a>` : esc(n.koT || n.title)}</div>
         ${(n.ko || n.body) ? `<div class="news-body">${esc(n.ko || n.body)}</div>` : ''}
         ${(n.source || n.date) ? `<div class="news-date">${esc([n.source, n.date].filter(Boolean).join(' · '))}</div>` : ''}
       </div>`).join('');
@@ -991,7 +1091,7 @@ function renderUSBriefing(b){
       .filter(n => !n.company || n.company === 'Anthropic')
       .map(n => `
       <div class="news-item">
-        <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a>` : esc(n.title)}</div>
+        <div class="news-title">${n.link ? `<a href="${esc(n.link)}" target="_blank" rel="noopener" title="${esc(n.title)}">${esc(n.koT || n.title)}</a>` : esc(n.koT || n.title)}</div>
         ${(n.ko || n.body) ? `<div class="news-body">${esc(n.ko || n.body)}</div>` : ''}
         ${(n.source || n.date) ? `<div class="news-date">${esc([n.source, n.date].filter(Boolean).join(' · '))}</div>` : ''}
       </div>`).join('');
@@ -1973,9 +2073,10 @@ function isAgendaStale(){
 // 모두 여기로 들어온다. 어느 경로든 하는 일이 같아야 "새로고침을 눌러야 최신인가?" 하는
 // 의심이 생기지 않는다.
 // 비용: 이 함수가 부르는 건 Worker 시세 10건 + Worker 뉴스 9건(전체 2 + 종목 7) + 정적 JSON
-// 2건 + (실시간 메일을 켰다면) Gmail 10건 + (캐시 만료 시) 날씨 2건이고, LLM API는 한 번도
-// 호출하지 않는다. 그래서 몇 번을 새로고침해도 토큰 비용은 0이다 — 늘려도 되는 건 이렇게
-// 과금이 없는 호출뿐이라는 게 요점이다. 클라이언트에 Claude 를 붙이는 순간 이 계산이 깨진다.
+// 2건 + 구글 번역 0~1건(새 제목이 있을 때만) + (실시간 메일을 켰다면) Gmail 10건 + (캐시
+// 만료 시) 날씨 2건이고, LLM API는 한 번도 호출하지 않는다. 그래서 몇 번을 새로고침해도
+// 토큰 비용은 0이다 — 늘려도 되는 건 이렇게 과금이 없는 호출뿐이라는 게 요점이다.
+// 클라이언트에 Claude 를 붙이는 순간 이 계산이 깨진다.
 async function refreshAll(force){
   if(state.refreshing) return;
   state.refreshing = true;
@@ -1988,6 +2089,10 @@ async function refreshAll(force){
     loadGoogleLive(false),
     loadWeather(force),
   ]);
+  // 번역을 기다리느라 화면을 붙잡아 두지 않는다 — 받아온 것부터 먼저 그리고,
+  // 번역이 도착하면 제목만 한국어로 바뀐다(실패하면 영어 제목 그대로 남는다).
+  render();
+  await translateNews();
   state.refreshing = false;
   state.refreshedAt = Date.now();
   render();
