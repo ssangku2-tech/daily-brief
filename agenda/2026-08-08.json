@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-08",
+  "generatedAt": "2026-08-08 06:36",
+  "events": [],
+  "unreadCount": 201,
+  "importantMails": [
+    {
+      "from": "ゲストハウスくしロコ <notifications@agoda-messaging.com>",
+      "subject": "Reply from ゲストハウスくしロコ || Booking ID: 1758696497 (Aug 23-24, 2026)",
+      "summary": "예약한 게스트하우스에서 예약 확정 및 안내 메시지 수신"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (b85262d)",
+      "summary": "개인 프로젝트의 Daily Market Briefing 워크플로우 실행 실패"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: pages build and deployment - main (8541a71)",
+      "summary": "개인 프로젝트의 GitHub Pages 빌드 및 배포 실패"
+    },
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "Hello Developer: 쿠퍼티노에서 새로 공개된 비디오를 시청하세요.",
+      "summary": "WWDC26 주요 업데이트 및 iOS 27 개발 관련 안내"
+    },
+    {
+      "from": "CapCut <admin@mail.capcut.com>",
+      "subject": "CapCut 구독이 7일 후 만료됩니다..",
+      "summary": "CapCut 구독 만료 예정 알림"
+    }
+  ]
+}
