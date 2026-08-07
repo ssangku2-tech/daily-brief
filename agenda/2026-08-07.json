@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-07",
+  "generatedAt": "2026-08-07 10:00",
+  "events": [],
+  "unreadCount": 201,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (0a9b54c)",
+      "summary": "Stock Alerts 워크플로우 실행 실패로 조치가 필요함"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: pages build and deployment - main (8541a71)",
+      "summary": "Pages 빌드 및 배포 실패로 확인 필요"
+    },
+    {
+      "from": "CapCut <admin@mail.capcut.com>",
+      "subject": "CapCut 구독이 7일 후 만료됩니다..",
+      "summary": "CapCut 구독 만료 예정으로 갱신 필요"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정으로 Claude 서비스 로그인 기록 알림"
+    },
+    {
+      "from": "Anthropic, PBC <invoice+statements@mail.anthropic.com>",
+      "subject": "Your receipt from Anthropic, PBC #2664-7995-2950",
+      "summary": "Anthropic 서비스 이용 영수증"
+    }
+  ]
+}
