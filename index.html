@@ -411,8 +411,10 @@ let state = {
   liveNews: null,   // 접속 시점에 Worker 프록시로 받아온 뉴스 {news, aiNews, byTicker, at}
   newsStatus: 'idle',  // 'idle' | 'loading' | 'ok' | 'fail'
   liveMail: null,   // 접속 시점에 Gmail API 에서 직접 받아온 메일 {unread, mails, at}
-  mailStatus: 'idle',  // 'idle' | 'off' | 'loading' | 'ok' | 'fail' | 'need-auth'
-  mailError: '',
+  liveEvents: null, // 접속 시점에 Calendar API 에서 직접 받아온 일정 {events, at}
+  googleStatus: 'idle', // 'idle' | 'off' | 'loading' | 'ok' | 'fail' | 'need-auth' — 일정·메일 공통
+  googleError: '',
+  googleGrants: null,   // {calendar, gmail} — 동의 화면에서 일부만 체크했을 때를 구분한다
   refreshedAt: 0,   // 마지막 갱신 완료 시각 (epoch ms)
   refreshing: false,
   assetForm: {ticker:'', qty:'', avg:''}, // 자산 카드 입력 폼 (render 가 DOM 을 다시 그려도 값이 남도록)
@@ -1454,28 +1456,35 @@ function eventSortKey(ev){
   return `${dateKey}|${String(timeRank + 1).padStart(5,'0')}`;
 }
 function renderSchedule(a){
+  // 실시간으로 받은 일정이 있으면 그걸 쓴다. 아침 파일은 실패했을 때의 폴백이다.
+  // (빈 배열도 "일정이 없다"는 정상 결과이므로 liveEvents 존재 여부로만 판단한다.)
+  const le = state.liveEvents;
+  const source = le ? le.events : (a && a.events);
   let inner;
   let events = [];
-  if(!a){
+  if(!source){
     inner = `
       <div class="empty">
         <div class="big">🌙</div>
         <div class="msg">아직 일정 정보가 없어요</div>
-      </div>`;
+      </div>` + googleConnectRow('일정');
   } else {
     // 낡은 파일로 폴백했다면 이미 지난 날짜의 일정이 섞여 있다 — 오늘 이후만 남긴다.
     // (날짜를 판단할 수 없는 항목은 버리지 않고 그대로 둔다.)
     const today = todayKST();
-    events = (a.events||[]).filter(ev => {
+    events = source.filter(ev => {
       const k = eventDateKey(ev);
       return !k || k >= today;
     }).sort((x,y) => {
       const kx = eventSortKey(x), ky = eventSortKey(y);
       return kx < ky ? -1 : kx > ky ? 1 : 0;
     });
-    const stale = isAgendaStale()
-      ? `<div class="stale">오늘 일정이 아직 생성되지 않아 ${esc(fmtShortDate(state.agendaDate))}자 정보를 보여주고 있어요. 그 이후에 추가·변경된 일정은 빠져 있습니다.</div>`
-      : '';
+    // 실시간 일정을 받았다면 낡을 수가 없다 — 그때는 안내 대신 기준 시각만 밝힌다.
+    const stale = le
+      ? ''
+      : (isAgendaStale()
+          ? `<div class="stale">오늘 일정이 아직 생성되지 않아 ${esc(fmtShortDate(state.agendaDate))}자 정보를 보여주고 있어요. 그 이후에 추가·변경된 일정은 빠져 있습니다.</div>`
+          : '');
     const items = events.map(ev => {
       const label = eventDayLabel(ev);
       return `
@@ -1488,25 +1497,32 @@ function renderSchedule(a){
         ${label ? `<div class="event-day">${esc(label)}</div>` : ''}
       </div>`;
     }).join('');
-    inner = stale + (items || `
+    // 동의 화면에서 캘린더만 체크를 뺐다면 조용히 아침 파일로 돌아가는 대신 이유를 밝힌다.
+    const denied = (state.googleGrants && state.googleGrants.calendar === false)
+      ? '<div class="stale">캘린더 읽기 권한에 동의하지 않아 아침에 만든 일정만 보여요.</div>' : '';
+    inner = stale + denied + (items || `
       <div class="empty">
         <div class="big">📅</div>
         <div class="msg">예정된 일정이 없어요</div>
-      </div>`);
+      </div>`) + googleConnectRow('일정');
   }
 
   // 카드를 펼치지 않아도 "오늘 몇 건인지"는 알 수 있어야 한다.
   const todayCount = events.filter(ev => eventDateKey(ev) === todayKST()).length;
   let sub = '';
-  if(a) sub = todayCount ? `오늘 ${todayCount}건` : (events.length ? '오늘 일정 없음' : '');
+  // 일정을 받아온 이상 "0건"도 사실이다 — 접힌 카드에 아무 말도 안 적어두면 데이터가
+  // 없는 건지 일정이 없는 건지 구분이 안 된다.
+  if(source) sub = todayCount ? `오늘 ${todayCount}건` : '오늘 일정 없음';
   // 보여줄 게 있을 때만 펼친 채로 시작한다 (빈 카드를 열어둘 이유가 없다)
   return cardShell('schedule', '📅', '일정', esc(sub), inner, events.length > 0);
 }
 
-// ====== 접속 시점 실시간 메일 (Gmail API 직접 호출) ======
-// agenda/*.json 의 메일은 그날 아침 06:00 스냅샷이라, 낮에 열면 안읽음 통수부터 틀리다.
-// 그래서 브라우저에서 Gmail API 를 직접 부른다 — Gmail REST 는 CORS 를 허용하므로
-// 프록시가 필요 없다.
+// ====== 접속 시점 실시간 일정·메일 (Google API 직접 호출) ======
+// agenda/*.json 은 그날 아침 06:00 스냅샷이라, 낮에 열면 안읽음 통수부터 틀리고 그 사이
+// 잡힌 일정은 아예 없다. 그래서 브라우저에서 Calendar/Gmail API 를 직접 부른다 — 둘 다
+// CORS 를 허용하므로 프록시가 필요 없다.
+//
+// 토큰은 하나로 둘 다 본다. 스코프를 나눠 두 번 받으면 동의 화면도 두 번 뜬다.
 //
 // 반드시 지킬 것 두 가지:
 // 1) GOOGLE_REFRESH_TOKEN(=CI 가 쓰는 값)을 클라이언트로 내려보내지 말 것. 공개 Pages
@@ -1515,14 +1531,20 @@ function renderSchedule(a){
 //    client_id 는 공개돼도 되는 값이다(허용 출처로 잠긴다) — 그래서 그대로 커밋한다.
 // 2) 중요 메일 한 줄 요약은 여기로 못 옮긴다. 그건 Claude 호출이고, 클라이언트에 API 키를
 //    둘 수 없을 뿐 아니라 접속할 때마다 토큰이 나간다. 요약은 계속 아침 agenda 파일에서
-//    오고, 이 실시간 경로는 "안읽음 통수 + 최근 안 읽은 메일 제목"까지만 맡는다(비용 0).
+//    오고, 이 실시간 경로는 "일정 + 안읽음 통수 + 최근 안 읽은 메일 제목"까지만 맡는다(비용 0).
 //
 // 값이 비어 있으면 이 기능 전체가 조용히 꺼진다 — Google Cloud Console 에서 "웹 애플리케이션"
 // 유형 OAuth 클라이언트를 만들고(승인된 JavaScript 원본에 https://ssangku2-tech.github.io 추가)
 // 그 클라이언트 ID 를 여기 채우면 켜진다. CI 가 쓰는 데스크톱 클라이언트로는 안 된다.
 const GOOGLE_WEB_CLIENT_ID = '';
-const GMAIL_SCOPE = 'https://www.googleapis.com/auth/gmail.metadata'; // CI 와 같은 최소 스코프
-const GMAIL_ON_KEY = 'mygmail_on_v1';   // localStorage: 실시간 메일을 켜 뒀는지
+// CI(setup-google-auth.js)와 같은 최소 스코프. 둘 다 읽기 전용이라 코드가 무슨 짓을 해도
+// 일정을 고치거나 메일을 보낼 수 없다. gmail.metadata 를 gmail.readonly 로 올리지 말 것 —
+// 그쪽은 Google 의 "제한된" 스코프라 보안 심사 없이는 테스트 상태를 못 벗어난다.
+const GOOGLE_SCOPES = [
+  'https://www.googleapis.com/auth/calendar.readonly',
+  'https://www.googleapis.com/auth/gmail.metadata',
+].join(' ');
+const GMAIL_ON_KEY = 'mygmail_on_v1';   // localStorage: 실시간 연결을 켜 뒀는지
 const GMAIL_TOK_KEY = 'mygmail_tok_v1'; // sessionStorage: 액세스 토큰. 앱을 닫으면 사라진다
 const GMAIL_MAX = 8;
 
@@ -1544,29 +1566,40 @@ function loadGis(){
 function storedGmailToken(){
   try{
     const t = JSON.parse(sessionStorage.getItem(GMAIL_TOK_KEY) || 'null');
-    if(t && t.token && t.exp > Date.now() + 60*1000) return t.token;
+    if(t && t.token && t.exp > Date.now() + 60*1000){
+      if(t.grants) state.googleGrants = t.grants;
+      return t.token;
+    }
   }catch(e){}
   return null;
 }
 
 // interactive=false 면 prompt:'' 로 조용히 재발급받는다 — 이미 동의한 계정이고 브라우저에
 // 구글 세션이 살아 있을 때만 성공하고, 아니면 실패한다(동의 화면을 멋대로 띄우지 않는다).
-async function gmailToken(interactive){
+async function googleToken(interactive){
   const cached = storedGmailToken();
   if(cached) return cached;
   await loadGis();
   return new Promise((resolve, reject) => {
     const client = google.accounts.oauth2.initTokenClient({
       client_id: GOOGLE_WEB_CLIENT_ID,
-      scope: GMAIL_SCOPE,
+      scope: GOOGLE_SCOPES,
       callback: r => {
         if(!r || r.error || !r.access_token){
           const e = new Error(r && (r.error_description || r.error) || '토큰 발급 실패');
           e.needAuth = true;
           return reject(e);
         }
+        // 사용자가 동의 화면에서 일부 항목만 체크하면 토큰은 나오지만 그 API 는 403 이
+        // 된다. 어느 쪽이 빠졌는지 여기서 알아둬야 카드가 "권한이 없다"고 말할 수 있다.
+        const has = s => !google.accounts.oauth2.hasGrantedAllScopes
+          ? true : google.accounts.oauth2.hasGrantedAllScopes(r, s);
+        state.googleGrants = {
+          calendar: has('https://www.googleapis.com/auth/calendar.readonly'),
+          gmail: has('https://www.googleapis.com/auth/gmail.metadata'),
+        };
         const exp = Date.now() + (Number(r.expires_in) || 3600) * 1000;
-        try{ sessionStorage.setItem(GMAIL_TOK_KEY, JSON.stringify({token:r.access_token, exp})); }catch(e){}
+        try{ sessionStorage.setItem(GMAIL_TOK_KEY, JSON.stringify({token:r.access_token, exp, grants:state.googleGrants})); }catch(e){}
         resolve(r.access_token);
       },
       error_callback: err => {
@@ -1579,17 +1612,60 @@ async function gmailToken(interactive){
   });
 }
 
-async function gmailGet(path, token){
-  const res = await fetch(`https://gmail.googleapis.com/gmail/v1/users/me/${path}`,
-    {headers:{Authorization:`Bearer ${token}`}, cache:'no-store'});
-  if(res.status === 401 || res.status === 403){
+async function googleGet(url, token, what){
+  const res = await fetch(url, {headers:{Authorization:`Bearer ${token}`}, cache:'no-store'});
+  if(res.status === 401){
+    // 만료된 토큰을 들고 계속 재시도하지 않도록 버린다. 다음 갱신 때 조용히 다시 받는다.
     try{ sessionStorage.removeItem(GMAIL_TOK_KEY); }catch(e){}
-    const e = new Error('메일 접근 권한이 만료됐어요');
+    const e = new Error(`${what} 접근 권한이 만료됐어요`);
     e.needAuth = true;
     throw e;
   }
-  if(!res.ok) throw new Error(`Gmail ${res.status}`);
+  // 403 은 토큰을 버리지 않는다 — 만료가 아니라 그 스코프에 동의하지 않은 경우라,
+  // 버리면 갱신할 때마다 토큰을 새로 받으면서 결과는 똑같이 403 이 된다.
+  if(res.status === 403) throw new Error(`${what} 권한이 없어요`);
+  if(!res.ok) throw new Error(`${what} ${res.status}`);
   return res.json();
+}
+const gmailGet = (path, token) =>
+  googleGet(`https://gmail.googleapis.com/gmail/v1/users/me/${path}`, token, '메일');
+
+// 오늘 00:00 ~ 내일 23:59 (KST) — generate-agenda.js 의 fetchEvents 와 같은 범위, 같은
+// 결과 모양({title, start, allDay, location})이라 renderSchedule 이 구분 없이 그린다.
+async function fetchLiveEvents(token){
+  const params = new URLSearchParams({
+    timeMin: new Date(`${todayKST()}T00:00:00+09:00`).toISOString(),
+    timeMax: new Date(`${kstDateKeyOffset(1)}T23:59:59+09:00`).toISOString(),
+    singleEvents: 'true',
+    orderBy: 'startTime',
+    maxResults: '50',
+  });
+  const d = await googleGet(
+    `https://www.googleapis.com/calendar/v3/calendars/primary/events?${params}`, token, '일정');
+  return (d.items || []).map(e => ({
+    title: e.summary || '(제목 없음)',
+    start: (e.start && (e.start.dateTime || e.start.date)) || '',
+    allDay: !(e.start && e.start.dateTime),
+    location: e.location || '',
+  }));
+}
+
+async function fetchLiveMail(token){
+  const [count, list] = await Promise.all([
+    gmailGet('messages?q=is:unread&maxResults=1', token),
+    gmailGet(`messages?q=is:unread&maxResults=${GMAIL_MAX}`, token),
+  ]);
+  const ids = (list.messages || []).map(m => m.id);
+  // 개별 조회는 병렬로. 실패한 건은 조용히 빠진다(목록 전체를 날릴 이유가 없다).
+  const details = await Promise.all(ids.map(id => gmailGet(
+    `messages/${id}?format=metadata&metadataHeaders=From&metadataHeaders=Subject`, token
+  ).catch(() => null)));
+  const mails = details.filter(Boolean).map(m => {
+    const hs = (m.payload && m.payload.headers) || [];
+    const pick = n => (hs.find(h => String(h.name).toLowerCase() === n) || {}).value || '';
+    return {from: prettyFrom(pick('from')), subject: pick('subject') || '(제목 없음)', at: Number(m.internalDate) || 0};
+  }).sort((x, y) => y.at - x.at);
+  return {unread: count.resultSizeEstimate || 0, mails, at: Date.now()};
 }
 
 // '"홍길동" <a@b.com>' → '홍길동' / 이름이 없으면 메일 주소 앞부분
@@ -1608,56 +1684,66 @@ function fmtMailTime(ms){
   return `${d.getUTCMonth()+1}/${d.getUTCDate()}`;
 }
 
-// interactive=true 는 사용자가 "실시간 메일 연결"을 눌렀을 때뿐이다. 자동 갱신 경로는
-// 언제나 조용한(prompt:'none') 재발급만 시도하므로, 앱을 열 때 로그인 창이 튀지 않는다.
-async function loadMail(interactive){
-  if(!GOOGLE_WEB_CLIENT_ID){ state.mailStatus = 'off'; return; }
-  if(!interactive && localStorage.getItem(GMAIL_ON_KEY) !== '1'){ state.mailStatus = 'off'; return; }
-  state.mailStatus = 'loading';
-  state.mailError = '';
+// interactive=true 는 사용자가 "실시간 연결"을 눌렀을 때뿐이다. 자동 갱신 경로는 언제나
+// 조용한(prompt:'none') 재발급만 시도하므로, 앱을 열 때 로그인 창이 튀지 않는다.
+//
+// 일정과 메일은 토큰만 공유하고 결과는 따로 담는다 — 한쪽이 실패해도 다른 쪽은 실시간으로
+// 뜨고, 실패한 쪽만 아침 agenda 파일로 되돌아간다.
+async function loadGoogleLive(interactive){
+  if(!GOOGLE_WEB_CLIENT_ID){ state.googleStatus = 'off'; return; }
+  if(!interactive && localStorage.getItem(GMAIL_ON_KEY) !== '1'){ state.googleStatus = 'off'; return; }
+  state.googleStatus = 'loading';
+  state.googleError = '';
   if(interactive) render();
   try{
-    const token = await gmailToken(!!interactive);
-    const [count, list] = await Promise.all([
-      gmailGet('messages?q=is:unread&maxResults=1', token),
-      gmailGet(`messages?q=is:unread&maxResults=${GMAIL_MAX}`, token),
+    const token = await googleToken(!!interactive);
+    const [ev, mail] = await Promise.all([
+      fetchLiveEvents(token).catch(() => null),
+      fetchLiveMail(token).catch(() => null),
     ]);
-    const ids = (list.messages || []).map(m => m.id);
-    // 개별 조회는 병렬로. 실패한 건은 조용히 빠진다(목록 전체를 날릴 이유가 없다).
-    const details = await Promise.all(ids.map(id => gmailGet(
-      `messages/${id}?format=metadata&metadataHeaders=From&metadataHeaders=Subject`, token
-    ).catch(() => null)));
-    const mails = details.filter(Boolean).map(m => {
-      const hs = (m.payload && m.payload.headers) || [];
-      const pick = n => (hs.find(h => String(h.name).toLowerCase() === n) || {}).value || '';
-      return {from: prettyFrom(pick('from')), subject: pick('subject') || '(제목 없음)', at: Number(m.internalDate) || 0};
-    }).sort((x, y) => y.at - x.at);
-    state.liveMail = {unread: count.resultSizeEstimate || 0, mails, at: Date.now()};
-    state.mailStatus = 'ok';
+    if(!ev && !mail) throw new Error('일정·메일을 받지 못했어요');
+    // 빈 배열은 "일정이 없다"는 정상 결과다 — null(실패)과 구분해서 담는다.
+    if(ev) state.liveEvents = {events: ev, at: Date.now()};
+    if(mail) state.liveMail = mail;
+    state.googleStatus = 'ok';
     localStorage.setItem(GMAIL_ON_KEY, '1');
   }catch(e){
-    // 직전에 받아둔 state.liveMail 은 지우지 않는다 — 있으면 그거라도 보여준다.
-    state.mailStatus = (e && e.needAuth) ? 'need-auth' : 'fail';
-    state.mailError = interactive ? String(e && e.message || '') : '';
+    // 직전에 받아둔 state.liveEvents/liveMail 은 지우지 않는다 — 있으면 그거라도 보여준다.
+    state.googleStatus = (e && e.needAuth) ? 'need-auth' : 'fail';
+    state.googleError = interactive ? String(e && e.message || '') : '';
   }
 }
 
-function connectMail(){
-  loadMail(true).then(render);
+function connectGoogle(){
+  loadGoogleLive(true).then(render);
 }
-function disconnectMail(){
+function disconnectGoogle(){
   localStorage.removeItem(GMAIL_ON_KEY);
   try{ sessionStorage.removeItem(GMAIL_TOK_KEY); }catch(e){}
+  state.liveEvents = null;
   state.liveMail = null;
-  state.mailStatus = 'off';
-  state.mailError = '';
+  state.googleGrants = null;
+  state.googleStatus = 'off';
+  state.googleError = '';
   render();
+}
+
+// 일정·메일 카드가 같이 쓰는 연결 상태 줄. 클라이언트 ID 가 비어 있으면 아예 안 그린다
+// (= 기능 꺼짐). 두 카드 중 어디서 눌러도 같은 토큰 하나를 받는다.
+function googleConnectRow(what){
+  if(!GOOGLE_WEB_CLIENT_ID) return '';
+  if(state.googleStatus === 'loading') return `<div class="stale">${esc(what)}을 받아오는 중…</div>`;
+  if(state.googleStatus === 'ok') return '<button class="asset-reveal" onclick="disconnectGoogle()">실시간 연결 끄기</button>';
+  return '<button class="asset-reveal" onclick="connectGoogle()">실시간 일정·메일 연결</button>'
+    + (state.googleError ? `<div class="stale">${esc(state.googleError)}</div>` : '')
+    + (state.googleStatus === 'fail'
+        ? `<div class="stale">${esc(what)}을 실시간으로 받지 못했어요. 아래는 오늘 아침 기준입니다.</div>` : '');
 }
 
 // ====== 메일 섹션 ======
 function renderMail(a){
   const lm = state.liveMail;
-  const liveOk = state.mailStatus === 'ok' && lm;
+  const liveOk = state.googleStatus === 'ok' && !!lm;
   const mails = (a && a.importantMails) || [];
 
   // 1) 중요 메일 — 한 줄 요약이 붙는 유일한 블록이라 계속 아침 agenda 파일에서 온다.
@@ -1687,15 +1773,10 @@ function renderMail(a){
         recentItems || '<div class="news-body">안 읽은 메일이 없어요</div>'}</div>`
     : '';
 
-  // 3) 실시간 연결 상태 줄. 클라이언트 ID 가 비어 있으면 이 줄 자체가 없다 = 기능 꺼짐.
-  let connect = '';
-  if(GOOGLE_WEB_CLIENT_ID){
-    if(state.mailStatus === 'loading') connect = '<div class="stale">메일을 받아오는 중…</div>';
-    else if(liveOk) connect = `<button class="asset-reveal" onclick="disconnectMail()">실시간 메일 끄기</button>`;
-    else connect = `<button class="asset-reveal" onclick="connectMail()">실시간 메일 연결</button>`
-      + (state.mailError ? `<div class="stale">${esc(state.mailError)}</div>` : '')
-      + (state.mailStatus === 'fail' ? '<div class="stale">메일을 실시간으로 받지 못했어요. 아래는 오늘 아침 기준입니다.</div>' : '');
-  }
+  // 3) 일정 카드와 같은 연결 줄 — 토큰이 하나라 어느 쪽에서 눌러도 둘 다 켜진다.
+  const denied = (state.googleGrants && state.googleGrants.gmail === false)
+    ? '<div class="stale">메일 읽기 권한에 동의하지 않아 아침에 만든 요약만 보여요.</div>' : '';
+  const connect = denied + googleConnectRow('메일');
 
   let inner;
   if(!a && !liveOk){
@@ -1862,7 +1943,7 @@ async function refreshAll(force){
     loadAgenda(),
     loadQuotes(),
     loadNews(),
-    loadMail(false),
+    loadGoogleLive(false),
     loadWeather(force),
   ]);
   state.refreshing = false;
