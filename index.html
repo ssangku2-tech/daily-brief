@@ -1467,7 +1467,7 @@ function renderSchedule(a){
       <div class="empty">
         <div class="big">🌙</div>
         <div class="msg">아직 일정 정보가 없어요</div>
-      </div>` + googleConnectRow('일정');
+      </div>` + googleConnectRow('일정', !!le);
   } else {
     // 낡은 파일로 폴백했다면 이미 지난 날짜의 일정이 섞여 있다 — 오늘 이후만 남긴다.
     // (날짜를 판단할 수 없는 항목은 버리지 않고 그대로 둔다.)
@@ -1504,7 +1504,7 @@ function renderSchedule(a){
       <div class="empty">
         <div class="big">📅</div>
         <div class="msg">예정된 일정이 없어요</div>
-      </div>`) + googleConnectRow('일정');
+      </div>`) + googleConnectRow('일정', !!le);
   }
 
   // 카드를 펼치지 않아도 "오늘 몇 건인지"는 알 수 있어야 한다.
@@ -1536,7 +1536,7 @@ function renderSchedule(a){
 // 값이 비어 있으면 이 기능 전체가 조용히 꺼진다 — Google Cloud Console 에서 "웹 애플리케이션"
 // 유형 OAuth 클라이언트를 만들고(승인된 JavaScript 원본에 https://ssangku2-tech.github.io 추가)
 // 그 클라이언트 ID 를 여기 채우면 켜진다. CI 가 쓰는 데스크톱 클라이언트로는 안 된다.
-const GOOGLE_WEB_CLIENT_ID = '';
+const GOOGLE_WEB_CLIENT_ID = '576621681088-iupfcj077kkju8ison962s0g19qtcb60.apps.googleusercontent.com';
 // CI(setup-google-auth.js)와 같은 최소 스코프. 둘 다 읽기 전용이라 코드가 무슨 짓을 해도
 // 일정을 고치거나 메일을 보낼 수 없다. gmail.metadata 를 gmail.readonly 로 올리지 말 것 —
 // 그쪽은 Google 의 "제한된" 스코프라 보안 심사 없이는 테스트 상태를 못 벗어난다.
@@ -1545,7 +1545,10 @@ const GOOGLE_SCOPES = [
   'https://www.googleapis.com/auth/gmail.metadata',
 ].join(' ');
 const GMAIL_ON_KEY = 'mygmail_on_v1';   // localStorage: 실시간 연결을 켜 뒀는지
-const GMAIL_TOK_KEY = 'mygmail_tok_v1'; // sessionStorage: 액세스 토큰. 앱을 닫으면 사라진다
+// localStorage: 액세스 토큰. sessionStorage 가 아닌 이유는 아래 googleToken 주석 참고 —
+// 앱을 껐다 켜도 남아야 유효기간(1시간) 동안은 버튼을 다시 안 눌러도 된다. 읽기 전용
+// 스코프 토큰이고 1시간이면 만료되지만, 그래도 로그·화면에 찍지 말 것.
+const GMAIL_TOK_KEY = 'mygmail_tok_v1';
 const GMAIL_MAX = 8;
 
 let gisPromise = null;
@@ -1565,7 +1568,7 @@ function loadGis(){
 
 function storedGmailToken(){
   try{
-    const t = JSON.parse(sessionStorage.getItem(GMAIL_TOK_KEY) || 'null');
+    const t = JSON.parse(localStorage.getItem(GMAIL_TOK_KEY) || 'null');
     if(t && t.token && t.exp > Date.now() + 60*1000){
       if(t.grants) state.googleGrants = t.grants;
       return t.token;
@@ -1573,12 +1576,32 @@ function storedGmailToken(){
   }catch(e){}
   return null;
 }
+function dropGmailToken(){
+  try{ localStorage.removeItem(GMAIL_TOK_KEY); }catch(e){}
+}
 
-// interactive=false 면 prompt:'' 로 조용히 재발급받는다 — 이미 동의한 계정이고 브라우저에
-// 구글 세션이 살아 있을 때만 성공하고, 아니면 실패한다(동의 화면을 멋대로 띄우지 않는다).
+// 토큰 발급은 사용자가 버튼을 눌렀을 때(interactive)만 한다. 자동 갱신은 이미 받아둔
+// 토큰이 살아 있을 때만 쓰고, 없으면 그냥 실패시킨다.
+//
+// 이게 이 파일에서 제일 헷갈리기 쉬운 부분이다: **GIS 토큰 클라이언트에는 조용한 경로가
+// 없다.** `requestAccessToken({prompt:'none'})` 도 창을 먼저 띄우고 그 안에서 구글이
+// 판단한다 — 동의가 이미 끝나 자동 승인되는 경우에도 창은 한 번 열렸다 닫힌다.
+// 처음엔 prompt:'none' 을 자동 갱신에 걸어놨는데, 헤드리스로 확인해 보니 앱을 열 때마다
+// 팝업이 떴다(게다가 사용자 제스처 없이 여는 팝업이라 실제 브라우저에선 차단되기 쉽다).
+// 옛 gapi.auth2 의 숨은 iframe 재발급은 토큰 모델에 없다. 대안으로 남는 건 authorization
+// code + PKCE 인데, 웹 유형 클라이언트는 코드 교환에 client_secret 을 요구하므로
+// (그걸 클라이언트에 두는 건 절대 금지) 그 길도 막혀 있다.
+//
+// 그래서 토큰 수명(1시간) 안에서는 자동, 만료되면 카드의 버튼을 한 번 누르는 방식이다.
+// 이미 동의한 계정이면 그 한 번도 동의 화면 없이 창이 깜빡하고 닫힌다.
 async function googleToken(interactive){
   const cached = storedGmailToken();
   if(cached) return cached;
+  if(!interactive){
+    const e = new Error('실시간 연결이 만료됐어요');
+    e.needAuth = true;
+    throw e;
+  }
   await loadGis();
   return new Promise((resolve, reject) => {
     const client = google.accounts.oauth2.initTokenClient({
@@ -1599,7 +1622,7 @@ async function googleToken(interactive){
           gmail: has('https://www.googleapis.com/auth/gmail.metadata'),
         };
         const exp = Date.now() + (Number(r.expires_in) || 3600) * 1000;
-        try{ sessionStorage.setItem(GMAIL_TOK_KEY, JSON.stringify({token:r.access_token, exp, grants:state.googleGrants})); }catch(e){}
+        try{ localStorage.setItem(GMAIL_TOK_KEY, JSON.stringify({token:r.access_token, exp, grants:state.googleGrants})); }catch(e){}
         resolve(r.access_token);
       },
       error_callback: err => {
@@ -1608,15 +1631,16 @@ async function googleToken(interactive){
         reject(e);
       },
     });
-    client.requestAccessToken(interactive ? {prompt:''} : {prompt:'none'});
+    // prompt:'' = 이미 동의했으면 동의 화면을 다시 띄우지 않는다(창 자체는 뜬다).
+    client.requestAccessToken({prompt:''});
   });
 }
 
 async function googleGet(url, token, what){
   const res = await fetch(url, {headers:{Authorization:`Bearer ${token}`}, cache:'no-store'});
   if(res.status === 401){
-    // 만료된 토큰을 들고 계속 재시도하지 않도록 버린다. 다음 갱신 때 조용히 다시 받는다.
-    try{ sessionStorage.removeItem(GMAIL_TOK_KEY); }catch(e){}
+    // 만료된 토큰을 들고 계속 재시도하지 않도록 버린다. 다음에 버튼을 누르면 새로 받는다.
+    dropGmailToken();
     const e = new Error(`${what} 접근 권한이 만료됐어요`);
     e.needAuth = true;
     throw e;
@@ -1684,8 +1708,9 @@ function fmtMailTime(ms){
   return `${d.getUTCMonth()+1}/${d.getUTCDate()}`;
 }
 
-// interactive=true 는 사용자가 "실시간 연결"을 눌렀을 때뿐이다. 자동 갱신 경로는 언제나
-// 조용한(prompt:'none') 재발급만 시도하므로, 앱을 열 때 로그인 창이 튀지 않는다.
+// interactive=true 는 사용자가 버튼을 눌렀을 때뿐이다. 자동 갱신 경로(interactive=false)는
+// 이미 받아둔 토큰이 살아 있을 때만 조회하고 없으면 그냥 실패한다 — 창을 띄우지 않기
+// 위해서다(googleToken 주석 참고: GIS 에는 창 없는 발급 경로가 없다).
 //
 // 일정과 메일은 토큰만 공유하고 결과는 따로 담는다 — 한쪽이 실패해도 다른 쪽은 실시간으로
 // 뜨고, 실패한 쪽만 아침 agenda 파일로 되돌아간다.
@@ -1697,14 +1722,23 @@ async function loadGoogleLive(interactive){
   if(interactive) render();
   try{
     const token = await googleToken(!!interactive);
+    // 한쪽만 실패했을 때도 나머지는 살려야 하므로 예외를 삼키되, 둘 다 실패했을 때
+    // "만료(다시 누르면 됨)"인지 "그냥 실패"인지는 구분해서 올린다 — 토큰이 1시간짜리라
+    // 만료가 가장 흔한 경우이고, 그때 "받지 못했어요"라고만 하면 원인이 안 보인다.
+    const settle = pr => pr.then(v => ({v}), e => ({e}));
     const [ev, mail] = await Promise.all([
-      fetchLiveEvents(token).catch(() => null),
-      fetchLiveMail(token).catch(() => null),
+      settle(fetchLiveEvents(token)),
+      settle(fetchLiveMail(token)),
     ]);
-    if(!ev && !mail) throw new Error('일정·메일을 받지 못했어요');
-    // 빈 배열은 "일정이 없다"는 정상 결과다 — null(실패)과 구분해서 담는다.
-    if(ev) state.liveEvents = {events: ev, at: Date.now()};
-    if(mail) state.liveMail = mail;
+    if(ev.e && mail.e){
+      const expired = ev.e.needAuth || mail.e.needAuth;
+      const e = new Error(expired ? '실시간 연결이 만료됐어요' : '일정·메일을 받지 못했어요');
+      e.needAuth = !!expired;
+      throw e;
+    }
+    // 빈 배열은 "일정이 없다"는 정상 결과다 — 실패(e)와 구분해서 담는다.
+    if(ev.v) state.liveEvents = {events: ev.v, at: Date.now()};
+    if(mail.v) state.liveMail = mail.v;
     state.googleStatus = 'ok';
     localStorage.setItem(GMAIL_ON_KEY, '1');
   }catch(e){
@@ -1719,7 +1753,7 @@ function connectGoogle(){
 }
 function disconnectGoogle(){
   localStorage.removeItem(GMAIL_ON_KEY);
-  try{ sessionStorage.removeItem(GMAIL_TOK_KEY); }catch(e){}
+  dropGmailToken();
   state.liveEvents = null;
   state.liveMail = null;
   state.googleGrants = null;
@@ -1730,20 +1764,28 @@ function disconnectGoogle(){
 
 // 일정·메일 카드가 같이 쓰는 연결 상태 줄. 클라이언트 ID 가 비어 있으면 아예 안 그린다
 // (= 기능 꺼짐). 두 카드 중 어디서 눌러도 같은 토큰 하나를 받는다.
-function googleConnectRow(what){
+//
+// 한 번 연결한 적이 있으면(GMAIL_ON_KEY) 문구를 "다시 연결"로 바꾼다 — 토큰이 1시간짜리라
+// 이 버튼은 처음 한 번이 아니라 주기적으로 보게 되는데, 그때마다 "연결"이라고만 써 있으면
+// 설정이 풀린 줄 알게 된다. 다시 누를 때는 동의 화면이 안 뜨고 창만 깜빡한다.
+function googleConnectRow(what, hasLive){
   if(!GOOGLE_WEB_CLIENT_ID) return '';
   if(state.googleStatus === 'loading') return `<div class="stale">${esc(what)}을 받아오는 중…</div>`;
   if(state.googleStatus === 'ok') return '<button class="asset-reveal" onclick="disconnectGoogle()">실시간 연결 끄기</button>';
-  return '<button class="asset-reveal" onclick="connectGoogle()">실시간 일정·메일 연결</button>'
+  const again = localStorage.getItem(GMAIL_ON_KEY) === '1';
+  return `<button class="asset-reveal" onclick="connectGoogle()">${
+      again ? '실시간으로 다시 불러오기' : '실시간 일정·메일 연결'}</button>`
     + (state.googleError ? `<div class="stale">${esc(state.googleError)}</div>` : '')
-    + (state.googleStatus === 'fail'
+    + ((state.googleStatus === 'fail' && !hasLive)
         ? `<div class="stale">${esc(what)}을 실시간으로 받지 못했어요. 아래는 오늘 아침 기준입니다.</div>` : '');
 }
 
 // ====== 메일 섹션 ======
 function renderMail(a){
   const lm = state.liveMail;
-  const liveOk = state.googleStatus === 'ok' && !!lm;
+  // status 가 아니라 값의 유무로 판단한다 — 토큰이 만료돼도 직전에 받아둔 목록이
+  // 아침 파일보다 최신이고, 블록 라벨이 기준 시각을 밝히므로 감추는 게 오히려 손해다.
+  const liveOk = !!lm;
   const mails = (a && a.importantMails) || [];
 
   // 1) 중요 메일 — 한 줄 요약이 붙는 유일한 블록이라 계속 아침 agenda 파일에서 온다.
@@ -1776,7 +1818,7 @@ function renderMail(a){
   // 3) 일정 카드와 같은 연결 줄 — 토큰이 하나라 어느 쪽에서 눌러도 둘 다 켜진다.
   const denied = (state.googleGrants && state.googleGrants.gmail === false)
     ? '<div class="stale">메일 읽기 권한에 동의하지 않아 아침에 만든 요약만 보여요.</div>' : '';
-  const connect = denied + googleConnectRow('메일');
+  const connect = denied + googleConnectRow('메일', liveOk);
 
   let inner;
   if(!a && !liveOk){
