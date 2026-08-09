@@ -1,0 +1,159 @@
+{
+  "sessionDate": "2026-08-07",
+  "sessionDateLabel": "2026년 8월 7일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,757.64",
+      "changePct": "+0.62%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,690.62",
+      "changePct": "+1.30%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "54,036.93",
+      "changePct": "+0.28%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock market today: Dow, S&P 500, Nasdaq rise after July jobs report surprises to the downside",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQWUtSUk9IQ0xYMmZFNzN1ZWRyeVZwNWR1aXdpc3AzTGRYUERaTXdETDNCOVZZQV9OZEtsWU1qa3FQamFUVGNuejFVMUh3ZUhMT0E2aDJqemZjdmFISTB0Q2ZkYVNDYU5ScFFjckZlcnAyYnByaFRQckgtU1l6bVJzTDRYc2VWRUs2WGtEMlE0aks3c1ZOS0lZOEtVOFNzR1kxOXZNN05ZV1dVeE1URVBBbXRlRlhfUjdFYndwME5TVnUyUGxnTVkyQVlwM3FPZw?oc=5",
+      "date": "2026-08-07",
+      "source": "Yahoo Finance",
+      "ko": "7월 고용이 예상을 밑돌면서 연준 인상 시장 우려 해소, 주요 지수들이 4월 이후 최고 주간 수익률 기록."
+    },
+    {
+      "title": "Stock Market Today: S&P 500, Dow and Nasdaq all book best weeks since April, with S&P 500 closing at a record high",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPNzFnNVdYQlpTSUJSSXJHZ0swcWVIWnFmQ2lyQUd6Y3M2XzdjdTl6SWY0ZEIyWFluUFIwckhBc042VjVnUmFuc3N4Z1VIVkVpUFV1c3hSZGpFUXBzQ0U5eHJTM2o1a2V4RWlRSUtTRE9RUW44cll2QXByd09sa1lScTUtWUNybnRmRldWM1BGeHRZOG5FanVibm12bnBFZzNFX3JadHVCYnhKaDA3eW9IaV9GaGQyMUJrRXlhbktRNzhOWUQ5WVE?oc=5",
+      "date": "2026-08-07",
+      "source": "MarketWatch",
+      "ko": "S&P 500이 사상 최고가 기록하며 나스닥·다우와 함께 4월 이후 최고 주간 수익률을 거두었음."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$223.96",
+      "changePct": "+2.27%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia CEO Jensen Huang Told Investors in Seoul to \"Buy at a Discount\" During the Recent AI Stock Sell-Off. Here's Whether His Call Has Paid Off.",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbkNGbDBQMWdPWElRS1VjZDNrMUtKZXhMZlExNWlSdkxER2h4Z2MxVm1xZVdSTU5zTW9kbzJiazVXSzFGZ1B3VWc0S2ttdmRWdHJyeHBvVUNiNnFpM3RxWms4cWxjQUpEVWxhbHhfOFJaSmQtMjRNbDItWVJ2bHhSV3BkQkNSR1JvTVhwRA?oc=5",
+          "date": "2026-08-09",
+          "source": "The Motley Fool",
+          "ko": "젠슨 황 엔비디아 CEO가 서울에서 최근 약세장을 기회로 '싸게 사라'고 투자자들에게 조언한 후 주가가 회복세."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$483.36",
+      "changePct": "-1.21%",
+      "up": false,
+      "news": [
+        {
+          "title": "Advanced Micro Devices Reported Record Revenue. AMD Stock Sank Anyway.",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPV0pxb3NPTHljNklhX04tMHdEdW1hNHU4ZDdTdE9jTnZqUmNnaWN4UWJpcGo1MVduZ2c1WEdpMXRIbERkQWk3bmdlRUpnYU01dHZMcU5mWlhLNHBQeEM3bnhLeF93M21hRXV5clE5bjF3VXlsSTZvMWNQR3hOWUZ4YUJ0YktycVMzdE92S1pqR1d0SHI3MEV0MFZ2dHVNY3dpQ0hvNGZR?oc=5",
+          "date": "2026-08-09",
+          "source": "Yahoo Finance",
+          "ko": "AMD가 기록적인 매출을 보고했음에도 주가는 하락, 시장의 엇갈린 평가를 받음."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$101.65",
+      "changePct": "+1.84%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel Foundry Lands a Major New Client Worth Watching",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTVpVYThRSmNIOWJmMEhfRUFqWHVZYzFzV1NTODZOcVFRNU81T3RYazZ2NHlzZVRLMWVnSGZFanM5NENtT3V6clBIaVFCMFFac1hpRmFqQ25wdzYtdUdBSUNnTENrTkNyRzVUQnFsejg0UmIyMmdhT0ZSeEZ2MnZGNS1yYW5oZWVnTVgtZmg1eTlUejhaUGxvaw?oc=5",
+          "date": "2026-08-09",
+          "source": "The Motley Fool",
+          "ko": "인텔 파운드리 사업부가 새로운 대형 고객을 확보해 반도체 위탁 생산 경쟁력 강화."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$420.04",
+      "changePct": "+0.44%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$877.57",
+      "changePct": "-0.44%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스 ADR",
+      "ticker": "SKHY",
+      "price": "$137.91",
+      "changePct": "-3.92%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK Hynix to invest $38 billion building new memory chip plants as demand soars",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5OWHRLdGVPZnRBSWh0Uy1XVFNaMFplajBFQ2VzS0ZTWTBNUXNVMEFVRk51bWxTVFl5TndPbkpmbWVlcExBcGsxTXlBWHRNWmh2aHU3d0FJdXBVSkdHN1ZJRXdxUmZpXzBOQVNnSVZMcFB0RE1ITnEw0gF8QVVfeXFMT0tjTHJQUUxsczVuWng3NDQyM1ZNZkpXenYyZDRYRUZHMUlvektWWkFYMThZTGNBdW9hVWtzN0t4N0VxSjlEanBEOHVxeFYwaGxCd1JNalNEa3BXbTZ0UjZOc2R4NjJUalJZRWxnVjlscVJNUnlpcWM2RnZaUg?oc=5",
+          "date": "2026-08-07",
+          "source": "CNBC",
+          "ko": "SK하이닉스가 메모리칩 수요 급증에 대응해 380억 달러를 신규 공장 건설에 투자 계획."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$172.01",
+      "changePct": "+10.32%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir Technologies (PLTR) Is Up 39.8% After Raising 2026 Guidance and Expanding Mercury Systems Deal",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPSjRUWURHbUIwRl9TZjlQY0c5YXoxbXRGVEQwU1VFdW0td2tzWS1iMDJNemNLQzdiTE5vbXA5WnpkOVNBVlRJR2YxemJ0d01hU0JNRXIteWZCN1hmYUFHT3VmMTk2MGpBMEladGhQSWdBeDR6RmdXeTQ0d05kWGdiNnJTOUpxMWdBbnhDWVVTY2ZpRWN5bVo0Z2dxck1zNlcteENGV29HXzZwM3VSYm5BVm5SWWNfS2RtZk1TdmFWQzlRUG1DWXhsRVZqYldlalBRVmRsQU1DRdIB3AFBVV95cUxOSEZpZlZaa0JBek9nZFpZbTZtZjZWWEh2VEFIblJfQ1RUU0haaXVHNEp3OHpGSUFQS2dIQ1FkX0RwUXZWc25ic2ljQ2ljd3ZIVFhkS2V3LUx3UWNTcGpMRkk5blBIeVdTcVVXWEZxTF8tQndycmlZdGJaSWhHdTJRaHhxZDBMcGIyYmtyN0hrZU50dkFGTTMtOElYUk9wRkZSa2FvSkdXa1p6X0daSmxrUElJb0JUclpxejlkUXhYcU10MVhEcUkxT3RLdmxmdEkwVjR5RzdjYjhOV3Vx?oc=5",
+          "date": "2026-08-09",
+          "source": "simplywall.st",
+          "ko": "팔란티어가 2026년 가이던스를 상향 조정하고 머큐리 시스템 인수 확대로 39% 급등세."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "How a small Israeli startup was linked to rogue AI hacks at OpenAI, Anthropic and Meta",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQMU95TFhjeUdscnZoOElsdnRhRmV5eTNEZ0dpa3VRTmFCdEVmSTRNOGIyWjJOcTl1aFo3OENPNC1DTFJoWGk5YTJjSVhEQjd1ZzhFQVFteEI1R3dwb0ctbkNuREx2MkpMbHVMVnBfczV5eG1NQlZ2anZ6MXlDdnplS2ljSWVoVlBQaWhZS0JfdUQxNGZEY3VqLUZBTWY5MENKRUpKTnpn0gGrAUFVX3lxTE1uTHVPT3VwRk16aWFGZFFmdEI2akJOaXhmVmpjNkhzVDRkdUpoRDcyZS1HQ2NzZzAyRTJzcjJGTDIyNG5CYTMxY2NxNC1NS2hZQ2VRdUNZUVgweWNPZnBoQjJpd3BudHN5WFJFU2RrcU1EbU5OMEprNGlHQVJzRk1UbndLeUNOSjd0S0FiNjhUbjBkVXdaN2lkdlBTRWt1MjZ3WVh1SmtyNVdXcw?oc=5",
+      "date": "2026-08-09",
+      "source": "CNBC",
+      "ko": "이스라엘 신생기업이 오픈AI·앤트로픽·메타의 생성AI 시스템에 무단 접근한 보안 사건 연루."
+    },
+    {
+      "company": "Anthropic",
+      "title": "The world's leading AI companies are all struggling to contain their latest models",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPN0Q1NjhDZUhMYTd6ZzZFMndvNkFaNFpjQlU5Q0lCU2RZZFdYcW1RUk91WkoxeWVsVXBBX2I1a1EzMThrdHBEUmpraEFWYnpUZHFKYWZqc09zVk5TU1h1cEk0NUFhaWhVNlp4WF83WVlIeXF3OURTWXI5STdwcWdTenhneGtIMG01QzRrODVSRDF6cVg1UTdjakVRbEtfWkU?oc=5",
+      "date": "2026-08-09",
+      "source": "Business Insider",
+      "ko": "주요 AI 기업들이 최신 모델의 보안·안전 문제 통제에 일제히 어려움을 겪고 있음."
+    }
+  ],
+  "summary": "7월 고용 부진으로 연준 인상 우려 완화되며 S&P500이 사상 최고가 경신.",
+  "generatedAt": "2026-08-10 06:58",
+  "date": "2026-08-10"
+}
