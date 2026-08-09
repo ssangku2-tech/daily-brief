@@ -1,5 +1,10 @@
-// 1회성 로컬 실행 스크립트: Google Calendar/Gmail 읽기 권한에 동의하고 refresh_token을 발급받는다.
-// generate-agenda.js가 매일 크론에서 쓸 자격증명을 준비하는 단계로, 딱 한 번만 실행하면 된다.
+// 로컬 실행 스크립트: Google Calendar/Gmail 읽기 권한에 동의하고 refresh_token을 발급받는다.
+// generate-agenda.js가 매일 크론에서 쓸 자격증명을 준비하는 단계다.
+//
+// 실행 전에 OAuth 동의 화면이 "프로덕션"으로 게시돼 있는지 먼저 확인할 것.
+// "테스트" 상태에서 발급한 refresh_token은 7일 뒤 만료되고, 그날부터 크론이
+// invalid_grant("Token has been expired or revoked")로 조용히 죽는다.
+// 2026-08-08에 실제로 이렇게 끊겼다 — 게시를 먼저 하지 않고 재발급만 하면 일주일 뒤 똑같아진다.
 //
 // 사용법:
 //   GOOGLE_CLIENT_ID=xxx GOOGLE_CLIENT_SECRET=yyy node scripts/setup-google-auth.js
@@ -21,10 +26,13 @@ if (!CLIENT_ID || !CLIENT_SECRET) {
 
 const PORT = 53682;
 const REDIRECT_URI = `http://127.0.0.1:${PORT}/oauth2callback`;
-// 캘린더/메일 둘 다 읽기 전용. Gmail은 gmail.readonly(본문 전체 접근, "제한된" 스코프라
-// 앱 게시 시 Google의 보안 심사가 필요할 수 있음) 대신 gmail.metadata("민감" 스코프까지만
-// 해당해 심사 없이 게시 가능)로 최소화했다 — generate-agenda.js가 실제로 쓰는 건 라벨·
-// 발신자·제목·snippet뿐이라 metadata 스코프로 충분하다.
+// 캘린더/메일 둘 다 읽기 전용. Gmail은 gmail.readonly(본문 전체 접근) 대신
+// gmail.metadata 로 최소화했다 — generate-agenda.js가 실제로 쓰는 건 라벨·발신자·제목·
+// snippet뿐이라 metadata 로 충분하고, 자격증명이 새더라도 본문까지는 안 넘어간다.
+// (2026-08-10 정정: 예전 주석은 metadata 가 "민감" 스코프라 심사 없이 게시할 수 있다고
+//  적어놨는데 틀렸다. Google 분류상 metadata 도 readonly 와 같은 "제한된" 스코프다.
+//  심사를 면하게 해주는 건 스코프 선택이 아니라 "개인 사용" 예외 — 본인만 쓰는 앱 —
+//  이고, 그건 두 스코프 어느 쪽이든 똑같이 적용된다.)
 const SCOPES = [
   'https://www.googleapis.com/auth/calendar.readonly',
   'https://www.googleapis.com/auth/gmail.metadata',
