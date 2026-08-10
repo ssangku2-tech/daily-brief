@@ -1774,10 +1774,15 @@ async function fetchLiveEvents(token){
   }));
 }
 
+// 안읽음은 labelIds 로 거른다 — gmail.metadata 스코프는 q= 검색 파라미터를 받지 않고
+// 403 "Metadata scope does not support 'q' parameter" 로 죽는다(2026-08-10 확인).
+// 여기도 q=is:unread 를 쓰고 있어서 실시간 메일이 08-07부터 계속 실패하고 있었는데,
+// 실패가 조용히 아침 파일 폴백으로 흡수돼 눈에 띄지 않았다. q= 를 다시 넣지 말 것.
+// 개수는 라벨의 messagesUnread — resultSizeEstimate 와 달리 추정치가 아니다.
 async function fetchLiveMail(token){
   const [count, list] = await Promise.all([
-    gmailGet('messages?q=is:unread&maxResults=1', token),
-    gmailGet(`messages?q=is:unread&maxResults=${GMAIL_MAX}`, token),
+    gmailGet('labels/INBOX', token),
+    gmailGet(`messages?labelIds=UNREAD&labelIds=INBOX&maxResults=${GMAIL_MAX}`, token),
   ]);
   const ids = (list.messages || []).map(m => m.id);
   // 개별 조회는 병렬로. 실패한 건은 조용히 빠진다(목록 전체를 날릴 이유가 없다).
@@ -1789,7 +1794,7 @@ async function fetchLiveMail(token){
     const pick = n => (hs.find(h => String(h.name).toLowerCase() === n) || {}).value || '';
     return {from: prettyFrom(pick('from')), subject: pick('subject') || '(제목 없음)', at: Number(m.internalDate) || 0};
   }).sort((x, y) => y.at - x.at);
-  return {unread: count.resultSizeEstimate || 0, mails, at: Date.now()};
+  return {unread: count.messagesUnread || 0, mails, at: Date.now()};
 }
 
 // '"홍길동" <a@b.com>' → '홍길동' / 이름이 없으면 메일 주소 앞부분

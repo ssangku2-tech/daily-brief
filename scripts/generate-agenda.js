@@ -92,11 +92,12 @@ async function fetchEvents(accessToken) {
   }));
 }
 
-// 전체 안읽음 개수 — Gmail이 돌려주는 추정치(resultSizeEstimate)라 근사값이다.
+// 받은편지함 안읽음 개수 — 라벨 정보에 들어 있는 정확한 값이다(추정치가 아니다).
 // maxResults=15로 가져오는 상세 목록(mails.length)과는 별개로, 실제 총량을 따로 물어본다.
+// q=is:unread + resultSizeEstimate 를 쓰지 않는 이유는 fetchUnreadMails 쪽 주석 참고.
 async function fetchUnreadCount(accessToken) {
   const res = await fetch(
-    'https://gmail.googleapis.com/gmail/v1/users/me/messages?q=is:unread&maxResults=1',
+    'https://gmail.googleapis.com/gmail/v1/users/me/labels/INBOX',
     { headers: { Authorization: `Bearer ${accessToken}` } }
   );
   if (!res.ok) {
@@ -104,13 +105,18 @@ async function fetchUnreadCount(accessToken) {
     return 0;
   }
   const data = await res.json();
-  return data.resultSizeEstimate || 0;
+  return data.messagesUnread || 0;
 }
 
 // ── 3) 안 읽은 메일 목록 조회 (제목·발신자·미리보기만, 본문 전체 X) ──
+// 검색어(q=is:unread)가 아니라 labelIds 로 거르는 것이 핵심이다 — gmail.metadata 스코프는
+// q 파라미터를 아예 받지 않고 403 "Metadata scope does not support 'q' parameter" 로 죽는다.
+// 2026-08-10에 실제로 이걸로 메일 절반이 통째로 비었다. 08-01~08-07 동안 돌아갔던 건
+// 그때 쓰던 refresh token 이 OAuth Playground 에서 gmail.readonly 로 발급된 것이었기 때문이고,
+// 문서상의 gmail.metadata 로 재발급한 순간 드러났다. q= 를 다시 넣지 말 것.
 async function fetchUnreadMails(accessToken) {
   const listRes = await fetch(
-    'https://gmail.googleapis.com/gmail/v1/users/me/messages?q=is:unread&maxResults=15',
+    'https://gmail.googleapis.com/gmail/v1/users/me/messages?labelIds=UNREAD&labelIds=INBOX&maxResults=15',
     { headers: { Authorization: `Bearer ${accessToken}` } }
   );
   if (!listRes.ok) {
