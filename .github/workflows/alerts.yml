@@ -11,6 +11,11 @@ on:
     # 앞뒤로 넉넉히 잡는다 — 장 밖 시간에 돌아도 전일 종가 대비라 값이 안 바뀌어 무해하다.
     - cron: '*/30 13-20 * * 1-5'
   workflow_dispatch:
+    inputs:
+      test_push:
+        description: '급변동 여부와 무관하게 테스트 알림을 한 번 보낸다 (구독을 다시 등록한 뒤 확인용)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -65,6 +70,19 @@ jobs:
 
       - name: Send push notification
         if: steps.check.outputs.alerted == 'true'
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+        run: node scripts/send-push.js
+
+      # PUSH_SUBSCRIPTION 을 다시 등록한 뒤 "정말 폰까지 가는가"를 확인할 방법이 달리 없다.
+      # 급변동 알림은 임계값을 넘는 종목이 있어야 울리고, 그날 이미 울린 종목은 중복 방지에
+      # 걸려 다시 울리지 않는다. 아침 브리핑도 그날 파일이 이미 있으면 발송을 건너뛴다.
+      # 그래서 수동 실행 때만 켤 수 있는 발송 스위치를 둔다 — 크론으로는 절대 켜지지 않는다.
+      # 알림 문구는 서비스워커가 만들고, alerts/latest.json 이 20분보다 오래됐으면
+      # 아침 브리핑 내용이 뜬다. 무엇이 뜨든 알림이 도착했다는 것 자체가 확인이다.
+      - name: Send test push
+        if: github.event_name == 'workflow_dispatch' && inputs.test_push && steps.check.outputs.alerted != 'true'
         env:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
