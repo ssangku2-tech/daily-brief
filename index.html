@@ -328,6 +328,8 @@
     padding:4px 6px;text-decoration:underline
   }
   .push-link:active{color:var(--tx)}
+  .push-link:disabled{opacity:.6;cursor:default;text-decoration:none}
+  .push-actions{flex-shrink:0;display:flex;align-items:center;gap:2px}
   .push-msg code{background:var(--bg-card-2);border-radius:4px;padding:1px 4px;font-size:10px}
   /* 구독 JSON 은 한 번 복사하면 끝이라 넓게 둘 이유가 없다 — 접힌 느낌으로 작게 */
   .push-sub{
@@ -423,6 +425,8 @@ let state = {
   pushError: '',
   pushCopied: false,
   pushShowSub: false, // 구독 JSON 을 펼쳐 보고 있는지 (설정 끝나면 접어둔다)
+  pushBusy: false,    // 다시 구독 진행 중인지 (해제 → 재구독 사이에 두 번 눌리지 않도록)
+  pushRenewed: false, // 이번 화면에서 구독을 새로 만들었는지 — 그러면 Secret 갱신이 필수라고 알린다
   assetsRevealed: false, // 자산 금액을 펼쳐 보고 있는지. 일부러 localStorage 에 두지 않는다
   pinPrompt: false,      // 금액 보기 전에 PIN 입력창을 띄운 상태인지
   pinInput: '',          // 입력 중인 PIN (render 가 DOM 을 다시 그려도 값이 남도록 state 에 둔다)
@@ -2164,6 +2168,45 @@ async function enablePush(){
   render();
 }
 
+// 푸시 서비스가 410(Gone) 을 돌려주면 서버는 더 이상 이 폰에 알림을 보낼 수 없다.
+// 그런데 브라우저 쪽에는 죽은 구독 객체가 그대로 남아 있어 화면은 "알림 켜짐" 으로 보이고,
+// 거기서 복사한 값도 같은 죽은 endpoint 라 Secret 을 갱신해봐야 소용이 없다.
+// 해제한 뒤 새로 만드는 것이 유일한 복구 경로다 (2026-08-10 실제로 이 상태가 됐다).
+async function resubscribePush(){
+  if(state.pushBusy) return;
+  state.pushError = '';
+  state.pushBusy = true;
+  render();
+  try{
+    // 권한 요청을 먼저 한다 — unsubscribe 를 await 한 뒤에는 사용자 제스처가 끊겨
+    // 권한 팝업이 필요한 경우 브라우저가 무시할 수 있다.
+    const perm = await Notification.requestPermission();
+    if(perm !== 'granted'){
+      state.pushError = '알림 권한이 허용되지 않았어요.';
+      return;
+    }
+    const reg = await navigator.serviceWorker.ready;
+    const old = await reg.pushManager.getSubscription();
+    if(old) await old.unsubscribe();
+    state.pushSub = null; // 새 구독을 못 받으면 "알림 받기" 버튼 상태로 되돌아간다
+    const sub = await reg.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: b64urlToUint8(VAPID_PUBLIC_KEY),
+    });
+    state.pushSub = JSON.stringify(sub.toJSON());
+    state.pushRenewed = true;
+    state.pushCopied = false;
+    state.pushShowSub = true; // 새 값은 반드시 Secret 에 넣어야 하므로 접어두지 않고 바로 펼친다
+  }catch(e){
+    state.pushError = `다시 구독에 실패했어요: ${e.message}`;
+  }finally{
+    // finally 여야 한다 — 위 권한 거부 분기는 try 안에서 return 하므로,
+    // 여기 밖에 두면 버튼이 '다시 구독 중…' 에서 영영 잠긴다.
+    state.pushBusy = false;
+    render();
+  }
+}
+
 function togglePushSub(){
   state.pushShowSub = !state.pushShowSub;
   if(!state.pushShowSub) state.pushCopied = false; // 다시 펼쳤을 때 "복사됨"이 남아있지 않도록
@@ -2194,13 +2237,20 @@ function renderPushRow(){
   // 구독 완료 상태. 구독 JSON 은 GitHub Secret 에 한 번 넣고 나면 다시 볼 일이 없으므로
   // 접어둔다 — 상시 노출하면 설정이 끝난 뒤에도 화면 아래에 계속 남아 거슬린다.
   // 기기를 바꾸거나 Secret 을 다시 등록할 때만 펼치면 된다.
+  // "다시 구독" 은 알림이 안 올 때(서버가 410 을 받는 상태)의 유일한 복구 수단이라
+  // 접힌 상태에서도 보이게 둔다.
   return `<div class="push-row">
     <div class="push-status">
       <span class="push-msg">🔔 아침 브리핑 알림 켜짐</span>
-      <button class="push-link" onclick="togglePushSub()">${state.pushShowSub ? '접기' : '구독 정보'}</button>
+      <span class="push-actions">
+        <button class="push-link" onclick="resubscribePush()" ${state.pushBusy ? 'disabled' : ''}>${state.pushBusy ? '다시 구독 중…' : '다시 구독'}</button>
+        <button class="push-link" onclick="togglePushSub()">${state.pushShowSub ? '접기' : '구독 정보'}</button>
+      </span>
     </div>
     ${state.pushShowSub ? `
-      <span class="push-msg">GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣을 값입니다. 이미 등록했다면 다시 넣지 않아도 됩니다.</span>
+      <span class="push-msg">${state.pushRenewed
+        ? `구독을 새로 만들었습니다. 이 값을 GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 <b>반드시 갱신</b>해야 알림이 다시 옵니다.`
+        : `GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣을 값입니다. 이미 등록했다면 다시 넣지 않아도 됩니다.`}</span>
       <textarea class="push-sub" readonly onclick="this.select()">${esc(state.pushSub)}</textarea>
       <button class="push-btn" onclick="copyPushSub()">${state.pushCopied ? '복사됨 ✓' : '구독 정보 복사'}</button>` : ''}
     ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
