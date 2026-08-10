@@ -1,0 +1,158 @@
+{
+  "sessionDate": "2026-08-10",
+  "sessionDateLabel": "2026년 8월 10일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,753.11",
+      "changePct": "-0.06%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,605.36",
+      "changePct": "-0.32%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,975.98",
+      "changePct": "-0.11%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "S&P 500 is little changed as traders await possible Hormuz deal, Intel shares fall: Live updates",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5PSlBQSkZDeVFXczJmMmRVYU4zbFdIejBqeUVSa1Z2cHNMaXUtVHZ5eUVKUEZzb2RMUWpYVE1aQWV0b21BNkM0VE9WNFI2dTFsUGNQUXNfOWtNV211WkhlLUxOTm9zOW01UHJVU0o2eDM1Wm5TREVz0gF8QVVfeXFMT1FxMFFZOTZCbGpROU5BX0xLVW9kMmtFLTBRRk9PTm5DaXJpdTJyRUpiNk5XcTQ5eUtmLThVUWIxOW5MSjE2NEhLZWtfV0ZFS1hiV0t5d2V3VmdacWdXTG0wSlV3MHYwY0NsMUVrb0pSSWpvYlM5Sm1vUEc5cg?oc=5",
+      "date": "2026-08-10",
+      "source": "CNBC",
+      "ko": "S&P 500이 보합권. 호르무즈 협상 진전 여부와 중동 정세를 주시 중."
+    },
+    {
+      "title": "Stock Market Today: S&P 500, Dow and Nasdaq close lower, as rising oil prices and Treasury yields add to investor jitters",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOd2d3V3BfMzhkdko4T0NzZE8zVWhGVEQxOS1tWWx1Q212WXdzWk9KU1kySjVoLTNjWWhwb0Rfc0VqWWpKLU1MNm1GVTk2cENvdWFWSV9lRm1ZV19oTndVcm0wYVczUXBIRHZ4a2VNSnNlNkhXcFlYaklySEc5YXNiYU9sckp5bXU5YWtqNVl0Q041UGNKcmJJX1l1eldSZUxYcm1zRWwwTnZSLU4wTTFoOWZjcDRsTGhLR29TSGlESUFFak1MSnlqYUNkOGYzVnc?oc=5",
+      "date": "2026-08-10",
+      "source": "MarketWatch",
+      "ko": "유가와 장기채 수익률 상승이 투자자 심리를 압박하며 지수 마감 하락."
+    },
+    {
+      "title": "Stock Market Today: Dow, S&P 500 Futures Fell as Trump Says US Is 'Only Semi-Negotiating' With Iran—T. Ro",
+      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNbGVlbFVVVEc1ZGZ1SUIydEhvQUxBUkVSYnpNcmtUN1J0S3FLS0FUVWI5UWI1SzNuelJrbXFyWHFRUmJhc3RkbWZZN0hoYmFMekNJNm8wRkEySXRjZlgyZDJwQnJRN1JWcFgzRDJPUGFBUHk0R3dMZGFFblA2UW5rNnh6eDJwdUlBeUFfcFV2VUwtemFHblY5NTNoLVNjT3hndXIwdG9rYzUwaE8xdjBqc0N0enRBd2cyWFRrWFZGOVlkcS1lVi0yWHo5bG5sUkEtcl9TdFN4SFg5aEhSbnlVMzZqTF8xZDZNMnJJWWRVc203d3BIYmVuTFhHX1hXQmxrZnMwZGVGV3RTUU4zbTFrR21JS3ZlVFhaVVBtSTEzelpUTUJa?oc=5",
+      "date": "2026-08-10",
+      "source": "Benzinga",
+      "ko": "트럼프 대통령이 이란과의 협상이 '반만 진행 중'이라고 발언해 불확실성 증대."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$217.55",
+      "changePct": "-2.86%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$469.56",
+      "changePct": "-2.86%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$97.52",
+      "changePct": "-4.06%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel plans $15 billion stock offering as AI demand accelerates",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9wLUxnRncxa2pNdGoxaFhBVnZzNU40Qks5MDFnSFJ5eHAzdWo0RGluXzctenFpbmREckVJQkFhTHJMREdNbnZaeDNtYnNDQnBxckd3bGZ2Qm1xbU9ZaW01bkQwNnRvdUFRUUVjYXpyT2JxSjjSAXhBVV95cUxOUFZTSFNOX3hPb2lHTzhMMXdESmV6anV2SlNObC1wZmNDM3RmUmtVdXdfMmpETzkxTmVROG5Idy00V1Q1UEt4b1VEaS1aZEdRRXBYNmZKbGotSU0yNkNPMDJZcHZsU29zMTdWekNHSUNWT2lBellmMlc?oc=5",
+          "date": "2026-08-10",
+          "source": "CNBC",
+          "ko": "인텔이 AI 수요 증가에 대응해 150억 달러 규모의 신주 공모 계획 발표."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$418.47",
+      "changePct": "-0.37%",
+      "up": false,
+      "news": [
+        {
+          "title": "World's biggest chipmaker TSMC's sales surge 45% amid buoyant AI demand",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9oWGx0TFRvc0JiTHhDMHpIZ25ZM0c3QURGMGIwdEl5UWgtRUtIdFd3UW5taUFGNnFMQ2E2ZG12eVE2cGdYNWh4NF9YaDVBWDNDWTVwM1ltUjJKMUUwZXc0U0Q2TU9iVkh5SEF2QnBDZmlleHptdzJHdzRvTmvSAYIBQVVfeXFMT2dPYmpkcHVyekVEY2V1c09ZbWxWekFkMFpFUk5nN213VDNXWWpTQVphRmZIbFpjZEFId1RfSDQzdjBCdFF1MzhWdlZWZ0tiRWlhYm15dUkwRTBobERlWVNaSHRoSHU1SF8yWXdYeFpiWnBTanhwNjdORE8tNzhJc2VKZw?oc=5",
+          "date": "2026-08-10",
+          "source": "CNBC",
+          "ko": "TSMC 매출이 AI 수요에 힘입어 전년 대비 45% 증가."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$861.00",
+      "changePct": "-1.89%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스 ADR",
+      "ticker": "SKHY",
+      "price": "$135.29",
+      "changePct": "-1.90%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK hynix Approves $38 Billion Memory Expansion as AI Demand Strains Supply",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdFRlY0syc1M2aUN6M0RibFJ6aHlwSGlCRzNRbkJ5aUtiUVBkQkh0YnFzMzVaWmVYNlNDenNKaHV4S2VMMFZvM0ptdXRaQ09oV1d3aTN2cXlWd2tudk5XdXNaM3JBTlhuQks5MTBZT0tDZUVmUHFod3MzREo1OEk2MUZ0NktpbHdvRHd3?oc=5",
+          "date": "2026-08-10",
+          "source": "techrepublic.com",
+          "ko": "SK하이닉스가 AI 메모리 수요 급증에 대응하기 위해 380억 달러 규모 확장 계획 승인."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$175.23",
+      "changePct": "+1.87%",
+      "up": true,
+      "news": [
+        {
+          "title": "Bank of America Is Bullish on Palantir Stock Thanks to ‘PLTR’s Successful AI Strategy’",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTDl4NXZmU0dEN3JZRWxNR1FDQlBRcUozLUl6d2Y1N2ZqNFZDZnBXbHZxank4d1BsRXFabjZpUTlENVB0M01uVzlqZVhuXzlKNnZxYS1SWkR2Q08zZUpaYzZmdkVIVnl4bldsUVJXd1I4YVM3Qmo5VHVFb1RudzF2R1BsMFNTaFMwREpPcW5zZm1YZkRlX3lRdlpXZnFMTzRNU2RaZnI5eDdzM0R3NWhhbFotbw?oc=5",
+          "date": "2026-08-10",
+          "source": "TipRanks",
+          "ko": "뱅크오브아메리카가 팔란티어의 AI 전략 성공에 주목하며 긍정적 평가."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic, Macquarie and GIC Form Venture for AI Data Centers",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNc0Y5VVJWSkc1aEJOMEF4QlNaeGxsVDg0YklRUzluTE5rVTVKekh5ZnM5VWh4NUcxNXBvNXB3djlZbm1DbHkxNTJhMFI4anFvakJnSndGYTI1WktTS2hOSmhXcUE5c0hXS1lrTmhjTEY3aGNERmlKOWc5TER3MUQtOHk4VHg3T0FwU0NLQmlNR09FbnMwLV9FaE80VU5qWG9HMXg2TDFKVENTeHJ6d0E5Mg?oc=5",
+      "date": "2026-08-10",
+      "source": "bloomberg.com",
+      "ko": "앤트로픽이 맥쿼리, GIC와 협력해 AI 데이터센터 벤처 구성."
+    },
+    {
+      "company": "Anthropic",
+      "title": "AI's fear factor hits a fever pitch",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE93Ty1WLWJ0bmdYNmZuVnRYRi0yam8yTFE1TzVJam1JZjhfMHJnekdXajZjYzlLejFPX3FiZVNnT0lfTmZFUFk1YkVCZG5jVnl5RkFSc1h2SFlnekRpZWNrMTAwUExld3BqVDNoa1VJNkYzWE9qUWdwTQ?oc=5",
+      "date": "2026-08-10",
+      "source": "Axios",
+      "ko": "AI 관련 우려와 규제 논의가 급증하며 업계 내 '공포 심리' 확산."
+    }
+  ],
+  "summary": "유가 상승과 중동 긴장으로 기술주 약세. 인텔은 150억 달러 공모 발표 후 하락.",
+  "generatedAt": "2026-08-11 07:07",
+  "date": "2026-08-11"
+}
