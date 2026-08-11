@@ -1,0 +1,189 @@
+{
+  "sessionDate": "2026-08-11",
+  "sessionDateLabel": "2026년 8월 11일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,728.20",
+      "changePct": "-0.32%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,445.45",
+      "changePct": "-0.60%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,791.85",
+      "changePct": "-0.34%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock market today: Dow, S&P 500, Nasdaq slip amid US-Iran impasse, Alphabet stock sinks",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOaGIwUVlQUnYxb0IzNFB5M2pOelZiaWhaN3dWVjZxTnBmMHFfRUZhNTFNdXVJaUY5bVNWTV9YbDJuOUZmckpKejZpaERNQzNuM3FQSUdfNEEtazMwNWRWYkx4YzVGdWh5THFVSXhWTWZQOW1idU9fSVBJSHhJellTQUFwTm93NXJQZkRqbkFmaG14RGlDeTM2M01EWHVxTm9IU0NFQUQ1RkFsREFF?oc=5",
+      "date": "2026-08-11",
+      "source": "Yahoo Finance",
+      "ko": "미국-이란 교착 속 시장 약세 전환, 알파벳 주가 급락"
+    },
+    {
+      "title": "Dow Jones| Nasdaq | US Stock Market Today | Live: US stocks end lower as optimism over Iran peace deal fades",
+      "link": "https://news.google.com/rss/articles/CBMi3wJBVV95cUxOVEl6WDl6d2hzdUljdDdhOVFtVDVxYWNoeVJPSG1kdGRNQlhLR0p6R1JPQTFIVnJVZnhSTnFKQWw4UDQ3SUpoWHhpbGhaeGl5bkVsYm1qdlUyQXVBaDlIN0JOVTRIOUVWcDMzanJTY3pPZ2lKRWlsWWp4TzZpT05EODAwZmdvYUcybTFkZklGRXMway1kQVRIQlVBMmpncjA1OXE0SE8wT0dZZEVscWpfLUVjMTlBNFVKMGxPakl6Q2lPbmlFZEtGODdtSDQ0dVdONE5lZkd4eXowUGZSUW51c2dfaEVxVnQwTTNDSFVhMzJkZWx4empvQ0prNEJHZkZUWW1GN19NNnJxUXlKbUpCdm5iWmYwZ2dvelZHanhWUE9xaG5LVDV3dk92aENDTDFIUndTaHdhenlob0RRcVFmb2phQ1ZpRUVxTHlvYmVyYmh2YmJJQzBqVzQxcnRDRTDSAeQCQVVfeXFMTnFEdVJLX3ZFRGZJVTYxOXpjTFNKYVBqaUJaYTgyaGIycm1FZHZtUEZpNDNsSnNPWWZaYmRkTW4wVlU4X0k0TVdBN1RfV0N6LXh4cGhtcGk0bDAwZ2VQNmdwUklFc3o2TmpvWUJCUEN6UjNzWWFFNWgxT0NpMGdMc3ZZa0VPRDNNemV1ZmVjRk53eXFhSHZTMkFmbDIzcURpUUUtWHJXVlVTdzVtSWg3eklMN05WaERXRjFjU21KUTJNZVhYYWE0YktlZGVZN0RycG83dm1SMHFubFNCcUUwQjZoVnEtUF9Pc3Q5amswaDA4S3huZTlHQ2JBbm9TRDV6V2xMSlVUQWp4Z3A2Q1Z6U0JLNmVINzc3Um12dU9sdE5McDQwd29FeWNVOE5NSU41dDV2WjNYWVNrVk9UYTEwdS1QY3MzcjZYc1NZeVlIaFgtdmdzSVdDa3dvdmhVUTRfUndFeUY?oc=5",
+      "date": "2026-08-11",
+      "source": "The Economic Times",
+      "ko": "이란 평화 합의 낙관론 퇴색으로 미국 주가 하락세 지속"
+    },
+    {
+      "title": "S&P 500 closes little changed as oil rises on Iran uncertainty, Intel leads chips lower",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5PSlBQSkZDeVFXczJmMmRVYU4zbFdIejBqeUVSa1Z2cHNMaXUtVHZ5eUVKUEZzb2RMUWpYVE1aQWV0b21BNkM0VE9WNFI2dTFsUGNQUXNfOWtNV211WkhlLUxOTm9zOW01UHJVU0o2eDM1Wm5TREVz0gF8QVVfeXFMT1FxMFFZOTZCbGpROU5BX0xLVW9kMmtFLTBRRk9PTm5DaXJpdTJyRUpiNk5XcTQ5eUtmLThVUWIxOW5MSjE2NEhLZWtfV0ZFS1hiV0t5d2V3VmdacWdXTG0wSlV3MHYwY0NsMUVrb0pSSWpvYlM5Sm1vUEc5cg?oc=5",
+      "date": "2026-08-11",
+      "source": "CNBC",
+      "ko": "유가 상승한 가운데 인텔이 칩 업종 하락 선도"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$217.50",
+      "changePct": "-0.02%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Confirms $500 Bil AI Funding Deal. These Stocks Jump.",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSXdHaG5KeV9nc1drckdFVUx5SXBzdjlXVGpxQzh1Q28xMlhRR1dRSmhPak1QUGFjdzl5R2FZaS1YOU9xODZ1ckNxc3hrMXp3blo5Y05CTjMwN1NnenFlUmExQ2hLV0NIVE5VbXZQZ0lrcVEwMjhSUmNZemJwVDQ4NTFR?oc=5",
+          "date": "2026-08-11",
+          "source": "Investor's Business Daily",
+          "ko": "엔비디아 $500억 규모 AI 펀딩 딜 확인, 동반 종목들 급등"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$474.32",
+      "changePct": "+1.01%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (NASDAQ:AMD) Trading Up 1% - Here's Why",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOd2JYRVpkc2s0X3N2b3hzSnBLVG5tSm1Ua1JxNFRzc0FGSlRWX3FwSGNHZWtPSEh5M1pUcUxydHAyT21oQXBrdVFqNTVCajhnMzNSNnVOeE5iSmM0OHViN0N5czB1MEFReWlvUXRHb0tOSnVWdW8zcDFycTN3cjJ0OXV4QW0xWDlsYjhRSFpEcHJnWmZHS2ctclhTYnQzSkVwZGotNjUyUkJNQzFVREE?oc=5",
+          "date": "2026-08-11",
+          "source": "MarketBeat",
+          "ko": "AMD 1% 상승 마감, 긍정 심리 작용"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$97.71",
+      "changePct": "+0.19%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel upsizes stock offering to $20B, prices at $95 (INTC:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZW5PSjFmd2pNWXFjV1ZWUmV5cGVIRjhZN1h6SXFoek1GYTEyYnA4c2UwUFJxTFVVM2EySkRKeGtlbEEwWVpIRUcwY3NxTVdEV3pEMDZCNlRWWFhOYmRVS3JuNnR3Tlg4TTNMQlhOMFMwV3pnRmR3T29pV3I2YlduVGdrSzUzbmFQU0FyMy10TQ?oc=5",
+          "date": "2026-08-11",
+          "source": "Seeking Alpha",
+          "ko": "인텔이 $200억 규모로 주식공모 확대, $95에 가격 결정"
+        },
+        {
+          "title": "Investors Hated Intel’s $15 Billion Stock Sale, but Wall Street Wanted $100 Billion Worth",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPRFN5eUlIbXVIX2NtdFNSMTF4RGJkYW1DU0tuZndlTGtQVUw5U0pfZnVTWm9zTktBNUJvdzBHMUJ4QjRpUjZFazAxSXVQdm1HTnRSaHpQMlF4TlI1YWlza3FWTEQtWGxiWU5Ld2I4XzFIdndSMFBuNGFweUdTQ1BMVUFua2FfcWdYRnVEZ19yb1FIdkNGTktaTkFmRlhrUQ?oc=5",
+          "date": "2026-08-11",
+          "source": "Yahoo Finance",
+          "ko": "인텔 주식공모에 $1000억대 수요 몰렸으나 투자자들은 $150억 규모 반발"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$422.06",
+      "changePct": "+0.86%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC's July Revenues Soar: How Should You Play the Stock Now?",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPcF9XTU90R3pVQWVRckRSXzZENmxQRnZqcDUwT1RtTElBYkJ0djJPZnNuN3FaQmhLTFNZUlpNbUlKblBfbjc2NzZWNE5IN1FaZVo0ODNqY3dlZ0xUQkpFemVhZjRiOENsZlRpaWltemVQdlNiTVNHNWZoNEkzU0hMOW1uMDRtVjNLWmRLcmpoUmdqaTU1UjNqVExOUUpfWXFQY2tCUTRkYVVvWDBoc21tNm8ydkNZS3M1X3ZZTEpzRWtrd0tTVnJnWjN3OXRwUUN4WGlrNmRLbFpnUQ?oc=5",
+          "date": "2026-08-11",
+          "source": "The Globe and Mail",
+          "ko": "TSMC 7월 매출 급증으로 투자자 관심 집중"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$868.52",
+      "changePct": "+0.87%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스 ADR",
+      "ticker": "SKHY",
+      "price": "$141.65",
+      "changePct": "+4.70%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix Has Suffered Post-IPO as Memory Flags: A Wall Street Pro Remains Sanguine With 160% Returns Predicted",
+          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOQjB4U0E5aHZEVlFwazdpVW1hdklBLW5jamhVZTVWbjJ0d0VaT29UZVB6QTVCTkRZNnFjUjJzRjhNMGNialpjZlZWd29pZFZiRWJodk5JamU4LTM5cEFmc1ZqcWJmU1VFS3JyclJIOE10U0Z6THVoNmQ3ckEtNVVQNjZVdXJaQjdHelZXLVpQdkVuclNYT0tLWW5RS2hHbG40b2doWjNtUkJiX0tDNXphQmxMV01VREFYUWRyTTdhQ3IzUHk5N3lJY0dFcGlGbFFrYk9NSHhPSjJMX0lvREpndnFoU2dpd0E?oc=5",
+          "date": "2026-08-11",
+          "source": "24/7 Wall St.",
+          "ko": "SK하이닉스 IPO 이후 부진했으나 월가 전문가는 160% 상승 전망"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$174.94",
+      "changePct": "-0.17%",
+      "up": false,
+      "news": [
+        {
+          "title": "Michael Burry makes bearish trade on Palantir with put buys (PLTR:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVzlEYS1HYlVsX1o3X1djT2x6Yi12MFhwSzM2aWlyZWJFR3BKVG1BUWxoSWlkWlJHNzNKUHVjQjdkWmsxY3dELWprUlgycW1BTzJfdHdmT0Q4bEZQN3JDaDJsMnR5akZ6VEpVRWtMTEZMR0EtWFMyMTdlSXVlSWhXQ1g2T3hBY0p0b0VwRGFrWnRrcUFkeTVQQTZYRmktQQ?oc=5",
+          "date": "2026-08-11",
+          "source": "Seeking Alpha",
+          "ko": "마이클 버리, 팔란티어 풋옵션 매수로 약세 베팅"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Claude will apply invisible watermarks to AI text and images",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSVlXWHJVOVhXbkRUbmdqZzhmY1BvOWNkelROTjhVaWlycnFlQmNqQ1g2UXJzdEM5MmlPd0N6UkZpa2JmVm5veE9uZnlCMWRGY0RMY2hZVFBpc1hFQVJVZVgtNFpvbnJXUGxaWkZwdi16d2g0M3lnc1Q4SzlKb1VGX1VVVkNuZlFpYWdtaHlJRVJZRmxRbVZ1YUNEcWFZUjh6TmdLTzhZU3k0QQ?oc=5",
+      "date": "2026-08-11",
+      "source": "The Verge",
+      "ko": "앤트로픽의 Claude 모델이 AI 텍스트·이미지에 보이지 않는 워터마크 적용"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Tries to Shore Up Investor Confidence Ahead of Blockbuster IPO",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPMkwyZ1VpWlNrT3d1MXNJbmJkXzRSSVpjMkl6UWt6TmlxZF9rdVFaeWc5TmZ1bVBYbjJsNkZpS2txNi1Yal82amFHYjdiRGlrWGswT3RTUVEzc1Q3Zzg2WUNscDZsV3IwTE80aGJFUjJvVzRWQ3pIbnZlSWlLLWZlX0l1N1FiaHpYVEpJTWlzNTJuOVRKdXpnUHlab2NCMnlaNFVtdXJPZWV2RW1DX0E?oc=5",
+      "date": "2026-08-11",
+      "source": "WSJ",
+      "ko": "앤트로픽이 블록버스터 IPO 앞두고 투자자 신뢰 강화 추진 중"
+    },
+    {
+      "company": "Anthropic",
+      "title": "An unreleased Anthropic model made progress on one of math’s biggest unsolved problems",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRU9WU2lITXVsNkVXSV9xSldxQWdnUWwyMWN6bzFMY1J3OUY4RWtBSVpTaG9od3pzYy1BWkdwVHhNcllRNlN2MTJBU3d5aEJXQ2JCQ1F1SEVoMWl1bUFLd3V0OXZUb01sZVhERHg4RnlON3ZvYmprcWU3eEJVbGJtNW13dTBwZjJOUkloV0l0TzJnOEFfeUpYQlZfdVRFQWVRNkM1LXZlNVYyRmRGM0QxRmlKdmRPeURqazI1RQ?oc=5",
+      "date": "2026-08-11",
+      "source": "TechCrunch",
+      "ko": "앤트로픽의 미공개 모델이 수학 난제 중 하나에서 진전 달성"
+    }
+  ],
+  "summary": "미국-이란 긴장 고조 속 빅테크 약세로 주요 지수 하락했고, 반도체는 인텔 자금조달로 엇갈렸다.",
+  "generatedAt": "2026-08-12 07:12",
+  "date": "2026-08-12"
+}
