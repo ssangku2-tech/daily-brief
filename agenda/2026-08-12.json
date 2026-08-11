@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-12",
+  "generatedAt": "2026-08-12 06:43",
+  "events": [
+    {
+      "title": "송박김",
+      "start": "2026-08-13T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 818,
+  "importantMails": [
+    {
+      "from": "Wargaming.net",
+      "subject": "[Wargaming] Final Notice: Your account has been deleted",
+      "summary": "워게이밍 계정이 삭제되었다는 최종 통지"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터 공유 권한 설정 알림"
+    },
+    {
+      "from": "Google",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 관련 알림"
+    },
+    {
+      "from": "ssangku2-tech",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (5616f47)",
+      "summary": "GitHub 프로젝트 자동화 작업 실패 알림"
+    },
+    {
+      "from": "CapCut",
+      "subject": "CapCut 구독이 3일 후 만료됩니다..",
+      "summary": "CapCut 구독 만료 예정 알림"
+    }
+  ]
+}
