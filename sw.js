@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v38';
+const CACHE='daily-brief-v39';
 // 앱 셸 — 이 파일들이 없으면 앱이 뜨지 않으므로 설치 단계에서 반드시 캐시한다.
 const CORE=['./','./index.html','./manifest.json'];
 // 아이콘은 아직 저장소에 없을 수 있다. addAll 은 하나만 404 나도 전체가 실패해
@@ -69,6 +69,29 @@ self.addEventListener('push',e=>{
       tag:'daily-brief',   // 같은 tag 는 덮어쓴다 — 재시도 크론이 여러 번 쏴도 알림이 쌓이지 않는다
       renotify:false,
     });
+  })());
+});
+// 브라우저가 스스로 구독을 갈아끼울 때 발생한다(키 회전 등). 여기서 다시 구독해두지
+// 않으면 구독이 사라진 채로 남아, 서버는 다음 발송에서 410 을 받는다.
+// 새 endpoint 를 서버에 알릴 방법은 없다(이 앱에는 서버가 없고 값은 GitHub Secret 에 있다).
+// 대신 index.html 이 앱을 열 때 endpoint 를 마지막으로 복사한 값과 비교해
+// "시크릿과 어긋남" 을 띄우므로, 여기서는 구독만 되살려 두면 된다.
+self.addEventListener('pushsubscriptionchange',e=>{
+  e.waitUntil((async()=>{
+    try{
+      // 공개키는 index.html 한 곳에만 둔다(send-push.js 도 거기서 읽는다) — 여기 복사해두면
+      // 키를 바꿨을 때 조용히 어긋난다. 이전 구독이 키를 들고 있으면 그걸 먼저 쓴다.
+      let key=e.oldSubscription&&e.oldSubscription.options&&e.oldSubscription.options.applicationServerKey;
+      if(!key){
+        const r=await fetch('./index.html',{cache:'no-store'});
+        const m=(await r.text()).match(/VAPID_PUBLIC_KEY\s*=\s*'([^']+)'/);
+        if(!m) return;
+        const s=m[1], pad='='.repeat((4-s.length%4)%4);
+        const raw=atob((s+pad).replace(/-/g,'+').replace(/_/g,'/'));
+        key=Uint8Array.from(raw,c=>c.charCodeAt(0));
+      }
+      await self.registration.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:key});
+    }catch(_){ /* 되살리기 실패해도 앱의 "알림 받기" 버튼으로 복구할 수 있다 */ }
   })());
 });
 // 알림 클릭 → 앱 열기/포커스
