@@ -516,7 +516,9 @@ const WATCH = [
   { name:'인텔',          ticker:'INTC', re:/\bintel\b|intc/i },
   { name:'TSMC',         ticker:'TSM',  re:/tsmc|taiwan semi/i },
   { name:'마이크론',      ticker:'MU',   re:/micron/i },
-  { name:'SK하이닉스 ADR', ticker:'SKHY', re:/hynix|하이닉스/i },
+  // 'ADR' 을 뗐다 — 옆의 SKHY 티커가 이미 미국 상장분임을 말해주고, 이 이름이 길어서
+  // 360px 에서 현재가·등락 금액·등락률 세 값과 한 줄에 못 들어갔다(코스피 000660 아님).
+  { name:'SK하이닉스',    ticker:'SKHY', re:/hynix|하이닉스/i },
   { name:'팔란티어',      ticker:'PLTR', re:/palantir|pltr/i },
 ];
 
@@ -546,7 +548,8 @@ function fmtQuotePct(price, prev){
 }
 // 등락 금액(전일 종가 대비 차이). 부호는 항상 붙이되 통화 기호는 붙이지 않는다 — 바로 왼쪽
 // 현재가가 이미 "$141.65"로 통화를 밝히고 있고, 한 줄에 값이 셋이라 8px 도 아깝다.
-// 실제로 통화 기호를 붙였더니 360px 에서 "SK하이닉스 ADR" 행의 이름이 두 줄로 접혔다.
+// 실제로 통화 기호를 붙였더니 360px 에서 가장 긴 종목 이름이 두 줄로 접혔다. 이름 쪽도
+// 줄여 지금은 여유가 있지만, 종목을 추가할 때 한 줄에 들어가는지 다시 재 볼 것.
 function fmtQuoteChange(price, prev){
   const d = price - prev;
   const n = Math.abs(d).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
@@ -1063,6 +1066,9 @@ function renderUSBriefing(b){
     const stockBase = (b.stocks && b.stocks.length) ? b.stocks : WATCH.map(s => ({name:s.name, ticker:s.ticker}));
     const stockRows = stockBase.map(s => {
       const q = quoteFor(liveStocks, 'ticker', s.ticker, s);
+      // 표시 이름은 WATCH 를 먼저 본다. 브리핑 파일에는 만들어질 당시의 이름이 그대로
+      // 박혀 있어서, 파일 쪽을 따르면 이름을 고쳐도 다음 아침 생성 때까지 화면이 안 바뀐다.
+      const name = (WATCH.find(w => w.ticker === s.ticker) || s).name;
       if(q.price == null) return '';   // 브리핑도 시세도 없는 종목은 빈 줄로 남기지 않는다
       const cls = q.up === true ? 'up' : q.up === false ? 'down' : 'flat';
       const mark = q.up === true ? '▲' : q.up === false ? '▼' : '·';
@@ -1075,7 +1081,7 @@ function renderUSBriefing(b){
       return `
       <div class="stk">
         <div class="stk-top">
-          <span class="stk-name">${esc(s.name)}<span class="tkr">${esc(s.ticker)}</span></span>
+          <span class="stk-name">${esc(name)}<span class="tkr">${esc(s.ticker)}</span></span>
           <span class="stk-vals">
             <span class="stk-price">${esc(q.price)}</span>
             ${q.change ? `<span class="stk-chg ${cls}">${esc(q.change)}</span>` : ''}

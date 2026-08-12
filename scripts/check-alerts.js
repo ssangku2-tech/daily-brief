@@ -20,7 +20,7 @@ const WATCH = [
   { symbol: 'INTC', name: '인텔' },
   { symbol: 'TSM',  name: 'TSMC' },
   { symbol: 'MU',   name: '마이크론' },
-  { symbol: 'SKHY', name: 'SK하이닉스 ADR' },
+  { symbol: 'SKHY', name: 'SK하이닉스' },
   { symbol: 'PLTR', name: '팔란티어' },
 ];
 

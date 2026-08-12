@@ -95,7 +95,7 @@ const WATCH = [
   { name: '인텔',          ticker: 'INTC', query: 'Intel INTC stock' },
   { name: 'TSMC',         ticker: 'TSM',  query: 'TSMC "Taiwan Semiconductor" stock' },
   { name: '마이크론',      ticker: 'MU',   query: 'Micron Technology MU stock' },
-  { name: 'SK하이닉스 ADR', ticker: 'SKHY', query: '"SK Hynix" memory chip' }, // 실제 Yahoo 티커로 확인됨(코스피 000660과는 다른 미국 OTC ADR)
+  { name: 'SK하이닉스', ticker: 'SKHY', query: '"SK Hynix" memory chip' }, // 실제 Yahoo 티커로 확인됨(코스피 000660과는 다른 미국 OTC ADR)
   { name: '팔란티어',      ticker: 'PLTR', query: 'Palantir Technologies PLTR' },
 ];
 
