@@ -1,0 +1,157 @@
+{
+  "sessionDate": "2026-08-12",
+  "sessionDateLabel": "2026년 8월 12일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,748.50",
+      "changePct": "+0.26%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,588.49",
+      "changePct": "+0.54%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,770.27",
+      "changePct": "-0.04%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Jones Futures Rise With CPI Inflation Due; AI Stocks Rally As 3 Nvidia Partners Lead Earnings Movers",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxORmxQdFlwUnZVcjNfSktSblNtci1ZZVprMHFlOW1vTW5aaFg2U3A5bmhaRDdCaUl5SUtnNHNqMk1DeHZRTUhma1dfZDFFYWQyVzBveEhIc0hia0tnTzlMOUxFdG9CMTNiRl9EbkFQSmdrYXBSR0NUVDVIV2hmQUQ4ZDNDQ1RuaERQSlFKejhRNW03Vm5lWlFSYXctUjNxa2lLY09IM0ZfcmlpX1loT19VZ1ZnZTRUUFN3QXc0bl9jWTFsYlhnRVE?oc=5",
+      "date": "2026-08-12",
+      "source": "Investor's Business Daily",
+      "ko": "CPI 발표를 앞두고 AI주 3개사가 실적 발표를 통해 시장을 주도했다."
+    },
+    {
+      "title": "S&P 500 Rises on Mild Inflation Data, Red-Hot AI Rally: Stock Market Today",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWngwXzVNNVllZ0NrdUVVeXZUbHRUZUJLcThXeUpkWU1KVlNuZTMzby1wamU3YzQtbThrandwZ2trdHFYZjFONHcwNzhkN1ZfdkFSdWpQNzN6MHJfSHlSeTM2NGFPYVA3YjJhbDRZMW5YVnlaamNWZ1JyRk82c1piVTJVM2R2S1IzRlZDWnFCWUg0UjZYdGN3RFpTMW9PZXpkT21lNXhPUDVFZExOYlhWdmR5bnVKVEhmWHA4?oc=5",
+      "date": "2026-08-12",
+      "source": "Kiplinger",
+      "ko": "완만한 인플레이션 지표가 나오며 S&P 500이 상승, AI 랠리가 지속되고 있다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$224.09",
+      "change": "+6.59",
+      "changePct": "+3.03%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$482.93",
+      "change": "+8.61",
+      "changePct": "+1.82%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$100.95",
+      "change": "+3.24",
+      "changePct": "+3.32%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$429.15",
+      "change": "+7.09",
+      "changePct": "+1.68%",
+      "up": true,
+      "news": [
+        {
+          "title": "Taiwan Semiconductor's July Revenue Rose 45% and the Stock Sits 13% Below Its High",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPS2EtdlByd2Nuam1kV3JiSENqYlNIcV94MFlianRVallJYmpkdHZBaFQ0SVIwbklFV2kwaUVoSVJGbmNFX0NwekM0a1JEdk5qRF9WNDZHb0ZSNE1MV0xSNXYxWkJFN1BiV0I0TWZMZ1IxR3RSZkY3Tk5UbUs4cE1NSmdBcXhuMlFlY2l5b2stbHRkXzNsYzN5VA?oc=5",
+          "date": "2026-08-12",
+          "source": "The Motley Fool",
+          "ko": "TSMC 7월 매출이 45% 증가했으나 주가는 고점에서 13% 하락한 상태다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$911.29",
+      "change": "+42.77",
+      "changePct": "+4.92%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$154.41",
+      "change": "+12.76",
+      "changePct": "+9.01%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Stock Is Being Outpaced by Memory Chip Rivals SK Hynix, Samsung",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMlVDZkxoNEloNFRoRGZYSjdwcXlTMmVXZXZUSmo1VWo0M2FDS21lVGVxRHpURUFYOHFvQWpZaDE1MTZBbC1aVThSeklVVzdhcmVOcVZFb2xZYTgxNjBxZFk5TTRpclBQQWJLQ3NrMTJ6MlVXY011X3hZQUFLOEtFT0UyeUIxejVtelpsbHJYdEtiTFU?oc=5",
+          "date": "2026-08-12",
+          "source": "Barron's",
+          "ko": "SK하이닉스와 삼성이 마이크론을 앞지르며 메모리칩 시장에서 우위를 보이고 있다."
+        },
+        {
+          "title": "SK Hynix shares jump 8% as Temasek considers investment🗽 Is the memory chip sector back in favor?",
+          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSDA2YWdseUx1OXgzTlFtREpfRzJwOVljc3F2dk5lRDN4MHFoQWROTnFfbWFoSGdhMjM2c0FSOHdHN3dzZGFQRTNodlNYMDRydzBFY0Yxd3pmMU1DLVR6ZEowclV2ZlV1ZVk2YUdQZ3Awb3ZoOEtKQW8yZVp3VGxQMk1ET0NkV0RFRlpwNVJfOVRYWWJoeDRIbkRqYWVsckwybHJiU0FhWW90anFwYXdCcE9QOHMwSjJ5VTZuZDRXSHZMbi1UX0hObUFLaTFoaVE4SWVJYWVrQllBZmdrUTZQUlc3YnozVms?oc=5",
+          "date": "2026-08-12",
+          "source": "XTB.com",
+          "ko": "테마섹이 SK하이닉스 투자를 검토하면서 메모리칩 섹터가 다시 주목받기 시작했다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$171.04",
+      "change": "-3.90",
+      "changePct": "-2.23%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir Stock Edges Lower Wednesday: What's Driving the Move?",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSXFaS0wxcU9RcExnNGJ0N2Y4WXkwMDRiSEp5d2lEVnBzaGhZQWY4emdOTEtlZTJ5SDdkdV9XN0JMSGltek5fdExCU2YyaE9nNElieG8xQnJuRUhadG9sUktzQXowQ0ZSWlJZamE0NUZrLXJoZFh6Y0hJMUkwc1NhQm1HazRKbWRsSHJSWGdWajZDWjVCZnRtUzFJQW83R3FEeEEycGpOUU5jZ0pIRnVod0Uwc2xDVjl6S1dMdg?oc=5",
+          "date": "2026-08-12",
+          "source": "Benzinga",
+          "ko": "팔란티어는 특정 국가의 수요에 의존하는 구조적 취약점을 안고 있다."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic's text watermarks signal new front in AI detection",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1TMFZTUmdmZWw4Q3RNNlpOcG01TkQ3bi1QRVF6LUpnWTJlTGFKT1Z5QmtONlJ1SXdtbnNfdEVpdkgxY2dvOHZGRTVPRlJBdVYyVFB0UzlGUjBsNmlvMzh3RDFWblk2SGNCZGRNM2xmS3BuMXN1SUFXZ0U0TVdOdw?oc=5",
+      "date": "2026-08-12",
+      "source": "Axios",
+      "ko": "앤트로픽이 텍스트 워터마크 기술로 AI 탐지의 새로운 영역을 열었다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Google’s new AI boss inherits a race to catch OpenAI and Anthropic",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1GdzdHeVhqMkp3QnhRTmNUeDdGNXFPcXUzME5SR0dSenc0OG9qcFFJYk53RE5scUVzNlpneG5panpMb2pmUWlLS0dqVDJxRGJPLW9EdFlYdW1UV3RsdjB3LUVyTU1rYTYxY19DUDZjX2JWbkZaOTR4dzZ30gF_QVVfeXFMTUZqWnlpYnMzVXlYeW9XYXFDWEVhUjdjZzIxaU1VbmdRUXI1eHhkUjRGOGxkNDQ2c3RRdnRNRGVRXzFUcDNzRXQtYW5pTjNsc1lTVzRzaGNTREtYVDRzbFdrenFBVklKRDZRVW9NSnN1LXJaYl9PZ18zYXpDd05VNA?oc=5",
+      "date": "2026-08-12",
+      "source": "CNBC",
+      "ko": "구글의 새 AI 담당자가 OpenAI와 앤트로픽 추격이라는 과제를 상속받았다."
+    }
+  ],
+  "summary": "인플레이션 완화 신호에 AI 관련주가 랠리를 주도하며 지수가 혼조세를 보임.",
+  "generatedAt": "2026-08-13 07:10",
+  "date": "2026-08-13"
+}
