@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-13",
+  "generatedAt": "2026-08-13 06:41",
+  "events": [
+    {
+      "title": "송박김",
+      "start": "2026-08-13T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "스카이밸리 08:08",
+      "start": "2026-08-14T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 824,
+  "importantMails": [
+    {
+      "from": "CapCut <admin@mail.capcut.com>",
+      "subject": "CapCut 구독이 내일 만료됩니다..",
+      "summary": "CapCut 구독이 내일 만료되므로 갱신 필요"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Claude와 공유됨"
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 관련 알림"
+    },
+    {
+      "from": "CapCut <admin@mail.capcut.com>",
+      "subject": "CapCut 구독이 3일 후 만료됩니다..",
+      "summary": "CapCut 구독이 3일 후 만료될 예정"
+    }
+  ]
+}
