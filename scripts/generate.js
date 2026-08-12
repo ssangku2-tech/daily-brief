@@ -130,6 +130,15 @@ function formatPrice(price, currency) {
   return currency === 'USD' ? `$${num}` : num;
 }
 
+// 등락 금액(전일 종가 대비 차이). index.html 의 fmtQuoteChange 와 같은 서식이어야 한다 —
+// 접속 시점 시세를 못 받았을 때 이 값이 그대로 화면에 나가기 때문이다. 통화 기호를 붙이지
+// 않는 것도 그쪽 사정이다(한 줄에 값이 셋이라 폭이 모자란다).
+function formatChange(price, prev) {
+  const d = price - prev;
+  const num = Math.abs(d).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return `${d >= 0 ? '+' : '-'}${num}`;
+}
+
 function formatChangePct(price, prev) {
   const pct = ((price - prev) / prev) * 100;
   return `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`;
@@ -160,6 +169,8 @@ async function fetchLiveIndicesAndStocks() {
       name: s.name,
       ticker: s.ticker,
       price: formatPrice(q.price, q.currency),
+      // 조회 실패 행에는 넣지 않는다 — "확인 실패"가 한 줄에 세 번 반복될 뿐이다
+      change: formatChange(q.price, q.prev),
       changePct: formatChangePct(q.price, q.prev),
       up: q.price >= q.prev,
     };

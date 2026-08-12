@@ -158,8 +158,14 @@
   .stk-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
   .stk-name{font-size:14px;font-weight:600;min-width:0}
   .stk-name .tkr{font-size:11px;font-weight:500;color:var(--tx-dim);margin-left:5px}
-  .stk-vals{display:flex;gap:8px;align-items:baseline;white-space:nowrap;flex-shrink:0}
+  /* 현재가 · 등락 금액 · 등락률 세 값이 한 줄에 들어가야 하므로 간격은 6px 까지만 준다 */
+  .stk-vals{display:flex;gap:6px;align-items:baseline;white-space:nowrap;flex-shrink:0}
   .stk-price{font-size:14px;font-weight:600}
+  /* 등락 금액 — 등락률과 같은 색(상승 빨강/하락 파랑)을 쓰되 한 단계 작게 둔다 */
+  .stk-chg{font-size:12px;font-weight:600}
+  /* 지수 스트립에서는 등락률을 오른쪽 정렬하려 min-width 를 주지만, 종목 행은 값들이
+     오른쪽 끝에 붙는 flex 라 그 하한이 폭만 잡아먹는다 */
+  .stk-vals .idx-chg{min-width:0}
   .stk-news{margin-top:7px;display:flex;flex-direction:column;gap:5px}
   .stk-news a{
     position:relative;padding-left:10px;
@@ -538,6 +544,14 @@ function fmtQuotePct(price, prev){
   const pct = ((price - prev) / prev) * 100;
   return `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`;
 }
+// 등락 금액(전일 종가 대비 차이). 부호는 항상 붙이되 통화 기호는 붙이지 않는다 — 바로 왼쪽
+// 현재가가 이미 "$141.65"로 통화를 밝히고 있고, 한 줄에 값이 셋이라 8px 도 아깝다.
+// 실제로 통화 기호를 붙였더니 360px 에서 "SK하이닉스 ADR" 행의 이름이 두 줄로 접혔다.
+function fmtQuoteChange(price, prev){
+  const d = price - prev;
+  const n = Math.abs(d).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  return `${d >= 0 ? '+' : '-'}${n}`;
+}
 
 async function loadQuotes(){
   state.quoteStatus = 'loading';
@@ -553,6 +567,7 @@ async function loadQuotes(){
   const toRow = (q, extra) => ({
     ...extra,
     price: fmtQuotePrice(q.price, extra.ticker ? q.currency : null),
+    change: fmtQuoteChange(q.price, q.prev),
     changePct: fmtQuotePct(q.price, q.prev),
     up: q.price >= q.prev,
   });
@@ -1063,6 +1078,7 @@ function renderUSBriefing(b){
           <span class="stk-name">${esc(s.name)}<span class="tkr">${esc(s.ticker)}</span></span>
           <span class="stk-vals">
             <span class="stk-price">${esc(q.price)}</span>
+            ${q.change ? `<span class="stk-chg ${cls}">${esc(q.change)}</span>` : ''}
             <span class="idx-chg ${cls}">${mark} ${esc(q.changePct)}</span>
           </span>
         </div>
