@@ -1,0 +1,165 @@
+{
+  "sessionDate": "2026-08-13",
+  "sessionDateLabel": "2026년 8월 13일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,798.99",
+      "changePct": "+0.65%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,803.03",
+      "changePct": "+0.81%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,839.99",
+      "changePct": "+0.13%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "S&P 500 rises to record after more encouraging inflation data: Live updates",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFB2T1BEeXVKNFJWUVhMSHpRTWdPV3BaaUJfMDZsX2QwMHRoQUZuZlpSY0FTSmhNLWRoemJFeWtmendXVGRMYy1tUmFWVU90YjBOVGpwVEpDRVRncUdZRlZLVUJyX19nblVVYVUwRHRMX3Rlc2ZsNDU40gF8QVVfeXFMTzFHZ1NJdVJ0NzRTTnBBNFJyUDVjSkNXUy1XMDRLWjlSdndzbzlPV0dndHBmSWFDX09RYmhSdU9PWFpMV0tET3BBODk5ZVJKVEJLX1FJRVZGYlFodXMzSDVkc25PbGQ2cEdoV1U5dEZtM1BCc1R0SXFKTUtCeA?oc=5",
+      "date": "2026-08-13",
+      "source": "CNBC",
+      "ko": "S&P 500이 인플레이션 개선에 따라 사상 최고가를 경신했다."
+    },
+    {
+      "title": "S&P 500 closes higher after tame consumer inflation report, tech sector rises",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9CSHNyNUIweUU5SmU5MmxjdEg3SXpaNGRpNE9EakxRVmVVRTBfLVBZb2txZ1NKa1pySEtGWUVUemVRaGRKdWdrNUpTWXRFM3ZOb2V6NUNIcXN5U1ppYzU4OUhmUDVydXcyclJLcndQZVJ5aVNCbW5R0gF8QVVfeXFMTmhFcWg1MDU1aEFqcHFBZUlUdnJqT1pHVy1mbWl1MU5TMGlfSFhOMmxDMmJ2QXlTZTF4bGtJSFdzMVR4VURwUDdLUmtBbHJEQ2Y2OFpKNlpKZkx6cTN6LW5PeDR2MjZrWHctVWZaSy1SdE1ndE5KaWdzS2hzXw?oc=5",
+      "date": "2026-08-13",
+      "source": "CNBC",
+      "ko": "소비자 물가 지표가 완만해지면서 기술주가 상승 주도했다."
+    },
+    {
+      "title": "Stock Market Today: S&P 500 Closes at Record High as Treasury Yields Retreat, Oil price Falls to $ 87",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPYzRXa01hRmpDZGx6OHZqaldfODM4ejR0c0NyNGlBUnBDMWloSDEwQlZPVWp2QmVxYWl0SGlSWjl1VW1UaE1aMDNhdW95QXpzTmFmVDNONi1IZDlLY1BoaXVfLXhOX3V0U0oxVG1BcS0xa3l0REpPbWNQa2h6X283WDNEMkRvM0ZadHlHUFFKNjh1NW5NMGtaM2g0Y2EwOFYtQTBmSWtMdEdlZVVFdXdib043QW9FVlBJbVpmUGZ3UzBtMEZ3bm9IcUlWSS1PbHZUNmZkZ01IOA?oc=5",
+      "date": "2026-08-13",
+      "source": "Eurasia Business News",
+      "ko": "국채 수익률 하락과 유가 하락이 시장 상승을 뒷받침했다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$225.30",
+      "change": "+1.21",
+      "changePct": "+0.54%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia Stock (NVDA) Forecast Ahead of Q2 Earnings – Susquehanna Sees Strong Demand Visibility",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPQ0JzVWRlZW9kWDBaR0d4aHp0bGRkVlZBYXNoUTJUMGN1ZHEyRmxjcXBFdWpHaUFTcUwwSExBT1ZzTmlfNEhLVFlyT041bTN2NmRmejJyMTMyalNRZmtzWk1XUHA5dFNqeFhuT1A1dl8zSGQ4ZGVBUkVSTlJKaDRhWnNtMWh4Si02UXBqZTBCUGVlamV2enlZeElNQWlBZjJNbno1Q2E2YkNtOHItUTkxVVRqd0lZVndxNzBZ?oc=5",
+          "date": "2026-08-12",
+          "source": "TipRanks",
+          "ko": "서스콰해나가 엔비디아의 2분기 실적 앞서 강한 수요 전망을 제시했다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$483.01",
+      "change": "+0.08",
+      "changePct": "+0.02%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$104.56",
+      "change": "+3.61",
+      "changePct": "+3.58%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel’s $20 billion stock sale has surprising upside",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPNDFTMU9VVk9fWHhzcDR2OWVwSEJYb0hacVdYMS1mQmJUODAzTmp4QVZqaFVrajlERnFEZUk5YjRiNC1Sc013eHhXb3liVGowVC10SXFkUkZ0eXBoV1laNGRKMVI5RzEzZFdEbTlGcWZSTmhNbDBWU1FSVnNENGhjeHg2cWJBTDE4VGc?oc=5",
+          "date": "2026-08-13",
+          "source": "thestreet.com",
+          "ko": "인텔의 200억 달러 자사주 매입이 주가 상승의 긍정 신호로 평가받고 있다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$430.49",
+      "change": "+1.34",
+      "changePct": "+0.31%",
+      "up": true,
+      "news": [
+        {
+          "title": "World's biggest chipmaker TSMC's sales surge 45% amid buoyant AI demand",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9oWGx0TFRvc0JiTHhDMHpIZ25ZM0c3QURGMGIwdEl5UWgtRUtIdFd3UW5taUFGNnFMQ2E2ZG12eVE2cGdYNWh4NF9YaDVBWDNDWTVwM1ltUjJKMUUwZXc0U0Q2TU9iVkh5SEF2QnBDZmlleHptdzJHdzRvTmvSAYIBQVVfeXFMT2dPYmpkcHVyekVEY2V1c09ZbWxWekFkMFpFUk5nN213VDNXWWpTQVphRmZIbFpjZEFId1RfSDQzdjBCdFF1MzhWdlZWZ0tiRWlhYm15dUkwRTBobERlWVNaSHRoSHU1SF8yWXdYeFpiWnBTanhwNjdORE8tNzhJc2VKZw?oc=5",
+          "date": "2026-08-10",
+          "source": "CNBC",
+          "ko": "TSMC 매출이 AI 수요에 힘입어 45% 급증했다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$949.83",
+      "change": "+38.54",
+      "changePct": "+4.23%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$165.67",
+      "change": "+11.26",
+      "changePct": "+7.29%",
+      "up": true,
+      "news": [
+        {
+          "title": "An inside look at SK Hynix $720 billion AI-fueled buildout that's taking over South Korea",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMkZyZURpRzJDN1Z2QjFneUp4UG9uN2Rfam9FOEF4ZWg1ZHA0R1BRX0FobzVndVZ3dGlGLUpSTnQtX3V4ZmFCWnNFSjFFa3FxMVlXUkRTV1VHajlDOXp5WWRvSVNYVjdHYl95RXE1OFBmTHlneHF2TExuRktvNE00Wi00d3FRbnhlLWR4aTlHUVJSNHhrMS1PdXh3X05hLWtS0gGmAUFVX3lxTFBJa1FBdnRrSVBuRmpydEJ0a3ZzdGZpZzZ6QzV4SXV4bWtfSGZteGtTU0V4QU1DeWM0S3ZuXzVHZUoxVnBvcGNhZlM3M21fREN4ejd3V3FVV1pJajJILVFLR0d3ODZtVXFUcG01VTVsanAzN1FUckktUlVBVW9XOVdDSjFjLU5LN0RzeEY0eFFCamJlWTUyQ3laUFA0aXc1UzAtMlJnWlE?oc=5",
+          "date": "2026-08-13",
+          "source": "CNBC",
+          "ko": "SK하이닉스가 7200억 달러 규모의 AI 관련 대규모 시설 투자를 추진 중이다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$179.01",
+      "change": "+7.97",
+      "changePct": "+4.66%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic in talks to buy Decart AI, source says",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRlV4bzBCa2VxRlZkN1VMdzh3UVR0VmJ5d0VIUEpLQkZBRFBpaC1sSkFuTzAtaU0zZkdjNmh1dFB0ZXdQLW5rcU82Q3g3SW1xOEpXWjl6MmpuOUQzVkhFcXBFRFRsWnpXb0t6RFNFRlZfV0d5VXdJSVVKUjBKcGI0YTJvM2ltekctTHQ0WlhyWkFQQQ?oc=5",
+      "date": "2026-08-13",
+      "source": "Reuters",
+      "ko": "앤트로픽이 이스라엘 AI 스타트업 Decart 인수 협상 중이다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic investors bet on $2tn valuation in record IPO",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUWRXMGN5WXlraTZ5dzRnUHVkcEtuUnhDV1FJU1pBNUVndnJXRkM5dkdrSDVXbDVLckNaOTZnUm9uRks4ZDRPN1JJSDF2SmFwX2tTTHNncTZiT21hd1hoc1VyVEJPZnlHZnNMcVRGczM4QVlVV1R6TG96VnpjWUktbUJHVVM?oc=5",
+      "date": "2026-08-13",
+      "source": "Financial Times",
+      "ko": "앤트로픽 투자자들이 기업공개 시 2조 달러 기업가치를 기대하고 있다."
+    }
+  ],
+  "summary": "약한 인플레이션 데이터에 금리 인상 가능성이 낮아지면서 주요 지수가 상승했다.",
+  "generatedAt": "2026-08-14 07:10",
+  "date": "2026-08-14"
+}
