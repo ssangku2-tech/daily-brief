@@ -1,0 +1,35 @@
+{
+  "date": "2026-08-14",
+  "generatedAt": "2026-08-14 06:41",
+  "events": [
+    {
+      "title": "스카이밸리 08:08",
+      "start": "2026-08-14T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 818,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (bb5fa63)",
+      "summary": "본인의 GitHub 프로젝트 자동 실행이 실패했습니다."
+    },
+    {
+      "from": "CapCut <admin@mail.capcut.com>",
+      "subject": "CapCut 구독이 3일 후 만료됩니다..",
+      "summary": "CapCut 구독 갱신이 필요합니다."
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "여러 기기에서 Slack 설정하기",
+      "summary": "Slack 다중 기기 설정 안내입니다."
+    },
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "Hello Developer: 쿠퍼티노에서 새로 공개된 비디오를 시청하세요.",
+      "summary": "Apple Developer 새 비디오 컨텐츠 안내입니다."
+    }
+  ]
+}
