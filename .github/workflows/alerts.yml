@@ -46,18 +46,29 @@ jobs:
           ALERT_THRESHOLD: ${{ vars.ALERT_THRESHOLD }}
         run: node scripts/check-alerts.js
 
+      # 발송과 무관하게 "지금 시크릿에 들어 있는 구독의 지문"을 기록해 둔다 (daily.yml 과 같은 이유).
+      # 장중 30분마다 도는 덕에, 시크릿을 갱신하면 앱의 경고가 30분 안에 풀린다.
+      - name: Record push subscription state
+        env:
+          PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+        run: node scripts/push-state.js
+
       # 서비스워커가 alerts/latest.json 을 읽어 알림 문구를 만들기 때문에,
       # 반드시 커밋·배포가 끝난 뒤에 푸시를 보내야 한다.
+      # 급변동이 없어도 돈다 — push/ 지문이 바뀌었을 수 있고, 그때는 알림보다 이 커밋이 먼저다.
       - name: Commit alerts
-        if: steps.check.outputs.alerted == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add alerts/
+          git add alerts/ push/
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 생략"
           else
-            git commit -m "alert: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')"
+            if [ "${{ steps.check.outputs.alerted }}" = "true" ]; then
+              git commit -m "alert: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M')"
+            else
+              git commit -m "push: 구독 지문 갱신"
+            fi
             git pull --rebase --autostash
             git push
           fi
@@ -87,3 +98,17 @@ jobs:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
         run: node scripts/send-push.js
+
+      # 위 두 발송 스텝 중 무엇이 돌았든 그 결과를 배포한다. always() 여야 한다 — 410 이면
+      # 발송 스텝이 워크플로를 실패시키는데, 바로 그때의 기록이 앱에 가장 필요한 값이다.
+      - name: Commit push send result
+        if: always()
+        run: |
+          git add push/
+          if git diff --staged --quiet; then
+            echo "푸시 상태 변화 없음 — 커밋 생략"
+          else
+            git commit -m "push: 발송 상태 갱신"
+            git pull --rebase --autostash
+            git push
+          fi

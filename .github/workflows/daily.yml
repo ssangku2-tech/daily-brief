@@ -44,11 +44,19 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/generate.js
 
+      # 발송과 무관하게 "지금 시크릿에 들어 있는 구독의 지문"을 기록해 둔다. 앱이 이 값을
+      # 자기 구독과 비교해 어긋남을 스스로 알아챈다. 시크릿을 갱신했을 때 앱의 경고가
+      # 다음 실행에서 풀리는 것도 이 스텝 덕분이다(발송을 기다리면 하루가 걸릴 수 있다).
+      - name: Record push subscription state
+        env:
+          PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+        run: node scripts/push-state.js
+
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add briefings/
+          git add briefings/ push/
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 생략"
           else
@@ -73,3 +81,17 @@ jobs:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
         run: node scripts/send-push.js
+
+      # send-push.js 가 남긴 발송 결과를 배포한다. always() 여야 한다 — 410 이면 위 스텝이
+      # 워크플로를 실패시키는데, 바로 그때의 기록이 앱에 가장 필요한 값이다.
+      - name: Commit push send result
+        if: always()
+        run: |
+          git add push/
+          if git diff --staged --quiet; then
+            echo "푸시 상태 변화 없음 — 커밋 생략"
+          else
+            git commit -m "push: 발송 상태 갱신"
+            git pull --rebase --autostash
+            git push
+          fi

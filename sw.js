@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v39';
+const CACHE='daily-brief-v40';
 // 앱 셸 — 이 파일들이 없으면 앱이 뜨지 않으므로 설치 단계에서 반드시 캐시한다.
 const CORE=['./','./index.html','./manifest.json'];
 // 아이콘은 아직 저장소에 없을 수 있다. addAll 은 하나만 404 나도 전체가 실패해
@@ -116,7 +116,9 @@ self.addEventListener('fetch',e=>{
   // 매일 갱신되는 브리핑/일정·메일·급변동 알림은 네트워크 우선(실패 시 캐시) —
   // 오프라인에서 어제 것이라도 보이게. (alerts/ 는 지금은 서비스워커가 직접 읽어서
   // 이 핸들러를 타지 않지만, 나중에 페이지가 읽게 되면 캐시된 낡은 알림을 보게 된다)
-  if(url.includes('/briefings/')||url.includes('/agenda/')||url.includes('/alerts/')){
+  // push/state.json 은 "지금 서버가 어떤 구독으로 보내고 있는가"를 알려주는 파일이라
+  // 캐시된 값을 보면 이미 고쳐진 경고가 계속 뜨거나, 새 고장을 놓친다.
+  if(url.includes('/briefings/')||url.includes('/agenda/')||url.includes('/alerts/')||url.includes('/push/')){
     e.respondWith(
       fetch(e.request).then(resp=>{
         if(resp.ok){const cl=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,cl))}
