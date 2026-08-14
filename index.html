@@ -338,6 +338,10 @@
   .push-link:disabled{opacity:.6;cursor:default;text-decoration:none}
   .push-actions{flex-shrink:0;display:flex;align-items:center;gap:2px}
   .push-msg code{background:var(--bg-card-2);border-radius:4px;padding:1px 4px;font-size:10px}
+  /* 구독이 끊긴 원인을 추적하는 기록 — 평소엔 읽을 일이 없으므로 눈에 띄지 않게 둔다 */
+  .push-diag{font-size:10px;line-height:1.6;color:var(--tx-dim);background:var(--bg-card-2);
+    border-radius:6px;padding:6px 8px;margin-top:2px}
+  .push-diag-log{margin-top:3px;font-variant-numeric:tabular-nums;opacity:.85}
   /* 구독 JSON 은 한 번 복사하면 끝이라 넓게 둘 이유가 없다 — 접힌 느낌으로 작게 */
   .push-sub{
     width:100%;height:56px;resize:vertical;
@@ -439,6 +443,8 @@ let state = {
   pushStale: false,   // 서버가 다른 구독을 들고 있다 = Secret 을 갱신해야 한다
   pushDead: false,    // 서버가 '내' 구독으로 보냈는데 410 = 폰에서 다시 구독해야 한다
   pushConfirm: false, // '다시 구독' 을 한 번 눌러 확인을 기다리는 중인지
+  pushPersist: null,  // navigator.storage.persisted() — 브라우저가 이 앱 데이터를 지울 수 있는 상태인지
+  pushLog: [],        // 구독이 언제 어떻게 바뀌었는지의 기록 (끊긴 원인을 다음번엔 알 수 있도록)
   assetsRevealed: false, // 자산 금액을 펼쳐 보고 있는지. 일부러 localStorage 에 두지 않는다
   pinPrompt: false,      // 금액 보기 전에 PIN 입력창을 띄운 상태인지
   pinInput: '',          // 입력 중인 PIN (render 가 DOM 을 다시 그려도 값이 남도록 state 에 둔다)
@@ -2176,6 +2182,55 @@ async function pushFingerprint(str){
   }catch(e){ return ''; }  // http 로 열었을 때 등 crypto.subtle 이 없는 경우
 }
 
+// ── 구독이 왜 자꾸 끊기는지 알아내기 위한 장치 (2026-08-14) ──────────────────────
+// 2026-08-08 이후 구독이 대여섯 번 죽었는데, 죽은 뒤에는 "누가 죽였는지"를 알 방법이
+// 전혀 없었다. 브라우저가 스스로 갈아끼운 것인지, 사용자가 '다시 구독' 을 누른 것인지,
+// 아니면 브라우저가 이 사이트 데이터를 통째로 지운 것인지가 구분되지 않으면
+// 매번 재구독만 반복하게 된다. 그래서 (1) 데이터가 지워지지 않도록 영구 보관을 요청하고
+// (2) 구독이 바뀔 때마다 기록을 남긴다.
+
+// 브라우저는 저장 공간이 부족하면 서비스워커 등록과 푸시 구독까지 통째로 버릴 수 있다
+// (localStorage 도 같이 사라진다). persist() 를 받아두면 그 대상에서 빠진다.
+// 설치된 PWA 는 대개 묻지도 않고 허용된다. 실패해도 앱 동작에는 아무 영향이 없다.
+async function ensurePersist(){
+  try{
+    if(!navigator.storage || !navigator.storage.persist) return;
+    state.pushPersist = await navigator.storage.persisted();
+    if(!state.pushPersist) state.pushPersist = await navigator.storage.persist();
+  }catch(e){ /* 지원하지 않는 브라우저면 그냥 넘어간다 */ }
+}
+
+const PUSH_LOG_KEY = 'mypush_log_v1';
+function readPushLog(){
+  try{ return JSON.parse(localStorage.getItem(PUSH_LOG_KEY) || '[]'); }catch(e){ return []; }
+}
+// 같은 지문이 연달아 들어오면 기록하지 않는다 — 앱을 열 때마다 같은 줄이 쌓이면
+// 정작 "바뀐 순간"이 묻힌다.
+function logPush(kind, hash){
+  const log = readPushLog();
+  const h = hash || '(없음)';   // 빈 지문도 한 가지 표기로 통일해야 중복 판정이 맞는다
+  if(log.length && log[log.length-1].h === h && log[log.length-1].k === kind) return log;
+  log.push({t: new Date().toISOString(), k: kind, h, p: (window.Notification && Notification.permission) || '?'});
+  const trimmed = log.slice(-12);
+  try{ localStorage.setItem(PUSH_LOG_KEY, JSON.stringify(trimmed)); }catch(e){}
+  state.pushLog = trimmed;
+  return trimmed;
+}
+// 서비스워커의 pushsubscriptionchange 는 localStorage 를 쓸 수 없어 Cache 에 자국을 남긴다.
+// 여기서 그걸 걷어와 같은 기록에 합친다 — 이게 있으면 "브라우저가 스스로 갈아끼웠다" 가
+// 확정되고, 없이 지문만 바뀌었다면 데이터 삭제·재설치 쪽이다.
+async function drainSwPushMarks(){
+  try{
+    if(!self.caches) return;
+    const c = await caches.open('push-diag-v1');
+    const r = await c.match('./marks.json');
+    if(!r) return;
+    const marks = await r.json();
+    await c.delete('./marks.json');
+    for(const m of (marks || [])) logPush('브라우저가 구독 교체', (m && m.h) || '');
+  }catch(e){ /* 진단용이라 실패해도 무시 */ }
+}
+
 // CI 가 남긴 "서버가 지금 어떤 구독으로 보내고 있는가 + 마지막 발송 결과".
 // 2026-08-13 이전에는 이 판정을 localStorage(복사한 시점의 endpoint)로 했는데, 복사 전에
 // 구독이 바뀌면 기준값이 없고 앱을 재설치하면 기준값도 지워져서 두 번이나 놓쳤다.
@@ -2221,6 +2276,20 @@ async function refreshPushState(){
   }
   state.pushHash = await pushFingerprint(currentEndpoint());
   state.pushChecked = true;
+  await ensurePersist();
+  await drainSwPushMarks();
+  // 지금 폰이 들고 있는 구독을 기록에 남긴다. 마지막 줄과 지문이 같으면 아무 일도 없었던
+  // 것이므로 기록하지 않는다(logPush 가 걸러낸다).
+  const log = readPushLog();
+  state.pushLog = log;
+  const last = log.length ? log[log.length-1] : null;
+  if(!state.pushSub){
+    if(last && last.h !== '(없음)') state.pushLog = logPush('구독이 사라짐', '');
+  }else if(!last){
+    state.pushLog = logPush(state.pushHash ? '기록 시작(구독 있음)' : '기록 시작', state.pushHash);
+  }else if(last.h !== state.pushHash){
+    state.pushLog = logPush('구독이 바뀜', state.pushHash);
+  }
   updatePushStale();
   render();
 }
@@ -2235,6 +2304,9 @@ async function enablePush(){
       render();
       return;
     }
+    // 구독을 만들기 전에 영구 보관을 받아둔다 — 사용자 제스처 직후라 승인 확률이 가장 높고,
+    // 이걸 못 받으면 브라우저가 저장 공간이 부족할 때 이 구독을 통째로 버릴 수 있다.
+    await ensurePersist();
     const reg = await navigator.serviceWorker.ready;
     const sub = await reg.pushManager.subscribe({
       userVisibleOnly: true, // 크롬은 이 옵션 없이는 구독을 거부한다
@@ -2247,6 +2319,7 @@ async function enablePush(){
     state.pushError = `구독에 실패했어요: ${e.message}`;
   }
   state.pushHash = await pushFingerprint(currentEndpoint());
+  if(state.pushSub) logPush('직접 알림 켜기', state.pushHash);
   updatePushStale();
   render();
 }
@@ -2282,6 +2355,7 @@ async function resubscribePush(){
       state.pushError = '알림 권한이 허용되지 않았어요.';
       return;
     }
+    await ensurePersist();
     const reg = await navigator.serviceWorker.ready;
     const old = await reg.pushManager.getSubscription();
     if(old) await old.unsubscribe();
@@ -2300,6 +2374,7 @@ async function resubscribePush(){
     // 여기 밖에 두면 버튼이 '다시 구독 중…' 에서 영영 잠긴다.
     state.pushBusy = false;
     state.pushHash = await pushFingerprint(currentEndpoint());
+    logPush(state.pushSub ? '직접 다시 구독' : '다시 구독 실패(구독 없음)', state.pushHash);
     updatePushStale();
     render();
   }
@@ -2327,6 +2402,22 @@ function copyPushSub(){
     .catch(() => { state.pushError = '복사에 실패했어요. 아래 상자에서 직접 선택해 복사해 주세요.'; render(); });
 }
 
+// 구독이 끊긴 원인을 다음번엔 화면에서 바로 읽을 수 있도록 하는 진단 블록.
+// '영구 보관: 아니오' 면 브라우저가 저장 공간이 부족할 때 이 앱의 구독을 통째로 버릴 수 있고,
+// 구독은 바뀌었는데 기록이 비어 있으면 앱 데이터가 지워졌다는(재설치·데이터 삭제) 뜻이다.
+function renderPushDiag(){
+  const log = state.pushLog || [];
+  const rows = log.slice(-6).reverse().map(e => {
+    const t = new Date(e.t);
+    const when = isNaN(t) ? e.t : `${t.getMonth()+1}/${t.getDate()} ${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}`;
+    return `<div>${esc(when)} · ${esc(e.k)} · ${esc(String(e.h).slice(0,8))}</div>`;
+  }).join('');
+  return `<div class="push-diag">
+    <div>저장소 영구 보관: ${state.pushPersist === true ? '예' : state.pushPersist === false ? '<b>아니오</b> (브라우저가 구독을 지울 수 있음)' : '알 수 없음'}</div>
+    ${rows ? `<div class="push-diag-log">${rows}</div>` : '<div>구독 변경 기록 없음</div>'}
+  </div>`;
+}
+
 function renderPushRow(){
   if(!VAPID_PUBLIC_KEY) return '';           // 아직 키를 안 넣었으면 아예 감춘다
   if(!pushSupported()) return '';            // 지원 안 하는 브라우저
@@ -2342,6 +2433,7 @@ function renderPushRow(){
       ${state.pushStale ? `<span class="push-msg push-warn">⚠️ 알림이 끊겼습니다. 다시 켠 뒤 <code>PUSH_SUBSCRIPTION</code> 시크릿을 갱신해 주세요.</span>` : ''}
       <button class="push-btn" onclick="enablePush()">🔔 아침 브리핑 알림 받기</button>
       ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
+      ${state.pushStale ? renderPushDiag() : ''}
     </div>`;
   }
 
@@ -2376,6 +2468,7 @@ function renderPushRow(){
         : `GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣을 값입니다. 이미 등록했다면 다시 넣지 않아도 됩니다.`}</span>
       <textarea class="push-sub" readonly onclick="this.select()">${esc(state.pushSub)}</textarea>
       <button class="push-btn" onclick="copyPushSub()">${state.pushCopied ? '복사됨 ✓' : '구독 정보 복사'}</button>
+      ${renderPushDiag()}
       ${!state.pushDead && !state.pushStale && !state.pushConfirm ? `<span class="push-actions">${resubBtn}</span>` : ''}` : ''}
     ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
   </div>`;

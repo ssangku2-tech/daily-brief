@@ -1,4 +1,7 @@
-const CACHE='daily-brief-v40';
+const CACHE='daily-brief-v41';
+// 구독 교체 자국을 남겨두는 별도 캐시. 배포 때마다 지워지면 안 되므로 activate 의
+// 삭제 대상에서 제외한다 (index.html 이 걷어간 뒤 스스로 비운다).
+const DIAG='push-diag-v1';
 // 앱 셸 — 이 파일들이 없으면 앱이 뜨지 않으므로 설치 단계에서 반드시 캐시한다.
 const CORE=['./','./index.html','./manifest.json'];
 // 아이콘은 아직 저장소에 없을 수 있다. addAll 은 하나만 404 나도 전체가 실패해
@@ -15,7 +18,7 @@ self.addEventListener('install',e=>{
   self.skipWaiting();
 });
 self.addEventListener('activate',e=>{
-  e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));
+  e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE&&k!==DIAG).map(k=>caches.delete(k)))));
   self.clients.claim();
 });
 // 푸시 수신 → 알림 표시.
@@ -76,6 +79,21 @@ self.addEventListener('push',e=>{
 // 새 endpoint 를 서버에 알릴 방법은 없다(이 앱에는 서버가 없고 값은 GitHub Secret 에 있다).
 // 대신 index.html 이 앱을 열 때 endpoint 를 마지막으로 복사한 값과 비교해
 // "시크릿과 어긋남" 을 띄우므로, 여기서는 구독만 되살려 두면 된다.
+// 서비스워커는 localStorage 를 쓸 수 없으므로 Cache 에 자국을 남긴다. index.html 이
+// 앱을 열 때 이걸 걷어가 구독 변경 기록에 합친다 — "브라우저가 스스로 갈아끼웠다"와
+// "앱 데이터가 통째로 지워졌다"를 구분하는 유일한 단서다.
+async function mark(endpoint){
+  let h='';
+  if(endpoint){
+    const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(endpoint));
+    h=[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('').slice(0,16);
+  }
+  const c=await caches.open(DIAG);
+  const prev=await c.match('./marks.json');
+  const list=prev?await prev.json():[];
+  list.push({t:new Date().toISOString(),h});
+  await c.put('./marks.json',new Response(JSON.stringify(list.slice(-12)),{headers:{'Content-Type':'application/json'}}));
+}
 self.addEventListener('pushsubscriptionchange',e=>{
   e.waitUntil((async()=>{
     try{
@@ -90,8 +108,13 @@ self.addEventListener('pushsubscriptionchange',e=>{
         const raw=atob((s+pad).replace(/-/g,'+').replace(/_/g,'/'));
         key=Uint8Array.from(raw,c=>c.charCodeAt(0));
       }
-      await self.registration.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:key});
-    }catch(_){ /* 되살리기 실패해도 앱의 "알림 받기" 버튼으로 복구할 수 있다 */ }
+      const sub=await self.registration.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:key});
+      await mark(sub&&sub.endpoint);
+    }catch(_){
+      // 되살리기 실패해도 앱의 "알림 받기" 버튼으로 복구할 수 있다.
+      // 다만 "브라우저가 구독을 갈아끼웠다"는 사실 자체는 남겨야 원인 추적이 된다.
+      try{ await mark(''); }catch(__){}
+    }
   })());
 });
 // 알림 클릭 → 앱 열기/포커스
