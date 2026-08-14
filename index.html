@@ -445,6 +445,8 @@ let state = {
   pushConfirm: false, // '다시 구독' 을 한 번 눌러 확인을 기다리는 중인지
   pushPersist: null,  // navigator.storage.persisted() — 브라우저가 이 앱 데이터를 지울 수 있는 상태인지
   pushLog: [],        // 구독이 언제 어떻게 바뀌었는지의 기록 (끊긴 원인을 다음번엔 알 수 있도록)
+  pushSynced: null,   // 구독을 보관소(워커)에 등록했는지 — 'ok' | 'fail' | 'off'
+  pushSyncError: '',
   assetsRevealed: false, // 자산 금액을 펼쳐 보고 있는지. 일부러 localStorage 에 두지 않는다
   pinPrompt: false,      // 금액 보기 전에 PIN 입력창을 띄운 상태인지
   pinInput: '',          // 입력 중인 PIN (render 가 DOM 을 다시 그려도 값이 남도록 state 에 둔다)
@@ -2159,6 +2161,18 @@ document.addEventListener('visibilitychange', () => {
 // 비어 있으면 알림 기능 전체가 조용히 숨겨진다 — scripts/setup-push.js 로 만들어 채운다.
 const VAPID_PUBLIC_KEY = 'BDxDlUmSuwXF19pJwhvTsEB0qeGUUgAJ3mcBcocL3qj5Im5W4LK0Vg0O1qkneqTKDaix4OdQRmTBWYT9HIrvwLQ';
 
+// 구독 주소 보관소(Cloudflare Worker, 소스는 worker/push-store.js).
+// 앱이 구독을 여기에 직접 써 두면 CI 가 발송 직전에 읽어 간다 — 구독이 바뀔 때마다
+// 사람이 GitHub Secret 을 고쳐 넣던 단계가 없어진다(2026-08-08~13 에 다섯 번 그랬다).
+// 이 두 값이 비어 있으면 예전 방식(시크릿에 손으로 붙여넣기)으로 그대로 동작한다.
+//
+// 쓰기 토큰은 브라우저 코드에 들어가므로 **공개값이다** — 숨길 수 있는 값이 아니다.
+// 읽기(=구독 주소를 꺼내는 것)는 워커에서 별도의 비밀 토큰으로 막혀 있고, 알림에는
+// 내용이 실리지 않으므로(문구는 폰이 직접 만든다) 이 토큰으로 새어 나갈 데이터는 없다.
+const PUSH_STORE_URL = 'https://push-store.ssangku2.workers.dev/sub';
+const PUSH_STORE_TOKEN = 'wIEndLtNbUExlkdZ';
+const pushStoreOn = () => !!PUSH_STORE_URL && !!PUSH_STORE_TOKEN;
+
 const pushSupported = () =>
   'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
 
@@ -2216,6 +2230,38 @@ function logPush(kind, hash){
   state.pushLog = trimmed;
   return trimmed;
 }
+// 지금 구독을 보관소(워커)에 등록한다. 이게 이 앱에서 알림이 끊겼을 때의 복구 경로다 —
+// 예전에는 사람이 구독 JSON 을 복사해 GitHub Secret 에 붙여넣어야 했고, 그 단계를 잊거나
+// 붙여넣기 전에 구독이 또 바뀌는 바람에 계속 끊겼다.
+const PUSH_SYNC_KEY = 'mypush_store_v1';
+async function syncPushSub(force){
+  if(!pushStoreOn()){ state.pushSynced = 'off'; return; }
+  if(!state.pushSub || !state.pushHash) return;
+  const h = state.pushHash;
+  // 서버(CI)가 이미 이 구독을 들고 있으면 보낼 이유가 없다.
+  if(!force && state.pushServer && state.pushServer.endpointHash === h){ state.pushSynced = 'ok'; return; }
+  // 방금 등록한 지문이면 다시 보내지 않는다 — CI 가 지문을 기록할 때까지 최대 30분이
+  // 걸리는데, 그동안 앱을 열 때마다 같은 값을 다시 쓰게 된다.
+  let last = null;
+  try{ last = JSON.parse(localStorage.getItem(PUSH_SYNC_KEY) || 'null'); }catch(e){}
+  if(!force && last && last.h === h && Date.now() - last.t < 30*60*1000){ state.pushSynced = 'ok'; return; }
+  try{
+    // 본문을 문자열로 보내면 Content-Type 이 text/plain 이 되어 프리플라이트 없이 간다.
+    const r = await fetch(`${PUSH_STORE_URL}?t=${encodeURIComponent(PUSH_STORE_TOKEN)}`, {
+      method: 'POST', body: state.pushSub,
+    });
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    try{ localStorage.setItem(PUSH_SYNC_KEY, JSON.stringify({h, t: Date.now()})); }catch(e){}
+    state.pushSynced = 'ok';
+    state.pushSyncError = '';
+    logPush('서버에 구독 등록', h);
+  }catch(e){
+    // 워커가 아직 없거나 죽었을 때. 이때는 예전 방식(시크릿에 직접 붙여넣기)이 남아 있다.
+    state.pushSynced = 'fail';
+    state.pushSyncError = e.message;
+  }
+}
+
 // 서비스워커의 pushsubscriptionchange 는 localStorage 를 쓸 수 없어 Cache 에 자국을 남긴다.
 // 여기서 그걸 걷어와 같은 기록에 합친다 — 이게 있으면 "브라우저가 스스로 갈아끼웠다" 가
 // 확정되고, 없이 지문만 바뀌었다면 데이터 삭제·재설치 쪽이다.
@@ -2227,7 +2273,9 @@ async function drainSwPushMarks(){
     if(!r) return;
     const marks = await r.json();
     await c.delete('./marks.json');
-    for(const m of (marks || [])) logPush('브라우저가 구독 교체', (m && m.h) || '');
+    for(const m of (marks || [])){
+      logPush(`브라우저가 구독 교체${m && m.s ? '(보관소 등록됨)' : ''}`, (m && m.h) || '');
+    }
   }catch(e){ /* 진단용이라 실패해도 무시 */ }
 }
 
@@ -2292,6 +2340,9 @@ async function refreshPushState(){
   }
   updatePushStale();
   render();
+  // 서버가 다른 구독을 들고 있으면 여기서 스스로 고친다. 사용자가 할 일은 없다.
+  await syncPushSub();
+  render();
 }
 
 async function enablePush(){
@@ -2321,6 +2372,7 @@ async function enablePush(){
   state.pushHash = await pushFingerprint(currentEndpoint());
   if(state.pushSub) logPush('직접 알림 켜기', state.pushHash);
   updatePushStale();
+  await syncPushSub(true);
   render();
 }
 
@@ -2376,6 +2428,7 @@ async function resubscribePush(){
     state.pushHash = await pushFingerprint(currentEndpoint());
     logPush(state.pushSub ? '직접 다시 구독' : '다시 구독 실패(구독 없음)', state.pushHash);
     updatePushStale();
+    await syncPushSub(true);
     render();
   }
 }
@@ -2414,6 +2467,10 @@ function renderPushDiag(){
   }).join('');
   return `<div class="push-diag">
     <div>저장소 영구 보관: ${state.pushPersist === true ? '예' : state.pushPersist === false ? '<b>아니오</b> (브라우저가 구독을 지울 수 있음)' : '알 수 없음'}</div>
+    <div>보관소 등록: ${
+      state.pushSynced === 'ok' ? '완료' :
+      state.pushSynced === 'fail' ? `<b>실패</b> (${esc(state.pushSyncError || '원인 불명')})` :
+      state.pushSynced === 'off' ? '사용 안 함(시크릿 방식)' : '확인 전'}</div>
     ${rows ? `<div class="push-diag-log">${rows}</div>` : '<div>구독 변경 기록 없음</div>'}
   </div>`;
 }
@@ -2430,7 +2487,9 @@ function renderPushRow(){
     // 구독이 없는데 서버는 뭔가 들고 보내고 있다 = 구독이 사라졌다(앱 재설치·데이터 삭제 등).
     // 이 줄이 없으면 평범한 "알림 받기" 로만 보여서, 알림이 끊긴 걸 눈치채기 어렵다.
     return `<div class="push-row">
-      ${state.pushStale ? `<span class="push-msg push-warn">⚠️ 알림이 끊겼습니다. 다시 켠 뒤 <code>PUSH_SUBSCRIPTION</code> 시크릿을 갱신해 주세요.</span>` : ''}
+      ${state.pushStale ? `<span class="push-msg push-warn">⚠️ 알림이 끊겼습니다. ${pushStoreOn()
+        ? '아래 버튼으로 다시 켜면 나머지는 자동으로 복구됩니다.'
+        : `다시 켠 뒤 <code>PUSH_SUBSCRIPTION</code> 시크릿을 갱신해 주세요.`}</span>` : ''}
       <button class="push-btn" onclick="enablePush()">🔔 아침 브리핑 알림 받기</button>
       ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
       ${state.pushStale ? renderPushDiag() : ''}
@@ -2440,8 +2499,12 @@ function renderPushRow(){
   // 구독은 있다. 여기서부터는 서버 기록(push/state.json)이 말하는 상태에 따라
   // "지금 해야 할 일 하나"만 보여준다. 고장이 아닌데 '다시 구독' 을 눌러 멀쩡한 구독을
   // 새로 만들어버리는 것이 지금까지 알림이 끊긴 주된 경로였다.
+  // 보관소를 쓰는 동안에는 '어긋남'이 사람이 할 일이 아니다 — 앱이 이미 새 구독을
+  // 등록했고 CI 가 30분 안에 그걸 집어간다. 그래서 경고가 아니라 진행 상태로 보여준다.
+  const autoFixing = state.pushStale && pushStoreOn() && state.pushSynced === 'ok';
   const status =
     state.pushDead  ? {cls:'push-warn', msg:'⚠️ 구독이 폐기됨 — 다시 구독 필요'} :
+    autoFixing      ? {cls:'',          msg:'⏳ 새 구독 등록됨 — 30분 안에 반영'} :
     state.pushStale ? {cls:'push-warn', msg:'⚠️ 시크릿과 어긋남'} :
                       {cls:'',          msg:'🔔 아침 브리핑 알림 켜짐'};
 
@@ -2463,9 +2526,14 @@ function renderPushRow(){
     ${state.pushConfirm ? `<span class="push-msg push-warn">다시 구독하면 새 주소가 만들어져, <code>PUSH_SUBSCRIPTION</code> 시크릿을 갱신하기 전까지 알림이 오지 않습니다.</span>` : ''}
     ${state.pushDead ? `<span class="push-msg">서버가 이 구독으로 보냈지만 폐기됐다는 응답(${state.pushServer && state.pushServer.status})을 받았습니다. 다시 구독한 뒤 시크릿을 갱신해 주세요.</span>` : ''}
     ${state.pushShowSub ? `
-      <span class="push-msg">${state.pushStale || state.pushDead
-        ? `이 값을 GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 <b>반드시 갱신</b>해야 알림이 다시 옵니다. 갱신하면 30분 안에 이 경고가 저절로 사라집니다.`
-        : `GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣을 값입니다. 이미 등록했다면 다시 넣지 않아도 됩니다.`}</span>
+      <span class="push-msg">${
+        autoFixing ? '새 구독을 보관소에 등록했습니다. CI 가 30분 안에 집어가므로 손으로 할 일은 없습니다.' :
+        pushStoreOn() && state.pushSynced === 'fail' ? `⚠️ 보관소 등록에 실패했습니다(${esc(state.pushSyncError || '원인 불명')}). 임시로 이 값을 GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣으면 알림이 돌아옵니다.` :
+        state.pushStale || state.pushDead
+          ? `이 값을 GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 <b>반드시 갱신</b>해야 알림이 다시 옵니다. 갱신하면 30분 안에 이 경고가 저절로 사라집니다.`
+          : pushStoreOn()
+            ? `보관소에 등록돼 있어 손으로 넣을 일은 없습니다. 아래 값은 보관소가 안 될 때 쓰는 대비책입니다.`
+            : `GitHub Secret <code>PUSH_SUBSCRIPTION</code> 에 넣을 값입니다. 이미 등록했다면 다시 넣지 않아도 됩니다.`}</span>
       <textarea class="push-sub" readonly onclick="this.select()">${esc(state.pushSub)}</textarea>
       <button class="push-btn" onclick="copyPushSub()">${state.pushCopied ? '복사됨 ✓' : '구독 정보 복사'}</button>
       ${renderPushDiag()}

@@ -50,6 +50,10 @@ jobs:
       - name: Record push subscription state
         env:
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+          # 앱이 구독을 직접 등록해 두는 워커. 이게 있으면 시크릿보다 우선한다 —
+          # 구독이 바뀌어도 사람이 시크릿을 옮겨 적을 필요가 없다.
+          PUSH_STORE_URL: ${{ vars.PUSH_STORE_URL }}
+          PUSH_STORE_ADMIN_TOKEN: ${{ secrets.PUSH_STORE_ADMIN_TOKEN }}
         run: node scripts/push-state.js
 
       - name: Commit & push
@@ -80,6 +84,10 @@ jobs:
           # 공개키는 시크릿이 아니다 — send-push.js 가 index.html 에서 직접 읽는다.
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+          # 앱이 구독을 직접 등록해 두는 워커. 이게 있으면 시크릿보다 우선한다 —
+          # 구독이 바뀌어도 사람이 시크릿을 옮겨 적을 필요가 없다.
+          PUSH_STORE_URL: ${{ vars.PUSH_STORE_URL }}
+          PUSH_STORE_ADMIN_TOKEN: ${{ secrets.PUSH_STORE_ADMIN_TOKEN }}
         run: node scripts/send-push.js
 
       # send-push.js 가 남긴 발송 결과를 배포한다. always() 여야 한다 — 410 이면 위 스텝이

@@ -13,21 +13,18 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
+const { resolveSubscription } = require('./push-store.js');
 
 const FILE = path.join(__dirname, '..', 'push', 'state.json');
 
 const hashOf = endpoint => crypto.createHash('sha256').update(endpoint).digest('hex').slice(0, 16);
 
-// 지금 워크플로에 주입된 PUSH_SUBSCRIPTION 시크릿의 지문.
-function endpointHashFromEnv() {
-  const raw = process.env.PUSH_SUBSCRIPTION;
-  if (!raw) return '';
-  try {
-    const ep = JSON.parse(raw).endpoint;
-    return ep ? hashOf(ep) : '';
-  } catch (e) {
-    return '';
-  }
+// 지금 CI 가 실제로 쓰는 구독의 지문 — 워커에 등록된 값이 있으면 그것, 없으면 시크릿.
+// 앱은 이 지문을 자기 구독과 대조해 "서버가 내 구독을 들고 있는가"를 판단하므로,
+// 여기서 고르는 구독과 send-push.js 가 실제로 쏘는 구독이 반드시 같아야 한다.
+async function endpointHashFromEnv() {
+  const r = await resolveSubscription();
+  return r ? hashOf(r.sub.endpoint) : '';
 }
 
 function read() {
@@ -60,11 +57,12 @@ module.exports = { endpointHashFromEnv, record, read };
 // 지문만" 기록한다. 이게 있어야 시크릿을 갱신한 뒤 앱의 경고가 다음 실행에서 풀린다 —
 // 발송할 일(급변동·아침 브리핑)이 생길 때까지 기다리면 하루가 걸릴 수 있다.
 if (require.main === module) {
-  const h = endpointHashFromEnv();
-  if (!h) {
-    console.log('PUSH_SUBSCRIPTION 이 없어 상태 기록을 건너뜁니다.');
-    process.exit(0);
-  }
-  const { changed } = record({ endpointHash: h });
-  console.log(changed ? `푸시 구독 지문 기록: ${h}` : `푸시 구독 지문 변화 없음: ${h}`);
+  endpointHashFromEnv().then(h => {
+    if (!h) {
+      console.log('등록된 구독이 없어(워커·시크릿 모두) 상태 기록을 건너뜁니다.');
+      return;
+    }
+    const { changed } = record({ endpointHash: h });
+    console.log(changed ? `푸시 구독 지문 기록: ${h}` : `푸시 구독 지문 변화 없음: ${h}`);
+  });
 }

@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v41';
+const CACHE='daily-brief-v42';
 // 구독 교체 자국을 남겨두는 별도 캐시. 배포 때마다 지워지면 안 되므로 activate 의
 // 삭제 대상에서 제외한다 (index.html 이 걷어간 뒤 스스로 비운다).
 const DIAG='push-diag-v1';
@@ -82,7 +82,7 @@ self.addEventListener('push',e=>{
 // 서비스워커는 localStorage 를 쓸 수 없으므로 Cache 에 자국을 남긴다. index.html 이
 // 앱을 열 때 이걸 걷어가 구독 변경 기록에 합친다 — "브라우저가 스스로 갈아끼웠다"와
 // "앱 데이터가 통째로 지워졌다"를 구분하는 유일한 단서다.
-async function mark(endpoint){
+async function mark(endpoint,stored){
   let h='';
   if(endpoint){
     const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(endpoint));
@@ -91,29 +91,48 @@ async function mark(endpoint){
   const c=await caches.open(DIAG);
   const prev=await c.match('./marks.json');
   const list=prev?await prev.json():[];
-  list.push({t:new Date().toISOString(),h});
+  list.push({t:new Date().toISOString(),h,s:!!stored});
   await c.put('./marks.json',new Response(JSON.stringify(list.slice(-12)),{headers:{'Content-Type':'application/json'}}));
+}
+// 새 구독을 보관소(워커)에 바로 등록한다. 앱이 열려 있지 않아도 되기 때문에, 브라우저가
+// 한밤중에 구독을 갈아끼워도 다음 발송 전에 서버가 새 주소를 갖게 된다 — 이게 있어야
+// "조용히 바뀌고 아침 알림만 안 오는" 상황이 없어진다.
+// URL·토큰은 index.html 한 곳에만 둔다(VAPID 공개키와 같은 이유로 여기 복사하지 않는다).
+async function storeSub(sub,html){
+  try{
+    if(!sub||!sub.endpoint) return false;
+    const t=html||await(await fetch('./index.html',{cache:'no-store'})).text();
+    const u=t.match(/PUSH_STORE_URL\s*=\s*'([^']*)'/), k=t.match(/PUSH_STORE_TOKEN\s*=\s*'([^']*)'/);
+    if(!u||!k||!u[1]||!k[1]) return false;
+    const r=await fetch(`${u[1]}?t=${encodeURIComponent(k[1])}`,{method:'POST',body:JSON.stringify(sub.toJSON?sub.toJSON():sub)});
+    return r.ok;
+  }catch(_){ return false; }
 }
 self.addEventListener('pushsubscriptionchange',e=>{
   e.waitUntil((async()=>{
     try{
-      // 공개키는 index.html 한 곳에만 둔다(send-push.js 도 거기서 읽는다) — 여기 복사해두면
-      // 키를 바꿨을 때 조용히 어긋난다. 이전 구독이 키를 들고 있으면 그걸 먼저 쓴다.
+      // 공개키도 보관소 주소도 index.html 한 곳에만 둔다(send-push.js 도 거기서 읽는다) —
+      // 여기 복사해두면 값을 바꿨을 때 조용히 어긋난다. 두 군데서 쓰므로 한 번만 받아 둔다.
+      let html='';
+      try{ html=await(await fetch('./index.html',{cache:'no-store'})).text(); }catch(_){}
+      // 이전 구독이 키를 들고 있으면 그걸 먼저 쓴다.
       let key=e.oldSubscription&&e.oldSubscription.options&&e.oldSubscription.options.applicationServerKey;
       if(!key){
-        const r=await fetch('./index.html',{cache:'no-store'});
-        const m=(await r.text()).match(/VAPID_PUBLIC_KEY\s*=\s*'([^']+)'/);
-        if(!m) return;
+        const m=html.match(/VAPID_PUBLIC_KEY\s*=\s*'([^']+)'/);
+        if(!m){ await mark('',false); return; }
         const s=m[1], pad='='.repeat((4-s.length%4)%4);
         const raw=atob((s+pad).replace(/-/g,'+').replace(/_/g,'/'));
         key=Uint8Array.from(raw,c=>c.charCodeAt(0));
       }
       const sub=await self.registration.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:key});
-      await mark(sub&&sub.endpoint);
+      // 되살린 구독을 보관소에 바로 등록한다. 앱이 열릴 때까지 기다리지 않으므로
+      // 밤사이 구독이 바뀌어도 아침 알림이 그대로 도착한다.
+      const ok=await storeSub(sub,html);
+      await mark(sub&&sub.endpoint,ok);
     }catch(_){
       // 되살리기 실패해도 앱의 "알림 받기" 버튼으로 복구할 수 있다.
       // 다만 "브라우저가 구독을 갈아끼웠다"는 사실 자체는 남겨야 원인 추적이 된다.
-      try{ await mark(''); }catch(__){}
+      try{ await mark('',false); }catch(__){}
     }
   })());
 });

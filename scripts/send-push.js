@@ -9,11 +9,14 @@
 // 필요한 환경변수 (모두 GitHub Secret):
 //   VAPID_PRIVATE_KEY  — setup-push.js 가 출력한 비밀키 (base64url d 값)
 //   VAPID_PUBLIC_KEY   — 같은 스크립트가 출력한 공개키 (index.html 에 넣은 것과 같은 값)
-//   PUSH_SUBSCRIPTION  — 앱에서 구독 후 복사한 JSON
+//
+// 보낼 구독은 scripts/push-store.js 가 고른다 — 앱이 워커에 등록해 둔 값이 우선이고,
+// 없으면 예전처럼 PUSH_SUBSCRIPTION 시크릿을 쓴다.
 const crypto = require('crypto');
 const pushState = require('./push-state.js');
+const { resolveSubscription } = require('./push-store.js');
 
-const { VAPID_PRIVATE_KEY, PUSH_SUBSCRIPTION } = process.env;
+const { VAPID_PRIVATE_KEY } = process.env;
 
 // 공개키는 index.html 에 이미 공개돼 있으므로 Secret 으로 또 받지 않고 거기서 읽는다
 // (사용자가 등록해야 할 Secret 이 하나 줄고, 두 값이 어긋날 일도 없다).
@@ -28,11 +31,10 @@ function readPublicKey() {
 const VAPID_PUBLIC_KEY = readPublicKey();
 
 // 알림은 이 앱의 필수 기능이 아니다 — 설정이 없으면 조용히 넘어가고 브리핑 생성은 그대로 성공시킨다.
-if (!VAPID_PRIVATE_KEY || !VAPID_PUBLIC_KEY || !PUSH_SUBSCRIPTION) {
+if (!VAPID_PRIVATE_KEY || !VAPID_PUBLIC_KEY) {
   const missing = [
     !VAPID_PRIVATE_KEY && 'VAPID_PRIVATE_KEY(시크릿)',
     !VAPID_PUBLIC_KEY && 'VAPID_PUBLIC_KEY(index.html)',
-    !PUSH_SUBSCRIPTION && 'PUSH_SUBSCRIPTION(시크릿)',
   ].filter(Boolean).join(', ');
   console.log(`푸시 설정이 없어 알림을 건너뜁니다 — 빠진 것: ${missing}`);
   process.exit(0);
@@ -74,8 +76,14 @@ function makeVapidJwt(endpoint, key) {
 }
 
 async function main() {
-  const sub = JSON.parse(PUSH_SUBSCRIPTION);
-  if (!sub.endpoint) throw new Error('PUSH_SUBSCRIPTION 에 endpoint 가 없습니다.');
+  const resolved = await resolveSubscription();
+  if (!resolved) {
+    // 워커에도 시크릿에도 구독이 없다. 알림은 이 앱의 필수 기능이 아니므로 조용히 넘어간다.
+    console.log('등록된 구독이 없어 알림을 건너뜁니다 (앱에서 알림을 켜면 워커에 등록됩니다).');
+    return;
+  }
+  const sub = resolved.sub;
+  console.log(`구독 출처: ${resolved.source === 'worker' ? `워커(등록 ${resolved.at || '시각 미상'})` : '시크릿(PUSH_SUBSCRIPTION)'}`);
 
   const key = privateKeyFromVapid(VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY);
   const jwt = makeVapidJwt(sub.endpoint, key);
@@ -92,7 +100,7 @@ async function main() {
 
   // 결과를 push/state.json 에 남긴다 — 앱이 이 파일을 읽어 "서버가 내 구독으로 보내고 있는가,
   // 그 발송이 성공했는가"를 스스로 판단한다. 워크플로가 이 파일을 커밋해야 앱에 보인다.
-  const endpointHash = pushState.endpointHashFromEnv();
+  const endpointHash = crypto.createHash('sha256').update(sub.endpoint).digest('hex').slice(0, 16);
   const before = pushState.read();
 
   if (res.status === 404 || res.status === 410) {

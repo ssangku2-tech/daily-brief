@@ -51,6 +51,10 @@ jobs:
       - name: Record push subscription state
         env:
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+          # 앱이 구독을 직접 등록해 두는 워커. 이게 있으면 시크릿보다 우선한다 —
+          # 구독이 바뀌어도 사람이 시크릿을 옮겨 적을 필요가 없다.
+          PUSH_STORE_URL: ${{ vars.PUSH_STORE_URL }}
+          PUSH_STORE_ADMIN_TOKEN: ${{ secrets.PUSH_STORE_ADMIN_TOKEN }}
         run: node scripts/push-state.js
 
       # 서비스워커가 alerts/latest.json 을 읽어 알림 문구를 만들기 때문에,
@@ -84,6 +88,10 @@ jobs:
         env:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+          # 앱이 구독을 직접 등록해 두는 워커. 이게 있으면 시크릿보다 우선한다 —
+          # 구독이 바뀌어도 사람이 시크릿을 옮겨 적을 필요가 없다.
+          PUSH_STORE_URL: ${{ vars.PUSH_STORE_URL }}
+          PUSH_STORE_ADMIN_TOKEN: ${{ secrets.PUSH_STORE_ADMIN_TOKEN }}
         run: node scripts/send-push.js
 
       # PUSH_SUBSCRIPTION 을 다시 등록한 뒤 "정말 폰까지 가는가"를 확인할 방법이 달리 없다.
@@ -97,6 +105,10 @@ jobs:
         env:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+          # 앱이 구독을 직접 등록해 두는 워커. 이게 있으면 시크릿보다 우선한다 —
+          # 구독이 바뀌어도 사람이 시크릿을 옮겨 적을 필요가 없다.
+          PUSH_STORE_URL: ${{ vars.PUSH_STORE_URL }}
+          PUSH_STORE_ADMIN_TOKEN: ${{ secrets.PUSH_STORE_ADMIN_TOKEN }}
         run: node scripts/send-push.js
 
       # 위 두 발송 스텝 중 무엇이 돌았든 그 결과를 배포한다. always() 여야 한다 — 410 이면
