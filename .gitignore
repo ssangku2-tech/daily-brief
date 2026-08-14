@@ -8,3 +8,6 @@ app.png
 
 # setup-push.js 가 만드는 VAPID 비밀키. 절대 커밋 금지.
 push-keys.txt
+
+# 구독 보관소 워커의 관리 토큰(읽기용 비밀값)과 설정 메모. 절대 커밋 금지.
+push-store-keys.txt
