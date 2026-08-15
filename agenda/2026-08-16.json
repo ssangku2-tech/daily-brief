@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-16",
+  "generatedAt": "2026-08-16 06:18",
+  "events": [
+    {
+      "title": "스크린",
+      "start": "2026-08-16T11:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 820,
+  "importantMails": [
+    {
+      "from": "CapCut <admin@mail.capcut.com>",
+      "subject": "CapCut 구독이 3일 후 만료됩니다..",
+      "summary": "CapCut 구독 만료 예정 알림"
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "여러 기기에서 Slack 설정하기",
+      "summary": "Slack 다중 기기 설정 안내"
+    }
+  ]
+}
