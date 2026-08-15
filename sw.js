@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v42';
+const CACHE='daily-brief-v43';
 // 구독 교체 자국을 남겨두는 별도 캐시. 배포 때마다 지워지면 안 되므로 activate 의
 // 삭제 대상에서 제외한다 (index.html 이 걷어간 뒤 스스로 비운다).
 const DIAG='push-diag-v1';
@@ -47,6 +47,14 @@ self.addEventListener('push',e=>{
       return;
     }
 
+    // 구독이 새로 등록되면 CI 가 그 자리에서 확인 발송을 한다(push-state.js 의 verify).
+    // status 0 = "이 구독으로 아직 한 번도 성공 발송된 적 없음" 이므로, 지금 도착한 이 푸시가
+    // 바로 그 첫 발송이다. 문구를 갈아치우지 않고 제목만 바꾸는 이유는, 아침 브리핑 발송이
+    // 새 구독의 첫 발송을 겸하는 경우(밤사이 구독이 바뀐 날)에 브리핑 내용까지 잃지 않기 위해서다.
+    // 배포가 아직 안 끝나 옛 파일을 읽으면 평소 알림이 뜰 뿐이라 틀려도 해가 없다.
+    const st=await get('push/state.json');
+    const first=!!(st&&st.status===0);
+
     let body='앱을 열어 확인하세요';
     try{
       const key=new Date(Date.now()+9*3600*1000).toISOString().slice(0,10); // KST 오늘
@@ -65,11 +73,13 @@ self.addEventListener('push',e=>{
       }
       if(lines.length) body=lines.join('\n');
     }catch(_){ /* 문구 조립에 실패해도 알림 자체는 반드시 띄운다 */ }
-    await self.registration.showNotification('☀️ 오늘의 브리핑',{
-      body,
+    await self.registration.showNotification(first?'🔔 알림 다시 연결됨':'☀️ 오늘의 브리핑',{
+      body:first?`새 구독으로 첫 알림이 도착했어요.\n${body}`:body,
       icon:'./icon-192.png',
       badge:'./icon-192.png',
-      tag:'daily-brief',   // 같은 tag 는 덮어쓴다 — 재시도 크론이 여러 번 쏴도 알림이 쌓이지 않는다
+      // 같은 tag 는 덮어쓴다 — 재시도 크론이 여러 번 쏴도 알림이 쌓이지 않는다.
+      // 확인 발송만 tag 를 나눈다: 그날 아침 브리핑을 덮어쓰거나 반대로 덮이면 안 된다.
+      tag:first?'push-verify':'daily-brief',
       renotify:false,
     });
   })());

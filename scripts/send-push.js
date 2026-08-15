@@ -88,20 +88,31 @@ async function main() {
   const key = privateKeyFromVapid(VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY);
   const jwt = makeVapidJwt(sub.endpoint, key);
 
-  const res = await fetch(sub.endpoint, {
-    method: 'POST',
-    headers: {
-      Authorization: `vapid t=${jwt}, k=${VAPID_PUBLIC_KEY}`,
-      TTL: '3600',            // 폰이 꺼져 있으면 1시간까지 보관 후 폐기
-      'Content-Length': '0',  // 페이로드 없음
-    },
-    signal: AbortSignal.timeout(15000),
-  });
-
   // 결과를 push/state.json 에 남긴다 — 앱이 이 파일을 읽어 "서버가 내 구독으로 보내고 있는가,
   // 그 발송이 성공했는가"를 스스로 판단한다. 워크플로가 이 파일을 커밋해야 앱에 보인다.
   const endpointHash = crypto.createHash('sha256').update(sub.endpoint).digest('hex').slice(0, 16);
   const before = pushState.read();
+
+  let res;
+  try {
+    res = await fetch(sub.endpoint, {
+      method: 'POST',
+      headers: {
+        Authorization: `vapid t=${jwt}, k=${VAPID_PUBLIC_KEY}`,
+        TTL: '3600',            // 폰이 꺼져 있으면 1시간까지 보관 후 폐기
+        'Content-Length': '0',  // 페이로드 없음
+      },
+      signal: AbortSignal.timeout(15000),
+    });
+  } catch (e) {
+    // 타임아웃·DNS 같은 이유로 응답조차 못 받은 경우. 여기서도 반드시 기록해야 한다 —
+    // status 0("아직 안 쏴 봤다")으로 남겨 두면 push-state.js 가 30분마다 확인 발송을
+    // 다시 걸어 같은 알림이 반복된다. -1 은 "쐈지만 응답을 못 받았다"는 뜻이고,
+    // 구독이 죽었다는 증거는 아니므로 앱은 이걸 경고로 취급하지 않는다.
+    pushState.record({ endpointHash, status: -1 });
+    console.warn(`⚠️  푸시 발송 중 오류: ${e.message}`);
+    return;
+  }
 
   if (res.status === 404 || res.status === 410) {
     // 구독이 폐기됐다(앱 재설치, 알림 끄기, 서비스워커 등록 교체, 브라우저 데이터 삭제 등).

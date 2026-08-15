@@ -48,6 +48,7 @@ jobs:
       # 자기 구독과 비교해 어긋남을 스스로 알아챈다. 시크릿을 갱신했을 때 앱의 경고가
       # 다음 실행에서 풀리는 것도 이 스텝 덕분이다(발송을 기다리면 하루가 걸릴 수 있다).
       - name: Record push subscription state
+        id: pushstate
         env:
           PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
           # 앱이 구독을 직접 등록해 두는 워커. 이게 있으면 시크릿보다 우선한다 —
@@ -89,6 +90,22 @@ jobs:
           PUSH_STORE_URL: ${{ vars.PUSH_STORE_URL }}
           PUSH_STORE_ADMIN_TOKEN: ${{ secrets.PUSH_STORE_ADMIN_TOKEN }}
         run: node scripts/send-push.js
+
+      # 아직 발송해 본 적 없는 구독이면 그 자리에서 한 번 쏴 확인한다 — 죽은 구독을 안고
+      # 다음 아침까지 가지 않기 위해서다(자세한 사연은 push-state.js 주석). 브리핑 발송이
+      # 돌았으면 그게 곧 확인이므로 건너뛴다.
+      # sleep 은 서비스워커가 방금 커밋된 push/state.json(status 0)을 읽고 "알림 다시 연결됨"
+      # 으로 띄우게 하려는 것이다. 이 스텝은 구독이 바뀐 실행에서만 도니 지연도 그때뿐이다.
+      - name: Send verification push
+        if: steps.gen.outputs.generated != 'true' && steps.pushstate.outputs.verify == 'true'
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          PUSH_SUBSCRIPTION: ${{ secrets.PUSH_SUBSCRIPTION }}
+          PUSH_STORE_URL: ${{ vars.PUSH_STORE_URL }}
+          PUSH_STORE_ADMIN_TOKEN: ${{ secrets.PUSH_STORE_ADMIN_TOKEN }}
+        run: |
+          sleep 90
+          node scripts/send-push.js
 
       # send-push.js 가 남긴 발송 결과를 배포한다. always() 여야 한다 — 410 이면 위 스텝이
       # 워크플로를 실패시키는데, 바로 그때의 기록이 앱에 가장 필요한 값이다.
