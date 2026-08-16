@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-17",
+  "generatedAt": "2026-08-17 06:16",
+  "events": [
+    {
+      "title": "서원힐스 12:38",
+      "start": "2026-08-18T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 823,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/English39] Run failed: Daily English Content - main (4b8acd6)",
+      "summary": "GitHub 프로젝트의 Daily English Content 자동 실행이 실패했습니다."
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 golfzon.com에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 golfzon.com에 공유되었습니다."
+    },
+    {
+      "from": "CapCut <admin@mail.capcut.com>",
+      "subject": "CapCut 구독이 3일 후 만료됩니다..",
+      "summary": "CapCut 구독 만료 예정 알림입니다."
+    }
+  ]
+}
