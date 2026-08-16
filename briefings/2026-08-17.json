@@ -1,0 +1,164 @@
+{
+  "sessionDate": "2026-08-14",
+  "sessionDateLabel": "2026년 8월 14일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,785.76",
+      "changePct": "-0.17%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,729.16",
+      "changePct": "-0.28%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,732.41",
+      "changePct": "-0.20%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock market today: S&P 500 slips from record high but caps third straight week of gains",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRWs4ODczd2sySy16V0d6WG1fZnpJM19oLUFDcFBEVjIzVGlxMHg3ZEozOFhLa1dnR0VVRC14ZXkxaDFYcHpwMHhEU0hFY3lFbDRNRE5EOGJKOGk5VDJIT2NNbG9pcWtXWVA4ZFFWVW9NenFRcGlxVG4zNWxCMU1UMEtiQUY0Z2pELThROFdla0FtRTVobWJ0LUlHOGtfelJMaEMzZXFXcVdUenM?oc=5",
+      "date": "2026-08-14",
+      "source": "Yahoo Finance",
+      "ko": "S&P 500이 사상 최고가에서 소폭 하락했으나 3주 연속 주간 상승을 마감했다."
+    },
+    {
+      "title": "S&P 500 closes lower, but posts third straight weekly gain: Live updates",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1BXzFEVmY5LW5TV2o4cFZrT0JUdFZ5RDI5VVY0bzV2emFoMFZnMVBhR0RVVHRtYmFGSGViTldiZ2Z0cS1PY2U5cTVIaHpSd01rLTZfRERLc0RqaXZkZXNuY2lUVXQ4azNwUFJvU1ZmR0ZxWFlNTDNN0gF8QVVfeXFMTTFzR1FySExlY1RkbFdLOEI4ZVVlb0JHQWZzWmphOGtFbTVjOHJVUlZIUkUwQkZDNWdhTXN2S0paQ25OdnZoMG1xVHNpVWE1d2hKaEZtb3Y3M1NMZ1cyZ25rcy00c2dYUnU1WEt0NzdjSGVlMXFNZVNHa01ERw?oc=5",
+      "date": "2026-08-14",
+      "source": "CNBC",
+      "ko": "지수가 약세를 보였지만 3주 연속 주간 상승세를 유지했다."
+    },
+    {
+      "title": "Futures Mixed; Chip Giant Falls, Memory Stocks Make Bullish Moves",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOQ1Y3cEJZWDhjSXlNX1AwTzFWcGF1V0lES1BDUWRRNWxONW5uNUxFVE5SVjBvOHlrLWRHazVyQXg1N2ZJZlFmTUp6eWdNSGJLM2I2aXJLb1ZIRzBjUFlzQUM1YUY3SGljT1ZPUGwxc190YVR4NF9HZF9wSFFtMXBZenBRU241R041bmdrTy10QTNtWndXVFBVLW44ZVE5Z2RjOUxzTURLdHc4N3Z5MXNOUGQ3NExEUHNlREptNng3c2J6c09LVE5vYWJ3NmtQMkxBbnp2cWd4RU1tUQ?oc=5",
+      "date": "2026-08-14",
+      "source": "Investor's Business Daily",
+      "ko": "칩 기업들이 엇갈린 움직임을 보였으며 메모리 종목이 강세를 나타냈다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$225.16",
+      "change": "-0.14",
+      "changePct": "-0.06%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$514.39",
+      "change": "+31.38",
+      "changePct": "+6.50%",
+      "up": true,
+      "news": [
+        {
+          "title": "What's Going On With AMD Stock Friday?",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPUUUtbTZ1bV9zNnRESG4ybDBobnZHa0ROQS0wNWVfS0F6UVpWMVN0UWJxdU5kMWxJX2U2bUlWdVA3a2FSREFfN1FOQU44OEJabThpdlpfbG5mVHhPbFFXTE5yQmxxOWhDUmhScGN4NkpGSHVRZ0l6OUVIOVhMZVpCY0FLWGlDNnJQUWx5MFlncG9pdC0tRlE?oc=5",
+          "date": "2026-08-14",
+          "source": "Benzinga",
+          "ko": "AMD가 금요일 급등한 배경이 무엇인지를 다룬 기사다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$102.50",
+      "change": "-2.06",
+      "changePct": "-1.97%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$426.35",
+      "change": "-4.14",
+      "changePct": "-0.96%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$971.66",
+      "change": "+21.83",
+      "changePct": "+2.30%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Is Hot Again: Here’s Why The Rally Has Legs",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOQTJSU1Z3Qjdya25JNVE5N0NXRTJvLTU4c2UtQ1dLM0FRcWc0RXhKZmpTVERLVGdnWnpxUnlKZ0ZhQnZhZ0xsd2RudUxQU1NJN1JSQnNLdXk4aHlGaEFqTm0ycTBBbWNwQk9IV1JWcFE5dFc0cFVHNkVzS25ybVRUdDFRUi1NTE93THRGZDhLSGZBVGFrWGc?oc=5",
+          "date": "2026-08-14",
+          "source": "Yahoo Finance",
+          "ko": "마이크론이 회복세를 보이고 있으며 랠리에 지속력이 있을 것으로 평가된다."
+        },
+        {
+          "title": "Analysts Keep Hiking Micron's Revenue and Price Forecasts - Shorting MU Puts Works Here",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPdzVHSWZpby1oS0dtOFNuR29NWU9hOE5odWJzbnp2bmZRajR1SkJPWXMtZnA2dGs0V19CLTh4TWJyU2lCMlNXMUN2NnhZeEpjWEJpeHRBdTFUNnJucE81Rk4wbHpOQTVDWWliVTIyUUVWbnR2bUVnSWo1aS1UNldKdERyVXNLTEhkNEpwVHhsVFVTWW5PNWFmYlVIVHBjM3RQZTdzams5andEeWtjNXd6SWtYbmZfZTM5WW1tb1pTUEtDZjJxZ1E4VQ?oc=5",
+          "date": "2026-08-14",
+          "source": "Barchart.com",
+          "ko": "마이크론의 매출과 목표가가 계속 상향 조정되고 있는 상황을 다룬다."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$166.33",
+      "change": "+0.66",
+      "changePct": "+0.40%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$174.04",
+      "change": "-4.97",
+      "changePct": "-2.78%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir Technologies Likely To Plunge After Its Historic Run Higher (NASDAQ:PLTR)",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOLXhYWnVXc0drRzhfNW41ZlMzR1g0LXhodkFoaUR3c1FJeF9aQW1JSmp0NmpiUWNrT1FqVzVNbnNWQUJxa296aW1FeXNlbGVCUW9LWGxOaTQ4em1JUEFTNjBHam1HamNHMU1ub3U5V0RHbjVrVmZnSVVQYVVGaDBPZmNEU0pldDY1WFhiRThpOEsyNjhyT3E0SFhUbnFtZjYteXVqNFRJTXlSWDYySkE?oc=5",
+          "date": "2026-08-15",
+          "source": "Seeking Alpha",
+          "ko": "팔란티어가 급등한 이후 급락할 가능성을 제기하는 분석이다."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic CEO says AI backlash is ‘fundamentally a crisis of trust’",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPNmRPdmFESjZoRzdqTlNwdU1nb2s0eDA3Y0NQMEtrVTFQcUc4QTY0Zkh1a0VGZnEwSFJoU1dwME9uWFNpMnoxZjI0MklDWVJ2amJOa010OUlBY2FvUUE4TFE3SUdDb3JkNGZrZF95MkI2WnVRVUtNQXhtYWY2ODVoYnRhcUpLZHpTR3g4MkJQZG4xUE5na1VjNFd3?oc=5",
+      "date": "2026-08-16",
+      "source": "Yahoo Finance",
+      "ko": "앤트로픽 CEO가 AI에 대한 대중의 불신을 신뢰 위기로 진단했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic CEO Dario Amodei says the way for AI to win over the public is to 'actually' cure cancer",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQaGdIdzNVMzJUdUpkLVFwVXZGSkZPRzBlM1lRaHNSdFNYS0YyVUZGYXhVbUZ4bmFVNFZCYkVha0J5NWU4akswT1ZWZTVlUDVrYzBvS0FJQld4dXp0Y256X3VJa2w3RTktZVJrS2VrY1FNZ0NhOXJfaTgtaWxhcHpnbzhWRzhXMEJ2YlhvOWx4dlFkN2hKUGpTUmF2cw?oc=5",
+      "date": "2026-08-16",
+      "source": "Business Insider",
+      "ko": "앤트로픽 CEO는 AI가 실제 성과로 대중을 설득해야 한다고 주장했다."
+    }
+  ],
+  "summary": "기술주가 조정되며 지수가 소폭 하락했지만, 3주 연속 주간 상승을 기록했다.",
+  "generatedAt": "2026-08-17 06:44",
+  "date": "2026-08-17"
+}
