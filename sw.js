@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v44';
+const CACHE='daily-brief-v45';
 // 구독 교체 자국을 남겨두는 별도 캐시. 배포 때마다 지워지면 안 되므로 activate 의
 // 삭제 대상에서 제외한다 (index.html 이 걷어간 뒤 스스로 비운다).
 const DIAG='push-diag-v1';
