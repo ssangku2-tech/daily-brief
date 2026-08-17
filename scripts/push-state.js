@@ -38,14 +38,27 @@ function record({ endpointHash, status }) {
   if (!endpointHash) return { changed: false, prev: read() };
   const prev = read();
   const sameSub = !!prev && prev.endpointHash === endpointHash;
+  const sending = status !== undefined;   // send-push.js 가 부른 경우에만 참
+  const now = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
   const next = {
     endpointHash,
     // 시크릿이 새 구독으로 바뀌었으면 이전 410 은 더 이상 이 구독의 이야기가 아니다.
     // 0 = 이 구독으로 아직 한 번도 보낸 적 없음.
-    status: status !== undefined ? status : (sameSub ? prev.status : 0),
-    at: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'),
+    status: sending ? status : (sameSub ? prev.status : 0),
+    at: now,
+    // 마지막으로 **발송을 시도한** 시각. `at`("이 상태가 시작된 시각")과 달리 결과가 같아도
+    // 매번 갱신된다. 이게 있어야 "며칠째 아무것도 안 쏴 봤다"를 알 수 있다 — 2026-08-15~17
+    // 주말 동안 발송이 한 번도 없어 구독이 죽은 걸 40시간 뒤에야 알았고, 그 판단을
+    // `at` 으로는 할 수 없다(상태가 그대로면 `at` 은 며칠 전 값 그대로이기 때문).
+    sentAt: sending ? now : (sameSub ? prev.sentAt : undefined),
   };
-  if (sameSub && prev.status === next.status) return { changed: false, prev };
+  if (next.sentAt === undefined) delete next.sentAt;
+  // 지문·상태가 그대로면 파일을 건드리지 않는다. 단 발송을 했으면 sentAt 을 남겨야 하므로
+  // 쓰되, 상태가 안 바뀌었으니 `at`(상태 시작 시각)은 예전 값을 유지한다.
+  if (sameSub && prev.status === next.status) {
+    if (!sending) return { changed: false, prev };
+    next.at = prev.at || now;
+  }
   fs.mkdirSync(path.dirname(FILE), { recursive: true });
   fs.writeFileSync(FILE, JSON.stringify(next, null, 2) + '\n');
   return { changed: true, prev };
@@ -77,8 +90,17 @@ if (require.main === module) {
     // 네트워크 오류로 죽었을 때 그 구독은 영영 미검증으로 남는다.
     const unverified = !prev || prev.endpointHash !== h || prev.status === 0;
     if (unverified) console.log('아직 발송해 본 적 없는 구독입니다 — 살아 있는지 확인 발송을 합니다.');
+    // 한동안 아무것도 안 쏴 봤으면 살아 있는지 한 번 확인한다.
+    // 주말(금요일 장 마감 ~ 월요일 아침 브리핑)에는 발송 기회가 40시간 넘게 없어서,
+    // 그사이 구독이 죽으면 월요일 아침 알림을 통째로 날린 뒤에야 알게 된다.
+    // 2026-08-15~17 이 정확히 그랬다. 20시간은 "하루에 한 번은 확인하되 평일의
+    // 아침 브리핑 발송과 겹쳐 이중으로 쏘지는 않는" 간격이다.
+    const cur = read();
+    const lastSent = cur && cur.sentAt ? Date.parse(cur.sentAt) : 0;
+    const idle = !unverified && (!lastSent || Date.now() - lastSent > 20 * 60 * 60 * 1000);
+    if (idle) console.log('마지막 발송이 20시간을 넘었습니다 — 구독이 살아 있는지 확인 발송을 합니다.');
     if (process.env.GITHUB_OUTPUT) {
-      fs.appendFileSync(process.env.GITHUB_OUTPUT, `verify=${unverified ? 'true' : 'false'}\n`);
+      fs.appendFileSync(process.env.GITHUB_OUTPUT, `verify=${unverified || idle ? 'true' : 'false'}\n`);
     }
   });
 }

@@ -445,6 +445,8 @@ let state = {
   pushConfirm: false, // '다시 구독' 을 한 번 눌러 확인을 기다리는 중인지
   pushPersist: null,  // navigator.storage.persisted() — 브라우저가 이 앱 데이터를 지울 수 있는 상태인지
   pushLog: [],        // 구독이 언제 어떻게 바뀌었는지의 기록 (끊긴 원인을 다음번엔 알 수 있도록)
+  pushHealAt: 0,      // 마지막 자동 재구독 시도 시각 (실패가 반복될 때 무한 재구독 방지)
+  pushHealNote: '',   // 자동 재구독이 실제로 뭘 고쳤는지 (화면에 한 줄로 알려준다)
   pushSynced: null,   // 구독을 보관소(워커)에 등록했는지 — 'ok' | 'fail' | 'off'
   pushSyncError: '',
   assetsRevealed: false, // 자산 금액을 펼쳐 보고 있는지. 일부러 localStorage 에 두지 않는다
@@ -2133,7 +2135,10 @@ async function refreshAll(force){
     loadNews(),
     loadGoogleLive(false),
     loadWeather(force),
-    loadPushState(),
+    // 서버 기록을 먼저 받고, 그다음 이 폰의 구독을 다시 조회한다(순서가 중요하다 —
+    // 자동 재구독은 서버가 남긴 410 기록을 보고 판단한다). 설치형 PWA 는 며칠씩 살아
+    // 있으므로, 시작할 때 한 번만 조회하면 그사이 구독이 사라져도 알아채지 못한다.
+    loadPushState().then(() => refreshPushState()),
   ]);
   // 번역을 기다리느라 화면을 붙잡아 두지 않는다 — 받아온 것부터 먼저 그리고,
   // 번역이 도착하면 제목만 한국어로 바뀐다(실패하면 영어 제목 그대로 남는다).
@@ -2220,11 +2225,13 @@ function readPushLog(){
 }
 // 같은 지문이 연달아 들어오면 기록하지 않는다 — 앱을 열 때마다 같은 줄이 쌓이면
 // 정작 "바뀐 순간"이 묻힌다.
-function logPush(kind, hash){
+// perm 을 넘기면 그 값을 적는다 — 서비스워커가 남긴 자국을 나중에 걷어올 때는
+// '지금' 권한이 아니라 '그때' 권한이어야 기록이 사실이 된다.
+function logPush(kind, hash, perm){
   const log = readPushLog();
   const h = hash || '(없음)';   // 빈 지문도 한 가지 표기로 통일해야 중복 판정이 맞는다
   if(log.length && log[log.length-1].h === h && log[log.length-1].k === kind) return log;
-  log.push({t: new Date().toISOString(), k: kind, h, p: (window.Notification && Notification.permission) || '?'});
+  log.push({t: new Date().toISOString(), k: kind, h, p: perm || (window.Notification && Notification.permission) || '?'});
   const trimmed = log.slice(-12);
   try{ localStorage.setItem(PUSH_LOG_KEY, JSON.stringify(trimmed)); }catch(e){}
   state.pushLog = trimmed;
@@ -2274,7 +2281,7 @@ async function drainSwPushMarks(){
     const marks = await r.json();
     await c.delete('./marks.json');
     for(const m of (marks || [])){
-      logPush(`브라우저가 구독 교체${m && m.s ? '(보관소 등록됨)' : ''}`, (m && m.h) || '');
+      logPush(`브라우저가 구독 교체${m && m.s ? '(보관소 등록됨)' : ''}`, (m && m.h) || '', m && m.p);
     }
   }catch(e){ /* 진단용이라 실패해도 무시 */ }
 }
@@ -2340,9 +2347,81 @@ async function refreshPushState(){
   }
   updatePushStale();
   render();
+  // 구독 자체가 사라졌거나 폐기됐으면 여기서 되살린다 (아래 autoHealPush 주석 참고).
+  await autoHealPush();
   // 서버가 다른 구독을 들고 있으면 여기서 스스로 고친다. 사용자가 할 일은 없다.
   await syncPushSub();
   render();
+}
+
+// ── 사라진 구독을 앱이 스스로 되살린다 (2026-08-17) ────────────────────────────
+// 2026-08-08 이후 구독이 여덟 번 죽었는데, 그때마다 복구 절차는 "사용자가 경고를 알아채고
+// 버튼을 누른다" 였다. 그 사이(짧게는 몇 시간, 주말엔 이틀) 알림은 그냥 오지 않았다.
+// 알림 권한이 살아 있는 한 subscribe() 는 사용자 제스처 없이도 되므로, 앱을 여는 것만으로
+// 구독이 복구되게 한다. 복구된 구독은 syncPushSub 가 보관소에 등록하고 CI 가 30분 안에
+// 확인 발송까지 하므로, 사람이 할 일은 남지 않는다.
+//
+// **이게 안전해진 것은 2026-08-14 에 구독을 워커 보관소로 옮긴 덕이다.** 그전에는 새 구독을
+// 만들면 사람이 GitHub Secret 을 갱신할 때까지 알림이 끊겼기 때문에, 자동 재구독은
+// 고치는 것보다 망가뜨리는 쪽이 컸다('다시 구독'을 두 번 눌러야 하게 만든 이유가 그것이다).
+// 그래서 지금도 다음 두 경우에만 돈다 — 멀쩡한 구독은 절대 건드리지 않는다:
+//   1) 구독이 아예 없다 (getSubscription() → null)
+//   2) 서버가 바로 이 구독으로 보내 410/404 를 받았다 (pushDead)
+// 권한이 회수된 상태(default/denied)에서는 subscribe() 가 실패하므로 손대지 않고,
+// 화면의 '알림 받기' 버튼으로 넘긴다 — 권한 요청만은 사용자 제스처가 있어야 한다.
+async function autoHealPush(){
+  if(!pushSupported() || !VAPID_PUBLIC_KEY) return;
+  if(Notification.permission !== 'granted') return;   // 권한이 없으면 사용자 탭이 필요하다
+  const gone = !state.pushSub;
+  if(!gone && !state.pushDead) return;                // 멀쩡하면 아무것도 하지 않는다
+  // 한 번 시도했으면 10분은 다시 하지 않는다. subscribe() 가 계속 실패하는 상황에서
+  // 앱을 열 때마다(그리고 3분 뒤 복귀할 때마다) 재시도가 쌓이는 것을 막는다.
+  // 시각으로 막는 이유는, 설치형 PWA 가 며칠씩 살아 있는 동안 구독이 두 번 이상
+  // 죽을 수 있어서다 — 한 번 쓰고 마는 플래그면 두 번째 죽음은 못 고친다.
+  if(Date.now() - state.pushHealAt < 10*60*1000) return;
+  state.pushHealAt = Date.now();
+  try{
+    const reg = await navigator.serviceWorker.ready;
+    if(!gone){
+      // 폐기된 구독은 해제하지 않고 subscribe() 하면 예전 객체가 그대로 돌아온다.
+      const old = await reg.pushManager.getSubscription();
+      if(old) await old.unsubscribe();
+      state.pushSub = null;
+    }
+    const sub = await reg.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: b64urlToUint8(VAPID_PUBLIC_KEY),
+    });
+    state.pushSub = JSON.stringify(sub.toJSON());
+    state.pushHash = await pushFingerprint(currentEndpoint());
+    state.pushHealNote = gone
+      ? '사라진 알림 구독을 앱이 자동으로 되살렸습니다.'
+      : '폐기된 알림 구독을 앱이 자동으로 교체했습니다.';
+    logPush(gone ? '자동 재구독(사라짐)' : '자동 재구독(폐기됨)', state.pushHash);
+    updatePushStale();
+    render();
+    await syncPushSub(true);
+  }catch(e){
+    state.pushHealNote = '';
+    state.pushError = `자동 재구독에 실패했어요: ${e.message}`;
+    logPush('자동 재구독 실패', '');
+  }
+}
+
+// 권한이 회수되는 순간을 잡는다. 지금까지는 앱을 다시 열었을 때에야 "구독이 사라짐" 만
+// 보였고, 그게 권한 회수인지 다른 이유인지는 그 줄에 찍힌 권한 값으로 짐작할 수밖에 없었다.
+// 앱이 떠 있는 동안 바뀌면 이 기록이 시각까지 남긴다. 권한이 돌아온 경우에는
+// pushHealed 를 풀어 그 자리에서 자동 재구독이 다시 돌게 한다.
+async function watchPushPermission(){
+  try{
+    if(!navigator.permissions || !navigator.permissions.query) return;
+    const st = await navigator.permissions.query({name:'notifications'});
+    st.onchange = () => {
+      logPush(`알림 권한 → ${st.state}`, state.pushHash);
+      if(st.state === 'granted') state.pushHealAt = 0;
+      refreshPushState();
+    };
+  }catch(e){ /* 이 이름을 지원하지 않는 브라우저면 그냥 넘어간다 */ }
 }
 
 async function enablePush(){
@@ -2463,13 +2542,26 @@ function renderPushDiag(){
   const rows = log.slice(-6).reverse().map(e => {
     const t = new Date(e.t);
     const when = isNaN(t) ? e.t : `${t.getMonth()+1}/${t.getDate()} ${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}`;
-    // 권한은 granted 가 아닐 때만 적는다 — 매 줄에 'granted' 가 붙으면 정작 다른 값일 때
-    // 눈에 안 띈다. 구독이 사라진 줄에 'default' 가 찍혀 있으면 그게 원인이다:
-    // 안드로이드가 한동안 안 쓴 앱의 알림 권한을 스스로 회수하면 구독도 함께 폐기된다.
-    const p = e.p && e.p !== 'granted' ? ` · 권한 ${e.p}` : '';
+    // 권한은 **모든 줄에** 적는다. 2026-08-15 까지는 granted 가 아닐 때만 적었는데,
+    // 그러다 보니 '구독이 사라짐' 줄에 아무것도 안 적혀 있을 때 그게 "권한은 멀쩡했다"인지
+    // "표시를 생략한 것"인지 구분이 안 됐고, 원인 판정이 실제로 그 한 글자에서 막혔다.
+    // 사라진 줄의 권한이 default 면 휴대폰이 권한을 회수한 것이고(안드로이드의 미사용 앱
+    // 권한 자동 삭제), granted 면 서비스워커 등록 자체가 날아간 것이다.
+    const p = ` · 권한 ${e.p || '?'}`;
     return `<div>${esc(when)} · ${esc(e.k)} · ${esc(String(e.h).slice(0,8))}${esc(p)}</div>`;
   }).join('');
+  const s = state.pushServer;
+  const sentAt = s && s.at ? new Date(s.at) : null;
+  const sentWhen = sentAt && !isNaN(sentAt)
+    ? `${sentAt.getMonth()+1}/${sentAt.getDate()} ${String(sentAt.getHours()).padStart(2,'0')}:${String(sentAt.getMinutes()).padStart(2,'0')}`
+    : '';
+  const sentTxt = !s ? '기록 없음'
+    : s.status === 0  ? '아직 보내본 적 없음'
+    : s.status === -1 ? '보내다 실패(응답 없음)'
+    : s.status === 201 || s.status === 200 ? `성공 (${s.status})`
+    : `<b>${s.status}</b>`;
   return `<div class="push-diag">
+    <div>서버 마지막 발송: ${sentTxt}${sentWhen ? ` · ${esc(sentWhen)}` : ''}</div>
     <div>저장소 영구 보관: ${state.pushPersist === true ? '예' : state.pushPersist === false ? '<b>아니오</b> (브라우저가 구독을 지울 수 있음)' : '알 수 없음'}</div>
     <div>보관소 등록: ${
       state.pushSynced === 'ok' ? '완료' :
@@ -2488,15 +2580,20 @@ function renderPushRow(){
     return `<div class="push-row"><span class="push-msg">알림이 차단돼 있어요. 브라우저 설정에서 이 사이트의 알림을 허용해 주세요.</span></div>`;
   }
   if(!state.pushSub){
-    // 구독이 없는데 서버는 뭔가 들고 보내고 있다 = 구독이 사라졌다(앱 재설치·데이터 삭제 등).
-    // 이 줄이 없으면 평범한 "알림 받기" 로만 보여서, 알림이 끊긴 걸 눈치채기 어렵다.
+    // 권한이 살아 있는데 구독이 없는 상태는 autoHealPush 가 앱을 열자마자 스스로 고친다.
+    // 그러고도 여기까지 왔다면 권한이 회수된 것이다 — 권한 요청만은 사용자의 탭이 필요하다.
+    // 원인을 정확히 적어주지 않으면 "왜 또 꺼졌지" 로만 남고 휴대폰 설정을 손보지 않게 된다.
+    const hadSub = (state.pushLog || []).some(e => e.h && e.h !== '(없음)');
+    const revoked = perm !== 'granted' && hadSub;
     return `<div class="push-row">
-      ${state.pushStale ? `<span class="push-msg push-warn">⚠️ 알림이 끊겼습니다. ${pushStoreOn()
+      ${revoked ? `<span class="push-msg push-warn">⚠️ 휴대폰이 이 앱의 알림 권한을 회수했습니다. 아래 버튼을 누르면 바로 복구됩니다.</span>
+        <span class="push-msg">계속 반복되면 설정 → 애플리케이션 → My Agent → 권한에서 <b>‘사용하지 않는 앱의 권한 삭제’</b> 를 꺼 주세요.</span>`
+        : state.pushStale ? `<span class="push-msg push-warn">⚠️ 알림이 끊겼습니다. ${pushStoreOn()
         ? '아래 버튼으로 다시 켜면 나머지는 자동으로 복구됩니다.'
         : `다시 켠 뒤 <code>PUSH_SUBSCRIPTION</code> 시크릿을 갱신해 주세요.`}</span>` : ''}
       <button class="push-btn" onclick="enablePush()">🔔 아침 브리핑 알림 받기</button>
       ${state.pushError ? `<span class="push-msg">${esc(state.pushError)}</span>` : ''}
-      ${state.pushStale ? renderPushDiag() : ''}
+      ${revoked || state.pushStale ? renderPushDiag() : ''}
     </div>`;
   }
 
@@ -2527,6 +2624,7 @@ function renderPushRow(){
         <button class="push-link" onclick="togglePushSub()">${state.pushShowSub ? '접기' : '구독 정보'}</button>
       </span>
     </div>
+    ${state.pushHealNote ? `<span class="push-msg">🔧 ${esc(state.pushHealNote)} 30분 안에 서버에도 반영됩니다.</span>` : ''}
     ${state.pushConfirm ? `<span class="push-msg push-warn">다시 구독하면 새 주소가 만들어져, <code>PUSH_SUBSCRIPTION</code> 시크릿을 갱신하기 전까지 알림이 오지 않습니다.</span>` : ''}
     ${state.pushDead ? `<span class="push-msg">서버가 이 구독으로 보냈지만 폐기됐다는 응답(${state.pushServer && state.pushServer.status})을 받았습니다. 다시 구독한 뒤 시크릿을 갱신해 주세요.</span>` : ''}
     ${state.pushShowSub ? `
@@ -2554,7 +2652,7 @@ function renderPushRow(){
 if('serviceWorker' in navigator){
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js')
-      .then(() => refreshPushState())  // 이미 구독돼 있으면 그 상태를 반영한다
+      .then(() => { refreshPushState(); watchPushPermission(); }) // 구독 상태 반영 + 권한 회수 감시
       .catch(() => {});                // 실패해도 앱 동작에는 지장 없다
   });
 }

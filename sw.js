@@ -1,4 +1,4 @@
-const CACHE='daily-brief-v43';
+const CACHE='daily-brief-v44';
 // 구독 교체 자국을 남겨두는 별도 캐시. 배포 때마다 지워지면 안 되므로 activate 의
 // 삭제 대상에서 제외한다 (index.html 이 걷어간 뒤 스스로 비운다).
 const DIAG='push-diag-v1';
@@ -98,10 +98,14 @@ async function mark(endpoint,stored){
     const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(endpoint));
     h=[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('').slice(0,16);
   }
+  // 이 시점의 알림 권한도 같이 남긴다. 서비스워커에는 Notification.permission 이 없으므로
+  // pushManager.permissionState() 를 쓴다('prompt' = 권한이 회수된 상태).
+  let p='?';
+  try{ p=await self.registration.pushManager.permissionState({userVisibleOnly:true}); }catch(_){}
   const c=await caches.open(DIAG);
   const prev=await c.match('./marks.json');
   const list=prev?await prev.json():[];
-  list.push({t:new Date().toISOString(),h,s:!!stored});
+  list.push({t:new Date().toISOString(),h,s:!!stored,p});
   await c.put('./marks.json',new Response(JSON.stringify(list.slice(-12)),{headers:{'Content-Type':'application/json'}}));
 }
 // 새 구독을 보관소(워커)에 바로 등록한다. 앱이 열려 있지 않아도 되기 때문에, 브라우저가
