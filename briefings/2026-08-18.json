@@ -1,0 +1,156 @@
+{
+  "sessionDate": "2026-08-17",
+  "sessionDateLabel": "2026년 8월 17일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,745.06",
+      "changePct": "-0.52%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,644.91",
+      "changePct": "-0.32%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,459.78",
+      "changePct": "-0.51%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock market today: Dow, S&P 500, Nasdaq fall as oil rises amid US-Iran tensions, 30-year yield hits highest level in decades",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPa2t1QktzNGVzSjR4cHdxUWtSX2Y1VUVmT2l5UVotajl2WjBvaFFxU29HREZHYXMtR0FPZVZtUkpnQWdNTXNCbHdLNHI3ZU55Xy1xOWRjdFVjdFl5cjdnWHd4T3NObEFaejhXdnh2a2JkRFRIWXdTVkZtODdMTEdnTDNFNGJOYmt1RUJBaGVycFhneUhwcG1MZXB2TXFBUWNJOXRRdmRlNGhseFU?oc=5",
+      "date": "2026-08-17",
+      "source": "Yahoo Finance",
+      "ko": "유가 상승과 미-이란 긴장이 주식시장 약세를 주도했고, 30년물 수익률이 수십 년 만에 최고치 경신."
+    },
+    {
+      "title": "Stock Market Today: Indexes End Lower to Begin New Trading Week as Oil Prices Rise; Memory Shares Outperform",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNQWlDaXE0ODlUNVY5b25xb3dORk1yYXcyc1JXa1N1Rjd6NzNwN1ZyUmptSFNPR1hnbjVVNXBsbkVlb1k3aGZwZEZUS0dJSmRpdzc3SjEyeTlDSkYwN1J2blo3S1hjSEdkWUZpTHFOb1dLVHpTYkdaX3p3MGtUUi1fMTA1ZGJuRlROS0JVZGJuYmU?oc=5",
+      "date": "2026-08-17",
+      "source": "investopedia.com",
+      "ko": "메모리칩 수요 강세 속 주요 지수는 하락했으나, 메모리 관련 종목들이 강세 시현."
+    },
+    {
+      "title": "Stock Market Today: Dow off 250 points; S&P 500 and Nasdaq fall despite strong second-quarter earnings; Anthropic revenue; bond yields rise",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMG5KTUtISE9VLTI1U1NYbXBtUmd0ZnVuWlI2bnZLcVA5SkgtRVlFaGp3NUJ3S0NQTWpablVGaGR2WC13WkkxV0I0V01lUUpFcU1IRGh2YWkyVUlzQUhuRlhlNWhXQ0tGRmxiNnVIVlZYVlU5UGNwRE5mOTBVTFdLMzRBc1lWT0g5UkZxc3dyWmd1VEJidG94WE1YWUlodGstaWJMQ2Z2dUctNVJIOFNNdnlJSjF6T2c3R2E3aklwWlF6eDZxdWc?oc=5",
+      "date": "2026-08-17",
+      "source": "MarketWatch",
+      "ko": "강한 2분기 실적에도 유가 상승의 부담으로 지수 약세. 채권 수익률 상승이 동반."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$225.01",
+      "change": "-0.15",
+      "changePct": "-0.07%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Strikes Deal With OpenAI As Tenant; Is Nvidia A Buy Now?",
+          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1XTUFJeFZmVTllZDZKSFlLVjhXd2hLUEFnSXlwakRMdk1pemZJQmZFOFNKSHJBbWNfYzM4OEtoQmFpN0dINXFieE1fT3FlVTNkdExwdzJLVTJRRURUWk5yV1F4cEppRVdYSm9PekNFTEtrbE8zOUVHM2dRZzY2R0k?oc=5",
+          "date": "2026-08-17",
+          "source": "Investor's Business Daily",
+          "ko": "엔비디아가 오픈AI의 부동산 임차인으로 협력하며 AI 인프라 사업 확대."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$506.00",
+      "change": "-8.39",
+      "changePct": "-1.63%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$103.49",
+      "change": "+0.99",
+      "changePct": "+0.97%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$430.97",
+      "change": "+4.62",
+      "changePct": "+1.08%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,011.75",
+      "change": "+40.09",
+      "changePct": "+4.13%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Stock Closes Above $1,000 After Key Move by Trump Administration",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1xbzBxWU80VEVEcUNyWURZdklkcmNqTUlIZWw5WExxajE1MUI2aGgwWmdraVBJcnNReGo4WkFQQ1EyYVZROVZxUU9vam1rQ0NtM0IwRHJ5NVVJdGtldXJvN1NBT2g3aVE2a3J0X3pWejRPdEZOdTJOWHh0Vy1mQQ?oc=5",
+          "date": "2026-08-17",
+          "source": "Barron's",
+          "ko": "마이크론이 1000달러 돌파. 트럼프 행정부의 적극적 조치가 긍정적 영향."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$171.38",
+      "change": "+5.05",
+      "changePct": "+3.04%",
+      "up": true,
+      "news": [
+        {
+          "title": "Investors Remember Why They Love Memory-Chip Stocks",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUnBXVmJsLUhCcHhhNEI5TDZxbThrQjRNb01JaFhZU0lXVGlJLTd5YkZIU2QzYWF6S29hX1hRNHY5MTd2NWVTVWZUOFNmZGt6VlAtYzVkYm9LUnd5QmRVenNyQmlTSHRJTlRRSEdpbHJMYkloR0pTVUVUc0VsbXpEZXdmMlVtN0NlMlRxOE9R?oc=5",
+          "date": "2026-08-17",
+          "source": "Investor's Business Daily",
+          "ko": "메모리칩 산업의 수급 개선으로 관련 주가들이 재평가받고 있음."
+        },
+        {
+          "title": "SK hynix stakes $38bn on memory — but relief is three years out",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbGYxczUwcjRzV3hDcWwzS2tUa0tsejdKMFN6NzA1QmU0ckhTNW5NYjBTWE9mOHNnUDg0S1AzbUtwbHRIZWkzUkJHeEpfYUpaazJrejNaVWpLblpIdzJHeEhHb0JfWHFoTTdDYmFscktHQmpQbmVYWHdrZmxiM080WEtLRDFZZko3UGMtOW5nOFBHTlZUVUNjZldkbXY1VHdDSzVUZ3BsZDh0cjJVTUZmaw?oc=5",
+          "date": "2026-08-17",
+          "source": "Astute Group",
+          "ko": "SK하이닉스가 메모리 부족 해소를 위해 380억달러 투자하나, 효과는 3년 후."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$172.55",
+      "change": "-1.49",
+      "changePct": "-0.86%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Will Anthropic and OpenAI Stop Selling Their Best AI to Businesses?",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWS1pQ01ldjR6WTlTVGJWYi10RU9jaUxsbWwyVmx6bTQ3NUtvX1phSTRoXzhRWl9WSE04OEpEVmt6M285QXdSSXhmdXVEVkJQVHVmOGVva0kzeWxWR2dJc0ZNVkxWbG5tbGhvOXA4WC1BaXlyWHlIUnRlUnUtSXB1Y1lqSFVncWZvZ2w4ZXl4Ry13TUY1cW9EYzE1dklHV2hDZnFJWE5hTWh0UQ?oc=5",
+      "date": "2026-08-17",
+      "source": "The Information",
+      "ko": "앤트로픽과 오픈AI가 AI 모델을 기업 고객에게 판매할지 여부를 검토 중."
+    }
+  ],
+  "summary": "유가 급등과 미-이란 긴장으로 주요 지수가 하락했으나, 메모리칩 수급 개선으로 반도체 주가는 엇갈렸다.",
+  "generatedAt": "2026-08-18 06:50",
+  "date": "2026-08-18"
+}
