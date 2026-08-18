@@ -1,0 +1,181 @@
+{
+  "sessionDate": "2026-08-18",
+  "sessionDateLabel": "2026년 8월 18일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,691.76",
+      "changePct": "-0.69%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,289.71",
+      "changePct": "-1.33%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,343.40",
+      "changePct": "-0.22%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock market today: Dow, S&P 500, Nasdaq fall as chip stocks sell off, bond yields rattle markets",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQb05YTlhtdm5CWWFjelNPMWFrWWtzUk9Vb05PZVRJT2FiSHc0em50elRIQ0lQX3Y1R0xlbVNKZjNPMDFKdHA1VWVjWnllN0ZqYUN4SWhWb01GWC16WTBCRXFGUUtBem54QVNrUE9SZnVZV19NRU1jQ245bEE5eHpzYWx4RTVWQXUwZjVZVG9LTlhKVGx6SXFsUjhORDY1dUhCYW1GNUMwdUdTQnJf?oc=5",
+      "date": "2026-08-18",
+      "source": "Yahoo Finance",
+      "ko": "미국 증시 전반 약세. 반도체주 대량 매도와 채권 수익률 상승이 주요 원인."
+    },
+    {
+      "title": "Dow loses more than 270 points as oil prices pressure stocks amid rising Iran tensions",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1RM1hCU0w1Ymc5bmJYUlpoT0FsMXpRY1VZSWtvbExwb2hycWN6eUhtdjJZWE9FTmRVdkV6WmpkQkhjNjVMVVZUY1J3WmRQZ2JKMFZFVWpGRUlfbjVlX180SzNQRWNpNEVwVlRQUVE4bml6TWRZTUNGRNIBfkFVX3lxTE9qWkJMWFk2bGV0U1ZiZmt4eFlUSUtueGNhd3JoQW80cFN4TDQ5dVp1RWk0ajllYXhycUpqV2FNMWtwaHJVS3JCRHZkS3M3RktRTXpoQkFTcXp4WnRycDhiOWNvNFlsRFpudXk0UDN3RjVRN0hwc0M4alZ6Q1BqUQ?oc=5",
+      "date": "2026-08-18",
+      "source": "cnbc.com",
+      "ko": "다우지수 270포인트 이상 하락. 유가 상승과 이란 긴장이 추가 압박 요인."
+    },
+    {
+      "title": "S&P 500 falls for a third day, as elevated global bond yields and oil prices weigh on market",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1EbTl6YmIwMk5iZFRFdDN1Ui11VTRNUGlDRjlEclNDNl9HTlhUM1lIZWZUVHpudmFHWHM5cUVnOGRqOW1EUjVBSFBYNzJvSTBqMVRma3piQmozU1BLRnZrS2xoNjUyeFUxV1lOZzQ3bUFkMzJNV0530gF8QVVfeXFMTjVFc3dmV1gybFdhUzhwTFJMMmIwYXZvVjhuMzNHdU0wNktMTWZYRzh4YmtsclhkY1dlU1YzUHRWRjhmR0w0M19rWjd1bGk0Yy1UekduWGFoekR2bkNYWGNjb19tLTNCeVk5R3FrbVhlUGowX2dIYkNCNXZrOA?oc=5",
+      "date": "2026-08-18",
+      "source": "cnbc.com",
+      "ko": "S&P 500 3일 연속 하락. 높은 글로벌 채권 수익률과 유가가 시장 부담."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$219.74",
+      "change": "-5.27",
+      "changePct": "-2.34%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Nvidia Stock (NVDA) Is Falling in Pre-Market Today – and Why BofA Sees 55%+ Upside Ahead",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQV1FhVWVBREFMUzIzT1VFb3BDTzJPNmNOdzk3Nlo0QnBVSmQyczhqamtEM2E5N2oxQ1RnX1JhNGZFM1ZRa0J3d0xMTHZVZUU0X2JGVjVzVm5PWGRXMkJZTk5xYXA1MnFNbUY2YzU4TTFBeG5aUTMzZ3pzNlBScGJseGp1WkR4b3B3Q0txdVUyWWtUSXVPU2U4dHdRa3BKaDdzYkF3LXE4VTZQaXJOYkc5bzQtU0FpMXc?oc=5",
+          "date": "2026-08-18",
+          "source": "TipRanks",
+          "ko": "NVDA 사전거래에서 하락. 골드만삭스는 55% 이상 상승 여지 제시."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$484.39",
+      "change": "-21.61",
+      "changePct": "-4.27%",
+      "up": false,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (AMD) Faces New AI Data Center Market Shake Up",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPamxBX01MR2lJNDQxRUlRdDcxQUJmTUpldk9wamtJRXNlVUdYdVBDV0hfUVNpVlRlVUlyWUFsOXF4T1VsZ1F0LUM2NUJpUkVnc3ZqWjlNb1hHaHlfLXVCcENIQm9HVkprRDAyMWhQWGZzZ3BCSk1NazdWLU9JYVJwOFJ0Y00yVXpSSV96bDVPZFZfekZCX1pjQlhzT1BEUTJRUlNuVm9uRG1LRWxGZ2Ridi1QYlR5SzFfTGNHVUtKSUt2Mnc3WEJQSFM1SkROVUNBdzVTZTZKdlB2RGJhT3hZ0gHkAUFVX3lxTE1jdDhzcG1pQ293ZE4zNE02c0NFZnhDWjYyamlOb2NYazZGWlNpd1RCS0lfNDRLV09EV3dnU2IwdkZFOU9yd09sck4tamRiYk9LQWMwRzIxNkZSa3loZmFxd3JTWEM3V2VCLTM5c2xTQ1llZTkxRlJuYnNqa3kwWjRyRjlhZHZCSlBuRkxTZ2wxRFFSdUN6Vi1BYlhzTVF0bDJuSHdxQnRzSHFfaEllV2RtNnR4cUNHam9DczduQXB2QjdSUHJDT1dVUENobFZSRHhhM1d6VDZiUC12Zi1iYXhJaEtRRw?oc=5",
+          "date": "2026-08-18",
+          "source": "simplywall.st",
+          "ko": "AMD, AI 데이터센터 시장의 구조적 변화에 직면한 상황."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$96.69",
+      "change": "-6.80",
+      "changePct": "-6.58%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock Pressured As $20B Share Offering Locks In",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9KQ2R0WWJjaEc5OVd1QlVFYlR1d2prb3lpOWR4UGk3V185M01ublVFcDVreUJhU1E0OVpBU1ROdGRTVnRIbkFnaTFFXzJaYXQ2UElwenBVQ0JxNmw0NFR3bVFwdGtFM0U2Wmo1UlZPQ3JzUWJWejlRYXN3cVU?oc=5",
+          "date": "2026-08-18",
+          "source": "StocksToTrade",
+          "ko": "인텔, 200억 달러 규모 유상증자 발표로 주가 추가 압박."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$413.41",
+      "change": "-17.56",
+      "changePct": "-4.07%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$940.76",
+      "change": "-70.99",
+      "changePct": "-7.02%",
+      "up": false,
+      "news": [
+        {
+          "title": "WSJ Report Sends Memory Stocks Down. SanDisk Down 9%, Micron Down 7%, Western Digital Down 5%",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUXh0MXI5by04eEFYcDhMZE5HdW1HTkI0T2dKdnQ3bDRKNG1ZRWFpeHJqZGE3dzNYZmhvOXVDajZXNHlRVllMdi1GZ1RBWHFHOEhQNTFvYmtmNTUyVTVXMW94TEc3WWFNNVpZaW5RU0c1dmxmbGF0TEg4ajMzOGd6d0gwdnVZZDNuS29wYzZrSkNMN0NFN095SGpNdEVTUXVkVkM0MWV2T2NMTU1EUXBwbWE3UC1xVXBEN05HUVdweDJNSS1zWkZDc0N3aw?oc=5",
+          "date": "2026-08-18",
+          "source": "24/7 Wall St.",
+          "ko": "WSJ 보도로 메모리 반도체주 일괄 하락. 마이크론·웨스턴디지털·SanDisk 모두 조정."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$155.62",
+      "change": "-15.76",
+      "changePct": "-9.20%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK Hynix Stock Crashes 8.4% as AI Memory Euphoria Breaks",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVnZoX0F2ZHZIRHZZNHlHdGhONDhmMmJ0bVBBaFV1YlpoTm1mWmRpUnJ2VEpqVHdTTTZQRllqa3U5T1ZQRExpb1d3N0tWZHJmMngyNHc3VTItdFVMQ2dkbHgzd1llTkFCN0w5SGMwRVJlTlFwenNBMUFEYVpWU1c3Y25VV3hhcDJ3UXM0am9Uam8yWjJBb2lJSHJXWUZKN3ZXeUpMOUVvNzk1S3NrbVZKdGxJaE5ZUQ?oc=5",
+          "date": "2026-08-18",
+          "source": "TradingView",
+          "ko": "SK하이닉스 8.4% 급락. AI 메모리 수요 euphoria가 꺾인 신호."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$171.54",
+      "change": "-1.01",
+      "changePct": "-0.59%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s Annualized Revenue Tops $65 Billion Before IPO",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPNVktR0ZGanRzYkMwQjBWRkhfbmVfLTVxR3JpYWtRbk1HemlQbjRab2EzTmN1VDNmYmk5Z0xIWGYzVmU2b3VTRENNTy00d1RrLXBoWjFPVE5hNEQyVDdrZ1ZuTzFaczRGODM0VnpycFpDa0tTZWpFSzYyU3d1dVNwQzlicGJPTm9WdlFHczFUMzNOalhjdDIwSWZZcVltMHdsVDY2OXE4QnZOQ2laUlU4Xw?oc=5",
+      "date": "2026-08-18",
+      "source": "bloomberg.com",
+      "ko": "앤트로픽 연환산 매출 650억 달러 돌파. IPO 준비 본격화."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Prepares Supervoting Power for Founders as it Readies for Mega-IPO",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUTdXMkt2RWM3LVQtV08xbGVaMG5MM3JuS2tpY1FIVUQ5Y3hQLVQtakU4WHZTRkExTXRTOThQWEJKTXJxVklvUzZEc1hPVVowb0h5SVJZeUNPV1U2VjRMTFljSlpnN3lUTEd6OTY1cHZmZTNuMHpYdV9aTUtfRkc2LVF6d3RHd2RxclhxdEIzbGpldjBHU3liU1A2dks0MDhBSVIzdw?oc=5",
+      "date": "2026-08-18",
+      "source": "The Information",
+      "ko": "앤트로픽 창업자에 슈퍼보팅권 부여 구조 추진. 상장 과정에서 경영권 강화."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Music publisher sues Anthropic, Suno over AI training",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUzBuU0RkY3lGY0pYZmM3c05LVVNLSUFqV1FfN0hqU053a21tRTYzanpfN0IwOThYTWNUV0ZuWXM1Q2pXRnlLYXhkVnVLMGxTbDlpZS00X1RzV2o0ekkzbHVpc0FLeFgzV0U4SGl1bm0xSk01cVJ4ZVdGOG93OFQyRTJvT3l4Zk16RXlzZk1KTHJHaDNKSVl4Z0VuRER5eC1BUHFWclZXNjF4bWhr?oc=5",
+      "date": "2026-08-17",
+      "source": "reuters.com",
+      "ko": "음악 퍼블리셔 앤트로픽·Suno 상대 저작권 소송. AI 학습 데이터 논란 지속."
+    }
+  ],
+  "summary": "반도체 주가 일제히 하락하면서 기술주 약세. 글로벌 채권 수익률 상승과 유가 부담이 시장 압박.",
+  "generatedAt": "2026-08-19 06:48",
+  "date": "2026-08-19"
+}
