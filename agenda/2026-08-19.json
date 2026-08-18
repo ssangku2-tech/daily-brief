@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-19",
+  "generatedAt": "2026-08-19 06:20",
+  "events": [
+    {
+      "title": "환전",
+      "start": "2026-08-19T09:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "박,송",
+      "start": "2026-08-19T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "정수기",
+      "start": "2026-08-20T09:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 829,
+  "importantMails": [
+    {
+      "from": "Agoda Customer Service <no-reply@agoda.com>",
+      "subject": "Agoda - Customer Receipt from Booking ID: 1758696497",
+      "summary": "예약 확인 영수증"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (aaa8ef7)",
+      "summary": "Stock Alerts 자동화 작업 실패"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (90f548a)",
+      "summary": "Daily Market Briefing 자동화 작업 실패"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 golfzon.com에 공유하셨습니다",
+      "summary": "Google 계정 데이터 공유 알림"
+    }
+  ]
+}
