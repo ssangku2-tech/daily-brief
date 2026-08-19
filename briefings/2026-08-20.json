@@ -1,0 +1,166 @@
+{
+  "sessionDate": "2026-08-19",
+  "sessionDateLabel": "2026년 8월 19일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,707.98",
+      "changePct": "+0.21%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,331.09",
+      "changePct": "+0.16%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,463.05",
+      "changePct": "+0.22%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock market today: Dow, S&P 500, Nasdaq snap 3-day losing streak as bonds rally, Moderna skyrockets",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVVBqOWZXQ2JNMDRyeVF1bnRvU2RRaUFKTk1rbnlKMHBpSi1hc01GZThfS2ozcVJDbDBzVGo3d1B1NWVSbmM3RkhLRU9OOG9QMHM3ZW1CSlJjSjFCb3FfYWRUNjctM09LMFpKSEhXX2hZWF9nUHphMVR3OUVoOWV6SDRueUF1dnFaY0ttWklOSFdZZ19hYmxyRFlXZHRRcGhNYl9lMF81QTBlX2tGaU9N?oc=5",
+      "date": "2026-08-19",
+      "source": "Yahoo Finance",
+      "ko": "3일 연속 하락세를 끝냈으나 채권 상승이 주 요인. 모더나 급등."
+    },
+    {
+      "title": "Dow rises as Treasury unveils plan to relieve bond market pressure: Live updates",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE52WVUwei1VUlFvc0FwU3lkWlBjY2lHYlNOei1RSnktZVRxQmpYWlFRN25yNS12NE96QlpuM2ZOUWpseURQV0JIcFVHZDRiYjJSb2tTSkJ3Vk5UNEpuNTJLRkFfcEZaZUluNVRXWXFFVHBvUDhSallz0gF8QVVfeXFMTnJZcUR5RmdKSDBwYlQyeXdhN2V6NFJYTVhHMVhZNzBxZFNkeFZ4OWZuMUZKLW83VWtXcWh6MVZpMHNjamVEbThLYzB4SzRIN2E2Ym5Ua2JOMU5vb2x2Y2hYSklqWi0tX210RS1neHZGbnRBY1ZqcHRVblhMTg?oc=5",
+      "date": "2026-08-19",
+      "source": "CNBC",
+      "ko": "미 재무부가 채권시장 부담 경감 계획 발표. 다우지수 상승 견인."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$217.56",
+      "change": "-2.18",
+      "changePct": "-0.99%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$466.42",
+      "change": "-17.97",
+      "changePct": "-3.71%",
+      "up": false,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (AMD) Raises $5b For AI As Its Valuation Debate Heats Up",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxObmVjd2pDMlJWVVZiWDRtcHZocmxnY05HQy1oUGYydVY3bHpxX1kxNW16S2lBeEtKc3FFUmdsRm93QWctMy0zWG93N3BCODlNakdkQjdkcnQtRlkxaml4UzMtN0YtM0N1U2J5a09weVZYRmZqbmNsQ3FBNjRHeV9SUUNmVUhOUXRLUWc?oc=5",
+          "date": "2026-08-19",
+          "source": "Yahoo! Finance Canada",
+          "ko": "AMD가 AI 자금 조달 위해 50억달러 증자. 밸류에이션 논쟁 가속."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$92.80",
+      "change": "-3.89",
+      "changePct": "-4.02%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock Charges A Premium For Capacity Still Being Built",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWkNsQXc5bnFfbEk0dWd3SjZMQi1wOTU1bi12Y2xGUUV6RUpqTnBTYkhsWHoxdzJLcXlia3lfMG5leC16X3RjakkxNU9zVldhQlRMZmRvSHFUbVNxU2xVYmdOUEdBSEgydkFjQlFtVXo1YU9LY3NWRjRlQ3ZDNXowMm55TXB2dmRzU0dIR1FMYmNubno5Ykh5YWg4M2phOEpENnpuZzBjLXFtTTRxcEctd3A4ZXh2cXF0aE5LUTJB?oc=5",
+          "date": "2026-08-19",
+          "source": "Trefis",
+          "ko": "인텔이 여전히 건설 중인 생산 능력에 프리미엄 가격 책정 중이라는 평가."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$412.09",
+      "change": "-1.32",
+      "changePct": "-0.32%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$937.11",
+      "change": "-3.65",
+      "changePct": "-0.39%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Gained Memory Market Share. The Stock Is Dropping Anyway.",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1QbEVBbEpPd2tYWW9XUUl6TTFqYWZWcnBoYXBYVTdLbDExWnFlc3F0ZGlsWllvVThvNS1ZRVJqQnN1LWRRNkdqa1lHeTJHRTNVQnVTcExwNW5yLXl5a1BmR2Q0QXN3NkpGWDg5YmFvVFJfeElVeDY1bkxHTWI5Zw?oc=5",
+          "date": "2026-08-19",
+          "source": "Barron's",
+          "ko": "마이크론이 메모리 시장 점유율 확대했음에도 주가는 하락하는 역설적 상황."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$156.16",
+      "change": "+0.54",
+      "changePct": "+0.35%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix suggests its stock is too cheap as it embarks on $29 billion buyback",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRUhkRmF0NTJCbWFLZFR1aUFVNTVVLWVHY1c0cTZGc0FEdlFnLVJWOHdhMXdPbjZLYkhtX3RvR0ZZRjJPbGVGcl9QZXVsNHFvdXNCc1hpaUJGckszVVdDU3dXTmJYU0plc2prdUNnMWZTSnhiVm0tUnJmUWpaM1RwRmo0NGt3bWwxQ1ZvNEpBQ1MwSWsta3lUOVg0VGFpSkhiSkNBelQ4VkxqUVlDVG9HcHJFVk5TOTJ6STZR?oc=5",
+          "date": "2026-08-19",
+          "source": "MarketWatch",
+          "ko": "SK하이닉스, 290억달러 규모 자사주 매입으로 저평가 인식 해소 시도."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$175.19",
+      "change": "+3.65",
+      "changePct": "+2.13%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir Stock Investors Just Got Good News From CEO Alex Karp. Wall Street Says It's Time to Buy.",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUGtQdndLTkZEekR4ZURKXzFJRF9Vb21ueEw4U3VmY1FMUHN5WUdreXlCV3o5OHdSdkZmZjNlZHdrQWRSRG56M3NjNnh3QTlBX1lGTGtXSm84VUlvajV4QmpsNHhKN0dMX0o1MXlRVXo0MklRamJVc3Z4Z3lrMWZzeUlEUnZYMnFxSmw5WDZn?oc=5",
+          "date": "2026-08-19",
+          "source": "The Motley Fool",
+          "ko": "팔란티어 CEO가 긍정적 소식 전달. 월스트리트도 매수 추천."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Stock winners and losers as Anthropic passes OpenAI as hottest AI upstart",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWmFhYU5mVjhXb0FnQ0NHTk1CMXE1azlabnZiN1pnZVN6aXhqUkdNLTVsMU9DTDJVVWVxVGxVMHFtaGx5QmRNWlc4ODljVnJYOXgxZEpUV1ZrYXBJUFplSXhHeDJKN293TXRUUHh4c1ZkVDFvdFBzSXJ0WXg0OVZVWUJFdVJmUmdlTFB5NjFJV0xQTWloM1lGZEQ4aFFWMDlYRkVFTGxiVDdLYmZCVVYw?oc=5",
+      "date": "2026-08-19",
+      "source": "CNBC",
+      "ko": "앤트로픽이 OpenAI를 제치고 최고의 AI 스타트업으로 부상. 수익성 면에서 우위."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s earnings overtake OpenAI’s for the first time: ‘revenue engine’",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSkxPalBnbWFFMElUX0ZNcXpEZndyUGFLUVRWUEZ0b1RxU0tkX2dMWWFISTZPSm5WSDBCU3I2V0dVckctbzE5ZnJpeFl5M2J1bUcxWkk3V1hnZER2OVZ3OGtEZVRfalV6YmtCMzdjZWdHOXhaTVI2WkhUa3dXVGVCNFFpcGxMWm00MWhPMTFyUjdXQXB6TEhOM1UyRXY3NGJuMzdRUEhoTTE2bGNMQlpR?oc=5",
+      "date": "2026-08-19",
+      "source": "New York Post",
+      "ko": "앤트로픽 수익이 OpenAI를 처음 능가. '수익 창출 엔진' 평가."
+    }
+  ],
+  "summary": "채권 랠리가 부양재로 작용하면서 주요지수가 3거래일 낙세를 벗었으나 반도체주는 광범위하게 하락.",
+  "generatedAt": "2026-08-20 06:51",
+  "date": "2026-08-20"
+}
