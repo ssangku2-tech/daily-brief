@@ -1,0 +1,173 @@
+{
+  "sessionDate": "2026-08-20",
+  "sessionDateLabel": "2026년 8월 20일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,641.16",
+      "changePct": "-0.87%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,067.17",
+      "changePct": "-1.00%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,759.21",
+      "changePct": "-1.32%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Jones Futures Fall As Oil Prices, Bitcoin Jump; Walmart Skids On Earnings",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOa0syUWR1dVM4V1cxSjJMZVBBQkRQcXhKWjhvTkp3eHdDV3ZtT3hiTEJFOV9MZU5Ud2RBOUNrSkxuQmxldmpzOVg3S2EzcjQtRjVNeFVOM3dNUk9pbGl4V29rNGJTenI3eTF0LXdWekJaMjdjWUtsYVNzY0RadmZNenBTMHVIMGVmY0lQUTByT2VydWh2VGVHS1ZBakR3azNlTWFRc0Vsb24zQ3oyNmRYWjZfOVhOa2tY?oc=5",
+      "date": "2026-08-20",
+      "source": "Investor's Business Daily",
+      "ko": "유가와 비트코인이 오르면서 주식 시장 선물이 하락세를 보임."
+    },
+    {
+      "title": "Stock Market Today: Dow Jones, S&P 500 Futures Fall as Trump Launches 'Operation Economic Fury' on Iran",
+      "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNbUp3Wl92NktDVHhjWllEYmdwMUhaMzBTTHJCZVBXamZISld3aDJrZGFzR19yUGZHUlEzSUJvX1Y4TU1WYlVOWXRneGt4amJWTnU5RHF6bUU3UDdYQUtuSElkeG9BZG00X1MtQ093TkMxSjdoQXlyb2lzaG1ra3pCbkZUYkhzbUlZLWVrUlpPRS1VdEk1VHhDNjBxS2FfaGdrWXpPOUJseDVHblp4dmJrY3V2SGJ2c0dPR0RwYV9jaXIzVmtQN0NzVnRXOWZJejdaRWJBci1rVE45ZldKSi11RG1IcnRubmVtbnoxMVJRZmlzYmQzTEc5cmllNFM5emZOaGtCUGxhSDN3Y3hMMHE0Mg?oc=5",
+      "date": "2026-08-20",
+      "source": "Benzinga",
+      "ko": "트럼프 행정부가 이란을 겨냥한 경제 정책을 추진하면서 시장 약세 심화."
+    },
+    {
+      "title": "Fed minutes, Walmart earnings and $40 trillion U.S. debt in focus for markets: Dow Jones, S&P, Nasdaq, Wall Street Futures",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONTZIbnZOUmx4UEl0bndLLVQzb0t3bVhPWWtpWXBYWS1RU0ppamM5cEZ1Qll6eDBPX0lLaDMwbEM0Vk5EMFI5TWI0V3MxWWZ2bkdRekV0T0pmclhHVHFqNzJaSG5WcFdNSHliZFNUWHNCZUJ5MzE5VWE2bUlic2FLQ09WZ3A5UUgtcjZsc2I0bHA5T0dSNFhRSmdkMHA?oc=5",
+      "date": "2026-08-20",
+      "source": "Yahoo Finance",
+      "ko": "연방준비제도 의사록과 4조 달러 규모의 미국 국채가 시장의 주요 변수로 작용."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$216.85",
+      "change": "-0.71",
+      "changePct": "-0.33%",
+      "up": false,
+      "news": [
+        {
+          "title": "Going Into Earnings, Is Nvidia Stock a Buy, a Sell, or Fairly Valued?",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPdWZTb0NVNDd2RWVMYWlSUXAzLWYxdHpBSmRmVmFBLWw1VC0xNFhVdjNzbXdkeDB2ZXo3bkdjeXdjdkw1X2NCUGtmWnNnT3JWSWRnVEM1OW9pSWhtOVBMUk1MbDJ2UFRmNHpUb0lyTmpKcUZxdENQSW0zTUFFekNvaEdPS1BaaUFuTHdxT3VtR19aanh6MTBCUzRObzlaS3dYSFAtMVI1OHNJV1U?oc=5",
+          "date": "2026-08-20",
+          "source": "Morningstar",
+          "ko": "엔비디아가 실적 발표를 앞두고 주가 평가에 대한 의견이 엇갈리는 상황."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$469.46",
+      "change": "+3.03",
+      "changePct": "+0.65%",
+      "up": true,
+      "news": [
+        {
+          "title": "What's Going On With AMD Stock Thursday?",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSWVudFUwQ0VhVHhpdDMzS2oxOGNuWmN3SjlhZlVKV29ORDI0NE1zSmk0clVEaEJtbzFtWGx4anBJbmY3d2d3NDluZnNFalVkWmwwcWh5bWNwd1ljWDV4aTN0NnFMZXRTbklDcEpYTU5mTDh2VVBFaGx6NHp4QkhNYUR4d3BzdGdKNHpKMnJiTmZrWkljYVFCZXVrMHU4MzJla3RN?oc=5",
+          "date": "2026-08-20",
+          "source": "Benzinga",
+          "ko": "AMD 임원진이 주식 매각으로 시장에 신호를 전달하고 있음."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$92.13",
+      "change": "-0.67",
+      "changePct": "-0.72%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Slips Despite Growing Shortage in AI Chips",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOYUp4N0c3V3VQTFJBUmdNNHBfbDRDN3Fjc2N0TEZHckVaODZhYTFieDRyTlhiM01DVEVnLXptbnhZbVJ1OFFzbVFhcDVHZVhOOFY4aGhFdVlydlRabzVGeUIyc2IwS1BlVWNBMExGT1pCYy11QVdzV0JMVEdFYUxFVklKVWlTc3B2Z2twOXM0M21fWGxhTXNEa0tscw?oc=5",
+          "date": "2026-08-20",
+          "source": "TipRanks",
+          "ko": "AI 칩 공급 부족에도 불구하고 인텔 주가가 약세를 기록."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$416.00",
+      "change": "+3.91",
+      "changePct": "+0.95%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC (NYSE: TSM) VP and spouse buy shares, report ESPP stake",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPSXNJZkF1VlhjYWp6ZDlsQ3RHcXlSeDJzV0M4U0pWV3VTTGJyRXM3cUJhU3VCVVFNV0hUTXdKTFF2bnRfczBKU1VnRW44MHloQzNTUlhXMlpDNWl4MWZVajBITXIwYU5oTFhLeEdheTFSZ1RVZGpHRGxoMVE4YXktNy11dGhLbVUyeXMzNTllLXZOWVp1dWN2TVpUMDRhNEt3TVpzcno5dF9fZXJlTEhXTFkzYVExblMxQ1pfUk14eHJ3U2dEZF9CakZR?oc=5",
+          "date": "2026-08-20",
+          "source": "Stock Titan",
+          "ko": "TSMC 임원진과 배우자가 주식을 매입하며 긍정 신호를 보냄."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "확인 실패",
+      "changePct": "확인 실패",
+      "up": null,
+      "note": "Worker 조회 실패",
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$163.08",
+      "change": "+6.92",
+      "changePct": "+4.43%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why SK Hynix Stock Is Rising Today and What Wall Street Expects Next – August 20",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYWE1al9IV3hQWHYyMklOZDZWYUREb2NnYUtSTUZwN2plZWM3dzdwbGNSZXZwTER2VzVEWXA2ekYyT1B4UVVGWGVGX3E4WFVQTFhuOUk2c3ZsWi1vNVpoRm16b0dCSVA2RDJRT3g5MUhMUkluRW1BUzJDcmFZMmt3ZTRIZzJRWDAyWUIxUU00TVU3blZ6djIyTS1iMVFUcTVSRm5Md01hYVVyemtaWGhaRjNTU3o2QQ?oc=5",
+          "date": "2026-08-20",
+          "source": "TipRanks",
+          "ko": "SK하이닉스 주가가 상승세를 보이고 있는 상황 정리."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$173.96",
+      "change": "-1.23",
+      "changePct": "-0.70%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Expects to Match SpaceX’s Record IPO Size or Top It",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZjdKM3p6TTVON2FNcXFDRVhHd056NU03dGQxNzFYYkNYc09xWDhwS1hETzdFUkoyVkpWM0o1VENSaENzWnIwODBmUThla2dsUWF5UkRuWThvVmRsRVdCZHhCaDVQZ2NYSVdLU2J4aHdaZ19OeDY5LUREbVg1cmR6ZmZxVk5OcG5YX0lHMmFUelNSYjNoVVBJVWNYdENoeFFZdmxEQVBPSDNsQWdIMFdtQnJn?oc=5",
+      "date": "2026-08-20",
+      "source": "Bloomberg",
+      "ko": "앤트로픽이 SpaceX 규모의 기록적 IPO를 목표로 자금 조성 중."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s Enterprise AI Venture Buys Consultancy",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMWtOUFRTLWtoemREQ09uOVpoQUJPQ2lyUjU2SVpEMEFNNXNoaGs4UWZfeGFING1pcG41VFlEUEx6NWxCNU5pTnFYd0RkNlhYWGJpdUp4d1dxNV9abWZBb3JtZkFwNVhuSE94Z2l3T1hzcFM4YjNGWXpmRHBWLXJQRVV1Y0VRMnlRRHdGV0lDRW1Ndzg?oc=5",
+      "date": "2026-08-20",
+      "source": "The Information",
+      "ko": "앤트로픽이 엔터프라이즈 AI 부문을 강화하기 위해 컨설팅 회사 인수."
+    }
+  ],
+  "summary": "주요 지수가 광범위하게 하락했으며, 유가와 비트코인 상승, 월마트 실적 부진이 시장을 압박했다.",
+  "generatedAt": "2026-08-21 06:54",
+  "date": "2026-08-21"
+}
