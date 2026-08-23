@@ -1,0 +1,202 @@
+{
+  "sessionDate": "2026-08-21",
+  "sessionDateLabel": "2026년 8월 21일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,674.37",
+      "changePct": "+0.43%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,180.46",
+      "changePct": "+0.43%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,277.01",
+      "changePct": "+0.98%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Gain as Scott Bessent Touts 'Toughest Sanction",
+      "link": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOMURjR2ZDVFc0WkNHUkFhTlFjbGNlS19ydnpoSnFlU3NWWV9nZ25zckxVSmpNSTluSldwS1pWekxJUHd1LVZ3cmZRR1NXZm1RNHNjQmJyNEJTTlV3VnEybHN5ckFGaEV6eTNmcHB2NmQ4UC0zTDlUbzMzcFVRWWhjQXhRRGJWTkFNR0pQc0dqNTZ5ZkRfRU1FMGczVTIxS2VPNXlYak1DWURvTGpBekNrYVFnWjBEaFVmTkdrcFM0bjlzcHZObkJVbHpPYXhWTVNsNWZ6NWZSSnp5N2FYcVI4WGI5SU1RVmtvQnZGOTJUTWd5b1ZtVDYzdUJMQWpOenViTVV0SVdIaEp2b3R4X2JzZnJrci1NN1c1d2Q1NnZ1ZjVJSVZGcE5j?oc=5",
+      "date": "2026-08-21",
+      "source": "Benzinga",
+      "ko": "재무장관 베센트가 강력한 제재 조치를 언급하며 시장 심리 개선"
+    },
+    {
+      "title": "S&P Dow Jones Indices upgrades Poland to developed market status",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX0d6cUx1YXZTelV0VDVKODVxQVpNWTZnaXdid1BBTm9tZEl4V3IxWkJ3ZUtnMjFLQVVOemRfMU1sNUpBOXNlVFhmWmdEVEljZE0tREsxRWpyUUVTeFgtS0dlRmluMEVvOUxCSkdFb3habC1La2lNLWlqRzBDZkxuOHFGa3VnQVFDekQtaWZjUms1ZlZzQ3FhZU9Uc1pCcFoyWURQVjZlX0w?oc=5",
+      "date": "2026-08-21",
+      "source": "Reuters",
+      "ko": "S&P다우존스 지수, 폴란드를 선진시장으로 승격"
+    },
+    {
+      "title": "Wall St rises on the day but falls for the week; bond yields and Iran in focus",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQX2E3YkdBQXBjbW43VmpoeklMN0VYV0ZtV0xZeUNHQUx0aXAxLW16MjU5bWdkLVRxUzlpNGhWWEpCeUJDd3JYbTJkZE5KTll3R3JkZGJoamdUSnRPMmp1d21Tc2lUb3FVcldGcXBXamZZU0lqcEV1SDdwN09pOUl4cTM4WHBnWDVhNExtbzdkMXBYVTRmVjVXSjQyYjMyUXJt?oc=5",
+      "date": "2026-08-21",
+      "source": "Reuters",
+      "ko": "월스트리트 일일 상승했으나 주간 손실, 채권 수익률과 이란 정세 우려"
+    },
+    {
+      "title": "US stock futures rebound as oil and bond-market pressures remain in focus: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUjV4NHAtc2s2bUtOMGpLMnF1MEJoc0E3Z3dielE3WkZneVRyNmRxWkw2dkpxbGtEeG9Zdm1kTGFEdEhlQWlTbzg0Wi1JQVFyUnlZVzBvR0xFVjRtVDdOWWE5NDA4dE1sM2JsaTNIRmxtcEo4MEJzdEdqRGlGOUNkcndXVQ?oc=5",
+      "date": "2026-08-21",
+      "source": "Yahoo Finance UK",
+      "ko": "유가와 채권시장 압력 속 선물지수 반등"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$214.72",
+      "change": "-2.13",
+      "changePct": "-0.98%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Reports Earnings Wednesday. Here’s How Much the Stock Is Expected to Move",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPcTBUUUJ3M2ZqLVRfUnFNMEh2cHZzSTdPOU53RElNcGctejByU3hMZ2g1REh6WVhCSEpCZVZ1aUNNNkVrV1BGUklpUDMtY2Vtb3hyTGRBcTJoTW5GcXA0TDZwMGhWT0tsMXEtX1JuZ20wM3FtQUtsYTM5dW9DVkxWMjNjSDVBNWw3RVYxZEZQbEZiVU9CczRoUzB0eGZnLWV1cF9lYXJwT0RtNDRHbVEyQ3JERGhZUU5rc0JKeUIwbU1kYVBWWlN0cE5Md3M1ZWRnNWc?oc=5",
+          "date": "2026-08-21",
+          "source": "Investopedia",
+          "ko": "엔비디아가 수요일 실적 발표, 주가 변동성 예상"
+        },
+        {
+          "title": "Nvidia Stock May Plunge After Earnings, Even If It Beats (NASDAQ:NVDA)",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPdDhDY0doSElNSFZmMFBMVnduNXhVN295UWp6VFMyVWpQOGhDenQ5OXlkTUx1X0xPSDBVOTlVT3prcFBLMEljMHRjcFpsR09yQVNPOEV3bGlyNDd0andzaVRFRjNreE96TmY2SzE1SElYeWxrOER4T1hlS3RhWjlhVzFDeUV6VFNIMDllUURhekZ6T2NkcTM0TnVNbW4?oc=5",
+          "date": "2026-08-23",
+          "source": "Seeking Alpha",
+          "ko": "일부 분석가, 엔비디아가 실적을 초과해도 주가 하락 가능성 제시"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$473.25",
+      "change": "+3.80",
+      "changePct": "+0.81%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (AMD) Posts Record Sales, But Musk’s NVIDIA (NVDA) Pledge Sinks the Stock",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNR29qS0twb1ZRTHlzcjlCbHdEWFpUbG5Qc2pBeHJwWjFLQlVRRzNmRkdLOTcxY3ZrdVFPaC1nazBWY2hNazZGaXdWbklxUTNCOWh6NWljRXV6SjhYMk1GVkNsclNmanVfdmhLTnJvLWV0aEJqX0w2NElhdFpwSnlYSzVPX1VuX2xiZ0lfRGlJLXZhYXB2TlFCS0x0S0hIdw?oc=5",
+          "date": "2026-08-21",
+          "source": "Yahoo Finance",
+          "ko": "AMD 기록적 매출 달성했으나 머스크의 엔비디아 공약으로 주가 하락"
+        },
+        {
+          "title": "AMD Is Investing More Than $10 Billion in Taiwan to Build Advanced Chip Packaging With TSMC. Here's What Lisa Su Is Actually Buying With That Money.",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeW1DSUlhZXc5NFNVbE04NG51VU51WnJZM2hhWnBNUG5GcVRSS3ZGTTFFTzVsOG0wcEVGY3E2dFhWcmEyWDBISHU0M2dKVFRncHlzYzVXQ29mcHBJVnZoSFQxSk5GdmZnQWJuaGFERld1enRIWTQ2T2JrSmJJaDJ1MHBFemhDSUhSMHZJSk9ZNW1aYzlwTno3dw?oc=5",
+          "date": "2026-08-23",
+          "source": "The Motley Fool",
+          "ko": "AMD, TSMC와 함께 대만에서 고급 칩 패키징 위해 100억 달러 이상 투자"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$90.07",
+      "change": "-2.06",
+      "changePct": "-2.24%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Slips as Howard Lutnick Defends Intel Deal",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSjJPd3FXZE80aDFtTERqVEFyMnZMQ2VSdGYtNDJiVV81QUkwS19JSzlXTkxCQXNHc3hwbVZuaVRGU0phM1c3dDVNV3MzRXFncjZ5TnNRd3dWa1cwSW9kNHZibVZWN1RDSDBGTGh0MkdYbmVaN3NuT19VekNwN2JTb0J6cE5pb09CS1Zwa0NPUnhYT0JvRnpJeHEyMA?oc=5",
+          "date": "2026-08-21",
+          "source": "TipRanks",
+          "ko": "인텔주, 루트닉 방어 발언에도 약세"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$418.95",
+      "change": "+2.95",
+      "changePct": "+0.71%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC's $100 Billion Arizona Expansion Shows The Stock Is a No-Brainer Buy",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQei1pMzJPaVNJQVVYT2JCRjBWS2xiWHc0VWZpQ2JkLVBQNmNZSXM1aXZDZi1Hb1lWMGFKRXBKQTk2OXV5YzJGaG4xbkVjLTdLZEg2Vzk1czJXemlTYXdOdmk3djNIdWxRa0c5a3Vsam9HWEhpZVBBb2pqTTR1SmdybnlZc3pDWXp3NXRhcmhGNWdQZw?oc=5",
+          "date": "2026-08-22",
+          "source": "The Motley Fool",
+          "ko": "TSMC의 애리조나 100억 달러 확장, 강력한 매수 신호"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$966.78",
+      "change": "-7.55",
+      "changePct": "-0.77%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$163.41",
+      "change": "+0.33",
+      "changePct": "+0.20%",
+      "up": true,
+      "news": [
+        {
+          "title": "South Korea's SK Hynix considers building memory chip plant in Japan, Hankyoreh reports",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNYlpPUlIxdmh3UmZRSFlsVmJCMGNZazBzYXpEd3BrZFJpd2xFQXhmODh2Y0Rlb0dKSHhjLTZxcUgwV1UwOTlJRUxDdUpmV0xQQVlYSXhTaUNRR2R0UGUtdjl5UEZ3YlJNYjFKNk5haVAtZGNwLVh5dEVzNFdOOFM2cEdweVFaSDYyUUpzWXRvZ1A2dWxJMXRsWXRCUDBSWmpQbW5RLUlKV0pLN1dOVzFSX1lIaUpnWWNKV0RORW5HQl9lU2V3RXRDYQ?oc=5",
+          "date": "2026-08-21",
+          "source": "Reuters",
+          "ko": "SK하이닉스, 일본 메모리칩 공장 건설 검토 중"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$179.94",
+      "change": "+5.98",
+      "changePct": "+3.44%",
+      "up": true,
+      "news": [
+        {
+          "title": "Trump’s Accounts Bought Palantir Stock in June. Is PLTR Still a Buy After a 46% Rally?",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbi1TQUNIU1RXcGVLbzZTdzFGWlA3aEEwM2FZT28zZjJYNHJIbzBMWGhoT00wb1g5bENCd3g3MDJHNHVuWkE1X21YQmgtcUc0LVdud1lBN09nZU92VU9feW9iNFN4Sks5NDdvTnlNYUs3SXZVWTZudktscmduTkRLLVJvYU0tbkY0NW5IbTExX2h5ZU8zdDUya3hnZEhRWG9nTG8zR2dJMDJCWGQzdjJRX0V3?oc=5",
+          "date": "2026-08-23",
+          "source": "TipRanks",
+          "ko": "트럼프 계정이 6월 팔란티어 매수, 최근 46% 상승 후에도 관심"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s best AI model struggles to attract users as cheaper tools thrive",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOQldWM1lpRFZ5SjhkcXQxalo3S3p0RWw2RHR1Rm5vaXlONzU5a1dSM0VoWGJ6dVJQYWE2Q2VlU0QxT0V2OVpsWDE1ZlJDeE90cEl5TDNrQUxZNWlEMVNkczNGWHVJVmNVQ3c5Ym9GQnp5V2gxSG5Hc0NpNHhRSFFHS3kxZ08?oc=5",
+      "date": "2026-08-23",
+      "source": "Financial Times",
+      "ko": "앤트로픽의 최신 AI 모델, 저가 경쟁 도구에 밀려 사용자 확보 미흡"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNeXdwbzNJcERVMTFvY2JtSkNBMUVaWGpSNlRqYXM1MndRT0lFOWw0NFpURjU4aVFZeTZvdjNRRWs0VWNaWXhzTXQ1QlJ4eUEwR2FXdl9Ca2xIQzVwQmgteVVLRkZneTlHMUt1dXJWNGk3UWladzNVQWZRc3ZpRFlQR2xTbGZLdGlRZzF2RWRvTk5CcVJQM19ZZlA1U2tCN1lkRkHSAacBQVVfeXFMTXQtbkxtMGJVQ0lSUjgwcG1EUFZkb1pWRjY4czE4M3NlQ1RsVWtWOVBESjM2SllMby1jN2haVy1wMWYxR2FnSFpwOUhKT180bVpRTzlETERmYjVQdE1SYjBiYXc0VzRRQnVSUC10Z2lpc0FqZlJibF8waTdOSndRa091YXZwUkRSWnlxbEI3NTYyeW55a1NkZ2NGVTc4YUM3UHZtQ056aGM?oc=5",
+      "date": "2026-08-21",
+      "source": "CNBC",
+      "ko": "앤트로픽 상장 신청서, AI 역풍을 위험 요인으로 공시할 예정"
+    }
+  ],
+  "summary": "다우지수가 강세를 보인 가운데 반도체주는 엔비디아 약세, 팔란티어 급등으로 엇갈렸다.",
+  "generatedAt": "2026-08-24 06:45",
+  "date": "2026-08-24"
+}
