@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-24",
+  "generatedAt": "2026-08-24 06:18",
+  "events": [
+    {
+      "title": "Stay at ゲストハウスくしロコ",
+      "start": "2026-08-23",
+      "allDay": true,
+      "location": ""
+    },
+    {
+      "title": "일본 08:20. 14:50",
+      "start": "2026-08-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 831,
+  "importantMails": [
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "sg의 Slack Pro 무료 평가판이 7일 후에 종료됩니다",
+      "summary": "Slack Pro 평가판 종료 예정 알림"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Klook에 공유하셨습니다",
+      "summary": "Google 계정 데이터 공유 확인"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (cbdb0e4)",
+      "summary": "GitHub 자동화 작업 실행 실패 알림"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 golfzon.com에 공유하셨습니다",
+      "summary": "Google 계정 데이터 공유 확인"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (aaa8ef7)",
+      "summary": "GitHub 자동화 작업 실행 실패 알림"
+    }
+  ]
+}
