@@ -1,0 +1,179 @@
+{
+  "sessionDate": "2026-08-24",
+  "sessionDateLabel": "2026년 8월 24일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,652.86",
+      "changePct": "-0.28%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,980.19",
+      "changePct": "-0.76%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,417.16",
+      "changePct": "+0.26%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Slip Ahead of Data-Heavy Week, Nvidia Earnings",
+      "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPMWE0MGh4M243Uzd6NFZhZVB2bnQwRTZ2ZXdMc3NrWUl0aTBseXVrWGRtR2RPamwxcUF6XzN2YTJXcnd3Y052Wjh2WHJGWWRXUDNrczZtRlN5YWJiZU1MTjVWeHJ0SEFqZVh5OGFGQXdJR1JxS3hwdW9ndzRObjNYUXo4RHp3bW5iUm1WTjBMaDRfQUZ2WFlGa2k5YVVLZnRTcGxEUndVdHViSUZDOEhwaUJ6RlIwcm8zQzNBVFI2V0RVbXlkU0dQYU5SV2NpSzVCdDhnaGhOLUhseFpZQXNLN0RiNzFnWUVtbmFhTUdrOFlqNGE1MUI2LVp4LXBEUF9QM2ZYdlM5RGNNUXJtRkFFa2NUQ3FTQQ?oc=5",
+      "date": "2026-08-24",
+      "source": "Benzinga",
+      "ko": "엔비디아 실적 발표와 데이터 발표 주간을 앞두고 선물 시장 약세."
+    },
+    {
+      "title": "Dow Jones, Nasdaq, S&P 500 preview: Nvidia results, Jackson Hole take center stage",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdHUtVXE3ZndNSHRHWlFPNWhPS3dNNE96X3JtZXhNVVExOHg2M1B5cjNmNl9uN0VyU0RqbGRpenF2M0xRTHVxN0RLWU1FZU9lcjk2Y1FDaXpVdWRNdXJ2TlNhbEszb0EyOGFOUTVFY3pKTmhmeC10Nm93STV5Y25qQVNJVkx1UldqTmNTYjg5b09oNEhfbUMwSWQ4NUE3VFdReE5TTjhNWE5YanRneVh0NWVlOGZneGNkNXJIUnByRDFKVFlqVl9ZSXNUVnFQUkE?oc=5",
+      "date": "2026-08-24",
+      "source": "Investing.com",
+      "ko": "엔비디아 실적과 잭슨홀 회의가 이번 주 시장의 주요 관심사."
+    },
+    {
+      "title": "S&P 500 Closes Down 0.3% as Tech Sells Off and the Dow Gains",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQYkp5TVF4Ni1BeTIza3F4Y0V5WFZMb0x0bFdqYThIc3RlLWdpaEh5NUJESF9KMjBrckRYc3pqcHdTY3VrUVBkUmlYZkNkZ0N4V3oyd1FOT0JwSy03UHpoREFWd05vOEZWbEpNYnlnRmxqOXlVbnJoa242cjlhWVhiZXU3X2VDWGVsRWtQYnhYOHJWT2NWc0FLenpmalhGQjZpVzNmM2hkNTVhM0lxekJ0VEpjeU42bFIyNFdjRWVMem9vTDZrLTJRcXpR?oc=5",
+      "date": "2026-08-24",
+      "source": "24/7 Wall St.",
+      "ko": "기술주 약세 속에서 S&P 500은 소폭 하락, 다우는 상승."
+    },
+    {
+      "title": "U.S. stocks mixed at close of trade; Dow Jones Industrial Average up 0.26%",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOM0x4M3lYMEl4ZlhCNllHUHZFVjljQnJJYUdwbl9aZDZIZnFKNm5paEc5aDFWOE1GUDJ1ZEQxRjF3amh5cUxiMVlod0ZBeGE3VFZmZDJockk2LUVpZUhENTRMM3U0N1JxWXJaX1lTdXN6WllVcFhJX1pfdHZtWmlQOXVtanB6TnU4VHIwT0hvWUl1M2MtZUxneWNDRnd6OWE4ZzRLOGVya1hsQUZ4ZVJySkxyeHl4dnFmZk5kdng0LU9kX3V6?oc=5",
+      "date": "2026-08-24",
+      "source": "Investing.com",
+      "ko": "미국 장 마감 시 다우지수만 상승, 나스닥과 S&P 500은 하락."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$208.48",
+      "change": "-6.24",
+      "changePct": "-2.91%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Reports Earnings Wednesday. Here’s How Much Traders Expect the Stock to Move",
+          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPMHVLQU03THBfMGZYMl9KSERlRFBLTnJBMHc5dE9VVGppMnd6T3pucENWN0lpOTNET2Q1UGtIenEyblVuaFVmekh1Ujl6OU00TFB6SDVTb0F2RUYzOE9rMmRzaFJQV2J1VkJadVl0NElDNng2czFfaWtHdHg2djZYNmRqUGRYZmFJN0U0YWVUSEgtd0pZRmtmSjBDVW52ekM2Z0drUTdxQi1LYWhWeEVRRTFud0pVai1xeWJzbVlsRFhNY3UwemtOVGV4VjlSMHd6Znl5WU81azBRS1E?oc=5",
+          "date": "2026-08-24",
+          "source": "Investopedia",
+          "ko": "엔비디아 26일 실적 발표 예정, 트레이더들이 기대하는 주가 변동폭 분석."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$456.75",
+      "change": "-16.50",
+      "changePct": "-3.49%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$87.26",
+      "change": "-2.81",
+      "changePct": "-3.12%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Slides as CPU Market Share Reaches Low Not Seen in Decades",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOajBxQlZPckk5UEVsSzZfalczRHRoWk9wY3ZjWk5DWVUtOGpJQTJZYkNfcGx0bUZEZVVEd2pKajJXendiQXYtRzVtalE4azhueUwxdmhaNmRva0hUYnNsRTZOZ1hjbXEtb3RBM1dBVmhWZ1RueEVxT1Z2WGpsbXRFbXVvZFhEMU1JYkZtQnp3OFl4UmZxbHliSko4WmM3eVg0SzhvNFQ5ZE9YUmx6WVBsNA?oc=5",
+          "date": "2026-08-24",
+          "source": "TipRanks",
+          "ko": "인텔의 CPU 시장점유율이 수십 년 만에 최저 수준으로 하락."
+        },
+        {
+          "title": "Semiconductor Stocks Slide Ahead of NVIDIA Earnings: Intel Falls 5%, AMD Slides 4%, Taiwan Semiconductor Slips 3%",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaDBmM0FRUG1yQU9HbC1CQmkycUNUTkp2XzVpY0F6ZW01c2F2RTdxOC1LSHNsMW9weUtDLU9jZVY0aFlBMi1MLXBUV2p3TmFMa2JjMzYtUXhZVHFYVGFDUC1CSVRmRkRBeHRpc0p3ZnowV0xOU1Bqak1kNXdjZm5EZHNBSU90ekdadElkMEprbEJyTVJFVE94N2pMWXpGZ3N0QWNwM1lzVQ?oc=5",
+          "date": "2026-08-24",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아 실적 발표 앞두고 반도체 업체들 일제히 하락, 인텔·AMD·TSMC 등."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$410.12",
+      "change": "-8.83",
+      "changePct": "-2.11%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$910.43",
+      "change": "-56.35",
+      "changePct": "-5.83%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$155.37",
+      "change": "-8.04",
+      "changePct": "-4.92%",
+      "up": false,
+      "news": [
+        {
+          "title": "Memory crunch drives Nvidia price hikes, cutting both ways for Samsung, SK Hynix",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1wYWxsX3E3MHZPb1JpOTJoWkRlWGpFcHNMaHg3bXlGbEN1TWVLalU0VXB0ZWpFbVBRa2xvWHVDTUNEZzBkNE1sWGlaT0JRYU1HaXhoM0lhZ0Q1c1QxUnlOTXJPTF9tWFBqMTFMMDRJWGxXb2ppckNV?oc=5",
+          "date": "2026-08-24",
+          "source": "KED Global",
+          "ko": "메모리 수급 부족으로 엔비디아 가격 인상, 삼성·SK하이닉스에 양면적 영향."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$175.89",
+      "change": "-4.05",
+      "changePct": "-2.25%",
+      "up": false,
+      "news": [
+        {
+          "title": "Cathie Wood Dumps $27.2 Million of Palantir Stock After 43% Rally",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNSDduUXFWTVNtMkZZY0RPLUxsLXJCSVE4V241U2d5STZnb1JNbDJwa1hUQi0zc3Z2Sk9UcHpxODQ5eHc0NzhBOWl4V1pSMzBqMWhUeGVzMFhrM1NKTFNpYkRLNEZEU2FnMHl2TW45Ujh6VmFlcnE1aHVHeTRrcDJVZFpkTEN5UUtzaEdmU3hBTHByU0syclhnb3AxSFFlaDJsWFJfRUNQcVJvX19RX2RtVWxVT29SeW5EYWpPWHppTlk?oc=5",
+          "date": "2026-08-24",
+          "source": "TradingView",
+          "ko": "캐시 우드가 팔란티어 주식 2720만 달러 규모를 43% 랠리 후 매도."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Wants to Beat SpaceX’s IPO, and It Could Reprice Every AI Stock You Own",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeXg5al9ya0lBS2dXbWhHYVp4MDhuX0ZKdU5ueWE1VE9rX3FQRHdhQjlwSHNqV3c0MkUwZ2VRSHVLckJNT3d4VlRYTlM0dDJlQXphSFdhWHQtYkhtYTIwNk9pQmw1UDJLc3VJb0tLRlVRZm03ZEZWZDJta1Q5TE1fVk1LUnZadElqZjUxeDBLY1dJQzNRSkJKOURLcw?oc=5",
+      "date": "2026-08-24",
+      "source": "Yahoo Finance",
+      "ko": "앤트로픽이 스페이스X IPO 수준의 기업가치를 목표로 AI 업계 밸류에이션 재평가 추진."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Who Should Control Anthropic?",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNR1J3NGNXVXJNR1BSeUtOQjliLTVYWFZvSFRra2tBM0lHWEV6Nkh0V1JjQ0h5RXFDTUVwWXo4NWZ3R1FKMDBXS1N0dEtEc1RJQWdWbncxVXFYNnZQVzJKalp5Si0tN2p5c0c2SVpDY0V3LW9tcElVZmZPQ0llQ05fVFFFdXRNcnEtcVNCMDB3?oc=5",
+      "date": "2026-08-24",
+      "source": "Bloomberg.com",
+      "ko": "앤트로픽의 통제권 문제를 놓고 내부 갈등과 지배구조 논의."
+    }
+  ],
+  "summary": "엔비디아 실적 발표 앞두고 반도체주 일제히 하락. 기술주 약세로 나스닥 내렸으나 다우는 상승.",
+  "generatedAt": "2026-08-25 06:54",
+  "date": "2026-08-25"
+}
