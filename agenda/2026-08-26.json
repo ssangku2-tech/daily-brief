@@ -1,0 +1,35 @@
+{
+  "date": "2026-08-26",
+  "generatedAt": "2026-08-26 06:24",
+  "events": [
+    {
+      "title": "일본 08:20. 14:50",
+      "start": "2026-08-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 839,
+  "importantMails": [
+    {
+      "from": "Agoda Reviews <no-reply@agoda.com>",
+      "subject": "[Booking 1758696497] 👎👍 SANG GU, would you recommend ゲストハウスくしロコ?",
+      "summary": "숙소 예약에 대한 리뷰 작성 요청"
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "sg의 Slack Pro 무료 평가판이 7일 후에 종료됩니다",
+      "summary": "유료 구독 전환 임박 알림"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Klook에 공유하셨습니다",
+      "summary": "구글 계정 데이터 공유 확인 알림"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (cbdb0e4)",
+      "summary": "깃허브 자동화 작업 실패 알림"
+    }
+  ]
+}
