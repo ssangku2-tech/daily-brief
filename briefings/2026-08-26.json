@@ -1,0 +1,166 @@
+{
+  "sessionDate": "2026-08-25",
+  "sessionDateLabel": "2026년 8월 25일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,677.28",
+      "changePct": "+0.32%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,151.30",
+      "changePct": "+0.66%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,577.40",
+      "changePct": "+0.30%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Falling oil prices help calm the stock and bond markets",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSjh1OGR6am1sWHpreGtGVW5sYzBRUzZiYmR3bS1aQm4tM1o0WXNnY1Bydlg2SHh6QkhiajZJWWxmcjRpTmt2MVpGclJabmJwa2szMEJnWUdhQVkzZEFlSTMxVGpmcjVkRDZxcEhCWlczRmwtaGdXUVpNWnlEcVFKTW5jMV9RQWFBcXN5YVhNN3FEYVZFcTRuTlYyYW83c1ZSaHlyUS1tWkozcXN6MmFJeGZSSGt2Z2duNWM4?oc=5",
+      "date": "2026-08-25",
+      "source": "WRAL",
+      "ko": "유가 하락이 주식·채권 시장 안정에 도움을 줌."
+    },
+    {
+      "title": "Futures: Inflation Data, Nvidia Due; Stocks Rise As Oil, Yields Fall",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPQ1g0Zi1LVEZtRElWZlduNnhGaEltUXdNSWxHR1VaOWVxNzZ6MjA3eTNLU0hQdUxMUldYNHNiY0QyWk1uaHJmUWcwN09mZFBGOTRvcDR0VWpWTzlTZkVfWno5MUtuVHRzMlYxTGg5MkRuQ2E3eUNVb3RBMkpBNUx1VnlYQzFYY1hpb19hQkhIanVDQUo1OUhGLWV2Q2NpSjNrWVlNYVFNYjY1SS1ZNndWOUdyRXVncm1EMGxZMVk5dHVMVlBKcE95S0xuZG0zaXd3ZDhjamZ3?oc=5",
+      "date": "2026-08-25",
+      "source": "Investor's Business Daily",
+      "ko": "인플레이션 데이터 발표와 엔비디아 실적 발표 예정."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$213.05",
+      "change": "+4.57",
+      "changePct": "+2.19%",
+      "up": true,
+      "news": [
+        {
+          "title": "Citi renews Nvidia stock forecast ahead of earnings",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVFlrZVB2bDYzYTlDOXBIdF82RHFhNWJJT1VNTTdqUkdGdGp2UEY3NXFkaElmdGkxUzBiRmJNV0JXaDdnYWNnSGg0S2ppX3V5aFRDX2tFQ1Q0SWpUUUVOOVJUV3FTOU1Bc0F2M3QzZkVhLXBjc3VEQm5FeDc4Wk9VLWVzcTR0bXV3ZldVQXFDRC05ZjdtTGp1VG5LUkprTHVYRDR5a2Nn?oc=5",
+          "date": "2026-08-25",
+          "source": "thestreet.com",
+          "ko": "시티가 엔비디아 주가 전망을 갱신함."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$479.18",
+      "change": "+22.44",
+      "changePct": "+4.91%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices Shares Rise After Raymond James Upgrades Stock to Strong Buy",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTTJPZTdzemJ5c25Wc3VUalllaUZFYl9sanFaN2xaenJWZmNCcjdfT3RueGhORUtRZ1EzMHRlZE43TDIzTEx3QTNaeUFWLXJrcEpPT2NWSFltZHFGaENEZUhqRFhWX2xFd29NTDNxcFhKR0phQnRwY0tsTTQycURaYVN5UXU1cmlYR3RIRHFjd21Cb3FXVlBtbWpvRlpmZ2RE?oc=5",
+          "date": "2026-08-25",
+          "source": "Yahoo Finance",
+          "ko": "레이먼드제임스가 AMD를 강력매수로 상향 조정."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$87.48",
+      "change": "+0.22",
+      "changePct": "+0.25%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$417.41",
+      "change": "+7.29",
+      "changePct": "+1.78%",
+      "up": true,
+      "news": [
+        {
+          "title": "Prediction: TSMC Stock Will Soar After Aug. 26 Thanks to Nvidia’s Historic Quarter",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcUtlUDE2cG9QUlJDS1hRaGlWR2kzeloxalNraTl1QmRRX3hpdGlEeEJ6UnFxUXMxUEJManNEQ0ZITmtwR3dtb0liUjlLVHJCYTdmcUItY1NieHVkQWZKUk5kOHFFNFpTTjN2aXZRVDktT19lSFJnWTBYaFpENzhkNEYtcU1vbk90T1dLcFJvZ2s0Nm51SWloRG1FbE9PcWF4T3lnUDh3NGJTZGpsTEZoV0VHdThFNmI5a2ZqMWs1bGE?oc=5",
+          "date": "2026-08-25",
+          "source": "The Motley Fool",
+          "ko": "엔비디아 실적 발표 후 TSMC 주가가 크게 오를 수 있다는 전망."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$932.97",
+      "change": "+22.54",
+      "changePct": "+2.48%",
+      "up": true,
+      "news": [
+        {
+          "title": "Finance giant sets aggressive Micron stock target after earnings",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNV05JLTBuQjFTNWJ0blBKb1ZOVEhUZlBoQ0kyVHIxU0NYeHpBTlkyRGJ5ZjV0Q2h5TGRpdXhEU2pNVFNKQTAxX0luRDNNOWJJM2hCM09GZm9VVlhDdFBhUndVcm1qeVB6Slp5Y3hZdUxyMUlURkFoMThScl8walc4dXFfX2pjdi1HbXJ3M2Z6eDJGQzRr?oc=5",
+          "date": "2026-08-25",
+          "source": "thestreet.com",
+          "ko": "금융사가 마이크론 실적 이후 공격적인 목표가를 제시함."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$159.53",
+      "change": "+4.16",
+      "changePct": "+2.68%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix (NasdaqGS:SKHY) Weighs First Japan Memory Chip Plant",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPQjlhUUpFWkdNcGtmWmc2SFFXSzVaek9NcDY1RlpYV0E2SXFXdm1VajRwUl8xVEhadENxRkFPNXBOSTlGbl9pWjFOUWgzckhON3E1NEp2Vi1ZMFdwM0dycFlUMUpxRTVwc0kyM3pkWmR2eFBQSW1FZmdKZlBkdTRhcGd5eFpBdzNYSE9LWDlFM0ZQY21rT3FTQ3pRNlhuTE0zZWszTXlsTlQ3bFdrcUQyUzd6Qk5lTmQyNllPU3R0dVk0ODBnaFJTV1B4SdIB0AFBVV95cUxNczU3SFI4UnVXUVIzZnFGU3JvTFYyQ08yTGNhbjBOalRSY0ZaYVVobnJveUZsRDIxMmV4WjYwWmVHallqajN6NDBtRnVkcXlmdTY3VEJyTHJfcDdqcUhtS0N2UWpXWG5NVnJoZ05IYVhjV09xTElaN3pBYnRaTnZoZlBBa3J1aDJvdWgwenE3ZUhPU1RXZXVjZV9xVFFkRnQ4QmRCcENIZUVmTFo1VTJIZEVXeHQ0MkJZdjRYN0FBaEJLTXdKdWZzR1ZMbjNJSDlB?oc=5",
+          "date": "2026-08-24",
+          "source": "simplywall.st",
+          "ko": "SK하이닉스가 일본 메모리칩 공장 건설을 검토 중."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$172.73",
+      "change": "-3.16",
+      "changePct": "-1.80%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Exclusive | Anthropic Expected to Tell Investors It Sees Over $30 Trillion in Potential Revenue",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZjZaazBLZXFzWnlOOHJ2b24wZzZsOGd6Sy11ZGF2NXZ1NmJ0bWdYNklaOUszQ2NMT2J0YTh6X0V6ZUJNVl9LVF82blJCTHZadHEybHN1WEFBMy1NdXNoenIxNGdudjZscEVQT09xMjRjU3htekdoNk45SzdkbGRlMUdKWUJCVlpzcFlYM1RLSlVqWHBtZUM0azctZV8xaWpvbHJLcmxGNXQ5bV9Mc1JjQVJXcXZnaWJ1MmJN?oc=5",
+      "date": "2026-08-25",
+      "source": "WSJ",
+      "ko": "앤트로픽이 투자자에게 30조 달러 이상의 잠재 수익을 제시."
+    },
+    {
+      "company": "Anthropic",
+      "title": "AI giant Anthropic in talks to lease massive Bastrop County data center, sources said",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPQlVUWGdCV3hiNFdydVphZlpwYXctSHAzRnZ3SzNMTmVxQm9QcVpkS0F4WVdQcGtYb1pGNXdnMjRHVVlHUlBFZ2JRdkU4eV9pQWduaXlWV1lneXJkMFNrZkhmTmI1czhGOUhFbjJ1U1VOcXgzMFhMMjl0WnphbXFEMXZGSzNuU1VONDBrNXhhRHRGVEY2R0V1SFNDSV9GbnNRUDN0OVlzYW1EQnpiQU01NVJrYkU4MEF00gG-AUFVX3lxTE5takJHbTd3Y1FjNjg4SVl2dEJNdHp6b2ZySVVsbnlzZXFBZ0YwVHgwUmdvQXN0RmtQbEJfNzRoNVhCeWl4bWU0ZFliOE54TVZINHBmN2s4QVpRNHI0NkFIUWY0VzA3WWx2aHJmOThNSDRQYUNuZVpINU9CdVFaSnZkZVd0cVZBNUZDWkZVWjFfWjRLYkNfNG5WSFlDd01ZNmNzX2lQZ3Z0bFRiTVlIZk5oTVdrYzhRaXk0d1V4anc?oc=5",
+      "date": "2026-08-25",
+      "source": "KXAN Austin",
+      "ko": "앤트로픽이 텍사스 배스트롭 카운티 데이터센터 임차를 협의 중."
+    }
+  ],
+  "summary": "유가 하락과 기술주 강세로 전 지수가 상승. 반도체주가 일제히 올랐다.",
+  "generatedAt": "2026-08-26 06:53",
+  "date": "2026-08-26"
+}
