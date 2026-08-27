@@ -1,0 +1,188 @@
+{
+  "sessionDate": "2026-08-26",
+  "sessionDateLabel": "2026년 8월 26일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,675.70",
+      "changePct": "-0.02%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,130.20",
+      "changePct": "-0.08%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,463.88",
+      "changePct": "-0.21%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "U.S. stocks lower at close of trade; Dow Jones Industrial Average down 0.21%",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSFB1UTNnZWxJb0ZQYnF2WEMyQnpDVXkyZWRZcWktOGVQUDRSaWNQa3lhOXFLaUJmMGt5akpNbmcyOHZ5cTdGZ3I5VHV4YjZIMTllRHpXb2t6S0R0YTc1RFpUNDd2akFYVE1GLWNLbjRDSVFBS3IwMHdidGo3b3ZvWTZxX2NCOVVGZEJpdEZPcFdQV1EtM2tnenR5VFFjR1hjY3QzRFk2aElkc2lMY183NVlzaWpMSnU3eGlWWm8yYWQ1RjB6ZVhn?oc=5",
+      "date": "2026-08-26",
+      "source": "Investing.com",
+      "ko": "미국 주식시장 마감시 다우지수 0.21% 하락으로 마감."
+    },
+    {
+      "title": "The Stock Market Is Repeating a Dangerous Pattern Not Seen in 60 Years. History Says Investors Should Buckle Up.",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbUtzMUZ1UEI5TksxS0RuQ2JBdjFwb2dRQ3AtSXBQVF9BdHZzNXNaWFpwOHViSnVnZE0yeWtMOVQ2TmhOS0hKSHlLd1lDN0pqcE1mVWNuT05GOEg2dFkybnd5U2l3QjQ4OWlMT09pMk1kMlhpandhZkh3MEVWd0tqMk5ta1BNUXZ1b18zT0Q4b1NJTnVqNmFV?oc=5",
+      "date": "2026-08-26",
+      "source": "The Motley Fool",
+      "ko": "60년 만에 반복되는 위험한 시장 패턴이 나타나고 있어 투자자 주의 필요."
+    },
+    {
+      "title": "Falling oil prices help calm the stock and bond markets",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSjh1OGR6am1sWHpreGtGVW5sYzBRUzZiYmR3bS1aQm4tM1o0WXNnY1Bydlg2SHh6QkhiajZJWWxmcjRpTmt2MVpGclJabmJwa2szMEJnWUdhQVkzZEFlSTMxVGpmcjVkRDZxcEhCWlczRmwtaGdXUVpNWnlEcVFKTW5jMV9RQWFBcXN5YVhNN3FEYVZFcTRuTlYyYW83c1ZSaHlyUS1tWkozcXN6MmFJeGZSSGt2Z2duNWM4?oc=5",
+      "date": "2026-08-25",
+      "source": "WRAL",
+      "ko": "유가 하락이 주식·채권시장 안정에 긍정적 영향."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$209.66",
+      "change": "-3.39",
+      "changePct": "-1.59%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Reports Blowout Quarter, Says Demand for AI Chips Is Getting Even Hotter",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE03cHRsZk93LVRNRHBPUkVPZEVuZnFMNnB0LXluOHFRRXRCS2xBR3RmNGh0QjhoM1FmcjRkSXdURUFpVHVjZkpRckFJeWl4R3NzWU8yWDF2bFlUdU51TmV2Ml9BTUFiT3dxekpWdjdUa0ROVVVoY3NN?oc=5",
+          "date": "2026-08-26",
+          "source": "WSJ",
+          "ko": "엔비디아 블owout 실적 발표, AI 칩 수요가 한층 강화되고 있음을 시사."
+        },
+        {
+          "title": "Nvidia ticks up as Q2 results, guidance top estimates (NVDA:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNN1M2WGxLZjVMWTcwSG5jNHQycFg0UVNmQmxXYWJzZEQ4VnF1ckxqS0NkaGxLZks5cVIzNFp3TklQRzJReVYxQzU1Vkltd0JEeUNCVzZfbDRVeUdtc3JYVkQyU0l4TW9mUDh0cUVpTkRhQ09YOUR6SzNnRXdqT2p6a2ZkVVpNNEZXdnhJVzc3OG83MUVrTXBN?oc=5",
+          "date": "2026-08-26",
+          "source": "Seeking Alpha",
+          "ko": "엔비디아 Q2 실적과 가이던스가 예상을 상회."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$480.93",
+      "change": "+1.75",
+      "changePct": "+0.37%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices Advances After Raymond James Upgrades Chip Maker To Strong Buy",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOdHRUZ0x4S3ZqTU84c2lKclNqR2N1dkhpOGJLcmtxaGhXVTZUM3BDNS1RT2wxaTVwQmRXLUtId192bnhpb3d2aHYtQ2JYQjZIamdwcDF5UXNUcHdyN25rMWZPNHU0QnZTR25fYlJ3ZUxZeFplWkNuNngxazVvSnFoU093MUY2TGtCVi1DdDh5UlB6R0pfTHc?oc=5",
+          "date": "2026-08-26",
+          "source": "TIKR.com",
+          "ko": "레이먼드 제임스가 AMD를 스트롱바이로 상향 평가."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$88.24",
+      "change": "+0.76",
+      "changePct": "+0.87%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel INTC Stock Finds Bids After NVIDIA Earnings, but $100 Remains Key",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTThPbE5ReDh5d05vWnc3M1lPallKMkhQMEVLUFJVV3RqOU1mSXlrZm1WS3BPcm56SUJMV2JQRjhtekNfeUYtc1JIdk1xeDkwbU91RW5hd1lyMUl6TXc4WUhhZy1BOWpIazhOekxLaU93Z3o0aFo2cmpMRGZRS2Jid2pNbmFkZzctcjNlSEJpR0huZnNjZm12cGlreGpBbXprVDFfaXQ0d0pqLURGX1hBSzlR?oc=5",
+          "date": "2026-08-26",
+          "source": "FXLeaders",
+          "ko": "인텔 주가가 엔비디아 실적 발표 후 100달러 저항선 유지 여부 관전중."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$417.69",
+      "change": "+0.28",
+      "changePct": "+0.07%",
+      "up": true,
+      "news": [
+        {
+          "title": "Prediction: TSMC Stock Will Soar After Aug. 26 Thanks to Nvidia’s Historic Quarter",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcUtlUDE2cG9QUlJDS1hRaGlWR2kzeloxalNraTl1QmRRX3hpdGlEeEJ6UnFxUXMxUEJManNEQ0ZITmtwR3dtb0liUjlLVHJCYTdmcUItY1NieHVkQWZKUk5kOHFFNFpTTjN2aXZRVDktT19lSFJnWTBYaFpENzhkNEYtcU1vbk90T1dLcFJvZ2s0Nm51SWloRG1FbE9PcWF4T3lnUDh3NGJTZGpsTEZoV0VHdThFNmI5a2ZqMWs1bGE?oc=5",
+          "date": "2026-08-25",
+          "source": "The Motley Fool",
+          "ko": "TSMC 주가는 엔비디아 역대급 실적 이후 8월 26일을 기점으로 급등할 것으로 예상."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$938.40",
+      "change": "+5.43",
+      "changePct": "+0.58%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Technology Has Fantastic News for Memory Stock Investors",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdnVWSkdxbE0yX2VUNzUwNjR5eEhPTVQyX0JIeUlmeWxqcDh6bkFnSWxVNEZZME00ZF9KeFdiY1g0QVZEZWU1V1ltRklHS285dVREb2RReU9OekdvcU5sc0E1cVh3Z2NReHJhc0NDUUY3UTZpSmVMWUhmdDJDbkkxTzNjNXE2dlR1aWJBWC1zQXlqbTBGX1Nucg?oc=5",
+          "date": "2026-08-26",
+          "source": "The Motley Fool",
+          "ko": "마이크론이 메모리 투자자들을 위한 호재 뉴스 공개."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$158.02",
+      "change": "-1.51",
+      "changePct": "-0.95%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$177.50",
+      "change": "+4.77",
+      "changePct": "+2.76%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir in focus as William Blair sees Maven 'surging' towards billion-dollar ARR (PLTR:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPM2F5NzZDQzZlSkFRZzY5ajQxcm1UdUU5UkdDRGw1dmdJemZxeFZFQWlZRlY3VU5DNmJHSDdOVjR3YWxyUmdUSmdwdk5BcWdvLVhDRllyeVZGdHpCN1VkMG1JRlJvR25PMUc1Z0JhbWFUcEs0Q0VuOVhORnBBQU1McDNteTVaMmJlemR4Y0wtSG10ejhlV0VRQ2N4ZFVjbjlveUdUQTRBeHR4ODA4eVdURUp3dWlYVEViQmc?oc=5",
+          "date": "2026-08-26",
+          "source": "Seeking Alpha",
+          "ko": "윌리엄 블레어가 팔란티어의 Maven 시스템이 10억 달러 ARR에 가까워지고 있다고 지적."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Salesforce Profit, Revenue Rise, Expands Partnership with Anthropic’s Claude",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSFpqV2tQWnJEcXhJRUJhZVFIblRMOWV2NDBCenVXcFh0M3N6YWpCcXZ2MGZueXowZWlaQy1uUXdEY3JVUzBHcVk4dHZKWHNkSHh4d0NEZ0RIVUQwZXZhdjZYLVdWNy1lZjNSRXR4akhmRTZSaEo1dTVIQlAyeVByMV9UX0V2aE9LNzRCUDBqaGNzLWY3Z2xibWFHbTF1amM4akhRZGlpWUFKQWtkWmZuWXhKU3QzTExPaWFQRQ?oc=5",
+      "date": "2026-08-26",
+      "source": "WSJ",
+      "ko": "세일즈포스 수익·매출 증가, 앤트로픽과의 파트너십 확대."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic to Pay Nscale $45 Billion for AI Computing Power",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVzVZckV2QWFDb2xsVWN6OGhuamVpbENEQTZxZWk3SjFxVWxhSlVWeERya1lGM0dzbGx0RGlsMU1kLWhxcFQxVldKZThrR01CUS1Gcnhya0NEMGk2aklKMnZIRHIzZlNlTWRIekdlQ19jaU5NczBNUmpqY1hWVlVTbTFVclF2dWRGUVZ3SUN2NFp4OXA3QktYcW5LWWNHZWtmMDBxVFItc2FBS3Iy?oc=5",
+      "date": "2026-08-26",
+      "source": "Bloomberg",
+      "ko": "앤트로픽이 AI 컴퓨팅 파워 확보를 위해 Nscale과 450억 달러 규모 거래 체결."
+    }
+  ],
+  "summary": "엔비디아 실적 호조에도 인플레이션 우려로 지수는 소폭 하락, 반도체주는 엇갈림.",
+  "generatedAt": "2026-08-27 09:57",
+  "date": "2026-08-27"
+}
