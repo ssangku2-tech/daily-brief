@@ -1,0 +1,30 @@
+{
+  "date": "2026-08-27",
+  "generatedAt": "2026-08-27 09:25",
+  "events": [
+    {
+      "title": "일본 08:20. 14:50",
+      "start": "2026-08-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 844,
+  "importantMails": [
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Build for the agentic Internet - the Connect 2026 lineup and agenda are live",
+      "summary": "Cloudflare Connect 2026 행사 일정 및 프로그램이 공개되었습니다."
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "sg의 Slack Pro 무료 평가판이 7일 후에 종료됩니다",
+      "summary": "사용 중인 Slack Pro 무료 평가판이 곧 종료될 예정입니다."
+    },
+    {
+      "from": "Agoda Reviews <no-reply@agoda.com>",
+      "subject": "[Booking 1758696497] 👎👍 SANG GU, would you recommend ゲストハウスくしロコ?",
+      "summary": "예약한 숙소에 대한 리뷰 작성을 요청하는 메시지입니다."
+    }
+  ]
+}
