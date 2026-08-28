@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-28",
+  "generatedAt": "2026-08-28 14:05",
+  "events": [
+    {
+      "title": "일본 08:20. 14:50",
+      "start": "2026-08-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 848,
+  "importantMails": [
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "Slack 프리미엄 기능을 사용할 수 있는 기간이 3 일 남았습니다.",
+      "summary": "Slack 프리미�m 기간 만료 3일 전 안내"
+    },
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Build for the agentic Internet - the Connect 2026 lineup and agenda are live",
+      "summary": "Cloudflare Connect 2026 행사 일정 공개"
+    }
+  ]
+}
