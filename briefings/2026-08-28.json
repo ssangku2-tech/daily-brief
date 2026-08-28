@@ -1,0 +1,179 @@
+{
+  "sessionDate": "2026-08-27",
+  "sessionDateLabel": "2026년 8월 27일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,730.99",
+      "changePct": "+0.72%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,541.35",
+      "changePct": "+1.57%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,569.44",
+      "changePct": "+0.20%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Nasdaq, S&P 500 Futures Surge After Blockbuster Nvidia Earnings Report; Salesforce, CrowdStrike Also Power Tech Gains",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNenRTN1djVkpqLXJsaUtaQU5PLWxPN1BOWE9kcjVMUEVwRTNIUzlUWjF6NW9KMVlnZFBhMDAwV0pIR21nS2Q0ZEFJYW9MTk1vMUxQc3NYdjIzLUQyRzJSdDJkcjZucW5vZ2FmdXlueGRqenFqeUVSc0ROOXFoWFlMTGluSXZLZlhEMHd2ZXNodTNiNjB1V0Y0?oc=5",
+      "date": "2026-08-27",
+      "source": "Yahoo Finance",
+      "ko": "엔비디아 실적 호조로 기술주와 나스닥 선물이 급등했으며 세일즈포스, 크라우드스트라이크도 함께 상승."
+    },
+    {
+      "title": "US stocks: Nasdaq, S&P 500 lifted by Nvidia's forecast; investors eye speech by US Fed's Warsh",
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOWWsxanNaam5fNmxYYXhueUg0Q20wUjFaWGQ5MWNCZXBVQ3NxVWFicURTZkxwNzV1Q0NPb1J5ZnRzQWsyYUJ2bHBFdUp1VmlNSWROM01GZHY3UHNrNVBoTEdXTDV1THNPamc2NHlxTE5fU3h4aGNnOEVoeHVYSjBOWnZnTHJwZlZEcml5THQ5YTRJWmRJVkhFbTBVSmUxTVR3UnJsZENPV2VsUHJIS3VjNTRMY3lCQXREaW1fUVdIaDRqaGlEbVRKc2RnakFiOVFMMmJuX0Z2MTl0NVdEODV0MVMzTjRuTld4ZHRuVUpLOGFPdw?oc=5",
+      "date": "2026-08-27",
+      "source": "The Business Times",
+      "ko": "나스닥과 S&P 500이 엔비디아의 긍정적 가이던스에 힘입어 올랐고, 투자자들은 연준 의장 워시의 연설에 주목."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$227.98",
+      "change": "+18.32",
+      "changePct": "+8.74%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia adds more than $400 billion in value after blowout earnings boost AI confidence",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1wT0tKVG5QdjJIV3RXNmZNYUROM1dJYWJ3d3VOUzdKUEZjTFgweTFXNlhFT3RwLUoxZ1E4SXYzQ0g4LUFYdW9tNkNVUmE5OE5TendnYU02ekhBeThSZDRpTVBwcmlCRXdkcDVoetIBckFVX3lxTFBTYXloWFBxMWUxVXBhV1VLdkJzbWpITXdabzh3b00zYXlnb0ZHcEZlRjFqRHRtWmF4QjA2ei1Id3hTQ3N3X1lQcGZyQkJKRzhZalpsbmZrd3lRd2gxQXRpMWpQUUpiVTFxTHJ3N0NEY0k1Zw?oc=5",
+          "date": "2026-08-27",
+          "source": "CNBC",
+          "ko": "엔비디아가 실적 호조로 4000억 달러 이상의 시가총액을 더했고 AI 신뢰도를 회복시켰다."
+        },
+        {
+          "title": "Nvidia: What We Think of the Stock After Earnings",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQM3ZkbHhTRlhjekFtYkd3WEIwd3lMb3pFNXZVSmZWb21lazBvMEtFV0c4ck0tTllqZmhFX3ZsVzl1WnNnVjUtVzRfbkxBdmNwZTN6eTZDU3JKTnZpNkZVRGRDdFRYSUVLUjJtbXFOOEd5QWh3SERJRGpQZmY0RWhKMXpaZlEydkdlYVo4TjRn?oc=5",
+          "date": "2026-08-27",
+          "source": "Morningstar",
+          "ko": "엔비디아 실적 후 주식 평가에 대한 분석."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$476.67",
+      "change": "-4.26",
+      "changePct": "-0.89%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$92.09",
+      "change": "+3.85",
+      "changePct": "+4.36%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Is Intel Stock Surging on Thursday?",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdjBfTXhSMzdfWXZHeDE1NkxkR0JweEhXMEtpT0VLcTZZR0NUZFhlQXR2LVh4bEdtS3dRemdVZWNCTDEtazU0c0FLYmptMVlxbnZ3cHFWNndYWkl6OFM0QnFWb3RKT2cyT0xnSzBnNWprdkhWVGJ2b1E1bG9HNnAxVUdnMDVEajlzdktfdkxxZXZ0Wnlra2tsbTRrYVZWeDVf?oc=5",
+          "date": "2026-08-27",
+          "source": "Benzinga",
+          "ko": "인텔이 목요일 상승한 배경을 설명."
+        },
+        {
+          "title": "Intel (INTC) Could Be 82% Below Fair Value Following AI News",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQQ2JhVlo1LVA3Z3p1Y0d0cnpzX3RWWGt5MjZXc1RxeWk0QjFyYWs3dnVZejhNb1BablRySEp5Rm1SUFk0TFQyWFJXb25FVFdEbzlZeHdXUlBuWW5hcUtOUkV3TVNyeGI0T080eTEySTBCMWdwVUk5TGZXVlZxWGlnQTctTVFOR1U4S0wwLWltQlhOUktoM3dGOWppaXZJUjFLTXNXUFBxYkNEYkNPaG9xQ3FoZFR1dzF0ZGVRTFpaRVQtY0JRa1HSAcsBQVVfeXFMTzJheTBJTVhFd2dHYkhoRlVQd2xrb1ljTEdjWUJUbmVzdUEyaHhYT0I1UkFqaDBoMUNjU3d0WmpxMkJ4Z0NoMkx0V0ptNmgyeE9Ec01kd3VfcUh5X2hIcUdsUHVMOVpLZEhQUjJNV1BLdjhkZUhWYTgyQ0lkRkV1QmN3TXJETklBWThDRlZYM2tFTzh3QXZxZVI3TGhaOHo1TnVVbVNLR2lyRUV3Y1FlbEVrRC1tS1kyeGJqZURQN01qS0tCd1YtVzBmUG8?oc=5",
+          "date": "2026-08-28",
+          "source": "simplywall.st",
+          "ko": "AI 관련 뉴스 이후 인텔이 공정가치 대비 82% 저평가된 것으로 평가되고 있다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$427.30",
+      "change": "+9.61",
+      "changePct": "+2.30%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$935.39",
+      "change": "-3.01",
+      "changePct": "-0.32%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$161.61",
+      "change": "+3.59",
+      "changePct": "+2.27%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix CEO says Indiana will be key memory production base by 2030, first U.S. facility now underway",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWmE1ZnQ4aUtXeU1mYWNXSXlWZGhrVHNINlFPUlRoRjB6bTBwaVhXRXFQei1nUDczbi1QSVdzamxET09tMEtlcFl6OVBrLXltUngwS3MwaElBYTI5MWtkNUdTMm5xS1AwOW94aVZZX3ZvWGFuMTRsbmJDYXEzdURvYllEajQyMkRWNHNQM05jS21mQk5JdGpFYklfbkdBd19sSUw0NXBGQ3rSAa4BQVVfeXFMTjc2WVRPVUlnT01RRWpISHFWazh3U3h6VENEUG4tMG1YQ2lwMWNBbV9tMEhuS1FMaVllRXYxNTNpTmdkbFpLNEI2cnNTX2pHclNnWHUzbG5OQ1gxZ3Mxc2RCMHl4aFp5M1RXRnhORGhrWFZNZ0tkd0huYW5yZGF5WDBxRUt1bGJJbUVwN1hDZmZXdmJtcHFtMHQ0bURmTmpVOWViRGMtYUpuY1M3NEd3?oc=5",
+          "date": "2026-08-27",
+          "source": "CNBC",
+          "ko": "SK하이닉스 CEO가 인디애나 시설이 2030년까지 핵심 메모리 생산 기지가 될 것이라고 밝혔다."
+        },
+        {
+          "title": "SK Hynix CEO dismisses memory chip oversupply risks, sees crunch till end of 2030",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPSXpseUxGek13YkxfY0pESDZ6Y25SLU5rNFM5ZkdtRFpRTlg1dmJfZTNzbnY5TmV4ZVNRTUR1QkhOVnZDaTE4UGNBUml2QnU5ZFBoNEMwQWY5VFQ3Sy15Tnl6NFYwZ2kwaWJaMlp4Zl9wV1dET0xpc0F6X0pVdXZnZFkyTEhTb2psTGVJWjRSTVE3UFMxajNUbHdpTThUaml0YVoxaXFmLWtnU0dSbFc5ZjBKemdMdjZlaUpDVzZKRW5rNXZEbWd4Xzd0SDlIUQ?oc=5",
+          "date": "2026-08-27",
+          "source": "Nikkei Asia",
+          "ko": "SK하이닉스 CEO가 메모리칩 공급부족이 2030년까지 지속될 것으로 예상하며 과잉공급 우려를 일축했다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$185.93",
+      "change": "+8.43",
+      "changePct": "+4.75%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic pushes into physical world with new standard to help AI agents operate machines",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPRE9pN0ZXS1ItNVdDQmJZbGtPYzdQRUJtaEF5cU8yajZGRkFzUC11WXlqSDViZS1feTJ2a05iQTNveG1UeThiNVNKUFU0d21NMkFiWTVFQjdHbDBhVzlEbEp6d2FvQVVVR3VwWnJIUGV4U0p6VlR0U0dhYWhFSm1rMUZJbzhiT0V3TVlSeGFMZVhzSlVzSXVwYkpUVlNqZjhSX3JwZ2hLRmRrZVJldm5qcFh3b3dIVWtycWJXTXRQaG1IcFFs0gHKAUFVX3lxTFA4X09HaXl2TVgxZWVFWkxZZmU0UC1RUXB1cEkwZFRPNkIweVh5b2J2aHlhRFludUpfMU9SdHpqdkItVUV4OUdnaU54UkpiWnhXVVNXUEZpNl8wNkkwdUNGalRTSzFhdnE0WjN0dmotV25QQVRwcnhZVERwMkdNUDZ0X0NGZWdIYm9oc3B4YmRXd1puNXpwY2p1MFpKRU9FbnBPNzBhODNraS1EeFRRbzZCaWZTY2R3aVcteG1LY1VXcmtJSlE4dkZOOXc?oc=5",
+      "date": "2026-08-27",
+      "source": "CNBC",
+      "ko": "앤트로픽이 AI 에이전트가 물리적 기기를 조작할 수 있도록 하는 새로운 표준을 공개했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic unveils new framework allowing AI agents to operate physical devices",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTWhmNnhIejBEcG1zQWRzeWtHbVZCOUtZZmtraGJiNHdjVzdpU3liY2VfZTF0X3pUUl8tNWN1TXMxcTNqRk9xRXRTZ3VGQUV2MVl1MllqWHpCby1ua2R2VWJJR1hRUi1aTWJxQ1lXWHBEcklUb1hZS3dkTEZkSDFxUjNzbFFiZUktaXJ3WGJRUjF5RHROREJSd2c3N0RfRkNIbzNxd05GdnJ4VnZma0R5QU5QTEJwOG1aUmZuaERmMA?oc=5",
+      "date": "2026-08-27",
+      "source": "Reuters",
+      "ko": "앤트로픽이 AI 에이전트가 기계를 조작하도록 하는 프레임워크를 발표했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "EXCLUSIVE: Anthropic in talks with chip start up MatX to speed up chip design, sources say",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNVG5SUDh0c0lLWkFTNWlLWmMtdnhHOXZHMC1zMmlTNFZnTG9CZnpXUG1QbnRZMmFCQTJ5QkhCdzVkX3JtWWNWbFNtSmpNVTJqTERPLWVKbXdxSV9oc2tKdm95YTZnX1B2YXlrRmptRGNqOUZUenctc2dTQi1TdGtnR1NZQXRSVmJMVS1QZWhnX1V0dHAyVG01RVIyQmtQd1VqQnJVcEIxYXBuOVlpeXE2SWxPTEVlcHhIeG9rSlln?oc=5",
+      "date": "2026-08-27",
+      "source": "Reuters",
+      "ko": "앤트로픽이 칩 설계 스타트업 MatX와 협상 중이며 칩 개발 속도를 높이려 하고 있다."
+    }
+  ],
+  "summary": "엔비디아의 강한 실적이 AI 낙관론을 부추기며 기술주 전반이 상승했고, 연준 의장 워시의 연설을 앞두고 시장이 기대감을 유지했다.",
+  "generatedAt": "2026-08-28 14:32",
+  "date": "2026-08-28"
+}
