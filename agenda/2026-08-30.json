@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-30",
+  "generatedAt": "2026-08-30 07:58",
+  "events": [
+    {
+      "title": "레이크사이드 11:50",
+      "start": "2026-08-30T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "1터미널 17:30~18:55",
+      "start": "2026-08-30T17:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "용산드레곤시티호텔_한라홀",
+      "start": "2026-08-31T12:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 851,
+  "importantMails": [
+    {
+      "from": "Google One <googleone-noreply@google.com>",
+      "subject": "Gemini Notebook 사용량 한도 업데이트",
+      "summary": "지메인 노트북 사용량 한도 변경 알림"
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "Slack 프리미엄 기능을 사용할 수 있는 기간이 3 일 남았습니다.",
+      "summary": "슬랙 프리미엄 구독 기간 만료 예정 알림"
+    },
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Build for the agentic Internet - the Connect 2026 lineup and agenda are live",
+      "summary": "클라우드플레어 Connect 2026 행사 일정 공개"
+    },
+    {
+      "from": "Klook.com <support-noreply@klook.com>",
+      "subject": "이용후기를 작성하고 경험을 공유해보세요!",
+      "summary": "예약 여행에 대한 리뷰 작성 요청"
+    }
+  ]
+}
