@@ -1,0 +1,42 @@
+{
+  "date": "2026-08-29",
+  "generatedAt": "2026-08-29 12:04",
+  "events": [
+    {
+      "title": "일본 08:20. 14:50",
+      "start": "2026-08-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "레이크사이드 11:50",
+      "start": "2026-08-30T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "1터미널 17:30~18:55",
+      "start": "2026-08-30T17:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 850,
+  "importantMails": [
+    {
+      "from": "Agoda Reviews <no-reply@agoda.com>",
+      "subject": "[Booking 1758696497] Final Reminder: Would you recommend ゲストハウスくしロコ?",
+      "summary": "예전 숙박에 대한 리뷰 작성 요청"
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "Slack 프리미엄 기능을 사용할 수 있는 기간이 3 일 남았습니다.",
+      "summary": "Slack 프리미엄 기능 사용 기한 3일 남음"
+    },
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Build for the agentic Internet - the Connect 2026 lineup and agenda are live",
+      "summary": "Cloudflare Connect 2026 행사 일정 공개"
+    }
+  ]
+}
