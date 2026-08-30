@@ -1,0 +1,157 @@
+{
+  "sessionDate": "2026-08-28",
+  "sessionDateLabel": "2026년 8월 28일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,711.76",
+      "changePct": "-0.25%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,402.42",
+      "changePct": "-0.52%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,559.99",
+      "changePct": "-0.02%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "The S&P 500 Keeps Hitting Highs - But It's Just Microsoft and Nvidia Carrying the Entire Market",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNMk55aVQyOGl4NG9VM1d0d0dOb0hGcWViZEhEMEJObHlwWTZQazc4ZnNMdXBaMnFsdHlnbnY3b2JBX29UR182eDJBQ29hb0x2a25XU2MwNGNKY3g4eTROclpFMm05aFpnV0wyZ09WVXoxUWlsMzN4NVNjSnY0R291WEdXQzlsTjFXYWFGUk1vb01hNDN2cWM3RGt0ZUdOc1FJdk4zdnpGdWxsT1RpQUNLeTBMaU5Vd1B3MlQ5RVlQbVV4aC1FY2tHT2dxVkdqYjNK?oc=5",
+      "date": "2026-08-30",
+      "source": "24/7 Wall St.",
+      "ko": "S&P500 신고가 경신 중이나 마이크로소프트·엔비디아 두 종목이 시장 상승을 주도하는 쏠림 현상 발생."
+    },
+    {
+      "title": "Can international stocks continue to beat S&P 500? A weak U.S. dollar will help",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBEbXVNZEhReWpHOXpXakE0X2ZUU3B4NDRrMEFSNDR5cGg5ZEhpVnVZTVBfUVlERGk4LUV1S3pZOW5TdkJiYi1lS2w4Rl9NcGFUcDR2OWtnOUI5R2NxdjZsYm52eE9FUXpQVlFYZmFB0gFzQVVfeXFMTkNjZUhYY28zMVBacFdCbGo5Q0JKaFNGbkJodTg3LXNMdk13VVVOQ01wVjMzQk1qeE53amFxVGtFMnRTenFkUUItV0ZVLWx2X0k0dEpNbllwQmxDRTFJSjNYdjRWSThvNEdUYXNUYUJTLVJoYw?oc=5",
+      "date": "2026-08-28",
+      "source": "CNBC",
+      "ko": "약세 달러가 국제주식의 S&P500 대비 상대적 강세를 뒷받침할 수 있는 요인으로 작용 중."
+    },
+    {
+      "title": "The S&P 500 keeps climbing on days when stocks broadly struggle. Here’s what’s going on.",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxONDZWdFBWb2tkMWdHak9SdVFUbkVVLUtmdldPYXVEVmR0MTlsd01HR1lieWR0TEJxRWhKWmh6MkMwVVRDVzg5M1VTOFZLOXVHa2lPcWxGSzJpSEd3d2VIN3hERGIxVzNYU0M4ME0tbDdDYXhManBkbkdhT3hTMXNuOXo0V2hoOHQ5bzdPVWV2bmxwWFVIdEhpdk9RbHNRbzdIUVV3WDNRN0VReFN5YzUtck55NkU3SlBvSUNFOWRzeTBpM2REMGc?oc=5",
+      "date": "2026-08-29",
+      "source": "MarketWatch",
+      "ko": "S&P500이 광범위한 약세 장에도 상승하는 역설적 상황 발생. 소수 종목 집중도 심화의 신호."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$217.55",
+      "change": "-10.43",
+      "changePct": "-4.57%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia: The Cracks Are Finally Showing (NASDAQ:NVDA)",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9lUE1UYmtLOVpQWmNyZkh0eW8tZHV4blpYSnBlR1Q3OUxjS1NfS1ViWWlSQUdCTEszeVBlSHZRbmRxblZvM0FrRmxUMHlDaFVtT2F3ODA1cEhlT2hjX0tkbUZRM0p6S2dPUUJpQlhiMndUc285b25WQmN3?oc=5",
+          "date": "2026-08-29",
+          "source": "Seeking Alpha",
+          "ko": "엔비디아 주가가 실적 랠리 직후 하락세로 전환. 높은 밸류에이션에 대한 시장의 재평가 시작."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$465.58",
+      "change": "-11.09",
+      "changePct": "-2.33%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$89.47",
+      "change": "-2.62",
+      "changePct": "-2.85%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$417.52",
+      "change": "-9.78",
+      "changePct": "-2.29%",
+      "up": false,
+      "news": [
+        {
+          "title": "TSMC (TSM) Stock Forecast: June Revenue Up 68%, Q2 Earnings Tomorrow; Is $438 the Next Stop?",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNZ1JnUDhUX2U1ZXlyTk1ZZlJZQUlCanB0VnhQVTE2RktleVdTd2Z5a2JxS25KZGJuYTIzc1duU2lvVkZXMU16WlVSRzB3a2tkQW11czBQUF80VFdJX1pQM2tBelY1akNLaEZlbXF3QVJ5eVNKNGM2TWh1S3ByREV5TDBmUmRTT05kSDNxMXhaZVhDSEhOYXc4WjRJVm9CN0xaLTVQbW1RLWR5WXhzb1RhZ0dFRFdCM3ltVmx3dy1VQ3JqSFlnMjU0ejFGN2V1cWNa?oc=5",
+          "date": "2026-08-30",
+          "source": "TradingKey",
+          "ko": "TSMC 6월 매출 68% 증가로 성장세 지속. Q2 실적 발표를 앞두고 주가 반응 주목."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$932.86",
+      "change": "-2.53",
+      "changePct": "-0.27%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$161.04",
+      "change": "-0.57",
+      "changePct": "-0.35%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK hynix says US$4bn Factory will be a Key Production Base",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQYll4M3hwQmduRjd4RWhVZF9BcV96SlY0V2FTUjZNb0lWbVVYSF92NVNpWU54NkI5ZEtJS2xiRHdOd1V3TzR2TW5WQ1VhNWw0R0FyVGdLV3lkY2s3TFQ3OW93bkctU0lvRWhVclpHMEJfbFFRR3c0cFRodkpHUkVUMWZMZkpUQmJLSldiQm5JV0ItYU0?oc=5",
+          "date": "2026-08-30",
+          "source": "Business Chief",
+          "ko": "SK하이닉스가 미국에 40억 달러 규모 신규 공장 건설 계획 발표. 메모리 반도체 공급 다변화 추진."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$186.29",
+      "change": "+0.36",
+      "changePct": "+0.19%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Sony Music Publishing and Warner Chappell sue Anthropic in multi-billion dollar lawsuit",
+      "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxONzV0ZEROLUxEM0gwRHJMc2VlMnh3N0R1c09wbFcta2tsV2JpbnA5UE1TR0Vrd0hwQnN0MHV4bmVYaGg4aVo0TXhKeUxCN3dNZXprQkU0dVM0MXhDZ2pURGQxREdxS0paSkZwaGxpWS1GRUVrS3k2OUU1V2ZFb1JodE8tVlJVSmdnRnZsZmhTUnNaLUprR2l2eEk4QVFTVHh4a3A5SjdqWk01YjdoV2tvTEh5b2oxaWRPcDBkUzZQR0o4VDBLWURJWFdNOHFJZUZZaE0yZU0xYzFjbW93cDNqVE1OZXRwWkhwZWhsdC1Lb29vR1JBMTFlOHBPSFhSS0xNZW5UTEV1NW9CclJhb3lVRDRybjhZSllxNnZ1ekRsaUFSTGFseHl2WjNTaFM2WDB2d3J2cEVXVm5YOEIzVzRR?oc=5",
+      "date": "2026-08-29",
+      "source": "Music Business Worldwide",
+      "ko": "소니 뮤직·워너 뮤직이 앤트로픽을 저작권 침해로 수십억 달러 규모 소송 제기."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Automated researchers can reliably mitigate alignment failures",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm12QTFLek9sVlhENXNNaFlpUHlnbEl5dDRNZTBCbG1iSUtndjBhaUQ3UGl6N2VOWFppR19kbGhHWjlGaWRnby1BcHNlM0lNLUFaZXVrWV9MTFFOcjg0dmpFcWc0cHkyUTd1d2Z3bjNjaU9FeUQzUnpKbFloc1lRVDRPNjBHQ2JRVDh6cg?oc=5",
+      "date": "2026-08-28",
+      "source": "Anthropic",
+      "ko": "앤트로픽이 AI 안전 문제의 신뢰성 있는 완화 방법 제시. 정렬 실패 자동 감지 연구 성과."
+    }
+  ],
+  "summary": "반도체주 약세로 기술주 중심 시장 부진. S&P500은 마이크로소프트와 엔비디아에만 의존하는 구조 심화.",
+  "generatedAt": "2026-08-31 08:42",
+  "date": "2026-08-31"
+}
