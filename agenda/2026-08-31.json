@@ -1,0 +1,31 @@
+{
+  "date": "2026-08-31",
+  "generatedAt": "2026-08-31 08:08",
+  "events": [
+    {
+      "title": "용산드레곤시티호텔_한라홀",
+      "start": "2026-08-31T12:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "메시징사업팀",
+      "start": "2026-09-01T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 855,
+  "importantMails": [
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "Slack 프리미엄 기능을 사용할 수 있는 기간이 3 일 남았습니다.",
+      "summary": "Slack 프리미엄 기능 사용 기간이 3일 남아 있음"
+    },
+    {
+      "from": "Google One <googleone-noreply@google.com>",
+      "subject": "Gemini Notebook 사용량 한도 업데이트",
+      "summary": "Gemini Notebook 사용량 한도 변경 알림"
+    }
+  ]
+}
