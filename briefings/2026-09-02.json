@@ -1,0 +1,179 @@
+{
+  "sessionDate": "2026-09-01",
+  "sessionDateLabel": "2026년 9월 1일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,631.47",
+      "changePct": "-0.71%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,099.77",
+      "changePct": "-1.03%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,766.88",
+      "changePct": "-0.79%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall Street ends lower as higher yields, rising oil prices mark shaky start to September",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWjZiWGhvamxJTzU5Ync5V2xObHhDRk1PRlZFRkZnZVNqQzM0dHhuUnBMeGJDYW9YWmgxc29fRTNUaTVRT2xLWFZUOGJMWDU4MTlhQVVXRmFOQ3VGQnlNME9tQ09nUW0yMGNUR1c2amZkSVBQbHcwWDNQY0tfZHZoREF4SzVqZ2pNYzlCQVFmSkJMNFFwMEptQi03WlZlZG82bDVNZWhnUm9KMnFDS1pqVWlHZDZ2MmE1?oc=5",
+      "date": "2026-09-01",
+      "source": "reuters.com",
+      "ko": "금리 상승과 유가 급등이 월스트리트 약세를 주도했습니다."
+    },
+    {
+      "title": "US bonds sell off as rising oil prices create inflation anxiety",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOVdtdVBtRUcxSEt0TVV3Q1BfNHowRjRxVlNITFFvdnR6UnZ0WVVCXzBhbV8yQnlES0g0NkplUmJZSHNqRVY4RlAtT1ItdEZYN2lVMTA2OXBMNVV3ZklwSDdVeFdhaGkybFo4OU00eFZRNFFBV3NYMFFlQnVTVm03TExLbHAtbFFORmVmNTRJeDItQXVyWFBzV051SlJWOFNBVUl1WFVLaXJUbzljUEp6aXZsQjlmYkxnb0tlaHFmVzE?oc=5",
+      "date": "2026-09-01",
+      "source": "The Washington Post",
+      "ko": "유가 상승이 인플레이션 우려를 촉발해 채권 매도가 심화됐습니다."
+    },
+    {
+      "title": "Stock Market Today, Sept. 1: Stocks Slide and Oil Surges Amid U.S.-Iran Tension",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOQVNRSWFCNkNJakRuWGh3bXVzcVI4cnc4VHcxekt3c21EUWc0TTl2S3d2THc1eGhSMEhqV2x6WGpnZnRkV0hlUkdfRTZSdDFnczlkX3haMmYtVjVKTWtYMTJ3SG4xcWZ0WC05WGlHSEk3a1I5UXN3dndjaktGbHVHZDBiU0RtVTBEQU5YRi1sbEZWYUF2bDN5Y25WeFBfUkpCQTAxcUFYd2JUSXRlYkgzU20ta2doQXRERkpTM0RMNlVuODBGMXBWdFdDUkxQVVRJTkRlNXlFQ1NKQm42R1VvSUhFYWJldXdtTnUzNFlkMWZYR0hm?oc=5",
+      "date": "2026-09-01",
+      "source": "The Globe and Mail",
+      "ko": "미국-이란 긴장 고조와 유가 급등이 9월 1일 주가 하락을 견인했습니다."
+    },
+    {
+      "title": "Dow Jones Futures: Market Breaks Key Levels As Oil Prices Jump; Dell, Credo, Palo Alto Are Earnings Movers",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWUdvU0pXc0dwSE44VUhDNkdFZTltY2p2Sm1SdF82Q3FCM3B0TnhqenJwQ1pMR1NOcXV3Ni1pYkJPM1JXcUk3UFhpM0QyX2hoeDF6SVZ5QldfQkNpMkwyOWtQdzdzQ2p5bElKY1FGOHZ0WDUxaWZsM2VDQ0tHZndKZFRRelcweVhLSnp2SG1iVUVtWE5UbnlJcTcyb2xNT2VLWmNRUmZNX0N4ekx1Tk9FNDVzeFNRWUFTUzBEcWpZNA?oc=5",
+      "date": "2026-09-01",
+      "source": "Investor's Business Daily",
+      "ko": "유가 급등으로 주요 지수가 기술 주요 지점을 하향 돌파했습니다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$217.44",
+      "change": "-3.06",
+      "changePct": "-1.39%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$459.61",
+      "change": "-11.11",
+      "changePct": "-2.36%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$88.97",
+      "change": "-0.54",
+      "changePct": "-0.60%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$414.00",
+      "change": "-1.32",
+      "changePct": "-0.32%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$933.44",
+      "change": "-25.29",
+      "changePct": "-2.64%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Just Gave a $267 Billion Warning That Micron Stock Could Crash Before 2029 Is Over",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNVmVMRXJ0VDFNenBaSHFoVVlVOTlWNkRWRll1Z3laZ3pVdXFyTFhvNFVNdmtkRktXMFBpVnB2SHhscEpPVXVFY3FYS3pCSmswMWs3MHBOa3MxVGpIdlZKWGFTUW1hNXIwaGlKR2JOcW5hd3RReVo4bGs1MmVySmtoTmJSVEpuekdQOEFvNTZia2RkS05xWXlBbQ?oc=5",
+          "date": "2026-09-01",
+          "source": "fool.com",
+          "ko": "엔비디아가 공급 경고를 내려 마이크론 주가 붕괴 가능성을 제시했습니다."
+        },
+        {
+          "title": "Micron’s Workers Are Threatening to Strike. What It Means for the Stock.",
+          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9tQ2JiODJoUFF6aEZJQWJLa2ljaWdpVGlnVDJ5XzE2NzJLeDhxTFg5S2I1ZkFSUk1SMUcxd0lKS1FxUGdHRW5xZ2FnQk1Ta3NKRkNKU3NwRW44WEpEVXBhcnhBbldUM0NwNFpSUnBzbjVSMFZxcldMSHM0X0J0dE0?oc=5",
+          "date": "2026-09-01",
+          "source": "Barron's",
+          "ko": "마이크론 근로자들이 파업을 위협하고 있습니다."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$160.78",
+      "change": "-3.80",
+      "changePct": "-2.31%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK Hynix targets 2029 start for AI memory chip production in Indiana",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPR2dWZld3V0RBVlIzVXp4NFd3UlNjeG9FWEt4UGt6VXVFVXAzT1Rlbl9jSlhtcVFzeFhma2sweFZFYnBoZXQzMC1rNHhqY3A5T2VPbEpPR0VwR2t1OWl4Y0ZGQ3NqYlIyNTNic0ZCdU1pVXhfZGo0Q0hWd3RPdjVSMGdCMXdkSENsYzkzUXZ2VmR0dHVNVU85R29nT3FvM25vWUtwd3pqSy1pZWJzS1ppUzROVmg?oc=5",
+          "date": "2026-09-01",
+          "source": "New Electronics",
+          "ko": "SK하이닉스가 2029년 인디애나주에서 AI 메모리칩 생산 시작을 목표로 합니다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$179.92",
+      "change": "-6.46",
+      "changePct": "-3.47%",
+      "up": false,
+      "news": [
+        {
+          "title": "Ukraine's Fedorov says Palantir CEO will be first major investor in new defence company",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNcmkyd1cwT1ZNMVA1VnRWYU9RYVhXVUJiZUNzN0J6SGlfMmF1NHJ1VWh3YlAtdG12WXFXNm1wamRSTlZ6VE5PSFNoRk1zYXR5YXFmdmdTMHZjZTByNThRU2ZjeFlMQl9yNFFpX3Y4ZS05OVVYQk13bzZNS3p3MlZXaGNXWkNFbFpmaV9PQU9CYUxFU3R4dW13TjVEUGdaMjBEYVQ1QXcyWWIxbksxYmFFZEk1MjFpd2hBeDFYcGlzWlVzT3p4SnJVUnZYZTRPNnR2NUJXTg?oc=5",
+          "date": "2026-09-01",
+          "source": "reuters.com",
+          "ko": "팔란티어 CEO가 우크라이나의 새 방위사업체에 주요 투자자로 참여할 예정입니다."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Says New Fable AI Model Is Cheaper, Better at Coding",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNU3g1eFNCNGd1ZlFka19DSDl3Y0pfdDJudFFfaTZzdHkySlB6WDhvMTlPbkVCLXVWMDdqYjNCWGk5UGEwTGZ4MTBNUkFBdTFfVndrbzY0bHN3VzhzWEV2N1RPYml2ZnAyOE5mQ3JPSWdhb0NFWFg3WGdoVnNEZmRlMEEtTTdtWlpuaHdGVk9tUGhoTEx6V2NsUnRlazFkZE1idlBCMmRyam9MWS05aTJDUTdhWUZINVE?oc=5",
+      "date": "2026-09-01",
+      "source": "Bloomberg.com",
+      "ko": "앤트로픽이 새 클로드 페이블 5.1 모델을 출시하며 코딩 성능을 개선했습니다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic launches Claude Fable 5.1 and says it’s up to 45 percent cheaper for agentic work",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTEJMNThLbnRBLWRoRlBnUnI0bmZ1WlVLLS0ydzhpUUVWYUZQbUtYM3I2eGRRWXhwM2kyNVdTREFQeHpxWjNJR2ZUYk5mQkFMOG5idkt3VDVvUC03bFE2UjhlRENaNTRBMnc5M0xQUHA3c0RfV2lMSTk3bzBKbDNGdHZ0MUJZSk1WODllLTBiRTdYZndGbTJ3?oc=5",
+      "date": "2026-09-01",
+      "source": "theverge.com",
+      "ko": "앤트로픽 클로드 페이블 5.1은 에이전트 작업 비용을 45% 절감합니다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "‘Not perfectly aligned’ with human values: Anthropic admits security failures behind AI hacking incidents",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPVGFjc2FGWHhOeE9TaEJnVXhGYTl4cEZQVzNKTTNWcmVueTB4eWNTVTI1X0luZnd5cFRiQThjRk9nYXh2TmRybTFNb2o1SjhBWnJlN3dOQTFLZkJNeVowUkFNQWdGMWJ0aExWSWhaUFdHa19sa3dLSmIyc2dkdDZ5Vl9zWUtFYjl4dlotUUpYOHRXSUt4RWc?oc=5",
+      "date": "2026-09-01",
+      "source": "The Guardian",
+      "ko": "앤트로픽이 AI 보안 해킹 사건 이후 인간 가치 정렬 실패를 인정했습니다."
+    }
+  ],
+  "summary": "미국 증시가 이란 긴장과 유가 상승으로 하락 출발했고, 금리 상승이 변동성을 키웠습니다.",
+  "generatedAt": "2026-09-02 08:28",
+  "date": "2026-09-02"
+}
