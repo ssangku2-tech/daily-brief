@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-02",
+  "generatedAt": "2026-09-02 07:59",
+  "events": [],
+  "unreadCount": 861,
+  "importantMails": [
+    {
+      "from": "Zoom <billing@zoom.us>",
+      "subject": "월간 AI 사용 한도가 재설정되었습니다",
+      "summary": "Zoom 월간 AI 사용 한도가 재설정됨"
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "Slack Pro 플랜 평가판이 종료됨",
+      "summary": "Slack Pro 평가판 종료 안내"
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "Slack 프리미엄 기능을 사용할 수 있는 기간이 3 일 남았습니다.",
+      "summary": "Slack 프리미엄 기능 사용 기간 3일 남음"
+    },
+    {
+      "from": "Google One <googleone-noreply@google.com>",
+      "subject": "Gemini Notebook 사용량 한도 업데이트",
+      "summary": "Google One Gemini Notebook 사용량 한도 업데이트"
+    }
+  ]
+}
