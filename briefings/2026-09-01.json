@@ -1,0 +1,188 @@
+{
+  "sessionDate": "2026-08-31",
+  "sessionDateLabel": "2026년 8월 31일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,686.14",
+      "changePct": "-0.33%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,370.89",
+      "changePct": "-0.12%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,185.90",
+      "changePct": "-0.70%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "US Stock Market Today: S&P 500, Dow, Nasdaq Slip Into Red As US, Iran Renew Hormuz Tensions",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZW9SQlhzUHlWa0pyTXpoelAwa0N3bXZzcjVITl9fSWxNdzNZamJ6bEFETTFXV2I2UGVyX0J6Vzk5NEFuZHR4ZHNPWHdmVjZYWFIwdnJOaUJyOUZzTkpZX05zQXA2SjdjY3FyT3gyUUl6TThHd2lSLXNBS2hqZHhUSVdjQWMtTUxvdjdaRG5UdzM3REhvT0VfS0JUdzQ2ak5XSV9zdnF5TGpZSV9tT2Q1X0tPQ0dzMm41V28wSnlwUG9EOEduREJSM0dUVdIB0wFBVV95cUxOYTkzYkJqSVp0MHJnWFd6cmdXOWk3MFIxZXN2VXc5VFNtcnZXUlY5cUNBSS1aWkhPYm0tQlFKNlQ0TXNwVmJUTm1oRldGVHdvaTVaVW1SM19qS1VPazZOa0h6T180YTEwR2lXUkN3RWMwYm9ZMElOMG0wREFQeG5Fc1EwbnpOVEV6X244QmxKbTBYWnYwT25CZzBReGd2Zktqa2RoQnNGRmRoQzZtM01zcWhNMzlrVmd0Qy15eVk2SkxQQl9FZHQ2SUFOZWhjbkxIak5V?oc=5",
+      "date": "2026-08-31",
+      "source": "NDTV Profit",
+      "ko": "호르무즈 해협 긴장으로 미국 주요 지수 동반 하락."
+    },
+    {
+      "title": "Oil prices rise and stocks fall after U.S. hits Iranian sites in the Strait of Hormuz",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaXlMd0NZcGxGRnpTVDBiOXdzekJZMWh1NnJjQmJCTlQwdzY2ZGlJMzlnaTVuS1BIbnBKTFgxcm5zRWVtR1A5S0FRWkFndG0tZFpEanZ5N1hoSG14ZVhkVENQU0h3ZjNqU2ZLamlzc0ZDeFlVaHR5YVNCVUNLbzF6NGdvS2tRLXNFOFMxaVZEOTU0RFROaEpBcWhMZ1RMTU1Hc0dCQ3dZZFdYZkY2cEdidnlDZnE?oc=5",
+      "date": "2026-08-31",
+      "source": "Spectrum News",
+      "ko": "미국의 이란 공격 이후 유가 상승, 이에 따른 주가 하락."
+    },
+    {
+      "title": "Dow Jones Futures Fall, Oil Prices Jump As U.S., Iran Exchange Attacks",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSW5MQXJjSmlxRnRnb3hOcEJFcDRrbVFYT091VjhrdjNWU2dWNnRrZ3JTNlMzRjM3RUotaGNBZG1rT3JWTF9VT1hVUWVMa0NnbERXLV9XeDVlTFE0dEZYanFzSE1haldYM3VXMy1wbHktelJEaWJTb2R3dG5rT0FiT3dUZ0RlaFdmUFNHSnVGLUx0UUQtLUdiU2N2c25LVE0zN2t0cHBnUWdwOTA5OHhXMVJTMk4?oc=5",
+      "date": "2026-08-31",
+      "source": "Investor's Business Daily",
+      "ko": "미국-이란 교전으로 유가 급등, 다우선물 하락."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$220.78",
+      "change": "+3.23",
+      "changePct": "+1.48%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia: Stock Price To Catch Up To Earnings Growth (NASDAQ:NVDA)",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSFhoRFRWZXlKblBTc3JMYk43QldXNEh5NGxmbHVzRkFCZEZNSk5DM2hhMGE5WjBsT2czekNRWGtCT1hPdkp4UXFWbERpb1V2ZTNybXRzZmR0bTlpRmRxMGNWLThidmNzSGtVTW5UbWFpaHpuOWlnQmdhN1A3TmdZSG1vczhKWUh2VnBfVU9HYjJ5NWwtdTVBUUhNRS1RLUZrZnNLd2pKenF0QklUVnc?oc=5",
+          "date": "2026-08-31",
+          "source": "Seeking Alpha",
+          "ko": "엔비디아 주가가 실적 성장률을 따라잡을 것으로 예상."
+        },
+        {
+          "title": "Nvidia Stock: AI Boom Times Still Ahead (NASDAQ:NVDA)",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1wWnRRMGM5MXkzTjVSZUphTkZsekVDcGdRUXdvQi0zOVVvX3VpUnhsdzRfOFJtY1p6akVXSk5mMVpuVzlKaGx1cERpa0l2VDNQRHpOR3VFMlFsYnQ4Ny0zMDN1ZDFSNzdETWRlSHBTLVJ1M0pjTWtQTFVuNURGQQ?oc=5",
+          "date": "2026-09-01",
+          "source": "Seeking Alpha",
+          "ko": "AI 부황 지속으로 엔비디아의 상승 추세 계속될 전망."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$470.72",
+      "change": "+5.14",
+      "changePct": "+1.10%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD Stock Alert: Advanced Micro Devices Teams Up With Cisco on AI Infrastructure",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZU90Zy1mZXZGT25KYXhNQThIQjRudXljMzBFRjBFc0I1NzlLM0hjVTlqbE8xN1JTS0RoLVdlT3RCVnJMeXJUU1BnVmxNZzF4Umdja2J4dEJQamdLWkFkc3ZDNFhieHFFUVN0d19rSG9ReWl0cHp4TTgyVFREQUthT0FISElUcC10NjZhcnBFdUhzSlUzT0RfVV9qbTBTeGdTRUVmbThKcWdicy1JMktaUGx1Ylg1d0lDR3FUSi1TclQ?oc=5",
+          "date": "2026-08-31",
+          "source": "Barchart.com",
+          "ko": "AMD, 시스코와 AI 인프라 협력 체결."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$89.51",
+      "change": "+0.04",
+      "changePct": "+0.04%",
+      "up": true,
+      "news": [
+        {
+          "title": "INTC Stock’s Next Boost Could Be Here: Report Says Intel May Land Korea's SK Hynix As Major Customer",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMmVHdWlTVm4yVGRwWklDTl9FWGVDRlFLSzZseWZVZDNuTGtsZ0Z6N0FpWlJCTlBReDZOUUdRWDc5Wm5VTE1iLWJPSUlMbFFrcWVrN3FiWjd3cHVxQTloUzREWE0tWDQtZ3RrNkFUSVB5VDg5NWt4VEItSUFkekwyWVF1VDRqNXF1NVVIMWMzZ2JVWDlNM1p3?oc=5",
+          "date": "2026-08-31",
+          "source": "Yahoo Finance",
+          "ko": "인텔, SK하이닉스와의 대규모 고객 계약 추진으로 주목."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$415.32",
+      "change": "-2.20",
+      "changePct": "-0.53%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$958.73",
+      "change": "+25.87",
+      "changePct": "+2.77%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Technology (MU) Gains Driven by Earnings Upgrades",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQa0dIOWhpR3VjZGdwQTdYSkJvUDBPRDM4WkdQNzV4U05IWGtoZ0NWODczM3dzY09aM1l5M010Q1lQZkx2Zzg3cG84REgzdE00SUVTWXBIWHBaRmhrWno1UENlYWQxRmhETnd2Sk43NWhvRlF6VHpORThGa0hGd21XenowTWJyeW5vbzY1b0EzX3FKYjJkU3lYN2h1d1J2S2M?oc=5",
+          "date": "2026-08-31",
+          "source": "Yahoo Finance",
+          "ko": "마이크론, 실적 상향 조정에 따른 주가 상승 견인."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$164.58",
+      "change": "+3.54",
+      "changePct": "+2.20%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix Weighs Japan Memory Plant Deal to Supply AI Boom",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaURWbXl4Sk80M2lzaXo4bVJQemM0TkR6bnkwZXRGdzRYbFlZTXJsQXZyV2NVTkx2dTdCQk8yUXJoeFU3UFotNFVXMnZ3YmVKLVpUaDE3RkhQQm1URGpDWHE3bTdxNndmRXEzTGxsTFJoemljWGkya1JMS0NDM2VScHp6LVhsbVpsN2FBWV9fMmZwdVNNRmZYX2xuYlpFcURWM09najhFNXFUWWxmS1F3cXdQOA?oc=5",
+          "date": "2026-08-31",
+          "source": "Bloomberg.com",
+          "ko": "SK하이닉스, 일본 메모리칩 공장 설립 검토 중."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$186.38",
+      "change": "+0.09",
+      "changePct": "+0.05%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Exclusive | Anthropic Signs $35 Billion Cloud Deal Backed by Nvidia",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVXJtVnpBU3B5TnhYUHdrUVc4QnlaeXBTemhxZ21ETG43empKbHZwTV9mN3huN1JNWjViOWYwMGhvVlNiX1VwU1VaVmE4RGRkV29SMFE1WWtNTVZiNXFKSUZlelFxdDAxbm9uUHNmQnhsbWlxMkdZaFRLMVNhUURYVGV0SGtBY2xlMVlid1dXcFJPaVV6NEE?oc=5",
+      "date": "2026-08-31",
+      "source": "WSJ",
+      "ko": "앤트로픽, 엔비디아 지원 350억 달러 클라우드 계약 체결."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Sony, Warner Music sue Anthropic over songs used in AI training",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQVh4aENUcjZvQVF3R0ZweUhDMjU2c3BHMEJiVjBQWnZXZGptS3p6blBocWcyVDBtQVU0aG5LR25WUzBsMHdNOXB3UERUbU5KeVR6T0FPY1NyN1lGWGJ5RTRXS01oSWJkRGxVVV9FODV2eFNBckY2OWY1SGNZU1QxWC04YTNuck0zVi04WG53T1p2SnZ5dk9LNmFMcC0yMEcyd0xSVlB0cWdPRVZCaXgwdGJR?oc=5",
+      "date": "2026-08-31",
+      "source": "Reuters",
+      "ko": "앤트로픽, 저작권 침해 혐의로 소니·워너뮤직으로부터 소송."
+    },
+    {
+      "company": "Anthropic",
+      "title": "China Rebukes Anthropic, Sets Terms for Key US-China AI Dialogue",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVi1ZbjlzZlUyb2ZVRVNPcHIxWHU2VGtOOURZeExiMXlCLUI1WXBadWI1X293LUdKQnk4a0pQd2d1eW1pTUpkMWNpSlhHemdfVGRPRFFabVQ1NGJMX1BSMnhaaGw2N1BIbUExcUVJMGZzclU3R3c5WDhRX1V2VDlzb1M1aDFnZERMYlpGNDRpTW1vOGdNTEd4TFp6MUVZdHk3M1NRd0p0TXB0RmtFak1rbjV5T24?oc=5",
+      "date": "2026-08-31",
+      "source": "Bloomberg.com",
+      "ko": "중국, 앤트로픽에 미국-중국 AI 대화 조건 제시."
+    }
+  ],
+  "summary": "미국-이란 긴장 고조로 유가 급등하며 증시 전반 하락. 반도체주는 강세.",
+  "generatedAt": "2026-09-01 09:43",
+  "date": "2026-09-01"
+}
