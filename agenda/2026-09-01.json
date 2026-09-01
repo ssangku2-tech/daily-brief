@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-01",
+  "generatedAt": "2026-09-01 09:22",
+  "events": [
+    {
+      "title": "메시징사업팀",
+      "start": "2026-09-01T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 858,
+  "importantMails": [
+    {
+      "from": "Slack",
+      "subject": "Slack Pro 플랜 평가판이 종료됨",
+      "summary": "Slack Pro 평가판 종료 알림"
+    },
+    {
+      "from": "Slack",
+      "subject": "Slack 프리미엄 기능을 사용할 수 있는 기간이 3 일 남았습니다.",
+      "summary": "Slack 프리미엄 기능 사용 기간 3일 남음"
+    },
+    {
+      "from": "Google One",
+      "subject": "Gemini Notebook 사용량 한도 업데이트",
+      "summary": "Google Gemini Notebook 사용량 한도 변경 알림"
+    },
+    {
+      "from": "Investing.com",
+      "subject": "🔦 +169% 급등했는데도 아직 장부가치 이하?",
+      "summary": "투자 관련 시장 분석 정보"
+    }
+  ]
+}
