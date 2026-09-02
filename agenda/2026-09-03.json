@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-03",
+  "generatedAt": "2026-09-03 07:57",
+  "events": [
+    {
+      "title": "SK렌트카 1시",
+      "start": "2026-09-03T13:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "저녁",
+      "start": "2026-09-04T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 865,
+  "importantMails": [
+    {
+      "from": "NOL 항공 <order@nol-universe.com>",
+      "subject": "[NOL 항공] 이상구님이 예약하신 항공권(E-ticket)입니다.",
+      "summary": "예약한 항공권 전자티켓 발급 안내"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 NOL에 공유하셨습니다",
+      "summary": "Google 계정 데이터 공유 확인 알림"
+    },
+    {
+      "from": "Zoom <billing@zoom.us>",
+      "subject": "월간 AI 사용 한도가 재설정되었습니다",
+      "summary": "Zoom AI 사용 한도 초기화 알림"
+    },
+    {
+      "from": "Slack <no-reply@slack.com>",
+      "subject": "Slack Pro 플랜 평가판이 종료됨",
+      "summary": "Slack Pro 평가판 만료 안내"
+    }
+  ]
+}
