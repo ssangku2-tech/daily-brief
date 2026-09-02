@@ -1,0 +1,173 @@
+{
+  "sessionDate": "2026-09-02",
+  "sessionDateLabel": "2026년 9월 2일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,666.60",
+      "changePct": "+0.46%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,217.83",
+      "changePct": "+0.45%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,061.95",
+      "changePct": "+0.56%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today (Sept. 2, 2026): S&P 500, Dow jump after back-to-back losing days",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOcXNmT2l3T2JWck9VVU9RWWNnRmFraFRXWUhRd09CVXZGOXh3RU92ZUhTTWI1Y3gySldRN0daZTRMdXNDZ0RBaWdtSjE0OS1fREdzR1dqTk95eGdtOGFZclBETTVHSVZLeC1IWXUwaGJ6RHczd0g2c3dhejQ2eHJFajlKaUtVUzM1aTNHaU1TQkxNcXh0?oc=5",
+      "date": "2026-09-02",
+      "source": "Yahoo Finance",
+      "ko": "연속 낙장 이후 S&P 500과 다우지수가 반등하며 시장 심리 회복"
+    },
+    {
+      "title": "Stock Market Today, Sept. 2: Dell Helps Stocks Edge Higher Despite Geopolitical Tensions",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQX2tpWURESjZ6dG9iY01LZ0RUckdEZDE4RFp2YnFYQ1FfZXJSamRKT1RDNzVsRmhYaE85Z25QRVJUU051QzFEQlU0UF9sbEJaMklabnFOdVVvUXpIME1EMEx2dTRkNmRwSmVYdlh5Mm1WT0ltUlJMY0NOSWthZTktTUJFbG1oeXRmSHlwTzBPczgyRVZ6bmVEQkc5TmkxaWVUQXNsLWxvdVh5ckxpUDlYaXpnbERPb1EzUUI5RnpGZTBlcllRYXJOd09hY1FlcTBRRHJjUDVOZGxrWVM1SVk0?oc=5",
+      "date": "2026-09-02",
+      "source": "The Motley Fool",
+      "ko": "지정학적 긴장 속에서도 델 같은 대형주들이 주가를 견인"
+    },
+    {
+      "title": "Stocks Close Higher as Treasury Yields Stabilize: Stock Market Today",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYWtKUFVFaG83OUp6UnAyQ3pWazREVTZxb29ra2trZWYxbXpSZUtmTDJnemI1ak03RkQ3OWdNZUtNblRQYk1jWFlYRjZRNFZzTS1ES0MzQ1hBMV81VkYxTG44azhDZ3BQN2l3anNfSzF4dFp6aGZ6UHpJWm5rSWJvUnRueVYtWFRCNkZkWXlvQUFxYTNVS0xVV2FjWFpPMWFaQzY1NkNxLVRwQVFZWlFZ?oc=5",
+      "date": "2026-09-02",
+      "source": "Kiplinger",
+      "ko": "10년물 국채 수익률 안정화가 주식 시장의 긍정 신호로 작용"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$224.41",
+      "change": "+6.97",
+      "changePct": "+3.21%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia Leads Chip Stocks Higher Amid Renewed Confidence In AI Spending",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQeXdEWkFIalBmUF9HbFdhN0pwMlNIdU9FNDRoT2lZU01mYUtaV2FDVVhSOW5yVTByUXJKVzQ3cl9BNGgzaTFQRFZXYl91MVRkdW5ZcC1kRkt0SU1hczUza0xvZkhWSVZVSGFZSUlFLTBqMHljMGxMUlN5aGN0WE0wcFdpR0ZJM3RtR09F?oc=5",
+          "date": "2026-09-02",
+          "source": "Investor's Business Daily",
+          "ko": "엔비디아가 칩 업종을 주도하며 AI 지출에 대한 시장 신뢰 회복"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$457.06",
+      "change": "-2.55",
+      "changePct": "-0.55%",
+      "up": false,
+      "news": [
+        {
+          "title": "Can AMD's Saudi AI Buildout Challenge NVIDIA and Broadcom?",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZ0EtU0Y1WmgtVFZDZHQ2SXoyM2g5WmFkWUprTjVQSTZ0anlUOVhrSXJ1c01vQTJsb2xSUUJhWUJ6ODFvUEhnSTAxdFc0bVhmSzh0ZnZtaW1tTVdYbDFLNnBaRURxR2xjcEdoUmp4dEVSZTAzY3N2N0VPVWY3OG5hZVpQUGo1cGV0T2ppX0w4OWFQQ2hvN1lBY3A3LTI1dC1kdDgycHZudVFzQkxFNVVsbFptdw?oc=5",
+          "date": "2026-09-02",
+          "source": "TradingView",
+          "ko": "AMD의 사우디 AI 인프라 구축이 엔비디아와 브로드컴에 도전장 제시"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$90.05",
+      "change": "+1.08",
+      "changePct": "+1.21%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$415.50",
+      "change": "+1.50",
+      "changePct": "+0.36%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$956.08",
+      "change": "+22.64",
+      "changePct": "+2.43%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Stock: Amid the Gloom, 1 Big Catalyst Shines Bright Ahead of Earnings",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNeFU1UXYxSzJGMGNEU0hrR1hUSWswV1Jsa1lyWUI5djBEVnBZLTdfVHdRbG1nWUlOUDNKXzZoS0s2cmNmR1pfeFBpWGNzczByTHJRZ1hPbHA5MFl1LWtIRUxGLUFUcGlObTdOVkNsS0V4cjhWUVV0QjJDSFRWOXdkQTZPRW1OVHZlaE9Uc0MtVQ?oc=5",
+          "date": "2026-09-02",
+          "source": "Barron's",
+          "ko": "마이크론 실적 발표를 앞두고 메모리 수요 회복이 긍정 촉매"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$164.98",
+      "change": "+4.20",
+      "changePct": "+2.61%",
+      "up": true,
+      "news": [
+        {
+          "title": "Demand for Micron, SK Hynix Memory Puts Surprise Twist on Chips Act Debate",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQV2VMZG1XZnpLOVdXa3dOV3RXWV9saGJXRGlLTm1TbG01eURQQkY5YnR3c1MtNDZhbWRlX19FNnc2ejJQWDBZTXhQRHNLY1ZFeXE0R2U5YmRIUzRRZzBPX3RMbUVsZzBHWXFac011cjNBcmR0cUhFeUlPbjlKd21WSjg4SzgzS1lVSWt6LXBoNkFoemdrejdxOFl0UEJieHpQN29LaDUtSE9fbXoxXzAzc0MxTkRwVVFhbjJkay1VM3FQZE5UZ3JiVzlmR3gxemdOeUxZ?oc=5",
+          "date": "2026-09-02",
+          "source": "Bloomberg.com",
+          "ko": "마이크론·SK하이닉스 메모리 칩 수요 부족이 칩스법 논의에 영향"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$169.46",
+      "change": "-10.46",
+      "changePct": "-5.81%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir Falls 7% Despite Army TITAN Production Award, Salesforce Slips",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZEZ4bFd6M1ZKMVVtdkJ5SVJaS1pRd0d3emkzdXRULUR3UHFGbkkxLVlFZllYdlF2WDFwSEdOdmw3a3ZDNVg3N0tteWliMGpQS1gydEJRdjA4bFpwc3NKSzNZeHkxS3BCQ29uUklFeEx6U1dqdDhWcTZWOHlac2dhYnVoMi1oZk1CekFNUlo0R0lsSmdmQWxfa2xaaEJKZFJxcGUwOWRRVG03el9JNWQtSWJ1SQ?oc=5",
+          "date": "2026-09-02",
+          "source": "24/7 Wall St.",
+          "ko": "팔란티어가 미군 TITAN 생산 계약을 따냈음에도 주가 하락"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "US Commerce chief says Anthropic back on 'right side' with Trump, Axios reports",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMHBQMU5YZUNBMjNSRS1VaGhzeHFWVVZhZDNpNjltUUNKVHN5TElMeVkyaVp0VU1XQVNsS0xzdGZTZUZnM3N2QTdVUGlJczNQYnE3MTFhYmU3OUJCOHJUZ2tCNWk5cWlheHQzY25Qc2x2RnJRWWhGU2VzbThNWElSWHM0WXlWeTZrbmc3MVVXRlNGWlNkN3RISE1lRGVZU2RjbFBVRE1GTUdON3FkNl9MTmlHOVdPU3ZzUDVpeA?oc=5",
+      "date": "2026-09-02",
+      "source": "Reuters",
+      "ko": "앤트로픽이 트럼프 행정부와 관계 개선으로 정치적 지원 확보"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Google, Anthropic, and OpenAI Unveil Cyber AI Models, Safeguards, and Access Programs",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE42YzZVZWJvNVN5MnFiNl9zVXVadzBVTi1xaHVId0Q5SnJfck5NVG9RS3RsWmJvaWlheWdmUV9QeFRqV0lWTnFTYTVhM3U2NU0xV1AtZ2R3NWRkVVlQOW9vZ3R4anpONVNhUnQ5ZFM0LXpqNEJEQXFsdjNWWEU2Zw?oc=5",
+      "date": "2026-09-02",
+      "source": "The Hacker News",
+      "ko": "구글·앤트로픽·오픈AI가 사이버 보안 AI 모델 공동 개발 추진"
+    }
+  ],
+  "summary": "이란 긴장에도 불구하고 트레저리 수익률 안정화에 AI 수요 회복으로 주가 상승.",
+  "generatedAt": "2026-09-03 08:28",
+  "date": "2026-09-03"
+}
