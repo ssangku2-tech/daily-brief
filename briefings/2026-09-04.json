@@ -1,0 +1,173 @@
+{
+  "sessionDate": "2026-09-03",
+  "sessionDateLabel": "2026년 9월 3일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,747.71",
+      "changePct": "+1.06%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,584.06",
+      "changePct": "+1.40%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,686.11",
+      "changePct": "+1.18%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "US Stock Market Today: S&P 500, Nasdaq, Dow Trade Higher As Oil Prices Stabilise, 10-Year Yield Cools",
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNdV9PTUZLSFhXMmhBdWw0d0V2Y3FnRlVrTEFfdWpKUjRDLWNxU1d5QVhCMWxDZktmSUVPQzhabldxMUdELUN0bTNra1RuVEdNYUJ6bnpKV0YydFRVRGkzekRubmMwN2Q2elltemtwcnEwQUdFZDJxSXV4d3BsQW9hN3VnQ2tqUlRDYUV0SUlUMXRaNDNEUWVlSDFSbVJmeUJ2VHZobnhxeUI5SWtneXp5VHpoQWZSTm5nVEhUaVJCV19WMWRMUXUxN2hIdXE0OWwwVVkzbEFuQlRPaXPSAeMBQVVfeXFMT2tLcTFMYjRhLVRobXpMdTRkTm9lZWJ5Njh4cXBKcW1TRm9lN1BOa3ByWWdxNHRLWnlYTFVPNEwxdnJfQTViWUNZOF9COEVXQ1lObEZodldLZ1dXMmFENks2ODYwYmQyd1U4NFY5OGJ4M19kRlB1QjZjT2JmUmYxcEY2ampwSUZPdDJiX1FlR3dzU0ltaktyVFAzQVVBOEUxUm9weVZNcDhmc2J5TURaNkt6c1dKelMxbFJpV3pwVFIzNEVfQTVUUi1DRlpWY2tGUTZvT3QtRUJ6NnpGN3k3Sjg3ZEk?oc=5",
+      "date": "2026-09-03",
+      "source": "ndtvprofit.com",
+      "ko": "유가 안정과 10년물 수익률 하락이 주식시장 상승을 견인했습니다."
+    },
+    {
+      "title": "Dow Jones Futures: Stocks Jump On Fed's Waller; Tesla Cybercab Event Private, Jobs Report Looms",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPR0M3ZTZtdEdVYUFxdzNzM0N5cGR1Tm1EdWlwdmF4ZDAtVk1BZklrRERfR3I1b0syUUh5TkNQSUIyLURTVURBNWhnNHdnOWR2UmltNkw5R0EyemFuWExZekFOaTBQQ0xnWnVvREZhbEdTa3VyQjI4V1BicHItUzhGTDJTbEgzNk5XZHBZSHFwZmd2SnYwN0NKMnJZYUw1TG91X1ZJR2UxakxReDhKSjdoOWF4a28?oc=5",
+      "date": "2026-09-03",
+      "source": "Investor's Business Daily",
+      "ko": "연방준비제도 월러 이사의 발언이 시장 상승을 주도했으며, 고용 통계 발표를 앞두고 있습니다."
+    },
+    {
+      "title": "U.S. stocks higher at close of trade; Dow Jones Industrial Average up 1.18%",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMUtmQVZXTzRia0ljVUZFT3RiYVlRSHFpNFVDaXBCcFUzWkhqLUtldi15WUVPY3JHWmMtcTcwd2xDbFN1MDRYb1ZNWWpXZGp6NElvcDBWNHltR2JkM0xZTmtFTTVwZzFfY0VTMy1YYk80MXE5bDFaRENMRGVjaXBOSUNBVFBROWhzNkoyWmM2ZG1qT1dGZUcxN2JxZEN5NDNWdFcwSWlNQ29jQXlicFJfd1N4VzVubFZ6VEdzWjg0c1hONjNpaEE?oc=5",
+      "date": "2026-09-03",
+      "source": "Investing.com",
+      "ko": "다우지수가 1.18% 상승하며 거래를 마감했습니다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$228.45",
+      "change": "+4.04",
+      "changePct": "+1.80%",
+      "up": true,
+      "news": [
+        {
+          "title": "Jensen Huang to Spend $13 Billion to Take On OpenAI and Anthropic. Should You Buy Nvidia Stock?",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOMXF1eDNsRVR4RmJEanlpd3dyWjhlUmZjNWhGUG91YkhhM0w5RUYzYk5GdFc3b0gzYXRnSXRIeFA3ZlJDQnFHRzVrZEFCSUpUTk9aZHhQcU9xU3JfOVVmdnRQdGNfWUlfc3JpVXZZdUVnY3dXbXJlQ0ZJTG40UkptYk91TjF3bWQtQW9kVGRwTE93X0NVeXhYRk1KeDBucWtZNGJxcklRODlKaTNiTUNWUTViQ25oRlhQc00wOEJ2SEFFYkNObVlsajB0V011YzZ4TEdqbw?oc=5",
+          "date": "2026-09-03",
+          "source": "The Motley Fool",
+          "ko": "엔비디아 CEO가 OpenAI와 앤트로픽에 대항하기 위해 130억 달러를 투자할 계획입니다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$456.16",
+      "change": "-0.90",
+      "changePct": "-0.20%",
+      "up": false,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (NASDAQ:AMD) Lowered to Hold Rating by Zacks Research",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQLWd1NTV4UU1LekxxZC1GSHpkbjZGdmNaQm10c0FCVFVJUHZwMHUydVFIOUx5MlhqaUEtR3V1R3gtdFZSZEZFbVZJU0hkdkg2bWNybjZkWXp0TXhWcUxVWjlWZmNGYzRWMl84b3dPSmViTnFJUlh5bEZsTmZZUkQ3SUpObE9TR2dtLWx5TmwtTTAxQVh5dFdZVDhvMHVLc2xXV2tRVTNZb2RsS2tZRzhyZXNWYlJIOEc0UHhISHo0Tmc1cEdsbVpRWVNmdHhoUFk2YUE?oc=5",
+          "date": "2026-09-03",
+          "source": "MarketBeat",
+          "ko": "Zacks Research가 AMD를 매수에서 보유로 하향 조정했습니다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$91.67",
+      "change": "+1.62",
+      "changePct": "+1.80%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel (INTC) Outperforms Broader Market: What You Need to Know",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZ1NWdEJiZ2RaS1ZqcHd2b0NkVmFXUmhzd2xWUVh3SGNBbmd2M1Qzcm5QSjlrVEVRVF9NRHpXekoyOEpZdTB2WGZ5M3Zxa1pjTERzSzl4NllTOTVCSGZkd01JaU0zWFpBdzR0RHJvUDIwa2JUSFA3N3dkQ1JpQVctTDhOdER4amxud1Z5VndhV2p3S3FJMnFhRDhSekplXzNCMGtWSQ?oc=5",
+          "date": "2026-09-03",
+          "source": "Yahoo Finance",
+          "ko": "인텔이 광범위한 시장보다 우월한 성과를 보이고 있습니다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$417.01",
+      "change": "+1.51",
+      "changePct": "+0.36%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$958.16",
+      "change": "+2.08",
+      "changePct": "+0.22%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$163.68",
+      "change": "-1.30",
+      "changePct": "-0.79%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron, Samsung, SK Hynix Suffer Drop In DRAM Market Share As China’s CXMT Pulls Ahead",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQUGt2OVJsb2NrNHZ3Y1FSUldUa1VhRlNrMWNCQ0NEcllXbkRweElsZkt2bmQyRE9qWWcwZ0YwX05kOThTMk1URVFVTGtGYlJIUUdRVWhRMVRPSlZNR1dfTmVxSlBPNTBqUUdwUHgwZ1VuRkpiczJ3Z0h6dTNpR0tvcmV6aXRzcUZtcUtkYV9zUzdTR2hydE1UWWdtUQ?oc=5",
+          "date": "2026-09-03",
+          "source": "Yahoo Finance",
+          "ko": "중국 CXMT가 메모리칩 시장 점유율을 확대하면서 마이크론, 삼성, SK하이닉스의 점유율이 감소했습니다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$182.53",
+      "change": "+13.07",
+      "changePct": "+7.71%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir Technologies Stock (PLTR) Jumps Almost 9% on an Expanded PwC Collaboration",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcDhoMVJmWlJaNWo1ckNmTG5GU29BWlFVTjd4SDZWU3Z3TS10eGJmZGZLTnpSWnZLUWpkZnRlMGhBSkRPcUdPRjR4MWVCUW1jQnRzclJDX1FlRGtpOERlRXRBU2pYaTJUVFRwdzN5SGh1TUlXTTNYYzFSUTAwWVRZNGdJVFRzV1lnd2JsSHo0X09VY2VxRW5SNndNSDdfcGgyQjBXY0VMcG1CMTJUWFg4?oc=5",
+          "date": "2026-09-03",
+          "source": "TipRanks",
+          "ko": "팔란티어가 PwC와의 협력 확대 발표로 거의 9% 급등했습니다."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic and OpenAI's revenue chasm, explained",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNMk5jbUdTandha3A1bnQ3N2dJY043XzgwS2pQWkE4RUZpYWV4NHAyMHEyWGdKSmRtNlIyeC1KZ0dYZGxQMmRzdG1iU0YyRUJYRDdZWE1FTHI4eUpST1JVUEp0d05wRzlKb0FBc2xEZ0ZBUFV1S2k4YmdIWHV4cFhKOHJDZjI?oc=5",
+      "date": "2026-09-03",
+      "source": "Axios",
+      "ko": "앤트로픽과 OpenAI의 매출 격차가 확대되고 있습니다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic says new gable AI model is cheaper, better at coding",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOaTNqZUJydW9laUJqWVhodXBLamUxWk1vSjRrbmx2MGpkT0Vad3VNbTE3cG92Z2xIV0dReDFRU09EVGItS0ZsU0VmcWZOQUYxTVk3TzlObXVlblJ2NDlYUmZ4TG5DX1pKbXB1bDZPdVQwTnBlOUZNYUtaM0xwSnRYSWZFSnVWTnhEZFY2bEJzMW1zVXlXck93ZkM1YlZZN0VYMnc?oc=5",
+      "date": "2026-09-03",
+      "source": "The Seattle Times",
+      "ko": "앤트로픽의 새로운 AI 모델이 더 저렴하면서 코딩에 더 우수한 성능을 보입니다."
+    }
+  ],
+  "summary": "연방준비제도 관계자 발언과 유가 안정에 힘입어 주요 지수가 전반적으로 상승했습니다.",
+  "generatedAt": "2026-09-04 08:25",
+  "date": "2026-09-04"
+}
