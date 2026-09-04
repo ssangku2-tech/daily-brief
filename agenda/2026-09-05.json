@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-05",
+  "generatedAt": "2026-09-05 07:45",
+  "events": [
+    {
+      "title": "썬힐CC 12:19",
+      "start": "2026-09-05T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 871,
+  "importantMails": [
+    {
+      "from": "NOL 항공 <order@nol-universe.com>",
+      "subject": "[NOL 항공] 이상구님이 예약하신 항공권(E-ticket)입니다.",
+      "summary": "예약한 항공권 E-ticket 발급 알림"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 NOL에 공유하셨습니다",
+      "summary": "Google 계정 데이터 공유 관련 보안 알림"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 9. 2.)",
+      "summary": "Google Play 구매 내역 영수증"
+    }
+  ]
+}
