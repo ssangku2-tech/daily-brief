@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-06",
+  "generatedAt": "2026-09-06 07:37",
+  "events": [],
+  "unreadCount": 874,
+  "importantMails": [
+    {
+      "from": "NOL 항공 <order@nol-universe.com>",
+      "subject": "[NOL 항공] 이상구님이 예약하신 항공권(E-ticket)입니다.",
+      "summary": "항공권 예약 확인 및 E-ticket 수령"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 9. 5.)",
+      "summary": "Google Play 앱 구매 영수증"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 9. 2.)",
+      "summary": "Google Play 앱 구매 영수증"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 NOL에 공유하셨습니다",
+      "summary": "Google 계정 데이터 연동 알림"
+    }
+  ]
+}
