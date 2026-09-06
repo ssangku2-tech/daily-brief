@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-07",
+  "generatedAt": "2026-09-07 07:40",
+  "events": [
+    {
+      "title": "건강검진(강북삼성) 08:30",
+      "start": "2026-09-08T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "저녁 박송김",
+      "start": "2026-09-08T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 874,
+  "importantMails": [
+    {
+      "from": "NOL 항공",
+      "subject": "[NOL 항공] 이상구님이 예약하신 항공권(E-ticket)입니다.",
+      "summary": "항공권 예약 확정 및 전자 티켓 발급"
+    },
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 9. 5.)",
+      "summary": "Google Play 결제 영수증"
+    },
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 9. 2.)",
+      "summary": "Google Play 결제 영수증"
+    }
+  ]
+}
