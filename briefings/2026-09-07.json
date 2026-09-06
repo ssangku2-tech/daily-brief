@@ -1,0 +1,165 @@
+{
+  "sessionDate": "2026-09-04",
+  "sessionDateLabel": "2026년 9월 4일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,718.60",
+      "changePct": "-0.38%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,506.99",
+      "changePct": "-0.29%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,414.25",
+      "changePct": "-0.51%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall Street ends lower as solid jobs data fuels hawkish Fed bets",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNeHN0dDlKUW5GZFotZml1LU1iRHB2dkFERDZDbVhFTUdZcFJtQmdqNFhDS0RsUk9PNEdCVGhTdVEydUZWd1FfM3dENlVFYV9QeXRNX2NWSjN2cS1NRVZ6YjU0WGRqQmJKMkZGOEczeHBzenpSS3Z4aEdZUms1a0RhcWUyOGdKM0ZrUk43N0J1aXBRUi1neE1rcFFR?oc=5",
+      "date": "2026-09-04",
+      "source": "Reuters",
+      "ko": "견조한 고용 데이터가 연준의 금리 인상 가능성을 높이며 미국 증시 하락을 주도했다."
+    },
+    {
+      "title": "Nike Exits the S&P 100 Index. 4 Tech Stocks Move In",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUF9rd2FQamF4WHptc0gzNDhsV3BtcGhxQjY5NXI0VkI0ZGNwTEdfYWhnbUZoVUxWU19VeGNOMDlGbDJlY28tU1V3VmgwN1dlV2ttWlFEem1XZXI0X2ZiUlM5NFM5MXhnbWUtRVowTHBEOTk4d2lwZTd2TGg5MU1lcm83bUxoVlduWGlDVWRPQkQ?oc=5",
+      "date": "2026-09-06",
+      "source": "Yahoo Finance",
+      "ko": "나이키가 S&P 100에서 퇴출되고 4개의 기술주가 신규 편입되면서 지수 구성이 변경되었다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$230.36",
+      "change": "+1.91",
+      "changePct": "+0.84%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$477.57",
+      "change": "+21.41",
+      "changePct": "+4.69%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Is Advanced Micro Devices (AMD) Pushing AI Governance And Confidential Computing?",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOampQa00tbU52dUkwalk1SjQ0bV82UzRtYzl0Z2M5MVp5N1R3a3NVbk5pOGdxRGg2UHVOQkhQMXJ5V25LalFGTk02cmsxa2RRdFRqam94bGJCOVp4dUhRcFRpbG93dENvVVBDazdwUGJOUy1vMkdESGJuQjFyM2V4X2VES2VJM2VRZkFxNTdsSmQyQi1VbF8wYXlVTGlMX1U1cUJsYUJjN0JhVlhHU3VLb0UzQTI4YkFpeDdEVFR3UnlaWmUwanZmNWY1NS1rNWtId3lCTjNBNjhDZWI5QlHSAeMBQVVfeXFMT2Y5T1RIWElTeTFFUFlUY2p5SGhWdFprdEtPakc5X0xncEVjbTNXalRBaHd6YVRVaC1hRzk0bmJhRlpONEJfZTh3NmxwU2dLcHVLSFgtamlWWkxLdDY1bnFYbEtYSlNjQ0ZZY2JJUklFYWZ4MW56WFZTRVRsYlFVTktJSEdzZzY3THk5di05UzRrWTUwWlFPZ19KSllVWGd0WlBIRmFpN2JCcFFBdmtZT2pKUVEtY19feVZ3MTEyMy1tVDYwMVl0dzZ5cTBDOTJXS2wzZEFOQW9JR0NmSG1MblpINzg?oc=5",
+          "date": "2026-09-06",
+          "source": "simplywall.st",
+          "ko": "AMD가 AI 거버넌스와 기밀 컴퓨팅 기술 강화를 통해 기업용 AI 시장 확대에 나서고 있다."
+        },
+        {
+          "title": "Saudi Central Bank Purchases 54,031 Shares of Advanced Micro Devices, Inc. $AMD",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNUmNYX29vZjlrd3VUS2RkWl9IOG11WnNEWWs1dEZDM3VEMTk3d245aTZvdjZLQ0tJcVByX3VFMlZiU1ByQ2g5Q2szdzYzTzlZMzI1SFhOaFJ1eE9BVHNwME9DMFQ1dEh6VXZCYjR2YjZlTk5kYlZOWkZoT1ZJM1RMZXhlcXQ4V2cxNHpsblhCWks0UG9aNHJwd0VENkhwUVoyWG9KZ21zN3ZQTDFEdlg4UnFYLTNpRXpobFUxc2NvOGdHbnk3dVdVTjhUU0lnR3Z0dnc?oc=5",
+          "date": "2026-09-06",
+          "source": "MarketBeat",
+          "ko": "사우디 중앙은행이 AMD 주식 5만4000주를 매수하며 전략적 투자 신호를 보냈다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$95.80",
+      "change": "+4.13",
+      "changePct": "+4.51%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$428.91",
+      "change": "+11.90",
+      "changePct": "+2.85%",
+      "up": true,
+      "news": [
+        {
+          "title": "Will Earnings Be The Catalyst To Lift TSM Stock Higher?",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNblAycUZNZ1RGRGhzczVyLW5tVjZKcWVScmJncDJQZ2pqYVhqUG5rZ2laTC1vb0hQRHhTTUFXS0p4RU5DcUpjTUNPdWluVVpzeWp4cmVQcGkzY2ViYmtZaFBMeDJ4LUMxcmlibldmZGYxV0s1dGptREx0S2k2X09CdVl5YTJLM1FYRVhONWg4VWdEc3Z2d3RuWEluZkZzS3FQbVBfSHdXaEZuZEZf?oc=5",
+          "date": "2026-09-06",
+          "source": "Investor's Business Daily",
+          "ko": "TSMC의 차기 실적 발표가 주가 상승의 촉매제가 될 수 있을 것으로 분석된다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,016.59",
+      "change": "+58.43",
+      "changePct": "+6.10%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$177.00",
+      "change": "+13.32",
+      "changePct": "+8.14%",
+      "up": true,
+      "news": [
+        {
+          "title": "Washington Threatens Samsung and SK Hynix With 100% Memory Chip Tariffs",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVG5ZT0VXX0U1ZnlZZks5MjJOUnEwemgtNkx3RUVOcFpVY3RYYm9xUnZJM212LWVncTNRc1BmWjdkVk5zM0JPdVFqdUVhSUJLZkNBaU90VlNiZENkWHEwV2xlcWhpT2lNaWdfcUluakljLTZFMVgyWHVucXFLdTRmQllUenhjVUttdldRWnB2ZU5iYXVCYUlrekhiTnFSbmM?oc=5",
+          "date": "2026-09-06",
+          "source": "Startup Fortune",
+          "ko": "미국이 삼성과 SK하이닉스에 메모리칩 100% 관세 위협을 가하는 통상 긴장이 고조되고 있다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$174.33",
+      "change": "-8.20",
+      "changePct": "-4.49%",
+      "up": false,
+      "news": [
+        {
+          "title": "Michael Burry Says Palantir's Books Look More Like a Consultant's Than a Software Company's",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOLXlDZl9iUTgxMm5sMmVHMmNCeUZKSlRKY1I0a0kzSjFHTlhUclhxUTFDUHhGRG9GWGVSLWpMLUdqOGNnM25QVjZva0I0VVlfYUlHUWVoS2QyMEI4M1phTDBnSlA1S3ZJMDFfTkFYZHcyN1FvWDhQdVpQazRfYUs2TU9CWWJVSmtTU1hLNFJ3YVZMVGtiaUpmOXZSTm10dzB1TDQzX1RVaWRNUTkxN2ZzUEhMTVh4TVdwekxIR3M1clZ3RDVkaVhpbXVjbWRsLU0?oc=5",
+          "date": "2026-09-06",
+          "source": "The Motley Fool",
+          "ko": "마이클 버리가 팔란티어의 재무 구조가 소프트웨어 기업이 아닌 컨설팅사 모습이라고 지적했다."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "How Anthropic Clinched $517 Billion in Compute Deals in 11 Months",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQLXRPY1Z1di1Kbks0MzNxSkpJdi1DTkRoQzZxUDJHVW90Q2pCalNYaDVIZ2Y0MENIS2laWE1MdEYtRGZFNFhaRDJKcEVsRHBsY2p2X0pUT3REVEc1VzhHN1JQQ0NmR0IybE5USmFQd1pfSFBBWVAyQzAwME43eEZCd0lCX0pycjIyWU9TT0VBczZyZk9sWnRmNGNn?oc=5",
+      "date": "2026-09-06",
+      "source": "The Information",
+      "ko": "앤트로픽이 11개월 만에 5170억 달러 규모의 컴퓨트 거래를 확보했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "AMD Committed Up to $5 Billion to Anthropic, and Anthropic's IPO Prospectus Is Reportedly Days Away",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNVd3dzNSOFVFMEt5MGdCenVMT3lXNm9URlNNUDFiUVNuaXF5YlE4MGVzeF9jTnJNTkxmamVqOGhWRDVfYXlRVnlaTUxaZmdnOHhmcVNUV3d0bWNQZmNRclZfZkVRNnRZSnludFJySEtQSTY3bUEwUkRMbHhaQkdIN3k2SWQwLURMa1ZTWEh4QWRnbjlmeWJEZzBSSW1Zdw?oc=5",
+      "date": "2026-09-05",
+      "source": "Yahoo Finance",
+      "ko": "AMD가 앤트로픽에 50억 달러까지 투자하기로 약정했으며 앤트로픽의 IPO 공개설명서가 임박했다."
+    }
+  ],
+  "summary": "강한 고용 지표로 연준의 강경론이 부상하며 지수는 내렸으나, 반도체주는 AI 수요에 힘입어 상승했다.",
+  "generatedAt": "2026-09-07 07:58",
+  "date": "2026-09-07"
+}
