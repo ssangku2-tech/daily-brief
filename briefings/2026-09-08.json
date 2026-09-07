@@ -1,0 +1,173 @@
+{
+  "sessionDate": "2026-09-07",
+  "sessionDateLabel": "2026년 9월 7일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,718.60",
+      "changePct": "-0.38%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,506.99",
+      "changePct": "-0.29%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "53,414.25",
+      "changePct": "-0.51%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Futures Fall, Oil Prices Rise; Nvidia, Micron, Sandisk Flash Buy Signals With Apple, Inflation Ahead",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxONnVmdkRaNDVMaV96YWJ1eGMzRlFGUTRMeDVfSlotMHFRaGJlN2VMTFpGVzQtM2JDVndXazFpY3VVajNBdG9BemQzZ0xKV1d2ejJkVVAzbWlOUGQwLVB1dU0tWnNuM2t1WEhaSlBwbDlmd1BDM3BaUU1od242RXhEanBPeEJJUF9LQS1GVzZwQTV3Q0c3bkVMN3lLbDhHU0tPY2xYc1p6NWRMMVBKTTF2dHJqNm8wR0NEMllEWkpLN0hmMEU1Y1ZhXzlQNDRYemM?oc=5",
+      "date": "2026-09-07",
+      "source": "Investor's Business Daily",
+      "ko": "나이지리아 유전시설 공격으로 유가 상승, 인플레이션 우려 속 반도체주 매력"
+    },
+    {
+      "title": "Oil Rises on U.S.-Iran Strikes as Markets Await U.S. Inflation Data: Dow Jones, S&P, Nasdaq, Wall Street Futures",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUEhxU0ZNaEppbzNBVmZHLUQxVE05NDhjcEh0SzkzREw2QjFrbVBTbzJhckJjWVB6NzRCX3pXUEJ2TFdfWUc3bmp4d2RvMTZXS1NCRWI4NWtZa0V5ckkweEdaaEVfUE56Mzk2bHB3c0RnMFp2ajg2ZFZzWHRwdVZDeC1qTDVwVkZ1?oc=5",
+      "date": "2026-09-07",
+      "source": "Yahoo Finance",
+      "ko": "중동 긴장과 미 인플레이션 통계 대기 속 유가 및 선물 변동성 확대"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$230.36",
+      "change": "+1.91",
+      "changePct": "+0.84%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia (NVDA) Board Member Sells $410 Million of Company Stock",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQUW5UckxTVW1zSGZxcUdMR3RGV2RQdUpWUTJrWWR3QzBxNXpiZ2s1RVFZUHZXQjcyQkVLa1Q2N3NmaUV4dmFyeWJDZVVkRkd3amtCaDNkR1ZJT3VsOElJdkN2SVY5WnNuOTBXUHhlcXdLT1N2TTF1a2FqbnRyMkVybHpiWWNXeTJPQ3pTU1ZuN08xTU0?oc=5",
+          "date": "2026-09-07",
+          "source": "TipRanks",
+          "ko": "엔비디아 이사진이 4억1000만 달러 규모 자사주 매도"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$477.57",
+      "change": "+21.41",
+      "changePct": "+4.69%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$95.80",
+      "change": "+4.13",
+      "changePct": "+4.51%",
+      "up": true,
+      "news": [
+        {
+          "title": "Prediction: Intel Stock Is Up Big in 2026. But the Best May Still Be Ahead",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNdWF4U21WeU1KYmloR19qa01oV21RS1FXVS1XVUdwRV9OWFNacW9DRm5oa200NGsxRFQzNzZfSzd6LVhHdEx2WWVVT1YzUmtLZWFzXzFsTUJHX0pjVVNvSmZJYURLQk9vWkk2YlpEQ25pLXJzM283cTR1WGZsWDBOUTVkZjhVZzF5QW1ZZjBaQXI0ZUdEd1FOcm1pZE82UGxObkcxS2xBSDdubXR0SEJPVGtEWFQ3WVE?oc=5",
+          "date": "2026-09-07",
+          "source": "24/7 Wall St.",
+          "ko": "인텔 CEO 자사주 매수와 NVIDIA 지출 증가로 2026년 주가 강세 전망"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$428.91",
+      "change": "+11.90",
+      "changePct": "+2.85%",
+      "up": true,
+      "news": [
+        {
+          "title": "Taiwan Semiconductor Retains 73% Foundry Share: Is the Stock a Buy?",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQRHhOa1FKR0pXZXVTSXFDTlF0TlpHWDU2ZHlHUjNlRi1QUlNCWERXUHJiVUczNUNJRjdielEtNWJka1llZGJQbDJnaTJtaHpBWEw4OEhXQTRmTmxvdXVhY2JQVWFwY3EzRkJKelBjd3BMWDlRd1kwOVB2QUtrQ2ZOd2FIbm8xWjVreWxxcm5nakJ0RkZjaG5ua3FKdElBSHN1Qm91STZZUFBlZXJGck8waUdReWdfbUhVTWpOMA?oc=5",
+          "date": "2026-09-07",
+          "source": "TradingView",
+          "ko": "TSMC, 파운드리 시장 73% 점유율 유지하며 독점적 지위 강화"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,016.59",
+      "change": "+58.43",
+      "changePct": "+6.10%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Has Skyrocketed 256% in 2026. What Would It Take to Get MU Stock Up to $1,250?",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeFZFVmhERVczUmdzcHVPekJVWWotSXY1dHhaN0h5Y0lIWERsdFBuN2l0SzZqWjBEMWJBT2RncmQyUlFON1dWN3diWmI2dVpMbjlmMlgyTS1vamxIUVVxeTVUSFRaRHdIaWRqbWNFU29vMmFPRGxHdDhmYk1ZYWhabWhweUdwdFhsMTduOWtLSXZtSWpOOUR2VDhsWEptVDMwU09rUS1WbHNkbmp2dk54Vy1YLVk0WkFBUW5ZTUI5aS1nQQ?oc=5",
+          "date": "2026-09-07",
+          "source": "24/7 Wall St.",
+          "ko": "마이크론, 올해 256% 급등 후 1250달러 도달 가능성 검토"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$177.00",
+      "change": "+13.32",
+      "changePct": "+8.14%",
+      "up": true,
+      "news": [
+        {
+          "title": "AI infra spend to hit $1.3T as supply shrinks for memory giants to 10 days",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNcF83Mk13blR4TlpveUt5U2VrQVV2dWZFdDE1ODZvRmxPek1rZzFKUnhveW9QN2xRdENGRTJPckhUYWxCZllKMzNPMTVmWHRCN2RKZGJJVEZicUt2VFpYMDJIcUx4cUtGVTFPQ3J6Q1hNSFFpS052QWxCNFZHLVdUT1JlZDVVQ1ByMTRwR0ZRNnRGSDQ1U2wtMU5SQl9kTWwwUmJGam5VLTk?oc=5",
+          "date": "2026-09-07",
+          "source": "SDxCentral",
+          "ko": "AI 인프라 투자 1.3조 달러 급증 속 메모리칩 공급 10일분으로 축소"
+        },
+        {
+          "title": "Will the AI spending surge trigger an unprecedented memory chip shortage?",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSU1nSW1YdVlZZnE5dUhfc0FDYlZyUlhYT2NybXBucGFfVk1qVzVic3A4Uk1tUHFwM1AwT0hSYk1id2JtMk5RNUFjLVd0SUhOX2NTSDlJRnR0R3lzSWZRUklqTWJBSjJrZmdIQ0RVZ0tFWkJ2R2NGZWhUNldLS0tjVmstb2lva3JrS3ZPNWVjTGVYeUFTYTQyU3dlTU1qaFVuWk5CeFNTdFdlS3Zna3FqcHJobnY5ZFRyYUJKdVNoaGs4amM?oc=5",
+          "date": "2026-09-07",
+          "source": "Korea JoongAng Daily",
+          "ko": "AI 투자 급증으로 인한 역대급 메모리칩 부족 가능성 제기"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$174.33",
+      "change": "-8.20",
+      "changePct": "-4.49%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s IPO Will Be Huge—and Risky. Here Are the Challenges Investors Should Watch",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNV2I4elphOVBGSDAyVVM5d25LR09BS0tzUWk0R0tvanlXRmtmakdsenN6UnBhOURhWVBiTi00ZTJ0SEpGcURvZGxXcFJvdVJwaUw1YU9lX0ZTdVdTa3oycmJFQU1oTzZhcGwydzJOVlpSVjJDVU8tT094dlBjc2lnRXdYOHBJS3BEN1l0TWdrZ1dlSjJRVmtMVEg1cU1PTGI5eDhHU3QtaXZITEhYNmJfZURsNkhkZlVodWhYNUJtQXE?oc=5",
+      "date": "2026-09-07",
+      "source": "Morningstar",
+      "ko": "앤트로픽 IPO는 규모 클 것이나 규제·경쟁 리스크 점검 필요"
+    },
+    {
+      "company": "Anthropic",
+      "title": "The Pentagon Doubled Down on Its Anthropic Blacklist. Why Amazon and Alphabet Investors Should Care",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdUZDMWRUZE9vck1iU19ZN2xDdm1FMUVrbXpRREZiUDBWbnJWd2U3WnA3R1FMdTdNZjhYTlJnMVFYdnhMQnp1ZVdzMUZLc2RaUmlvU1ZscTJJbHlFSUdlR0lwWjZJNFhmbzl0Sk12dlg3QmMtTlZxODB2M01MaGRGOFJRZ2hIeEhoU2htVE15VlluR0xsMUU5UjdqY1QtYmJJX0xaT1YxRjA?oc=5",
+      "date": "2026-09-07",
+      "source": "Yahoo Finance",
+      "ko": "펜타곤의 앤트로픽 블랙리스트 강화가 아마존·구글 투자자에 미치는 영향"
+    }
+  ],
+  "summary": "반도체 주가는 강세를 보인 반면 전체 지수는 약보합. 메모리칩 수급 부족과 AI 수요 증대가 부각.",
+  "generatedAt": "2026-09-08 08:39",
+  "date": "2026-09-08"
+}
