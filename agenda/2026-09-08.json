@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-08",
+  "generatedAt": "2026-09-08 08:16",
+  "events": [
+    {
+      "title": "건강검진(강북삼성) 08:30",
+      "start": "2026-09-08T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "저녁 박송김",
+      "start": "2026-09-08T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "신규 등",
+      "start": "2026-09-09T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 875,
+  "importantMails": [
+    {
+      "from": "NOL 항공",
+      "subject": "[NOL 항공] 이상구님이 예약하신 항공권(E-ticket)입니다.",
+      "summary": "항공권 예약 확인 메일"
+    },
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 9. 5.)",
+      "summary": "Google Play 구매 영수증"
+    },
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 9. 2.)",
+      "summary": "Google Play 구매 영수증"
+    },
+    {
+      "from": "ÖBB Vorzugspunkte",
+      "subject": "Information zu Ihren Vorzugspunkten",
+      "summary": "철도 회원 포인트 정보"
+    },
+    {
+      "from": "Investing.com",
+      "subject": "🟠 금리 상승, 다시 봐야 합니다 SANG GU",
+      "summary": "금리 상승 관련 투자 정보"
+    }
+  ]
+}
