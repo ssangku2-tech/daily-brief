@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-09",
+  "generatedAt": "2026-09-09 08:10",
+  "events": [
+    {
+      "title": "신규 등",
+      "start": "2026-09-09T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "노을공원",
+      "start": "2026-09-10T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 875,
+  "importantMails": [
+    {
+      "from": "NOL 항공 <order@nol-universe.com>",
+      "subject": "[NOL 항공] 이상구님이 예약하신 항공권(E-ticket)입니다.",
+      "summary": "항공권 예약 확인 메일"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 9. 5.)",
+      "summary": "구글 플레이 구매 영수증"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 9. 2.)",
+      "summary": "구글 플레이 구매 영수증"
+    },
+    {
+      "from": "ÖBB Vorzugspunkte <meineoebb@vorzugspunkte.oebb.at>",
+      "subject": "Information zu Ihren Vorzugspunkten",
+      "summary": "오스트리아 철도 마일리지 포인트 정보"
+    }
+  ]
+}
