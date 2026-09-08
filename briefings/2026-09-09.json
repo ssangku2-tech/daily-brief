@@ -1,0 +1,171 @@
+{
+  "sessionDate": "2026-09-08",
+  "sessionDateLabel": "2026년 9월 8일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,673.52",
+      "changePct": "-0.58%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,421.41",
+      "changePct": "-0.32%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,786.07",
+      "changePct": "-1.18%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: S&P 500, Dow, Nasdaq 100 Futures Fall as Oil Tops $99 Despite Trump’s Price Drop Pred",
+      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQV0JabjItTkd2SWotTUJvZEVwdUJRY0xyT1BpS05FeDJSNFdHYXdlczk0NGU2RFB5a3Zrb0s3bzdkeGFsUmExQzhmLW1qTi1sejZNYUlvS3E2V2RVNWFZc2thWFgxNURrM1c5dWM3R1ppb1RpQTRaNEp6UkZ6U3NhYTJJSG1nUkwzYm5DRHlGNnhDbTBzWlV1MHczRTFYcjVraV84Y081Ty1ZSWxKMHAxZzQ3VXp6UkhOMThKSndscng3RnNXMzAxUWtKeHZHTXo3cDRseWlUcmpVZ01VQzBZdTcwSkFZZVZraS1RNjFZcmFoNG5GY0JiRmd2dmpOZk9pbXExSA?oc=5",
+      "date": "2026-09-08",
+      "source": "Benzinga",
+      "ko": "유가가 99달러를 넘으며 트럼프의 유가 인하 전망에도 불구하고 선물 시장이 약세"
+    },
+    {
+      "title": "Nike exits the S&P 100 after 18 years and a $200 billion market-cap wipeout",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA4VFhmMjhXT09sMjFCR0pySVdvc1poSWRqWTAtMUk0dXNIVzFMbHI4NEJVMWlLZFczM3V0bVA0YXE1RWZTa29CVGE1dmdzV3NNdkIzQTQ0MngxZDgzekhwNlBEOEZ2MjM3Q2FZQnoxcm1pSzZ5T2xvS05oWEc2MVU?oc=5",
+      "date": "2026-09-08",
+      "source": "Fortune",
+      "ko": "나이키가 18년간의 S&P 100 편입을 종료하며 200억 달러 시가총액 손실"
+    },
+    {
+      "title": "U.S. stocks lower at close of trade; Dow Jones Industrial Average down 1.17%",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQS2hLVE5pdVBiYWdDdndhUXRSRjQ3dVlzcTljSy1URGRFb09KTWlac3RhX3hiSDZsLU9DMkl3OGtuX2t6clJXMUpucDZ4S3VYaTcySGNrdlVyM1BDTEdENlJVbWI3RWo2RmNOc0hLejNBZER2QTI3TktjeVVHZ3JfSHZ2NVZON1RKdEhyZnpGYkwtN2dEd3ZQVWUybHp4a2o2ZXRCaHA5eGxRSXlGazRCR1pheUtHNm9VY2pWeWRDMU5WY1RubzZv?oc=5",
+      "date": "2026-09-08",
+      "source": "Investing.com",
+      "ko": "다우지수가 1.17% 하락하며 주요 지수 중 가장 큰 낙폭 기록"
+    },
+    {
+      "title": "S&P 500, Dow End Lower As Middle East Tensions Spur Oil Rally Ahead Of Key Inflation Data — META, QCOM, BE, AMZN, AVGO In Focus",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPTExLVUxrN2l0NmNNalVORTVURzNEWE4tTWQyWUM0Y0pTQ2R6VFVGdWlXTHc4akpaZ013Y3JXa3daY2tfcUkwUU96N3J6QlV5Wkpsdzd1TUItay1VTGF4WjNuM054bVdjckVHWHVSSEpCYW9LQkJzRG9DV3lsbl9GMmROanM1bjNpWGYxeEowV2ZiYXVQOUJXTHF2OGo4ODA0YnE5T2dZVjF6YkZQdXVYVU8zUzZEdDVjV3MwTGtTVG9TZ1NycENz?oc=5",
+      "date": "2026-09-08",
+      "source": "Stocktwits",
+      "ko": "중동 긴장이 유가 랠리를 견인하며 인플레이션 데이터 발표 앞두고 시장 불안"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$225.73",
+      "change": "-4.63",
+      "changePct": "-2.01%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$505.74",
+      "change": "+28.17",
+      "changePct": "+5.90%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD Stock Rises as CFO Claims Its Addressable Market Could Reach $3 Trillion",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBiaXNUTGhIVFk0NWc4dGtjZVlMWHN4Ujl5bFNUaHlIYVFkeTg5MHVlSktlMGJTQkxoTjU3VUxLbXNLNjN1QUItd3lHczJvUVRPaDctTFJycmFxdndKeEhwSHhKOVU2Q0dGd1pKek5ZMU16VXc?oc=5",
+          "date": "2026-09-08",
+          "source": "Barron's",
+          "ko": "AMD 최고재무책임자가 회사의 주소 시장이 3조 달러에 달할 수 있다고 주장"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$104.47",
+      "change": "+8.67",
+      "changePct": "+9.05%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel (NASDAQ:INTC) Stock Jumps 9% on CPU Price Hike Report as U.S. Government Stake Gains $36 Billion",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVE1ONURxRkFRb0taSkx4NXRPcHU4dWRpaGtTY0lXN3pRc1l0Tk5zTmgxTmVtQ2tLWGhoZFhKVzVBSHdsTkRjUFY1MVZBdnZnbEpvYVQzY0o2MmxBb1pfZFN2UnBhLUdyM0tFTGwzT2w5dmhHc0txZ2Z1dVNPWFNsdg?oc=5",
+          "date": "2026-09-08",
+          "source": "Stocks Down Under",
+          "ko": "인텔이 CPU 가격 인상 발표에 9% 급등하며 미국 정부 지분이 360억 달러 증가"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$439.00",
+      "change": "+10.09",
+      "changePct": "+2.35%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,000.26",
+      "change": "-16.33",
+      "changePct": "-1.61%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$185.55",
+      "change": "+8.55",
+      "changePct": "+4.83%",
+      "up": true,
+      "news": [
+        {
+          "title": "Bank of America Is Bullish on SK hynix Stock as the Memory Chip Market Stays Tight",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQQVRfVTExY0JTc1h5Z1ZYbk5UUmtIQXZ2ZVFBMGtDcmsyT3lHRlpNVlhMMjRWTXpMdGw2QXFobHpMcURBeExJek9YaFlrUWNSUk1kb0dqREZxZGZZdUFyVGF6UHBLNGdQUVU1M1RKU2ZMWTlMN096eVBWUldXeE5HWVNidmhraURxMG50SEM0RzVOYzl5WWs3VnBR?oc=5",
+          "date": "2026-09-08",
+          "source": "Yahoo Finance",
+          "ko": "BofA가 메모리 칩 시장이 긴축 상태를 유지하는 가운데 SK하이닉스에 강기 입장 유지"
+        },
+        {
+          "title": "US chip tariffs raise stakes for Samsung, SK Hynix's US memory plans",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQkFBM3BwSFZlazdIbU1fZ1NzMmQxOTVGUmxWQkp4YmtkYXdCNksxdUoyMC1pYUN0YTQ1M3RrM2o3RTk0cmNWQXlwWFlNY0FLSlRoWHRLUGFDUTNiV0haRC1rTFpGTWx1bFQybHBjbTRXN19MU3dQdEg5b3FIb1YtQ0RVeEp2Q2hUcEprSjdKcVNmODZobkhjd0RET08?oc=5",
+          "date": "2026-09-08",
+          "source": "digitimes",
+          "ko": "미국 반도체 관세가 삼성, SK하이닉스의 미국 메모리 계획의 판돈을 높임"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$170.30",
+      "change": "-4.03",
+      "changePct": "-2.31%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Scoop: Anthropic breaks from major tech group over chips",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1wQXJjM3prLW5SV3pEUVJlS1lzZzlKbTFtNngzUUJSU0ZvR08xODFXMVlGSTNwNG5HdXN6WGpLMWt1VkdBaHowTUo1bEluQ0QyeUNmLXZTcFNFQjkxSFkzbTBRN01VWk11c1FQWGxaQWc3aWUy?oc=5",
+      "date": "2026-09-08",
+      "source": "Axios",
+      "ko": "앤트로픽이 칩 관련 주요 기술 그룹과의 입장 차이로 결별"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Destroying Books to Build a Mind",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPR0t4eERQSkhXaU9xdWMwcHVydF94TFdfc0hfb2ZwdlZRUkhOSVdWbGFKcHp4NldKTEJfMzVEeHhXU001WTZJZDJBTkwxVEgwVVJ3T0tXTnRUMzk0UDE1YVk0QWxKOTJ2T2w1dTJjNGFWS3I3TTcwOFc5dHNwOU4xcg?oc=5",
+      "date": "2026-09-08",
+      "source": "The New Yorker",
+      "ko": "앤트로픽의 AI 훈련 데이터 수집 과정에서 저작권 침해 논쟁 제기"
+    }
+  ],
+  "summary": "유가 강세와 중동 긴장 속 에너지 관련 우려가 시장을 압박했고, 다우지수가 가장 큰 낙폭을 기록했습니다.",
+  "generatedAt": "2026-09-09 08:32",
+  "date": "2026-09-09"
+}
