@@ -1,0 +1,179 @@
+{
+  "sessionDate": "2026-09-09",
+  "sessionDateLabel": "2026년 9월 9일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,636.36",
+      "changePct": "-0.48%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,253.34",
+      "changePct": "-0.64%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,380.66",
+      "changePct": "-0.77%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall, Brent Jumps Over $100 Amid Middle East T",
+      "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNMXNBc2FSZzRnalJlbUpLWWx1WWQ5TUpBbHVZVzRmWlh2WmZPTHFkd3NtV0h6LVd2eGZSc3dhZmhiZlhWcGdkZl9lUlZPQi1BS2VtRXFUT1VTei05by1jWWt1TTB1VUhrQ1lPSHhpZEZ0dy14RHI5dFZMVEY5WkZvbVJjMUt6cVRqQVl4cmplTTBwZnRjVlcwZVdNMnBvZTlRUmJRTlp3cEI5SEUwT21sUDdOLXRib2hwVGVtUU96Yjdrb1l5NDN4aVBMUUlLeGlLWEdUU0piY2ZjbmhIcEdjR2g2cTEtRnhjQWFQMGVDOEk2eTVHQUZRSDF6Z3cwWEtwYUZhaFhHMA?oc=5",
+      "date": "2026-09-09",
+      "source": "Benzinga",
+      "ko": "브렌트유가 배럴당 100달러 돌파, 중동 긴장과 미-캐나다 무역 갈등이 영향"
+    },
+    {
+      "title": "Dow Jones Futures: Oil Prices, Yields Hit Stocks, Apple Unfolds iPhone. Inflation Data Due.",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOME10TE03THRKWjFfQ0JQcm5PdDZaTUczbEtRX2ZXVHA4bWJkaGdENWVQTEZPd1pLaWR1Si0zMXR0Q3haWVVZa1hqNDhlajRzZUctbmd1ZGlEdjhfdngtbkdvNUs5VGdXSmw3S0xBVGp2V3JUYmN4ZXE0OHJRVTY3TUtZVGhSMTdNVlNzU2tkdzJiUVlfdF90cTE1UEFrcjNfUnZwb2JFN3VJYktJdWVCcGlGMGNKVkRFdFJnOEItVmhFNkJyUU1Eek5sYmp3R28?oc=5",
+      "date": "2026-09-09",
+      "source": "Investor's Business Daily",
+      "ko": "유가 상승과 수익률 급등이 주식 약세 주도, 인플레이션 지표 발표 예정"
+    },
+    {
+      "title": "Oil reaches $100 as markets assess Middle East conflict, rates and US-Canada trade tensions: Dow Jones, S&P, Nasdaq, Wall Street Futures",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcDB0S2RWLVVUd1VDZjJzMGYwWm4xZXVxbG1CekZSOWJlZ3FoMFZ0SlJMZUtyZkx5dkhFbVhuLWltTkYyQVd3YXRJd2NGQmRMZ3ltdHlEcUNRcUxlQ0g1Q1lJRmZvUW53dGZkNmRZLU5sMWROa3o5MVp5UVdJeV94ajEyaGwyb0czUjMzVV9LOTQ?oc=5",
+      "date": "2026-09-09",
+      "source": "Yahoo Finance",
+      "ko": "유가 100달러 돌파, 중동 분쟁·금리·미-캐나다 무역 긴장 등 복합 요인 작용"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$223.67",
+      "change": "-2.06",
+      "changePct": "-0.91%",
+      "up": false,
+      "news": [
+        {
+          "title": "NVDA Stock Falls Toward $200 as $3.1 Billion Indonesia Deal Adds to Growing Spending Concerns",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQY2RwQ2VoSVJRTmk1eGdMUkhXSmpOWUI2a1NPbnZLeGFSVG1EQXFWR2N6SzdxeXBvTjdScW1yTGs1dE5uMWpIckNCcUdqRkFmWFRjYjUxWkRUaGk2c1BXTjg3aHN5N0VheGVVZmVEY1k1SGJsSTNqMlRCRVNMamItYmNla3dyRVBidXVHV3A3cE1mejNtdDdQOHhXTk1wNGlnM2JwZmdxMEMtYUxsUGtOb05HNFFKZkRyMXR3WlpZNm9xN0dDQS1pZml2Uk1iSVU?oc=5",
+          "date": "2026-09-09",
+          "source": "FXLeaders",
+          "ko": "엔비디아 인도네시아 31억 달러 거래로 지출 우려 증가, 주가 200달러 근처로 하락"
+        },
+        {
+          "title": "Nvidia gap with other chip stocks could narrow amid increased cash return: Melius (NVDA:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPc0FEZ3B5MEk5TVJRM3hMZXhuRjNfSVRUUTFNbnljVk5oaTUxOFA2MjllU0JRbTZCcWQxZVZVSUVoVHBzV1VCa0VWWjI4R1pEMm9xdXd4dFNmVkJ3c0VlbDdSOXJsOG5qZGRZTWliV3ZBaTBZWDN3d0pBSGJFNGRHbVZiR2VuVUgzaWhTMFh4WTFoaEZldEFNelZTVHF5ZTlDamtDV0QwTFkyam1kSHlGYTBGTkdkY2hFZUE?oc=5",
+          "date": "2026-09-09",
+          "source": "Seeking Alpha",
+          "ko": "엔비디아 수익 환원 정책이 충분하지 않으면 다른 칩 기업과의 격차가 좁혀질 수 있음"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$521.10",
+      "change": "+15.36",
+      "changePct": "+3.04%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD Stock Rises as CFO Claims Its Addressable Market Could Reach $3 Trillion",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBiaXNUTGhIVFk0NWc4dGtjZVlMWHN4Ujl5bFNUaHlIYVFkeTg5MHVlSktlMGJTQkxoTjU3VUxLbXNLNjN1QUItd3lHczJvUVRPaDctTFJycmFxdndKeEhwSHhKOVU2Q0dGd1pKek5ZMU16VXc?oc=5",
+          "date": "2026-09-09",
+          "source": "Barron's",
+          "ko": "AMD, 주소 가능 시장이 3조 달러에 도달할 수 있다는 CFO 발언에 급등"
+        },
+        {
+          "title": "Guidance Upside Drives Advanced Micro Devices (AMD) Higher, Hurting Non Owners",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdG1kclVWbjJrZEVYLXg1cFh6Ty1JeUVNZ05VV3RNWlFhTHVHQnlxWVNGRlBET2k0dkdkS283TXBmODhuYWpESlZsYjZYcGVKaGFNM2Noc1I4dVFueXZnbzE3SHZIZ3ZkTWVodmY0SGNwUzlBVW1jSnBIbzRVZzh4Wm9RUFhnUmdUT3J3N1RWNmQ0VkNQd0o0NE54VGxpOEpLSlFUTw?oc=5",
+          "date": "2026-09-09",
+          "source": "Yahoo Finance",
+          "ko": "AMD 상향 가이던스가 주가 상승 견인, 다른 반도체업체와의 격차 확대"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$106.24",
+      "change": "+1.77",
+      "changePct": "+1.69%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$435.36",
+      "change": "-3.64",
+      "changePct": "-0.83%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,027.77",
+      "change": "+27.51",
+      "changePct": "+2.75%",
+      "up": true,
+      "news": [
+        {
+          "title": "Memory Stocks Rally as Goldman Says the Worst May Be Over: SK Hynix Climbs 5%, SanDisk Advances 3%, Micron Gains 2%",
+          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQdlpVZDZOQlJpRVJ3SkcyeE5xOHpUUDJURkNnTFhva2xVaVBGLXdlaFJwN3M4dVVvM3kwZWREYjVxQVBoY095WTdDbWdCNGtoOVV0Znhtd1VaRGI3X1ZzemRtdnJwSWN6THpJZVpkclpOV2pXLUhJRGhTbWxObzdBam1tYTNxS2llZG93RXY5WVl2cjNyNlBNTllzVGN0STJrbHlSMjJ3ZmdDNWhzMUtEUmwteUIzUEZvbEd5VC1ZTUtKYVZ1UTJiOUZSQkFoVWxoakhTU0RrM2xsbnR3aXF4czAwT2FwWF9C?oc=5",
+          "date": "2026-09-09",
+          "source": "24/7 Wall St.",
+          "ko": "메모리 수급 개선 신호, 골드만삭스가 최악 지났다고 평가하며 MU·SK하이닉스 상승"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$198.63",
+      "change": "+13.08",
+      "changePct": "+7.05%",
+      "up": true,
+      "news": [
+        {
+          "title": "Samsung and SK hynix Memory Inventories Crash Below 10 Days as AI Demand Triggers Historic Shortage, Says Report",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSTc2dzB4bHg1bjdLRjlMdkNqMktnRHJFT1F0amUxVjJ6TnFKNUFWVmQ4MFBGVnhDdW1RcVd5T0xGZWgydXQ4UDR2NzJHLTJHLTBQZXh4djJmNTh3QUs0OHczNEFpNHJ2ZmF0LTNvNmVkdWlTN216NHRiOHZJNjRXT3lzWFREbmx3bzRzd3N1UC1TZUtUc3FMOUU1UUsyUEVmcXNJTGpySjV6aE4wemZpTE1meVZjNzEtSmVsa0xWc2NSOWtsWUE3X1d2VGtKZ9IB0wFBVV95cUxNV2xsV1RKWk1LUUZsNzVvSUdwV1BaTGF2NW9HcUJJNUFIRTNseUREMFktM3QxOHA2eXRLdVdLWDhFcUZkSndFQm4xR1BRQ2xoMGZENG8zSzZCTzhEd1BHcWs5bnhsZEk5MTZQV2ljS1dJbG1zQV9MNFd3SHA3MzRJMGFMR0UtU3Z1dmxfYmEwREdFeEdKNk0xVXg3V1BPZVltc3VyODFBRjlrSlpzLUFnTVhwZU5kcGZDOUhHSFA4S3NWeVVFb3MzaXdpSENIdGxoLUZz?oc=5",
+          "date": "2026-09-09",
+          "source": "Wccftech",
+          "ko": "삼성·SK하이닉스 메모리 재고가 10일 이하로 붕괴, AI 수요의 급격한 증가 반영"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$169.53",
+      "change": "-0.77",
+      "changePct": "-0.45%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Exclusive | Anthropic Researcher Quits Over ‘Out-of-Control’ AI Fears",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNNkJNMUhyUzQ3M1FsRFZMcUhKMGFFeFpsdnJaVzM4T2duWVVFYTk4ZUpXN0dRemFMUjZ3bC1CZ29ETjF4dWlScEQ5UVZDYVhLOUt0YVVmV1JfdjVoZWVpcXVyTFhDdjNTN0NIc2h6bXdRbkZDek5RX3poR0JkRE5XdG55ZFFJRGNqRWllSzllQk56LWJHYURn?oc=5",
+      "date": "2026-09-09",
+      "source": "WSJ",
+      "ko": "앤트로픽 연구원이 AI 안전 우려로 퇴직, 통제 불능 상태라고 비판"
+    },
+    {
+      "company": "Anthropic",
+      "title": "He Helped Build Powerful AI at OpenAI and Anthropic. Now He's Afraid It Could Kill Us",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0temJ5Q1lqZzdnLXdGOU9GcjdyTWdxcEtUM0QtNTcwQjR6aXBvRzVyTVRobkdGZmhXWDNQMXlabGVxbktEa0lyUm9CaVEwTXU2eVphbkRuUG1CWFl2VEFSaGdQck1EVDFSaHJrN0FOZ2pnc1AwNmpB?oc=5",
+      "date": "2026-09-09",
+      "source": "Time Magazine",
+      "ko": "OpenAI·앤트로픽에서 강력한 AI 개발에 참여한 인물이 인류 위험성 경고"
+    }
+  ],
+  "summary": "유가 상승과 금리 급등이 주식시장을 압박하면서 3대 지수가 동반 하락했다.",
+  "generatedAt": "2026-09-10 08:25",
+  "date": "2026-09-10"
+}
