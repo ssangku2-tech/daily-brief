@@ -1,0 +1,172 @@
+{
+  "sessionDate": "2026-09-10",
+  "sessionDateLabel": "2026년 9월 10일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,591.70",
+      "changePct": "-0.58%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,081.73",
+      "changePct": "-0.65%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,064.10",
+      "changePct": "-0.60%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "S&P 500 ends down as Treasury yields rise and traders fret about inflation",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPVUNZS2ZwczJmM0x1aEM5ZFJMbUhWckRSOE54a1NyTFZjb1NaNFNCZDFwOFJiMk40b1RJelZsVnhKOVNObGNGenNkZzVhUWtZRlktVzhTWk9Qc1EybkRweDk4RFRRUjh2bk1TU0lJazBncUFnUlcwcTlPVWY3NjBzdWVUd3JGTDlLeF9EMU1aTnEzSDctTVcxZVdzT1RZclZjanRhbkl3?oc=5",
+      "date": "2026-09-10",
+      "source": "Reuters",
+      "ko": "채권 수익률 상승과 인플레이션 우려가 S&P 500 낙장 주인공."
+    },
+    {
+      "title": "Dow Jones Futures: S&P 500 Breaks Support As Oil Prices, Yields Surge; Oracle Jumps Late With CPI Inflation Due",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZGdpMlBVbExibHozSndzcGVmRE9SOVdnMnJDbmFSX2NSbjRQamJhd3R6dEkxX2tlaTkwdWRjVlplWkpsQTJoamljRzhQcXZkUmhDTmgtRWY0U1RwRUlEYUdoRmVmVkktM3FDNWpyVXRFNkpEWGl5ZlhHaGNadmVKTUx5NlhlQXE1ejdTUlowM0dGM1lPRkdTb2xRV2pKczR6aWtoLXRMWG11RDlUaXRuZDc3eUh1SDBmQ2NZQ2laTzBXMGtVQ0NpVjNhU2FvZ1ItWDhQWV9n?oc=5",
+      "date": "2026-09-10",
+      "source": "Investor's Business Daily",
+      "ko": "S&P 500이 지지선을 하회했고, 유가와 수익률 급등이 압박."
+    },
+    {
+      "title": "U.S. Stock Futures Fall as Oil Tops $100 and Producer Inflation Accelerates: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxON2dmeHZYVWtlY2REa3I3VUJ5am9aR2QyTlhfeW1KMF9felE1RXpGajlJYUh1T084cmN1TVhNV3RHWXdTaXA2M1pVMVh0TkxGa2NvNlY5VC1sZzI3Rm9BbTBHb3pJNVF6YVgzc0wzQzFpVkFOaG1pWmdNT2JZVGFha1B4RncwS291WktmaWpCbGJ3RzQ?oc=5",
+      "date": "2026-09-10",
+      "source": "finance.yahoo.com",
+      "ko": "유가가 배럴당 100달러를 돌파하며 생산자 물가 가속화 신호."
+    },
+    {
+      "title": "S&P 500, Dow, Nasdaq End Lower As Surging Oil Raises Odds For A September Rate Hike — ORCL, ADBE, M, NVDA, UBER In Focus",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOOVZPb3ZzUnZxNUQwZ1puTFBTXzdlWkRsSXlmTTNCQnZOS3JETHpNcUwta3ZiQUJDSUQ4VW0ySy1wZGhZUHEzaUpxVnFrcXJaVUx0YWFtWkZWSGJjeW5lY1RwQktKc1RfVTVjY3k5UWpwOGZ4dDV5WFY4SE9xWFprazE0Rll0eWVMcUsxTUllaUxDY1MyMnAyR2VQWUZ3WFdLeHdRNlQwMFJmbzQ5dGFyZ3hndlZRR3I5NDNvdHVuYmFuSDZ2ZnlQaDA3WjNRRFkyU3lwaGVhTV9CaUR2b0hTTUZwQQ?oc=5",
+      "date": "2026-09-10",
+      "source": "Stocktwits",
+      "ko": "급등한 유가로 9월 인상 가능성 상승, 반도체·소비재주 동시 약세."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$218.36",
+      "change": "-5.31",
+      "changePct": "-2.37%",
+      "up": false,
+      "news": [
+        {
+          "title": "NVDA Stock Alert: What to Know as Nvidia Faces DOJ Probe",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQT3J5TlZwaUF0cXNFR3ZKR0E0V1ZyQnVJSmZubFo2aWswVDhvWXNtTFRlaGVWTGdKTFFXanZCSkpNQmF0elhVTWJjNENiRjEzV2x5cExwUEpESHA1M1c0ZTFDU2ZxY2ZUX1dRcnV2UVktS085bllvUE5KYWRmVVJrd19MbnhjWGtWejNvT2ZfOTJzMmw1czdPSU5JX3lOUC1V?oc=5",
+          "date": "2026-09-10",
+          "source": "Barchart.com",
+          "ko": "엔비디아가 미 법무부 조사 대상이 됨."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$503.60",
+      "change": "-17.50",
+      "changePct": "-3.36%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$100.32",
+      "change": "-5.92",
+      "changePct": "-5.57%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Slides Despite New Hopes for Memory Chips",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMGNtdWFnT3h6VVZuMC1BN3M2dFdRaTlWSXlxd2RMbnhLTU1KR1pGZmd6UDM1c0NQVXdjTi1xN253blhSQzNsNUg2dHVPSzJRUy1pTktDSXRRYnJ5SUZ3RndUalk0TGhRZWxab1V6UFlmdWZ1YlJlTEIyWVpaQWxxTWlZUlFmVFphdkhmUEpSY3NWQkFCa2g2cUt3?oc=5",
+          "date": "2026-09-10",
+          "source": "TipRanks",
+          "ko": "인텔, 메모리칩 사업 신규 희망에도 불구하고 주가 하락세."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$428.03",
+      "change": "-7.33",
+      "changePct": "-1.68%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$977.41",
+      "change": "-50.36",
+      "changePct": "-4.90%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$188.30",
+      "change": "-10.33",
+      "changePct": "-5.20%",
+      "up": false,
+      "news": [
+        {
+          "title": "China's CXMT tops SK Hynix, Micron to take memory profit margin crown",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSXpUZ05aYzNzZHk5WnFXN3NFRkdHM3l5YUhzTnpGWWNnRExUM1JDYVFKcVhIc2lkR0R6NkhmOXYxRXZ6RFVqT25hVnBBR2VzR3NDcXREYl9oOG5XZXBZQWdaNXZCQ2FBWjBQSV9ZcmQ0Ny1UVkIwOV9GamxqbHFmQzQ4QVVQTTVFRHM4bE5sSGpjbHJYMGVxMFN3S2ItR3Z5LWN5YmZrOWZOc0JkRklvRmMtSjdxNDRRakZ5TVNR?oc=5",
+          "date": "2026-09-10",
+          "source": "Nikkei Asia",
+          "ko": "중국 CXMT가 SK하이닉스와 마이크론을 제치고 메모리 수익성 1위 등극."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$165.86",
+      "change": "-3.67",
+      "changePct": "-2.16%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir and Fujitsu Renew AI Partnership and Expand Forward Deployed Engineering Role",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRi1saHh1Smx6YkR4NnlOWEZScGNGM3JqZ0ZITjZfdzZqRTJ5YjVRMGFLSXA2aGdWSTBrQUp2ZG5tZEdranNiNzFhdlhXRzk2emNXVXhGVk1rVjRSMEZnT1JUUXZ4Y2NHbU9Ib01GMTFaOHV2cDZteFB4ZnFaRFR5MzY1RUFFYzFuVFg2R1k3NnB6RWs3ck1JVWpncTVLcjhsS3NR?oc=5",
+          "date": "2026-09-10",
+          "source": "finance.yahoo.com",
+          "ko": "팔란티어와 후지쓰가 AI 파트너십 갱신 및 확대."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Two AI researchers leave Anthropic and Google over safety concerns: ‘There are no adults in the room’",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZWNvdzlvUk5ndUZPUklZS3NYX19TYkVWcHVfbVZ5b0JuWkRrMm53c20xOXVmNURSaTI0bmNnZFdkbHNlWXB5S3FmRmZ5VlpPRFpOcFVkVzdaeXZPbllFMURHcGdFdkFNM3Z2cm1vdXJndnFyekRBSVc5aWdObVRvenBHY2R1RGI4ZFVIU0VjSGphZVdYdnlzYVVabDRwenhZMi1MSXBHTFRlZw?oc=5",
+      "date": "2026-09-10",
+      "source": "NBC News",
+      "ko": "앤트로픽과 구글의 AI 안전 연구원들이 우려를 이유로 퇴직."
+    },
+    {
+      "company": "Anthropic",
+      "title": "'Extinction' warnings ramp up as more OpenAI, Anthropic researchers join calls for an AI slowdown",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZmtEXzVYTG9YMUdiR0YxRDFfUlFucHJMSFpPRUdlVEVqd29TTGZ2OEJ2NjNWV1k2UTZEd2RwSFlYMnoyeXN4TzFoamk5b1ZiRkY4RVVtRV9hSmp1aVIwUkI2OGIzckNzOTVPSDNrbG5XLWM4bU4yZlpGOFlZNnAyczdLSGE0VVJTQktz0gGQAUFVX3lxTE01eW9yU0xQdzc3YkxMVmpaY0RKVjRvcWs1SVZEbkw4OVFoeGdTeGg0N0hybl9IU3Nna2dkWmNZaTd6V2swUldYdXVUeUFNTnQ5VnpDUkFrYWkxZ3J6YTR1d0Jtem44dzBZbmQ4cHlnRTMxZW9ScGpnRm4wR2pKRFB5eGFLYUc0cWh0ZkxReHp1RQ?oc=5",
+      "date": "2026-09-10",
+      "source": "CNBC",
+      "ko": "OpenAI와 앤트로픽 연구원들이 AI 감속 촉구 목소리 높이는 중."
+    }
+  ],
+  "summary": "유가와 인플레이션 우려로 채권 수익률 급등, 반도체주 동반 하락했다.",
+  "generatedAt": "2026-09-11 08:19",
+  "date": "2026-09-11"
+}
