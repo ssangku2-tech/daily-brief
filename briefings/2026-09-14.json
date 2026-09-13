@@ -1,0 +1,231 @@
+{
+  "sessionDate": "2026-09-11",
+  "sessionDateLabel": "2026년 9월 11일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,656.98",
+      "changePct": "+0.86%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,333.04",
+      "changePct": "+0.96%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,573.29",
+      "changePct": "+0.98%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Gains as August CPI Meets Expectations at 0.4%",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPVGVzek03SnNoRFpSQm9jUUZtZFRqRV9EcjBBLUtZb20yMGd6TjBLN2NXZnFsbklua0x2Tm9JY1dMUGp0N3F5c05HYW1nRGM3WkpwNV9Gazk3MFRIVk5CeU5ESXlwbkdydDlMYnFjelFEeGFPeG1wVFJydXFPQ2JZUmlLaUdQTFY3bUJoYmFJR3ZyNG12QVcxY1k4VkRnRXZKNVM5aXJEaFNrSF9OVHVJYlI5cEZUSi1XZ0VycFRxdnZGNm1remVxN1Y5a3lNdUV0REc5blhkN1lKXzRBMGFEeXZpbFhuNWpIMk5lUXcyS2s?oc=5",
+      "date": "2026-09-11",
+      "source": "Benzinga"
+    },
+    {
+      "title": "S&P Dow Jones Indices loosens Canadian index inclusion criteria",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPaTcydnNQUEtheElJcVluYUNpWTlxZUtpT2VTdHZoZnEzRjFrM2Q3UzNKZDhIeTBxamY1cHRsRGVDaW0xOUN2ZmZaRVZidkRLejVhQUNzTzBOaGN1ZDVBMGNETTN5LWJpZUpVOTFDSjVOVWFncU90TXlVYndva2FEZ280Nkg5by10RDBTM2dqc3pKQzE3SDhxajhrblpmbnNiMTRpUTFTWnFEUnFXaXZvNFRwaw?oc=5",
+      "date": "2026-09-13",
+      "source": "Reuters"
+    },
+    {
+      "title": "Dow Jones Futures: Will Anthropic-Led Call For Slowdown Hit AI Stocks? Fed Meeting Ahead",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNTTgxYjBHZXNGVFRDVXdTdGJBQ3ZUaXB3Q2RvdFB5aHIydVdRLWdBUXRiSzJTZ3p5dVdnTi1zUlhLVEtJeVJpUEhWakw1d2FralNhdktDUEhQYWVhdC0wQzRrYkFjR1VxYkkwODFwTjBHelZDVzdxX2JzNnl0OUIzclVkY2JXQWl6TTF3TjJKZ1RYLUozTUZCTEZzVUJOMmEyRDJpNkpiNUs3STVVMEppZlVzQ1ZUb2xNN2o5VzNtcy1BbnljczFFb0dITHJtYUxnRm9nUTY2SVROZ0RXcTltNTdlOA?oc=5",
+      "date": "2026-09-13",
+      "source": "Investor's Business Daily"
+    },
+    {
+      "title": "The New York Stock Exchange | NYSE",
+      "link": "https://news.google.com/rss/articles/CBMiP0FVX3lxTE93UWVlU3g1TVNpdTNEcjI2Yk9kSHU2Tnh5Y0stVFBGRWVkLW9wbU1EbHhQaHdIOE56d2V5NXVhSQ?oc=5",
+      "date": "2026-09-11",
+      "source": "NYSE"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$218.29",
+      "change": "-0.07",
+      "changePct": "-0.03%",
+      "up": false,
+      "news": [
+        {
+          "title": "Prediction: Nvidia Stock Could Be Worth This Much by January 2028",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPaGQzVzMteGh2SFJGaGtUY1hFTDBJRTUxQVNVcmFwa0E3RnBZSzN0YmdDdkZfLWtlUTdUZndtRXpFY05PbHViOFBWQjdzeThCdXh4V0s1QTc5RXo2d2lTWUFIYm9obzFFMXhqZEIyTDBBVUNYY3FZMktiUUVPc1UzV1dleHEwSDZhVDFDVg?oc=5",
+          "date": "2026-09-12",
+          "source": "fool.com"
+        },
+        {
+          "title": "Nvidia (NVDA) Looks Cheap on Piper’s Forecasts, but the Earnings Assumptions Are the Real Test",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNUVJtM1E5S2E0VmhVQXNKOHBsMkdITVdud3ZJNW5iWk1wc1Njb1Q2eHQzYlRBTG56OGhZVGZlelBFYkRxSVpPNzZkaHhtdFpIa2ZSOXFQNlpfbGo4cVB3LXNaRHd6YUpmSzdwYTRkdEtSLXQzTXhhb2Fidm9KYnlzeGlUSlJPbUthREV2REtGWkJ2VnRXSzQ5dVlR?oc=5",
+          "date": "2026-09-13",
+          "source": "finance.yahoo.com"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$516.13",
+      "change": "+12.53",
+      "changePct": "+2.49%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices, Inc. $AMD Shares Sold by Corient Private Wealth LP",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPQjBLbWNFUU1MWDYtUE9aaVdRTHd1UmNsYjMweHJWREpTOWlTQzdqQ09HaW9FQUpNNjc4cXRnT3RqRWF3dERiblp5Rm8zbjBKc1VUSmYxUXJleDlqRHZLaFExeXJDOTBMNmhsMFVnbV9CRlZLbXpHZEtCcnBQeVFkTHZTZWlQQUhteTZGX2dmajlkcDktbWVHUnplbF83NUgweWxnakZRUndvcnJ1cnNITTUxejJsU0lSeXB6aXRVbDRrNVFHUjN2ZFVpTVI?oc=5",
+          "date": "2026-09-11",
+          "source": "marketbeat.com"
+        },
+        {
+          "title": "Advanced Micro Devices (AMD) Draws Fresh AI Backing, Is The Valuation Still Compelling?",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMDBiVVpua25TemI2TkJDQUZPRzJBZ1hJdUFkaUptVktuYmpWdkFUdHYzaThxdWp1dE5kYkR1czJuZHI4ZXg3S1hYY3F0aVFXTXdXUm92aS1CdHhRb1BUY3I2S2YzRUJRd2YtdWlYYW1nY3BFNzdNRzJwQ1FDMHJzbGZkYVVpc1ZyaVlGbThueWdvMXpTQ3VPZVROUDhWSWdLZWRDV2lETVB5dm9LUmc4bDhFVDBLOERpSVBvYnpxSlNOYWQtOWFwRmtrYURZazk0WVQ2bWo4S2Z0c0w3dHU00gHkAUFVX3lxTE12bi1VMGhfbzVTb1YwSUtycDRfeFNlY2R3X19hRjVvMXRqVUd0NkFjSTl5cVNBaHhlTkc0RnlRa0NqMHF1NG1QM05qaGhFXzdNNTJUanBva1BaX1htY29SNURTa0N3WG8zelhUaEJZTG9yd2JkdXdXRVpodnhSQ1dtQ2QtRDk3eS1kWnNQYm5NU1dnVUZ3MkN6eFhWS0dLdElrY19US295N2k2U2hCVXk0WnJ0NFdVUXJtOHhieW5Vcnh3UFVNcFptRURSOVFhY1JpNjdnMnM2cXBIWksxQTFCWk51cA?oc=5",
+          "date": "2026-09-12",
+          "source": "simplywall.st"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$102.94",
+      "change": "+2.62",
+      "changePct": "+2.61%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Is Intel (INTC) Stock Volatile After Earnings? Revenue Beat Overshadowed by $11 Billion Loss",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPdGVhdUdOWHYwd0I2OHRLRjlFVE9KTkNud09aOHhCOTZGY2NDZVM4VjFnTTZKdkpKdlBORHo1OG5RWENLVFg4VUZoYVdVWVRpaWFCSWtxY2dHX280ZFFsaDlvSldKQm9NdTdWTjlueks4V3V3RUVJQ2pqYVFtNi0xVU9zY2V3MGdONjRFaHJqU1RRaVZZMm9GZndlNVRSaWpveDlMWG41WG5qUk52T0tRcGl1bklGZ2twMmQyQnJxdkM0YzU1d1J2Wg?oc=5",
+          "date": "2026-09-13",
+          "source": "TradingKey"
+        },
+        {
+          "title": "How Far Could Intel Stock Fall After More Than Quadrupling In A Year?",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMHMxR3FBRzUzY1I2NDE3bldOaUtiUVB2RThGOGtlaGNDLU1GTDc2RUlENzJtTWR0bXp1empCYzZmV1lJWDZsT2lEOWQ2R2ptYlVwSFhtcWtlM2FfZmJYbXBTc21Fal9vNTZMdVh6WjdVeHI4YlUyVDAzZHEwT2dHNzJObWlnZlhFT3YxcnFvMnd5TFFEdDg1YTQ2dVIwR3llNlJwSGprOUVHRjh5UmltVFpDT0RoOWk1T1dzeGVFNUxVQnM3b3E5RQ?oc=5",
+          "date": "2026-09-11",
+          "source": "Trefis"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$433.24",
+      "change": "+5.21",
+      "changePct": "+1.22%",
+      "up": true,
+      "news": [
+        {
+          "title": "Prediction: Taiwan Semiconductor Manufacturing Stock Will Hit $600 by the End of 2027",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOejNzandWdGJVaU1UbktHZmhSeFhRMzlTTk5qMXhVWW1aNFl5S0E0em1YNHFOWGdkTUVoVUdnd2pKRjlTejFkWndPQm9sTlhTNXpTWXVlMnN2cmpzQkI3cWh3QVZTZno2YU1uZkdreXVlUzgzeFN0QXFZSXpIVE1wTGN2emZuUUtra3pTai1aU3g0dkI2amQySw?oc=5",
+          "date": "2026-09-13",
+          "source": "fool.com"
+        },
+        {
+          "title": "TSMC Price Prediction: One Number Could Define the Stock’s Next Move",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNY1lpSEt6MWFQbV9OMDZ5aE9SVFdzanlSMTdrSVV1b2dfcl9XMDdlbThVN0lRdjJ4YU90bGlTUVJhRUM5UXR1Q0RUd0VISUJDVjR2eWw4RkhrN2NPN1B3TWdaZHBaZ19BVFlmZzlLdkZkcVVtRHpScEt0OURUZDFPeF85M3ZTY3RPczhtNmhFSTJGbU1adkllTVFWcmVpR2N4VEZhdFg4NGNyZmROTkxN?oc=5",
+          "date": "2026-09-11",
+          "source": "24/7 Wall St."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$975.26",
+      "change": "-2.15",
+      "changePct": "-0.22%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Micron Stock Just Sank",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE81NEpNWnh2SWVxWW1MWHV4Y2Y3cWxDOVVJVW1QaG1vYVRQS29LelZ4bC0tQjBHX2dUbFhKMlVpQ0xvdDZMQ2EzN1RXNnY3MVFnc0pUQUt5MDV3eUNUejBSY09fVmVWTThWMkNsVW5yakNuTWQ4Z0hKMQ?oc=5",
+          "date": "2026-09-11",
+          "source": "fool.com"
+        },
+        {
+          "title": "Micron Is Down 19% From Its High. History Suggests a $5,000 Investment Today Could Be Worth This Much by 2030.",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNRGRJbE9BdGpUMUJEbjZDbkg2X0FNLVdjZHo2VlVabnpFazRGa3MwV2RTTHE3TExYWlpnTzFyUFlmTEI3dU1TVW1YaGgyUlFFUzBhTEZiMVNibFV6X3h3QS1LZm4zQXNpd2plVFg2LXRoRFpkeVI5ZFQ1UmthWEU2VFo4bWRkVEFLel9iQVhaX3pGTjJVbldOYw?oc=5",
+          "date": "2026-09-10",
+          "source": "fool.com"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$190.07",
+      "change": "+1.77",
+      "changePct": "+0.94%",
+      "up": true,
+      "news": [
+        {
+          "title": "Prediction: This Memory Stock Could Surge 233% Over the Next 3 Years (Hint: It's not Micron or Sandisk)",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZ2ViRWZRMGhPT3FwUTFRcHdHN2RBTUNra1BfYnNYUDc1RktGTndvZjVKQmZONlRaYzAyVVVsSVZiRjA0NHRWVlFJVElZWTFtSUIxRkRCYks5ZWp2bWhHQ2tpWW4wamVyOVBvWDR1X0wxY0gwYTlQLTFMa1h0Z1oxbkhkMGNxVi1RMDdaMG5hbWprTnZQeFlR?oc=5",
+          "date": "2026-09-13",
+          "source": "fool.com"
+        },
+        {
+          "title": "DeepSeek's New AI Model Spooked Samsung and SK Hynix Investors",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQV3JiMkdHTHAwU3BMaGxfcHJ6SlZJRjhLQWhjekUzVGlwUzcyWHFGX1FENm9QUDVNekxnUVA3VjJobjY2b2NJeURhcHlLZXZ6SG5QdndOVExzMUJBS05LMnc1ZjYxTWN2SlMyblJaT1ZSQTBObWVhbXh4aGtIbFpQQ1ZXSjNHUl9lZ1NYTkhnbW9LYjA?oc=5",
+          "date": "2026-09-13",
+          "source": "Startup Fortune"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$167.23",
+      "change": "+1.37",
+      "changePct": "+0.83%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nebius And Palantir: Implications Of The New Partnership (NASDAQ:NBIS)",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOMU02QUlJTlhDYmdCWVVOd3JLNC1ndGVONmJaWUhaQkFTRlJYRlZFeTMzdGlESkR6cW5iSUFnLVJqMktNaGYwWVowR0ZlOWJwclFxaDgxb294bFlZV3FjYmpody1zNzhJRlF4NnNRWV9ZZnQ1bkNDWlFpZ1huWW9xaXotdHdZeWxJcm5lTlBtYjBoa25EbXU1NmRIYmE?oc=5",
+          "date": "2026-09-13",
+          "source": "Seeking Alpha"
+        },
+        {
+          "title": "Palantir and Nvidia Are Building a Sovereign AI Stack. Who Captures More of the Economics?",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSzlYbVV0WFhYUlBjdDRkazM0MkpxS2xYbFExM1dhRlh4Wkh1ZC0tTUpocG9ob3BuMEQyc1pmM3U2Y3VXNEJGaHJvVU1QZFJQd2s2UmVHZy1zWVBOanVOX0x1dVFtSnRmWWlydnlpS2R2QUJXckQ4MFZza2VibU9wTjB1UVhOU056T1FqYVlzenc5RklNVHc0U0FKZ2l4NDJVbjY0?oc=5",
+          "date": "2026-09-12",
+          "source": "finance.yahoo.com"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "We Must Pace the Frontier",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFByRm5SZWdmLXZJN2RBM2hteVFFT0F2Qk5GVFozVEFmZHlaRVhYRmJNZ1pOS1I3MGstU1JvQldUeklNYjBUcDRGLTdDMGpnMzk5VTlxS0k4anFpRzFpMWhGeTBMYVY?oc=5",
+      "date": "2026-09-12",
+      "source": "darioamodei.com"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Here's who stands to make money from the Anthropic IPO",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeVpmU0JnRFZzaXNNSXlMZzQtVkwyNHB6dzc0bldFRldIRFpYdGRVNm1zRTFhWUVRNkZmR3ZJcnVTc1RLS0k5dHpmaEdYZ0tWTHFPUkhnMzdJb014a1paR1NBalljbE1vOUNMTlhhc0hXQ2J5Yms5NmVVZm1XS0NlV1BWYmo4X3BSMmh0R3ZzVk53UTVQbHlSX21La0ZOd0NMVmNvYV9kZ3lNQVk0a2tj?oc=5",
+      "date": "2026-09-12",
+      "source": "finance.yahoo.com"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic tells investors it will be profitable for second straight quarter",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPeEJ6YVJJNkh0djM5TC1ZNW9wSkJoeU1nMDA1dmpxeW5XdjR1cmVlZzUzeEJLbHFfQm9KMFNhbkY2S2N1bHV1V2xncGtBMERtRzItTlFqUEFBVHZ0LUJwSDY2eTA5c21rS3hEdzBlWVZNMHgyalBTbnZ3MjgtbEozU00yUnY?oc=5",
+      "date": "2026-09-13",
+      "source": "Financial Times"
+    }
+  ],
+  "generatedAt": "2026-09-14 08:19",
+  "date": "2026-09-14"
+}
