@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-14",
+  "generatedAt": "2026-09-14 07:50",
+  "events": [
+    {
+      "title": "상섭",
+      "start": "2026-09-14T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "세이지 우드(홍천) 08:06, \n남훈,익주,길호",
+      "start": "2026-09-15T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 887,
+  "importantMails": [
+    {
+      "from": "Trip.com",
+      "subject": "[트립닷컴] 항공권 예약 확정 안내: 서울 - 사가, 사가 - 서울",
+      "summary": "서울-사가 항공권 예약이 확정되었습니다."
+    },
+    {
+      "from": "Trip.com",
+      "subject": "[트립닷컴] 보험증권 발행 완료",
+      "summary": "항공편 여행 보험증권이 발행되었습니다."
+    },
+    {
+      "from": "Trip.com",
+      "subject": "[예약 확정 안내] 컴포트 호텔 사가 예약이 확정되었습니다-NoReply",
+      "summary": "사가의 컴포트 호텔 숙박 예약이 확정되었습니다."
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Claude와 공유되었습니다."
+    }
+  ]
+}
