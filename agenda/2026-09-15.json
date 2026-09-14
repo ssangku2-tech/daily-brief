@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-15",
+  "generatedAt": "2026-09-15 08:40",
+  "events": [
+    {
+      "title": "세이지 우드(홍천) 08:06, \n남훈,익주,길호",
+      "start": "2026-09-15T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "동기_강원",
+      "start": "2026-09-16T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 895,
+  "importantMails": [
+    {
+      "from": "Agoda Customer Service <no-reply@agoda.com>",
+      "subject": "Agoda 예약 확정서 - 예약 번호: 1774306527",
+      "summary": "아고다 숙박 예약 확정 안내"
+    },
+    {
+      "from": "Toyoko Inn Saga Ekimae <notifications@agoda-messaging.com>",
+      "subject": "Reply from Toyoko Inn Saga Ekimae (Oct 20-21, 2026)",
+      "summary": "예약한 호텔로부터의 답변"
+    },
+    {
+      "from": "Trip.com <kr_flt_noreply@trip.com>",
+      "subject": "[트립닷컴] 항공권 예약 확정 안내: 서울 - 사가, 사가 - 서울",
+      "summary": "항공권 예약 확정 안내"
+    },
+    {
+      "from": "Trip.com <KR_FLIGHT@trip.com>",
+      "subject": "[트립닷컴] 보험증권 발행 완료",
+      "summary": "항공권 보험증권 발행 완료"
+    },
+    {
+      "from": "Trip.com <kr_flt_noreply@trip.com>",
+      "subject": "항공편 관련 중요 정보",
+      "summary": "항공편 관련 중요 공지"
+    }
+  ]
+}
