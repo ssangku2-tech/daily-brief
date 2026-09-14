@@ -1,0 +1,178 @@
+{
+  "sessionDate": "2026-09-14",
+  "sessionDateLabel": "2026년 9월 14일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,619.98",
+      "changePct": "-0.48%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,186.41",
+      "changePct": "-0.56%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,421.20",
+      "changePct": "-0.29%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow, S&P 500, Nasdaq Futures Fall After OpenAI, Anthropic’s Appeals Rattle AI Trade",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPajc4QXo4bXNBSUZlTk5PSVZ0U0MwVUszTmd6SlBLVjBnMm9vaDZrbGtHcFVEa1k1S2xwSXBsNXA1OE1Ud1RhM0o4T0tmRWZNSFVCWUFzdlhadWU0TGprWXRoQ3B3S1YyekQzMXNEam82WDZYZlpEdEVMdmlOMFFFaXBOZUZPVTIyZEFDU3k5NnJoaGRWbEFpNXladWN1Mk1QOUNTODlyOHI2QTFlajlv?oc=5",
+      "date": "2026-09-14",
+      "source": "benzinga.com",
+      "ko": "OpenAI, 앤트로픽의 AI 개발 속도 조절 촉구가 시장 심리를 악화시켰다."
+    },
+    {
+      "title": "Doomsday fears are coming at exactly the wrong time for the AI-led bull market",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPRi1VRkJXM19TbUcySE9XNG5OM1p2MUFndFJwcXhzeTJjaXE4SXcyTk1yWUlSNW9SUDg3Q1Q4a1VQbkJBdVJBdEk0Y1hQUGxLeklmSU1Pay1GOUdSbDhRZUVrWVlZcldIdE8wbFZ3VklXRkxWZVlVY05ZMF8tb2VWYW1BM2U0bWhFUkhfY1h5VG9Fd0poTWgwWWRsamstRDcy?oc=5",
+      "date": "2026-09-14",
+      "source": "businessinsider.com",
+      "ko": "AI 주도 강세장이 규제 우려와 안전 이슈로 흔들리고 있다."
+    },
+    {
+      "title": "US Stock Futures Fall as AI Safety Concerns and Middle East Developments Weigh on Markets: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSFl0RG5qMnRRbExEdDhfLXo0a09DQ0k1SC1lNXJoWWE1QkJheG1NU0NoWHU2NW9Yb2tyeTNQMkFKR0xPcmFkTnU4ZzJoQUQ3Nk5iNkUtZVhBVjhHQ2tvdUVVTTcwSWNzNFpJalpGYWN4bURTTkUzSDlSZy1nRWlKMTI2QnBRTWthand6SzZoQnNoOW8?oc=5",
+      "date": "2026-09-14",
+      "source": "Yahoo Finance",
+      "ko": "중동 상황 악화와 AI 안전 우려가 선물 시장 하락을 주도했다."
+    },
+    {
+      "title": "Dow Jones, Nasdaq, S&P 500 weekly preview: Imminent rate hike to test equities",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPc1VvaVRPOEtLekhKZ2lzVDduNWRIT2dJX09mRWV5NzRTc01Vb2tCY295em1uMm40ZC1YQWlWaTBUUW94RlJWUDgtWkxIVXZTS09DeDJQdE9KaXZ3YU9DQndGQkItTjd4UFh0UnF2ajRnNHFWUHE1ZmhuV1N5STJFOGJ2VTk5cUcxXy1CVTk4ckJfV1VIZmYtTWNxa3VsZU00OU1GYS1jdUhuRGR6RWxTVUltZkxhVmtPREp4SkNYTHNrTzJ3Qi0zeFhsOA?oc=5",
+      "date": "2026-09-14",
+      "source": "Investing.com",
+      "ko": "임박한 금리 인상이 주가 변동성을 높일 수 있다는 전망."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$210.96",
+      "change": "-7.33",
+      "changePct": "-3.36%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Stock Drops. It’s Still the Best Chip Bet in an AI Slowdown.",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNd28zaEgxYzJOZi1kWWhWa0Y5RG5za0VEUDN5dEVXTjVPdzhnTlhLX3BIaUdTNUEtN20zRWhkandEbDlZaTNiX0VrUkQ2aFQ3Z3BvbmlDeTI5enc2RUJqaTkzV3FZZWxZUmxqMXBNZ25MNnRLMDhPYmV1aTd0WWc3MERLWQ?oc=5",
+          "date": "2026-09-14",
+          "source": "Barron's",
+          "ko": "엔비디아 주가 하락에도 장기적 AI 반도체 주도권 평가는 유지."
+        },
+        {
+          "title": "NVIDIA (NVDA) Stock Drops Amid AI Model Usage Concerns",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNFoxZ3JlSVIxcklrYmQ4V2V3NjEyc0Z4bGZmN0xDWlJyOG9xY2c0ZHhkSzItVkRObXlidTIxVloyUUVEdGYwc0hjNUlncW5ONWlNdTJHTVZ0ck43bDJUanJuWnBvMV8xSzFGYzFKOUkwT19sc2lGZE9JUk9iUXVkQUljNnRIUURTVkk2cGxWeVZ5bkhKNHc?oc=5",
+          "date": "2026-09-14",
+          "source": "GuruFocus",
+          "ko": "AI 모델 사용량 우려로 엔비디아 주가 하락 심화."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$493.41",
+      "change": "-22.72",
+      "changePct": "-4.40%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Is AMD Stock Falling Monday?",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdEhDUGF6QlZZUllrQzhaQllfcHZ6MU9SbnlPREJsM3IyS2FuRXNvZTAzTFFKaWZ1UzdTX3BjMmt5VC1VS3JSUzdVdUdpdVd0WTBFYVJ4c183bUZIMUlnTkRha0tlUUNlaWRqdU5GdUtJMlNibG83RkJHbk9DdlgzVjNxZ2xsMUEtcmRyRw?oc=5",
+          "date": "2026-09-14",
+          "source": "benzinga.com",
+          "ko": "AMD 주가 하락 배경의 구체적 원인 분석."
+        },
+        {
+          "title": "Advanced Micro Devices (NASDAQ:AMD) Trading Down 4.4% After Insider Selling",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQaXptaEhseS1vYk14Vkg3N0RtM3AxaXU3Q2M4MzVEaUktbV9zQWVJM1g2UFFjS2FZNVNGbmpFRWhZbmVMLXo2RDZvQy1ZbEF2Mi1kcGdNV21qc1lINzFUQU04YU1PbHZDTGdFcGlVcXc4TW0xMlhMVGpuVXhPcllSSlFaQTV6RnB1WEl3RmJaRElLa0RtY2ZmMGxrUDhyZDFQV1hWTVg3ZGwxZXY1MWxNRjZ1QUszTi0wZUVBdHlQNHdlWEpJLVJCVmVQNA?oc=5",
+          "date": "2026-09-14",
+          "source": "MarketBeat",
+          "ko": "AMD 내부자 매도와 함께 주가 4.4% 하락."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$97.19",
+      "change": "-5.75",
+      "changePct": "-5.59%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$418.01",
+      "change": "-15.23",
+      "changePct": "-3.52%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$924.03",
+      "change": "-51.23",
+      "changePct": "-5.25%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Stock Sinks Again. What AI Safety Fears Mean for Memory Chips.",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTHV5ZDlaVFl4bzRZM0UyNUo5M0VLXzc4d0VXcmI2RV9YWlRVUjI1d1YwejNmMUwtQ1VVMWI0SENOeUVuZTdON0NCaWxKWFVaYmswOVJXWHkxMmJQcnQ4enNkSzZ6OUpmTnJ4TjQzZWdSWnNRU282bVUxYUxHX0VPY2J3?oc=5",
+          "date": "2026-09-14",
+          "source": "Barron's",
+          "ko": "AI 안전 우려가 메모리칩 업체까지 타격, 마이크론 5% 이상 하락."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$175.63",
+      "change": "-14.44",
+      "changePct": "-7.60%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$173.31",
+      "change": "+6.08",
+      "changePct": "+3.64%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "AI 'kill switch' may need to be mandatory, Anthropic co-founder says",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1LX1VWZndOZkpCRzh4M21BdnVxb0QwNGxiX3UxamJ6TlV4ZDZRZWlhY3RmMS14WjNDazU1YWpKMFF4THhWNFF3eDBndzBqdmRBcFl3dTBiTk1GaXM?oc=5",
+      "date": "2026-09-14",
+      "source": "BBC",
+      "ko": "앤트로픽 공동창립자, 의무적 AI 킬스위치 도입 필요성 제기."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic co-founder says we lose to China by 'rolling the dice' on AI safety",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4tLXFhamV5UzAzWGpYWkdsZkh1aV82V2JLOUFZOTdycVBZbVJsS0NDbHpPVkFyQnhPaDRZR0k3N3hIRzF3V2kwUDhWeGtnSms4SzMyeUl3?oc=5",
+      "date": "2026-09-14",
+      "source": "Fox News",
+      "ko": "앤트로픽 측 AI 안전 무시 시 중국에 뒤질 수 있다고 경고."
+    }
+  ],
+  "summary": "AI 안전 우려가 확산하면서 반도체주 중심으로 광범위한 낙폭을 기록했다.",
+  "generatedAt": "2026-09-15 08:56",
+  "date": "2026-09-15"
+}
