@@ -1,0 +1,186 @@
+{
+  "sessionDate": "2026-09-15",
+  "sessionDateLabel": "2026년 9월 15일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,585.73",
+      "changePct": "-0.45%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,981.57",
+      "changePct": "-0.78%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,093.11",
+      "changePct": "-0.63%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Jones Futures: S&P 500, Nasdaq Break Support; How Will Bonds React To Fed Rate Hike, Outlook?",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNcDY5cGk1b1piYWlVVV9zbXlFVjRZRjNGSDZOWUU1emRTYWd2dExlYS1wcFBPRTBTcTNQNkdLWUhrUnRtdDNjLXgzM05NblpsZjUybUlDbFdUT2JicmhzenFNUjFqa0h1Y0VLdXpvWTM1S2RyWjNaaUxzcG84ckhTNzlxM285OGdiQ3R4UVpwTEhsYTlacmc2Q09tS2VxNk15VkluVWlveUFLalNOZjVPUW9KRmFyc1BCbXRDSERmNU1EZEJGTXc?oc=5",
+      "date": "2026-09-15",
+      "source": "Investor's Business Daily",
+      "ko": "S&P 500과 나스닥이 지지선 붕괴. 채권 수익률 급등과 Fed 전망이 시장 압박."
+    },
+    {
+      "title": "Dow clinches its worst September start since 2008 as history repeats itself",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORzBLN1JMdWRuMGpSUDZMdXNIT295UVhfdnFyWDE5UTZQMm96V1ktWTJyaU1uU2RadFd2QnJRd1A1bmNpV1o1UlAzVkdoR0xXSGFmeC1OQ01vamNUa3c2eHRNaDBpUmF2TmV1dDNyRjRuZVFFS2hUMTRlNWcxNUZkTDMwZ1hqQ180OWhhb1FtQ3hNX280T0pySW5PcEJEdlp6TWVtYlZpSm0tbTBJTFpmN0k1d25sRVEtTGc?oc=5",
+      "date": "2026-09-15",
+      "source": "MarketWatch",
+      "ko": "9월 첫날부터 약세. 다우지수가 2008년 이후 최악의 9월 시작 기록."
+    },
+    {
+      "title": "US Stock Futures Edge Lower as 10-Year Treasury Yield Moves Above 5%: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPSnI4aHg1NFlZNVVFUkxJQjBtVnRyZ2xpS2QzNWRWWGdQZDVqRUNJbjl2LWZnZEtjVzdXamhkWExzTjdiRmJKNGFDbWVIeXdXLVE4WkU2dVRhRVlNcDNNcjlOMHlBdHptNFpBYzNLbDRFSlBXdjBpaFBrX2RRbUdENnpOelJnMjF4andBZ2ROcHdsLVMtejdF?oc=5",
+      "date": "2026-09-15",
+      "source": "Yahoo Finance",
+      "ko": "10년물 국채 수익률이 5% 돌파하며 주가지수 선물 약세 지속."
+    },
+    {
+      "title": "US Stock Futures Fall Ahead of Fed Meeting as Oil and Treasury Yields Rise: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTzZEOXRIWFFCMFVOVkNRdTJmaGdkdXVUVHVBUTNoYzVTb24wVjJFMFhLSm9NR3BncF9BRkNDdGJKN0hnRFBKdGZudDdsc01sX2YtVnVKMjcwS1JpTE1JUUR1SWo4N3R2WmdSZjZ4QV9ZNmViWHBHVDNJTElQT2hLSU1Bd3lkaXVqM1dTeW1UbXNIUjRxRUlJ?oc=5",
+      "date": "2026-09-15",
+      "source": "Yahoo Finance",
+      "ko": "Fed 회의 앞두고 유가와 채권 수익률 동반 상승으로 주식 선물 하락."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$212.17",
+      "change": "+1.21",
+      "changePct": "+0.57%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$504.20",
+      "change": "+10.79",
+      "changePct": "+2.19%",
+      "up": true,
+      "news": [
+        {
+          "title": "What Is Going on With AMD Stock on Tuesday?",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTXJjYUJGc0o4Q0U1eGpCeGxBazRmb3VFZmJXVXZSdi1wMzY1V3BmRjY2cWVHck44N1pMMFZ4ZjY1QmVhNi1FUzQ2amltTzZuVjBRQlFUUjFWTmxfVlZ0UENZZUxZbnliaGF4VWZ2SFpYV0NoT0prWnhoOHJDVHVYM2Vidkw1d3Y4YW5zLUhKb2NtT2RIWFNZQUg3S0FHZw?oc=5",
+          "date": "2026-09-15",
+          "source": "Benzinga",
+          "ko": "AMD가 이날 상승한 정확한 사유는 불명확하지만 시장 변동성 속 강세 보임."
+        },
+        {
+          "title": "Nvidia Will Still Beat AMD Through 2028. Here's the Data Behind My Conviction.",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZlR3SFI1aGJfbFVuRWVab1AwalpqYXQyczFxSUV5cW1nd0V3QWNTb1pwUEtiTURHcVd1Qnh3c21sa2h3Yk5RN3Z4MWVjdkVOQS1TdVJXSDRJQVFjb0N6bGlzbWNpY2phZWFpRTJ4OE9Ia3BxOG1LZHdETlpWVklIV05jaGQyVTUxLUxiSlpZdm9xOVE4bWYw?oc=5",
+          "date": "2026-09-15",
+          "source": "The Motley Fool",
+          "ko": "Nvidia의 기술적·시장 우위가 2028년까지 지속될 것으로 분석. AMD 추격 어려울 전망."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$97.14",
+      "change": "-0.05",
+      "changePct": "-0.05%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel: No Bad Products, Just Bad Prices (Rating Downgrade) (NASDAQ:INTC)",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxObmpfVTBsSVVEMG12MWFHYjJNbkZIRWpFMWJvSDhUTDg1cVp5aFJDMk50UXpsSWk5T1BkRGRJUWttX01QMU12Q1NvOXZiRS1KTUljXzQ0a2ROVlJvWjVXX1labVFtalVBamFtT2lBN3YwaF9hUTNxcnQ4MVNtZmNHbUstV1BHYmZkSHpJZUE5dU05QV8zR2VZTm5ZYw?oc=5",
+          "date": "2026-09-15",
+          "source": "Seeking Alpha",
+          "ko": "Intel 제품은 경쟁력 있으나 가격 책정 문제로 평가 하향. 투자 매력 제한적."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$413.75",
+      "change": "-4.26",
+      "changePct": "-1.02%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$927.60",
+      "change": "+3.57",
+      "changePct": "+0.39%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Stock Moves Past AI Fears With Launch of New Memory Module",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPeGZ0dmc2RDl6a1Q3Y3FrUHA3YzNIajEyeVE4YVVHQVFremEzZU10LXFLYjFVQVhTckJEMFR1YXhUSlFZN2k3OV9Yc1NrMnI3Z1RzemJEWlBvdmVSN1RFZlhIaUlZS2FKQm91YlZXN19zTmhZRnRkYzY4Znk4UUlGdDlLZGFoNTQ?oc=5",
+          "date": "2026-09-15",
+          "source": "Barron's",
+          "ko": "Micron이 새 메모리 모듈 출시로 AI 우려 불식. 신제품 수요 견고."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$174.83",
+      "change": "-0.80",
+      "changePct": "-0.46%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK Hynix Capacity Hits Zero: Tech Giants Offer to Fund Factories Amid AI Chip Shortage",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQM05JcTlzLXJpbWNiVHVEZFhWc3hyajJpRGtlalVmRmtNS2poM1A1NGU3ZENSU1I5S1VnVTd5SnctdVFRdFFXaTVMUXFNTXAtT05zLW9fZVZaTWRzQVZsbm9yUjlCLVBhVUpKVXBlQmMtMmpsWnR4akxCbGtuNnFLa2lTTi1jNmRLNkJKTWxpYmJvWHNnaXQtT0c4NlNkN19UeHNKV3N3bmZvUVh1R2R5SldINk9lNDlZSEpaZmwxbHAwb3RYOHlteUhRMVdUSEhLY0lLcVkxVQ?oc=5",
+          "date": "2026-09-15",
+          "source": "tradingkey.com",
+          "ko": "SK하이닉스 공장 증설 자금을 기술사 제공 제안. 부족한 생산 능력 해소 방안 협의."
+        },
+        {
+          "title": "South Korea's power grid limits AI memory chip expansion, delaying SK Hynix's growth plans.",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOENCdE0wS1dUWDFKNXAxbjRiaXRiTklENzFRTEZiNDdMYVdxWXZiTUc3S2lkYXB6anNxQXVSS1k5YUZjT0N5dmpmV29qcHBVaXV3cWVPUjVydWYtSGJHOWd2OWFUREZKZXRrdnJqLUVDRGQwUjVra0lwTG5aaWZ2RGFXR2FSbDdmM25yb3Q4dVNBMHE4Uy1ZM3FmRQ?oc=5",
+          "date": "2026-09-15",
+          "source": "Pluang",
+          "ko": "한국 전력망 용량 제약이 SK하이닉스 AI 메모리칩 사업 확장 저해."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$172.56",
+      "change": "-0.75",
+      "changePct": "-0.43%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Nvidia's Huang rips Anthropic's proposal for AI safety antitrust waiver: 'Completely unnecessary'",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE44RHpQWkxyODlqZFVxWEs5TjRrN2ZWMktZUGRyWERQMURrUEZSWk53QXRpRURxcmJtMVJvcmIzWTY5Unk3VVBlRThad2J0YVhJcFRkSVdOUlNvU3Jvbzh1anRPTGU3SGZnUXZOOE5GcWtQOXpPMldaR1hCTdIBgAFBVV95cUxNZ1VaYzZvQzNWOHQwX3Vfc1BraXpSRU91R2E5ZWVoSUhaZjNZQ1BfT1hUaFU5aEI5cF95UHE1V3VWX1ExcGpQR2NXc2JsSUJzWGFGRjU3TC1waW1hM0FmbTNRS2c2UlZVcWk3bmxudUNBbXBVYWJDVHRLRm9meG1zQg?oc=5",
+      "date": "2026-09-15",
+      "source": "CNBC",
+      "ko": "Nvidia CEO가 앤트로픽의 AI 안전 독점금지 면제 요청을 '불필요'라 반박."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Palantir and Nvidia Are Restricting Anthropic’s AI. Microsoft Could Win the Enterprise Trust War",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYVRVNkI4ZU9iTkNsUXNGcjVFZjVvOUU5SC1wMzFvdS1JelNTU1k3eElISEZXQnd5UEo3cWN4QUl4aWZtMXo5c3pqdFR0cTZaYUVpbXZ0ZWVsdjNSbzhveG5vaGR5VkNDbF9zLVNFdmhqWENWWF9OaDhVNWpuVjgzN1JURzJqRjViZWFpd0FQMjhBeUlleF8xakJkb3FvUzd1bnZETmM0dw?oc=5",
+      "date": "2026-09-15",
+      "source": "Yahoo Finance",
+      "ko": "Palantir와 Nvidia가 앤트로픽을 제약하는 가운데 Microsoft가 엔터프라이즈 신뢰 경쟁에서 이득."
+    }
+  ],
+  "summary": "Fed 금리 결정 앞두고 채권 수익률 상승하며 주요 지수 하락. 반도체주는 엇갈림.",
+  "generatedAt": "2026-09-16 08:35",
+  "date": "2026-09-16"
+}
