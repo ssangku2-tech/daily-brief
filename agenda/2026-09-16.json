@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-16",
+  "generatedAt": "2026-09-16 08:23",
+  "events": [
+    {
+      "title": "양수_조문",
+      "start": "2026-09-16T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "동기_강원",
+      "start": "2026-09-16T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 896,
+  "importantMails": [
+    {
+      "from": "Agoda Customer Service <no-reply@agoda.com>",
+      "subject": "Agoda 예약 확정서 - 예약 번호: 1774306527",
+      "summary": "숙박 예약이 확정되었습니다."
+    },
+    {
+      "from": "Toyoko Inn Saga Ekimae <notifications@agoda-messaging.com>",
+      "subject": "Reply from Toyoko Inn Saga Ekimae (Oct 20-21, 2026)",
+      "summary": "예약 숙소에서 회신이 도착했습니다."
+    },
+    {
+      "from": "Trip.com <kr_flt_noreply@trip.com>",
+      "subject": "[트립닷컴] 항공권 예약 확정 안내: 서울 - 사가, 사가 - 서울",
+      "summary": "항공권 예약이 확정되었습니다."
+    },
+    {
+      "from": "Trip.com <KR_FLIGHT@trip.com>",
+      "subject": "[트립닷컴] 보험증권 발행 완료",
+      "summary": "항공권 보험증권이 발행되었습니다."
+    },
+    {
+      "from": "Trip.com <kr_flt_noreply@trip.com>",
+      "subject": "항공편 관련 중요 정보",
+      "summary": "항공편과 관련된 중요한 정보 알림입니다."
+    }
+  ]
+}
