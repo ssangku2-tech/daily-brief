@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-17 08:31",
+  "events": [
+    {
+      "title": "박,김",
+      "start": "2026-09-18T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 900,
+  "importantMails": [
+    {
+      "from": "Agoda Customer Service <no-reply@agoda.com>",
+      "subject": "Agoda 예약 확정서 - 예약 번호: 1774306527",
+      "summary": "숙박 예약 확정 안내"
+    },
+    {
+      "from": "Toyoko Inn Saga Ekimae <notifications@agoda-messaging.com>",
+      "subject": "Reply from Toyoko Inn Saga Ekimae (Oct 20-21, 2026)",
+      "summary": "호텔로부터의 예약 관련 회신"
+    },
+    {
+      "from": "Trip.com <kr_flt_noreply@trip.com>",
+      "subject": "항공편 관련 중요 정보",
+      "summary": "항공편 예약 관련 중요 안내"
+    },
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Updates to managing AI crawlers on your account",
+      "summary": "계정의 AI 크롤러 관리 정책 업데이트"
+    },
+    {
+      "from": "noreply@kakaoinsurecorp.com",
+      "subject": "[카카오페이손해보험] 개인정보 이용•제공 내역 안내",
+      "summary": "보험 가입 관련 개인정보 이용 안내"
+    }
+  ]
+}
