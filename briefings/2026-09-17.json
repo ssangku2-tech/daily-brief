@@ -1,0 +1,134 @@
+{
+  "sessionDate": "2026-09-16",
+  "sessionDateLabel": "2026년 9월 16일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,551.81",
+      "changePct": "-0.45%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,978.42",
+      "changePct": "-0.01%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,461.90",
+      "changePct": "-1.21%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "U.S. stocks slip after the Fed raises interest rates, hints more hikes may be on the way",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPQ0o4SEFnLXVuc0pFakhWQXNrNVdZOFBqTmZsR3dlMlFFZEluX2VWbEJPOGJkRkZ6a2tfaHZySVdpaVhYZk1aeGZFdjM2UExoOGMxc1BDbkcwUVFMaElEXzBUb2ItX1hmRVkxWjhHanJyV3ppMGJFcjhNY3BVYlZMNFVCemRaSW94Z1hBZy0yNmd3R29KMEppZThtNmxWaERxa3hfZzZ4WU5BV3AzN19xSTY0OEZwQmwzdGVSWC1SNNIBxAFBVV95cUxNQ3ZKZVFHbHpRSEo2cGs4RjlfMG1UdURsamh2Y3ExeEVkZzdmaGQ3OElrd0FpclpvUGQ1MFlKSHZ2VGFOc1hVN3ZmSVc4aGhIY3hvVm5UUlY0emc2bFNyU3ZGU0RFckhMekh6WE5FeklHLU9uUGZNOVZCQWJPdnctcTNJTmpTOGp0Q3ZVUjEzSWROc0V6VE1lY2hLLWNJWUlwTkEwQkJ1SVVtRlZrYlg5QUxoZEZFOFFzMXgwbkNPNzgzdlRa?oc=5",
+      "date": "2026-09-16",
+      "source": "PBS",
+      "ko": "연방준비제도가 금리를 인상했으며 추가 인상 가능성을 시사하자 미국 주식이 하락했다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$213.90",
+      "change": "+1.73",
+      "changePct": "+0.82%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$512.50",
+      "change": "+8.30",
+      "changePct": "+1.65%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$101.05",
+      "change": "+3.91",
+      "changePct": "+4.03%",
+      "up": true,
+      "news": [
+        {
+          "title": "INTC Stock Alert: What to Know as Intel Reportedly Teams Up With SK hynix",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZ3dWOTRSNFhKWUdJZFJxaE1FcUE2czRhd2M3ZGJnUW1qVjRHNzBfdFdpLXNLbVREYTRnTFRqR0lMSnhPZ0txZk1KTF9UckJzWHpsYW45NU5mTTUxaEExWTZJVi1CTE4taGF0Uy1CYnJ4UXJOVDRHOGxnYWtPVFZxTl81WVlLLUNrcXF5ek9sVXpYalJaRVRaVThzZzdFN3hEVE81OGx6NWg3NXEwa3Y5N1N3aTk5WTg?oc=5",
+          "date": "2026-09-16",
+          "source": "Barchart.com",
+          "ko": "인텔이 SK하이닉스와 협력하여 오하이오 공장에 메모리칩을 생산할 것으로 보도되면서 주가 상승을 견인했다."
+        },
+        {
+          "title": "Intel (NASDAQ:INTC) Stock Jumps 5% as SK Hynix Talks Could Fill Its Delayed Ohio Plant",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9QUjVPdDl3MldwRzlDYWlNc19zUWYyZTFEcjAtX3hleDhTWkVBdnJBaWZRVTZDV05YVnAzaEtUVzlyR1Y3akJHeWFiU1lxcTR3bmM5SENEMW13a2xwQVJMcnFNOXQySVFWM1N1dDViRTN6V2VDZ2lXaXpsaw?oc=5",
+          "date": "2026-09-16",
+          "source": "stocksdownunder.com",
+          "ko": "인텔과 SK하이닉스의 메모리칩 생산 협력 논의가 진행 중이며, 이는 인텔의 지연된 오하이오 공장 운영을 도울 수 있다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$417.72",
+      "change": "+5.08",
+      "changePct": "+1.23%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$926.55",
+      "change": "-1.05",
+      "changePct": "-0.11%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$174.87",
+      "change": "+0.04",
+      "changePct": "+0.02%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel, SK Hynix shares jump on report they're discussing U.S. memory chip manufacturing",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE55T19qVTR2OGlMZzBXYUNrM0U1dExRSkNINjA3LU9LcHlscXBvSGxIVUtSOFdmaGpFR0RZSWRIQVhMeXlpUlQ1ZmJWR1VkNTBwVTZqRG1aTzFxRWJhYjVTTmE5dFltNGJITThsMGs0TkJkOHF6SkHSAXtBVV95cUxPZW5KZmVLS2FIRlZkSlcxR25xcC1GU1N0YVBWaC1DNFRqM3dUSHJZLUczU1QxQnBNTWt1RU9vTUM1SG53ZkFuQ3dGaE1UYzBwYjFjcVZJdjI5cDJ5cHNrcEhyTEdreHRld01uSC1wb2JMS1A2bGsycG1XaXM?oc=5",
+          "date": "2026-09-16",
+          "source": "CNBC",
+          "ko": "인텔과 SK하이닉스가 미국 내 메모리칩 제조를 위한 협력을 논의 중이라는 보도로 양사 주가가 상승했다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$174.34",
+      "change": "+1.78",
+      "changePct": "+1.03%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic policy chief says AI companies can't be expected to operate on 'honor code'",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZloxWlZBOWdQOG1OVUVSLXJHUTFzRmhhdUxwZDZyajJWdXB2em9rRVBLSWNrdDEwNDRCS1lXZzRyXzRfbFljZEQyY1ZKd25CdW5oQ2VycFF6N3pHbmp1c3NLY0Vydlg4R1ZKcWNPNHZWcHNWTXU2UU9VMy0zRDV5M19xSGVZSWMwd2M3VWxOUDV4eXRudjk4UENfcHB5cmota2tFT1NCSdIBrAFBVV95cUxQdU91elVSV1RfWENhNFQ0QXFOc0Y4TjdXV2hGME5xajJLUHpVUURKd1lxbWt0ejVHTm1yUkt4cVc3WWtxM0F6UG4yV2dMaXFaS2xqOFF1eVNBUzQ3LS1DUlNzSF9xUWNwN2ZQUFlvcHZ6Y0g3VDEteHlDM2NGaERwMC1xSkMxajJHWXo3aTF1cDRyTmJqWDY2SEtlWjBQazh2NzQ4RnZzMDRGQ0dt?oc=5",
+      "date": "2026-09-16",
+      "source": "CNBC",
+      "ko": "앤트로픽의 정책 담당자가 AI 기업들이 '명예 규칙'만으로는 운영될 수 없다고 주장했다."
+    }
+  ],
+  "summary": "연방준비제도의 금리 인상 결정을 앞두고 혼조장세. 반도체주는 강세를 보였다.",
+  "generatedAt": "2026-09-17 08:44",
+  "date": "2026-09-17"
+}
