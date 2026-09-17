@@ -1,0 +1,181 @@
+{
+  "sessionDate": "2026-09-17",
+  "sessionDateLabel": "2026년 9월 17일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,637.76",
+      "changePct": "+1.14%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,418.30",
+      "changePct": "+1.69%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,778.04",
+      "changePct": "+0.61%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Jones Futures: S&P 500, Nasdaq Rebound Above Key Level; Moderna, AMD, SpaceX Flash Buy Signals",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSDJ4cFROUlQ1d3M0TU5mSUlINDFfRjNnc0FidVpOcEY3N1dFd0hWZDB0OFZBVXdINXlqaEdiRzU4U0hVN0ZHbVFTNjJYYVdqeXZmd251UGJmd3RiSlU1VHZzOFFZdEdHUklBVVpGeGNNZS1RV1Q1LXpleGtTWWNUVFRlY00zVXVIaXFnNW9zUnFIZGhoYTJyOWNHQWVUcHY1RnkwalpHSVk3aFc3UlJnaFJ3aDRQYTlpRGs5eg?oc=5",
+      "date": "2026-09-17",
+      "source": "Investor's Business Daily",
+      "ko": "S&P 500과 나스닥이 주요 저항선 위로 반등하며 기술주 강세 주도."
+    },
+    {
+      "title": "Tech-Led Rally Lifts S&P 500 To Best Day Since Early August",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPOEQ1Z3N3emRUUUZvRmdOa0luVUdXZGVXeFpVcEk4U0ZQM2oxQnpVYU1DS1VwQ2p2dXZHTWpXeldqaGdMZW9rTGdjSXRnY0RuaGYxMTNqX1RVb3UzdnE0bkFEdjkySDg0YjNzV0NKd1F4TmJWdnFBTUNZZUh0aXR3cjdJSXkya1VTazdrWDBPVUlWV0pLLXo0b0x4LXUtWHprel9feg?oc=5",
+      "date": "2026-09-17",
+      "source": "pro.thestreet.com",
+      "ko": "기술주 랠리가 S&P 500을 8월 초 이후 최고 일일 상승률로 끌어올림."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$219.34",
+      "change": "+5.44",
+      "changePct": "+2.54%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia Stock (NVDA) Is ‘Undervalued,’ Says Five-Star Analyst. Here’s Why",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPekZTeWdzaGtqdXkwZVhYQVNSbFE3dWhfbzVzMVluYXRoX3huUERzTUlETWZoQkYwUmZxRkhDTmp1MktDdGlFSGJiVzJVTmNXV20wbzlHUlNMOEIxVXpldkpDUVpBTE9vcTFJYkZXNUZzLVJ1SHZWemctakllQUVIVWxvOTJuTHZQanFQQVV3?oc=5",
+          "date": "2026-09-17",
+          "source": "TipRanks",
+          "ko": "엔비디아가 5성 애널리스트로부터 저평가 평가를 받으며 강세 지속."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$545.09",
+      "change": "+32.59",
+      "changePct": "+6.36%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD Leads Chip Stocks Higher Amid Sector Rebound",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPXzFqQ0VoTWF2NHRlQTQ2Mk5iX01wTUNLMkZBZF9iSDIwU2JaRTVUdWNkUHhJQUJ5YUFaanlNdEhPZlZIdkZjdzBJUWE4ZVJ5WUlvUGU2OWZIc3FxLVlXM0lHTm9YdGpzaGczN2k5SGc4UnhZcG81ZXlITlJ3X1NNZS1HbDk2eTVaeTVyRE9IOEZFX0ZkeWEwaThkaGFBbmZ2SGtwa2hMX1NtQms?oc=5",
+          "date": "2026-09-17",
+          "source": "Investor's Business Daily",
+          "ko": "AMD가 칩 업종 반등을 주도하며 가장 큰 상승률 기록."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$108.80",
+      "change": "+7.75",
+      "changePct": "+7.67%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Blasts Up Nearly 10% as 14A Risk Production Moves Up",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQ3UtQnI4VHhHbmIwY2hxUXBuSlNURWF4ZkhUQk9hZEZMUWtWaWlxeGM4dGpsaHM2NVU1b1VlQk9SbjdDc25Rbi03QnVxX0kxdXE0ZER1WTFKYUc0M0Y3MDlaQ3RhU1d4cFk4RkJXX2tnOURSbENNOHg1S0x1bEdOVUl4UDdGZlpPdElwai1ERGNqamtSVzdvOURYZ08xb2FHTXM1Y2RIZw?oc=5",
+          "date": "2026-09-17",
+          "source": "TipRanks",
+          "ko": "인텔 14A 리스크 생산 일정 단축으로 주가 9% 근처 급등."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$430.26",
+      "change": "+12.54",
+      "changePct": "+3.00%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$977.50",
+      "change": "+50.95",
+      "changePct": "+5.50%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Micron Stock Is Jumping as Intel CEO Warns on Memory Chips",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxObjVSZEkzTV9pcFZDM1dOLW5LcmN3MEJnU01vVHJtMHhjY251bWVDbklwUlFCR3lvbjlncjN4eDBMRWl0aFh0UTloZFlYamoxeUtLTUd3UERzTG1nQUEyTFVkTjcwOWg2SVFoVm82ZFRxTWIwMnRPdmphSGxMUkNPLWlBRzNfUQ?oc=5",
+          "date": "2026-09-17",
+          "source": "Barron's",
+          "ko": "마이크론이 인도 AI 메모리 수요 베팅과 인텔 경고 영향으로 급등."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$182.99",
+      "change": "+8.12",
+      "changePct": "+4.64%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix, Intel Discuss US Chip Manufacturing",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5rWmctMTB0TmhlSUpIb2xIZzVKMl9FeC1XUG5ZZ2hfSHRGVVVGd3d0Ykl2eWpudEpkRzlOQjBMQ0N6YkJNWUxtU0h2cnBnWFVjazZaQ3NnVkhTUmRwWWI3NA?oc=5",
+          "date": "2026-09-17",
+          "source": "Investing News Network",
+          "ko": "SK하이닉스가 인텔과 미국 내 메모리칩 생산 협의 진행 중."
+        },
+        {
+          "title": "SK Hynix in Talks With Intel to Manufacture AI Memory Chips in the US",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUy1wbFE1TURmXzBLbHJqTENxcUpuS0tULTk3UER1OXBtUGY1X3pOLU1mM0daM0dlVXB1N0U1YU5KYnU3UUxOMk4yUUV6NHNucTdYRzFYTHRWbll1Q2dxcGVqaWJOM0kxb1ZrOVFlU2p1WXoyWEhwTEphZUVCc01makd3cTNrOUl2aFdqUk90WERzbHRKWWV6TGZwNWpvQklWYmxITGlMSGxCN1k?oc=5",
+          "date": "2026-09-17",
+          "source": "AI Insider",
+          "ko": "SK하이닉스, 인텔 오하이오 공장에서 AI 메모리칩 제조 협상 추진."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$176.24",
+      "change": "+1.90",
+      "changePct": "+1.09%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir’s Real Moat Just Got Stronger (NASDAQ:PLTR)",
+          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQRUZsc29mekkxNjVjRHR2UXhzR3VYLUN0WGtnaWE1WFpfdUUtQjdSNXhablNELV9zSXQ5LVVCLWlMeEpfdXpaTXIyQVRPZC1VUjFzUmltT2tBMHVKbjUteG9vNmtoUVdMUlhYT2hxRTQyeExsZ3VMczdZc2dWUk1xWkZGWXM?oc=5",
+          "date": "2026-09-17",
+          "source": "Seeking Alpha",
+          "ko": "팔란티어의 경쟁 우위가 최근 소식으로 더욱 강화되는 중."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic shares 3 metrics to help AI companies monitor pace of development",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSzN2eUY3RnNGdHJMYWNMdS12T3g4WjB0SW1lOUIzNF85bC03a2lZVVo0QXVGc2cyMUUzS0lzUThUZ3BPZkZOalRkejJ0MkwwSC1VQVN6ck9yZHJzUEhoTGstQUEwRll6WHo0dWVxV21kR1FwTTVubWdDWTByWGJpUU1YeU9FYzZOektWZ1dMNmtWUTdveE1id1Y4Q2lHUWhuQ1FKTTFEY9IBrAFBVV95cUxQenhKVjFMSlpUdXlCc21oZTZvR3Ywa0Q3Rk9ILTAteUlXT3ZENFZxOHJxLVlrS0REcnM2NHFzaE9BMFR4N2ZDMnc3djhWN0hrcGN3WlhsZkd0SWs1aThJdk1FSWp5YTdQOS04ZWtVVTB6UzVMTVVURGhPclJjbGpWNUtzUTI2eEJPNjhVQlhxVmk5R09JaURYX3A4UFJYR0sybGdfak9JUHhlcEpZ?oc=5",
+      "date": "2026-09-17",
+      "source": "CNBC",
+      "ko": "앤트로픽이 AI 개발 속도 모니터링을 위한 3가지 지표 공개."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic says Claude now leads a quarter of work building its next AI models",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPOTlkTk8zR3FVNjBtYTRfeEZQWU9zWHhWUE00dUhyMDhMUHZDRF90dlhuUDhYS3QweW9ZejB1U0tNQ0dFQjIxZ1lFLXhfdEliaHN3MzJZV0JYRnJMc0pyU2k4dmdyX2tPR1VOX0RRdmVJUkZ1bWZCcVJ5czg4XzlXQmRXaXpVYzB1a0QwRGdzUkFVbGtVY3ZJVEpKSEwzUXdMT0NaV0F1cTVQOEFhSzRTR0ZURUlzM3NL?oc=5",
+      "date": "2026-09-17",
+      "source": "Reuters",
+      "ko": "클로드가 앤트로픽 다음 세대 AI 모델 개발의 4분의 1을 담당."
+    }
+  ],
+  "summary": "기술주 중심으로 반등. Fed 인상 후 시장 심리 개선되며 칩 업종 일제히 상승.",
+  "generatedAt": "2026-09-18 08:36",
+  "date": "2026-09-18"
+}
