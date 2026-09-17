@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-18",
+  "generatedAt": "2026-09-18 08:21",
+  "events": [
+    {
+      "title": "박,김",
+      "start": "2026-09-18T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "HLP 동기 라운딩",
+      "start": "2026-09-19T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "호국원",
+      "start": "2026-09-19T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 907,
+  "importantMails": [
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Adobe Acrobat Reader에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Adobe Acrobat Reader에 공유되었음을 알리는 보안 관련 알림"
+    },
+    {
+      "from": "支付宝提醒 <service@mail.alipay.com>",
+      "subject": "Alipay account successfully bound! 支付宝账号绑定成功！",
+      "summary": "Alipay 계정이 성공적으로 바인딩되었음을 알리는 확인 메일"
+    },
+    {
+      "from": "支付宝提醒 <service@mail.alipay.com>",
+      "subject": "添加邮箱登录名",
+      "summary": "Alipay 계정에 이메일 로그인명 추가 관련 안내"
+    },
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Updates to managing AI crawlers on your account",
+      "summary": "Cloudflare 계정의 AI 크롤러 관리 업데이트 안내"
+    },
+    {
+      "from": "noreply@kakaoinsurecorp.com",
+      "subject": "[카카오페이손해보험] 개인정보 이용•제공 내역 안내",
+      "summary": "카카오페이손해보험의 개인정보 이용 및 제공 내역 공지"
+    }
+  ]
+}
