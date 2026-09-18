@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-19",
+  "generatedAt": "2026-09-19 08:00",
+  "events": [
+    {
+      "title": "HLP 동기 라운딩",
+      "start": "2026-09-19T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "호국원",
+      "start": "2026-09-19T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "동준",
+      "start": "2026-09-20T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 906,
+  "importantMails": [
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Adobe Acrobat Reader에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Adobe Acrobat Reader와 공유되었음을 알리는 메일"
+    },
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Updates to managing AI crawlers on your account",
+      "summary": "Cloudflare 계정의 AI 크롤러 관리 설정 업데이트"
+    },
+    {
+      "from": "Pinterest <recommendations@discover.pinterest.com>",
+      "subject": "Pinterest 서비스 약관과 개인정보 보호정책을 업데이트 중입니다.",
+      "summary": "Pinterest의 서비스 약관 및 개인정보 보호정책 업데이트 안내"
+    },
+    {
+      "from": "Adobe <noreply@adobe.com>",
+      "subject": "Adobe에 오신 것을 환영합니다",
+      "summary": "Adobe 서비스 가입 완료 및 환영 메일"
+    },
+    {
+      "from": "noreply@kakaoinsurecorp.com",
+      "subject": "[카카오페이손해보험] 개인정보 이용•제공 내역 안내",
+      "summary": "카카오페이손해보험의 개인정보 이용 및 제공 내역 통지"
+    }
+  ]
+}
