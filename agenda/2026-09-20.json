@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-20",
+  "generatedAt": "2026-09-20 07:38",
+  "events": [
+    {
+      "title": "동준",
+      "start": "2026-09-20T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 908,
+  "importantMails": [
+    {
+      "from": "Claude Team <no-reply@email.claude.com>",
+      "subject": "[Action Available:] Claude Code defaults to auto mode on Sept 25",
+      "summary": "Claude Code 자동 모드 설정 변경 안내"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Adobe Acrobat Reader에 공유하셨습니다",
+      "summary": "Google 계정 데이터 공유 확인 필요"
+    },
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Updates to managing AI crawlers on your account",
+      "summary": "Cloudflare 계정의 AI 크롤러 관리 업데이트"
+    },
+    {
+      "from": "Adobe <noreply@adobe.com>",
+      "subject": "Adobe에 오신 것을 환영합니다",
+      "summary": "Adobe 계정 생성 및 가입 확인"
+    }
+  ]
+}
