@@ -1,0 +1,165 @@
+{
+  "sessionDate": "2026-09-18",
+  "sessionDateLabel": "2026년 9월 18일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,650.50",
+      "changePct": "+0.17%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,522.55",
+      "changePct": "+0.39%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,682.64",
+      "changePct": "-0.18%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Investors Just Got Bad News From the Federal Reserve. History Says This Will Happen Next.",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNbmNaam0teWVpa28wWWVQUm1sT2o4eWdUUjQ4QTZ4NWstbXRmLWhSMFBRMTY5bVJBMkNMVXZzNi05QXhINXgtT0JpclRfcjdhS2tfcVdZUmpVemNtS095Rm9Ta2xwUWNJLWU2RnVwOXBOYVNjZGlDNC1mZEFxeUFNS0JiejN5R2g2RHVxRDNxdTBLMTVQakc4LU1SZ1dORFFXenZ6TldzTHFQQQ?oc=5",
+      "date": "2026-09-20",
+      "source": "The Motley Fool",
+      "ko": "연방준비제도의 부정적 신호 이후 역사적 선례들이 모두 부정적 결과로 이어졌다는 분석"
+    },
+    {
+      "title": "Stock Market Week Ahead: S&P 500 at 7,650 Meets a 5% Treasury Yield",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZVlfeklNbkVjb2FlSUlLNzlwWlpQZmtDTUNYSnVvTUY0QjZKRTI3RjlETUxjZ2RhQmt1czhUbHBMX3QzWmZMV081dGhmdHFCWEpMUXlRRFFrVzQxbFFmQmoyY2NieFJHTG4wdFNnZTE2dm9OQkpnc1ZVS1REanhRekM4Zk9tRlplZEZybw?oc=5",
+      "date": "2026-09-20",
+      "source": "TechStock²",
+      "ko": "S&P 500이 7,650 수준에서 5% 미국채 수익률과의 상관관계 주목"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$222.27",
+      "change": "+2.93",
+      "changePct": "+1.34%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia Stock (NVDA) Is ‘Undervalued,’ Says Five-Star Analyst. Here’s Why",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPekZTeWdzaGtqdXkwZVhYQVNSbFE3dWhfbzVzMVluYXRoX3huUERzTUlETWZoQkYwUmZxRkhDTmp1MktDdGlFSGJiVzJVTmNXV20wbzlHUlNMOEIxVXpldkpDUVpBTE9vcTFJYkZXNUZzLVJ1SHZWemctakllQUVIVWxvOTJuTHZQanFQQVV3?oc=5",
+          "date": "2026-09-18",
+          "source": "TipRanks",
+          "ko": "5성급 분석가가 엔비디아를 저평가 종목으로 평가하는 이유"
+        },
+        {
+          "title": "Nvidia Stock Keeps Failing to Retest Its Record High as Headwinds Rise",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOM3V3Qi1RN2lfNWpBNVVXZF9rR2s4LVV3ZjhFcVc4TUgxUEJiaXdEdkF3WTE0dHRWTXlncU0yeEpJV1FhNG1DZUQ5VDFGOVR2c0RvUEtOVGkwMkhURXNpR2NHdmFsRS0weUF2UjB3WHVnZTZyNzh6TEEyYmZ3OExTZ09vOEZxUGlzSVItSFZjN0xoeWlxUDBiaUc1dHdROGs3djB0WWdSMFZGNHhpSDd0RkpwaUcyNWxqRHVuYmJneGNfNkF2eVE?oc=5",
+          "date": "2026-09-20",
+          "source": "Benzinga",
+          "ko": "엔비디아가 사상 최고가 경신에 실패하며 역풍이 커지고 있다"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$559.82",
+      "change": "+14.73",
+      "changePct": "+2.70%",
+      "up": true,
+      "news": [
+        {
+          "title": "Better Artificial Intelligence Stock: Advanced Micro Devices vs. SK Hynix",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQdWJxd3JwRE1sUVJ2YU82Nkg1X0FnUHFnQzJ3aE9mR2hVbVg1ZjJ3QUJab2JYendXZ1VSOWFiNjFkcFpDdFpkV2ZVWEJISnhsUTlPN3ZHR2VYaDRGS1QzQUlfMmFXT3l4ZW1DRjA0YkcxVmdRUEN1eVljVlNwYnRfNldWb1J1bVNJX3RXM3ZLZUpFbEZXbW9lM3llam12cEw5VEZWZUtkcXBiekpXMGZDU09GMUtiREFWLXFkejBxamsxQQ?oc=5",
+          "date": "2026-09-20",
+          "source": "The Motley Fool",
+          "ko": "AMD와 SK하이닉스 중 인공지능 투자 관점에서 더 나은 선택지 비교"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$108.60",
+      "change": "-0.20",
+      "changePct": "-0.18%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$434.67",
+      "change": "+4.41",
+      "changePct": "+1.02%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC (TSM) Stock Forecast: June Revenue Up 68%, Q2 Earnings Tomorrow; Is $438 the Next Stop?",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNZ1JnUDhUX2U1ZXlyTk1ZZlJZQUlCanB0VnhQVTE2RktleVdTd2Z5a2JxS25KZGJuYTIzc1duU2lvVkZXMU16WlVSRzB3a2tkQW11czBQUF80VFdJX1pQM2tBelY1akNLaEZlbXF3QVJ5eVNKNGM2TWh1S3ByREV5TDBmUmRTT05kSDNxMXhaZVhDSEhOYXc4WjRJVm9CN0xaLTVQbW1RLWR5WXhzb1RhZ0dFRFdCM3ltVmx3dy1VQ3JqSFlnMjU0ejFGN2V1cWNa?oc=5",
+          "date": "2026-09-20",
+          "source": "TradingKey",
+          "ko": "TSMC 6월 매출이 전년대비 68% 증가, 2분기 실적 발표 임박"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,015.80",
+      "change": "+38.30",
+      "changePct": "+3.92%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$187.50",
+      "change": "+4.51",
+      "changePct": "+2.46%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix's Solidigm unit is weighing NAND memory chip factory in US, sources say",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNVVtN2pfeEs4R2NCcG9sdEpkTHB3MUMyNHdXdkZCQThtbm16WHNoQWhUUmZEN3ZFM2RFU0QzS2Z6WXB3VVNkdmNJbV9EdnA5ZlQteUpseWhuRzlOMnlFNmR1cE9oVWM4Zjl3OGpRMjdVVV9pYUxKRXZ1dlZIaXVCZ2dYWTliQWxWNHNoWTRiMm9PTGQ3TGtsTGtIZ1B0NzZJaldGcHZhUF8tXzRpU2FvWWJhZnBONk56QnFzVExnYmx0Z1UyU0xjeWlR?oc=5",
+          "date": "2026-09-18",
+          "source": "Reuters",
+          "ko": "SK하이닉스 Solidigm이 미국 내 NAND 메모리 공장 설립 검토 중"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$177.64",
+      "change": "+1.40",
+      "changePct": "+0.79%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Lawsuit says Anthropic, OpenAI, SpaceXAI and Google made illegal agreement on AI slowdown",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcGNIX0w3dGlsV1dsUUdPS1l6TXFWSm8yUVBkTlVhZl85V1hGNHVadW9LZFRHRl95Y2VBY0Nvc3FvbDBOcXpfdFlYc1dEckQtbk9BMVlEeHBIYkdBVjJmZDYxMFFpVlR6Mm1NeEZ3cEFvcmtLLXRTWDZjQjRtRWxuYnNQQ204Q0I0Z3haTXRSN0w3QnhSYXZDOG00eXhQd2ZyTVhZc09SR3lSb0ZSMU5mYktsNzNjWTdLVGV6dmZNVQ?oc=5",
+      "date": "2026-09-19",
+      "source": "AP News",
+      "ko": "앤트로픽·OpenAI·Google 등을 상대로 AI 개발 속도 늦추기 불법 합의 혐의 소송 제기"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic, OpenAI, SpaceXAI, and Google face antitrust lawsuit for agreeing to slow AI development — plaintiffs say plan has been in motion for months before, calls agreement ‘self-serving’",
+      "link": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxNWkxCQWN6Yl9tc3JjbVlLUGg1S1diMFM4RHhTYS1nQkRUTWdxQjloeW1LR2oxY1NUSjFBZkV0WWd1ZzRSV1FJeUltaE5jNjFLVC1UTGhDVEFyc2g0Q0NFaFZBOW9vOHNsVkU3eU1XRU41Z1ViaFhFSkp2YjdXLWhyUEhMVTRLNHlIcHRPS3M4YVJxSVl0R0F5YWhLYmRVV3ZYUzQyQWhlLTdVeUJQcHRBMGVVc0NkbkoyUU1uNWc1cVpuc1FaNHd3d2xjSkdqWjQ5Z2ZiWElldXNRUlQtalJjdk95cGNPM1RyWjdoczdQQlNmaWpkNERqR2p6Vi1KQ2RxZUlLcjJUaVhrSlZzNWtPVmFBbGFwdXFKX0JRUW5oaEFHRWttZDdWZkhUelI4N0R5QzIwNjJLc3F0TF82SUhyX1pCd1FDWVlTWndjcGZkeUtsMUU?oc=5",
+      "date": "2026-09-20",
+      "source": "Tom's Hardware",
+      "ko": "AI 개발 속도 조절 합의가 수개월 전부터 계획되었다는 독점금지 소송 주장"
+    }
+  ],
+  "summary": "기술주 강세로 S&P 500이 소폭 상승했으나, 금리 우려와 시장 과열 신호가 제기되고 있다.",
+  "generatedAt": "2026-09-21 08:21",
+  "date": "2026-09-21"
+}
