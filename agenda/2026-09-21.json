@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-21",
+  "generatedAt": "2026-09-21 07:57",
+  "events": [
+    {
+      "title": "아톤 저녁",
+      "start": "2026-09-22T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 909,
+  "importantMails": [
+    {
+      "from": "Claude Team <no-reply@email.claude.com>",
+      "subject": "[Action Available:] Claude Code defaults to auto mode on Sept 25",
+      "summary": "Claude Code의 자동 모드 기본 설정 변경에 대한 중요 알림"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Adobe Acrobat Reader에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Adobe Acrobat Reader와 공유되었다는 알림"
+    },
+    {
+      "from": "Adobe <noreply@adobe.com>",
+      "subject": "Adobe에 오신 것을 환영합니다",
+      "summary": "Adobe 계정 가입 완료 또는 서비스 이용 시작 안내"
+    },
+    {
+      "from": "Cloudflare <em@em1.cloudflare.com>",
+      "subject": "Updates to managing AI crawlers on your account",
+      "summary": "Cloudflare 계정의 AI 크롤러 관리 업데이트 안내"
+    }
+  ]
+}
