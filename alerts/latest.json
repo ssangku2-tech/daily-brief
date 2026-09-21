@@ -1,16 +1,16 @@
 {
-  "at": "2026-09-17T17:28:39.277Z",
+  "at": "2026-09-21T18:28:55.572Z",
   "threshold": 7,
   "items": [
     {
-      "symbol": "INTC",
-      "name": "인텔",
-      "pct": 9.88
+      "symbol": "AMD",
+      "name": "AMD",
+      "pct": 8.84
     },
     {
-      "symbol": "272210.KS",
-      "name": "한화시스템",
-      "pct": 15.7
+      "symbol": "INTC",
+      "name": "인텔",
+      "pct": 11.93
     }
   ]
 }
