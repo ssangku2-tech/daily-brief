@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-23",
+  "generatedAt": "2026-09-23 08:28",
+  "events": [
+    {
+      "title": "BNK 우편",
+      "start": "2026-09-23T09:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "브라더스",
+      "start": "2026-09-23T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 915,
+  "importantMails": [
+    {
+      "from": "ÖBB Vorzugspunkte",
+      "subject": "Information zur Änderung der AGB",
+      "summary": "ÖBB 이용약관 변경 안내"
+    },
+    {
+      "from": "ChatGPT",
+      "subject": "이제 무엇을 할 수 있는지 살펴보세요",
+      "summary": "ChatGPT 새로운 기능 안내"
+    },
+    {
+      "from": "Claude Team",
+      "subject": "[Action Available:] Claude Code defaults to auto mode on Sept 25",
+      "summary": "Claude Code 자동 모드 전환 안내"
+    },
+    {
+      "from": "Adobe",
+      "subject": "Adobe에 오신 것을 환영합니다",
+      "summary": "Adobe 가입 환영 메시지"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 Adobe Acrobat Reader에 공유하셨습니다",
+      "summary": "Google 계정 데이터 Adobe와 공유 알림"
+    }
+  ]
+}
