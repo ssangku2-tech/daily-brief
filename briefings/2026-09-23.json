@@ -1,0 +1,196 @@
+{
+  "sessionDate": "2026-09-22",
+  "sessionDateLabel": "2026년 9월 22일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,764.64",
+      "changePct": "-0.00%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,244.28",
+      "changePct": "+0.45%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,863.69",
+      "changePct": "-0.36%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Jones Futures: Nasdaq Hits New High; Sandisk, Micron Trigger Buy Signals",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQTmdCYk1HUkZUVi03VDRCTmpkVi1kblVTZDdxUnotRi13Tl9mNWx5RzNuYVNHcnVDOVVxaHkwRF9vNk9KNWdYMGY5SlhhM3lDVld1cnVoWC01bHJieGhYWGtfS3dlc1lzdW5VVEVDZ3M1M2JSTy1NdTFtaVlIcUp1Ry10ZVNkR0IyT0NlNGdJRlZqNkZZVnBJU1gzWnNOTHUwajJzdnpIa1lnb185QXJQUzFQdDVQOFVvRk5oTw?oc=5",
+      "date": "2026-09-22",
+      "source": "Investor's Business Daily",
+      "ko": "마이크론과 샌디스크가 매수 신호를 보이며 나스닥이 신고가 달성."
+    },
+    {
+      "title": "Dow Futures Slip While S&P 500, Nasdaq Futures Climb After AI Rally: GME, IBRX, AMD, PSKY Stocks In Focus",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZW9MczQ5eU5PM2tvT01QNlpUZU90ejZheGhlTnhQd1VEU2phYVZpTjB0cmN6XzFPQ3Zac3ZrOU9Kc1B2MGs5bzM4YkF3NHozS25mRGU2eE85Tnd0WWt5bWNxZGJsUWJVUk5weTFNT3hGbllPR2Etem1OU3lVY3l2S3ZYQ29ITm1WWkRVUnZqNDFPeWM?oc=5",
+      "date": "2026-09-22",
+      "source": "Yahoo Finance",
+      "ko": "트럼프 행정부의 이란 항공사 제재 등 지정학적 이슈 속에서 AI 랠리로 S&P 500과 나스닥이 상승."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$228.87",
+      "change": "+1.49",
+      "changePct": "+0.66%",
+      "up": true,
+      "news": [
+        {
+          "title": "NVIDIA Corporation (NVDA) Is a Trending Stock: Facts to Know Before Betting on It",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYmNsenBBenpZNXJtYjNib244NXF2NnpRZ2dGb0F2UGNBeldqZjlidTd5VFFQMDdIMU9QQUcxUFdRWkEwMFk2MXAtc0I2WHJYWVhyd0FNWExSLVVDN05kN241SEY2VTMybkdxMjAyV01PYTFsNThYWjFrMkpXWmlUcUlISTRDTDlKTTVTZFVNSEs1U0dkc19jLVpfM0JpclhYaVl6U3pn?oc=5",
+          "date": "2026-09-22",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아가 트렌딩 종목으로 떠올랐으며 투자 검토 시 주의할 사항 정리."
+        },
+        {
+          "title": "NVDA Stock Eyes the $236 Record Highs as 2027 NVIDIA Growth Forecasts Rise",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOSmRKaGFHc1NQRmY4czJaWER3ekdDcHhwbW9BVmhPT1RTRGR0UHZTejI3Xzd5Y0VrbGNSZlFvYVFRQ1lhSS12eHppSlpLemxtX0l5Q3o2RUpyM3FGeERRWXFfLWRORUVhWFJZcmRHbzllck5KR2h6V0J6SHN2bGZIME1mMC1hV2xIZEl0ZGtJZWVSUW1RdTZIVUdYWjVReVhNdEh0QlpJUHVMYjcxemlUXzUwZmIxQzg?oc=5",
+          "date": "2026-09-22",
+          "source": "fxleaders.com",
+          "ko": "엔비디아가 사상 최고가인 236달러를 목표로 2027년 성장 전망이 상향됨."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$623.77",
+      "change": "+8.25",
+      "changePct": "+1.34%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (NASDAQ:AMD) Stock Price Up 1.3% - Here's Why",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQY2Z6WURTZmVRVWQ2a2V1N0tqakYyQWpYTV9lcEtTN3JwMllZX3ltTnZoNHBrOHV2dGdUbi0tM2EwTkx4dXp2UzIwRF9FWjd0dU1ibllobU45V3VwR2k3VjRwTm80N3FpRGlnT181c3RFaExxcmxhZVF6bUpBUjI1UEV6VTdxdS1PdXhXaXVteno2dHlwWlFfWkxqWHFsTzNrUmc4RUlfT2xPano0bllyUzJTdkJ3T1VSZ21GdnRR?oc=5",
+          "date": "2026-09-22",
+          "source": "MarketBeat",
+          "ko": "AMD 주가가 1.3% 상승하며 나스닥종합에서 개별 종목 움직임 분석."
+        },
+        {
+          "title": "Advanced Micro Devices (AMD) Reaches $1 Trillion Market Value",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOeGxKY1NpUTIyQ2FmUDlIckpqTEVnZlRzYkdTSDFFQmpCTFNWYm5uckVsUEJXUWQzZERMRkxtYWVZVlN3UlozY2pGc3lzTGRJQzNHWVJHRlRKdEpBc2xZRTlEY0JwNmFBWkFweVNoNjlzcVpxeWRjdkZaZm9zbGtDREhyTS05TWRVeEwwckoyNEdSWHFOQmN0V1M3emwtUjF3?oc=5",
+          "date": "2026-09-22",
+          "source": "Yahoo Finance",
+          "ko": "AMD의 시가총액이 1조 달러를 돌파, 반도체 업계 강세 반영."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$123.86",
+      "change": "+2.08",
+      "changePct": "+1.71%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel (NASDAQ:INTC) Stock Price Up 1.7% - Here's What Happened",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQTWF6M19GNFBsaE1hd0d3TUF4ZHQ5TEYyeG9WYVI2QzBBZGI4LUpZV1c4MUx3THc5bmNnZE11dWNlZi12dDc5WGI5VVNwVXh5aXA5bldVbTBnZ0d1NHdmUmVEVEI4cERTMzhsRkZNWFFEQWNpN01rOTVMNlc4X3hTU204TlREc3NsV2J1UnhYMm1rWUpxam5aeHpFSS1BdTlSNHFWZ2RvbTN2UGhBYk9ydVhFb3Mwdw?oc=5",
+          "date": "2026-09-22",
+          "source": "MarketBeat",
+          "ko": "인텔 주가가 1.7% 상승하며 반도체 섹터의 광범위한 강세 지속."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$452.00",
+      "change": "+6.86",
+      "changePct": "+1.54%",
+      "up": true,
+      "news": [
+        {
+          "title": "Taiwan Stocks Surge Over 880 Points in Early Trading; Index and TSMC Both Hit Record Highs",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE40cU92d09Da1JpVVV4c2ItZENKaEdXaDZyc2diMFR1N1l6dHlmZHpjbWF2OW8zeXNveFJKa1lOOThhb0hTTjNaLWhTV1BIM29oSDFHQmxpZUNuaVVWOWVzNkJDczZiSTFGVHNMYVFSTGstaUI1NEE?oc=5",
+          "date": "2026-09-22",
+          "source": "finance.biggo.com",
+          "ko": "TSMC와 대만 지수가 신고가를 경신하며 글로벌 반도체 수급 강화."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,096.16",
+      "change": "+52.20",
+      "changePct": "+5.00%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Is Facing a Potential Strike at Major Taiwan Chip Factory. The Stock Is Rising Anyway.",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPSy1pVHctdWszS0J3eWJRRFU0Z19jMU5QclBoSS1wVnhKNHJLUmhvTWdsMkVJeG9pMlY4X2w5SU5pQTJ2clZFclNYSTJBUVBBQmg5WXFyNHV0Q2xvSE8yMTJPWGl5V3pVUG1sRGxMbDRHS21MSENKNDZzNTAtWlF0Q0VMLXpzOXJaVnpiTlBB?oc=5",
+          "date": "2026-09-22",
+          "source": "Barron's",
+          "ko": "마이크론이 대만 칩 공장 잠재적 파업 우려에도 불구하고 주가 상승."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$195.37",
+      "change": "+6.51",
+      "changePct": "+3.45%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron 2 GB GDDR7 Memory Chips Reach End Of Life, Leaving RTX 50 Series Fully Dependent On Samsung And SK Hynix",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1nLUJkZXhrSmhYanhYQnZtYy0yYXhZaHhWT3RmajdRbGJDWTRzMVplN1dQUlJsaVFqUUZFc2hVU2x1S1JodWI0azNpWVRtNzlyT0FnQWlzYkQwOV9rbFdLV3RkblBJZ3diNmZpWEVzVklMWWIzMnlCeFpiSWTSAYIBQVVfeXFMT3IzVkJONWpzcXZIOEFveGNNSzlPcENCaXlkM1JiV3hWZ0FfV0VaM1hhR3ZEOTBTalNwMTV5TkRQSjJUUXlLTFF0b3RmTlVGSVF6ay1sSjdjUGdqbWVzQUxpQm84XzB1Q0NFemcwaUtmOGhaZUNaOEhVU2g5M0I5bVZpZw?oc=5",
+          "date": "2026-09-22",
+          "source": "Wccftech",
+          "ko": "마이크론의 GDDR7 메모리가 단종되면서 RTX 50 시리즈 공급이 삼성과 SK하이닉스에 집중."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$184.99",
+      "change": "+1.92",
+      "changePct": "+1.05%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir: The $10 Billion Inflection Is Bigger Than It Looks (NASDAQ:PLTR)",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdXRHOFRBaUJ2cTI5YW5QMnhyRnl0UlpFc1F2cFBLSFpwSkZvN2h5RXREbTRiVURUaWx2cmJNbW80WW5hbkhPREhBbkV4Mm1mazRYOFBtbmM3RHBkdlpndzA0SE1fTzM2dkI3bTVZcXlLRGJoME1DLWxPR25sV1Fzdng5ZVhTR0xJS093RHJWdWlrMVVDYnQ3QlM0di04a1dY?oc=5",
+          "date": "2026-09-22",
+          "source": "Seeking Alpha",
+          "ko": "팔란티어가 100억 달러 수익 달성 시점 임박으로 차기 성장 단계 전망."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Introducing Claude Opus 5.5",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9xbTN1a0tOdm9kT0JxbVBHMU9XYUhpUjd0MHNFYm8yd2pRMnhjdEYzdjF3ckZEY1V0a2ZQTXlyRUhteVozMlhDbVQ3Mm1KWlRYbUVF?oc=5",
+      "date": "2026-09-22",
+      "source": "Anthropic",
+      "ko": "앤트로픽이 Claude Opus 5.5를 발표하며 AI 경쟁 심화."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Massive AI-Fueled Hack Hit 100 Companies In Days",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPemhwX1dobU94R0tSelBqNUg5OTQ5Sko3VXBDWWZHVW90MWxUTnMxbzhZMVNZazM5VjVWZmoxNm5fdmw4dVdOWUdLZG56dXp1d0NRblZQSEtCVTgzeVF5R0NjU3VCSkx5SGpuR25iTkpuZXNlcjQwTW5ZTUdsc1d1SzlJaHFleGk1aE9wd0VBSUNpMkxDWE5pbVhaZTg2U3YwZmJsVEJ4TGdqWUExZ2xXTkpxbU1lV09rTl9sZW53eTBfZGstMHc?oc=5",
+      "date": "2026-09-22",
+      "source": "forbes.com",
+      "ko": "AI 기술을 악용한 광범위한 해킹 사건이 100여 개 기업에 영향."
+    }
+  ],
+  "summary": "나스닥이 신고가를 경신하며 AI 랠리가 이어졌고, 반도체주들이 광범위하게 상승했다.",
+  "generatedAt": "2026-09-23 08:43",
+  "date": "2026-09-23"
+}
