@@ -1,0 +1,173 @@
+{
+  "sessionDate": "2026-09-21",
+  "sessionDateLabel": "2026년 9월 21일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,764.70",
+      "changePct": "+1.49%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,122.09",
+      "changePct": "+2.26%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,048.83",
+      "changePct": "+0.71%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow Up, Nasdaq Roars To Record As Micron Does This; AMD Hits New High",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPcmo0ekw5d2RwR0RpRXVxV3FtVy0xczc5N2JvT2dCR1pVcXNXS016dnVMZl9pVHlRUUxrWkdhaDdKTlJaWGxRa2lPYVRHRHBMS2Q3NjlaaXEzWG9TNU1FcGVRT0FCR29nbEJEYlpFcFN4ZmNhSWRuaWk5XzltR0NVSGRudEpuV1BhbUotLUlwRzlKSDV3ckM0cFJJaG5oMUgybDM3SEYyZ3BvbFNLYW0tYWc2ZC1YYk54WkFNZzBIR3V0dzZCOERpZndXREtPZElGcUE?oc=5",
+      "date": "2026-09-21",
+      "source": "Investor's Business Daily",
+      "ko": "마이크론이 주가를 올리며 나스닥이 사상 최고가 경신했다."
+    },
+    {
+      "title": "As the S&P 500 nears a new record high, there are signs of weakness below the surface",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNaUpBcWdQYU1iWjdsY0dkajQxYUpFSEwzVE1sLTllWDZ3UnVOeFBVNmhuSWdQNnJUMWQ2bHpTMEN3TkNEMGxCQ1p3NEJDdW1ZS2RVSUU3M3QwbzZLM1RGR0lscUkxODBaSW1MMDl0Zk1IdXlsM0VHMEkxOXp5a2NHalpCbjBaYXkyT1hlV1ZSYUNwTUxvSHF3VjEzZWFyNUF2cWZpMWw3RXdsUHFLU1lscWtVNENEZzA?oc=5",
+      "date": "2026-09-21",
+      "source": "MarketWatch",
+      "ko": "S&P 500 신고가 근처이지만 광범위한 약세 신호가 감지되고 있다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$227.38",
+      "change": "+5.11",
+      "changePct": "+2.30%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia Stock (NVDA) Rises on New Physical AI Safety Highlights",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVWhPbTNBcF8zRFdKT1ZuaEdtakVZYTRsNlVDMXFrTEpJWXcyWTYwM2ZlV3FSZG5jWlF6d09QcFZBUWI2dTJGXzhUd3IxZDcyTEdqeC1PV0tNSkNhWTVTNjNPcm55TVZOd1NtOVRXYXhMdV9aOUliNFFLMTFXVkdBV1BaLWVrRWhhWmJGOEgyVzlBUHNE?oc=5",
+          "date": "2026-09-21",
+          "source": "TipRanks",
+          "ko": "엔비디아가 물리적 AI 안전 기술 관련 소식으로 상승했다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$615.52",
+      "change": "+55.70",
+      "changePct": "+9.95%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD hits $1 trillion market cap for the first time as stock rides 5-day rally",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9SaGJvMThYUVlDY2hQVmVIQlRtMFR5YTBROTJhTW0weGRsYTlyQmJjNTF6UlE1MUE0UTFvZGtTQnNOMk9jUVR4WVZrYzI1X09CT29EU2ZDbUZ4QmFzOGdpbGJxaTZrODcybUE5Qm95cGbSAXZBVV95cUxOWmpqeFFKbWUwd04ybDU0MmFRdW9GVHpEN3pkUmkyR3M2SlBKeWo0Ti1TRUJGaHB4ZGRCSmQzUXhudEUxUVBmdEp0X2ttQmp4QmhwQXdNZ0JIZ0RIMWFXSm1MUG1hRXJWVVZfMDA2d2UyRFprMGpR?oc=5",
+          "date": "2026-09-21",
+          "source": "CNBC",
+          "ko": "AMD가 시가총액 1조 달러 클럽에 진입했으며 5일 연속 상승 중이다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$121.78",
+      "change": "+13.18",
+      "changePct": "+12.14%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why is Intel stock surging today?",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQb0kyVl8ybFZMU1JzcVlkVndLalFJMlE3WXZJZndLVWkzQXlpazkyS3lqV28wN3k2Wi03ZGlGNUlEcERNT0Y5T3dDdHEzZWhiMWlBNWNjWDNlN3VJVEItVHVzSXY2NHJ0Tzd4cHVqdWRFbGw5N2dQcUxoampHU1NBMTdMT2JfM3B3dDRkemJDSTIxbmpySjBaZWRR?oc=5",
+          "date": "2026-09-21",
+          "source": "Investing.com",
+          "ko": "인텔 주가 급등 배경을 설명하는 기사."
+        },
+        {
+          "title": "Meta’s Muse AI Agent Triggers Intel, Chip Stock Rally. AMD Hits $1T Market Cap.",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5SSTIydHlWS0FFdS1GRHczbHByd0d5aXU0OEF5X1lkTUdVTjlldTlVdEYwZHNxR0Z3M0RvWnU2TXBKV2R3NDViTFoxZDlVV3RfQ0NaZVQ4VXhFdmdpVXh6eER2YjlhOTRrRVktQ3h5Ykd2THBmcmZiTVI0YTNWdw?oc=5",
+          "date": "2026-09-21",
+          "source": "Barron's",
+          "ko": "메타의 AI 에이전트 뉴스가 인텔 등 칩 제조사 주가를 부양했다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$445.14",
+      "change": "+10.47",
+      "changePct": "+2.41%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC (TSM) Stock Forecast: June Revenue Up 68%, Q2 Earnings Tomorrow; Is $438 the Next Stop?",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNZ1JnUDhUX2U1ZXlyTk1ZZlJZQUlCanB0VnhQVTE2RktleVdTd2Z5a2JxS25KZGJuYTIzc1duU2lvVkZXMU16WlVSRzB3a2tkQW11czBQUF80VFdJX1pQM2tBelY1akNLaEZlbXF3QVJ5eVNKNGM2TWh1S3ByREV5TDBmUmRTT05kSDNxMXhaZVhDSEhOYXc4WjRJVm9CN0xaLTVQbW1RLWR5WXhzb1RhZ0dFRFdCM3ltVmx3dy1VQ3JqSFlnMjU0ejFGN2V1cWNa?oc=5",
+          "date": "2026-09-20",
+          "source": "TradingKey",
+          "ko": "TSMC 6월 수익 증가율 68%, Q2 어닝 발표 임박했다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,043.96",
+      "change": "+28.16",
+      "changePct": "+2.77%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$188.86",
+      "change": "+1.36",
+      "changePct": "+0.73%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$183.09",
+      "change": "+5.45",
+      "changePct": "+3.07%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Accenture Shares Climb on AI Safety Partnership with Anthropic",
+      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxNeE1BTGlPUnUyd2tnQlpWUVc2LUo0Nm1peDRvUmhSZWFaZDBsUlFhR1pCU3hzcEVHanQ5OHVHQjlsQlBWTXdtZnptLTI5R21FQU1zSldzSWVVR1lFZXNnb0k5TmVRaVVva096YjdENnE1ZFphOUVQcFRzdW81bkxzMVNaNGdtbEtzaF9uZjlIaGczOEY2cGRmM0FBRDhPcEc3UGZXZkhEVDQ5NlhJMGFTYzNkWG1SY2lURTFPNXFhQllZZzE1QVk3N0lyM2NDZWFEUThySmxmOXdSRFA0UWJtNzJaUWQtTU1oeThzQ0RBU1NROTk3UUpQRUYyZEFjSjZRcnVjS2RNM2VuN1pDQWN6Y2pLVnNzWmZmNVE?oc=5",
+      "date": "2026-09-21",
+      "source": "WSJ",
+      "ko": "액센추어가 앤트로픽과 10억 달러 AI 안전 협력 계약을 체결했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Accenture Shares Rise 6% Premarket Following $1 Billion AI Safety Partnership With Anthropic",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNYVo2SnhialhwSkNJUlZ5OS1VLXVLZUNST0YzWUt4RFU2aEJXZFNSeFRTakV0bm0yZ1pnZVhDNWg2S0tXc0l3M3dtdmhwX2R3S1dFYlVzbXZQWUZjX3ZxbGZUSVk3SVlHMDVGZTJqV2d1aUJaN29lOW80ZGJOQzVJN0FhRU8wVkNpVkNqVTY5X295NHBzUUZ2TE5QdE45dw?oc=5",
+      "date": "2026-09-21",
+      "source": "Yahoo Finance",
+      "ko": "앤트로픽과의 AI 안전 파트너십으로 액센추어 주가가 장중 6% 올랐다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "OpenAI and Anthropic Neared Deal to Stress-Test Each Other’s AI",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQUDRwaDNUMzFDNEdibnZnNE9OYnpoeVIzQjhlQ1BtUmQzU3BoM0ZOM3JUZXEzTDdMcHpiQ05RUjNBRGJ0ZzBQbFRrQXdJWkxaVzZLeVo0QTN0ZEU3MjVNblItQ3J0WGI2dV9HUEpUU2FsU1B1T0hKMWdBTm9FZDhoTnRYYW1VTGFCQTFzNU9xLUVmRmN1?oc=5",
+      "date": "2026-09-21",
+      "source": "The Information",
+      "ko": "OpenAI와 앤트로픽이 상호 AI 안전성 검증 협력을 추진 중이다."
+    }
+  ],
+  "summary": "AI 칩 수급 개선 기대와 지정학적 긴장 완화에 반도체주가 강세를 주도했다.",
+  "generatedAt": "2026-09-22 09:13",
+  "date": "2026-09-22"
+}
