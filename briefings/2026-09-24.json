@@ -1,0 +1,164 @@
+{
+  "sessionDate": "2026-09-23",
+  "sessionDateLabel": "2026년 9월 23일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,706.03",
+      "changePct": "-0.75%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,936.04",
+      "changePct": "-1.13%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,511.59",
+      "changePct": "-0.68%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow, Nasdaq, S&P 500 Futures Drop as Trump Threatens to 'Annihilate' Iran at UNGA—KB",
+      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNZnJESGowQVpLQ0JfSGF6VlU0S0YtTGNkSG5KUkxkV3hwWUxxM2NleFpkWG82bjFXZVR4RmZlUWJoQUEtUXQ2UjVqcVFmalNvb3AxRGFJdWZIVXVWTWk1TTJNTU9pYkdBOXNtYUMxOUtBUFpPM1gwbkxDVUJlNmprQ21ISVVIbkJGamlSMnBOTy1DOTY5U0loalFWaVZESEp1RWItVTBTa01lNmYtaDRrWWdwVk1CT01tMXZmUDBONnk4dnpXQ3hkemVnUFJ2aUpLcGZRcXBfSDNrb1BJYkktejZ3R2k3SjZrazJSLUJJeUY2TWtBbVpBOGRWdE5SQ20zQnU1SkJJc2MzSk0zRW01U0Nvdw?oc=5",
+      "date": "2026-09-23",
+      "source": "Benzinga",
+      "ko": "트럼프 이란 발언으로 선물 지수 하락, 지정학적 리스크 부각."
+    },
+    {
+      "title": "Dow Jones Futures: Stocks Fall As Treasury Yields Soar; Palantir Flashes Buy Signal",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMlZpMGFZbnA2RlZoLUZKekplM1RyZ0pabm00eWhrb21qbDNxV1ZpdHQ2aFA3M1hkdVI4d1ZiUmhVdUJwNGZnakxTVUVYVzAwekdLQkFsYXZjeWdGRWVlY2pSYWRJRUtlWkN6YUpiSDZTSXlqLVg4R1NBUEtCdHlzRlRaN0lPS1JoMWY2YnN2bzFHYXFZWUN6OVdkdGVzNTE3dG9ZUDZOUnlEVVo4Vmpwc2dsQ1J1ZUJNMVdBX0EwMG9UdWhMM2c?oc=5",
+      "date": "2026-09-23",
+      "source": "Investor's Business Daily",
+      "ko": "미국채 수익률 급등으로 주가 하락, 팔란티어만 매수 신호 점화."
+    },
+    {
+      "title": "Wall Street Futures Point Lower as Investors Monitor Middle East Developments and AI: Dow Jones, S&P, Nasdaq",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVllXVzNjRzY5SU9HbzFzZG9RNjlxQ1BPd3A3RGlWZ1ZPQ0YtY09GUlFPZnkwaTFwVG9UdzQxNGlESnFXTXNLRVNoeHRDTlkwS0dKNDMtTnJ1anFhMHRJV3VkM3RHdmhIVWR1LVZtWWl5SlBMLXFmYW92WFFmbnI5RjVySVlJT2VVcTNuZkF3bWk2ZHlfTzRmWXpXOW4?oc=5",
+      "date": "2026-09-23",
+      "source": "Yahoo Finance",
+      "ko": "중동 외교 상황과 AI 관련 developments가 시장 주시 대상."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$225.51",
+      "change": "-3.36",
+      "changePct": "-1.47%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia director Mark Stevens sells another $300M in shares (NVDA:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNXzI1dWx0RVVuQ3BaZ01HNmRiZ1k2MmNqTjZ5QUxySlNZQlMxLXYyUjNmTWM1N2VzdkxfLUN2a3l5Q05EWk5qdlgyUUdfWmRKRW9DalBHWWw1bVF0Y3BDY0p3NUY5SkNiXzFoVWFXN2NwLV9WcUUxWFJEeWxNdF8yUU1zVEpXcHdQSzlZaHVNUmVQVkFWN2VibGFQMA?oc=5",
+          "date": "2026-09-23",
+          "source": "Seeking Alpha",
+          "ko": "트럼프 대통령이 마이크로소프트·아마존 보유 주식 매도, 엔비디아 매수."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$614.61",
+      "change": "-9.16",
+      "changePct": "-1.47%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$122.60",
+      "change": "-1.26",
+      "changePct": "-1.02%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel: The Party Is Only Getting Started",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQm83WDZ3TTRQb1BnZU1fclBRSlRBZloyRlhHMEJZU085NUd6TVlpU0V6NGJWUGJ4ekdRTVdjSF9YNER0cE9Bd0wyUHhjX0hFRTljWERJUENrV2M3eDNMRWFhMmY0R3Bmc0VWUnVzY1pidV9ZQUlYdEdYeHVsZHFSS1g3YlZLUEk?oc=5",
+          "date": "2026-09-23",
+          "source": "Seeking Alpha",
+          "ko": "인텔의 AI 시장 복귀가 본격화되며 강세장 지속 평가."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$446.57",
+      "change": "-5.43",
+      "changePct": "-1.20%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,071.88",
+      "change": "-24.28",
+      "changePct": "-2.22%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$189.28",
+      "change": "-6.09",
+      "changePct": "-3.12%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$191.79",
+      "change": "+6.80",
+      "changePct": "+3.68%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir Could Be Big Winner as Air Traffic Control Goes AI. The Stock Is Rising.",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOdjNRTktob1lWdUl6SDdDYjAyNXJYejVlSDNkZUZ1Q3RnX3pqQ3M2NWxMdU1WM1hrWmV1dURZeHJDQ3ZXdEZleWYyR1VBQ1FBdDNPSVNhRk12OVlILWI1WlhqeHFkZV9GUGIwR3A4TmVmZ3k0TFdOV3pwNDhMYnZsLVdrTEMyUzZxeURN?oc=5",
+          "date": "2026-09-23",
+          "source": "Barron's",
+          "ko": "팔란티어의 항공 교통관제 AI 솔루션이 FAA 신뢰를 얻으면서 상승."
+        },
+        {
+          "title": "Palantir, IBD Stock Of The Day, Flashes Buy Signal Amid Earnings, AI Momentum",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYXJyMmxuejZESG1mZWVZd3d2MHVYSldkRUh6dHQ2MThMaVNnU19zUFJlWGM1Rk0weVRVWFVlaW10WF9KZzd6N2hRZHFrYzhVTnZtUTIxTnJWTDdhZEZGcmtXejExaEJRRlN3cXFWeDd6SEU3eS1qZWdBYUdLT0ZRZGVmUjhONlRHNTk2bHJNa3NuNHNMenhGYmZFSm9vNDBpUnZFZVZn?oc=5",
+          "date": "2026-09-23",
+          "source": "Investor's Business Daily",
+          "ko": "팔란티어가 IBD 금일 주식으로 선정, 매수 신호와 실적·AI 모멘텀 언급."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s biolab made a discovery it’s comparing to Crispr",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQT2loeHU3b3JGVFhMUEhJb0Qyd2RBaGpmbHFPdW1xVVNfRmF6TWxiNjhkR1NPMGJTT3Z2NW9tblY1YnJrRWtlSFF6c25JMjRQS1RwN1I0QTFKRl9ybDNZaFpZdjlTbTctdkpmVkM4TTRaa2h1OUc1U2NibENyZ2I5MXlEbG15WDdfTDFoUVBwdVhpNXc?oc=5",
+      "date": "2026-09-23",
+      "source": "The Verge",
+      "ko": "앤트로픽 생물학 연구소가 CRISPR과 비교되는 발견, AI 활용 영역 확대."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic says its biology lab has already found something big",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQMGNCdGw4Vk51RmJJd25GQTRmblZobmZfTFh1WjUzUXRTNHJtX2hhdXVVMkgxQ3lLYlRCaHV5aGtDTTY0cDBGNU1OZWhab3lHRU1ob1c2Z2VManlRUDNLMkVpazhsRGRrUWhmM2RoQmRqc243X2xrWE1IQWttY05WRk5CTkFvQWwyVUNrR0czcHMxNERxVVB2Q2RNZ1JFQQ?oc=5",
+      "date": "2026-09-23",
+      "source": "TechCrunch",
+      "ko": "앤트로픽이 자사 생물학 연구실의 주요 발견 사항 공식 발표."
+    }
+  ],
+  "summary": "중동 긴장과 채권 수익률 급등으로 전 지수 하락. 팔란티어는 FAA 신뢰 표명으로 상승.",
+  "generatedAt": "2026-09-24 08:51",
+  "date": "2026-09-24"
+}
