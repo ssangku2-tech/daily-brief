@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-25",
+  "generatedAt": "2026-09-25 08:44",
+  "events": [
+    {
+      "title": "강릉",
+      "start": "2026-09-25T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 920,
+  "importantMails": [
+    {
+      "from": "Apple Developer",
+      "subject": "iPhone Duo용 앱 제작을 시작하세요.",
+      "summary": "iPhone Duo 앱 개발 관련 안내"
+    },
+    {
+      "from": "Apple Developer",
+      "subject": "예정된 이벤트: iPhone Duo에서 앱 출시를 준비하세요.",
+      "summary": "iPhone Duo 앱 출시 준비를 위한 예정된 이벤트"
+    },
+    {
+      "from": "Claude Team",
+      "subject": "[Action Available:] Claude Code defaults to auto mode on Sept 25",
+      "summary": "Claude Code 자동 모드 전환 관련 필요한 조치"
+    },
+    {
+      "from": "ÖBB Vorzugspunkte",
+      "subject": "Information zur Änderung der AGB",
+      "summary": "이용약관 변경에 관한 중요 정보"
+    }
+  ]
+}
