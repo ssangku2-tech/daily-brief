@@ -1,0 +1,157 @@
+{
+  "sessionDate": "2026-09-24",
+  "sessionDateLabel": "2026년 9월 24일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,704.13",
+      "changePct": "-0.02%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,939.37",
+      "changePct": "+0.01%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,349.98",
+      "changePct": "-0.31%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Jones Futures Fall As Treasury Yields, Oil Prices Keep Rising. Meta, Everpure, Grail Are Early Movers.",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMlZpMGFZbnA2RlZoLUZKekplM1RyZ0pabm00eWhrb21qbDNxV1ZpdHQ2aFA3M1hkdVI4d1ZiUmhVdUJwNGZnakxTVUVYVzAwekdLQkFsYXZjeWdGRWVlY2pSYWRJRUtlWkN6YUpiSDZTSXlqLVg4R1NBUEtCdHlzRlRaN0lPS1JoMWY2YnN2bzFHYXFZWUN6OVdkdGVzNTE3dG9ZUDZOUnlEVVo4Vmpwc2dsQ1J1ZUJNMVdBX0EwMG9UdWhMM2c?oc=5",
+      "date": "2026-09-24",
+      "source": "Investor's Business Daily",
+      "ko": "미국 국채 수익률과 유가 상승이 선물 하락을 주도하면서 메타 등이 장중 주목받음."
+    },
+    {
+      "title": "Wall Street Futures Decline as 10-Year Treasury Yield Reaches Highest Since 2007: Dow Jones, S&P, Nasdaq",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONTY1Z2N4akhkRWJsTzlzZ3ZrbmxyN2F1QzN4YWtHazFCNWxfS2NrYmpTdDV4bVp3QlhJSWZETjJUSUdTNXZqYnRmUnZ3LS1udmw1dHl5WEF5OU5pRkkyb0VpVEUyMTZXZE1CcC05UkdEOU4wUkRSbGlXVkpwWlh1VmNaSmFXdw?oc=5",
+      "date": "2026-09-24",
+      "source": "Yahoo Finance UK",
+      "ko": "10년물 국채 수익률이 2007년 이후 최고 수준에 도달하며 증시 약세 심화."
+    },
+    {
+      "title": "U.S. Futures Decline as Investors Await Trump-Xi Summit and Assess Higher Bond Yields: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPclVISU80QTd2SjhRTzd3ejF0c1FSZmFDWi1pcFBkUmgwYVlCVEQ4NWJRTWJvYi1TMmNVUUNuNFNvOGV5N09BVWZlM1VLaDRfQkhqclZzRFJyc1dOa0pVSDRaeDhNOWtVQTN1WlB4T1VaN1VOT3N1RjhKaDROTjUzOXZ5dzFaM2ZieGUtQWVwV3pRX083dEVTUTlrc0FYZm8?oc=5",
+      "date": "2026-09-24",
+      "source": "Yahoo Finance",
+      "ko": "트럼프-시진핑 정상회담 결과와 채권 수익률 상승이 선물 시장 약세 요인."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$224.58",
+      "change": "-0.93",
+      "changePct": "-0.41%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$629.26",
+      "change": "+14.65",
+      "changePct": "+2.38%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (AMD) is Emerging as a Viable Alternative to Nvidia",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVkVsNVZ3c0VkZFFnTkE4SW11UG56amIxbVdBOGhQTDhxRk9NcTdmSXY5UWZUbllwaDJ0bXE5cnVXelJ2ZWdZMjY0eFlmaEpYd3FBdGdMMW1XenQzRm9vZUZXVUlvak1VTFpuS0hRSnlsZkxBWGlNVjM3bV9CZXViUDd2bnVXSkJCUkgwT0F5TVNaZlpiZ3pEbHRHZVloTmpaMDYw?oc=5",
+          "date": "2026-09-24",
+          "source": "Yahoo Finance",
+          "ko": "AMD가 엔비디아의 대안으로 부상하는 추세를 보이고 있음."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$127.39",
+      "change": "+4.79",
+      "changePct": "+3.91%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$451.15",
+      "change": "+4.58",
+      "changePct": "+1.03%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC to Raise Wafer Prices 3%-6% in 2027: Report - Taiwan Semiconductor (NYSE:TSM)",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNOXBOVzRITThoVkdiQWVhcUNBQ0JWOGd5WmpQaU5Ya3Q5dkJjZzNLYm5iMmtWdVFRSU9OMXI0U1BxVU9vcG9yUUR5dHNtcEdhVHByNEtQVVdDd3Zvdmc4MTBzZVNPM01sZnF1VGswVTZoYlNlZmdRVmRRY0MwdUpqaUF3eFN3ZzMxVnRfeTVxcXQ1NFIwQmdhb1h0LXplME82NWlYaUhzNA?oc=5",
+          "date": "2026-09-24",
+          "source": "Benzinga",
+          "ko": "TSMC가 2027년 웨이퍼 가격을 3~6% 인상할 계획으로 보도됨."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,080.53",
+      "change": "+8.65",
+      "changePct": "+0.81%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Stock Gets a Big Wall Street Boost Ahead of Earnings",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeHV1NmlfMndSY09KT1RTaVVUT0MwSjd6V0EyV25qTEpFQ3JZbjlYbWo1aHczM1RPZE5CbExXcDNLSllDMzRVWGZfMDc3U1hWSE5sOElsNjM4NmhIek5ZanlyZnQybzl6QnlqTlhhLXNxZW5lTVAzbkRKakRwem51bTFxMjY0Ty1ZUHljM2c3MTRjcUxMQlU2QmpCU2xXMTRXQ1JZaw?oc=5",
+          "date": "2026-09-24",
+          "source": "The Motley Fool",
+          "ko": "마이크론이 실적 발표 앞두고 월가의 긍정적 평가를 받는 중."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$186.37",
+      "change": "-2.91",
+      "changePct": "-1.54%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$192.59",
+      "change": "+0.80",
+      "changePct": "+0.42%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s A.I. Is Teaching Itself Biology. Now It’s Made Its First Discovery.",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNNFZzajNZQW1MeHplVTRLYWd5NUlpUjhTSVU1YU9sODRIQTRvZU5TXzBvR2xETVVPYmEzRVJNNVJkRk83Y2pPZlVFbnB5RHZULU85MEdTa09wZUVBM3ZiLUJIdWs3U2NieXZVNTJUNER0WG1qSGF1TkdEZGs4TjNLdVFB?oc=5",
+      "date": "2026-09-24",
+      "source": "The New York Times",
+      "ko": "앤트로픽의 AI가 생물학 분야에서 독자적인 발견을 이루었음."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Akamai signs $11.6 billion cloud deal with Anthropic, grants warrant for up to 5% stake",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNanVpUjFYbXpXWHdEU1NlRFlfZnI5a0Y2OVlzYUkya2tBR3hOY05ZTk05ZVZrWUZqcmttYjV3b2x6d01iTUFIZ095a1lQbkFCbTZFVGJzd2tUM1NkcWtOV3B2X1VpMGpkSVlGOW13ZU0xd3BjUm1paldVNHpYVllpN0UwQ3ZkUGk0R3AtaWx3SDJFaXdEUkdmeHRlT3M0Tk10LWc?oc=5",
+      "date": "2026-09-24",
+      "source": "Reuters",
+      "ko": "아카마이가 앤트로픽과 116억 달러 클라우드 계약을 체결하고 최대 5% 지분 보유권 확보."
+    }
+  ],
+  "summary": "채권 수익률과 유가 상승으로 시장이 약세를 보였으며, 트럼프-시진핑 정상회담 결과를 대기 중.",
+  "generatedAt": "2026-09-25 08:57",
+  "date": "2026-09-25"
+}
