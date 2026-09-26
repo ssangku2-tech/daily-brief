@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-27",
+  "generatedAt": "2026-09-27 08:21",
+  "events": [],
+  "unreadCount": 922,
+  "importantMails": [
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "iPhone Duo용 앱 제작을 시작하세요.",
+      "summary": "iPhone Duo 앱 개발 시작 안내"
+    },
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "예정된 이벤트: iPhone Duo에서 앱 출시를 준비하세요.",
+      "summary": "iPhone Duo 앱 출시 준비 이벤트 안내"
+    },
+    {
+      "from": "ÖBB Vorzugspunkte <meineoebb@vorzugspunkte.oebb.at>",
+      "subject": "Information zur Änderung der AGB",
+      "summary": "ÖBB 약관 변경 사항 안내"
+    }
+  ]
+}
