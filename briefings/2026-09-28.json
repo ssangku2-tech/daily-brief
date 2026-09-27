@@ -1,0 +1,174 @@
+{
+  "sessionDate": "2026-09-25",
+  "sessionDateLabel": "2026년 9월 25일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,743.41",
+      "changePct": "+0.51%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,068.72",
+      "changePct": "+0.48%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,828.62",
+      "changePct": "+0.93%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "The S&P 500's CAPE Ratio Just Hit Its Highest Level Since the Dot-Com Bubble. Here's What That's Historically Meant for Dividend Stocks.",
+      "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPb3F3OWVKaDd0amxDSEc0dzFSNmJpbVJfVkJlQUI5QzVjVXpCemNBVnBHUl9RM2oxaWJJTE9CNlIySi14X3BWclo2V2JwYkQyaV9RWHJjVks3cXlud29neG1XS3JObUM5UEdJRmRaaG52QVcwd3VEWENjelFFM0dZSlFWb0VaeFR5cXQ4Wm1wdDRURVc4Um5rSndYRVNnLWl6RUdVa3VCZWpzb0JsQlhlXzF6NWZxSDZpWlRJVFZpWmR3RXlUOXNoQldyQm0zRzRDLWVnVG1xSXZtb2g0UTd4bVFnY3B3WU55ZjRqU0dSdTBqTFA1cDhNcDZQVENHeHJWcTFvR3lUV3FGQVliMFE?oc=5",
+      "date": "2026-09-27",
+      "source": "The Motley Fool",
+      "ko": "S&P 500 CAPE 지수가 닷컴 버블 이후 최고치. 역사적 배당주 수익률 의미 분석."
+    },
+    {
+      "title": "We're Witnessing the Stock Market Do Something for Only the 3rd Time in 156 Years, and History Is Crystal Clear About What's Next for Stocks",
+      "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxQbTdhT3RBQ2FLNzhONUdlck51R0M5WVBES1c4am1UbnktU0JDQVBndV9taE9JaHhCWkoxaEJ2NXJMV1FRQnoyNlZWcEFuUzEzYnVjMEUxOFpkN1dBNEYyUU1wVHFnRjR5YVhUeFZrejJPd1FIU1Q3dTJQZmtraTlRRmRncVJoQ051VDRVY21rQUtsb3hDeU1YdlFIcktXeHlqWDJITmdYZ3FOOXhJU3JTdGVudThwc21PSkdRMG5rRHdjUExSN1dybU1SanRwcFRiaG52amk1RGpyTkNLcDNaOWsxUlVnaUVmVlU4Zi1JTWpXNFdpSF9oRFlfTGN4RERfRmZTUnluZnhTbzB2ZFlCUWN6eGRoTGk0a29XeTFWMDdmZGJqaHJWRFBiTjZIYU1semZLc2FGb1NJNnhEVmpr?oc=5",
+      "date": "2026-09-27",
+      "source": "The Globe and Mail",
+      "ko": "156년 역사상 3번째 발생한 시장 현상. 역사적 선례로 본 향후 전개."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$225.07",
+      "change": "+0.49",
+      "changePct": "+0.22%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$630.63",
+      "change": "+1.37",
+      "changePct": "+0.22%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel CEO Lip-Bu Tan Has Incredible News for AMD Stock Investors",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSC1WTTFSX2pUUXVsekwybW5nN0p0THJ2NTZRY3BHT2d1QU9hUlRQWGlYRi1BdXhQUWR3WC1hQllPbDJmVExJVzlReXg5a1c3dWpocDBFOGVVN2tBdWYtRVg2ZDNfamdCVDZNaHNVUmlBdnl2SU5jTWtBRHNrWFVUSE84YjBEUEpQSE1laElIbThJR2R6WXVBRjNPR1BDeFRwbGRsTHU3UFBzODA?oc=5",
+          "date": "2026-09-27",
+          "source": "The Motley Fool",
+          "ko": "인텔 신임 CEO의 결정이 AMD에 긍정적 영향. 반도체 업계 재편의 신호."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$123.00",
+      "change": "-4.39",
+      "changePct": "-3.45%",
+      "up": false,
+      "news": [
+        {
+          "title": "What Is The Case For Waiting On Intel Stock?",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZlZYeXRaSVFsSXZWQlIyNDdtZ2VrUlpkUmp0TEFMX2hLT09felVyamgyNnp1c1hZRThENWdQNl9saXB4eVB5Vzl5QzNkVC1pQXBvQTBFTUNCVTRiOGc5ckRkWVBONW9VdUNYX1k3c3dBeGVDSlMzRVhad3V5anQwaUpyQ0FLdGVfbGExOHZOTzBmVjA?oc=5",
+          "date": "2026-09-25",
+          "source": "Yahoo Finance",
+          "ko": "인텔 주가 급락 후 추가 하락 가능성 검토. 기술적·펀더멘털 약점 분석."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$450.61",
+      "change": "-0.54",
+      "changePct": "-0.12%",
+      "up": false,
+      "news": [
+        {
+          "title": "Is Taiwan Semiconductor Stock an Undervalued AI Stock to Buy Right Now?",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONHBHSE1VendpcDdRLV96bWwtTTl5aUtkSUs4Y19wOWQwaEx6Sm5LWmNVd0VLRHhPRW1LS3RRZl91QjVqbzVaWjdsOEZLcVpveWswZzFnTHQ1cnVmblBpNURLaXhrNmhPcDNnYk5KSF9fRVdJbzNiYVVMYjlnMzZId0NiTE1CSHlwZzU0eFA1dV8wZHdpMWxzeQ?oc=5",
+          "date": "2026-09-25",
+          "source": "The Motley Fool",
+          "ko": "TSMC의 AI 칩 수요 증가에도 저평가 상태. PEG 지수 기반 투자 논거."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,082.28",
+      "change": "+1.75",
+      "changePct": "+0.16%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Stock Clears Key Resistance as Analysts Predict 352% Revenue Surge",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQeGMwNXlpWlZKbWdBTk1wWDFPcDhWSUJSRUtPNmwzc1AteUt6WThVOVY4ZGVReFZmT2NkY2pjV3NUN1ZBb1JQSk12eFc5UXY2OVRXSFYteXRYbVRtUVJDaWdFX1NQLWxvWjJqU0lnUF9yZC1VRmY3eGJ4dnNtSzJUTk1ELVJvckFqcWR5aVBscndmempXTnR5RmRHRTVHX1IzOVVRbkR5TDdKUHlmclZ0U0ZzSElWNFJHNUhWZThDQVhNOTRRSUY0Yg?oc=5",
+          "date": "2026-09-26",
+          "source": "Benzinga",
+          "ko": "마이크론이 주요 저항선 돌파. 애널리스트들 향후 매출 급증 전망."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$191.56",
+      "change": "+5.19",
+      "changePct": "+2.78%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix (SKHY) Weighs a U.S. NAND Plant. Would Lower China Risk Justify the Cost?",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNY1BnVHUxX2N3SkZGZUlxaG04Xy15eC0zeXNaRlpfUklLdUtkN3VRSGlTOUtZdUtYVHZ1NjlkSllLUnFjZGtvYU1tU0JCODJadnM0MHhsdkVncEJiM2c3YkV4TjdKNnRGR2V3RExiUkhUZGVPaHAzOU4yZVFVcE5rS21FMS1lanF0ME9B?oc=5",
+          "date": "2026-09-26",
+          "source": "Yahoo Finance",
+          "ko": "SK하이닉스, 미국 NAND 공장 검토 중. 중국 위험 회피 전략으로 평가."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$189.67",
+      "change": "-2.92",
+      "changePct": "-1.52%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir Is ‘Not Really an AI Company,’ Defense AI CEO Says - Palantir Technologies (NASDAQ:PLTR)",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUGhVUkxMYVpHRFpDT3duSUo2YWFzUmZiLUh3ZklsMUVqUE95S2Y5S0VUcGVvcDBGb29GdWVQNjRaSTZxdXdjZ0tRaVp4RWw5eDltUEhhbkhGSzZXdkpaQ3IzVGdHaFhrazREcnQxSjladnNJOVpJZ19mVlhfWGV2WEE2SjhBN0VPbXExUkpWLXNWVmpMOENSUTJpSGI1T0pabzk4QngxN0x1RlE?oc=5",
+          "date": "2026-09-25",
+          "source": "Benzinga",
+          "ko": "국방 AI 전문가가 팔란티어를 '진정한 AI 회사 아님'으로 평가. 사업 모델 논쟁."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Scoop: Top AI companies probing tens of thousands of security incidents",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOaUlRV1JkUEZFRkRINVBlWTR1SWxkZ1hjcUdOMkJDNzF4UXdBVHd2LVlqQmlwb0R3cTVuTFk3MEp1eHlUT0hsRTAzekszcl81ZjNoWDZCMkZBTlk4Z3dlV1RoZnd3YVZSQmpUWWEyc3EyWUFnRHFiQjNacUVEYmxuYXFxVldIdVJ3?oc=5",
+      "date": "2026-09-26",
+      "source": "Axios",
+      "ko": "앤트로픽 포함 주요 AI 기업들, 수만 건의 보안 사건 조사 중."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Scoop: Anthropic's Dario Amodei to have White House dinner with Trump",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNa01meU5ZWVpKYVJodDlpcExfZUdQbnBqVEc1UUl5TGg2YnFxT05yd0I5RU9vd2ltcjhMY1VCeVBsTGluNjJ3X2hyNkJEZFlUbHI3SmNsdWpGbzA2NmNEdTg4UjMwdEo2UzdsUHg5WUl0S085cXVMN1lwN1Q0UzBWdQ?oc=5",
+      "date": "2026-09-27",
+      "source": "Axios",
+      "ko": "앤트로픽 CEO, 트럼프와 백악관 만찬 예정. AI 정책 영향력 강화."
+    }
+  ],
+  "summary": "반도체주 엇갈림 속 시장 소폭 상승. 인텔 약세, SK하이닉스 강세.",
+  "generatedAt": "2026-09-28 08:52",
+  "date": "2026-09-28"
+}
