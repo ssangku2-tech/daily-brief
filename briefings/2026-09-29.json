@@ -1,0 +1,179 @@
+{
+  "sessionDate": "2026-09-28",
+  "sessionDateLabel": "2026년 9월 28일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,683.69",
+      "changePct": "-0.77%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,820.38",
+      "changePct": "-0.92%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,481.51",
+      "changePct": "-0.67%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: S&P 500, Dow, Nasdaq 100 Futures Fall as Rising Yields and Trump's Rejection of Hormu",
+      "link": "https://news.google.com/rss/articles/CBMinAJBVV95cUxQTHYtNHZSakdwYzNPNUJ0NXd2WHA5bi1TRjY1VWVKVV8yMk5LWTJ4dnl0ZVd5eDlzdkozcUtQTVNGUTJrSldNTjVENHhEUlN1QmdhNnNUTmkwVHNUWnlINllMdGtzWkFMaG1GamtnRnZWa0ZsQ1hHQzFkc2p6XzdwdjNmUnFCUXI0UVYyOVBGdkt3NHBQZEl4NXpWZG8zTERXQlFISXFLcWwzTXZKM1gxdFJjb3lUXzdydGRJMWYxMDc4Nkp2NGhGSl9obDJvVEdNMmJPcWNkdUdJMFJGRWlWRTJPNzR0WGpVSXhyeGgzeXBLaHFYQVVWRlo3UlAybWcxQVpCRGlxR0ZvZ1dXVmdGY0dCYUY3YXcyWEVWSg?oc=5",
+      "date": "2026-09-28",
+      "source": "Benzinga",
+      "ko": "S&P 500·다우·나스닥 선물이 금리 상승과 트럼프의 정책 결정으로 하락."
+    },
+    {
+      "title": "Stock Market Today: S&P 500, Dow Jones Futures Fall as Rising Yields and Trump’s Hormuz Deal Rejection Spook Investors—LLY, PEP, JEF in Focus",
+      "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNa095bjFuc2pHSzJsN1dYMDVTdi1oYmdWUTJwTnNMcFN1YUVGTHdtLVBpN2NlWkM5ZXdpMDJJd0JIYko4enh3eUJsNHlKaFpNMW5EVDNaQklPRXNJNm9xenVyc3lvSVNZYmQ2RGpjeTEwYzcyWGJCLXh2NDVqUXMybXYyRjI2QWQtUGQ5M05KdWVIQVNvQzl4TUJ3SlJnVnMzWmVQX0VsYjFrSHpmN0VyZ3Q2elBRaVdYaGtQZE1JT0pyUXoyVTE5Zl9PVGRHU0t6WVpOc21CRERGUTl0dzRTNUctc2VEWVRLc0MxVDRDX29qZ1lYRUI2UzZSa3I4aGdiekRVUzMyM21zZ0dyLU8wdUYtZlZsYXFyVGNROUJtcTVvdw?oc=5",
+      "date": "2026-09-28",
+      "source": "tradingview.com",
+      "ko": "금리 상승과 트럼프의 호르무즈 협상 거부가 투자자 심리 악화."
+    },
+    {
+      "title": "US Stock Futures Point Lower as Crude Oil Prices Rebound: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTEtlczZFRVpya3h2NlVYZmhWai10RGFLZk1oTE9FOTNOZjdab2ZOR0lzaTdSR2lQaGhyajJwcnZxRUZCci1YSHYwQkNYSWFodmFUQllfRkI4WU1OUWxLVWdLRGtoWmVaYnBuSzNaV0g3T29pa05OYzEwX3ZoUWFPSjFqTy1uM1F5aHc5M1M3NEJQOFNMRWNCTg?oc=5",
+      "date": "2026-09-28",
+      "source": "Yahoo Finance",
+      "ko": "유가 반등이 선물 지수 하락을 가중."
+    },
+    {
+      "title": "S&P 500, Dow, Nasdaq Drop Under Pressure From Elevated Yields As Investors Shrug Off Trump’s Iran Sanction Relief — NVDA, BA, AMD, NVTS, CBRS In Focus",
+      "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQR1Q4N2VCZUpYbW1mUWQ4NnF5d1FMWjI0T0UzT0VzVzBqSlhrZUQwWndlaUY0bGhLRFdrNEtuV3EyR05jNUlNdVFpQjhQQ0sxMHRNclhuMjNQR2p5VFJqOF9JMUJtajVpU09VYlB6eGo5U0FPdE1OdElIWEFWZzFDamFVUmdadlBoTG9hTEY1d0NSOTRMR09aMlQ5Smx0bExPWFZ1amk4SDdqODBUSFd5d3AzMU1tdndTVWl5YlVlZGxodm5ON0hXaHB5QXFkb2NwRzRHNno5OXYtVkhLSnM3UUhrZzFlbDNRRkxjNzg3d1RPOW50Ri14ZHg4cDJUcmhaR1ZnUDI1NThGNklXSU5CSmY4REtBZ0QzaFZ5VWRGcFdyaGpwd2JiTXJLNA?oc=5",
+      "date": "2026-09-28",
+      "source": "tradingview.com",
+      "ko": "높아진 금리 압력이 광범위 낙장 주도. 기술주·방위산업주·반도체주 중점 관찰."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$228.86",
+      "change": "+3.79",
+      "changePct": "+1.68%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia announces jaw-dropping $150 billion stock buyback, largest single authorization in history",
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPMTJ6S3JPLXRudUdXY3d2UW1qQXhHQ2s2Tlo4emxQeWJGYzFYMmdCQ1lkUlNKUllqbk5VUlFJRnhfR29zT3RpbDV5TkJDZVVtVjZLd2hvM2pzUHR3REJ2dElXR1FZaHVPcllEUmxQUWVBQzVPek1vZWtDS0dDVWhYaS1qVVJDUEQwX1QtWDBVaEZDanVHeHY3bnE3VE9IWWNpR1RZaEVMdDN5YkNQaURUeVY0RHpqS1MzRlloS2NLYlJlaHMyd3Y2UzhhS0hRMUlfQjJid0l5bGhzdzgwRWNwZ2NndGVQLTN1UW9r?oc=5",
+          "date": "2026-09-28",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아 역사상 최대 규모인 1500억 달러 자사주 매입 발표."
+        },
+        {
+          "title": "Nvidia unveils massive $150B increase to share buyback program (NVDA:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQRlFjUUtPSzI4Q2JHSG5kRUUxQ3VDX1dWV2I5MDBYWXdXNGlxa3NOU3ZIbU9PeVBSZW1QRnN6d0s5RFFvUDRjcFloakF3NEwxTDVTLWE5NEdYNFpPb0Fwb003azVGUDVWdXcyTVlWdWNkZUJ6WUR4Tmh3cmdVY2NlMUpGUGVNeFRRMk9NejJaVlA1SWRPS25Ba2x4ZS1xd01p?oc=5",
+          "date": "2026-09-28",
+          "source": "Seeking Alpha",
+          "ko": "엔비디아가 주당매입프로그램 상향 발표, 업계 최대 규모."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$607.87",
+      "change": "-22.76",
+      "changePct": "-3.61%",
+      "up": false,
+      "news": [
+        {
+          "title": "AMD to Buy AI Firm World Labs in $8.2 Billion Deal",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcDVDOUpwOWNrbUxTaFFRei10U2o4Q1g5N1JPdjlsT01pZS0tLWhoZG1WblE2WDdmcUw0MUpSQ19UdUxJOU5TMTdobkY3UVVqU1ROcXNjLWpNb1Q3SmxhNDZmTkFZSE9aaXhqaC1VakVCYkkxMnpEOEhXbkpNSy04Uk9oTGVWdE1hanFDd3d4b0R3dnNIMlhudDVlR1pOVFhKTHZxY2xOZlhFak5HbGNF?oc=5",
+          "date": "2026-09-28",
+          "source": "Benzinga",
+          "ko": "AMD, AI 기업 월드랩스를 82억 달러에 인수 계획."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$116.03",
+      "change": "-6.97",
+      "changePct": "-5.67%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Is Intel (NASDAQ:INTC) Stock Down Nearly 6% Today While Nvidia Rises?",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9WZzFEUjhJYl9EdEExanBBRDFKT0EyV0hXX0N5RUk4WTY1ZkZIaHo5ZHotUkdhbkEzYm1XSXVPLTItcnpFYlJpb1JKbC1GN2d1Z25pNzdvbGpRMUlla0JldVZvamJNTE03c21fOGtGdDlDQQ?oc=5",
+          "date": "2026-09-28",
+          "source": "Stocks Down Under",
+          "ko": "인텔이 광시장 낙장 이상으로 하락, 반도체 센티먼트 약화와 익절 매도 영향."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$452.88",
+      "change": "+2.27",
+      "changePct": "+0.50%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,053.98",
+      "change": "-28.30",
+      "changePct": "-2.61%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$181.92",
+      "change": "-9.64",
+      "changePct": "-5.03%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$187.48",
+      "change": "-2.19",
+      "changePct": "-1.15%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "EXCLUSIVE: Anthropic's IPO prospectus shows sweeping AI vision, surging costs",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNbVlPeVROc0FBWTl6a0ZCZXdPVF93WjdPT1BFV2xkQmlyRE9oYS1wRF9yWk0zV1EwSlJ5Vmt0UkpucHdQWUpSbGdzUmdVeC1EWm5sMzBkTUNQMkg3ekVYMkMtemVySUxhWnRCTWRNLTA1Vl8tZVZkRU80ZVk4TjdZbE5LdjJ5VzJXbUlmM1FvMnJqTFE4TkZVeEJFVndEMmpIbGN5WDRxclhHX0JZdHp6LWlad3JTakZr?oc=5",
+      "date": "2026-09-28",
+      "source": "Reuters",
+      "ko": "앤트로픽 IPO 공시서 공개, AI 비전·급증하는 비용·존재론적 위험 경고 포함."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Trump pushes US to win AI race in meeting with Anthropic CEO Dario Amodei",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQYTJiUlZEa2N3S21hQnVYVjBXeVEyN2ZicERzMWNpUTFFNEFYcGNrSzZjNDh6ZTFqdW9vZDkzbzg1YjhBV1FwVnROQlZNalJjTlFXZXRIdFJRQW81LUV0V1ktb05sZmw0eTVZdUl5aEFDT204T1lMeGRQNjFVY2QwYQ?oc=5",
+      "date": "2026-09-28",
+      "source": "Fox News",
+      "ko": "트럼프, 앤트로픽 CEO와 AI 경쟁에서 미국 우위 확보 논의."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic warns of ‘existential risks to humanity’ in IPO prospectus",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSy1KbEtmZ1NBTnFEd3Fkck9jajdOcHNMRnhrRDAzNEV6UWRVaWk4LWZLdlNCeHQ2U29rWUQzaFpmd3ZfUzNQWXQxMVhmX01ELXYyMEk4MzBLRjlrRGdPT0dEMlBsZUU0UFdmZ0VmYVNhTmFtRTJtaXRPNjc5MVBCcFNNaHY?oc=5",
+      "date": "2026-09-29",
+      "source": "Financial Times",
+      "ko": "앤트로픽이 IPO 공시에서 AI의 '인류 존재적 위험' 경고 명시."
+    }
+  ],
+  "summary": "금리 상승과 트럼프 정책 불확실성으로 광범위한 낙장. 반도체주는 엔비디아 강세 대비 인텔·SK하이닉스 약세.",
+  "generatedAt": "2026-09-29 10:09",
+  "date": "2026-09-29"
+}
