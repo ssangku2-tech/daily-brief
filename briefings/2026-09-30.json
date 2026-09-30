@@ -1,0 +1,180 @@
+{
+  "sessionDate": "2026-09-29",
+  "sessionDateLabel": "2026년 9월 29일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,670.84",
+      "changePct": "-0.17%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,797.54",
+      "changePct": "-0.09%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,349.92",
+      "changePct": "-0.26%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow Jones, S&P 500 Futures Slip, Nasdaq 100 Gains as Trump Dismisses Iran Sanction Relief as 'Hoax' — NVDA, AAR, MTN in Focus",
+      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxQZXBuZ1F2RGw0dFdFNm1icTNENENNUGNEbVduQ21RQml2RWpPdl9BeEFlNVJHdEJjNnAzQ0RXSWpzNml5eUwxXzUyRGotZ0hUNVhaalFGeUhOc0ZyVTk5ajdycWY2WERYNG9GdmJXa3AyUDdTMzN4ajdZZzJYQUpWcVBZYlVadVdCeEloZG8xTU1MQWVQZm1DcldyQjl4dkhSaUFJZWVMNGg3NVI1dXlXNlp0ZDRWM1BiOWI0WWVEa00tNVFVekpETTRoeWRYUTZDdERTQ05SSzJKR0xodmJwY184SkJmeWFUODdxbmF5eTRsbmJlUl9MVEV2TkdEZWdaVjZDM0hoek5WTDFtMXpDVHJEa3FPWk1PQ25nZFRWNXM?oc=5",
+      "date": "2026-09-29",
+      "source": "TradingView",
+      "ko": "트럼프, 이란 제재 완화를 '거짓'이라고 주장하며 정치적 불확실성 확대"
+    },
+    {
+      "title": "Stocks Grind Lower Under Interest Rate Pressure: Stock Market Today",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQRnBGNG1pa3o5WGkxOW50Qll5WDVlS3phQ0FaZDl4bXZzbm1jM0JKMDV1Vm5NME9mUHVGaDA2VFJJSkN1R2pTaEFocS1GNnJ0ZzRGUTRTdmRTUHhCWFhtM0taclBuX2N4b0F5eWJRX3A0YmIwNHk0TlZ2Q25oUVpHQWF3cXJhWTR6Ymg0d3l1ekx4b3FwUTRMMUlJa245LXVBNTk5QnhfLU9CcTg5b0E?oc=5",
+      "date": "2026-09-29",
+      "source": "Kiplinger",
+      "ko": "금리 압박이 주식 시장의 주요 약세 요인으로 작용 중"
+    },
+    {
+      "title": "U.S. stocks lower at close of trade; Dow Jones Industrial Average down 0.25%",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQeDRTbVFvSFU1MUtDM3N0cU1QQV9fVGRtMVpuQkpDam9KQWF3VC02WjctSFJYWHhrLUFIUEFaS3NHRGMzWnVQODhSZlFkekdPblhQZ3pzLWxyeDQ0N3plVTFmZHFxV3J0ZmozTkpIc3F4bzAzcFNWZ2xfMHN6b2lzckoxWE1Sc21qMmNqUW84RFhoY29kaUVFa3ZiQU45UE03Y0I1Q0FzX2RFc2VPX2QtMktpOFZUTFVLTVBxeTZiaVp1SXpkZmtZ?oc=5",
+      "date": "2026-09-29",
+      "source": "Investing.com",
+      "ko": "다우지수 0.25% 하락으로 마감, 전반적인 약세 기조 확인"
+    },
+    {
+      "title": "Cboe and S&P Dow Jones Indices Sign 25-Year Extension of Exclusive Licensing Agreement, Through 2051",
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOV1kxU0R6eWVmeldUb0pkeGNqNm9jVE5XdkNYZ1lvWWFlOXBielplSk9FZWt0S2FCV3pxYmR2UmJIU2lMMXpZdXZBTFRZMmstS2pKVDJXVVo0aGljbXJnb2xPNzhZQTBxV25pbklLdTlVMEhRdkNQSUZKeXQxZVVlNHJDa2ozUG94MHFuR2RtLTIyUFZTVzFPcFRuRGpFR2RlZ2llb2JnYnViTjZzek4tanJla3pTTHhxXy1kbHRzX0NsR3psLVY2VmNhWGc4SW00SkI3Qldld1NDdGlfQXJiN3J6RVduSWxya0E?oc=5",
+      "date": "2026-09-29",
+      "source": "PR Newswire",
+      "ko": "Cboe와 S&P 다우존스 지수사, 2051년까지 연장된 25년 라이선스 계약 체결"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$227.21",
+      "change": "-1.65",
+      "changePct": "-0.72%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia announces jaw-dropping $150 billion stock buyback, largest single authorization in history",
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPMTJ6S3JPLXRudUdXY3d2UW1qQXhHQ2s2Tlo4emxQeWJGYzFYMmdCQ1lkUlNKUllqbk5VUlFJRnhfR29zT3RpbDV5TkJDZVVtVjZLd2hvM2pzUHR3REJ2dElXR1FZaHVPcllEUmxQUWVBQzVPek1vZWtDS0dDVWhYaS1qVVJDUEQwX1QtWDBVaEZDanVHeHY3bnE3VE9IWWNpR1RZaEVMdDN5YkNQaURUeVY0RHpqS1MzRlloS2NLYlJlaHMyd3Y2UzhhS0hRMUlfQjJid0l5bGhzdzgwRWNwZ2NndGVQLTN1UW9r?oc=5",
+          "date": "2026-09-28",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아, 역사상 최대 규모인 1500억 달러 주식 자사주 매입 공표"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$607.57",
+      "change": "-0.30",
+      "changePct": "-0.05%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$115.93",
+      "change": "-0.10",
+      "changePct": "-0.09%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Is Trying to Reinvent Itself. Here’s Where INTC Stock Could Be in 2027",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRXEySHZCNGp4djJzWlR4c0hmak90UUJOZmFHWmJ4VExGc0Zqd2RGekxmQ2xVUEZZNVh5Y3p6VzlzTEZNT0M0eHZJZ1JpeUV4ZEFsS3F1SEhQOXZadXZsSGgyd3VGVDlESzZrYVpxNmtzek1JVElRQVJUOTAtSkNuWW1wdzhfS1JZSlo4S2s1VUc0NEZwOTBLdGhZYVE1a1lraUVXa3hpUGRFUnV6T2Q5ZGFfOUs5Nnl1c2c?oc=5",
+          "date": "2026-09-29",
+          "source": "24/7 Wall St.",
+          "ko": "인텔, 경영진 교체와 사업 재편을 통해 2027년까지의 주가 전망 불확실성 존재"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$456.94",
+      "change": "+4.06",
+      "changePct": "+0.90%",
+      "up": true,
+      "news": [
+        {
+          "title": "Prediction: Taiwan Semiconductor Manufacturing Will Hit a $3 Trillion Market Cap Before 2027 Is Over",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWWtSRFoyc3ZRZ1RSS192ZG1vNVEyQ3NjNkppcVdocGx4cGZ0Nno0QUVDaXpCWnZ1SUVmOWVrdTRyTjBUdERfS1JCamFLdlhNRnVaSjRqaHA0V3pRd2FYd3VqOWVjdWt1WDFKeGxzcHp2dUdXTHVvMlVjTUdGbDNjdTF4RjR5SEF3YlgxS1NDX3JkMS10Xy1FaA?oc=5",
+          "date": "2026-09-29",
+          "source": "The Motley Fool",
+          "ko": "TSMC, 2027년 이전에 3조 달러 시가총액 도달 가능성 제기"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,065.08",
+      "change": "+11.10",
+      "changePct": "+1.05%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron to report Q4 earnings as memory boom powers on",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNY2REVk9Lb2VfOThUV0hPeUZrdGt4aEFwdFdCVVlHNFB4WmhBbjFaWkxweHhBZlVMTFphUlhqbUZPSkRWdG12OWFNb1phQ2xpRC0xZ2d2akxmTnRLb1Nnc1Blbk1KQ19jNndORFp1U2MtMUtCT3hoc3dwaHFFS0ljODctU1RvNFk2T2RsTzQtZmJ6Y29RaGJOaEpKdFhON1ZOZVFIcGoyNUpQMy1fZ3Q0WERsWQ?oc=5",
+          "date": "2026-09-29",
+          "source": "Yahoo Finance",
+          "ko": "마이크론, Q4 실적 발표 앞두고 메모리 수요 호조에 힘입어 강세 지속"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$186.68",
+      "change": "+4.76",
+      "changePct": "+2.62%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix Climbs 3%, Outpaces U.S. Rivals Micron and Seagate as Traders Weigh Memory Demand",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQX0FscjJKbGY1WnZuaEl5S2pabW5ZempwSTBRbHNseUliTURET25fOXoyNktYZnBQRlZpV3VJcnFGdFVEbFFDeXlsdHFqOEpLTVBuQUkxTjJaY2U5N0FLREFfNE9Wc2dqSXFwYnFLM0tuSi1iNW1FOXdwemI2a2FPeWg1cjF0ZWd6RmtORGRtQzlQWmxISTFEVVJqX0VkWFE1VXBnQUkxUWhvR084Z3ZELXFJeVpZaW5zRENIc29vVVJJd2I2NmRhRXVvcw?oc=5",
+          "date": "2026-09-29",
+          "source": "24/7 Wall St.",
+          "ko": "SK하이닉스, 미국 경쟁사인 마이크론·씨게이트를 능가하는 상승률 기록"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$186.97",
+      "change": "-0.51",
+      "changePct": "-0.27%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Trump, AI CEOs sign voluntary safety pact, back data center expansion",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbnRqUzdYZGRGeF82aU9Kc3BzNk9rLWZwTjJBNWhVNTRfcXU1UEtWWC1XNndCWGNHZDZhekREX2k4bUg1VjNNLUpMSV82U281RTJqMUZjMjFVRzhXaGZ1Q1B0TG9XWG9OVFBHSGZlZnZmX3lBcHp0a2Nrb3daZGliamtZY2kwNUEtRm9Mb092bDVxemtaVGlRME5WM2xXRHZOX25IQWk2cURXc09paHJVNEdmT1Q4UTg?oc=5",
+      "date": "2026-09-29",
+      "source": "reuters.com",
+      "ko": "트럼프, AI 업계 CEO들과 자발적 안전 협약 체결 및 데이터센터 확대 지지"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Nvidia, Anthropic CEOs to Attend Trump Meeting on AI Risks",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUTRUbGlpNTVLX2hBNXJCN2RhRDE5Z0dIcGpJZ0RfNGFSQ18wYmtFcW5CbnpHODdnOHVkR0VvM0dZQlhsdTlaZkp4Y1llTHJVc2xqZEVwdW8wTjkxQU1sbHdIM2JhT3JxcndzbmtHcmdfbzh3MHlvYUo0ZjdwaUliMXJFN19IVnpZeGJBLXh5Ump1WnhRMDNxYUMtbUxCems?oc=5",
+      "date": "2026-09-29",
+      "source": "Yahoo Finance",
+      "ko": "엔비디아·앤트로픽 CEO, 트럼프 AI 위험 관련 회의 참석 예정"
+    }
+  ],
+  "summary": "금리 압박 속 주요 지수 약세. 반도체 메모리 수요 강세로 TSMC·마이크론·SK하이닉스는 상승.",
+  "generatedAt": "2026-09-30 09:40",
+  "date": "2026-09-30"
+}
