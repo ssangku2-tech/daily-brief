@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-30",
+  "generatedAt": "2026-09-30 09:03",
+  "events": [
+    {
+      "title": "중국",
+      "start": "2026-09-30T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "12:59  옌타이역 > 칭다오북역 14:20\n    열차 번호: C6562\n    이등석: 03호차, 좌석 004A, B",
+      "start": "2026-10-01T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 926,
+  "importantMails": [
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "iPhone Duo용 앱 제작을 시작하세요.",
+      "summary": "iPhone Duo 앱 개발 시작 안내"
+    },
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "예정된 이벤트: iPhone Duo에서 앱 출시를 준비하세요.",
+      "summary": "iPhone Duo 앱 출시 예정 이벤트 안내"
+    },
+    {
+      "from": "ÖBB Vorzugspunkte <meineoebb@vorzugspunkte.oebb.at>",
+      "subject": "Information zur Änderung der AGB",
+      "summary": "ÖBB 약관 변경 안내"
+    }
+  ]
+}
