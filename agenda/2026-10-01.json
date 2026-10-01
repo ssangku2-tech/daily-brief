@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-01",
+  "generatedAt": "2026-10-01 09:20",
+  "events": [
+    {
+      "title": "중국",
+      "start": "2026-09-30T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "12:59  옌타이역 > 칭다오북역 14:20\n    열차 번호: C6562\n    이등석: 03호차, 좌석 004A, B",
+      "start": "2026-10-01T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "\n  칭다오 맥주박물관\n   (11:30~14:00 사이 입장)",
+      "start": "2026-10-02T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 934,
+  "importantMails": [
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 DiDi에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 DiDi에 공유된 것에 대한 알림"
+    },
+    {
+      "from": "Anthropic <no-reply-SbG2eWbfdqHKFGs7zHvTNg@mail.anthropic.com>",
+      "subject": "Your Claude API credit balance is low",
+      "summary": "Claude API 크레딧 잔액 부족 알림"
+    },
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "iPhone Duo용 앱 제작을 시작하세요.",
+      "summary": "iPhone Duo 앱 개발 관련 공지"
+    }
+  ]
+}
