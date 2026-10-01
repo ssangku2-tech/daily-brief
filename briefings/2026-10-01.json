@@ -1,0 +1,149 @@
+{
+  "sessionDate": "2026-09-30",
+  "sessionDateLabel": "2026년 9월 30일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,651.54",
+      "changePct": "-0.25%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,861.06",
+      "changePct": "+0.24%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "50,906.05",
+      "changePct": "-0.86%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Technology Shares Lift Nasdaq as Broader Market Slips",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSTc0MzlHUy00NXRueDJOVmZhbnVRX0lOd09GRklPRUVoVGJ1R0xQb09ydll3a0lBVVZzbUk2SEhYZXhLdDhwcnVhdWRQdjJDNFZqVmotNWFjTFNLVkZsZVZISGs1TndyamVsaHJ5LVFMcTg4VS1HUks2N2tDQmxDWFc1MGFuTkJXSVhNODlTNTNKak5lQ2ExV2JBSF9kUQ?oc=5",
+      "date": "2026-09-30",
+      "source": "WSJ",
+      "ko": "나스닥은 기술주 강세로 상승했으나 광폭주 약세로 전체 시장은 하락."
+    },
+    {
+      "title": "S&P 500, Dow End Lower As Investors Shrug Off Cooler-Than-Expected Inflation Data — MGM, SPCX, AAPL, TSM In Focus",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNRnlxWkw0VGNQUjB0b0UxaVdZempLUWQtN19TQnQ2N0FLUm1kbFBpdkg1NVQ0QmZTdlpSNkM3c2R1bVZnVWRwWU1XNkhqdkJzR1RvUzJOcWRfZVEybldHM2g3bUNEZUN6NWcxWlZaUVRiNmFQMlpOcldxalJIangxaUllQXIzT1lpLW1QUw?oc=5",
+      "date": "2026-09-30",
+      "source": "Yahoo Finance",
+      "ko": "예상보다 낮은 인플레이션 데이터에도 다우지수는 하락, MGM·AAPL·TSM 등이 주목."
+    },
+    {
+      "title": "How the ‘AI put’ has become the only thing that matters for stocks",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPRFh1MUpObGprWkRqdFRBelV1bk1yRFR2VkJTLUhteUVmaGs3RlZJTnpfQ01wZTVXVGdUVlRmbHBwVjdjVmZUVXM5LXI3WVBXUDktSGVveDVvWTBsa0JpUjJSZHJuTk1EaXlSd0NfSHdyT0ctZkxnTzVjM2RRSkJ1S0NlN2xOQm95dG9wd0dIX19zYXhyeVNFUjNBR3hac0hEV2FBdVpHYkZMNjF3REg0THB6cHB5WUwyLUI1dC0tSjNUNFZsOGJwYUpLemVRMmFUT1l0MnFhUQ?oc=5",
+      "date": "2026-09-30",
+      "source": "MarketWatch",
+      "ko": "AI 관련 위험회피 심리가 현재 주식시장에서 가장 영향력 있는 요소로 작용 중."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$228.38",
+      "change": "+1.17",
+      "changePct": "+0.51%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia announces jaw-dropping $150 billion stock buyback, largest single authorization in history",
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPMTJ6S3JPLXRudUdXY3d2UW1qQXhHQ2s2Tlo4emxQeWJGYzFYMmdCQ1lkUlNKUllqbk5VUlFJRnhfR29zT3RpbDV5TkJDZVVtVjZLd2hvM2pzUHR3REJ2dElXR1FZaHVPcllEUmxQUWVBQzVPek1vZWtDS0dDVWhYaS1qVVJDUEQwX1QtWDBVaEZDanVHeHY3bnE3VE9IWWNpR1RZaEVMdDN5YkNQaURUeVY0RHpqS1MzRlloS2NLYlJlaHMyd3Y2UzhhS0hRMUlfQjJid0l5bGhzdzgwRWNwZ2NndGVQLTN1UW9r?oc=5",
+          "date": "2026-09-28",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아가 역사상 최대 규모인 1,500억 달러 규모의 자사주 매입 발표."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$611.76",
+      "change": "+4.19",
+      "changePct": "+0.69%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$120.23",
+      "change": "+4.30",
+      "changePct": "+3.71%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel (NASDAQ:INTC) Stock Jumps 3.7% - Still a Buy?",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcHE2YkJYOVA1Q1JEdnpMNjd2eXlvV05vQWN0Rm0tYXBPM24yQkRNMmpKSWc3Q25NQU56TzFkQUd4b1lIYUxHX0NqTVlJY1g1SFl4U243YmhsYTAxNlowdElINVkxdzBNOUNVZENJdXZxd3hGQzNnTEtwUElnM1oxUHEwMUNrNVlabV9DVzlyYV9oM1lhUEh2bjVYN2hlSFFXblR5TlNRWQ?oc=5",
+          "date": "2026-09-30",
+          "source": "MarketBeat",
+          "ko": "인텔이 3.7% 상승하며 강세, 반도체 업체 중 9월 실적이 부진했음에도 회복세 보임."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$456.19",
+      "change": "-0.75",
+      "changePct": "-0.16%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,065.11",
+      "change": "+0.03",
+      "changePct": "+0.00%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron beats on earnings and issues strong guidance as data center revenue jumps 11-fold",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1PSFA1cXl4cDVITm14U0I1M1pXYnA3ak9LbDVvbkZ1WE15T3RROE1ockpDdWdBRXhUNXlPRTMzeURtbkZLdVAwLWkwaS1UUVloNDVsUGVQRGhQOTUzNXFld0RJaTNfemRiOFY4enFzdDZqUmdHQ0JyTzNn0gF_QVVfeXFMTmtvM2lhcV9sSWxYSEdxNmNSODBOLVhEN3NzdDNTUVRDNklvOXJWYjFISFkwWkFKaUNNMXdRMnczWi1SVkxkU3hxcEJKRFV2eEFpLWNveDRPbExBYnNITVRlYnVYZjJfM2wySXpqTDU5ZjAtaXRLaEZ2MjJQMkVhVQ?oc=5",
+          "date": "2026-09-30",
+          "source": "CNBC",
+          "ko": "마이크론이 3분기 실적 및 4분기 가이던스 모두 예상 초과, 데이터센터 매출 11배 증가."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$184.15",
+      "change": "-2.53",
+      "changePct": "-1.36%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$187.05",
+      "change": "+0.08",
+      "changePct": "+0.04%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "NEWSLETTER: Inside Anthropic’s confidential S-1: a Q&A",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOOFhLTkZneU9Ya2hKLWthbzg3TmpESVlwR3JVN01jc0VGaE85T0FOUnp6Z09ManVqcDJVNVFwVzUzUk5FMFJ5dUw5UFA4ckpEeDhTcVJLSldfa3k1c3FHMHFjMUVlRURuX014b3BQMmhPSVhrWmQ3ZnhPT05TM2w5dVZYZFZ5ZVoyRjdtSzlUT1Ffck5RSWNGSW9tbUVvSndMMlNUeEFnMWVIalRl?oc=5",
+      "date": "2026-09-30",
+      "source": "Reuters",
+      "ko": "앤트로픽의 S-1 서류 공개로 AI 비전과 급증하는 운영 비용 현황 드러남."
+    }
+  ],
+  "summary": "인플레이션 데이터 발표를 앞두고 시장이 혼조. 기술주는 강세를 보인 반면 광폭주는 약세.",
+  "generatedAt": "2026-10-01 09:41",
+  "date": "2026-10-01"
+}
