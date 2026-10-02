@@ -1,0 +1,172 @@
+{
+  "sessionDate": "2026-10-01",
+  "sessionDateLabel": "2026년 10월 1일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,666.45",
+      "changePct": "+0.19%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,871.60",
+      "changePct": "+0.04%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "50,926.56",
+      "changePct": "+0.04%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Futures Rise, S&P 500 Finds Key Support; Micron Crushes Views",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWVoyZktSa2ZJN09IQ3NzVV9jbXduR01hWXR5SUl0V2FDMllQdjFfQ0h0Z2s5ZGFWSEtQMjktT0N0eVNqbzJYODRVVXJRZFI0M04zWUF5RGxya1FzR3VJN3Q1ZXhMLWlEVzQ2cE94Zm4tSnVaNjlnb1hzM2YwRTA5ZEFMOVVSZmhnYmc1bmx2VklsaGkwVXA5ZXpTSVJkck5YLUFkZHJ6TlFmYnNIeDNoZWpTVXM?oc=5",
+      "date": "2026-10-01",
+      "source": "Investor's Business Daily",
+      "ko": "마이크론이 실적 기대치를 크게 상회하며 S&P 500이 주요 지지선을 유지했다."
+    },
+    {
+      "title": "US Stock Futures Rise as Treasury Yields Ease and Investors Assess Micron Results: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVVJTbnNYQ3dRVnJsQ2lLVlRLalQ5Z2lNS2RjNldzM2tHMFZQbXhGbVFTbjdmZ1VOajJldlVYa04tOTE0a2x3MXpIU0ZKLXJJRTN5dGhfTkY0d2haOFNGN3hFaXpnRmRxOVRLb1hLZmlqa29RcWNQRlAtV1NzZ2ZPRkMzcEUtWUZjSmlvb1N6YnR5LVhSMUZ3OEVMcw?oc=5",
+      "date": "2026-10-01",
+      "source": "Yahoo Finance",
+      "ko": "미국 국채 수익률 하락과 마이크론 실적 호평이 선물 시장을 부양했다."
+    },
+    {
+      "title": "Nasdaq, S&P 500, Dow Futures Mixed Even As Micron Fuels AI Rally: ORCL, NKE, TSLA, RKLB, ASTS, PSKY In Focus",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPaXZBaFlYVE5UMGtLRkRhY0FIT000bWVrNzRyM19oUmVOSThGSDdScDRfb3Ewd243YmhVZ185UDl2bFRyT0lmYW1jR3NETktwUTlGbTFyVHdWUnVrOE1Qb1pyVU11dVpvcUc1YU1IeVBITFJ6YmpoUlc3a05nTWlRUVRGVVZWd2hpNVhKS195Rmh4ZG8?oc=5",
+      "date": "2026-10-01",
+      "source": "Yahoo Finance",
+      "ko": "마이크론의 AI 랠리 선도 속에서 주요 지수 선물이 엇갈린 움직임을 보였다."
+    },
+    {
+      "title": "Vylor Takes Corteva’s S&P 500 Seat, Twilio Set To Replace Warner Bros. Discovery — Both Stocks Rise After-Hours",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNU1l3clNka3dBT1ZJTlFicVU1eklFSmJsVTVzM2o5WHFXLVMybVMxcjg5VDZ6V254TjgxY29hdkVWWjRKaU52UVdsR2tNNnZqSmY1QXFHcDFDQkNfTDNzbEt2Z19yajVBUG1CbWZGa1MzSDg4SWxrZmxuaFhlbkQ5SEhacHFDSmtjeFhLdmI0U21PX1lp?oc=5",
+      "date": "2026-10-01",
+      "source": "Yahoo Finance",
+      "ko": "S&P 500 지수 개편으로 빌로르가 코르테바를 대체하고 트윌리오가 워너브로스 디스커버리를 교체한다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$230.86",
+      "change": "+2.48",
+      "changePct": "+1.09%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia (NVDA) Stock Gets Fair Value Boost As AI Demand And Analyst Views Shift",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNUlc5NlBsMjlQLVVaSzh1d0JXbmxDTk1LeVNhcVRDNTNZdWlNVjVPVXgySW1TenlOOERUSjZmVzFXN2hHMUJnSzBFVXNpRWRMdXAtZGFfTzVRajF3dzBUQ05zR2tuYjNST1JDcHc3Vk1PTkcyQldlOFhfR0Jpc0swbjdB?oc=5",
+          "date": "2026-10-01",
+          "source": "Yahoo! Finance Canada",
+          "ko": "엔비디아가 AI 수요 확대와 애널리스트 전망 상향에 따라 공정가치가 상향 조정됐다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$615.73",
+      "change": "+3.97",
+      "changePct": "+0.65%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices Is Spending $8.2 Billion to Learn What AI Needs Next",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZW94VVpIQUVldk0wTEpXLWJkRkNuYm9VV1VCMXlsM0Vvd3RqOC1Xa0V0Vm1GYnE0OU9pUGNzbkFfVUw2TUZuX0lFNDZNWGxQUXd1U0stRUpuTU1fTzd6d1hNRnhzbEwxRDhNc2dyTHhOckt4ejVGaDlOdmxUOXd6Vy1pWFZjTXJLT09UQVlXT3Y0UHNGcExWUFBYblRNbHVDV0wyeDlGbnB1allRQ3NB?oc=5",
+          "date": "2026-10-01",
+          "source": "MarketBeat",
+          "ko": "AMD가 AI 기술 수요 파악을 위해 82억 달러를 투자하는 대규모 R&D를 추진하고 있다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$120.00",
+      "change": "-0.23",
+      "changePct": "-0.19%",
+      "up": false,
+      "news": [
+        {
+          "title": "TSMC Vs. Intel: Goliath Is Defeating David (NASDAQ:INTC)",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTVUwMERLWmNodDJyZjNicWMtaUFNNXdhZmVWSVFSNVROUHhPS1FEOGNCM0RmTGxIOUVBX0p0cE16bnR0aGg3Y29MVk9qSWdVNndjS3NkSG0wWVNESG9wU1Jzak1MdjZzZ2ZYbGFJRGozVVlGME55cGIwTHcwb2x2UGhZVDlkdTVj?oc=5",
+          "date": "2026-10-01",
+          "source": "Seeking Alpha",
+          "ko": "TSMC가 인텔을 추격하는 기술 경쟁에서 우위를 확보하고 있다는 산업 분석이 나왔다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$459.20",
+      "change": "+3.01",
+      "changePct": "+0.66%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,097.39",
+      "change": "+32.28",
+      "changePct": "+3.03%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$193.50",
+      "change": "+9.35",
+      "changePct": "+5.08%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron posts record earnings, signals upside for Samsung, SK hynix",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObXBOdVI1eHJFSXU1RWRzUjdaZVY4UWkyWUlYb01vZ3lzVG9Eb0dIQTFLcFp4NkQxdXdBVTZfc3BZU25SSDJmcFZ2MXd5LUhKV1lBdmVRRjdVQ3FLSk1yeWtvU2lWektLR2FnZHBrbEMtb1NlYXhHdGhPaHhvcF9pRjZlbVhKZGlkSWtqZGYyLUNLcTBKWGNtUUtfZ3dadk9lQVl1RnNKYjNvc2FaNlAyQXNfOTYtbjlV?oc=5",
+          "date": "2026-10-01",
+          "source": "Korea JoongAng Daily",
+          "ko": "마이크론의 기록적 실적이 삼성과 SK하이닉스에도 긍정 신호를 보냈다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$190.04",
+      "change": "+2.99",
+      "changePct": "+1.60%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "EXCLUSIVE: Broadcom to lend Anthropic up to $42 billion to lease its chips, filing says",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbzU3NnV4NFhNazRXQzVkeTV6VVNBSzUyUE0yM25SWGQtaFM1YkU4Y1htNWMtYXBPcU9pRDZfZUhSQnZyYnpvWWJ5ZGE4T3ZPOEZrN3IzeHBxMURHQlZySUhfQTBrb0FPdUxFSHRjVEd2ZFh2VGVuMjluVDhxYmhDa2hHc3hnV1p6c1hxaDJaa0VCQXQ3NmhackVWSVBJRlpXMzJXQ3Q2UHlhVXFaMDNN?oc=5",
+      "date": "2026-10-01",
+      "source": "Reuters",
+      "ko": "브로드컴이 앤트로픽에 최대 420억 달러 규모의 칩 임차료 대출을 제공한다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Broadcom Stock Rises. Anthropic and Broadcom Are Becoming More Intertwined.",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONlU3MlRpX21YbFpIcUUwOWxhNHVIUVNHTl9ydGtoZ3JNcDZGbjhESGhSMmlQN1hyNWNpNGdQNWVKWlc5NUZNblNUekZpSjBmZ1VXOXo3TWxmd092LVJVaWgyamxnc2UyVkk4ZnhjcmxJWGhCYzZpcl9KQnJiR1BHUg?oc=5",
+      "date": "2026-10-01",
+      "source": "Barron's",
+      "ko": "브로드컴과 앤트로픽의 칩 거래 확대로 두 회사의 관계가 심화되고 있다."
+    }
+  ],
+  "summary": "마이크론의 호실적이 AI 수요 신호탄이 되면서 반도체주 일제히 상승했고, 지수는 소폭 상승으로 마감했다.",
+  "generatedAt": "2026-10-02 10:00",
+  "date": "2026-10-02"
+}
