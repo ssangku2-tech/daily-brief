@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-03",
+  "generatedAt": "2026-10-03 09:08",
+  "events": [
+    {
+      "title": "중국",
+      "start": "2026-09-30T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "10:29 칭다오 > 옌타이역 12:03",
+      "start": "2026-10-04T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 940,
+  "importantMails": [
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 10. 2.)",
+      "summary": "Google Play에서 앱/콘텐츠 구매 영수증"
+    },
+    {
+      "from": "Zoom",
+      "subject": "월간 AI 사용 한도가 재설정되었습니다",
+      "summary": "Zoom AI 기능 월간 사용 한도 리셋 안내"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 DiDi에 공유하셨습니다",
+      "summary": "Google 계정의 데이터 공유 권한 설정 알림"
+    },
+    {
+      "from": "Anthropic",
+      "subject": "Your Claude API credit balance is low",
+      "summary": "Claude API 크레딧 잔액 부족 경고"
+    }
+  ]
+}
