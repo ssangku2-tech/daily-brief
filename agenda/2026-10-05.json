@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-05 08:48",
+  "events": [
+    {
+      "title": "중국",
+      "start": "2026-09-30T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": " 장위 술 문화 박물관",
+      "start": "2026-10-05T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 943,
+  "importantMails": [
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 10. 2.)",
+      "summary": "Google Play에서 앱 또는 서비스 구매에 대한 영수증"
+    },
+    {
+      "from": "Zoom",
+      "subject": "월간 AI 사용 한도가 재설정되었습니다",
+      "summary": "Zoom 월간 AI 사용 한도 초기화 알림"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 DiDi에 공유하셨습니다",
+      "summary": "Google 계정의 데이터를 DiDi 앱과 공유한 기록 확인"
+    }
+  ]
+}
