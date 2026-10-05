@@ -1,0 +1,171 @@
+{
+  "sessionDate": "2026-10-02",
+  "sessionDateLabel": "2026년 10월 2일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,722.72",
+      "changePct": "+0.73%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,190.86",
+      "changePct": "+1.19%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,176.96",
+      "changePct": "+0.49%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: S&P 500, Dow Jones Futures Gain as September Jobs Report Misses Expectations— Nike, S",
+      "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNVGgzY2EyZDdxZFd0TEhwbnhBVnF2NDlEUTJwbjA3TmVPaDVsbG44dHpqd2poRXFtN1dMYmhTQU9hWXY4QXM4dEdhTTdfei1ZY0cwdEFOT1pRRk1UdHRhMS1raHpBX1IzZURHSFJEZm42VWdoTGJkaXdjMXNEYlRMak1nZUNOT2NlVTRfU0RwODhGVDFrZWNsMW4tVXI0elRiX29uMWxXUU1fSFozSG1KSkRnLXYwMUZraTJjS2dqQVVMMnQwdk5NeklTQ2RmVmVjLTZGaUxMcHNkMU5qOGVzNTR4V1BCM08wbU1RQ3gza2tJd2VrQ0M4emNKUURka2JKdFV2dEZR?oc=5",
+      "date": "2026-10-02",
+      "source": "Benzinga",
+      "ko": "9월 고용통계가 예상을 하회하며 시장 심리에 영향."
+    },
+    {
+      "title": "October can be a scary month for stocks. Here’s what investors need to watch this year.",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQcVlHNERhcXBibm91R0c4V3o2Z2wzSUs0VFl5V2FhOGFsN29MazBnX2FlOEVDUVE1ei02blMxTG43SEtLQS01Zmh5cUswb29md0NWMDdYODBwNHllY1RpcThIcTRvam5VUzVlbVZ3bTh4WklmRGI3YmtudVV3dUJNRXcxbXB6SVBHRm5DZ0NINnB4T1FnUU1tcllWSnFKZzl2YTEwX2ZOdlBwRFBqbXRYU0h3bDNsY3RiaVBWcVZHWlhDNTZZS3c?oc=5",
+      "date": "2026-10-04",
+      "source": "MarketWatch",
+      "ko": "10월의 역사적 변동성 패턴에 투자자들이 주목."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$233.95",
+      "change": "+3.09",
+      "changePct": "+1.34%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia Stock (NVDA) Hits a New All-Time High – Wall Street Still Sees 39% Upside",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUUhCeHUxMUd2VGh0NFJIWjV2aWFzQ052SHRfcU1iWTRrR3ZNaW5VT2FYd2ZSbjhydENpMlBSYy0yZWxrMzUtNVItRTg5YURKamdxQVlYVlJWVlNGREtiWFA5UDZWZnJuNnpXWVpuR2U0NmdUbGZjSEdfNGpmNUpnbmdvOEk5XzFHMjZUMFdRQm1Qd19JMUtSNFNnSHJWejdwTnliNEtsTVE?oc=5",
+          "date": "2026-10-04",
+          "source": "TipRanks",
+          "ko": "엔비디아가 사상 최고가 경신, 월스트리트 애널리스트들은 여전히 39% 상승여력 제시."
+        },
+        {
+          "title": "NVDA Stock Is Back As Morgan Stanley’s Top Pick – All AI Trends Play To Nvidia’s ‘Strengths,’ Says Analyst",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNQmhKSmh1M2ZIZmFwM3dWTGNBVzZZT0V0OE5mM3ozLTZfMU92aTFiR1NmMk1JeUhCNTJrNmRjQk9JUVQwbTlob3VOV0hsUDVTUjJHUi0yMEtqdHhqbDJhNUg4TGpCRlZsV0RqdHBacGFJZE95Wm9YM2VsSFI4d0hNRzVMcTR6ZGFkVHdELVdqdUtlTjc0VGtpWVNWaw?oc=5",
+          "date": "2026-10-02",
+          "source": "Yahoo Finance",
+          "ko": "모건스탠리가 엔비디아를 톱픽으로 복귀, AI 트렌드가 엔비디아 강점과 일치."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$633.91",
+      "change": "+18.18",
+      "changePct": "+2.95%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (NASDAQ:AMD) Stock Lifted to \"Buy\" by Wall Street Zen",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPTlVFRHYtS0d1dEMycUoxZENPY0ZEOFAxVXdERV9VY1NrbGZtOVJUaWIwNmtUUWZDU0JyRThpeHVNOEJzZDJuX0JXcmk5Ym53eEVOcmpHdTU5dGZOYmtaY1BWNmZ1eEJ0Qy00NXFxSmR1V3JZOTl4RXE2N2hlUVc5bm00ZkQ5UEdwYW80TnlheVYzWjNHR3BTSldRdG9yM2ZEX3BzWk1oQVMtOGdxb0dRTmFlRHdsd1ZjVmxkSVlpcEcxRTc3LW5jdWQ5Z29YSWM?oc=5",
+          "date": "2026-10-04",
+          "source": "MarketBeat",
+          "ko": "AMD가 월스트리트 젠으로부터 매수 등급 상향."
+        },
+        {
+          "title": "AMD Reaches a $1 Trillion Market Cap. Can It Finally Dethrone Nvidia?",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOM0NqMm1LVEZuVDM2dWdUd21Pb0FRcHEzLUgzN0diUkplNVQ4YVlSdldwM2RUVjNYbVM1QXl5VFlYcFVIdkY4aGxvYjMtZ3RYS3lOMWx6RjMwbjVzdjhrbHNxWTNRWXdraE94TGZUb1BmS0hjSGlfS1Rfb1FnMl9MLVQyblVoWkhJekZqTDBtQUJjQ2JfdVpmUw?oc=5",
+          "date": "2026-10-04",
+          "source": "The Motley Fool",
+          "ko": "AMD가 1조 달러 시가총액 달성했지만 엔비디아 추월 가능성 진단."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$119.33",
+      "change": "-0.67",
+      "changePct": "-0.56%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$472.78",
+      "change": "+13.58",
+      "changePct": "+2.96%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC Stock Forecast: TSM Reported $35.9B Revenue. Why Is Demand Still Outpacing Supply?",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRDNVeXY1UmNhRlc1N0Vrb2cxc0VzVTJsSFdqUUk0bTFNdUE0WElNeGFtS3I1ZjlwRjg5WVRRWjR0THJDZkl0SXAzOE5DNVhqREtJMm5PUFc1bjM5MkJ5cmNuckRZODlwQVFGdk5MSEVVSDc0d2xlbjI0V2FHYlp2Z0tTdnlOeW1UZ0V4M1ZRa2V4M1JmcXZramdTVjA0OVRqNkRvMkl3a1V6ZjZQcFdGUjFFMk9WZG92aVlHVTdhQld5OW9PMVBPWG5R?oc=5",
+          "date": "2026-10-03",
+          "source": "TradingKey",
+          "ko": "TSMC가 Q3 매출 359억 달러 기록했으나 수요 대비 공급 부족 상황 지속."
+        },
+        {
+          "title": "Prediction: This AI Chip Stock Will Be the Biggest Winner of 2027 (Hint: It’s Not Nvidia, AMD, or Broadcom)",
+          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOQ1dsUlo3Q2FTM0d3bkJSX0lkSmtqbklsOU9QRVQwM1N2d1VfQzkyN0N0ZUlydDBqMlBnU2RlTkxDOFBvQ0lNWnBoZXBibUFabEEweHRyWmFsbkNyMUJDLVBIcnNnd01nNkFncWR0YzlhQU13TEdCVnRTQXlKNzNRQnZHQ0taWmFJNGs1NVRQLWZiS240eGc4U08tc1d3UlpTQ0dDRm1qNWZ4Mm80bVZGV1VSMUtpS3p6WE1rZmtoYTl1MW1aTTMwQkdIdWVhNmRvQjAwZncyRHFCeU5i?oc=5",
+          "date": "2026-10-03",
+          "source": "The Motley Fool",
+          "ko": "AI 칩 중 2027년 최대 수혜주로 엔비디아·AMD·브로드컴이 아닌 다른 업체 예측."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,074.89",
+      "change": "-22.50",
+      "changePct": "-2.05%",
+      "up": false,
+      "news": [
+        {
+          "title": "Bank of America resets Micron stock forecast as AI ‘memory tax’ rises",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOWFRQRXM2XzlEZjVWU2phTF9peFhCdTRjMldJRGdrTE54NmNPYnFuN1pQbHpzQXBrQWxQYnY3ZzlQSmpRbk5lRGF4RmNRWl9nWXRQYnBqVDdZQm9CRDFERHN2Uk9tdnFFUVBfRU1rNThTRG5tU2tlOXZaREYxcVlnVzVHaUMwWDJUcmVWNUEzYldkUQ?oc=5",
+          "date": "2026-10-03",
+          "source": "thestreet.com",
+          "ko": "미국 은행이 마이크론 포지셀 리셋, AI 메모리 수요 상승으로 비용 증가 우려."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$195.13",
+      "change": "+1.63",
+      "changePct": "+0.84%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$188.75",
+      "change": "-1.29",
+      "changePct": "-0.68%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Claude Frontier Academy: $100M to train 10,000 engineers",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9FNlFxVHBSRkl5bVF0c253UE5sUEFac3dDZmQ4bzFjc2lER0hNcjFmUUxPVFI5T0xQcldFTXhsd1diR2h4UUVoRnl4TWxEVnp5WXpCMFdkZHNKdlA1bFV4QTVqUDI?oc=5",
+      "date": "2026-10-02",
+      "source": "Anthropic",
+      "ko": "앤트로픽이 엔지니어 양성을 위해 1억 달러 'Claude Frontier Academy' 출범."
+    }
+  ],
+  "summary": "반도체주 강세로 나스닥이 주도. 9월 고용 부진과 10월 변동성 우려 속 성장주 선호.",
+  "generatedAt": "2026-10-05 09:03",
+  "date": "2026-10-05"
+}
