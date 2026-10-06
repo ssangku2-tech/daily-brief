@@ -1,0 +1,180 @@
+{
+  "sessionDate": "2026-10-05",
+  "sessionDateLabel": "2026년 10월 5일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,773.95",
+      "changePct": "+0.66%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,477.31",
+      "changePct": "+1.05%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,267.90",
+      "changePct": "+0.18%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow Futures Gain, S&P 500, Nasdaq 100 Slip as Iran Keeps Conditions To Reopen Hormuz",
+      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNWUt3eEFxQlFsMHZhNlRCaC1HRWlCNjRyWDV5VmV5M0R5T2czMGlKWTVWSzgzVGdJRmU4ZEpreGlQbWtGS0N1THB4WUd6WDhMSUhHVHdzSGw4anN1NThmQklMQV9tSjJEQnY0MkRGTk91a1pJdXBrWjgySjhGb3ptZE9OSGZ3R1N5aXY5LTE0ZFRYeFV2QzBzaGxrM2tXRlV6N2Q1YWNLVWNCb05rZVY2RC02X3VnWGVmN0pRNkVYSmZKMkRaLUMyTDRnbGRmbWphd0tXNGFxdHlrY1BfQl83R1JlSDIxMm03OFhWdXpTME1ZelppSGlNVndFdnVZUnpyTlhSYWN2cng?oc=5",
+      "date": "2026-10-05",
+      "source": "Benzinga",
+      "ko": "이란이 호르무즈 해협 재개방 조건을 제시하면서 지정학적 리스크가 시장에 영향을 미치고 있다."
+    },
+    {
+      "title": "Dow Jones, Nasdaq, S&P 500 weekly preview: Q3 earnings to kick off as yields surge",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOdlJqS2FWNE9FaUpFQ21MSFNKM2lwQWxDbmU5YnQ2aTZZUUlJcEdwaVp1NldMUldjWUFOanNPX1J2c1ROY0N0Vl84TlN0UUtLX1hJQ1UxVUZlekZtYUFuX1NKeUtkNTY2dzVveFd1ZUVNeElYamhNR3pFZHNyOUhsbWlwdlRFUl9mSnZXX3J5dzVZenpoNjR4NU96cG1QdkRrTi1RNVNrUWlnTS16R0NrTXRDYW5JMlhEa3VBR1p0V19LZ3pzYXZKMHFkcFpfLTBC?oc=5",
+      "date": "2026-10-05",
+      "source": "Investing.com",
+      "ko": "3분기 실적 시즌이 본격화하는 가운데 미 국채 수익률이 급등하고 있다."
+    },
+    {
+      "title": "This rare stock-market divide means an elevated chance of a big surge — or a deep plunge",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcUp5OXIyTTVjWjkzWko0MUJLZG1YYko4N0l5c3lMVGQ2bk8tell6NmxBa1dIRll6N1p1QnNiWWhzVnF0SGExYmU2T3hwY2puR2owRURVM0R0MVpzSXBiWGZXREdyZG9kU19Fbi0xUmoyQlFDRlEtbVd4Z3Rqa3dObDl5dEpMZHlpbXpTblhBT1VEVzdVYXkyVzZQaWtZS181VUoxcTRqVjcwa2c4VGJheDIydVFFUW0tb3RVQURQaXhBbmdMNU85cw?oc=5",
+      "date": "2026-10-05",
+      "source": "marketwatch.com",
+      "ko": "주식시장의 희귀한 양극화 현상이 큰 상승 또는 하락의 신호로 해석되고 있다."
+    },
+    {
+      "title": "Stock Market Today, Oct. 5: Tech Momentum Lifts Nasdaq as Treasury Yields Surge",
+      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQdnVxR0tseHRMcmQ3WjI4TTllN2ZoZ3JJdnlLZ1BwbUVjb2hCWnN6TjRWTGI4OVZsWHdyYVZ2RVdjem9tV0lDZmNMUEROY2xXZ21FTDduN2c3cW9Odm1HZWRfekxVcURBQTN4NGRWRldzRGZTczNHLVRSWkVNaGlHTkZ2dWJYX05HS0NzLWdEMW1fLS1RY0N4UFRENklhNlcwUGt4TzNRa3lrS2lfbzNxWW1aRi1oU3NJR2NheUVCTmkzTGxncUJ1THNLSEJHLWZqOWx5bFY1eXFNZkpkQ2lLa1FEb3lGSGZwTXY4?oc=5",
+      "date": "2026-10-05",
+      "source": "The Globe and Mail",
+      "ko": "국채 수익률 급등 속에서 기술주 모멘텀이 나스닥을 끌어올렸다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$238.90",
+      "change": "+4.95",
+      "changePct": "+2.12%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia Stock at New All-Time Highs: Market Expert Says ‘Cusp of a Major Breakout’",
+          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPNEJvNzhQLXd3QjdiMXltZ21STHJfWThfWjluXzRoTmM5dGdfN2VuaXF6bmFOUlVaNUJvR0dOSlNLUHhFV2c3VzNCdE5lbktJYjdmTEJ0U1NRM1ZOY2hscE5YNUlhZ25Bd0NDUlVwN1FLWm54TWxUbEl4M2xzVmc2cThBcGpxclczMDJ4QnlsSnp3bFlMdThNRE9DbURpRDBDN3FIQ0hhTm9EWVJ3SHlITVBBcGdiNENvNHlOZ2VqRVA2X00yOFk4d20yVzg2ejJSczFmN3RiMEFtbUU?oc=5",
+          "date": "2026-10-05",
+          "source": "Benzinga",
+          "ko": "엔비디아가 사상 최고가를 경신하며 큰 상승장 진입 직전이라는 분석이 나왔다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$631.75",
+      "change": "-2.16",
+      "changePct": "-0.34%",
+      "up": false,
+      "news": [
+        {
+          "title": "Advanced Micro Devices Q3 Preview: AMD Stock Could Surge on ‘Beat-and-Raise’ Earnings, Analyst Says",
+          "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWVE3N0duQ2pLemhWeFhjT2ZkajZtRldUQV9DdzBsVkdtRFdaTjZ0WW9BSVFhZE44Z0pBVzNJNmI5TjJoRmt2ZGhEcWtpT2QwWXdFQ25JdkNPc3o1djE2WldxNlozYm5CZHBPOGVUakZVeVFMWkJWM193UmpyVkJYcUNFZndPZ0lGVjhNRWgzQUlQb2FZelZHZzA1NG0zbWFUUEY4NTVkZlV2Ym8wakxKaFlXMElKNnJEa0FpQU1mWDBERlFfMmYwN0R4bkVTZzA1c3Z2azVRcW52emRqYTdpa0hhMHVVVGZ6WmZTQ2VkdXotUG0yMTFJUU5MTXoteXNi?oc=5",
+          "date": "2026-10-05",
+          "source": "Benzinga",
+          "ko": "AMD가 3분기 실적에서 상향 발표 가능성이 제기되고 있다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$116.19",
+      "change": "-3.14",
+      "changePct": "-2.63%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel stock drops after Elon Musk hints Terafab could partner with a rival chipmaker",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQU1VQbFdILVNBU1pnUDdDd0RqSkRvRmRua0FQazZoOVVWZ3ZadkQ0RWtEZ1o1aFNVYzB0dEIzc0VhV0RZaU8xN3JKRXVfckhnWDRwbEtfLXFweEZ2Yk5aWEY1Umg5d0NNYWpkckxWbUx2T1ZtQ0VKYVg2NkRWbnFNRU5FQjlTb1lwek5Tb245V2JldVRJZlZ4alRRV2JfOTFl?oc=5",
+          "date": "2026-10-05",
+          "source": "businessinsider.com",
+          "ko": "머스크가 테라팹의 경쟁사 파트너십 가능성을 암시하면서 인텔 주가가 급락했다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$485.80",
+      "change": "+13.02",
+      "changePct": "+2.75%",
+      "up": true,
+      "news": [
+        {
+          "title": "Taiwan Semiconductor Stock Hits 52-Week High — What's Going On?",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNTEIxNmkxUkZqU0haSVdwbExFSGdSYm9IalZVb2Y0XzQzNUZ4d1N5Y3k2VW54Rm1oRnY3RU5BTHA1Nms0Y2QxVU1IS2VHYzNBX1dFX1lIcDVkWHBzbUlpWkYtRm9ZSndPa25HUTl4c1NFeW02SEEwNWswb2xQYzZ6UXdFLUhXN3VXRlpVLUFiaENfcGZHS19GRmVqOXdBQzNiVExqWGQzaVFfVkJvN2RpOVdn?oc=5",
+          "date": "2026-10-05",
+          "source": "Benzinga",
+          "ko": "TSMC가 52주 최고가를 경신하며 테라팹 공급사 유력설이 부각됐다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,063.96",
+      "change": "-10.93",
+      "changePct": "-1.02%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Generates Massive Free Cash Flow - MU Price Targets Rise",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQaUpLbXNpMGh6NERLT2hMLXRpdFZFcnpUYmZSVUZYRmZHb1pXVmhNMUxDTFpRS0FxaFF3N3dBRzdTUVMwaHB6UDBDN0xNcmdNa3JqZDRYTENvZWNXWDEzdXVuNU9yS3NqOVl5bTFqS1NRM3UydjA5YXMwLVNrUlhoYk9MaXNlRXZEemhTaEVOLUZTWmI2SUVSUDE3d3REWmtBXzhxSHRVNnk?oc=5",
+          "date": "2026-10-05",
+          "source": "Barchart.com",
+          "ko": "마이크론이 거대한 잉여현금흐름을 창출하면서 목표가가 상향되고 있다."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$195.02",
+      "change": "-0.11",
+      "changePct": "-0.06%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$189.40",
+      "change": "+0.65",
+      "changePct": "+0.34%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Pentagon stops using Anthropic AI tools after blacklisting company, BBC told",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5ILU5UbWc0NDdJSEowdm9PaE14Nkl1MjlpSEJ4djdRQUlhVWNocFAyMXpxN0pXOUZNQk1YQ3JiZnd5MVpGckNkLU5NU1FXTjZzS2EyWDU0RnB3N1U?oc=5",
+      "date": "2026-10-05",
+      "source": "BBC",
+      "ko": "펜타곤이 앤트로픽 AI 도구 사용을 중단했다고 BBC가 보도했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Subscriptions Offer 5x+ More Value Than OpenAI",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1obmlsblJmOTI4SDVYR1hzd3lzNEVkM0JONGV0ZUJjZXpWRjdzaW85cjNIclpLZXJVbzQyU0VkbFVzX3VuM0M5VkZ2MlowRG1DaVc0ZllobllaLTBDaFlrSllvRmpqZVBMS0E2b1NNRkdwMkNnT0xxSFhn?oc=5",
+      "date": "2026-10-05",
+      "source": "SemiAnalysis",
+      "ko": "앤트로픽의 구독 서비스가 OpenAI 대비 5배 이상 높은 가치를 제공한다는 분석이 나왔다."
+    }
+  ],
+  "summary": "기술주 강세로 나스닥이 1% 이상 올랐고, 엘론 머스크의 테라팹 논의가 인텔 약세와 TSMC 강세를 견인했다.",
+  "generatedAt": "2026-10-06 10:49",
+  "date": "2026-10-06"
+}
