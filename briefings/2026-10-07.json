@@ -1,0 +1,172 @@
+{
+  "sessionDate": "2026-10-06",
+  "sessionDateLabel": "2026년 10월 6일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,818.93",
+      "changePct": "+0.58%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,599.89",
+      "changePct": "+0.45%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,521.28",
+      "changePct": "+0.49%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "S&P 500, Nasdaq reach record closing highs as focus pivots to earnings",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZ0p5VWxQQ0ZmUUI0Vk5wRUVjTUJhZjZGUlZjU2tWU1AtOEdqYjZ0OFRtRXNrUVdrTFlNZjVWdzluRjUyaWhHTlYxMG5Yc21pMHFubTdiX1RIRTRUSnB4UTZPckRMZTlzTHBEbkZKU1ROMTZpWE9lMXhPQkhyQmhBV3JNdkFrQVk?oc=5",
+      "date": "2026-10-06",
+      "source": "Reuters",
+      "ko": "S&P 500과 나스닥이 사상 최고가로 마감하며 실적 시즌에 초점이 이동 중"
+    },
+    {
+      "title": "S&P 500 Joins Nasdaq in All-Time-High Territory: Stock Market Today",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQMkhicjZaVkUwY0xtS0JqUDBZTGs4Z0c3TktjZHAtNFVfS2ZyRUl1VHJVbm1va2hQTXJ4VVRoTkpqbHhPTEdhQklIMEpLSFRiM2ctZExfS2Vvd213Vng2S0s4V2lCTUQxMmtqR3ZoN04tSU0yVHpJVko4d2lKWlZNdG1FSExfRjJwaVd1aVNoNWhnN0VNWnEzbVp4b2RjWEFZZU9fa2VQblVuZlM4YXc?oc=5",
+      "date": "2026-10-06",
+      "source": "Kiplinger",
+      "ko": "S&P 500이 역사적 고점 진입, 나스닥도 함께 상승"
+    },
+    {
+      "title": "The S&P 500 Hits a New Record High, Powered by Tech—and Not Much Else",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWVBfRFY4SVFPYm93QngwVDhpREpDRGlEZnZEZXd2RWwxNkszSVpHZ1RheF9rUDNWck5aY3NKMXl0dllxUXc5cmg3VkZuZjJCSThvckI4RFlHNTlwNG5KdVFPSnZsckNuNWpYZGllSUdkWWdHOEpMdTlMRVY5eWsyam1TYm44eWkwemFkcUFFSll0N1dTSDNiMXJQWnAzblBJemticThmZzBMdTFaR2tzXw?oc=5",
+      "date": "2026-10-06",
+      "source": "WSJ",
+      "ko": "기술주 중심의 랠리로 S&P 500 신고가 달성, 다른 섹터의 역할은 제한적"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$239.24",
+      "change": "+0.34",
+      "changePct": "+0.14%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$649.42",
+      "change": "+17.67",
+      "changePct": "+2.80%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices Stock Hits Record High on PT Hike",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNckQxMllrcDlFcmI2ZVJJSlRwQThEeW5kWjhDWTFzcnlVMTdyUkVQd2JESjE2YjJ5UVczbnVLZzh5amtUX1ZVS19sdVA0RWpYY0ZxS1E1dzdfM21GVVJMRDRhaGxUTHhpcnUyRUNNQ2xqMFFjUExIaTBibzJQSzVCWFplLUNCWFpOcUl5VkJPT0M2aDZGcTQtNjA3TGRJNXduNmlrTU5oQ0ZWVlJGbVpEQWZBbXRkdw?oc=5",
+          "date": "2026-10-06",
+          "source": "Schaeffer's Investment Research",
+          "ko": "AMD가 목표가 인상에 힘입어 사상 최고가 경신"
+        },
+        {
+          "title": "AMD Stock Hit a Fresh High. Meta’s Muse Is a Win for the Chipmaker, Says Citi",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOcThDcWlDZ3VoWHZCMmphWUdYMFBLWG1ZMWtvZXBxcUEwQjg1dTE2ZzdwVWw5UFNqN0s4dmZkZjdnVnlNcTRjVzVYLW1SQ2E1MjlyZWI4Uk5BZWNmWTBVNXZhSi04UDk3Y2steUMzMnZySmgyYjFxTjJudlJOT3RyUXBFQ0tucDM0eng0aEhMYV9GWnQ1MEZaalYtMENjUlF4cG4xLWEzcDNVS3JoTkNxWnR3ZVJWeU9lUi14V01HYUdacVJJNmJxWGplVC1FRVE?oc=5",
+          "date": "2026-10-06",
+          "source": "Investopedia",
+          "ko": "Meta 수요 전망이 AMD의 랠리를 견인한다는 시티 분석"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$112.50",
+      "change": "-3.69",
+      "changePct": "-3.18%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel stock falls as TSMC eyes Elon Musk's Terafab venture",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9NTUJUZEtNRmdmWHBBWm15NGtwQ2Frc2pzemZjUlFMWkpJYW9VTl8tTG83VHM2VDlnMTBCeXp3UUJvLUg0R1BvNVprUmdfcGwtRTdQeHh6WmRzRkxiSUtiR1Vma0hVX1UzcHZYeDMyUE1GUQ?oc=5",
+          "date": "2026-10-06",
+          "source": "Quartz",
+          "ko": "TSMC가 머스크의 테라팹 사업 진출 추진 중, 인텔에 부담"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$482.30",
+      "change": "-3.50",
+      "changePct": "-0.72%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,045.56",
+      "change": "-18.40",
+      "changePct": "-1.73%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$182.56",
+      "change": "-12.46",
+      "changePct": "-6.39%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$192.07",
+      "change": "+2.67",
+      "changePct": "+1.41%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir Just Had Its Best Quarter in a Year, Up 60%",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPOUxMU0ZKRW15bTRsbTFUZ2pYVFkzeFFBQ3dnOWhDenRlaDV5b3o4bVUtSE01ZjZ2bmZUSkRQNnBlTllVVlFLaHVhamZRUDVsbGFSUGp1SndONUNvUXRkVWJsY3NrX1B2cHN1R0Jic2lmbEItVjUxRnRCOWh3U2JHbzdQWmVndHBBRzllLTVBS2NFbTRJaDBwYTJR?oc=5",
+          "date": "2026-10-06",
+          "source": "24/7 Wall St.",
+          "ko": "팔란티어가 지난 분기 최고 실적을 기록하며 1년 만에 60% 상승"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic expands Claude Startups program in bid to snag founders and fast-growing companies",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBrMXU1ams3ZHlMaE4yVnNKLUFKUEREMjJGRkVJQ09UVHRYbzBiXzdQSlFqS2lsY3dtSWZmLUpoZFRkb0tEZHh4YlBvbUVVQVBCcUFQMlVyNTJuOVdscHhabW5SY1oyRzZLU2ZsT1BwSlJoUHRiYVNrSmlR0gF_QVVfeXFMUFlncV9mdTFCd3ZGSVZqeGVEUVVfVl9mRzc0UzhEQ2dncnNRN1Y0NE9LWHpvREFYcVljSG90RXl3UGRIVnVhaEc3NldUSjlZSTdDTHJSRGxEekZXQUJaejVWSGtiOW45RHZuZHA0RlFzVzdGa3M4NEIySjJEWWdIdw?oc=5",
+      "date": "2026-10-06",
+      "source": "CNBC",
+      "ko": "앤트로픽이 클로드 스타트업 프로그램을 확대해 신생 기업 확보 나선다"
+    },
+    {
+      "company": "Anthropic",
+      "title": "A New Open-Weight Challenger to Anthropic, Reflection, Emerges",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPek92bW43WU9RZ1dyajlJYWMzYkZvZzRPRW92d3NRaEhBMEQ2OUdQMlh2bUR4MW1EMzUxMUNxMHJHdjZFX05KcTRCb0E4Tk9yWjJwa2JSSUlsSFY4UE03NlpsUVRZTTNLVnN6eUdpSHNTQUpRNUxLZ1JFMjB6NlNJTkpIbXJtcHUtXzlQZXFJY28zd2xweWo2UA?oc=5",
+      "date": "2026-10-06",
+      "source": "The New York Times",
+      "ko": "반사(Reflection)가 클로드의 오픈 가중치 경쟁자로 등장"
+    },
+    {
+      "company": "Anthropic",
+      "title": "OpenAI and Anthropic Face Rising Price Pressure From Big AI Users",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRHhUUnpNdE5CR1VFVEx2Q1NsTjg5cjNCb2VYazhWeERKMVpMOWdlQVFteW52b1o5UTRONGt4TmdJbE8xbld4RHFkaE5vSHQ2MHBFdVlOY1ZSeVJsamNVc0VERHp3dE5xUmV6Ymk5S1FvblZlcTU4REVZQ2kwVHRBck9Ma1dkVk9Bb3VfVUphN3V3X1FsNThpVzlMTktSSGV4SHlhZzU1MEZicW5vQTQ3SlNoUldWcFBMVlMw?oc=5",
+      "date": "2026-10-07",
+      "source": "Bloomberg.com",
+      "ko": "OpenAI와 앤트로픽이 대형 AI 사용자들의 가격 인하 압박에 직면"
+    }
+  ],
+  "summary": "기술주 랠리에 힘입어 S&P 500과 나스닥이 사상 최고가를 기록했다.",
+  "generatedAt": "2026-10-07 09:54",
+  "date": "2026-10-07"
+}
