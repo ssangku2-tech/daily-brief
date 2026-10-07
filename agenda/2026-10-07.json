@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-07",
+  "generatedAt": "2026-10-07 09:20",
+  "events": [
+    {
+      "title": "연금개시 신청_미래",
+      "start": "2026-10-07T10:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "문부사장님, 심이사",
+      "start": "2026-10-07T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "동기_남수",
+      "start": "2026-10-08T19:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 950,
+  "importantMails": [
+    {
+      "from": "AIRBUSAN <webmaster@airbusan.com>",
+      "subject": "에어부산 탑승 안내",
+      "summary": "항공편 탑승 관련 안내"
+    },
+    {
+      "from": "AIRBUSAN <webmaster@airbusan.com>",
+      "subject": "에어부산 인터넷 항공권 구매완료 영수증",
+      "summary": "항공권 구매 영수증"
+    },
+    {
+      "from": "AIRBUSAN <webmaster@airbusan.com>",
+      "subject": "에어부산 인터넷 항공권 구매완료 안내",
+      "summary": "항공권 구매 완료 안내"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 10. 5.)",
+      "summary": "구글플레이 구매 영수증"
+    },
+    {
+      "from": "Zoom <billing@zoom.us>",
+      "subject": "월간 AI 사용 한도가 재설정되었습니다",
+      "summary": "Zoom AI 사용 한도 재설정 알림"
+    }
+  ]
+}
