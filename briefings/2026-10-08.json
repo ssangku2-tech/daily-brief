@@ -1,0 +1,157 @@
+{
+  "sessionDate": "2026-10-07",
+  "sessionDateLabel": "2026년 10월 7일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,801.77",
+      "changePct": "-0.22%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,538.69",
+      "changePct": "-0.22%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,179.87",
+      "changePct": "-0.66%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Dow Jones, Nasdaq 100 Futures Decline as Iran Mocks US Economy, Trump Sparks Bipartis",
+      "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxQbERJUmRRcVU3MU5HYk5HNE5xNHR1UGE0a2dtRkV3VWs0OUcya3NUcGxWdlU4LTRsVm5tR0RjVHpUU3o4bUpLQlMxTWZIWUU3M0hEVExnYUt0ai1PUGJHR25RMjMzTi02aG12SDh1bDUwWnRmRE5YV0FCdGQtdlB1MkpTcVFNS2kxYXZWUExYYnRyN0MzSVljUkxQVEJtcUtzU3RVakhDSkszbDNldHJFTnZlR2tVNGtPdVA4RGg4UTZjT1dOZEZnaWtBSmZueXJHQWRsUld4Z1F5R3ZpQXVnemZmbW5mQkFHcXQ5SWstcGxCOFhKb1EzWjRFMmhpRENZVUMyRFFSMm54anh0SjRtczluWkFGQjZHRy02amRB?oc=5",
+      "date": "2026-10-07",
+      "source": "Benzinga",
+      "ko": "이란의 미국 경제 조롱, 트럼프의 초당적 논의 등이 시장 심리 악화"
+    },
+    {
+      "title": "US Stock Futures Fall as Treasury Yields Rise Ahead of Fed Minutes: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQjRSblBYcExWc2RxUVVIM3h2djhkZkFUYVZIT2FjOXVMd2R0cWFPdUFxTVprLTkydmlOcnU5djhHdDBHVmo4VVB6X25XSnhZalJmLWQwcWozZ3dDaFB0ckRCWXBTVFllNkM1NmpEQ1duOXpNa3NEQlJWV0Npb1U2SjlrbzdYUjJSeUtWZmlJNnRobzZrUUw1cjZzRQ?oc=5",
+      "date": "2026-10-07",
+      "source": "Yahoo Finance",
+      "ko": "연방준비제도 의사록 공개 앞두고 미래지수 하락, 10년물 수익률 상승 영향"
+    },
+    {
+      "title": "S&P 500 and Nasdaq-100: Rising Treasury Yields Trigger Pullback From Records",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa0k2Z3B0MGIxZTNGT3ZkNkh0TmU2VlV4YllGZU53X3lWb1czSHRQTW5HM0ZrR05Gb1A3QnRrdWgxOWZiQWxqTlJtSDREVlc3MkN3clZMM0ZaQWd4SzAyUFJ4SE1JbmpudUhQZDN6aFhjOElrY1MxRzVpYUFsMU1fMFBaUkNubm9jQVBnX2M5V05BOHB2R3ZTYW5Kamg2eUw1Rk5MTUtWRk5oNlR4aVA0cnB5VmtKYzY4a3JzQ0JBX01GY00?oc=5",
+      "date": "2026-10-08",
+      "source": "FXEmpire",
+      "ko": "미국 재정 수익률 상승이 주가 기록경신에서의 후퇴 유발"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$237.47",
+      "change": "-1.77",
+      "changePct": "-0.74%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$645.86",
+      "change": "-3.56",
+      "changePct": "-0.55%",
+      "up": false,
+      "news": [
+        {
+          "title": "Advanced Micro Devices vs. Broadcom: Which Semiconductor Stock Is a Better Buy in 2026?",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQclpjVUozVjN0S0NERllWLTAta0E5NktaNVhFMi1wRGoxQzNBMHNwNmlMX3BQN2F0VE8teFl1OHRITll3a3ZYMi1RdVk4TnhxNWZFNlVaYkJ5dk9hMHI0UFR1MGo2RkxHaThYRlktMVB4NXNYdUUwcENYTkhNVmdLYkJNM241bzl1OWRmZi1WeDYwczJ1cDVMZm1yWkF2dk1ScklIb25nLUMyTTFMVVpyTUtreEhfTHowcXZkVUUyNWhONmsza1BWV1VGcEV0X29SMUln?oc=5",
+          "date": "2026-10-07",
+          "source": "The Motley Fool",
+          "ko": "AMD와 브로드컴의 2026년 반도체 투자 가치 비교 분석"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$113.12",
+      "change": "+0.62",
+      "changePct": "+0.55%",
+      "up": true,
+      "news": [
+        {
+          "title": "INTC Stock Jumps Overnight: CEO Says Intel Will Keep Working With Musk's Terafab Amid TSMC Partnership Buzz",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNV2F0VHpuWHhzRDF3Wm5VdmVGaURmTEV6S2JQTHFMMW9yRzRTUHVGRUJ2OURqU0RnQlo2Sm50bDVxVFZLUExaandsR0FwdnI1bkl5cnVHaHFvbk9PRTNyRmwzaC1KV0ZiYzhvbzJZb3g2NUgtaERqUk9HeVEzQzM1eW5xZDlNRks0aU1hYjFfTi1pTERJcDE5VzhDUQ?oc=5",
+          "date": "2026-10-07",
+          "source": "Yahoo Finance",
+          "ko": "인텔 CEO, 머스크의 테라팹과 협력 계속하겠다며 TSMC 교체 우려 불식"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$472.20",
+      "change": "-10.10",
+      "changePct": "-2.09%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,088.00",
+      "change": "+42.44",
+      "changePct": "+4.06%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Technology: Not At Its Peak, At Least Not Yet (NASDAQ:MU)",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNTFFdnBPUW02UEtlenVNZFFKMnZXZkxsNnBRdHczYTFYRUhHdDVYX1h5NUJjaGhvSVE3b1YyYXR5UjNDaWctRDJTX2xJVDVMZlZWM25oeWhXZHpSMElGSU5ncGxWUVlBSGE1bUp0ZjJxYU5kc2t5N2hleFBCdkIwVDVoOEc3U3NublFXcmhmWDlFZzZuVnRuajRB?oc=5",
+          "date": "2026-10-07",
+          "source": "Seeking Alpha",
+          "ko": "마이크론 주가 1,069달러, 아직 정점이 아닐 가능성 평가"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$178.25",
+      "change": "-4.31",
+      "changePct": "-2.36%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$194.12",
+      "change": "+2.05",
+      "changePct": "+1.07%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic reveals Haiku 5.5 model as AI pricing war intensifies",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQeHZ0WUJYU0QtenhKZXlFVWhIY2taQ1dCakNleGN1Ulp1Q3l1Ylk4V0Q1NDcyRDk1d2J6RXdUZzFIbnU5Rkc0Ykw2QVBQTGF3bVBuME85eTBPZW9QU3VnQVZWeW1POUFEVE5WTXlKY1ZMMjBXX2VpSVo2WV9uOXlqSm5aMzBYSlQ5N0hyLTVvb05jZXFyVlhpNEd5MXVNdy1Lc1VmQkhLVkV0QmJMd2NJeHVSMU51dU5Zc2FLTmRDUQ?oc=5",
+      "date": "2026-10-07",
+      "source": "Yahoo Finance",
+      "ko": "앤트로픽, 클로드 5.5 하이쿠 모형 공개하며 AI 가격 경쟁 심화"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic launches third Claude 5.5 model, expanding AI lineup before planned IPO",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbENadk1Lcm1iLUZOd0hYSmRZLWJHLTd0YjAwTExuMVozWW9McllnVWJuTHdPY3ZfRWJwVGdzMmpVaHhvODVVMkFMd0U0ejdyRjQxcEJMVzRqcTJqbWVaLXI5QnM1ckRSYmZVYjlBR2NqRTZaaW42QjFZMC00ZmxKOF9Fal9EODV2dEZnb1BPUDBlSFJrRDVtWkNLTWhacE04b3dyemlvckZTR3JmR0xONmxGb19hNU1tWFJMcVlJajNYUQ?oc=5",
+      "date": "2026-10-07",
+      "source": "Reuters",
+      "ko": "앤트로픽 IPO 계획 앞두고 세 번째 클로드 5.5 모형 출시로 경쟁력 강화"
+    }
+  ],
+  "summary": "채권 수익률 상승으로 나스닥과 S&P 500이 약세. 인텔은 머스크의 테라팹 발언에 상승.",
+  "generatedAt": "2026-10-08 10:10",
+  "date": "2026-10-08"
+}
