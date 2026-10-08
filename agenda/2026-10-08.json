@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-08",
+  "generatedAt": "2026-10-08 09:41",
+  "events": [
+    {
+      "title": "동기_남수",
+      "start": "2026-10-08T19:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 949,
+  "importantMails": [
+    {
+      "from": "AIRBUSAN <webmaster@airbusan.com>",
+      "subject": "에어부산 인터넷 항공권 구매완료 영수증",
+      "summary": "항공권 구매 영수증"
+    },
+    {
+      "from": "AIRBUSAN <webmaster@airbusan.com>",
+      "subject": "에어부산 탑승 안내",
+      "summary": "항공편 탑승 안내"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 10. 5.)",
+      "summary": "구매 영수증"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 10. 2.)",
+      "summary": "구매 영수증"
+    },
+    {
+      "from": "Zoom <billing@zoom.us>",
+      "subject": "월간 AI 사용 한도가 재설정되었습니다",
+      "summary": "Zoom AI 사용 한도 변경 알림"
+    }
+  ]
+}
