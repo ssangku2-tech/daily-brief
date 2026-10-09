@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-09",
+  "generatedAt": "2026-10-09 09:57",
+  "events": [
+    {
+      "title": "구로",
+      "start": "2026-10-10T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 952,
+  "importantMails": [
+    {
+      "from": "강남센터",
+      "subject": "[필자닷컴] 이상구님 등록하신 English Fella_2캠퍼스학원 학비내역서 보내드립니다 (학비납부: 12월 11일까지)",
+      "summary": "등록한 영어학원 학비 납부 안내 메일(12월 11일 기한)"
+    },
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 인터넷 항공권 구매완료 영수증",
+      "summary": "항공권 구매 완료 영수증"
+    },
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 탑승 안내",
+      "summary": "항공편 탑승 관련 안내"
+    },
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 10. 5.)",
+      "summary": "Google Play 앱 구매 결제 영수증"
+    }
+  ]
+}
