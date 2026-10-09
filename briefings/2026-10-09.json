@@ -1,0 +1,164 @@
+{
+  "sessionDate": "2026-10-08",
+  "sessionDateLabel": "2026년 10월 8일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,765.36",
+      "changePct": "-0.47%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,193.34",
+      "changePct": "-1.25%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,231.64",
+      "changePct": "+0.10%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Jones Futures Fall As Oil Prices, Treasury Yields Jump; Samsung, Micron, Taiwan Semi, Sandisk In Focus",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPOGxRYlh2TThUalZYTVZjTVFVRk1wZkZjejJVY1dwZXB1dTQxZ0JjNnd4MjZRbW1XcVlVbXVCVUlpNS1FZmZRTXJUVElTaUZoeXFRdGVDZjJMejJockVXd25xRGd4UGdhNWVBb01BMWs3RkVVUEtRZXZUb3NCQU9Hanlkb0E2bHBGN2pkN3ZQblYzVkh6MENNUGpwOVd2TnVJSzBfWmJySVVHVEM1QzdyNDQ2aEJRYUhYcFE?oc=5",
+      "date": "2026-10-08",
+      "source": "Investor's Business Daily",
+      "ko": "유가가 배럴당 104달러를 넘으면서 인플레이션 우려가 부상하자 채권 수익률이 급등했다."
+    },
+    {
+      "title": "U.S. Stocks Mixed as Oil Spikes, AI Profit Doubts Hit Tech",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmRmSzBtSkZNNUdzbkJoOThxUHFJNlhXVDQ3aUhtQklNTTlCN2lyckhrSGxJY2d2OGV3QnFlYzdXYTltUmdvb01Kd3Uwa0ZGYnJ3VnE2OFkxUzRpSWpLUURoX2hkcVVhc056UXAxTEdrR0k3S3A1U3RUOUhjMlVjNk5WM1JXazV6VFpBY2lZeUpPa0E4YVBmZEFQVzhuWUZCNWc?oc=5",
+      "date": "2026-10-08",
+      "source": "WSJ",
+      "ko": "유가 급등과 AI 기업들의 수익성 의문이 섞여 주식시장을 혼조로 이끌었다."
+    },
+    {
+      "title": "Nasdaq 100 Ends Lower As Report Of Weaker-Than-Expected OpenAI Revenue Drags Chipmakers — NVDA, DIS, ORCL, SBUX In Focus",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOa2xoRnp3UDUwRW5RZnFSem5ZOWt1Mk01bmFVb3l6ZGdrdDE3VXY5dVJiX21IZ1NwRVllYW80eVpJRVlsU0NFbU04S0d2YXRHeUJjRTRNZGlMZExjbXdXMk9FZTJoandYMGhFMVJhajZoNW5GTThxOHpTSDZIMmdDSlpJVDJ3RUI2aTk0emZCVDg3UWdRMFByZw?oc=5",
+      "date": "2026-10-08",
+      "source": "Yahoo Finance",
+      "ko": "OpenAI 수익이 예상보다 낮다는 보도가 엔비디아, 오라클 등 AI 관련 칩 기업들을 끌어내렸다."
+    },
+    {
+      "title": "Tech stocks drop after report that OpenAI’s revenue is lower than expected",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5BOTNlajdpNk5VanVGYmx1ZDZBZUpSZGtoWktCQmhzcDVNQ3BtUzBDb3d3MlNndUQyVnFLMThGX3FTZ0RjWDIxM1EyUTJZbU5nM2Z1VFBLRFQxV1o3dFRkdHFzM0tLRHVJT1c1dG9B?oc=5",
+      "date": "2026-10-08",
+      "source": "CNN",
+      "ko": "OpenAI의 수익 부진 보도가 기술주 하락을 주도했다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$230.48",
+      "change": "-6.99",
+      "changePct": "-2.94%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$620.68",
+      "change": "-25.18",
+      "changePct": "-3.90%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$107.08",
+      "change": "-6.04",
+      "changePct": "-5.34%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Down Over 5% Despite Surface Win",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQZ081OU5EV1lNNkg5N3RmZl9JQmtuMEwxeWs3N1pWbGZnTmhUV2tEVmViTWJxX2ktWHR6YjRmbTRGb3pPbC1kbnB2X0dCVWZ2SUQ3ODBOTTdCUzNSbk5ROWpxRmJBczRteV83U1BQQXVvOWFFWVhad3VjLTZIT1lDVHdKc2RZSXQzeTduRQ?oc=5",
+          "date": "2026-10-08",
+          "source": "TipRanks",
+          "ko": "인텔은 5% 이상 내렸으나 새로운 표면용 제품 수주가 있었다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$457.99",
+      "change": "-14.21",
+      "changePct": "-3.01%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,035.84",
+      "change": "-52.16",
+      "changePct": "-4.79%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Analyst Sees Stock Nearly Tripling to $3,000, Warns Short Sellers: 'You Have an Expiry'",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQXk0dk1JcE9LaTkybm9fYXR1dnpJREl3MDRFWmV3VzN3RVVRR3pxWk1zZlZ6MWhOTUIwT012OXlXdFJSZ0xPME1aSEVFTHdWMHY4VndESmRLMnFLR3EyZUVsaElkUlhpT0UtLVVOMExrTFVmNzE4SEVFZzhMNzJoRTFPc3o3TUd6RFVmU2tJcjhTLVFhQ3pYNzhsdnNDVHl4cEtMSzJnR1pnN2dNTFBZSg?oc=5",
+          "date": "2026-10-08",
+          "source": "Benzinga",
+          "ko": "마이크론 애널리스트는 향후 주가 3배 상승을 전망하며 공매도자들에게 시간이 정해져 있다고 경고했다."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$170.50",
+      "change": "-7.75",
+      "changePct": "-4.35%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$198.78",
+      "change": "+4.66",
+      "changePct": "+2.40%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir Gets Goldman Sachs Upgrade as Sovereign AI Opens New Market",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQQTVyVkF3NURnUmNPalJsSF96UFl5RTZBY3FPMXlnVFBLVzdsXzdtVVlPNW8zeVREbVE3Z3ZCVUlnbzRtbjhEclRIb0MyRHhqM3lTSFVUbWdBTkpJWG85emdqVTU3eEpwNy1oTnR0Qm0zLVNEMWd5THcxa05DX0ctZ0hkN2QtMEpZaGZKbVlWNHEzUUdYQXlYbUpyV2FPbVZuckVYTFFCcFBkbFBEZGdRSWM5MEdsdnhWdXFDeXJNUWFFS2Z1MHRRRFo1X3lkUkJuRmdWWTRn?oc=5",
+          "date": "2026-10-08",
+          "source": "Benzinga",
+          "ko": "팔란티어가 골드만삭스 상향 평가를 받았으며 주권 AI 시장이 새로운 성장 영역이라는 분석이다."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Exclusive: Anthropic's new plan to protect critical infrastructure",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPaUhqYlFvYUhvdUZPa283VmtJSmRzTWVyYjJyNFhsVG9tQ21rQzJBVVViN1JGdkVfZjBDVThkZk9HRXAtdk1sbm9seEh5ekYwOEpBTXA2Q2loRF80QXAyYVpmVUprNjJwQkx3VFJ6UEozUWNSTVBwWmhFRGVtbS1xV2hRYVN6ZXM?oc=5",
+      "date": "2026-10-08",
+      "source": "Axios",
+      "ko": "앤트로픽이 주요 인프라 보호를 위한 AI 보안 계획을 공개했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic launches free AI security scans for open-source projects",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaEtaVTdoNVhBaUw0U2xoNzlWX1VPWmFQRXBMejZyWWpnUXZfMW9WUS1ZT2ExRkV6alhyVkNTdGhDVUpvRGJrWklZc0hKVFhZQnZuYXpyaUxRdms3TG9XSnJUbXhUbnAzTUtYcExwa1BVVy1EWmNHTWlpdGJibGNvdU9fQ1J2TnJGVnB1eDg1a1dpaThwa3dMNw?oc=5",
+      "date": "2026-10-08",
+      "source": "The Verge",
+      "ko": "앤트로픽이 오픈소스 프로젝트용 무료 AI 보안 스캔 서비스를 출시했다."
+    }
+  ],
+  "summary": "AI 기업들의 수익성 의문과 유가 급등이 기술주를 압박했다.",
+  "generatedAt": "2026-10-09 10:19",
+  "date": "2026-10-09"
+}
