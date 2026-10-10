@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-10",
+  "generatedAt": "2026-10-10 09:28",
+  "events": [
+    {
+      "title": "구로",
+      "start": "2026-10-10T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 952,
+  "importantMails": [
+    {
+      "from": "AIRBUSAN <webmaster@airbusan.com>",
+      "subject": "에어부산 인터넷 항공권 구매완료 영수증",
+      "summary": "항공권 구매 완료 영수증"
+    },
+    {
+      "from": "AIRBUSAN <webmaster@airbusan.com>",
+      "subject": "에어부산 탑승 안내",
+      "summary": "항공편 탑승 안내"
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 10. 5.)",
+      "summary": "구글 플레이 앱 구매 영수증"
+    }
+  ]
+}
