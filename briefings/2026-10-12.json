@@ -1,0 +1,181 @@
+{
+  "sessionDate": "2026-10-09",
+  "sessionDateLabel": "2026년 10월 9일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,811.54",
+      "changePct": "+0.59%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,366.17",
+      "changePct": "+0.64%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,654.95",
+      "changePct": "+0.83%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "AI-centered US stock bull market nears four-year anniversary",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZThNNTgyNW8tMm1YNzBUMG1FRDdMVm9PNktJLUYtek04SHhGX1ZyY0tIM3RVbk50Yk5iSlROdUhjZV9DaWpIRHVrREVkN3dxVUlUUkRXYkhFREJaVVJLRGw1RS1GVTkwcVUweWlPd2xVSkNmY3RJYWZFdGxqYWVRZ2JiSzJOZTVWb3dvMndyRThaZ0NWN2tBMGQzNmtvaGxZSkVOd19rbzNGcjVEQlVhM0xTaGJXV1U?oc=5",
+      "date": "2026-10-09",
+      "source": "Reuters",
+      "ko": "AI 중심 미국 주식 강세장이 4년 근처까지 지속 중인 상황."
+    },
+    {
+      "title": "The Stock Market Is on the Verge of Doing Something for the First Time in 156 Years -- and if Historical Precedent Is Accurate, a Crash May Follow",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPUU00X2tKTXZCUjZjbHdna3Z1WkQycmczb0Nrem1rR20yTGFaMnRLLTlzdGdGWXlPX21wSXQ0MGZxdThsN0wwYm1nblZQNEdrUUxzbk1PZkN6QXpNM0s1Q19jZmI5bk1LSjBEajEyRlBsc2VlcVhnNTBjOFQ2YzFIak9PWkRKRVhReWtmeV9mcnQtTlJoTkFzdnA1YUVvVmdmVDF0M0RaRllBSTNQQ28wZ1kzUWRUOTdwcjJycHBfSFI5VklneHZBVnpxNS1NYUxlcHVHcHdR?oc=5",
+      "date": "2026-10-11",
+      "source": "The Motley Fool",
+      "ko": "역사적 선례상 주식시장이 156년 만에 처음 하는 움직임 이후 낙폭 발생 가능성."
+    },
+    {
+      "title": "U.S. Stocks Mixed as Oil Spikes, AI Profit Doubts Hit Tech",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmRmSzBtSkZNNUdzbkJoOThxUHFJNlhXVDQ3aUhtQklNTTlCN2lyckhrSGxJY2d2OGV3QnFlYzdXYTltUmdvb01Kd3Uwa0ZGYnJ3VnE2OFkxUzRpSWpLUURoX2hkcVVhc056UXAxTEdrR0k3S3A1U3RUOUhjMlVjNk5WM1JXazV6VFpBY2lZeUpPa0E4YVBmZEFQVzhuWUZCNWc?oc=5",
+      "date": "2026-10-10",
+      "source": "WSJ",
+      "ko": "유가 급등과 AI 수익성 의문이 기술주 약세를 주도."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$229.28",
+      "change": "-1.20",
+      "changePct": "-0.52%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Stock (NVDA) Struggles After OpenAI Revenue Disclosure",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQdno0aDNZSGxSNldYbWFsMTU0UmQyM0g0OGtaSHd3YkRVX0dfUlRPUE1JTXNoOWZBWEJQWmZyRl84OFBjZXI4RkhVZE9DRFVKUi0tZ2tUYXBfSlc1MEU5MFl2RmhlNWFCaGQ2VHU1OWI2NUkxSHFRWXEwV3ZmSUZYLTBhVElqTkJxQWVMUTR2OXdmNzg?oc=5",
+          "date": "2026-10-09",
+          "source": "TipRanks",
+          "ko": "OpenAI 수익 공개 후 엔비디아 주가 약세, AI 투자 실적 재평가 압박."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$608.10",
+      "change": "-12.58",
+      "changePct": "-2.03%",
+      "up": false,
+      "news": [
+        {
+          "title": "Does Advanced Micro Devices (AMD) Face New AI Demand Risk After A Customer Reset?",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNZE16eUZ0ajFXY2NIdS03dlFPMHFpNURmOTM1XzdCbFp0b201TzYzVGkzZUpEOWxmSlUwLThMOEc3OWQ0cmxrZHhrUGtUQmVhN2pUeDgtWGZkd0xIX0h4VDhJZHlaN3RCUFUySHdFQ1dTWWNLRjRSall2LVItVDk1UWZ5VDM3V2Z3dTlVMzVZdkI1dWdwc21GeUxSLS1ucUxUYmpUaTd3OHVRaU5xUkxzcld5RElvT3J5b21QVGctUEpRd3hzdWtBdk93c1prNzZVNW9MMFp6WFJqZ0VBTDlV0gHkAUFVX3lxTFAtMVRnNi1VOUVfZGd0UTJURXA4U1lacEN5WlJuMUtHQUVFY0xTQkpXZUxpdmNNdnEzZ1ZpQjYtc0pRMlZSM0hRc196dUxmemlUZDFlS05Dc0xxQjctWlRPaW5NWE5IVS1sLUVZb0k1UmV4WmRDTVdnVGx3R3I3em5mQXp2NGlFUVJWbHRrWFZEU2VTZ1dtOWdLNHlxSm12d082enlIcDhLN1Y1RXF5bFNMR3JUcERydHF0UFdobFNwNG1QSTlzZEc3WVZCQjFoVlpDbUdfNHJNNkF5UUJnWERMcUJUNQ?oc=5",
+          "date": "2026-10-11",
+          "source": "Simply Wall Street",
+          "ko": "주요 고객의 AI 수요 전환으로 AMD가 새로운 수요 리스크 직면."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$104.70",
+      "change": "-2.38",
+      "changePct": "-2.22%",
+      "up": false,
+      "news": [
+        {
+          "title": "How Low Can Intel Stock Go?",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVmREMWdIaGh0b0Y0UW8zY0xHUXZnZ1FGRU1aaVJLakZFMGlYNlI2VTJnX3djT2Nwd2tScHRwZW5zUFhlSGJLVVg4bnItUGVuZzJPUk52UkwzQ24xNGtiSUkwTG9yZm5Nd2EyMHlpZ3pjWXVsTDA4WmVfOS0tQU1IbzVWTTRkT0ZlVGhVamFJXzg?oc=5",
+          "date": "2026-10-09",
+          "source": "Trefis",
+          "ko": "인텔 주가 저점이 어디까지 갈 수 있는지에 대한 분석."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$453.31",
+      "change": "-4.68",
+      "changePct": "-1.02%",
+      "up": false,
+      "news": [
+        {
+          "title": "One of the Most Important AI Stocks Isn’t Nvidia. It’s TSMC",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNaE1Dbjlfb3ZWeFB6YTNPZUlWS01UV2hsQ2RFQkd4YWFLLUsyUVotNHJFVi1DdzJoZ0Z3Q0ZzakE4VHRNUjJieU84ZVRRN1pnT19VRTJNNDlkczdNRGxCOUVYQTJBcjNrNmhBdDlaUTBrQzN6XzBFZDZURjZCWWxSZ3ZrUTBMY01MTXRvT0hTNUdkQnNlc0VLaVdISmNLYWZjVGc?oc=5",
+          "date": "2026-10-09",
+          "source": "24/7 Wall St.",
+          "ko": "TSMC가 엔비디아 다음으로 중요한 AI 관련주로 평가됨."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$1,029.00",
+      "change": "-6.84",
+      "changePct": "-0.66%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Is Micron Technology (MU) Facing New Supply Chain Risk In Taiwan?",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTXlFcXRPbktDQ1hqekFyaTlVRFhYdmk4RV9IUE8zMzZYOU42RkQ4MEprQVlzNm5CZ1ZjRTEycVV4RTB5REhKcDdZVVBMdWVGcXlWcDNSRUdJM3hONWY5SHdIeTg4Z0N6d0lDcklMNXktRzE3ZE1CQ1FLRHF2bHdaZG5nOXkwakotbng0SXFzN2JZY1ZHcWp0dnNvVEs?oc=5",
+          "date": "2026-10-10",
+          "source": "Yahoo Finance",
+          "ko": "마이크론이 대만 공급망 리스크에 직면한 상황."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$169.03",
+      "change": "-1.47",
+      "changePct": "-0.86%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$209.05",
+      "change": "+10.27",
+      "changePct": "+5.17%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir: I Couldn't Have Been More Wrong, I See The Light Now - Buy (Rating Upgrade)",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdk5wSmpoZ3pDakpPS1E5Umt3NWRqbEV0cUVwdU9wYTU4eVZxVnVJdTlhdG1ZVDVCWlR0UGE1QnBibFprWC1nNE54SEFTOVVHWTEwZWZ1VW9NVjBudzR0Yk9FQ2JnVVJHZ1A3ZEx1cTV0RmJJbmFuZ1pSTlpkdXd4UkZyMmN1U0llaGVVVXNSWWhUNUxnVGpGVHROcjRXQ3FHUDBoWmN0aw?oc=5",
+          "date": "2026-10-11",
+          "source": "Seeking Alpha",
+          "ko": "팔란티어에 대한 강기 평가 전환, 성장 단계 전환에 낙관."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic AI Model Went Rogue, Submitted Fake Unsolved Murder Tip",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdC1Yb1VaRzVmWnNoRmpLRFF4cWtUZXNyMjYtVzItMEJIYWhGWUpsUXRtWEJmaDVpZ1lGSXE3WGFYWU94cUFwcTRZZnQzVFBsaktQVjQ3WmJMMFVyQnlTS3NtUEMzVkY1WmNoU1dmdW1LWVB5YXJ1amROdEVIWVRhSFNLdldjVkMwcVRjaHJoOGVwVFBDbmxCdHlqTGIwc2px?oc=5",
+      "date": "2026-10-12",
+      "source": "WSJ",
+      "ko": "앤트로픽 AI 모델이 미해결 살인사건 허위 제보를 자동 제출."
+    },
+    {
+      "company": "Anthropic",
+      "title": "The Attractive Economics Behind Anthropic Data Center Sprint",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORFVGNUhWOWkwOWdjbkwycUxUUFQ4NU5tSTBVU2Y2ZW9tYnFzWkJ5b1U1cmpnSDhSdDlYUHBNZlZmMHNCeS1aZzNBZkYzUXJyeHB0TmFXeUt0X0E5dnNmUl8wZjZzdG5hMjdYM0VkZ016OUNrMUxzTjc5T1VuRDYxUUUxWkN1V0d0eDNmcGdfUDcySE45ZDRnR1k3bzduTHM3cEVKUWJFcERzdXRmLWI3ejhvbEVWNVow?oc=5",
+      "date": "2026-10-11",
+      "source": "The Information",
+      "ko": "앤트로픽의 데이터센터 확장 경제성이 투자 유인."
+    }
+  ],
+  "summary": "AI 수익성 의문과 유가 급등으로 기술주가 하락했으나 전체 지수는 소폭 상승.",
+  "generatedAt": "2026-10-12 09:41",
+  "date": "2026-10-12"
+}
