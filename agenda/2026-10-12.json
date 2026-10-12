@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-12",
+  "generatedAt": "2026-10-12 09:12",
+  "events": [
+    {
+      "title": "송추CC 11:46",
+      "start": "2026-10-13T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 953,
+  "importantMails": [
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 탑승 안내",
+      "summary": "에어부산 항공편 탑승 관련 안내"
+    },
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 인터넷 항공권 구매완료 영수증",
+      "summary": "항공권 구매 영수증"
+    },
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 인터넷 항공권 구매완료 안내",
+      "summary": "항공권 구매 확인 안내"
+    },
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 10. 5.)",
+      "summary": "Google Play 구매 영수증"
+    }
+  ]
+}
