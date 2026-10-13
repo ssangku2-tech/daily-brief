@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-13",
+  "generatedAt": "2026-10-13 11:24",
+  "events": [
+    {
+      "title": "송추CC 11:46",
+      "start": "2026-10-14T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "병순형, 박대표",
+      "start": "2026-10-14T17:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 959,
+  "importantMails": [
+    {
+      "from": "Anthropic, PBC",
+      "subject": "Your receipt from Anthropic, PBC #2250-7521-7856",
+      "summary": "Anthropic 구매 영수증"
+    },
+    {
+      "from": "Link",
+      "subject": "Verify your email",
+      "summary": "Link 계정 이메일 인증 필요"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터 공유 확인"
+    },
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 인터넷 항공권 구매완료 영수증",
+      "summary": "에어부산 항공권 구매 영수증"
+    },
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 탑승 안내",
+      "summary": "에어부산 항공편 탑승 안내"
+    }
+  ]
+}
