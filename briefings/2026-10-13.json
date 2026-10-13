@@ -1,0 +1,172 @@
+{
+  "sessionDate": "2026-10-12",
+  "sessionDateLabel": "2026년 10월 12일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,807.24",
+      "changePct": "-0.06%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,245.90",
+      "changePct": "-0.44%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,850.55",
+      "changePct": "+0.38%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: S&P 500, Dow Futures Gain, Nasdaq 100 Falls as Iran Flags ‘Inadequate’ US Response to Peace Terms — SMP, QMCO, SVRN in Focus (UPDATED)",
+      "link": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxPVWVJZGktV0hUd05SREJkRFNiWTl0NHc4UUF0UDJSTXhfbGVBU1BMUjBMY1hDejFTRXU3b2ZVc19hQkJmYjR3emxhTXpyU3ZSQ2pIS1BKZkZXd1VQWEt0VkZSbDBiYllweTdvSTFsRmFnYzZlYVc0M0lrY1RjaXIwYTZTbC1yeDBHNG1YQnd6S2J2aEwxM080c1FDVmI1TG5GOE9GSXVlc0pWYl9LMTBxaE5tbDF0S04wZE1kakhoalBlMFdhcGQ0ajc3MTUzbExGVUtXTlA5NnlGckJyTnotSmI0Vko0dU94WlhfWnhpMWx2dnVRRlJVaDFxdncxSWdYc3V1RVRCdGhkWkI4djNJd0YxMnh6REZZT2o5Q2tHbkRuVS1yYTVEbUV3?oc=5",
+      "date": "2026-10-12",
+      "source": "TradingView",
+      "ko": "이란의 '불충분한' 미국 평화안 대응 발언으로 지정학적 긴장 고조."
+    },
+    {
+      "title": "S&P 500, Nasdaq Slip as Oil Rises on Russia Strikes in Ukraine",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPamJ2ZGp1bmNfdEs1MUlid3YzVTcxNmRtZW9DRjE5LUhjM0E5cHJ3elNrYzVXTVBWOVNYX0hVTVJ2anJUUG44QnBvWnJfNVVUbnRTTDZEcVdqSTFSeWxuemlXOVJvWUhObmhiOVk0X083ckp4WEtQTUU3dnVNMW1wd3VxUlctaG5RbGpISVI3bVNQZXpHT3hWVEZZbDJrblZTYmhPVG9pVlJxUUJ3MnFNUmozQk5iNkp6OFlzNWppUEN1VXc?oc=5",
+      "date": "2026-10-12",
+      "source": "WSJ",
+      "ko": "유가 상승이 주식시장 약세를 견인, 러시아의 우크라이나 공격이 원유값 상승 유발."
+    },
+    {
+      "title": "Stocks Churn Ahead of CPI, Earnings Season: Stock Market Today",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNm9Mem5xSVRtQndXaDl2Q19TeUV3NmN6bmoyb3BQdE9uekY4em1zaFJBZlh0SnNUUmJJWjVnQnI3dkxoeXlucDFkb0FvWi1OdGphX19ldTBBUV9HRXdXQW82RDl5cTZJZW5KeXN3TUhianQ4QUd6dlVzeWZZa3ZBUkRVLU4yXzBzeWdWdkh0bUx0WDExTE9WTlVxV0VaQmxGMEdWbDVn?oc=5",
+      "date": "2026-10-12",
+      "source": "Kiplinger",
+      "ko": "CPI 발표와 3분기 실적 시즌 앞두고 시장 변동성 지속."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$226.32",
+      "change": "-2.96",
+      "changePct": "-1.29%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$594.24",
+      "change": "-13.86",
+      "changePct": "-2.28%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$101.35",
+      "change": "-3.35",
+      "changePct": "-3.20%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel (INTC) Lost Its Competitive Moat: What Went Wrong?",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOSnlrcXRRTjR2OUc5em5wLUtvcmxaN2U5SzBjVUozeUk0RW1nQ0J6ekhxVjAxbU1mRFFCUVozTS1Ba196STBLLXRSbkExV0w0ZV9Pa0hGNEdhWFBvcVR2ZVdQcEJhWTRjeVV1M1BxQVZSZHYzUzVWb0VISEo1dGZ3VEdHWTR3d0JDZFBZNmZaczRJTnpJRktZeElxeTlWQQ?oc=5",
+          "date": "2026-10-12",
+          "source": "Yahoo Finance",
+          "ko": "인텔의 경쟁력 약화, 과거 독점적 지위 상실로 분석."
+        },
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Slides on Fears of “Capital Crunch”",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRmtDWG10SjFQOExCRHdQbVZROTRYOXpwTkxROXJPNndMSkR5bW9aNHoyS01HMWJlNTNvS2wybl9yMVNhWlhOcU8xVG1WXzJ5R0ZfeGlLN3RRLVoxOG9lWmE1Y0NjcnJ5aU95Wkdmc003REdUYmREZHhyXzVldGhiR2t0bFpXQVVzLXBTMkVmTQ?oc=5",
+          "date": "2026-10-12",
+          "source": "TipRanks",
+          "ko": "인텔 자본 부족 우려로 주가 하락, 투자 여력 제한 신호."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$444.35",
+      "change": "-8.96",
+      "changePct": "-1.98%",
+      "up": false,
+      "news": [
+        {
+          "title": "TSMC Revenue Growth Accelerated Faster Than Expected Last Quarter. Here's Why It's My Top AI Chip Stock to Buy.",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTkdQNi0ybFQ3Njl5NFFHSXZ5Y3FPeVVrRXVOSkZSajlQakYwbnpOOU1CVHpPZFFqcmlnUHhBUjBiUUVuMm1TRDU5aHRYQ2prdmlOcWhqbU1Ib194X2I3SFB6QVVPU2dsVTNmb0oxZHhVRW84UWpoNzNJaEJoanRyR3FhVE1BUlZ5bng4TlY5SzJhNzBGTHYwRA?oc=5",
+          "date": "2026-10-12",
+          "source": "The Motley Fool",
+          "ko": "TSMC 3분기 매출 성장이 예상을 초과, AI 칩 수요 견조."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$989.04",
+      "change": "-39.96",
+      "changePct": "-3.88%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia and Micron Technology Just Received Some Very Bad News From an Unlikely Place",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWlcyNzRVcXpNVzBQclJNNTllUV9na0ZlbkRNNmxOaE1UY2RLWTg1X1dOa1UwUTRxQnV3bmlQazdjLUhYRlMzdk9ULWtZbmdqUVFDUENOaTBKMDJWZWNiSTQ2OXNrdG5ibWR2NEhFSGRQbzRmNFdFTkJhaXVDOTUwTkxhVmxvWVF6VW9JMzVaX29yWDNsNF9tRQ?oc=5",
+          "date": "2026-10-12",
+          "source": "The Motley Fool",
+          "ko": "마이크론이 중국 경쟁사 CXMT의 고밀도 칩 기술 진전으로 악재."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$162.23",
+      "change": "-6.80",
+      "changePct": "-4.02%",
+      "up": false,
+      "news": [
+        {
+          "title": "Memory Stocks Slide as China's CXMT Flags Denser Chip Design: Micron and SK Hynix Fall 4%, Western Digital Drops 2%",
+          "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQQzFpZjVHNUVwdWg5RE9CejZqNlp6M1BPQ211ZlE3d3ZSZWhldTBRNWlzamNZVzhoY3BvRlR2NXpEQmhiLURBU0tIaDMzeVlna1JWYTJFLUZRNk9ma1Q2aHUtVWRzNEFETF9VeVFmV3JYbW5TVk9KSVZfQ0thUGRTTFlyUktKTlBHa1lDWFp4cnhoVlBkSUxkN1V3dklUT1NxaWgxQTFEZjRCMzJyYmRLZEd2SU5uMEJ4eDNzMlBmQ01ENzMzRVA0bE12YU1XQ01KZDFidFloRDA5YnVxcEh6WXRHYVByMU8xRnc?oc=5",
+          "date": "2026-10-12",
+          "source": "24/7 Wall St.",
+          "ko": "중국 CXMT의 신규 칩 설계 발표로 메모리 관련주 일제히 하락."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$209.00",
+      "change": "-0.05",
+      "changePct": "-0.02%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic says new safeguards sharply reduce AI distillation attacks",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPVlZuUXZob1BWeEV1WEZOdWIwRW9ucW92UFVueWd3clAxbHNSUHh1VXFuX1dTalVxLWgyX3Y5ZmZhYzIxc1BNRGN4Y3JUOXBIQjhZUUlDMlNyZ2Q1WW4zOThMbF85R1NGZ0RrWnRLVWMyNjdFWmswb2hrMmNlQWttOUZVOGFjUnRaUzduMDVKMnI1ODlUaWJuTkZ1M3U5N3haQWIzMzNyNzNNUUt1eW5ZVk5EV1pPczA?oc=5",
+      "date": "2026-10-13",
+      "source": "Reuters",
+      "ko": "앤트로픽이 AI 증류 공격에 대한 새로운 보안 대책 발표."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Meta unveils new frontier-class AI models to compete with OpenAI, Anthropic",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE50WlVKQWVQZDJBOUh3M29URVE3aERKWG9CUVNtQjk1eDdKTmN2Sl8wamZQeDRPNEltbU1EelhDWWt5VEtyVFVVUkRJQTJNbWFwcnp1UkVTaU90Vkw4R0pKT0gwN1A1cHZ4Tzg0YkJpVlVZNUJGbnRR?oc=5",
+      "date": "2026-10-12",
+      "source": "Axios",
+      "ko": "메타가 오픈AI, 앤트로픽과 경쟁하는 새 AI 모델 공개."
+    }
+  ],
+  "summary": "기술주 약세로 나스닥 하락, 유가 상승과 이란 정세 불안이 시장을 압박.",
+  "generatedAt": "2026-10-13 11:40",
+  "date": "2026-10-13"
+}
