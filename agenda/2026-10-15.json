@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-15",
+  "generatedAt": "2026-10-15 08:39",
+  "events": [
+    {
+      "title": "환전",
+      "start": "2026-10-15T09:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "보모들에 모임",
+      "start": "2026-10-15T14:00:00+09:00",
+      "allDay": false,
+      "location": "영종도"
+    },
+    {
+      "title": "이규식 대표 등",
+      "start": "2026-10-16T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 964,
+  "importantMails": [
+    {
+      "from": "Claude Team <no-reply@email.claude.com>",
+      "subject": "We're updating our Anthropic Policies",
+      "summary": "Anthropic 정책 업데이트 안내"
+    },
+    {
+      "from": "Google Cloud <CloudPlatform-noreply@google.com>",
+      "subject": "[Action Required] Mark AI agent OAuth clients as agentic for Google Workspace MCP by Nov 11, 2026",
+      "summary": "Google Workspace MCP AI agent OAuth 클라이언트 설정 필요 (11월 11일 마감)"
+    },
+    {
+      "from": "Anthropic, PBC <invoice+statements@mail.anthropic.com>",
+      "subject": "Your receipt from Anthropic, PBC #2250-7521-7856",
+      "summary": "Anthropic 영수증"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터 Claude 공유 알림"
+    },
+    {
+      "from": "Link <notifications@link.com>",
+      "subject": "Verify your email",
+      "summary": "이메일 주소 인증 필요"
+    }
+  ]
+}
