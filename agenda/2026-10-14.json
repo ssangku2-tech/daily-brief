@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-14 09:07",
+  "events": [
+    {
+      "title": "송추CC 11:46",
+      "start": "2026-10-14T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "병순형, 박대표",
+      "start": "2026-10-14T17:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "환전",
+      "start": "2026-10-15T09:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "보모들에 모임",
+      "start": "2026-10-15T14:00:00+09:00",
+      "allDay": false,
+      "location": "영종도"
+    }
+  ],
+  "unreadCount": 960,
+  "importantMails": [
+    {
+      "from": "Anthropic, PBC",
+      "subject": "Your receipt from Anthropic, PBC #2250-7521-7856",
+      "summary": "Anthropic 구매 영수증"
+    },
+    {
+      "from": "Google Cloud",
+      "subject": "[Action Required] Mark AI agent OAuth clients as agentic for Google Workspace MCP by Nov 11, 2026",
+      "summary": "Google Cloud 계정 필수 조치 요청"
+    },
+    {
+      "from": "Link",
+      "subject": "Verify your email",
+      "summary": "Link 서비스 이메일 인증 요청"
+    },
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 인터넷 항공권 구매완료 영수증",
+      "summary": "항공권 구매 영수증"
+    },
+    {
+      "from": "AIRBUSAN",
+      "subject": "에어부산 탑승 안내",
+      "summary": "항공편 탑승 안내"
+    }
+  ]
+}
