@@ -1,0 +1,187 @@
+{
+  "sessionDate": "2026-10-13",
+  "sessionDateLabel": "2026년 10월 13일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,805.45",
+      "changePct": "-0.08%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "27,204.38",
+      "changePct": "-0.15%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,670.10",
+      "changePct": "+0.03%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "S&P 500 Ends Flat, While Nasdaq Drops As Memory Chipmakers Sell Off — BAC, GME, SPCX, ARM, QCOM In Focus",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNWlg0bldGSVBmS3lwNmZDaWJmNzBXMDBPaDNPYlptaTdScmZEUzlpOWVxMmJnVGxCbkNjQy15M01Vbkd4WDBBMGNDdWtNWkhDV2JjVGJfVTVoeVJoZlJIQzFTTHZrRHZrUndTRU41aG4yampSU0RGNGpmVVc1LXFRTTRQdV83YlVKY2tzVHVwMkM1Mlc4UjZjUFFheHBQYVliNWk1bjFsU1czQkowdXFjWTh4WVF6bUtBeksyT1Zud2lrdElQTmxWaXdablk1QWp5VzdhZ05yT0FqVHQ4UE12ZDllNlFNLWZOWUxCVWt3Zw?oc=5",
+      "date": "2026-10-13",
+      "source": "TradingView",
+      "ko": "메모리칩 제조사들의 대량 매도로 나스닥 하락, 특정 종목들이 주목받는 중"
+    },
+    {
+      "title": "Dow Jones Futures: Stock Market Holds Up As Meta, AMD Lead Buys; ASML, CPI Inflation Due",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVDFGc21reGxUZzFsZDdzeXdiZm43ZVBKZlJMN2NiQ2lPLXozSzBzcnNwQS11ZDM0cFBpOEsxQWxwd3dpR0J0Rks3SzZQMVZENG91UkhuLVhScVBFWU5YeEEtQmpuUktXSnpDREdhN1Bpd2JvUEFJTTQxZmhQaXdrZHlGLWJIZHJLMTFuZTNIQWxFNkxyV3Y0Qzl3cUVmQU1WdEk1UGI3RnExdFl5Umc?oc=5",
+      "date": "2026-10-13",
+      "source": "Investor's Business Daily",
+      "ko": "AMD와 메타가 주요 매수세, ASML과 CPI 인플레이션 데이터 발표 예정"
+    },
+    {
+      "title": "US Stock Futures Mixed as AI Concerns, LVMH Sales and Bank Earnings Shape Market Sentiment: Dow Jones, S&P, Nasdaq, Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTW5wVjJWbzltNW1KVHJzdWxBU3gyY0dvOHM4RjlJZ29JSXJUaUtONk5YVHc4SGQ2UUtXcGpldk5vbTE0dGtNODY4YkxCYUtjMlM2MmQ2QTg1elE4REY4S211azN6UmZybHFiMFVSajFXLU1nVEdIaXZ0MFRnY3dGZnp2Sy1oWC11MG1iZGdUSURYNTlL?oc=5",
+      "date": "2026-10-13",
+      "source": "Yahoo Finance",
+      "ko": "AI 투자 의구심, LVMH 판매 부진, 은행 실적이 시장 심리에 영향"
+    },
+    {
+      "title": "Wall Street Futures Diverge as AI Investment Doubts, LVMH Weakness and Bank Results Drive Trading: Dow Jones, S&P, Nasdaq",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQU29jZVc4WTVzendlcmQ4OXJVaTRRSEtYZWRlZzlSRHQydV95M1gxNHd6RnlsUzdiYldvWGtyc2FoM3pFWENPaVpqOGpLVlVvX0E5RDN1a2JxUzFLeWZMc0RtaElvalhNRmlNYnRtbUtKTERLU2RRNkNGVUVFZHBielQ0RHZhUQ?oc=5",
+      "date": "2026-10-13",
+      "source": "Yahoo Finance UK",
+      "ko": "유럽 증시에서도 AI 투자 의문과 LVMH 약세가 선물 변동성 확대"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$228.52",
+      "change": "+2.20",
+      "changePct": "+0.97%",
+      "up": true,
+      "news": [
+        {
+          "title": "NVIDIA (NVDA): Still Watching the AI Growth Story, but Is the Stock Getting Harder to Value?",
+          "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPSllCVVhlY1ZGa0RDUXlha3lJT0Exd2tOYUlkOXhqOXBMeDZlUUtFc21TcHlBYXQ0eTAwU2F1UlRoXzk5QUxSZ2xZaGZoTjJyYnZxODRuLXdVT2R0UGl5TFotSGdnUXp6cm1WbDRCb0VQRTg0LXk1NGRFdlFMT29ndW0wYktDTTI3VU00SVYweWpTU21xcDQ1MmVMSmlMZHhEb1lFZ3ZKeEFOWlRWd0xCdEpVbk9Lbi1EdUYxYkRsWFY2bHJNejRtMEJadXRCTXM0ekhVR3NGbzhPdjkwQWFpYTFJVmRSdkZiTFFQWkk3a184d0FvOG91Zi1hRlZzTU5pNWhyZ0hKNA?oc=5",
+          "date": "2026-10-13",
+          "source": "Simply Wall Street",
+          "ko": "엔비디아, 클로드 AI의 올해 상위 종목 선정됐으나 주가 상승 지속 가능성 검토 필요"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$605.53",
+      "change": "+11.29",
+      "changePct": "+1.90%",
+      "up": true,
+      "news": [
+        {
+          "title": "Applied Materials vs. Advanced Micro Devices: Which Semiconductor Stock Is a Better Buy in 2026?",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOUG90a0hhdTBKTExLcnV5UWw0VjNGNVBwMzVGdW00NHpDMmwweVQ5bEU1dkhlamNZbl9vUE5laXVRYnEwTWlfTUN4WkJkbThaMjVsclgyQmRZeFY4MHJyQTRMSnhlTUZPTWNtcjEydmJDeFNPNHhhWlBSTzZVcUQyMkNFbW5yMU5FaEN2cEkxdGlVeVAxLVRhaFpLbF9wVGZqUGJMbktocTdGMDdaWml5NE1KeG15WG8zREFVYlpvMXhOUXM3R2tteXBkWnhqTGNzOEJTeThPQzJGT3JoZ0xZ?oc=5",
+          "date": "2026-10-13",
+          "source": "The Motley Fool",
+          "ko": "응용재료 vs AMD 비교: 2026년 반도체 주식 투자 선택 분석"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$102.81",
+      "change": "+1.46",
+      "changePct": "+1.44%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$445.12",
+      "change": "+0.77",
+      "changePct": "+0.17%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC Earnings Preview: High Growth Likely, But Mind The CAPEX (Downgrade) (NYSE:TSM)",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRHNSWnFMV0dEOHlHeWxoMjJlODU3Mm56V2NEQzVpakdDSHlEdUxtUlZ1dEI2clBIMTBuUTJXZ1dqOXVIaW5DUllEVHU2dHBHYmlmUDZjM0prelJyeG1vZzJWSU50dG5hTFFVNlpIeFVsNGxvdXN0a25IUEtGcmZEVTlpLWFzakxDSWFmU001SFVyZ0JzQ1BJeFByNElxYmh1NW11eHJKRlo1dzdvallJ?oc=5",
+          "date": "2026-10-13",
+          "source": "Seeking Alpha",
+          "ko": "TSMC 실적 호조 예상하나 자본지출 증가(하향)에 주의 필요"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$953.19",
+      "change": "-35.85",
+      "changePct": "-3.62%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Technology adds to recent weakness, slips another 4% (MU:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPSDh0ZEZzQl9JbDJablNMcDV2UGJsYTJIY1dPZTVKY1A3dzA4Q0pEOU92cV9QanBVRE9VTjZYTldKY0p1UTlJdjhRVGRYN08wZ3ZDWUV0cENLNm9HWlhuZ3FaaVJtMy04aWRYaElfZmpGZ0o4ck9HVWhMQ2I5dzdneVhBTnZ5OU9uNUczWmlxLXNLMVM1UmhBdm4tOA?oc=5",
+          "date": "2026-10-13",
+          "source": "Seeking Alpha",
+          "ko": "마이크론, 최근 약세 지속하며 추가 4% 하락"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$157.06",
+      "change": "-5.17",
+      "changePct": "-3.19%",
+      "up": false,
+      "news": [
+        {
+          "title": "Samsung and SK Hynix Lead Chip Selloff as China Competition Fears Grow",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNcC1iZXdTaFRtMnBJRFdzWmRibE9EV2ZObkNUcXBqN1BXUEsxT1JHWnN3OGJ5M1hBMEtQQ1VXWmN3UmhTcDdVTTV0ZXRXX0gyRFZlUGVfelExdVR0ZndxZ3NfOEZQc2t0UkstMnl4Skc1TnIwVjdXNkZhMDJBU1N0M0F2eDJaRjFsamp4Q1BtR2YtNWd0YktyaDdReUE3cUFlZDRBblF5Vy1zZw?oc=5",
+          "date": "2026-10-13",
+          "source": "Morningstar",
+          "ko": "SK하이닉스, 중국 경쟁 우려와 칩 매도세로 한국 시장 타격"
+        },
+        {
+          "title": "US chip stocks extend slide as China memory report, AI spending jitters hit sector",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdjlLc0J0QjMyZmZRZWM1SldodnE0RV8xUWN0S0EzdUtWX1VjNXRiTVRKdDJQQVNkNkNadU50bGFueTItd3V0Zk43aFRiV2xsMVdCS1lFbFh3TVI3b05yd253VjBLSWdlYmwyb3VIOFBLQm5VbFRlR1ZQczRlekUyWHNOMjUwdmhvMXA2MWl1UUp6aDFydkZRZWdjUzZnRUR2NXAteDNMZS1zdDNUWm1HRVBxYlo3TXh6ZGZKT1lNOXFHUjBp?oc=5",
+          "date": "2026-10-13",
+          "source": "Reuters",
+          "ko": "중국 메모리 보고서와 AI 지출 의구심으로 미국 칩주 하락 계속"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$208.67",
+      "change": "-0.33",
+      "changePct": "-0.16%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic warns AI models could soon replicate across home devices, become difficult to shut down",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPeFB3aGVWQmlzcGNwdGVNZVhfZG1OOFlBQmVOaHpTS3E2XzJzclFnV3hXdTQ4UE5CQlQxZ2RiMjVWTDZaLVlrdU1QVkV5VzdVSjNEeFBBM3hNS2FTekVjTFBHS0tLWUJ1UGlWTFdMcGtjemhJNmZLb1kzaEJHbDNVbGp1ZTJJNms?oc=5",
+      "date": "2026-10-13",
+      "source": "Fox News",
+      "ko": "앤트로픽, AI 모델이 가정용 기기로 복제·확산될 수 있다고 경고"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic to disclose new revenue numbers as AI lab financials become central to tech trade",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9iTFZ0YmNOLXFxS3pxWDdPSGx0bjBrdDE2OXFTZmJELThrSU5LWHZlYXcxQ2swUmZUWHhNRjc4Znh1bDZQVU4xMjQ4ZTAySHNQMWRSZjRlaVF3T3F0MDRIU2l4T3A3V3NNYy1pdGJqZWR3Z9IBd0FVX3lxTE9UQjBLY1Jza0hRNlRoYXdYYmN6QU9jT01YUlUwTllZWUp3bGxpTC1RWmJzSlREX09xR0lzdkJVejlpV2FFWVdYRVNJZFV6cXM0Y0hyQ0kxdGhlcmd0Y0pTRE1qVTZXUVNJeHpVUVQyVVcwbUNvTXRz?oc=5",
+      "date": "2026-10-13",
+      "source": "CNBC",
+      "ko": "앤트로픽, AI랩 재무공개 추세 속 신규 수익 수치 공개 예정"
+    }
+  ],
+  "summary": "메모리칩 약세로 나스닥 하락, 반도체 기업 간 엇갈린 성과",
+  "generatedAt": "2026-10-14 09:29",
+  "date": "2026-10-14"
+}
