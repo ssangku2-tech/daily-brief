@@ -1,0 +1,180 @@
+{
+  "sessionDate": "2026-10-15",
+  "sessionDateLabel": "2026년 10월 15일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,744.06",
+      "changePct": "+0.33%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,713.03",
+      "changePct": "+0.08%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,177.69",
+      "changePct": "+1.08%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: S&P 500, Nasdaq 100 Futures Fall As Chip Stock Sell-Off Intensifies — SKHY, TSM, RKLB in Focus",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPWXFvRzhSRWVpeFpDR2tkNWpuYm9BcU5mUFRLVTZNci1FUjkxbVlPdGs4UkFUeGZ3UkJ3Z0xOMU9SbXJveG41QmJhRHdNNzlrNWFXbWJQSnl3di1Ea1ZVRWNqV1Myd05lZnhMV3RMTy1VUVZmemxlS3YtcmFCczB1VzdmdmJIcVlPbHp4SG9RNHZ6RndjVC0wTDFVWjk5dkhZNjdmVWJUTjlEbFl1VmxYaEplb21JRlNTb2ZGa3R3OHRQa0pzRlBvUl9fOHJhbjJHVzlmZ1Q0YW8xdFAtam1rNmFRemJFVnNwN0Y3MGRhU2ZvWGJDclE4?oc=5",
+      "date": "2026-10-15",
+      "source": "Benzinga",
+      "ko": "반도체 주가 동반 하락으로 S&P 500과 나스닥 선물이 하락세를 보이고 있다."
+    },
+    {
+      "title": "S&P 500 Holds Key Level, AI Off Lows, 12 New Buys. But Beware This.",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUzRnYjFzcTcyNzV2WFlmMUhqVHRiejRDTDdfYVpQN0xRUlFaNFI1S0hHQzRpZ29vYjhHWVJUbVV2MHlxNnRUZFJiVkZLcU5Jci0wQ1ZzYTk2TENkWW1OMzhxYXNYT1AwTy1wd0FNNnRSbUpmUHkyZnF4QjVVeC1WNDB2MC13WkhMTVRtLTFuc1VPeFlYNkZDdzlLYXV6bWhBYjVndVRVSndVVlM0T0JKZW4tVjMyOXVPZk9WT0ZzcVc?oc=5",
+      "date": "2026-10-15",
+      "source": "Investor's Business Daily",
+      "ko": "S&P 500이 주요 수준대를 지키고 있으나 AI 매도세가 지속되는 상황이다."
+    },
+    {
+      "title": "A Staggering 84% of S&P 500 Stocks Are Now in Correction Territory, and History Says This Foreshadows Disaster for Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVXJ2N25aNm1DRnZ2UFhXMUN2R0lEOXNOcThGWjMxaUlZbzFiQlFYeFNhLVM0eXRzWm40dlJ5LWxXcVRZNG1aQWp6cWluYWllU3JaWFRNTzlVX1F5bkVnNk9hRzhhM3E0NGt0ZHlhbUxSZlBqX1BFUjcyTXRKWGtZUFFpaUx0NFlsQzlyNHNraFhYZnN6bUxSRFlZUmZfaVF6SEpGc0YwTHdKWXFiQVJsRWZseElubWk2Y2VYVG90S0k0RzV6Q1hn?oc=5",
+      "date": "2026-10-15",
+      "source": "The Motley Fool",
+      "ko": "S&P 500의 84%가 조정장(조정 수준의 낙폭)에 진입했으며 역사적으로 시장 약세를 시사한다."
+    },
+    {
+      "title": "U.S. stocks higher at close of trade; Dow Jones Industrial Average up 1.08%",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPSEJMQnl0SXQtbG1JbVkzY3lqWXptUmJCRlREX05MM2diUE45NEx1YlV0SVZfcm83bUVGM01YRHlrdm9kM2EwX1k4SVJpZVZfcGpxNjViaHAzNi1UeUExTjdnRVVwOUJuRWRKbVV3aWRHX2MwekMwenJBTmVTOHlmNnppOUVYNk42X3dSLURCT3VuZnUwWURuYS1MeWlsbzFzSkJQMFJCRjV3LXdpSTRmV1hNdGc5Zl94aTBMVG1ma2JvSDY3VHc?oc=5",
+      "date": "2026-10-15",
+      "source": "Investing.com",
+      "ko": "주식시장은 장 마감 시점에 상승으로 돌아섰으며 다우지수가 1% 이상 상승했다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$217.23",
+      "change": "-4.07",
+      "changePct": "-1.84%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock sinks as chip sell-off deepens on hot inflation data",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQb1ZGcUkyMFZEdXYtUDhENXZ6Rkl6b29Ic3BlOUE2a2U5d3I3UWlPM2ZYRjRnZVYyRVdPRUFjTklPeG9OY2hrdUNZaXc4YU9JWGlsNXY2WFlkQ0lzNHl1VFZoaWNLamlGT3lKQVpyN2VTMm1HVEpRd2FzdUZUN3dTbFBkOEVVUnh6SE05QTZpRmlDTk4xVUoyckJQRjlIRVJaZTBkV2hWalNwd1pKOW9QSFh5ODY4VEVZcE51Wm5RMHZ1RlVnWDVvZw?oc=5",
+          "date": "2026-10-15",
+          "source": "Yahoo Finance",
+          "ko": "고인플레이션 데이터와 칩 매도세 심화로 엔비디아 주가가 하락했다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$562.23",
+      "change": "-8.59",
+      "changePct": "-1.50%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$95.37",
+      "change": "-2.75",
+      "changePct": "-2.80%",
+      "up": false,
+      "news": [
+        {
+          "title": "INTC Stock Drops As Musk Terafab Talks Favor TSMC",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBuNFVtTGRKcVRCdXh6T0t0ekpFcVlueWJsc2lJVDJFY1M5SHpfWHVtbF8yS1IxNWlHQ2VUQUhfT3BBbElPd3M0LXJjYjJua2FtZ0p2dzVYaWJ4MGtxdDlNcmdZd18zY1RwRWNyU054b3luSHRuZ2RueE1R?oc=5",
+          "date": "2026-10-15",
+          "source": "StocksToTrade",
+          "ko": "머스크의 테라팹 계획이 TSMC 중심으로 진행되면서 인텔이 추가 압력을 받고 있다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$422.25",
+      "change": "-7.75",
+      "changePct": "-1.80%",
+      "up": false,
+      "news": [
+        {
+          "title": "Chip Leader TSMC Delivers Beat-And-Raise Third-Quarter Report",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOXy1TbG85Y0hNQkxYR3pFRDV0UWZPVG5udjJxekd6RkNJWmlBX1Y0T2NnSEF3V1Q2VXAwNGZleWxwRC1DakxjZmZha2V1Q2J1cFNqdWRLek9fQlI1R010Q3NRQ3pYeE16WVY3dUVuUkRyQzhkeHYyb0VVSVhaWWJMT1BrT09Fem54Y2NQRVhjbzNqX1FHRzZOeW9JSQ?oc=5",
+          "date": "2026-10-15",
+          "source": "Investor's Business Daily",
+          "ko": "TSMC가 3분기에서 예상을 상회하는 실적을 기록하고 추가 인상을 발표했다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$931.24",
+      "change": "+17.11",
+      "changePct": "+1.87%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron (MU) Stock Fair Value Edges Higher After Analysts Lift Targets On AI Demand",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNkRfLWk1VEVQTHVMMWg2YVlveFVfVnlfN0NTOVhoTWViNGljSkF0bWxCbk0wVkhIX2xsdTgtZ0k0cjJTOERNckszY3RDT2NBSGZBR3U0RVNJb1N0TXlpVHZ4Z21sc3ZkVXBEd2NOQkpTbl82aUhCMm9mZjhoUVpac2VNUzVGQ0Fqai0tSDc1Q0w3cldlVEE?oc=5",
+          "date": "2026-10-15",
+          "source": "Yahoo Finance",
+          "ko": "마이크론 목표가가 AI 수요 증가를 반영하며 상향 조정되고 있다."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$146.11",
+      "change": "-1.44",
+      "changePct": "-0.98%",
+      "up": false,
+      "news": [
+        {
+          "title": "EXCLUSIVE: SK Hynix conditions new US factory on more US chip equipment exports to China, sources say",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZExZLWRBZUo2NlJPaFhzSWxERFdkcGl1bklYWTFfQ1NrRG01WWtmQjhlT3g5OEtvT3c2SjNlbHVlcEhVelBtVk5RVHR2ckU4VFZTV1J1S3ZpOENaT1dibXQ3cXdsbFd3Rk43N1lFWEZBVC00NFJiSlU5TlpEbEVsWi1RakhQYmpwN2xlMGRlakZqdFRnaEJpQkZaRllTMFVhbUJmaWt3d2NRclJvRFZ1VG5jNWpSZ2dWZ3l1bEhHUnBWajR4YVB6S3hEamlMMzA?oc=5",
+          "date": "2026-10-15",
+          "source": "Reuters",
+          "ko": "SK하이닉스가 미국 신규 공장 건설을 중국 향 반도체 장비 수출 허용을 조건으로 협상 중이다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$200.50",
+      "change": "-0.47",
+      "changePct": "-0.23%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic grants outside evaluator METR employee-level access in AI safety push",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbERjb3RFVUdmYXZ6ZktrZ0tiVUlEck5vRGtxd2dXTnA4UGFoSF9QNEU5Y3FfVUxZOHp1cEt3UktQUXZicnI5UDByaW5hTDdhanhtb2JsVTZsRkxYSjRsd2VZZUx2Yy1lZzNhWGdJSWxOalZoZGJNU0g1NGFkUEFkZHNob2RXaVVqb3BxTkZGVFJaUHg4cVNTTXJMcnFtSGZTZDZ1TVVBOWxSSGhjZ0Z6SFpB?oc=5",
+      "date": "2026-10-15",
+      "source": "Reuters",
+      "ko": "앤트로픽이 독립 평가기관 METR에 직원 수준의 접근 권한을 부여했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "EXCLUSIVE: Investors temper Anthropic IPO valuation expectations over revenue growth slowdown, sources say",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQRW4tSGppV2U0ZWtvaXBsQmlyaDVVLVFCSmJNMWdmMHpod0FWd25kUXRNQzFvZXJPTmhoQUNvMlFrQzI3NjBQVG9McWFPRHdUODhMbVItOGg4S0N3ZmJ4R2psZVd1aWFZM2M0aEY4R3VaYnFZWUxhOFZiRXAxTnc5UG9hMm1ERGpKbURkX3BWYzQ5UWl3THBFTDhWUWR0SVhUSWJsekpMZjM4OUZRQl9BVmY2djVKRENDSldCSUpOWmdvbHVK?oc=5",
+      "date": "2026-10-15",
+      "source": "Reuters",
+      "ko": "투자자들이 앤트로픽의 매출 성장 둔화로 인해 IPO 밸류에이션 기대치를 낮추고 있다."
+    }
+  ],
+  "summary": "칩 업체들의 대규모 낙폭에도 불구하고 다우지수는 상승으로 마감했으나 시장 전반의 약세 신호가 나타나고 있다.",
+  "generatedAt": "2026-10-16 08:44",
+  "date": "2026-10-16"
+}
