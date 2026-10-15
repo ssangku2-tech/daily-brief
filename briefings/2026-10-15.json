@@ -1,0 +1,149 @@
+{
+  "sessionDate": "2026-10-14",
+  "sessionDateLabel": "2026년 10월 14일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,718.94",
+      "changePct": "-1.11%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,692.87",
+      "changePct": "-1.88%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,621.48",
+      "changePct": "-0.09%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Stocks Head Lower as Hot Inflation Puts Another Fed Rate Hike Back in Play",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQRmpNMXhBd3IzV2lBX21jMFhkRXpUcXlvUXdaTGhveHZZRFdhRk9XNTBxMnlBcVU0dUxnM01lYnFldm4ydzQyTUhVa3pRUzdoY3haSU5SVnBYSzc4MjRxNFdvSVQwM2E5dXBjLTRnZGJCbTUwbVlWbTZCS1RzZ0c4dnVFS1BxRWpzNXd1Tl8tNXZHQ0YzcldWR2FWSjQ5alVaVTlYMnFnQ2ZKN29RMVItS0lfcEI1X2NaZElfVTViMElwLUJwV25EMVZ4LVpOYWI2MU00?oc=5",
+      "date": "2026-10-14",
+      "source": "24/7 Wall St.",
+      "ko": "9월 CPI가 예상을 웃돌며 연준의 추가 인상 가능성이 재부각되어 주가 하락 압력."
+    },
+    {
+      "title": "Update: Nasdaq, S&P 500 Fall for Third Straight Session Following Hot CPI Data",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOSjVyQjlsLXdGenFyZmtaN21SbjlHSGx2NXRqM0JoODE0NEdjRzFsdG1CUVJaYkFRNWJuM1d4S0RfWlBPVGJOSUxPYzc4SGY1c1VOam1MaVg1SVVJZ0RHcXZTTElvaXpDSVc2ckM5QlhEMlFQbVBVazdjaUEtYkE3UHRXajlIOGN4V0ZpaFhseHFFQQ?oc=5",
+      "date": "2026-10-14",
+      "source": "Yahoo Finance",
+      "ko": "핫 인플레이션 데이터 이후 나스닥과 S&P 500이 3연속 하락."
+    },
+    {
+      "title": "Stocks Sell Off On AI Fears; Dell, AMD, CoreWeave Are Big Losers",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxObkt6ekRhM01GYllSNng3cnhNQjJHZlBSVjZ0d2d3aElqTFpSd2hWOWxOdG54ZHhSa0wtSUFtX2JLSXcxRnF6TVNtcUV1ZXhlb2ZqdHZ6YzFlb3BVV0pmaEVlZzgyU1RXZDB5c3RFNEpmT3ZsZXI1NjBKcDVCQjRmUExrakhTWDFJODI2bHlfV29nZXlJYTdMcFlpLVhXbEFta0xMSlQyM2FiYlNDOXNWM2s4NVdCUWp0eUlJQkpoUVFEQ0FpM2JnUjlCTFVDMDVxLUtsUUZ3?oc=5",
+      "date": "2026-10-14",
+      "source": "Investor's Business Daily",
+      "ko": "AI 관련 우려로 반도체주들이 광범위한 낙장을 기록."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$221.30",
+      "change": "-7.22",
+      "changePct": "-3.16%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock sinks as chip sell-off deepens on hot inflation data",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQb1ZGcUkyMFZEdXYtUDhENXZ6Rkl6b29Ic3BlOUE2a2U5d3I3UWlPM2ZYRjRnZVYyRVdPRUFjTklPeG9OY2hrdUNZaXc4YU9JWGlsNXY2WFlkQ0lzNHl1VFZoaWNLamlGT3lKQVpyN2VTMm1HVEpRd2FzdUZUN3dTbFBkOEVVUnh6SE05QTZpRmlDTk4xVUoyckJQRjlIRVJaZTBkV2hWalNwd1pKOW9QSFh5ODY4VEVZcE51Wm5RMHZ1RlVnWDVvZw?oc=5",
+          "date": "2026-10-14",
+          "source": "Yahoo Finance",
+          "ko": "인플레이션 데이터 발표 후 엔비디아 등 칩 업계 전반이 급락."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$570.82",
+      "change": "-34.71",
+      "changePct": "-5.73%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$98.12",
+      "change": "-4.69",
+      "changePct": "-4.56%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$430.00",
+      "change": "-15.12",
+      "changePct": "-3.40%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$914.13",
+      "change": "-38.91",
+      "changePct": "-4.08%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$147.55",
+      "change": "-9.51",
+      "changePct": "-6.06%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK Hynix Sinks 5% as China's CXMT Aims at Server Memory; Western Digital Drops 4%, Micron Falls 3%",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNQzdEYmlicGhiOC1LV2NXRk92T2tRMXhZVlZfN3VjcVd5a0tHRUFETU55dUhhemhSSWl0bllIeGJ1aDdSQjM2X2Jnai1FX3VyNXJabGpkSzVPdl9CR1pEMzRrNURIYnphOEVRTmxhdGFPdW5NdDVfcnRnWUQySkdqSGljMkZQZ29CdUhoX1VsOGpEZ21MbVhOS1dJTk9FTzZ2TzdxejVFcUY5X0xaek1vcUlPZEVPZkx3TXJBTncxbmhtYkp3OWwtOElUOFM0UEdGX0E?oc=5",
+          "date": "2026-10-14",
+          "source": "24/7 Wall St.",
+          "ko": "중국 CXMT의 서버 메모리 진출이 SK하이닉스 등 메모리반도체주 하락 주도."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$200.97",
+      "change": "-7.70",
+      "changePct": "-3.69%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic tells investors quarterly revenue up 50% to $16.8bn ahead of IPO",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPREFXR25nQUF4WXJFTFcwN01WaS1OUWphZkFKWmRLVFlza2c3Q194d1JVdWdpRU9LWlNyZlE4REZEUEdhZzA4Ykc4UEpxZmdaaUp5ckZIcG5zNXdOYUdIYm9WQ3JxOXktR2I0d1Jab0g1T0lRcERma2FrUmx6ekZoRGJPazE?oc=5",
+      "date": "2026-10-14",
+      "source": "Financial Times",
+      "ko": "앤트로픽 Q3 매출이 전분기 대비 50% 증가해 IPO 전 실적 공시."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Says Revenue Jumped 45% to $16.8 Billion in Third Quarter",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPTzNSa01ZdlJVSWlCelZQd1ZsNXV5clhHaHE2bHNXbm1HR3dBdEZ0VW8zcVRpN0lxSzJrMDlBN1dKdDNraHM1V1IyWW5iY1MwUjVxQzVlbFpmX3QyRlpVVnVQUzNQN1dRYXFTUVFZOHMxLUtQX3VKM3ppdzBzcGhKSEktMzQ2Zw?oc=5",
+      "date": "2026-10-14",
+      "source": "The New York Times",
+      "ko": "앤트로픽이 Q3 매출 165억 달러로 45% 성장했다고 공시."
+    }
+  ],
+  "summary": "9월 CPI 상승으로 추가 금리인상 우려가 부각되며 기술주 중심 낙장.",
+  "generatedAt": "2026-10-15 09:00",
+  "date": "2026-10-15"
+}
