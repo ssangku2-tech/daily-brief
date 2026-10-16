@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-17",
+  "generatedAt": "2026-10-17 08:14",
+  "events": [
+    {
+      "title": "초등 모임_양양",
+      "start": "2026-10-18T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "8:20 경부선",
+      "start": "2026-10-18T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 959,
+  "importantMails": [
+    {
+      "from": "Agoda Customer Service <no-reply@agoda.com>",
+      "subject": "Agoda - Customer Receipt from Booking ID: 1774306527",
+      "summary": "예약 확인증 수령"
+    },
+    {
+      "from": "Claude Team <no-reply@email.claude.com>",
+      "subject": "We're updating our Anthropic Policies",
+      "summary": "Anthropic 정책 업데이트 안내"
+    },
+    {
+      "from": "Anthropic, PBC <invoice+statements@mail.anthropic.com>",
+      "subject": "Your receipt from Anthropic, PBC #2250-7521-7856",
+      "summary": "Anthropic 결제 영수증"
+    },
+    {
+      "from": "Google Cloud <CloudPlatform-noreply@google.com>",
+      "subject": "[Action Required] Mark AI agent OAuth clients as agentic for Google Workspace MCP by Nov 11, 2026",
+      "summary": "Google Cloud 필수 조치 요청"
+    },
+    {
+      "from": "Link <notifications@link.com>",
+      "subject": "Verify your email",
+      "summary": "이메일 인증 요청"
+    }
+  ]
+}
