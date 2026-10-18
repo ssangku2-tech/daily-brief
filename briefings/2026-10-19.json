@@ -1,0 +1,164 @@
+{
+  "sessionDate": "2026-10-16",
+  "sessionDateLabel": "2026년 10월 16일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,659.44",
+      "changePct": "-1.09%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,140.03",
+      "changePct": "-2.14%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,002.41",
+      "changePct": "-0.34%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "We Just Witnessed a Unique Stock Market Measure Do Something for Only the 4th Time Since 1997, and It Offers a Chilling Outlook for Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPMWVlbTE4TmZuTGxjcDFtVzFPZVdOcXlEbE05ZU5tNVBKRjI0Q1haZFp0enBzWmRQUmpRTHBaZE9KYmoxSEVSdl9ybWloQTVremNzbmtraXJOX3JlQ3BIWXlROFZLVFphVVdaQmg1VVlGandYYWV0T3M3eW05UWN1dUN6c2dGN3JUc0Q1OTVBZjI5YS1xY3drVXhYdXBXRVVIWFBSZ1psV0ptTDdGTS1iaGFqR0xuUFFpYUx4WC11aVVnRlBabG9FakxpQURwRFdGdjZpNnZrLThiYlVIUHRTR25jNEpkZw?oc=5",
+      "date": "2026-10-18",
+      "source": "The Motley Fool",
+      "ko": "1997년 이후 4번째로 발생한 특정 시장 지표가 월스트릿에 약세 신호를 보내고 있다."
+    },
+    {
+      "title": "Opinion: There is a silent market rotation inside the S&P 500 that’s warning of more weakness ahead",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQc3Q2VG9DakFjU3JIMFpjMmFwcDI1cFZGemt1VWZCWUVHWWswdXEtY0RSRUtuS1haTVBtTVFubVRrVDhtbzZBczZoX0NHRmVQbjRjN1plekNKQVRpZ3lzT2ctbUQ1b1FQNmRFeVJ1YndQaXE4X0tBdU5tamZfNndGTnlfMXZndm1CUWZ1VjVxSFQ0SEFZX29tQ0V2NDB6bFBtQXhFMXlnTTB4VEtnX1c0SE5EM0sxXzE3a3FJUWhBTTRWZGdhZ2pBaUpzZXU?oc=5",
+      "date": "2026-10-18",
+      "source": "MarketWatch",
+      "ko": "S&P 500 내 조용한 자산 재배치가 진행 중이며 추가 약세를 경고하고 있다."
+    },
+    {
+      "title": "Yardeni Lowers S&P 500 Target to 7,900 Despite Maintaining 2027 Earnings Forecast",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNEx1cXFDWlloY0xiTGcyc29EZmNrZDFUYUp4eUxZRE5nT3lHdGtGMmpDX29yeEl2aE9RQm1TTUlpSWhGMTVXMTVuWmJiTndBaHl6ZmVIZllza0lzckJyZWx3M1B1NUNEVGlyUXowbGNMako3MzVlazlmZHRtTVF1ekd3?oc=5",
+      "date": "2026-10-18",
+      "source": "Yahoo Finance UK",
+      "ko": "애널리스트가 S&P 500 목표가를 7,900으로 인하했다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$214.13",
+      "change": "-3.10",
+      "changePct": "-1.43%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia (NVDA) Trades Far Below Its Usual Multiple, Is Customer Debt the Real Risk?",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZ0RqY1JjcXVtOWFoM2F2ZmRINWluWTJqV2UyQU5UaldWN1ozeDhrMHV0X280WWIzYlU5dTVRUTFwbDB1OXJZc3ZHeU9zRWhMOV90dlZYQkFyR0ViSXRRbTQxbjFDQ1MwNXlrTTh6Vld2clBiS256VlR4UkNKUTRWbUZjcjBSTWZBZ1pWZ3ZRa1MydEQ3cHowaA?oc=5",
+          "date": "2026-10-17",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아가 평년 밸류에이션보다 훨씬 낮은 수준에서 거래 중이다."
+        },
+        {
+          "title": "Jensen Huang's Nvidia Lost $200 Billion in Value After OpenAI's Revenue Run Rate Came Up $18 Billion Below Expectations. Is This AI-Jitters Sell-Off a Buying Opportunity?",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQMmUybE1nMEtyMGJFb0VDd2dpOHFTYjU1eXJHc2xXbnRfc25LVjB2UVpSLU5mR1Jqa2NvNVMzSTJFVXFlZGJKbUtDQWljUG1SUmVEZHdOMjZQVWhSUFV6QnFLVzdVSGl1UGdMMll5Y2c3T2g5cDNvd2FOYnFTZU1ELXQ4eGxlNHNqY295R1hDakVJYWZCYzZyaw?oc=5",
+          "date": "2026-10-16",
+          "source": "The Motley Fool",
+          "ko": "OpenAI 매출 전망 부진으로 엔비디아가 2,000억 달러 이상 감손했다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$528.75",
+      "change": "-33.48",
+      "changePct": "-5.95%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$89.85",
+      "change": "-5.52",
+      "changePct": "-5.79%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$412.61",
+      "change": "-9.64",
+      "changePct": "-2.28%",
+      "up": false,
+      "news": [
+        {
+          "title": "TSMC: The Easy Money Is Gone (NYSE:TSM)",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9UMVJuNEMzQ2Q3aGFzZS01cHp6YkdUMHFzNlQyREw5NFJRR3pqb05yVVg2TVc0Ylg5QmZIU2VYUG9MLWVfUjVScGFFaWZSSVpaeDhUWVpwSDNiRm5zR3B4ZWJfRnhBQmV5WE80ZzNrN1BOelRlQldn?oc=5",
+          "date": "2026-10-18",
+          "source": "Seeking Alpha",
+          "ko": "TSMC는 기술주 상승의 수혜를 이미 충분히 누렸으며 앞으로 상승 여력이 제한적이다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$878.84",
+      "change": "-52.40",
+      "changePct": "-5.63%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$136.49",
+      "change": "-9.62",
+      "changePct": "-6.58%",
+      "up": false,
+      "news": [
+        {
+          "title": "Elon Musk’s China RAM Warning Raises Questions for Samsung, SK Hynix as South Korea Faces Potential Memory Chip Oversupply and Less Time To Diversify",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQcnNDV1RjMklRTVpJVFNPeDlHU1gyZDFjMFBWb1FXU3N1bThWZlNtLW01WXNrakQ0ZjVfZFd6YWI0OW83Wm9vU2RJbnBsbkwxN2piMFZjRkQ1SFBHWm8tSzNQeHpJSEtjS1hqMEZKcE5CcU9vUmdRczdPN2VHTFhUbVFmTUUwdFNBR0tsYXF6QkRldw?oc=5",
+          "date": "2026-10-17",
+          "source": "Yahoo Finance",
+          "ko": "머스크의 중국 RAM 우려로 삼성, SK하이닉스 등 한국 업체들이 추가 도전에 직면했다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$186.03",
+      "change": "-14.47",
+      "changePct": "-7.22%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "What are self-replicating ‘AI worms’, and why is Anthropic worried about them?",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVjB4YWJlM1piXzhhQzJFa1ZMWXh1dC1lZHJpaUJhVFhoZGdZbkwxUzRmeUdXdktLU2M5eFdRTG04am5UNDdtYlMwZWxLVW0zejBZWWtTTlExMTRTUlpnY3NUZGZ3V1JsMVlVY0RTWVdVQUhvWU0xZWdzNEgwdFJzQmdR?oc=5",
+      "date": "2026-10-18",
+      "source": "The Guardian",
+      "ko": "앤트로픽이 자가복제 AI 웜의 위험성을 경고했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic quietly pitches its own AI safety bill to lawmakers",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0ydWVrbHdHeGNraEdTSHQ5eExwZ2lLRUU1U1BoVFJUTWNLenpWTXJOMHNnWnhaa0thQXlRbk1KdEliVVVGUEJXZWwtcWtUZE9Ielo2X05DaHJKSmJpd05rRl9vMWdQQUE4ZnVRRFBLQ3hlcm9FNG12bg?oc=5",
+      "date": "2026-10-16",
+      "source": "Politico",
+      "ko": "앤트로픽이 의회에 자체 AI 안전 법안을 제시했다."
+    }
+  ],
+  "summary": "AI 우려와 경제 불안이 겹치며 기술주 중심으로 광범위한 낙폭을 기록했다.",
+  "generatedAt": "2026-10-19 08:30",
+  "date": "2026-10-19"
+}
