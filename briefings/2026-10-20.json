@@ -1,0 +1,164 @@
+{
+  "sessionDate": "2026-10-19",
+  "sessionDateLabel": "2026년 10월 19일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,690.73",
+      "changePct": "+0.41%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,430.89",
+      "changePct": "+1.11%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,966.03",
+      "changePct": "-0.07%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Tech Futures Rise As AI Stocks Rebound; What To Do Now",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUnZSNzJZS2NlWi1Hckg0djB1aGQ3bEkzVTB4ejBTQWRoQ0JTOWJBa1U4Z1EyWFZSa0ZmSDlIcmx5MFEwQmhCeFE2MEs4ZEdMSThwczNORG03QTY4MU9xR3pXWmRtNmdMc3BRZ0F4U1FudlhIdXpwVHVQUXUxMU44NHhhRVZyTmNDVk1MLXBsOHBIV2Q3VU9oTE1sa2JET0c5b3p5ZUJHeTBrQlJKaTRnS284ZGVhUUlwekJKalp5dmsyRmdzU25QRQ?oc=5",
+      "date": "2026-10-19",
+      "source": "Investor's Business Daily",
+      "ko": "AI 주도 기술주 반등이 선물시장을 견인하며 시장 심리 회복"
+    },
+    {
+      "title": "Stock Market Today: Dow Futures Drop, S&P 500, Nasdaq 100 Rise as Scott Bessent Links September Inflation",
+      "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOTnZtV29mRUFZenNNOGFrakpkUXpVWmVMVmo2Uk5LLXk0T0lNMllDNWUxMXR3SzBVVXNiNEdFbHBaQUpKbU5aSV8yRVE0Zkc0Y01pWFNDU2hLV2hLR0E5NjJTcjVDV2ZtZlJmazY1dkgtNU1MYjZJbl9HLVI2ZTVHM1VDd09sZzNqakNWM0ZFd0RpT3JEWVh1Z1dwUk5IVUppS3F3SHVMeHBjSTVIbzJsbjVYcVVzSmg0LU1nZTJyQ19TdDlTUGFpazNqODZiVXBqeHd3YTJBell5RERqeWNyWnJJUkZGN2RUYlkyNGZDeUxiNk5UbTZSamNxT2M4ajBQZlBFajl4NnVlUjdEWUZad28zZGozQU0?oc=5",
+      "date": "2026-10-19",
+      "source": "Benzinga",
+      "ko": "9월 인플레이션 데이터 공개 예정으로 경제지표에 초점"
+    },
+    {
+      "title": "Dow Jones, Nasdaq, S&P 500 preview: All eyes on Meta, Tesla, SpaceX earnings",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOYmUtbzFDN292MDZEdFdwQlR3alNid3NDSDdJT3o4NUt5NU95NDVEY1dHYjhuOTlqUHBPMjhTQk5IZHpvcnMzRlJFMWdSU09vaVBycjRONWYzRU1JOUpLUVUzLVdqdUkzMEtnVkFsXzFvLW90U2tTNmVvVFczZXlXZS1PUnQ0MUcxSU1pZ3dLa3A?oc=5",
+      "date": "2026-10-19",
+      "source": "Yahoo Finance",
+      "ko": "메타, 테슬라, 스페이스X 실적 발표를 앞두고 기술주 주목"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$217.09",
+      "change": "+2.96",
+      "changePct": "+1.38%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$538.05",
+      "change": "+9.30",
+      "changePct": "+1.76%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$92.03",
+      "change": "+2.18",
+      "changePct": "+2.43%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Intel Stock (INTC) Is Rising Following J.P. Morgan Upgrade",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9YQWdHYnZlTmIwX09sYnMwVEotSzZsUFZxamZ0QWRUenBoX0xSNHhUWGRUQms0MWpTUkE2eFI0Y0ZudWRBWTZRSDNjamtFeThGTUtmb2FtLTV2dHBqMlp2LWIxY0tjZw?oc=5",
+          "date": "2026-10-19",
+          "source": "TipRanks",
+          "ko": "JP모건의 인텔 상향평가로 반도체 섹터 전반에 긍정 신호 전파"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$420.22",
+      "change": "+7.61",
+      "changePct": "+1.84%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC’s Profit Soars 69%, but Can its Next Chip Breakthrough Justify the Valuation?",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPcW5FVzYycHhYZTFHanlxeXRtUm1lWXNvUVhwWnhRUTRXX05idWVJQVNkM2JBaDJTblA2YXdQSkdxRkRvU19NTmJ1UVVMRDBxUnY5RmxJN0hwOGdBUFhPbV9GaEJJd0FiTHpqWGQ1c25DRHpTXzVSQmNwZmZ0WTcxODZibEh1eTVmb1RCZG5HbXB2UzZ5?oc=5",
+          "date": "2026-10-19",
+          "source": "Yahoo Finance",
+          "ko": "TSMC 이익 69% 급증했으나 밸류에이션 정당성 검토 필요"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$904.90",
+      "change": "+26.06",
+      "changePct": "+2.97%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Stock Rallies as China Memory Chip Rival Forecasts Revenue Boom",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSzgycjVEZy1udFpGVjlVc0hxamM0WWNWZWRLazhJZGxqeFo3YThfRkFYX0VDVURZUVZSbWpCMXJCTEt3OEdNcFZTb0VnaTF3RUVOR3hKanBUZzJOQVJQOHJoVldMTWo5aF9IdVdxV2JkVHB4WEF3TFB4Q2ZWanR5MFo4aw?oc=5",
+          "date": "2026-10-19",
+          "source": "Barron's",
+          "ko": "중국 경쟁사 호실적 전망에 마이크론이 연쇄 상승"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$142.87",
+      "change": "+6.38",
+      "changePct": "+4.67%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$194.15",
+      "change": "+8.12",
+      "changePct": "+4.36%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir: AI In Production While Everyone Else Is Still Piloting",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVHlRbl9uaG5jakRkZXR6WWdSdVFNcTdJT2xUVlFzQ2Z6SXhKeHFvUGtnX21WcDhmU1RocnRuaHhlWW9pZVROX20zRnRUcFpORnBwdUlKaDFnc2M5bmFjYk1ZX2Y1ZDRkcUx0c0hlOWNmZ1k5V3FTNG0yeWpZWGVpVXhCbkh0cURwbjFwUDRUNVlUTWVpd05TdkUybFY1QlhEMVBWVlByOA?oc=5",
+          "date": "2026-10-19",
+          "source": "Seeking Alpha",
+          "ko": "팔란티어의 AI 기술이 파일럿 단계를 넘어 실제 운영 중인 상태로 평가"
+        },
+        {
+          "title": "PLTR Stock Gains After Palantir Expands Federal Push With Knox Systems Partnership",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPQXhZUk9oS1Y5dEJNV3R0eGdSdU9DRnN4VldudFNqa0pHcE04QkhpZXBXSjZBb20xcFVrWGk0MTdYZEZMaW9xQ2tORUVPc3VvUkU3N0NEdkRTQWZtSFVoN2hDblpwTHBaR3R1c3VFVFhwcnRqNWNZTmlsc3BwOWJ3MEI5empUa0hDOTVvd1IyZEJfU2R2bmRHNWczai1ncVU?oc=5",
+          "date": "2026-10-19",
+          "source": "Yahoo Finance",
+          "ko": "팔란티어가 Knox Systems 파트너십으로 연방 클라우드 사업 확장"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Nvidia-backed Nscale, Anthropic in talks for new $45 billion AI cloud deal, source says",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPcGMyclR5X0JrXzBKem90Uk1sZnBQNkcyRnlyc3ZnWTM4Q0ZoUWtKUzRrd1Y3aHlqaDRjT1pfaFdmV0pHYUFROFI3TFhTWVhtczJsM01PSF8tSEtXejB4emlhVjZGMmQzeWh0RXJoaS0tNDQ1SDhlZDRJZU5hZG5ibE85N3dxU21DS2ZKYm1NV2pVUUF4ZjF3XzQ1ZncwaHVMdXlWZ2FsWjRtQ1d0eFN2YUVQc2x4cTd6YjNwSTVuVUFQZw?oc=5",
+      "date": "2026-10-19",
+      "source": "Reuters",
+      "ko": "앤트로픽이 Nscale과 450억 달러 규모 클라우드 컴퓨팅 협상 진행 중"
+    }
+  ],
+  "summary": "기술주 반등으로 나스닥 상승, 인텔이 JP모건 상향평가에 힘입어 반도체주 전반 강세",
+  "generatedAt": "2026-10-20 09:30",
+  "date": "2026-10-20"
+}
