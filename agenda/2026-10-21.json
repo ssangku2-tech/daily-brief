@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-21",
+  "generatedAt": "2026-10-21 08:36",
+  "events": [
+    {
+      "title": "일본 19일 08:10~09:40 (TW285)\n21 10:40~12:15 (TW186)",
+      "start": "2026-10-19T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "Stay at Toyoko Inn Saga Ekimae",
+      "start": "2026-10-20",
+      "allDay": true,
+      "location": "1-10-36, Ekimae-chuo, 사가, 일본, 840-0801"
+    },
+    {
+      "title": "박,송,김",
+      "start": "2026-10-21T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "동기모임",
+      "start": "2026-10-21T19:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 972,
+  "importantMails": [
+    {
+      "from": "Google Developers <googledevelopers-noreply@google.com>",
+      "subject": "[Action Advised] Manage your unused OAuth clients and protect your information",
+      "summary": "미사용 OAuth 클라이언트 관리 및 보안 조치가 필요함"
+    },
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "iPhone Duo용 앱 제작을 시작하세요.",
+      "summary": "iPhone Duo 앱 개발 시작 안내"
+    },
+    {
+      "from": "Google Cloud <CloudPlatform-noreply@google.com>",
+      "subject": "[조치 필요] 2026년 11월 11일까지 AI 에이전트 OAuth 클라이언트를 Google Workspace MCP의 에이전트로 표시하세요",
+      "summary": "Google Workspace MCP AI 에이전트 설정 마감일 안내"
+    },
+    {
+      "from": "Agoda Customer Service <no-reply@agoda.com>",
+      "subject": "Agoda - Customer Receipt from Booking ID: 1774306527",
+      "summary": "아고다 예약 영수증 확인"
+    }
+  ]
+}
