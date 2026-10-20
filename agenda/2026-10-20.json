@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-20 09:05",
+  "events": [
+    {
+      "title": "일본 19일 08:10~09:40 (TW285)\n21 10:40~12:15 (TW186)",
+      "start": "2026-10-19T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "Stay at Toyoko Inn Saga Ekimae",
+      "start": "2026-10-20",
+      "allDay": true,
+      "location": "1-10-36, Ekimae-chuo, 사가, 일본, 840-0801"
+    },
+    {
+      "title": "박,송,김",
+      "start": "2026-10-21T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "동기모임",
+      "start": "2026-10-21T19:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 968,
+  "importantMails": [
+    {
+      "from": "Google Cloud <CloudPlatform-noreply@google.com>",
+      "subject": "[조치 필요] 2026년 11월 11일까지 AI 에이전트 OAuth 클라이언트를 Google Workspace MCP의 에이전트로 표시하세요",
+      "summary": "Google Cloud 서비스 정책 변경으로 인한 필수 조치 요청"
+    },
+    {
+      "from": "Agoda Customer Service <no-reply@agoda.com>",
+      "subject": "Agoda - Customer Receipt from Booking ID: 1774306527",
+      "summary": "예약 완료 및 영수증"
+    },
+    {
+      "from": "Claude Team <no-reply@email.claude.com>",
+      "subject": "We're updating our Anthropic Policies",
+      "summary": "이용 중인 서비스의 정책 업데이트 안내"
+    }
+  ]
+}
