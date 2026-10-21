@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-22",
+  "generatedAt": "2026-10-22 08:53",
+  "events": [
+    {
+      "title": "미래에셋 연금 인출",
+      "start": "2026-10-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "포레스트힐 07:12",
+      "start": "2026-10-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 977,
+  "importantMails": [
+    {
+      "from": "Google Developers",
+      "subject": "[Action Advised] Manage your unused OAuth clients and protect your information",
+      "summary": "사용하지 않는 OAuth 클라이언트를 관리하여 정보 보호가 필요함"
+    },
+    {
+      "from": "Google Cloud",
+      "subject": "[조치 필요] 2026년 11월 11일까지 AI 에이전트 OAuth 클라이언트를 Google Workspace MCP의 에이전트로 표시하세요",
+      "summary": "AI 에이전트 OAuth 클라이언트 설정 변경이 필요함"
+    },
+    {
+      "from": "Apple Developer",
+      "subject": "iPhone Duo용 앱 제작을 시작하세요.",
+      "summary": "iPhone Duo 앱 개발 관련 정보 제공"
+    }
+  ]
+}
