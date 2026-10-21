@@ -1,0 +1,166 @@
+{
+  "sessionDate": "2026-10-20",
+  "sessionDateLabel": "2026년 10월 20일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,712.57",
+      "changePct": "+0.28%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,424.82",
+      "changePct": "-0.02%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,495.88",
+      "changePct": "+1.02%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow outperforms as Wall Street rises, healthcare stocks lead gains",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOT2JsXzZ4YTVKcDJjNE9iTW42aU0wY0VOZXRtdDYxTzJTanBUOGZIT1FLSl9FVTNxQ1RpTVFSWHlsejgyR0Y1b3JQWXRlT0dEMjJPWWpXYlpfdFJQaHZKZG5KdUNMdW53NmlMd2RwUWJKWFB3dE9Xc2ZBbnRfalF3cWNzblhxTGJOTGlKYUh1a0FmWC1vaGQydWZXdTMzemJjSVg5NWZ0bw?oc=5",
+      "date": "2026-10-20",
+      "source": "Reuters",
+      "ko": "월스트리트 상승장에서 헬스케어 주가 선도적으로 상승했다."
+    },
+    {
+      "title": "Dow Rallies 530, Nasdaq Slips 6, S&P 500 Gains 22",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQYU9FVlQwa1N6ZTJwQ21NMXFLRkhKUDFEdE92dnhmNG9FTy1keDh2elplOGo2bmJ4UElSQ3A3UnFCalFWLW1DcWxLaldRR2VUeFo0LWlYVGlGbVB1RW1QQkNhUXRoNlBhRlMzeUIyV3o4dDB1UnZJb2dkLVFyS183S3RMeDY1bEFPVGZjWW9Dc1Bldw?oc=5",
+      "date": "2026-10-20",
+      "source": "TV News Check",
+      "ko": "다우지수 530 포인트 상승, 나스닥 6 포인트 하락, S&P500 22 포인트 상승."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$216.47",
+      "change": "-0.62",
+      "changePct": "-0.29%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Isn’t Nvidia (NASDAQ:NVDA) Stock Rising Despite Reports of US$35 Billion in China AI Chip Orders?",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1MM09XRVRUMjVxeFFKdFhWSTJSSjdQUUdZdzlTT05QTTdaOFJSLTQwMV9TSmo2S0tKLXNKMWxmS19tejBXOVZHTDNNUnNSaXFxSHh0RTBPTTRoVjctdDVoUzJzVkdSOTdJWFQ1Z0YxVk1tZ0hZM1E?oc=5",
+          "date": "2026-10-20",
+          "source": "Stocks Down Under",
+          "ko": "중국 AI칩 350억 달러 주문 소식에도 엔비디아 주가가 오르지 않았다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$534.74",
+      "change": "-3.31",
+      "changePct": "-0.62%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$91.69",
+      "change": "-0.34",
+      "changePct": "-0.37%",
+      "up": false,
+      "news": [
+        {
+          "title": "JPMorgan Upgrades Intel Stock Following Strong Management Execution",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORUV2eTlLUTUzOW5ubUU4aGNBR3pwbUhfTFJ3NjdPZ3pBTkFBNnJxZXhNelpibExJbG9pUzNxbGlmN0ZQY1hicEdhUlVrU1NhTVN4MzQ3anBnSGd4Z1NWMW8zUFUtaU9Veno5Rk1tcTFjRDVPakZJRWQtaDF3M08zWGRWSlNIWDlTa20w?oc=5",
+          "date": "2026-10-20",
+          "source": "TIKR.com",
+          "ko": "JP모건이 경영진 집행력을 근거로 인텔 주가 상향 평가했다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$425.08",
+      "change": "+4.86",
+      "changePct": "+1.16%",
+      "up": true,
+      "news": [
+        {
+          "title": "Taiwan Semiconductor: The Margin Peak That Isn't",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQSlpKRXJaZ1BUaDZBMTM1eW1SQ3ZmYXBOdW02dVhxb0EtUDZOWVNZZkhsYV9MNW5GZDNGWmJzR1FGWGkzMXlVTDVDcHZIekY2Tmh5cjhES2FZX05hX1RTNjk1MEJielpINms5TlZpREdYZXRqdVFmUG5FZ19hZ3JzSHR4aUJoX2xOOFU3QTNjRWZLWlE?oc=5",
+          "date": "2026-10-20",
+          "source": "Seeking Alpha",
+          "ko": "TSMC 마진이 절정에 달했다는 분석이 나왔다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$896.07",
+      "change": "-8.83",
+      "changePct": "-0.98%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$139.79",
+      "change": "-3.08",
+      "changePct": "-2.16%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK Hynix Sinks 4% as Seoul Selloff Revives AI Spending Fears; SanDisk Drops 3%, Micron Eases",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcHlHZGJCNmRRWjVDbl9RM2p1RDU5eDNIVU1CenZyVndKMFl5RDdhb0tGTUV5bVc4Wm11cXNZdVUtNkUwcDQ1VHp6bzJzZ0dUbVVKcXR4T2huWVdxTUpMb0xhLU90SXV1V3F6WFl0Z3JmWFpTSlZsZEctZWxXckVtNFEwTVUzTXZqeHpnem9SRVg4alZXRFFTWE15ZURvT2FPTVVUQ295QXRqWVNCQWs3SEhZQ3ZRSWhibWthVGN2MEN5QkRSRlp4YkV4bDM?oc=5",
+          "date": "2026-10-20",
+          "source": "24/7 Wall St.",
+          "ko": "서울 증시 약세 속 AI 지출 우려로 SK하이닉스가 4% 급락했다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$192.60",
+      "change": "-1.55",
+      "changePct": "-0.80%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Exclusive | Anthropic S-1 Shows Red-Hot Growth, Risks and Massive Computing Costs",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5zTlFXZm1uRTJYSXlPWi1OWmJCSkdBcmg2dkRDc2ZiNmNNaFQtYmg5WFBiWUFQRFVUTms0T3hweW9ycWZ1SlljdlNFUTZuOGliSUpVNkpybnJaQ0p2bzBYWmgydU9MVVBQQlJKMGFRdEpCaWM?oc=5",
+      "date": "2026-10-20",
+      "source": "WSJ",
+      "ko": "앤트로픽 S-1서는 급성장과 함께 막대한 컴퓨팅 비용 부담을 드러냈다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Eric Schmidt’s 1% Anthropic Stake Set to Pay Huge Windfall",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQY3A5WUhzc052RnlDWFU5R2FOWFQtU0g0OXV4X0MzTGRoR1U2enhudDIzMU9FNFBQaHVZNFlHN2dDc2VnRzM0ZmxSVldfdmVLTnVLNjFVSG9tcGF2QkQ3VE16ZkZzV25GU3BLWTRldFphbzd4bFhjSzFmU3VtN1dmMjdYR2kwSk1VcTlKNDJVZVlSRUlWaVI3U3dBTTBFY0U4UHVqeklBOXotNFBYTlVUUQ?oc=5",
+      "date": "2026-10-20",
+      "source": "Bloomberg.com",
+      "ko": "에릭 슈미트가 보유한 앤트로픽 1% 지분이 상장으로 거액 이윤을 안길 전망이다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "SpaceX, Anthropic plan to share wealth with the public amid concern AI could trigger job losses",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOTZpOEhpbXJmc3YzQTlzYWx5dFAzeVJ0em9iWWdpV0RfX1BlZUozTUI1aTVxdHBtOFJHdnlPZDlVWUVJVkVmMkxKekNMSWhXVWRLbk5XSGo5VkVUSjFGRzBqdG16VUg0SE9JR2tMZE5rZE54NWxhUmVRSHFYMDdYcDloc1lRVU8zRGl0NXNRQ05QQ2VDakdJS01mY210eVExekRPVmZzWnQ4WlIxaUdpMjFMQ2ZkM1BYN2J0NTB0VndHNUI4OU9temFtVElyMWg4V2RaN1ZaVQ?oc=5",
+      "date": "2026-10-20",
+      "source": "Los Angeles Times",
+      "ko": "SpaceX와 앤트로픽이 AI로 인한 일자리 감소 우려 속 부의 공유 계획을 추진 중이다."
+    }
+  ],
+  "summary": "다우지수가 헬스케어 주도로 상승한 가운데 반도체주는 약세를 보였다.",
+  "generatedAt": "2026-10-21 09:01",
+  "date": "2026-10-21"
+}
