@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23 08:52",
+  "events": [
+    {
+      "title": "미래에셋 연금 인출",
+      "start": "2026-10-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "포레스트힐 07:12",
+      "start": "2026-10-23T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "10:40",
+      "start": "2026-10-24T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "부산",
+      "start": "2026-10-24T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 983,
+  "importantMails": [
+    {
+      "from": "Google Developers <googledevelopers-noreply@google.com>",
+      "subject": "[Action Advised] Manage your unused OAuth clients and protect your information",
+      "summary": "미사용 OAuth 클라이언트 관리 및 계정 보안 조치 필요"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Claude에 공유되었음을 알리는 알림"
+    },
+    {
+      "from": "Anthropic <no-reply-iit4RMUduI5hMYuoCN_gNg@mail.anthropic.com>",
+      "subject": "A computer was registered to your Claude account",
+      "summary": "Claude 계정에 새로운 컴퓨터가 등록됨"
+    },
+    {
+      "from": "Apple Developer <developer@insideapple.apple.com>",
+      "subject": "iPhone Duo용 앱 제작을 시작하세요.",
+      "summary": "iPhone Duo 앱 개발 관련 안내"
+    }
+  ]
+}
