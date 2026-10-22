@@ -1,0 +1,172 @@
+{
+  "sessionDate": "2026-10-21",
+  "sessionDateLabel": "2026년 10월 21일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,757.17",
+      "changePct": "+0.58%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,702.86",
+      "changePct": "+1.05%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,856.09",
+      "changePct": "+0.69%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Dow Jones Futures Rise As SpaceX, Supermicro Revive AI Stocks; Tesla, Meta On Deck",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMGM3eElCcmNqVzZCZFFsSU1yemxZN3RGeGx1cnh3OHNkWGZwc1J5b0U5NVEzYXFqSlQzWGNteDR4ODlGbkplZ1lYeTVVbm5tUU9nRGlDVVdBcWdGMEZFYVZTSGxWQy1YY0hnV04tSVZkSUZkOWpicjlEVzRmT3VQT3dWN2NkaDdqX3BwbHc2cVRJQTFJVnFUUkJINDR0VGYxSFlCU3M1Yy1jSHI3ajZzTmRtUm4?oc=5",
+      "date": "2026-10-21",
+      "source": "Investor's Business Daily",
+      "ko": "스페이스X와 슈퍼마이크로 강세가 AI 관련주 랠리를 주도하며 나스닥 상승 견인."
+    },
+    {
+      "title": "S&P 500, Nasdaq Gain, Powered By Meta, Tesla Stock — SPCX, META, TSLA, SKYD, IBM In Focus",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxONjQyd3F1UEZZNnhKMnA3YmhnSmxHWjlGQmpfcVRXZlFlaHVFMG5ySk1oRkQ3YWtPbmdLaVpTNkZLQnIteXBiU1hIa2xibUFwZ2xiTEsyaXlZN3htczcteEdYQ1pLN0J1WjlzSDFBbzFON2p5QVhURXNyUkV0aU1BSWRCWF9jekNidXY4Nkdvdm5YMmpQ?oc=5",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance",
+      "ko": "메타, 테슬라 등 주요 기업들의 실적 발표가 S&P 500과 나스닥 상승을 뒷받침."
+    },
+    {
+      "title": "Update: Tech-Led Rally Lifts Nasdaq, Extends S&P 500's Advance to Third Day",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNYTZIem9KRUVEZGZMOGFJelFoby1jcEQ1dzFreERRclpPSEtfbm1NRG52N2ZmNllkbXE2YkF1X3U0cEV6b2QzZldpblJRMkhSUkE2MjVQSC1NcTM2QXNlbGZUaWV6RlhpRXR3V0dUZXRGRE96czJENXltcWtlYTdNWmRDRmRQTDdPSTlPbGVWck1hVkhDczhj?oc=5",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance",
+      "ko": "기술주 중심의 랠리로 나스닥이 강세를 보이고 S&P 500이 3연속 상승 기록."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$221.97",
+      "change": "+5.50",
+      "changePct": "+2.54%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia Stock Jumps After Hours on Elon Musk’s SpaceX Chip Plan - NVIDIA (NASDAQ:NVDA)",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQaFJQcVY3VVNKZUY4bzNsY3JoNGFtN0xTUVNqTGs2cEtwemUwYU5MQVMyeXlzYWJXR0ZfWHF5VXZmTnBFcldmVnoyN19kb3FoZnRYWWF3RUZQSjllczBkNlVNbXA2ZktqRFR0dkx3azNSTTR2YzhLak9Yd1l6X2ZZQ1VDa3VVNllWZ0lNamZVRVl5TEV4SzJGRklPZmFDUDA1SHdrdDBnZ1ZneS1VNXc?oc=5",
+          "date": "2026-10-21",
+          "source": "Benzinga",
+          "ko": "일론 머스크의 스페이스X 칩 계획이 발표되며 엔비디아가 시간외 거래에서 급등."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$552.72",
+      "change": "+17.98",
+      "changePct": "+3.36%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (NASDAQ:AMD) Shares Climb 3.4% Following Analyst Upgrade",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMnRIZEd4dDNrcGwtUS1yR0NXc1RNeFZ2bU44NWV5MFNqcktFeHQtcXZjem1BNEYzY3NQbWk4TnFEU1R0ckVDdmlNWF9IQVVuNHlBY2JJT3ZBOF9XTEQ3bnNrQVJEaWtuQlZRUVh0SmxKUElLMl9JOWxkN1dIRGRMblZUWGJlbTlpbWZkNmpiM0tXMTlPcWxxMHJnd1dDYUtEY0JSYmNPYTVram92RWdTUHd6LUFlZWdxQ2VqQkR2QVhvSEtTVjVKUi1ndWVYWGV2?oc=5",
+          "date": "2026-10-21",
+          "source": "MarketBeat",
+          "ko": "서스퀘해나의 애널리스트 상향 평가가 AMD 주가 상승을 견인."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$92.96",
+      "change": "+1.27",
+      "changePct": "+1.39%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Notches Up as JPMorgan Changes its Mind",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVzAzUHZOa3V3bUlVaFoycS1WNmh3U244ZWcwRzg2SHluSUQwM1hrMDRlRUtsZ0Q5TVpJMjY3NG5fUFdNcm1xUm5WLXkzT1NvMDNqUGQyeGtUc3NuNW5ieDdDWGdFOWpwaHZxcTFKSmdKbDFVbTZyZHhNWkNtUzZ0Wk9Eak92V0FPRlRGdmlUVklmbk0zaG80?oc=5",
+          "date": "2026-10-21",
+          "source": "TipRanks",
+          "ko": "JP모건이 인텔 투자의견을 긍정적으로 변경하며 주가 상승을 지원."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$431.89",
+      "change": "+6.81",
+      "changePct": "+1.60%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$913.67",
+      "change": "+17.60",
+      "changePct": "+1.96%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$143.25",
+      "change": "+3.46",
+      "changePct": "+2.48%",
+      "up": true,
+      "news": [
+        {
+          "title": "EXCLUSIVE: Samsung, SK Hynix upgrading China plants to make more advanced chips, people say",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNmZxYjhQQjhXcUZzRnh3dHJIMWQzWUxyNDFMLTM1b1R3d3NFMEFycFpkQkx5NW5sQjBNdVJldDNhakRYcUMxRERYRnR3ZWdoVDBZUmljM2VENTdmRzFVdVY4eUMxTDk3VmtCWk1jQ1dvZmY0cnVCQ1FpTl9uZ3lrWWU4MGp0aDRsbG9jNTBvUDBadXpoZVAwOUFYRUlITXVUMUMxakpMVGc3QXJmQjJxeWZoWWJlTHNDSHNmZGprUVY?oc=5",
+          "date": "2026-10-21",
+          "source": "Reuters",
+          "ko": "삼성, SK하이닉스가 중국 공장을 고도화해 현지 AI 경쟁사에 대응하려는 전략 추진 중."
+        },
+        {
+          "title": "SK hynix Starts Discussing Mass Production Plans For iHBM Memory Chips That Aim To Improve Heat Resistance By 30%, Says Report",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOSzlES1d6am1WV0RhREdma3lmSHRBMmIzS2ZXakNGY0Z0b3RhRXpwOENNZUVnekxWZEF1aUU5VjdxYWo3UFZQbHgtMEhabUtVQTNNalNSZEg5Y1pwMVlGeURpM183d21LSzZwRUFRck5CRUZvU0JaYXpTd2pkbEVxR3Y5OHFleFpiSkRZTWc5QWlROVl1dDVxM1BCWndjYW1DY1FQNW1FNGwyU3JzTzhLQm40ckQ4YkNFRUtxRVpnakhjUl90b08wVk9xTENvWXdhcXk5MExTOW9aOFJMYWhv0gHkAUFVX3lxTE5RYjlrQW83Nk5lelVVeXhMS2FKV2liei0zRmdlMjF2MDhaU1FIZWRvNWxoVmNsVTNyanM5cmJwQkpWajd2ejY1YVNGS21PSUoxdnV0S1VSaEsxSjZJbkMta19ZRkZoWndmNHZpTm43UDcxYkhZcVZ1eHZhZm5WUnNKVnNGUElsbXRlQzRaRHk2cm1LV3A3c3l3VmlhRVIxT1RCVWlSUlVTdXhuX2VZSkYyQTNldmc4Nld3UmQ5aDhPTGZ1c0RMRnBpbXpVMGhpelBGRmVkRjVmNTVtOWJ4cVlVNDNoNg?oc=5",
+          "date": "2026-10-21",
+          "source": "Wccftech",
+          "ko": "SK하이닉스가 열 저항성 30% 향상을 목표로 하는 iHBM 메모리 칩 대량생산 논의 중."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$201.72",
+      "change": "+9.12",
+      "changePct": "+4.74%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic to publicly file for IPO as early as Friday, sources say",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPREpSeVQzcmx3WVBKdmRna3pObmZqMEpoN3hvcGpid1JuZEJRODNnZUg5X19DQmJDT2E5YnRqQTNwbWJwMjVPVXQ2MDBLRmNXd1VMOGFScHl6cE9GWUp3LWc0UTAzcGJtRnJiR1ZqdjNWWkZwVV9OX0Y5WkVER2RMMHhmZVBjYVR5aVN2ME1nd3BNNWdQNTFGOTMtM245MGpEOGhRTFNqSlZ0bnBwQmRHZVlLeXJOVFhCZDd3TEpnNA?oc=5",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance",
+      "ko": "앤트로픽이 금주 중 S-1을 공개 제출해 상장 절차 진행 예정."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic announces preview of Claude Duet, a personal AI agent to take on Muse, Dots",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSFZYTW81ai1KaU91ZGZUV1VlUkFrRkVfWVpraWlRMl9rWXJnUXV2cnZ3dlFBUUtCeldidHR0MVhJdmY3MGVzSzZDYnYxODNQNXdxS1Z5ZVNIcHd4bklybjBOR3hQeEhwUkFBVW1WdVA1Q0V2WTZfbFAwSVdPcVRKdG5jc3dhYzZiYm01X1hqbDR2ZlVtblF6NmZUWVV0TFlVSkZJWHJUeG_SAa4BQVVfeXFMUDZ1eGN2Uncyczl3by1yNFAxQlJfd2JmSDBaX05QaEpFb0tGY3FJWGY4R2RzcXBRMXRYdzFhTWFIVEluT0I5MExZZG9hX3U0MXliVFJYS3hxN0FtME5obUdWOW9CZTBYdkpsVXFHN2d1VXp2VVI2NG5BNFF4MkEwLTlmZkVWZ016RkRtRHNsUi1RSEVERG1SNzB2aFlVLXFNSF80dEtDUnNZN05RSlh3?oc=5",
+      "date": "2026-10-21",
+      "source": "CNBC",
+      "ko": "앤트로픽이 개인용 AI 에이전트 '클로드 듀엣' 프리뷰 공개, 경쟁사 제품에 대응."
+    }
+  ],
+  "summary": "기술주 강세로 나스닥 선도. 스페이스X와 테슬라 등 대형 기업들의 긍정적 뉴스가 시장을 부양.",
+  "generatedAt": "2026-10-22 09:06",
+  "date": "2026-10-22"
+}
