@@ -1,11 +1,26 @@
 {
-  "at": "2026-10-22T03:33:18.907Z",
+  "at": "2026-10-22T17:51:17.705Z",
   "threshold": 7,
   "items": [
     {
+      "symbol": "AMD",
+      "name": "AMD",
+      "pct": -7.46
+    },
+    {
+      "symbol": "INTC",
+      "name": "인텔",
+      "pct": -7.13
+    },
+    {
       "symbol": "493330.KQ",
       "name": "지에프아이",
-      "pct": -8.57
+      "pct": -10.18
+    },
+    {
+      "symbol": "SPCX",
+      "name": "스페이스X",
+      "pct": -8.2
     }
   ]
 }
