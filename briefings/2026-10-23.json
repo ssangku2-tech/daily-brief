@@ -1,0 +1,164 @@
+{
+  "sessionDate": "2026-10-22",
+  "sessionDateLabel": "2026년 10월 22일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,663.43",
+      "changePct": "-1.21%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,008.86",
+      "changePct": "-2.60%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,867.98",
+      "changePct": "+0.02%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Sharp drops for AI stocks overwhelm markets worldwide as oil prices jump",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRDdDRVpuU3BjVEFLeWVqSGI3Q2FsLXVDT1BfTDhCNVB4VDV0Tm1mZUl6bnc3U1JiS1FHcmlPX2ZMWGRBMkJhZTRsUTUyRXBWeVgzSi1sckIySFN4V3dldFVVcGVndFhyQklZOGpGYkhMNkszT3VkSV94YVhGdHBQa2h2U21aamFaVDhVYTQ0OG9udWtybjl5NVQtNGpfblBVdHBuQnhNQWRmQVg5VXFr?oc=5",
+      "date": "2026-10-22",
+      "source": "Pittsburgh Post-Gazette",
+      "ko": "AI 주식 급락이 전 세계 시장을 압박하면서 유가도 동반 상승."
+    },
+    {
+      "title": "S&P 500, Nasdaq end sharply lower as revived AI doubts ignite tech selloff",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNTWxDZDg5X0padGNvb2k2V2ZkX2tEWW9YWkdjeVdMZHNUTlg1MXY4TmUyTDZHdUhNTHFRNWRPRjc2VFlEN3RXTDhNSjhDYmRfTWZGXzdKYXdLejRHNGgwRVdNbmZRUkFhSm9GakxMek56UUZ2OUtqajd6NVkzRkR1VzBNWlo5VWp5NUFkX2phUjlSSFlndUlNNGxvUXlHSm1wMlpTbkRR?oc=5",
+      "date": "2026-10-22",
+      "source": "Reuters",
+      "ko": "AI 관련 우려가 부활하면서 S&P 500과 나스닥이 큰 낙폭 기록."
+    },
+    {
+      "title": "Nasdaq dives more than 750 points as investors worry massive AI spending won't pay off",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUF80b0hRS1hYN3NIRHhRTXcxQ3gyeHN0UHB5QzdkdnZFRVdqNVdHU1BxTUxBamcyY3ZMUWx2ZHJfRXZ3QlVXUjNUOFcta0FzNjdyZUk3S0s1YldtZThyZ3FXSjhlV2o1OWlrcy1yRXZ3cGNVVWFRS2pkVmZUb3VYY3ZNTUJrdw?oc=5",
+      "date": "2026-10-22",
+      "source": "CBS News",
+      "ko": "거대한 AI 지출이 실제 수익으로 이어질지에 대한 투자자 우려로 나스닥 750포인트 이상 하락."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$212.21",
+      "change": "-9.76",
+      "changePct": "-4.40%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$507.93",
+      "change": "-44.79",
+      "changePct": "-8.10%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why AMD Stock Fell on Thursday",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQUVweGpxUTdqakVrOUFnVUhlZWZqa1k1OWlpOU9hWUNpOElia3B4cGZ5RXJabnEwX3VaTEd3eHFHM1hqX2xYTlU5T2ZyaGJsbU96OUdJaWVLd1hfanJHektSNF95TlpHVzk5MnAtdzd4TWNneUd4RlMwTV9RcDdYVHV5MlZOckJDWHFRWlQyeW00dk44RzYw?oc=5",
+          "date": "2026-10-22",
+          "source": "Yahoo Finance",
+          "ko": "AMD 주가 하락의 구체적 배경 설명."
+        },
+        {
+          "title": "Chip Stocks Fall as Supply Warning Deepens AI Selloff: Marvell and AMD Sink 8%, Intel Drops 7%",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPSHYtVnBnaXBZc3V3cXUySWxseXJNcVUxV0Vhb2R5SlFkMVF4aTRyemE3VDladG5fVVB4blJNb0YwR3BwTG85TUt4MG0xT2R4Q1dOMUFXcUNtSkFVejktNjVWVXlWRThLUVBoX1hHZGNQWnZPdjZCaXFqYzRFWm1IWXdoQzl0WjlpZ0hxclhpUWFZa01ERVFCMHRtTFdVUEtDRURXYW1lWnJxSlRVYmpiaEREaGphdmo3Rld6OUg4R1BaOUhXNGtadEZvOENFWlE?oc=5",
+          "date": "2026-10-22",
+          "source": "24/7 Wall St.",
+          "ko": "공급 경고로 AI 매도세 확산, AMD와 마벨이 8% 하락, 인텔은 7% 하락."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$85.49",
+      "change": "-7.47",
+      "changePct": "-8.04%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$412.35",
+      "change": "-19.54",
+      "changePct": "-4.52%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$856.49",
+      "change": "-57.18",
+      "changePct": "-6.26%",
+      "up": false,
+      "news": [
+        {
+          "title": "3 big reasons Micron and other chip stocks fell hard on Thursday",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQOGZPNEpMdnlfTHU5OFFIbXZBM0VtWlJyWWhJTDNHWWRoUlBWLTdSR28zOXFrOU9GNG1Db2VhQ1VNVEZweFFJYlEtZTVnUTduQkR2bkRRdWJVQnhEZ3FzS3B5cTJ2c05tRTNLOExzY3BuVHV0MW9aRUlqMVhUTHExcDJHUkppaXloLVZta0hNMjhrSy1vOURaM3E3WUZaVENCRFRYamY5a1dYNHdNUTFYQw?oc=5",
+          "date": "2026-10-22",
+          "source": "MarketWatch",
+          "ko": "마이크론을 포함한 반도체 주식이 급락한 세 가지 주요 원인 분석."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$131.69",
+      "change": "-11.56",
+      "changePct": "-8.07%",
+      "up": false,
+      "news": [
+        {
+          "title": "EXCLUSIVE: Samsung, SK Hynix upgrading China plants to make more advanced chips, people say",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNmZxYjhQQjhXcUZzRnh3dHJIMWQzWUxyNDFMLTM1b1R3d3NFMEFycFpkQkx5NW5sQjBNdVJldDNhakRYcUMxRERYRnR3ZWdoVDBZUmljM2VENTdmRzFVdVY4eUMxTDk3VmtCWk1jQ1dvZmY0cnVCQ1FpTl9uZ3lrWWU4MGp0aDRsbG9jNTBvUDBadXpoZVAwOUFYRUlITXVUMUMxakpMVGc3QXJmQjJxeWZoWWJlTHNDSHNmZGprUVY?oc=5",
+          "date": "2026-10-21",
+          "source": "Reuters",
+          "ko": "삼성과 SK하이닉스가 중국 공장을 고도화해 더 첨단 칩 생산 준비 중."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$196.19",
+      "change": "-5.53",
+      "changePct": "-2.74%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "LLMs are making formal software verification feasible at a much larger scale",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1Ba1lXTGVFWUJQTVA5UUJMdDJfRVNyU0E1cmlUMXJLSkV2X3RaUnFtbmhpT1IzOUxsNlh1LTA3SGxXd2E5MEM0TnFxZ1B1T1drRUNvQXhodk9nVkFSbUlORXRNNXQ?oc=5",
+      "date": "2026-10-22",
+      "source": "Anthropic",
+      "ko": "LLM이 대규모 형식 소프트웨어 검증을 실현 가능하게 만드는 중."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic IPO stands alone as AI market jitters sideline others",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNX2RHNFI2M0VmLTVfUGwyWjBzTFZwcHBoNlFwZEttM3NHOHBVQzJmZmp0YV81V1lyX2VCWFZGMENVZzRhV3lPbVYzQWE1cHIwejVtbzlGR1hmMWpPTUlhM2pObDMyM1ZBMmEtbm14QXVnMUkzRnZvY25sTHlXM0hmTnNwbGx4SjNGaVhseGNHUVVQb0VzaVFVWTdVTUVMWkRVMS1JaFZWbDkzNmF5UEtWWWs2TEZxdjA?oc=5",
+      "date": "2026-10-22",
+      "source": "Reuters",
+      "ko": "AI 시장 불안 속에서 앤트로픽의 IPO는 독자적으로 추진 중."
+    }
+  ],
+  "summary": "AI 수익성 의문으로 반도체주 급락하며 나스닥 하락. 유가 상승과 지정학적 긴장도 영향.",
+  "generatedAt": "2026-10-23 09:04",
+  "date": "2026-10-23"
+}
