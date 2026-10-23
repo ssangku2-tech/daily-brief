@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-24",
+  "generatedAt": "2026-10-24 08:44",
+  "events": [
+    {
+      "title": "10:40",
+      "start": "2026-10-24T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "부산",
+      "start": "2026-10-24T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "16:00",
+      "start": "2026-10-25T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 984,
+  "importantMails": [
+    {
+      "from": "Google Developers <googledevelopers-noreply@google.com>",
+      "subject": "[Action Advised] Manage your unused OAuth clients and protect your information",
+      "summary": "사용하지 않는 OAuth 클라이언트를 정리하여 계정 보안을 강화해야 함"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Claude 서비스와 공유됨"
+    },
+    {
+      "from": "Anthropic <no-reply-iit4RMUduI5hMYuoCN_gNg@mail.anthropic.com>",
+      "subject": "A computer was registered to your Claude account",
+      "summary": "Claude 계정에 새로운 기기가 등록됨"
+    },
+    {
+      "from": "Agoda Reviews <no-reply@agoda.com>",
+      "subject": "[Booking 1774306527] 👎👍 SANG GU, would you recommend Toyoko Inn Saga Ekimae?",
+      "summary": "예전 숙박 시설에 대한 리뷰 요청"
+    }
+  ]
+}
