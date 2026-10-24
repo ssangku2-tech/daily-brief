@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-25",
+  "generatedAt": "2026-10-25 07:52",
+  "events": [
+    {
+      "title": "부산",
+      "start": "2026-10-24T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "16:00",
+      "start": "2026-10-25T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "병순형, 박대표",
+      "start": "2026-10-26T17:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 987,
+  "importantMails": [
+    {
+      "from": "Google Developers",
+      "subject": "[Action Advised] Manage your unused OAuth clients and protect your information",
+      "summary": "사용하지 않는 OAuth 클라이언트를 관리하고 계정 정보 보호 필요"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Claude에 공유됨"
+    },
+    {
+      "from": "Anthropic",
+      "subject": "A computer was registered to your Claude account",
+      "summary": "Claude 계정에 새로운 컴퓨터가 등록됨"
+    },
+    {
+      "from": "Dropbox",
+      "subject": "Dropbox 서비스 약관 및 개인정보처리방침 업데이트",
+      "summary": "Dropbox 서비스 약관 및 개인정보처리방침이 업데이트됨"
+    },
+    {
+      "from": "Agoda Reviews",
+      "subject": "[Booking 1774306527] 👎👍 SANG GU, would you recommend Toyoko Inn Saga Ekimae?",
+      "summary": "호텔 예약에 대한 후기 작성 요청"
+    }
+  ]
+}
