@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-26",
+  "generatedAt": "2026-10-26 08:00",
+  "events": [
+    {
+      "title": "병순형, 박대표",
+      "start": "2026-10-26T17:30:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "자동차 검사",
+      "start": "2026-10-27T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "태수, 병락",
+      "start": "2026-10-27T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 989,
+  "importantMails": [
+    {
+      "from": "Google Developers",
+      "subject": "[Action Advised] Manage your unused OAuth clients and protect your information",
+      "summary": "사용하지 않는 OAuth 클라이언트 관리 및 정보 보호 조치 필요"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Claude와 공유됨"
+    },
+    {
+      "from": "Anthropic",
+      "subject": "A computer was registered to your Claude account",
+      "summary": "Claude 계정에 새로운 컴퓨터가 등록됨"
+    }
+  ]
+}
