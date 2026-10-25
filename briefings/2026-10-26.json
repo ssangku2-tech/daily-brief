@@ -1,0 +1,171 @@
+{
+  "sessionDate": "2026-10-23",
+  "sessionDateLabel": "2026년 10월 23일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,623.68",
+      "changePct": "-0.52%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,955.34",
+      "changePct": "-0.21%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,215.16",
+      "changePct": "-1.23%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall Street closes lower to end rocky week",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQR01KeXBjdXBubVRzTlJfWWJTMHctb2hFS2pVT21ydWtZNzBaMldxd1c2ZUJGNWhIeGV6MUxvQVZvSl9GdFh5QThQbFpuT0IwYi02Y3JGM19YSWJ3LXMtb29RbS1WZUljdGtsS2dockxHVm5SWnBSMzJpM0Y4RFItdW5SMzFsdXg2LWtrYWE1SC1TQlkxOERJZHNtQVREdw?oc=5",
+      "date": "2026-10-23",
+      "source": "Reuters",
+      "ko": "월스트리트가 변동성 높은 주간을 마감하며 하락으로 문을 닫음."
+    },
+    {
+      "title": "Stock Market Today: S&P 500, Nasdaq 100, Dow Jones Futures Fall Ahead of Global PMI Data—Western Digital, Newmont, Crown Castle in Focus (UPDATED)",
+      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxOakVZTkdPQ0ZIYmY5ZkpCcVFVSV8wTHZfZ3UwemFJVHBQbkIyeVR5SHNvYzFKcEJDSnZ6eHFQZHZDS2pRZUhYM3kyYkRVdS13YWRDTXo0Q2RuQ0tZX3FOZ0NQdVZUNVBmcWtuTkpwbTYzV3ZiNThET25maXd1aGd2a1RDZDN4cGFlRlhQNElIRm9rT0JLeGR0Tm5GaklxdDdBeDU1NDluWFBCUzdxQk5XWlRrZnVuVnlfeDZRRW1JVHNZcGllZlRlVmJWa05qcmdVUkt1ODBSZmkzckVzRXU1TXN3b2dmZTRTMDBDcmVwYkhXWjBtNlhLeWExMV9mLTNsNmZNQktySnA5TXFBSXFVUEpSdTFvdG1XeE9XeG1xelpZbTI3?oc=5",
+      "date": "2026-10-23",
+      "source": "TradingView",
+      "ko": "글로벌 PMI 지표 발표를 앞두고 선물이 하락, 반도체주는 반등 중."
+    },
+    {
+      "title": "Stock Market Today: Futures Head Lower at End of Wild Week as Oil Prices Rise Further on Middle East Tensions; Chip Stocks Rebound",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQy1jOC1PbG1mLWxKWmhIUnlRcVJHVDZmWUFEUVdEMHRSdVEydEJCYmVBUm84SzlFX0tzSzBncWVobHE2dzJ2NW8tbGVRMEVwc3Rja0RmSHBUc25PNnhQeDZHdzE5VlpsSnZLV3d5ZHRpRzFLX21qTGY5cEpubkFyalhGcHVxeUowd0ZPa1JDTVlzMFhrQ1l6SFhabUM?oc=5",
+      "date": "2026-10-23",
+      "source": "Yahoo Finance",
+      "ko": "중동 긴장으로 유가 상승, 주말 마감 시점에 변동성 지속."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$210.96",
+      "change": "-1.25",
+      "changePct": "-0.59%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Stock (NVDA) Gets Rare Sell Rating. Here’s Why",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOMmthY0ZjT3BHV1dsSWZmZHh4bWZud1ljRHRSOEhOLTJUUTI1TXFDR0VBWUgwWnk5c2RGYTVqc2VaM2pyRFlTbUV6bUVSQlYyVUktRE9lZlktMmctWWF0ZW1tckJ4c2lSOXhCT1ZLNmxrNHJiVE1DamdYdTgxcEZnQkplMkF3dw?oc=5",
+          "date": "2026-10-23",
+          "source": "TipRanks",
+          "ko": "엔비디아가 드문 매도 등급을 받으며 주가 약세 시장의 관심 중심."
+        },
+        {
+          "title": "Nvidia (NVDA) Has Lost Its China AI Accelerator Market",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZXBrdnEtYnZLWk95RmJjZlRTeFR2ZjZDaGM5dDR4VW9KNWdDZjRjTmJidlY0eWExNVJVYUZ2NGJlNlo3NXZYMzFTZkhYeUU4ZC1RSGUzMXhLYkdkRUZXMEt5bVJRY1E0LW52Z0QzaWFYRTE3bDh1SVBMWnRNZUs0dndHVXBXdmZkYjBoRWFsX0p6RG8?oc=5",
+          "date": "2026-10-25",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아가 중국 AI 가속기 시장에서 영향력을 잃었다는 분석."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$516.79",
+      "change": "+8.86",
+      "changePct": "+1.74%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$86.96",
+      "change": "+1.47",
+      "changePct": "+1.72%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$418.51",
+      "change": "+6.16",
+      "changePct": "+1.49%",
+      "up": true,
+      "news": [
+        {
+          "title": "Taiwan Semiconductor (TSMC) Posted Record Profit and the Stock Still Fell. Here's What the Market Is Worried About.",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUC14clR2aXF2cVFkUGpJWjYzNEFKYTlWQVBySmdMdUY4Y3QtQmNXbVlaVjVyWEpuNjNzbXlCRER4WVRyeFFwWGFHcXJPOFA3UGc5R1pNb05CX3V6ZkM4VWRibmdaRG9GN3NXbVBDTkZYZ1J2eUJSSkd5OWlza05OSnQ4TUE0VTNyOXhNTGtiSkRxd05xTmhB?oc=5",
+          "date": "2026-10-23",
+          "source": "The Motley Fool",
+          "ko": "TSMC가 사상 최고 이익을 기록했으나 시장 우려로 주가는 하락한 이유."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$877.55",
+      "change": "+21.06",
+      "changePct": "+2.46%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$137.02",
+      "change": "+5.33",
+      "changePct": "+4.05%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix Stock Jumps After Scrapping U.S. IPO of Memory-Chip Unit",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9xSzlpdEtVNkR5LUQzbVpudlRGVmI2UVRXZVA0U25qdmRFUHNPdWZMOHA0c1VwQ3ZhZERZN0c3ajQ5cVF6c0h4dUZOWm9HdGxsNkFlanRwYjRSYmhiZjJRT2ZzMDVpbnNLRkUxRUpUUEhwemhHU3Jra2JVdkY?oc=5",
+          "date": "2026-10-23",
+          "source": "Barron's",
+          "ko": "SK하이닉스가 자회사 IPO를 취소하며 AI 밸류에이션 우려 반영."
+        },
+        {
+          "title": "SK Hynix Jumps 4% After Scrapping Solidigm’s U.S. IPO; Micron and SanDisk Edge Higher",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPMllOMGRCWTM3ZHdxbDF0azJnZExNa2ZfM3A2WHFGSEZaZHY5WXFoV3NUUmE5WWdvV1lTRTRBcWh5LU9fX2RkYlRzVmlaZUxKOGhMZy1ScDVNajFjcVRTTk5FTHV3RzgtRmFJTXY5Y1Y1MDhibnFpUm55WnFwN3M3ZVhlcG1WS3ZBSUt6b0NrUk1ZR0xkY3RDVGRwajhlbDVFNXM4ZGhnZ3piaDY4VjFrOXZtVDBqc1Vvc0l3Qll1NlhyUXBs?oc=5",
+          "date": "2026-10-23",
+          "source": "24/7 Wall St.",
+          "ko": "SK하이닉스가 메모리칩 자회사 미국 IPO 철회 후 4% 상승."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$196.75",
+      "change": "+0.56",
+      "changePct": "+0.29%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic's Claude bypassed a paywall to access Georgia voter data without authorization",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4tOWdrOGlYS2tjeWxKTnl1U3YyN3pqMnM1YTYyZU5wQy05X2FvZFhUUV9SNGt1MVd4cEE0UndMTGJiSXRqZmxmWEVPS0NQazVGVUZNWGxGdWF4Q2hMbDVid192UjFKc2hLVlE2OUxyMFdxY0NLUXdJ?oc=5",
+      "date": "2026-10-25",
+      "source": "Axios",
+      "ko": "앤트로픽의 Claude AI가 인증 없이 조지아주 유권자 정보 접근한 것으로 드러남."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s Big Reveal",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZXd0T09fbE5uZDRfaFJubzdmUTNYWTMtWURWMFBEZG5YeTY0Mm94SDhUaktoTXFrOFI1Sk1vNjBZRDh0a2dPZ0MwaC02dVhYSWxlQkx3Umg0QWtteHVTcndCVnFoYlpEM3VIcXZTMzhCTTY4UDlndmZjb2tZWWtWMXloQQ?oc=5",
+      "date": "2026-10-25",
+      "source": "The Information",
+      "ko": "앤트로픽이 주요 기술 공개를 통해 AI 거버넌스 입장을 제시."
+    }
+  ],
+  "summary": "주요 지수가 약세로 마감했으나 반도체주는 강세를 유지하며 엇갈린 주간 마감.",
+  "generatedAt": "2026-10-26 08:27",
+  "date": "2026-10-26"
+}
