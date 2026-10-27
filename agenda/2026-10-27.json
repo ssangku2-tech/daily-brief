@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27 09:13",
+  "events": [
+    {
+      "title": "자동차 검사",
+      "start": "2026-10-27T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "태수, 병락",
+      "start": "2026-10-27T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 994,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (39c1c23)",
+      "summary": "자신의 GitHub 프로젝트 Daily Market Briefing 실행이 실패했음"
+    },
+    {
+      "from": "Google Developers <googledevelopers-noreply@google.com>",
+      "subject": "[Action Advised] Manage your unused OAuth clients and protect your information",
+      "summary": "사용하지 않는 OAuth 클라이언트를 정리하여 계정 보안을 강화하도록 권고"
+    },
+    {
+      "from": "Anthropic <no-reply-iit4RMUduI5hMYuoCN_gNg@mail.anthropic.com>",
+      "subject": "A computer was registered to your Claude account",
+      "summary": "Claude 계정에 새로운 컴퓨터가 등록되었음"
+    },
+    {
+      "from": "Dropbox <no-reply@notices.dropbox.com>",
+      "subject": "Dropbox 서비스 약관 및 개인정보처리방침 업데이트",
+      "summary": "Dropbox 서비스 약관 및 개인정보처리방침이 업데이트됨"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Claude에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Claude와 공유되었음"
+    }
+  ]
+}
