@@ -1,0 +1,157 @@
+{
+  "sessionDate": "2026-10-26",
+  "sessionDateLabel": "2026년 10월 26일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,676.77",
+      "changePct": "+0.70%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,169.38",
+      "changePct": "+0.82%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,361.58",
+      "changePct": "+0.28%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Equities end higher as Anthropic's IPO filing buoys AI stocks",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVVlfUU5UYnVIOHVRRHJCaWJNQ0NtM0V5aXdZUE5QSEhGVTAxWmdXcU1KeGVEaEtYTXlEal9YNjMwblR6bGZQcm5HODd6N2xnNUppZzdXMDVTSWwtZEc3a3p3Q0M4VzRtaHo3QTd1VDJpaGNPQmw0WjFNaEMyQ2JyOVpGcmZEbktIdk45OHp4blZxdzc5UllRT2V1cnllVTVVTjVYZm1IZ0VjWDlwTnc?oc=5",
+      "date": "2026-10-26",
+      "source": "Reuters",
+      "ko": "앤트로픽의 역사적 IPO 신청 소식이 AI 관련주 상승을 견인했다."
+    },
+    {
+      "title": "Stocks Gain Before Tech Earnings as Oil Declines: Markets Wrap",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPeGVmU0kxdjhvRF9ZU0VaeFFkODlaUTRlN1dQaHNSV1JiOTBwSV9nb1RKejQ2clRzQ0doN3VjVEtHb0RaTlVBNUdhMFI3aUtTRHB1dEE3NWdXZS1ZbktuMVUtYnE0ellyLWlNa29aWThtQkdSQW5FRzFIVUZlb3hEUlg1czdXd3FyV0VwNW0wVEMyTUg4ZEpoTVg0SzIyZ0VmLTAxOUlPTUtLXy1kS0ozbw?oc=5",
+      "date": "2026-10-26",
+      "source": "Bloomberg.com",
+      "ko": "기술주가 실적 발표를 앞두고 상승했고, 유가는 하락했다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$216.00",
+      "change": "+5.04",
+      "changePct": "+2.39%",
+      "up": true,
+      "news": [
+        {
+          "title": "Jensen Huang Says Nvidia's Next-Gen Vera Rubin Chips Will Generate $40 Billion in Revenue per Gigawatt, Up From $25 Billion for Grace Blackwell. What That Means for NVDA's Growth Runway.",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQVFlZWE12Y1JWbDkyUGxfVjZpUkJSTTBQaE9mbWVqdG9wZ1lWVms1dXZaS3ZZdmFMWW11alAyUmZ0WFNkYUt3VHp5M3E1WlpEQ1IyWXZqN3ZwLU5aS2czdUFOZzBkT3A0ZlRvT0lDWjhKUVlka19ZTG9aS2ZPNFFYTWFKQXctNDF2WmVQTDBCR3FZN3gxb00ycw?oc=5",
+          "date": "2026-10-26",
+          "source": "The Motley Fool",
+          "ko": "엔비디아의 차세대 베라 루빈 칩이 현재 제품 대비 기가와트당 매출을 60% 높일 것으로 예상된다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$531.28",
+      "change": "+14.49",
+      "changePct": "+2.80%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$90.47",
+      "change": "+3.51",
+      "changePct": "+4.04%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel Stock (NASDAQ:INTC) Surges Up After Talks with AMD",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQeHpEUGpLMFN5Tzh4VjBXTWh2Nk5jYUItMzkxVXJyU05yTFU5VVFaanVtN2V5d1Z4RERBREZsT3hWUEFfQmpoZDlIS3AxVFlkcEVaYk0zNmNLa1BBWFZ0cEJyMnJNVlpvUEcwX0xaWVUtQzVSWmRYeXVnZFlOUmNETjZpN0dtWlUxcTN3?oc=5",
+          "date": "2026-10-26",
+          "source": "TipRanks",
+          "ko": "인텔이 AMD와의 협상 진행 소식에 급등했으며, 월스트리트가 목표가를 125달러로 제시했다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$424.37",
+      "change": "+5.86",
+      "changePct": "+1.40%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$903.70",
+      "change": "+26.15",
+      "changePct": "+2.98%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$142.62",
+      "change": "+5.60",
+      "changePct": "+4.09%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix Q3 earnings on deck: What to expect",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOaU9sc1djWHV4VjRwLW5yMF9qc1RPUl9RU2hBQnV0OTBRb3BOcGVoRWdSWVhxdTlsMkZtOUZsWlVqUWdjQUVnUzFHZ3RNOGZPSFlBV0h2XzZpb3otbnFWb3ZZTkt1aUFlbFNoMzRFc013R3RsbUFtTWEzblFRdm9SdUZYNjVtWm9IZG1qUFpyemZGSHIzY2tsRUNPNGsxc0dIelhDRDV4ZTlwUQ?oc=5",
+          "date": "2026-10-26",
+          "source": "TradingView",
+          "ko": "SK하이닉스가 Q3 실적 발표를 앞두고 있고, 업계의 AI 버블 논쟁이 계속되는 중이다."
+        },
+        {
+          "title": "SK Hynix Stock Rises: Korean Memory Giant Reportedly Weighs $12B Special Dividend From Kioxia Gains",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxONHV5TFpCQ3pPSzZlRlM3aUpxNjdoaWVsSGUyRy1CWnZ0aGNkczhYUWRLbW5zMnQtWnFJTVJwTy1sQkZGUE5SSVBNSzJrY2VJdDN0QjlBZGgyN0o4RU9WNEVtOXE5RkJJN3plcFpSRDQyXzVFeFFXLVI2bTB4STVxNG90TmJpOTN5TEJqdS1EV0RQYVdGdDJv?oc=5",
+          "date": "2026-10-26",
+          "source": "Yahoo Finance",
+          "ko": "SK하이닉스가 쿄시아 매각 이익으로 120억 달러 특별배당 검토 중이다."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$198.84",
+      "change": "+2.09",
+      "changePct": "+1.06%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Stock Market News, Oct. 26, 2026: Tech Shares Rally After Anthropic Files for Historic IPO",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbzdFQkJFVk8yOUxhWXN4M0J5TGc2cFZMLU1HLWpYblk2RGprSlh3RHhMOE1mRlUzRE5XU3d1a08zcjE1UE0xTUZzWDBSSnBhZ3hjekRXVzYxajhNRFdYZ1lyZURmWW9USTNhYXVWWTFDRGlxczFydE5UNTRCQTVmc1duR2RKTGs?oc=5",
+      "date": "2026-10-27",
+      "source": "WSJ",
+      "ko": "앤트로픽의 IPO 신청으로 기술주 전반이 반등했다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s Claude AI model accessed Georgia voter data in US",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWUJzcmZKYjhVN2dtZm5OZmNpUzVrdEUzMlRPV0wwYkRxZkp0ZkZDVEozLWtYOHZDeVdoZ2d2djFIaENOdmRaRlVGeGo5SDRZSzhXYzZuekh0d2dES0REZGc5ZXB6MnJfWXJGakxuWnRRRFc5SmlIbzFxQTFLTmttRXB4MEhablk3Wlp6OFg1bnRvTVNsNHV4NDJpUW5ZcTAxZVpObm4yQzJlb0tGR0U2MA?oc=5",
+      "date": "2026-10-26",
+      "source": "The Guardian",
+      "ko": "앤트로픽의 AI 모델 클로드가 조지아 선거인명부 데이터에 접근한 것으로 확인됐다."
+    }
+  ],
+  "summary": "AI 업체 앤트로픽의 IPO 신청이 나오면서 반도체주가 일제히 올랐다.",
+  "generatedAt": "2026-10-27 09:40",
+  "date": "2026-10-27"
+}
