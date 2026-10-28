@@ -1,0 +1,157 @@
+{
+  "sessionDate": "2026-10-27",
+  "sessionDateLabel": "2026년 10월 27일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,722.60",
+      "changePct": "+0.60%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,477.81",
+      "changePct": "+1.18%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,377.57",
+      "changePct": "+0.03%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall Street ends higher on revived AI momentum",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR21qQWZsLUZqbWRjR2YtQ3FGakpEWWVjSUVFNjVDSi01MnRiWmV3Z2pPQUsyVGhJR3UxQ1o4RjRVa2tCLXNXbnJjNE9fbE5KVzlKTEZtNHpZb3lPR0hXcFFSVGVydlpnR3RQdVM5bDE3aVI3aVowN0NqY3NHb3VDN3hlaXpLTmxkeFc3NE13dUNqYUtIMHNxRFR5M3VYZmpKUDRzVE5WLUdwRHJCeEpQM1pKaw?oc=5",
+      "date": "2026-10-27",
+      "source": "Reuters",
+      "ko": "월스트릿이 부활한 AI 모멘텀에 힘입어 상승 마감."
+    },
+    {
+      "title": "S&P 500, Nasdaq advance as oil eases ahead of Fed decision",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPX0trOVV5U3N3OGNYRjQ1SE93MUJIYm9JOXlRS3hYWGhwR3hGei1mOGxXbVdsUHo1VU5VdlRScHdsOUw1U2VtRno1cnYtUHZMNTVmYkdFQjVDcWZwS1Q2LVhtb3NaZTZ4aWQ2azBiQ21yVm42b1VDVDRFQ0V1U2RHcjZSZ09EblplWUtBRXZTaTZURC1YU2hMSGpBVXdhVTRSLTZZ?oc=5",
+      "date": "2026-10-27",
+      "source": "Kitco",
+      "ko": "유가 완화와 연방공개시장위원회(FOMC) 결정 앞두고 S&P 500과 나스닥 상승."
+    },
+    {
+      "title": "Broadcom and other AI stocks lift Wall Street closer to its record",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPRk1TWTVMOWk1TXUzcFY4SXF6RERWd1Jyd3dZN0htTGprMzVhNUpRb25uRkREX19DdVN6NFJRTjlaaDJtLUZMU1ppTUhGbFpQN2NTc1JVU2lRVk9MMU1NM2ZtRnE0RlREOTJsZTlMT0VmZ3cyUEQxLUlqY1JQb3pEMlRkeWV2V2VfdVdQUkdPZTE3TVFqbVc2WnZzb2FfSEVwbHVYRVg4YmE2dl82cXc?oc=5",
+      "date": "2026-10-27",
+      "source": "WRAL",
+      "ko": "브로드컴 등 AI 주가 상승으로 월스트릿이 사상최고치에 가까워지고 있다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$217.94",
+      "change": "+1.94",
+      "changePct": "+0.90%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia to invest $3B in Meta stock, expand AI collaboration on Muse models (NVDA:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNc0hJUV8wbklYTWx4NVlpcnNNSlV3WExEaGhDV3hNckpkaHhMUUUtcFdVV3YyWmRnTF9wWnhBVkY4eGhLLTlsT0d3SXJORk12NVhSWVo1RVpKS0xjNFRrWGpFYU4wN0ZUak9pbFpjdnYtQWZUaVRma09wcGJLU253VjVoSlZYdzE1eTNPUXBsbVh2VnduNlMyWEJsWFNvR3VadW9mdmhRQW9NTFVSdkZB?oc=5",
+          "date": "2026-10-27",
+          "source": "Seeking Alpha",
+          "ko": "엔비디아가 메타에 30억 달러 투자하고 뮤즈 모델 개발 협력 확대."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$560.26",
+      "change": "+28.98",
+      "changePct": "+5.45%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD To Invest $1B In Meta Stock Offering As AI Partnership Expands — Helios Systems Now Running At Meta",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMVZONEsxU01Pa2dLUzZQWFFrM0VMQzJLWFQ1UzVkNW5zS0VIeDNCUDFYbmZMSWVnODBFWkJhLWVfWGNabFlTWEpicjYxcjItbHV5OE9pMkp2dzBKLUh3dFdGT0c5V19wWTBXQmVUQ3doNGRwa3BqalozWUx0M0lsVE9vdERua2Q1aGN2VWZzaVc3Zw?oc=5",
+          "date": "2026-10-27",
+          "source": "Yahoo Finance",
+          "ko": "AMD가 메타 공개 발행에 10억 달러 투자하며 AI 파트너십 확대, 헬리오스 시스템 메타에서 구동 중."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$93.74",
+      "change": "+3.27",
+      "changePct": "+3.61%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Intel Stock Popped Today",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9PX2tGbjFlc3dnWElER0JyeUREUDlHbWx5czZZcDVFbWk3R1lYTGlOTmw2RUczXzZGdmZscnc1N1hCZ3Fxd0taaGZfMHdUY3k5UERmMVVfc0JmQWhZVVV5RWNzdkJhUnR6bFdFV1pmYkZIUGtCWFFmV0t1QQ?oc=5",
+          "date": "2026-10-27",
+          "source": "The Motley Fool",
+          "ko": "인텔 주가 상승 배경 분석."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$436.87",
+      "change": "+12.50",
+      "changePct": "+2.95%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$928.76",
+      "change": "+25.06",
+      "changePct": "+2.77%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$145.36",
+      "change": "+2.74",
+      "changePct": "+1.92%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK Hynix quarterly profit soars sevenfold to $63bn on strong memory demand",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQVVhGbl84YU9TQUh1MmxpU3lTek12emM5VjFTNVFvWWdnZVprMHAyQ09aWlVfbUhyc24tNXBUbnJrYUpvWS1OLXdnODZZajlqclduLWhQMEdzQ1l5TkFsLVpBeUp3bElkY2JfZjgzblJRVERVNHZNUUNOblFGR3dCNXdaanhTbkxKYmFoSkVPOGxKanJBM1pIeFhrT3BnQnlxZEVZV3pRekxKdmlpRFhXWHBra1BoZi1BZHQ4SjEwSjdBQ3ht?oc=5",
+          "date": "2026-10-28",
+          "source": "Nikkei Asia",
+          "ko": "SK하이닉스 3분기 순이익이 강한 메모리 수요에 힘입어 7배 증가해 63억 달러 기록."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$198.73",
+      "change": "-0.11",
+      "changePct": "-0.06%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic IPO filing reveals AI security breaches, training halt",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQLTlKRElSWm9qYTIzblVBRG1Bbm5Idk1mYW9HZ2c0bFY3cGw1MlpsT1k2NlRIRlVNOHA2Y2pvWGJqVGk5U2JLcjVONWRTdU9VMWtiS3Q3alNPanBMbHM0dHFPZ2ZESEJwZHdLVllxQmVvcEdBUzlQVGNzeUlFUnI4eHBWeGxFdno1YWc?oc=5",
+      "date": "2026-10-27",
+      "source": "Fox News",
+      "ko": "앤트로픽 IPO 신청 공개 자료에서 AI 보안 위반과 훈련 중단 사항 드러남."
+    }
+  ],
+  "summary": "AI 관련 투자 재개로 반도체주가 상승하며 나스닥이 이틀 연속 상승했다.",
+  "generatedAt": "2026-10-28 09:38",
+  "date": "2026-10-28"
+}
