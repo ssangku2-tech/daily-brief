@@ -1,0 +1,172 @@
+{
+  "sessionDate": "2026-10-28",
+  "sessionDateLabel": "2026년 10월 28일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,743.98",
+      "changePct": "+0.28%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,549.85",
+      "changePct": "+0.27%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,475.10",
+      "changePct": "+0.19%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Market Today: Fed Holds Rates Steady, Dow, S&P 500 and Nasdaq Post Modest Gains",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxORmdWTHRYTzlqdXI1ZkNOVlZ0REoydlpLOU13MTFORHJ6U0JwanpPMTJlRVdHRE1FU0RPLTZRLWtjWDBhMjJpaXdVY2VZTUY4RGNZdFlFWGVRU0JmTWdKMVhxTVJfcHNyOS1MM1hXclUyaFl5RTBpUFFvUkxCcEwtOGxERGlsVjRNaktzemEtalR1SlRWbGExTGYwRVprQlFycDc1Z0IzZFpZdEtwczBJN1dzd1NxNzN0Q3JJTEZneno4bms?oc=5",
+      "date": "2026-10-28",
+      "source": "Eurasia Business News",
+      "ko": "Fed가 기준금리를 현 수준에서 유지하기로 결정, 주요 지수들이 완만한 상승세 기록."
+    },
+    {
+      "title": "Stock Market Today: S&P 500, Dow Jones Futures Trade Mixed Ahead of Federal Reserve Interest Rate Decision — SKHY, STX, V, GOOGL in Focus",
+      "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxNOHIyTThiOE03WlhxUFYxRTBxMy1RVm53Wkh1NDg5Z1lmVEp3c1JRSlJtRzJQV09faVNvWEZHOFRJOUtSWDdKbjVGaHpYZmZiQUJfU1dEUUV0c0lDWEw2TjJmc0xKY1RyZkJwcm4wUmd3ay1DTy1jWDNYcVpxWlFMcFBReUl4N3hoaGtfZVU0NVJMRS1zazlEdjZxbGpVbnBjTFBIcjlnNGVET1RXTk50STZHTXExb1MybUt2UEF4XzJuQnNOcHJhdU1na1REMzlNWmZCc0c3QnBUWG84VFQ4eGt3bmgtakZWUmNsbXFueGFINF9RbE1Jbm1ndFFEQVVnQkg1b2p6VnJoSElMeTItV2YwYkowS1Bw?oc=5",
+      "date": "2026-10-28",
+      "source": "TradingView",
+      "ko": "Fed 금리 결정 앞두고 시장 혼조, SK하이닉스와 스트로티지 등이 주목받는 중."
+    },
+    {
+      "title": "Dow Jones Futures Fall, Techs Rise As SK Hynix Crushes Views; Fed, Microsoft, Google On Deck",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOXctSXZneUdSOFNkQzc5bC1BWHgyUmJNS25RYldwUzJpeGwwUjVHTFhGSlZmS2Ytd3oxTEdHbFdrVlRPaG56eGZ1X0FVTmgwYUUwUDlmTlljVEx6V2prWHhyTWdZUXJJWG5oWWtXOUFuckhPZGRZR3p0eWxhRXZFVmhPeFdxVHNMOEJwWThoX2xtZXNwb1pYclVUd0hjVUU2QUNmQWtadndfZnNRNG9Td2FVM0xJeGZHRTFVZkoyQzVDVEFjWGc?oc=5",
+      "date": "2026-10-28",
+      "source": "Investor's Business Daily",
+      "ko": "SK하이닉스가 예상을 크게 웃도는 실적을 발표하면서 기술주 강세로 이어짐."
+    },
+    {
+      "title": "Update: S&P 500, Nasdaq Rise For Third Day Following Fed Pause",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOVE9pXzV6aEE4Rk1WdmFrSURVMTlTUDgtTmU4c0x2bWdILW1DVzRyZkY1RksxQ2hqNFdqSi1aeXlzd293ei1NZUtaUGtRM3lLYzZQZzRDSEZmRXphNktwNlNjS2ZEMmFHNXJnRjJPekxQTW41c08xYTlZS3pBVDJEY01ZWmpjLV9UX0EzOTNkSlQ5QQ?oc=5",
+      "date": "2026-10-28",
+      "source": "Yahoo Finance",
+      "ko": "Fed 금리 인상 중단 이후 3거래일 연속 상승으로 시장 심리 개선."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$215.38",
+      "change": "-2.56",
+      "changePct": "-1.17%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$578.44",
+      "change": "+18.18",
+      "changePct": "+3.24%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices (NASDAQ:AMD) Stock Price Up 3.2% Following Analyst Upgrade",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQamJzOU5ZZVFFb09TS1NBY3ExTmxiVS1TYmdYSEJGeU1YR3ZPQUZ4eHZlMTdTeVNhT1N4dVdnRmF6WndfUmZuS3BBdm91ZC1yOHNBTkhZSllSU1NUeUhWcTRVdjR6YXdMTEhPUUp1akJRRkx3UVZVU09Ubkhmc1lrWjdaMVpwc3BZVnQ0RklqaE83NnkyMkRyb3JQR3FRSGRmUjlaMW9vcWtSVklUdnlRMm9fNDBvb21SWUFjS0ZsdUpTc0JwOHhvM3kxUFFCSGFtRGs4?oc=5",
+          "date": "2026-10-28",
+          "source": "MarketBeat",
+          "ko": "AMD가 애널리스트 상향 평가를 받으며 주가 상승."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$95.53",
+      "change": "+1.79",
+      "changePct": "+1.91%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel Q3 earnings on deck: What to expect (INTC:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPci1RYlVwSlliTVVCaGkweGlLSnBhOVBKOUJ6c0JFNkJxUThwNDBfbUpVUWE4TVVfOXpGeU4weWR3NmM3OThUS2w3SVdpeFdoWFlLaXJwTl9zdGg2eTl6TE10ZkZNZ1VxdUhNeEVYTklPZWVPNDBCbkRZeXhha01VN25CX2g?oc=5",
+          "date": "2026-10-28",
+          "source": "Seeking Alpha",
+          "ko": "인텔이 Q3 실적을 발표 예정, 시장의 기업 회복력 평가 기준점."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$439.51",
+      "change": "+2.64",
+      "changePct": "+0.60%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$983.23",
+      "change": "+54.47",
+      "changePct": "+5.86%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Is Micron (NASDAQ:MU) Stock Surging Today? SK Hynix Signals AI Memory Shortage",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1oLXBKdVlfWWwwOGhMNjVkNlZyLVp0SkVsMFA0bFRmWXZiMVAwbkZVNE8tdXFOcUVaaU1Kem5tZExGdWpCTmEzUUNKZXdUVThrMy1YaG92cXhuN2U4Z1VPRXF0RjNrUUQ1Ykl4dlh6M0gxd09nQklYMw?oc=5",
+          "date": "2026-10-28",
+          "source": "Stocks Down Under",
+          "ko": "SK하이닉스의 AI 메모리 수급 부족 신호가 마이크론 등 동종업체 주가까지 견인."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$164.70",
+      "change": "+19.34",
+      "changePct": "+13.30%",
+      "up": true,
+      "news": [
+        {
+          "title": "The memory shortage will last until 2030, SK Hynix says",
+          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1yZnFXY1F2ZS1rdHVIZkhxdXFOM2ZPX2JrUTBRcGp1eUFCaVQtUFN3Tko5b3FSU2RMcjBCR1Z2WE9MWmhuN1RweTEyQllJQnRrd1VZYW9BNWZhejdwR3E5Q0FNR1czRFRFRWN5M3Vn?oc=5",
+          "date": "2026-10-28",
+          "source": "Fortune",
+          "ko": "SK하이닉스가 메모리칩 부족이 2030년까지 지속될 것으로 전망."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$196.81",
+      "change": "-1.92",
+      "changePct": "-0.97%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic unveils additional Claude tools for lawyers",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbFBaWDBVa3BKM0dEcGpjZldpYXlJb1pZdDYtMFFOaDJpMEtjWkVyaGMtVHhGd0pwZDRLLUJhNnlveHJwZHNsckY1STlMZXBuc1Z4SUpiSEJVTFlWR0I5d1o3X3ZabkRNMkE0TDRTaVNiVnRzS0o4S1JTcllTVUVPZ1JXOFI1bFV2dm1JaE00YzluSGZwY2V4NDk1aVB3c1RTX2pFZUk5SzQ?oc=5",
+      "date": "2026-10-28",
+      "source": "Reuters",
+      "ko": "앤트로픽이 법률 전문가용 Claude 도구를 추가 공개, AI 실무 활용 확대 중."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Expert Judgement Can Be Easily Hacked by AI, Anthropic Study Finds",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZ3hIMUZpekhyUm5IWXhkcnBxcG1SWmJPTzJCTkVPOVhQRmxsNXMyZHZjdGNNUmZWQk9xR1lPenppcS1iWTA0OUJrdkV6VGQ4dkpKSkE5TU9WQ284OV81bjY5Nm9oU3ljTnQyUjBOSjkzYXVpZjlHQkN4MDMwaFFIWHhrWkxLQmJhMDRwR3Y1cGxfY3RlVFpWVTlTSms?oc=5",
+      "date": "2026-10-28",
+      "source": "Gizmodo",
+      "ko": "앤트로픽 연구팀이 AI가 전문가의 판단을 쉽게 속일 수 있음을 실증."
+    }
+  ],
+  "summary": "Fed 금리 동결 결정 후 시장이 소폭 상승. 메모리칩 수급 부족 전망으로 반도체주 강세.",
+  "generatedAt": "2026-10-29 10:08",
+  "date": "2026-10-29"
+}
