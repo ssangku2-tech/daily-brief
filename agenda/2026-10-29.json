@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29 09:35",
+  "events": [
+    {
+      "title": "양수",
+      "start": "2026-10-29T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "저녁",
+      "start": "2026-10-30T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1002,
+  "importantMails": [
+    {
+      "from": "Nord Account <support@nordaccount.com>",
+      "subject": "Your Nord and Google Accounts are now linked",
+      "summary": "Nord 계정과 Google 계정 연동 완료 알림"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Nord Account에 공유하셨습니다",
+      "summary": "Google 계정 데이터를 Nord Account와 공유함"
+    },
+    {
+      "from": "Scribd <hello@hello.scribd.com>",
+      "subject": "Finish setting up your Scribd account",
+      "summary": "Scribd 계정 설정 완료 필요"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Scribd Inc.에 공유하셨습니다",
+      "summary": "Google 계정 데이터를 Scribd와 공유함"
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 관련 알림"
+    }
+  ]
+}
