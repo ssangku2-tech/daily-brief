@@ -1,0 +1,165 @@
+{
+  "sessionDate": "2026-10-29",
+  "sessionDateLabel": "2026년 10월 29일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,720.39",
+      "changePct": "-0.30%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "26,184.73",
+      "changePct": "-1.38%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,342.56",
+      "changePct": "-0.25%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "US Stock Market Today: S&P 500, Nasdaq And Dow Jones Open Lower After Corporate Earnings Miss Expectations",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQVS1OcjRldTVMVmd0cDVZWUZSRkVaNnkyX0xzS1Q2ZkZwRTg3SThrSENMVDhwLUZjWS1DS1ZhX0xTRFd0cmo1MFFwZjlveE95Ti1KRFFZamhva001QTlpemk5VF9hV3p2MlpTcUZ4U0xtODR0Z19UQ1JQajR6YUVXeU5UemgwM1FPSU11ZHAyckdZbDBpaE04SEh2eHJsNk9hMk01LWZTTEdIZnlwTWF4aWZQVUxTdC1HZV9qWnZkMWpHcmczVThqemtxLUtMdFRxdGxwWVlNRE9rREF4TFFRaUZ30gHqAUFVX3lxTFB3U2I4bVhMc0lCYUlfRUh5WWM4ckxSZ1FlZlF6ZVVQdktyUG9NNk9jM2lncGtMUzB3R3lRWkp1VmtJZTFtYW1tT2VZbFJ2SkJ6TmRiOXNJdHdwWTR6Y3N4M082VnpNem9xS1N1NjE0LTZOTkkxTmt5TktoMGtLVG1KLXltaGNEVlROMGxiTFNQOVoxRXh5c3ZhdWN3QU5YbmRHcXVpcnRhMC1KSDJvRTNUSlVCemxjYnZLTGpXOUNabEhsRHQ3NkMxNG9JNkxJTUtHS044b0QxN1hkMFh0N1pzb0p6RTJWWVVsQQ?oc=5",
+      "date": "2026-10-29",
+      "source": "NDTV Profit",
+      "ko": "실적 부진으로 개장 후 주요 지수가 하락 개시."
+    },
+    {
+      "title": "Update: Nasdaq, S&P 500 Snap 3-Day Rise on Alphabet Sell-Off, Inflation Anxiety",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQUjllbTYwZGZ0N0tEV0N4TTh0cG9WOXl0d196MVB0bXUtdThPZmppMzBjMjZ4NGEzWmNSUFJCbmJTcWYtektWQ0tRY0tlZFM4Zm5GYXhDX0J5ZUQzdVhYOHY4RXFkbG9tclI0a1VFTHI2S044bV9IdWZiTkxhTjc0bXQxYVBxbDF5TzBnUA?oc=5",
+      "date": "2026-10-29",
+      "source": "Yahoo Finance",
+      "ko": "알파벳 매도와 인플레이션 우려로 나스닥 3일 연속 상승 마감."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$213.66",
+      "change": "-1.72",
+      "changePct": "-0.80%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Shareholders Have a Major Reason to Be Bullish After Jensen Huang's Latest Announcement",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdm5MRWNjdXpxb1k2Z1g0R2VfVnlYdmxwT0JBNGJPSzBDOXhVNDExZDBsLVdTSnprWVBPU21OMEVqQzVYZHQwSHlnUzc3ZlpFM1NyYTNiMnFUeGdKUDhjUUdQTGZEcEdjX0VORF9wcW5jZFQ0dzdFeWhyQkFBTHNrWnNadzRkRDJzNXN4Rm9IT1Z1eklEQTcxSw?oc=5",
+          "date": "2026-10-29",
+          "source": "The Motley Fool",
+          "ko": "젠슨 황 최근 발표 이후 엔비디아 주가 강세 전망 관측."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$566.42",
+      "change": "-12.02",
+      "changePct": "-2.08%",
+      "up": false,
+      "news": [
+        {
+          "title": "How Investors May Respond To AMD Stock Meta AI Infrastructure Deal",
+          "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNbHpSWUQ4bVFLSEhFSEZnQTB0bnB2YUhQWVJKdGdhQnN0amM3M2RBS0JtNmFrRHpvTHdjaDg5Y0RfRnNMckNYbjlDWVpsY0RBQkFRWkVVVnAzelMxR2JLUFE0ME5uOFJXSUhTSjVMX3QyYnk0XzZERmdQOGZvYTZ2WWtUQllIVDJvNzRudXItaHFEcTFncWI3WnBqS2tOUlo4c0lZUWpZUV9pWTAxOVhYMGZHYS1RMy1iY3BvQVJCOFd2bzVzX0hMUmsxWVNiU0NkWmtRLXNyZ2tFN2JQZ2JWRjc5SUrSAeQBQVVfeXFMTWx6UllEOG1RS0hIRUhGZ0EwdG5wdmFIUFlSSnRnYUJzdGpjNzNkQUtCbTZha0R6b0x3Y2g4OWNEX0ZzTHJDWG45Q1labGNEQUJBUVpFVVZwM3pTMUdiS1BRNDBObjhSV0lIU0o1TF90MmJ5NF82REZnUDhmb2E2dllrVEJZSFQybzc0bnVyLWhxRHExZ3FiN1pwaktrTlJaOHNJWVFqWVFfaVkwMTlYWDBmR2EtUTMtYmNwb0FSQjhXdm81c19ITFJrMVlTYlNDZFprUS1zcmdrRTdiUGdiVkY3OUlK?oc=5",
+          "date": "2026-10-29",
+          "source": "Simply Wall St",
+          "ko": "메타-AMD AI 인프라 제휴 확대가 투자자 반응에 미칠 영향 분석."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$92.07",
+      "change": "-3.46",
+      "changePct": "-3.62%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel stock plunges 21% as chipmaker blames PC slowdown for weak guidance",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBlczFWcC1WVTdsdENmNVdsNnJpczI0SzZqRkZuel9NLTdsUG85UlJDVEV4NllwUmRUXy1QZGV6ci1BamdFQTVtQ2hlelhiR21LNzJsQ2dCSzdTc1JCQUdDVU90bGY2a3hIeldPa043TnYtelgtZFh2b04xblrSAYIBQVVfeXFMT0lPRHpDdlR4ZlpnZWc1SS1mTHNjZGE3VVItSnA5bndoU3ByQVFPa2Rzakx2QlFoWW52ZVM1dF9aWjdlczFEby05eHhwaEQ5YllseUJlbjkwRzNva0VWdkM0Tkp3a2tZcTZydktHUXdmZEZwamdwMTBuUUNwY3hDZHRDZw?oc=5",
+          "date": "2026-10-29",
+          "source": "CNBC",
+          "ko": "인텔이 PC 수요 부진과 공급 차질로 약한 가이던스 제시하며 21% 급락."
+        },
+        {
+          "title": "Intel crashes as Q3 results, guidance miss Wall Street's forecasts (INTC:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcTFGVkw4QnBJcHZYcG1aOE5jNDBRRklUeWdCTkZ1c2g2bUJ0NWs5MlpCZUJmeWp6MkNUS3EwNXNzY2plOVpaVkZVaHJzOGZrS1hZZzM2dnFFc19PZFpmZHRTUnJlOHlxWjJtWDc0Uk9IUV85YzNCUW5Ddk9Ja2dDNjJUVlZXa2g4ZGZGYkw4MVZqNnVRQmRudVBoUmFpQmJ0cVdN?oc=5",
+          "date": "2026-10-29",
+          "source": "Seeking Alpha",
+          "ko": "인텔 3분기 실적과 가이던스 모두 시장 기대 하회로 낙폭 확대."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$431.81",
+      "change": "-7.70",
+      "changePct": "-1.75%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$934.27",
+      "change": "-48.96",
+      "changePct": "-4.98%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Stock Falls as Samsung Earnings Show the High Bar for Memory Stocks.",
+          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQYVprRmdFU1M2cmhCUUhmd0RnNFFpX19leG13UjlOOUwwMVUzSTA5NW5wNllZd0JGem1IOFpCeS1yQXlPS3FrTWZ5TWptanlvbkNtQllncjE2ZE9pVkRFX1NVNEFDTUo2NWVDYUw3VGw3TWhKbGVsMThGc1lxSFhiUFRkRS0?oc=5",
+          "date": "2026-10-29",
+          "source": "Barron's",
+          "ko": "삼성 실적에서 높은 기준선 제시로 메모리 반도체주 전반 부진."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$162.09",
+      "change": "-2.61",
+      "changePct": "-1.58%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$196.42",
+      "change": "-0.39",
+      "changePct": "-0.20%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Nvidia in Talks to Provide Billions in Credit Support For a Cloud Provider’s $45 Billion Anthropic Deal",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOdmhuRzVaOG9xaEQ5U1VOcWNNLVN4YUZ0NUpfVnM3Qy1KakJVMWxDbW1heDFWNkxOR2dJbnR5NnJNb1dSb1RaTnUxTkZlQzU3b0l4SGFuR1RMVXY1dmlhTzJTVzd2VmstYWhyX0pyeGEwUTdKM1FtVGZQenBCdE5fSE9zZm8wOGNxUEQ3WmVrSi1ZSlZyX3A3cWRlTkRhMThMSjVEYnhuTGt6RE5janN1NkFUVjgxV3dVVklCcm1JUWlkRVpf?oc=5",
+      "date": "2026-10-29",
+      "source": "The Information",
+      "ko": "엔비디아가 앤트로픽 클라우드 사업 자금 지원 협상 진행 중."
+    },
+    {
+      "company": "Anthropic",
+      "title": "SpaceX’s Largest Revenue Source Is a Finite Deal With Anthropic",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQ044eGtubmthLU5BVE1IbUVZbGQ1MklPR1R2MzhTQ0xRdE95ZUEwSEx5b0ttZkRrWDNLWG4zQ3d6S3IwZjBQbUphajhfY2VCa0NIbkx2TEc0TWpENmRvS2ZpTHB1TVNKMEJvNjdlNHFNYVRzZUwtb2N6SnZoeG5ISmtwOUFsajdYMnd4dlJBcm1uQ1czNzVlRTlDUE81QVo3QW1kTGFoSXBmT1gxZ0RRa2ZPNm4?oc=5",
+      "date": "2026-10-29",
+      "source": "Bloomberg.com",
+      "ko": "스페이스X 최대 매출원이 앤트로픽과의 유한 계약."
+    }
+  ],
+  "summary": "기술주 약세로 나스닥 1% 이상 하락. 인텔이 약한 가이던스로 급락하며 반도체 업종 전반 부진.",
+  "generatedAt": "2026-10-30 10:15",
+  "date": "2026-10-30"
+}
