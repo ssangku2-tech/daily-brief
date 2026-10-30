@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-30",
+  "generatedAt": "2026-10-30 09:35",
+  "events": [
+    {
+      "title": "저녁",
+      "start": "2026-10-30T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1007,
+  "importantMails": [
+    {
+      "from": "Nord Account <support@nordaccount.com>",
+      "subject": "Your Nord and Google Accounts are now linked",
+      "summary": "Nord 계정과 Google 계정이 연동되었습니다."
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Nord Account에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Nord Account와 공유되었습니다."
+    },
+    {
+      "from": "Scribd <hello@hello.scribd.com>",
+      "subject": "Finish setting up your Scribd account",
+      "summary": "Scribd 계정 설정을 완료해야 합니다."
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Scribd Inc.에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Scribd Inc.와 공유되었습니다."
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Adobe Acrobat에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Adobe Acrobat과 공유되었습니다."
+    }
+  ]
+}
