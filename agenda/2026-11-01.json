@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-01",
+  "generatedAt": "2026-11-01 08:56",
+  "events": [
+    {
+      "title": "자동차 검사",
+      "start": "2026-11-02T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1012,
+  "importantMails": [
+    {
+      "from": "Google Phone Verification",
+      "subject": "Galaxy Tab S4에서 전화번호 인증하기",
+      "summary": "새로운 기기에서 Google 계정 전화번호 인증 필요"
+    },
+    {
+      "from": "KOREAN AIR",
+      "subject": "[대한항공] 기종 및 사전좌석배정 변경 안내",
+      "summary": "예약된 항공편의 기종 변경 및 좌석배정 변경 안내"
+    },
+    {
+      "from": "Nord Account",
+      "subject": "Your Nord and Google Accounts are now linked",
+      "summary": "Nord 계정과 Google 계정 연동 완료"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 Nord Account에 공유하셨습니다",
+      "summary": "Google 계정 정보가 Nord Account와 공유됨"
+    },
+    {
+      "from": "Scribd",
+      "subject": "Continue with \"To All the Boys Ive Loved Before 2018 (1)[031 070]\"",
+      "summary": "중단된 Scribd 콘텐츠 시청 재개 제안"
+    }
+  ]
+}
