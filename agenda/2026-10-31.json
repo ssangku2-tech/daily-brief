@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-31",
+  "generatedAt": "2026-10-31 09:21",
+  "events": [],
+  "unreadCount": 1010,
+  "importantMails": [
+    {
+      "from": "KOREAN AIR <no-reply@koreanair.com>",
+      "subject": "[대한항공] 기종 및 사전좌석배정 변경 안내",
+      "summary": "예약한 항공편의 기종 및 좌석배정이 변경되었습니다."
+    },
+    {
+      "from": "Nord Account <support@nordaccount.com>",
+      "subject": "Your Nord and Google Accounts are now linked",
+      "summary": "Nord 계정과 Google 계정이 연동되었습니다."
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Nord Account에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Nord Account와 공유되었습니다."
+    },
+    {
+      "from": "Scribd <hello@hello.scribd.com>",
+      "subject": "Finish setting up your Scribd account",
+      "summary": "Scribd 계정 설정을 완료해야 합니다."
+    },
+    {
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "subject": "[Notice] Cloudflare Observability pricing changes starting December 1, 2026",
+      "summary": "Cloudflare 요금제 변경에 대한 공지사항입니다."
+    }
+  ]
+}
