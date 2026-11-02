@@ -1,36 +1,26 @@
 {
-  "at": "2026-11-02T04:44:22.572Z",
+  "at": "2026-11-02T22:09:06.914Z",
   "threshold": 7,
   "items": [
     {
       "symbol": "AMD",
       "name": "AMD",
-      "pct": -10.88
+      "pct": -7.52
     },
     {
       "symbol": "INTC",
       "name": "인텔",
-      "pct": -28.58
-    },
-    {
-      "symbol": "SKHY",
-      "name": "SK하이닉스",
-      "pct": -7.95
+      "pct": -8.8
     },
     {
       "symbol": "042660.KS",
       "name": "한화오션",
-      "pct": 10.4
-    },
-    {
-      "symbol": "466920.KS",
-      "name": "Sol 조선 TOP3플러스",
-      "pct": 7.47
+      "pct": 10.8
     },
     {
       "symbol": "272210.KS",
       "name": "한화시스템",
-      "pct": 8.43
+      "pct": 7.77
     }
   ]
 }
