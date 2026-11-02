@@ -1,0 +1,172 @@
+{
+  "sessionDate": "2026-10-30",
+  "sessionDateLabel": "2026년 10월 30일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,580.07",
+      "changePct": "-1.82%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,437.00",
+      "changePct": "-2.86%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,770.31",
+      "changePct": "-1.09%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock futures open a monster week after a $5 trillion AI wipeout",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNY0kwVjNUVm5US2JvNGQ3SXA5eXlvMnVEdjZXNjdwRGZ0b1licWxjQkY2Slpmb0Y2dzhjS1FNc3Q2NlExX3lBSHk0dkRkZjlxNzk0eDBVbmlOMnlMN1RmVXM2VVVmanBnbWtkR3h1ZVhlRDItT1pvckNudG9HQ0NhQUt2Wi1oVmppS0lPYkx5dDBMMExJWkloTEpFejBxRWg4VkVfMzFkRDljenhUdHIwYzBGVVJYNGNhX2I2cA?oc=5",
+      "date": "2026-11-01",
+      "source": "Yahoo Finance",
+      "ko": "5조 달러 AI 손실 이후 선물 시장 개장, 시장 변동성 극심."
+    },
+    {
+      "title": "Nasdaq suffers worst month in over a year as AI nerves roil markets",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFByUnNNYXM0dTNpeXAwcGJGWnBKODNxWEZFaHFVR3ZwZFpqb2ZSX1VDVjdxVnc2aElIYk1MNFRtd2NEUE81dnZGbGZBN25CRUJIWHJUQnpOdEMxVXlyTUd2UDRFUmlhSE5JMmNKeFpibzgtZw?oc=5",
+      "date": "2026-10-30",
+      "source": "CNN",
+      "ko": "나스닥, 1년 이상 최악의 10월 실적. AI 관련 우려가 주요 요인."
+    },
+    {
+      "title": "Wall Street closes sharply lower as AI cash burn fears spark tech selloff",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPblVtZktXRjdPbHJBWDM4WWJsV2RyMlhnOVFYRTZPc01udjZNZTVjeHdIN1dVY0w1M1NHbHpxNjV6Vm9jQ3FOUjBIaElyZEdSWWxycmNZdnJwNnBfdTJDc1FBMWVJZ19vR0s3Y1h2Uml2LThWc2NzQ2sxN3NnVzFEeGhvNnpPSElHSFRIQnJreHpCR2c3dnRQbEVYTDlJVjhzVVk3b1gxaFczMFhkb2NDSw?oc=5",
+      "date": "2026-10-30",
+      "source": "Reuters",
+      "ko": "AI 현금 소진 우려로 기술주 집중 매도, 월스트리트 큰 낙폭."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$204.64",
+      "change": "-9.02",
+      "changePct": "-4.22%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Nvidia Stock Took a Dive Today",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZWpnVVNKVXlKQzRrdEl1SmhxZWVWd2ZFZjlEdUxCU1NCal91ZHpWVlo4NnE4WnlvQzVUVkhIVkdpVXRRSWUtcDQ3YThveWU1WnlQQ3VBMDk0aDhmMFRUV2VxcUxOT2pmZlp2WmpZSnpnczQtLVAzXzkyVTNGQXY2X242NA?oc=5",
+          "date": "2026-10-30",
+          "source": "The Motley Fool",
+          "ko": "엔비디아 주가 하락 원인과 칩 산업 전반 약세 분석."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$504.80",
+      "change": "-61.62",
+      "changePct": "-10.88%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$65.76",
+      "change": "-26.31",
+      "changePct": "-28.58%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel stock plunges nearly 29%, its worst day since 1974",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQQ05GUVBJSzZLZlMzb01mX0lvT1VNRlowa0dLWUZzRU9xWXJLRzRyVm51aVFvVWJBSVBiOGY3RG9faDJjaHVDcWtycktJbUhBSXBJcUdlcU1GRmRTRjZVdlBrZlJWaTJFN1FxR3AwdkxZMmw1ZDZtVjVaeHRyM0xhTFFkaTJXV2dNVjNRQ1d1RkZxRTJQT0Q2QkxfQzBpZHJFNWVVZ2NVaFpZTjQyVlBGYQ?oc=5",
+          "date": "2026-10-30",
+          "source": "Yahoo Finance",
+          "ko": "인텔 1974년 이후 최악의 하루 기록, 주가 29% 급락."
+        },
+        {
+          "title": "Intel Suffers Worst Stock Thrashing in Decades on Weak Forecast",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaURpSDFJSVlDdjY1d0wtcmQxOVpjYmowVTBSaEZCelVCWGNoVGI2VVR2UWNVcVZDVHVyUjFIMWdvQ0FfQ1dDdkpXWmdKUXRuNG9wVnlJRjNPTzFvcTB1TFV0QjdIVHhUZEZhOHFrdGJfSGNHbF9La09hYVhrempMWm5mTHZWMlJKUElqXzNYbjJKa3ZpZ0dZTE5Kb3JHb212eEtyNUQzNkltOUhnTlVNNWlR?oc=5",
+          "date": "2026-10-30",
+          "source": "Bloomberg.com",
+          "ko": "약한 실적 전망으로 인텔, 수십 년 만에 최악의 매도 당함."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$406.13",
+      "change": "-25.68",
+      "changePct": "-5.95%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$884.74",
+      "change": "-49.53",
+      "changePct": "-5.30%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$149.21",
+      "change": "-12.88",
+      "changePct": "-7.95%",
+      "up": false,
+      "news": [
+        {
+          "title": "SK Hynix Sees the Memory Shortage Lasting Through 2030. 2 Memory Stocks to Buy and Hold Until Then.",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9sUDMzTGFlNm50Ml9SNzZrM19OcGltOVhWZUxtSmlzQ0NvbVNHekhmYTlGTzZybUptS3ByeGNmLWE1UnJvOEU2eHBnYUlVcXBWYlRrR3M4M0JqdlpHWFZ1SnBKNExWQjBhMHZRY0FJLVZSTnRQLXVEbHN3TUpSZw?oc=5",
+          "date": "2026-11-01",
+          "source": "AOL.com",
+          "ko": "SK하이닉스, 2030년까지 메모리 부족 지속 전망 제시."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$184.11",
+      "change": "-12.31",
+      "changePct": "-6.27%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir (PLTR) Q3 Earnings Preview: Can AI Growth Match Last Quarter’s 93% Surge?",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSTBrcHhLVUZqZ0cyR0dWaFhrczU2LUd3ZWFtNm1CMVJwVzZzaUxmT0x0bXVUYmkxSFFxLS00UkxyUkdNc2l4Tm5ST0lXMmtseE80NGtMaUNBSGVfSXZucWd5OGFlT1JscjNpd1pqNXV3dWxKSjJpWlJLQWFVdy1zMGV2OHdMZDVXUFE2ekdkNEJad21XQVEzN2VkUXN2SEpacS00UExoX3RFdw?oc=5",
+          "date": "2026-11-01",
+          "source": "TipRanks",
+          "ko": "팔란티어 Q3 실적, AI 성장이 지난 분기 93% 급증 수준 유지할 수 있는지 주목."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "DeepSeek Drops Enhanced Coding Agent With Aim to Rival Anthropic",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSGJoZUdrNzFHTjRVcm9OOVZ5a1Z4dVB4ME1aNjlmYmdjX1ZOTXNWTFJTNFFFUkQ2UUxxTGV4UDlOS0RjMnRlWlFUZ04yemVtQU9zU3FZbHlWY1YxMi1YSVBGb3k5cGszYnptNnZVZk1mR1NmS0RvLUhOeS1QUmxZamtoNGgzR21CR2tmY0JUd1c3YXBBMlc0SDhkZm9kOFRtZ3NvQ2RLNVZOYnFaV2x5Vy1ra3ZNUQ?oc=5",
+      "date": "2026-11-01",
+      "source": "Bloomberg.com",
+      "ko": "딥씱, 앤트로픽 대항 코딩 에이전트 출시하며 AI 경쟁 심화."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic expands text watermarking to older Claude versions beginning November 3",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUEM4THdHaktsdExGbnVyMWxVLWhuRmx4S3hYSEMwWFIxcjIydjA2TVl6bkZidU10QmYyWEZWYkNsM0NXdTBHc2pIY0tXU1ZiMTdYbDZvYVNUUDduTDB2eU1DRU0yVERyS3ppRFpHWjZ5OUFxdXU5ZTRCbk5hSG9UNkgxQTJmX1BKWlJkOXAtNA?oc=5",
+      "date": "2026-11-01",
+      "source": "Mashable",
+      "ko": "앤트로픽, 11월 3일부터 구형 클로드 버전에도 텍스트 워터마킹 확대 적용."
+    }
+  ],
+  "summary": "AI 현금 소진 우려와 약한 실적에 반발한 기술주 대규모 매도로 3개 지수 모두 하락.",
+  "generatedAt": "2026-11-02 09:58",
+  "date": "2026-11-02"
+}
