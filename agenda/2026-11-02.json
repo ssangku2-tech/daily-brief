@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-02",
+  "generatedAt": "2026-11-02 09:12",
+  "events": [
+    {
+      "title": "미용실 09:30",
+      "start": "2026-11-02T09:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "자동차 검사",
+      "start": "2026-11-02T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1014,
+  "importantMails": [
+    {
+      "from": "Google Phone Verification <noreply-phone-verification@google.com>",
+      "subject": "Galaxy Tab S4에서 전화번호 인증하기",
+      "summary": "새 기기에서 전화번호 인증이 필요합니다."
+    },
+    {
+      "from": "KOREAN AIR <no-reply@koreanair.com>",
+      "subject": "[대한항공] 기종 및 사전좌석배정 변경 안내",
+      "summary": "예약한 항공편의 기종 또는 좌석이 변경되었습니다."
+    },
+    {
+      "from": "Nord Account <support@nordaccount.com>",
+      "subject": "Your Nord and Google Accounts are now linked",
+      "summary": "Nord 계정과 Google 계정 연동이 완료되었습니다."
+    },
+    {
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "subject": "[Notice] Cloudflare Observability pricing changes starting December 1, 2026",
+      "summary": "Cloudflare 서비스 요금제 변경 안내입니다."
+    },
+    {
+      "from": "Zoom <billing@zoom.us>",
+      "subject": "월간 AI 사용 한도가 재설정되었습니다",
+      "summary": "Zoom AI 월간 사용 한도가 초기화되었습니다."
+    }
+  ]
+}
