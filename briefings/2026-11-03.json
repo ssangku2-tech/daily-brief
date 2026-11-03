@@ -1,0 +1,223 @@
+{
+  "sessionDate": "2026-11-02",
+  "sessionDateLabel": "2026년 11월 2일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,541.40",
+      "changePct": "-0.51%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,164.36",
+      "changePct": "-1.07%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,983.98",
+      "changePct": "+0.41%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Rally for U.S. stocks peters out as the tech and AI industries remain shaky",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbFpyY09lUk9yRzdIa3BLZ0JkZ1FUck9Yci1tdVdrQWk0QUpaNXpVVzZ4WEZ4LWhUbTBjMXZzY0xZQUpnaE53LVFhWDBPMWlOOEtiMHpuM2pJYk5NOG5McEU2eUtid0duUWdRT0plQ1JfWW1rbUMyZ3RpM0M1dnFpYlo0dU85YjFiUTgxTjZETmQ2T281T2pXZUdVemNfQnktWlRNMDlmSHBDdUhXblp3?oc=5",
+      "date": "2026-11-03",
+      "source": "Pittsburgh Post-Gazette",
+      "ko": "기술·AI 산업 약세로 미국 증시 랠리 약화"
+    },
+    {
+      "title": "Dow pops, Nasdaq slumps as oil tumbles on hopes of a US-Iran peace deal",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZzg3SFV6NFFMTlF4UDZJMDc5NFl3TS1CeTlJWXhGOWVvdjBlekVlRHdTX2xPeWVrUmxhVlY0RVJEYVhINmVOY3NseHV3R2ZSVlg2cVJVcmc4bUNYSWVJQXYzQVBvaXpVR1ljVjVfTEJ0MU1ZaVV5TjVESU9acUJ0a1cxZWNScjFxLTRoN2JJTU93X1ZUa1RvNTdkdThZXzZieVVXYUg5aw?oc=5",
+      "date": "2026-11-02",
+      "source": "New York Post",
+      "ko": "유가 하락이 다우지수 상승을 견인, 나스닥은 하락"
+    },
+    {
+      "title": "Broader Market Settles Lower on Weakness in Chipmakers and AI Stocks",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPREtNNTFEMUVPWGN5aERRQ1g3bWdlcE9jQXp0T0FiYUtMcEFkU0d1dG1tOHNMMHk4c3VxX0RNa1hBelNJdU5FUFo5eGEtdXRneE1MM00yM2ZralN6MzZLX1VlbGoxMldjbnByR1JPcW5tV3hDaDZreTF4cTBOS1lKUlozakpnNDBMbXp4SUZDRldQRVVMaUIwOUdMMU9yUDlYaVFPTmNNLWdfUFlVaFB5N0xB?oc=5",
+      "date": "2026-11-02",
+      "source": "Barchart.com",
+      "ko": "칩메이커와 AI 종목의 광범위한 약세가 시장 약화의 주요 요인"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$202.06",
+      "change": "-2.58",
+      "changePct": "-1.26%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock valuation gets torched by tech stock rout",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcGZseDhYeDZxTDFzcm9tLVdXRlo0RzdnTzR6U284RVFhTW1Rc09WU2R6TG1iODczZUQ0RUdPTDdPR09CajZWc0tNMV9laGxQZktza2RtZXRKTE5YT0xfY2FFWFRmVTkyWUxnb251UEJ5TWV5UFJ0VzU1LVgtTzEyZ0RjcURPUXItdEc2YzdSREtuRGZhVUlHQ3JMbWNOZmllc1RzNUphcFBRSjFTakZrT0dpTENVMFhFVVE?oc=5",
+          "date": "2026-11-02",
+          "source": "Yahoo Finance",
+          "ko": "기술주 약세 속 엔비디아 밸류에이션 급락"
+        },
+        {
+          "title": "Nvidia Reports Nov. 17. History Says What Its Stock Usually Does Next.",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbGJJZXFlWmhxcWo4RHFDWXFyN1JkcER6LW11MkZNaUpqb09hLS1ycVEzcjFVUkdwbjFxdzRQaEVrdTlUa1NVNlZ4ZDJVMUpfVHQzdlVHdE1zRVptbm9CSVh1R2hqSHBUYy1HMGQyencySVZnWV82VVBlNlJ4eC1HYTZmMzBaX0JXSGw0NEpWNkt6eUY5ZkRfOTZmTUxuakxscGZuRU5nVVZLLXl3X3Bv?oc=5",
+          "date": "2026-11-02",
+          "source": "The Motley Fool",
+          "ko": "엔비디아가 11월 17일 실적 발표 예정, 역사적 패턴 분석"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$466.84",
+      "change": "-37.96",
+      "changePct": "-7.52%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why AMD Stock Is In Focus Before Q3 Earnings And AI Partnership Updates",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRFZqQnJQc2E5bXlQbldmdWlHd1h5S3BhclFTYmNfNm1NQ0J5bmdfYkpEZXZ2dWZFX25NSW1vMEtUT2ZFQnd3N3d5SEw2SDRLTWp2QmM1czRxT09tVjdENldBY1hqcXdLLV9oVF9wWWZUS2Jvc1JkVnVOZEtzdzVBV2N3R0lCZEdXeTZhRXZmTk0?oc=5",
+          "date": "2026-11-03",
+          "source": "Yahoo Finance",
+          "ko": "AMD 3분기 실적과 AI 파트너십 소식 앞두고 주목"
+        },
+        {
+          "title": "Ahead of Advanced Micro Devices Earnings, Here’s What Barchart Data Says Comes Next for AMD Stock",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbXJodzQtaWtBSi1tRFpVZ1VyQ0tObE5BOU5uY2htQU4ya0Fncm1ITE5xYXhoNlp5NUlwTGIxQ0ZfejExYzZvMXJYSUg0bUo4bE1fU3lOSTgyeS11U0YzRTZEODZncjVvTmtjeTdwWHJSMVVNY2E1QTlSbTdJMnpfZV92NUhSSEM4eGNjN0JyenFCWEo2OURpNmt6Z1AwaXhqMFVEVWgxa2NTbUJkSU92V3ZRVEVUeGgxaXhma2N6aXFXWjRyaGNTbkVWT1hkT3VuZzBYWlV3?oc=5",
+          "date": "2026-11-02",
+          "source": "Barchart.com",
+          "ko": "AMD 실적 발표 앞 바차트 데이터 기반 기술적 분석"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$59.97",
+      "change": "-5.79",
+      "changePct": "-8.80%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Shares Collapse. Why I'm Still Not Buying the Stock",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOdXlTa1ZUX0cyb1pRUEtoV0t2bWJEZ3J4LXFOS3hUVlh0aEFRWnE0Y25WeFR3VTJYWU81QW8wVzRPdWtOUjZ5bWRlSEd1YUVXLWtIN2ZUN2ViS3dwVk81YlNHV0hPTDRDNzR1YkFPNGRCZm4xUXZndzJEbEY4NDRnbHdHQkZrbmNkckRGV0FtRF9KQ2R5MURXNQ?oc=5",
+          "date": "2026-11-02",
+          "source": "Yahoo Finance",
+          "ko": "인텔 주가 급락 속에서도 매수 회피하는 이유"
+        },
+        {
+          "title": "Intel stock price prediction: Downward momentum persists as volatility stays elevated",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPWUxwNGk0QlluOG5mb2NzQmFYRng0a3BYYnRCenR1YlJQTGNQVmJTQnVzdl9tOG41WHVqUlNLYUotSlkxbWE1WTEyNC1JWE9hN3p5V1U2OTREWXRRSE90bXFlaVNodWZZZ2cyTHZjeWFsYmlISHI3ZTRJX3lFZjZqR2J0RU12enN0czhfc21Faw?oc=5",
+          "date": "2026-11-02",
+          "source": "Traders Union",
+          "ko": "인텔 주가 하락 추세 지속, 변동성 확대"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$398.63",
+      "change": "-7.50",
+      "changePct": "-1.85%",
+      "up": false,
+      "news": [
+        {
+          "title": "What's Going on With Taiwan Semiconductor Stock on Monday?",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNUFNpQ2hNdDBaMmtieTBRSU9SU2lsanJHanU1U3VOMlIxM0prTnhscVpNX0c5Q1BsRDdWUS1ZRXZndFZXTXlHb3hxY2VpOHdhTW80VC1jbi1NQnplTF9EUl9Bd1FDd1NtQUFuOFNJdTRfZTA4bUY3a2FrQ0ZJY3Z3R1JFY3M1Nl9FMDR2R0FuUUs2M2FfQTZVaXdhSkxXNnZ2ZGljc1EzcmlUYXZuaDllVw?oc=5",
+          "date": "2026-11-02",
+          "source": "Benzinga",
+          "ko": "TSMC 월요일 주가 변동 원인 분석"
+        },
+        {
+          "title": "Taiwan Semiconductor Shares Plunge NT$40 in a Single Day; Analyst Calls It a \"Mistaken Selloff,\" Sees Rebound by Tomorrow at the Latest",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFA4RTRqVnZNNGpSQzhYVFpSeWV4WC1RdVB1WE1mcDljR1lwV09JaENMOEFxV1l5bU85Tkp6T0Y0MUQtSWlfS05UM3ZCckJUVU9HNGdHbk52bGlOZWZlYjFlY05hdFlXWElhSUdyUGN5RUswSmFkRnc?oc=5",
+          "date": "2026-11-02",
+          "source": "BigGo Finance",
+          "ko": "TSMC 대폭 하락 후 애널리스트, 과도한 매도라며 회복 전망"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$833.59",
+      "change": "-51.15",
+      "changePct": "-5.78%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Falls 4% as Kioxia's Cautious Outlook Hits Memory Stocks; Western Digital Drops 5%, SanDisk Slides 3%",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQd24xZ3lROHBoV1M2WWN3VmlMUjNjZ1ZfZnNNNGFmWnhZZ2d5Qnl4TjZMd3FPSm44N0VIRFhVM2s2RkNpVmdvMWJYeUZnRWR5YWhIdmtKdUpiQndZV19vaFlFRU1hZ1FfTk9GRzJ4M3lXLVJHclZ0cmpzYW9CbkJvb1BYNGNDYmpJTkJhWkRmMklmN3EtM2ZYc2V2bzEzdGZCVTJtZmVvVVk1SjhTQUQtNzZ2MDlQaXQ3T3NSaVBjQ0FCRm53Mkc3UEtzOGNWaUc2XzhVb0NNS3Ryc1JsZkVN?oc=5",
+          "date": "2026-11-02",
+          "source": "24/7 Wall St.",
+          "ko": "기오시아의 신중한 전망으로 메모리 칩 관련주 동반 하락"
+        },
+        {
+          "title": "A Year Ago, Citi Said Buy Micron. It's Up More Than 500%. Here's Where We See the Stock Going.",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSFp6Y1hYcHhnZW1WV0NPa3p6QUUwNkxWR29wQjdLVW1TVEg2UWZPOTRNekEwQm5Xcmt4MnRsUlNfOFhMY0k1WEpVMEhRb1Y1Z01zSWFqamt3ZG1FZ013d0hvRzlWSlRVSmxMN1JRdmZlY1pOcjhuQk1zaEhTNUI0Tmk0X1cydl9UbWRKMUV4a0VqWFF4WjUwU2ZOYjhnSFFucnFpdktqaENjOGg2LXFyRkJTVzBfTU9DdzVQUEJhY3NSaTR2THJIcjNKbw?oc=5",
+          "date": "2026-11-02",
+          "source": "24/7 Wall St.",
+          "ko": "마이크론 1년간 500% 이상 상승 후 향후 전망"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$147.71",
+      "change": "-1.50",
+      "changePct": "-1.01%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$178.34",
+      "change": "-5.77",
+      "changePct": "-3.13%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir Stock Tumbles Even as Earnings Get Big Boost From U.S. Customers",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBmaHVqdkxNZVdKWERyTmp6U1VTRHdub05tMHZSRHlrd0MwajF1aDdWeW5YT2JHMXpSeTR5a3RXcG1PeUQ4S244U2xLT1NYTlRaajVDb0RGN1FlTjJINk1QQmdrRzFRMVhpa2ZuNU1PbTR5cWVtcGVtVlIybw?oc=5",
+          "date": "2026-11-02",
+          "source": "Barron's",
+          "ko": "팔란티어 실적 강세에도 주가 급락"
+        },
+        {
+          "title": "Palantir Earnings Top Views. Revenue Beat Slightly Smaller.",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNLUl1N2ctdGVDRFNCRkd2bWxCRVJNeC1QaUNCcXN4dFRNRC1ReGlkYUxNWnFtVVpNRHB0akxGLXRHSk1mRUdNMUloNHlTemQ4WlkyZEw0bDRTdmdxVG5iU3NOc3Z1a3JaMTlPb3oyd3dnQlFhcGNEOTUxbm04N2hlc2JDTE1iWVZuSWZxb3Qyd0ZMdVBraWVRZy11cy1zMGdBcERUN0ZtOA?oc=5",
+          "date": "2026-11-02",
+          "source": "Investor's Business Daily",
+          "ko": "팔란티어 실적 어닝서프라이즈, 수익 증가폭은 소폭"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic revenue growth slows, compute financing risks mount ahead of IPO",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPalN1b2NwcllWRkRjRUNmOVBjSDMxWDNzdjZIclhDNTdMMFlaVUx2eWN1U19acllfTk0xX0JIbkJma21jVDFhZUR1czFjbVdLbThjMHVQZ0F4MkFvNmc0cURPN05FMkE3VFNyMTktbmNzWVIxN3c1YVFhSXpBTmZSQk1DZ013aDVRcXE5OEplekFkZWFJbmQxUEhDSVJ3RVVrZWJUd2ZRYWRfWUJhMVMycEZRRk8?oc=5",
+      "date": "2026-11-02",
+      "source": "Reuters",
+      "ko": "앤트로픽 매출 성장 둔화, IPO 앞 컴퓨팅 자금 조달 리스크"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic warns that it’s very close to RSI capability, aka self-building AI",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPa0VUSzBwdmlqRHY0N1duclMzOVBhVk5FbjllcHNiX0ludVpmX25neDhaWlFLUmx4R21mY20wNjVOVE1uZUdDajNzNDNHdGkwY3BvYVpMOFI5cmF4TWRDaUppTmJrTE5NaHJPbmdkWWJEWGJPNmNyVl9ZUE1Lb1U5WV9PckEzd3RMZzhVMW53cHBSMHh2Y2VDU2tnY3BoMFpZczdObkp1VEV4ZXNfWUE?oc=5",
+      "date": "2026-11-02",
+      "source": "TechCrunch",
+      "ko": "앤트로픽, RSI(자가 개선 AI) 능력 임박 경고"
+    }
+  ],
+  "summary": "칩메이커와 AI 종목 약세로 나스닥 하락. 기술주 부진에도 유가 하락 호재로 다우지수는 상승.",
+  "generatedAt": "2026-11-03 11:59",
+  "date": "2026-11-03"
+}
