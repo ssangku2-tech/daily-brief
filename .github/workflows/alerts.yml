@@ -31,6 +31,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          # 실행 당시 커밋(github.sha)이 아니라 브랜치의 지금 끝을 받는다. 기본값대로면
+          # 지난 실행을 '다시 실행'했을 때 며칠 전 트리 위에서 생성·커밋하게 되고,
+          # 그 사이 쌓인 커밋과 index.json·push/state.json 이 충돌해 rebase 가 멈춘다
+          # (2026-11-04, 11-03 실행 재실행에서 실제로 났다).
+          ref: ${{ github.ref }}
 
       - name: Setup Node
         uses: actions/setup-node@v5
