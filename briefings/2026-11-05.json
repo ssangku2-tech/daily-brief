@@ -1,0 +1,157 @@
+{
+  "sessionDate": "2026-11-04",
+  "sessionDateLabel": "2026년 11월 4일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,688.62",
+      "changePct": "+1.58%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,736.51",
+      "changePct": "+1.44%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "53,356.12",
+      "changePct": "+3.03%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall Street ends higher after Democrats win Congress; data center stocks tumble",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbWpBY1VHMFd5a2tJXzM1RFFFQTl5Y09aVDgza095UkJKVzNnQ3F4VW1pMzBEazJKMGhlS21zUEdCLXJPOVhWdXRnZmlLRHliMDdqYmt2b2ZWYk5FeW85VnBSalpRd1E5b3BVSUZDU2VLMUNiQm41YWw1SUgxV2dWaUFZUkI2MllhY0Z5ZkZHcWNuQmdCaHBKbVRhck1meTRz?oc=5",
+      "date": "2026-11-04",
+      "source": "Reuters",
+      "ko": "민주당 의회 장악에 시장 상승했으나 데이터센터 관련 반도체주는 하락."
+    },
+    {
+      "title": "Stocks and Bonds Rise, Dollar Slides After US Vote: Markets Wrap",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPLVc2azZiNTdEZEJUM0RFOERmNk1QaTRQOGdkbE5EOUM5YVE5M2pqVTFkYmJsTC13MnpKaVRSd2ZLYmowSlhpOE5VcjdJNnJleWZsTDJ2SGN2b3JTOE9pdkZLMmdCblZhSE5ucGoyd2k2SEJwOFpVZVp1aWk1aWJYSHdvQ3VTMGtGa3FXa3NYUWxiWEsz?oc=5",
+      "date": "2026-11-04",
+      "source": "Bloomberg.com",
+      "ko": "미국 선거 결과 이후 주식·채권 상승, 달러는 하락했다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$200.13",
+      "change": "-6.56",
+      "changePct": "-3.17%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$488.78",
+      "change": "+4.88",
+      "changePct": "+1.01%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD Earnings: Strong Data Center Outlook Points to Upside for Stock",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdUdGaXRMT19sZ0xxbk1fVnV6Qlg2MUNPRndSWmJwU2o2ZThDczhEd2gzZi1XSHpMOWt1NEU5eENBTWJLM0dweTNDUERJR01HdVB4WWx3WUNiSnNkQ05UYkxXVWwtSjhMejF0WEowdXN4U3I3cDJsSl9yUkZDcThBTWJUNFlaZ2RSRUNlajZZMjlvVDVWOHFLMW10UXdId3QwckdxQ2p3?oc=5",
+          "date": "2026-11-04",
+          "source": "Morningstar",
+          "ko": "AMD 데이터센터 매출이 전년 대비 107% 증가하면서 강세를 보였다."
+        },
+        {
+          "title": "Advanced Micro Devices (AMD): AI Data Center Sales Jump 107% as Helios Racks Roll Out",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPR2pidFhaWmRFZ2Y3Nzg3SFB1YUIxRExMcFY1Z1RTc0NDOWVMUGh5MHBrb2xNNnd6bVBNSlRMNXE3YlpaeUtfMkZ2c2NNT1E5b0lsaVZHaml1RjdyQ3k3bnJ5SElZYmRJNEhqU2hhaUsydWVvNUVrdzhwTTlxT2pVSzFmMUlyakFDWDNSYU9Od2FDQWJlUnJsZA?oc=5",
+          "date": "2026-11-04",
+          "source": "Yahoo Finance",
+          "ko": "AMD AI 데이터센터 판매가 급증하고 Helios 서버 출하가 확대되고 있다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$58.27",
+      "change": "-2.28",
+      "changePct": "-3.77%",
+      "up": false,
+      "news": [
+        {
+          "title": "INTC Stock Dips Even After CEO Lip-Bu Tan Buys $9.7M Worth Of Intel Shares",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ0NKVDl6cDU0RXFoT2dROF9HRUxFLWZMLWVXSHpaazI3NGRpcXJwd3RWeHVqbUNNZTNueGZhSExZeGRUTXpHRGl4U01UaERXTXYwMUZIMEtoSVJfSnhpekg5TDVobjNXSDdEakJsTHktNm9uMXFXZDBFcjNSclA2WUZrdW1Od2tPeFFuUEhWX1JVVzQ?oc=5",
+          "date": "2026-11-04",
+          "source": "Yahoo Finance",
+          "ko": "인텔 CEO가 약 1000만 달러어치 주식을 매수했음에도 주가는 하락했다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$395.75",
+      "change": "-9.05",
+      "changePct": "-2.24%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$795.23",
+      "change": "-59.87",
+      "changePct": "-7.00%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Micron Stock Is Falling Today",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPQ0M3UkVsOVdFak9oUmRLdzczQ1hlTXJrU2xqU3ZReXJjeHZkUlJpaG4wVXozMTZ6ZWZrd3pRaFRDRnl4YTZYOXdyNVdDYTJfN0IxMFJXRUJSak1WUjFWWGxWV05tRnc3QzJUSHFSZU42a1NFWEJUelpka1ZIWlljSmtn?oc=5",
+          "date": "2026-11-04",
+          "source": "The Motley Fool",
+          "ko": "마이크론이 메모리 가격 약세와 정치 상황 변화로 인한 불확실성에 매도당했다."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$143.07",
+      "change": "-7.72",
+      "changePct": "-5.12%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$171.70",
+      "change": "-3.70",
+      "changePct": "-2.11%",
+      "up": false,
+      "news": [
+        {
+          "title": "PLTR Slides More Despite Strong Results And Forecast — Cathie Wood’s ARK Buys The Dip As Analysts Raise Price Targets",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWmtJUS1hb0pxV2ZiTDdzbXlwOFlGOFhzRXRnRzQwZXZib0hIWkRHVV9USDlpaEZpQUljWnBGMEwzQmxrUWlpM1FxRktzcDBEWlkwVVVJNXVQSXBhcERpMWhELUNPclhJejcwREZYZnhIQkI4cXU2eUZsY1lnc0VGbFZNRTlic1FiTWNlNE5XMlVNU1ZMRTljV3FVZWI?oc=5",
+          "date": "2026-11-04",
+          "source": "Yahoo Finance",
+          "ko": "팔란티어가 강한 실적과 전망에도 불구하고 계속 하락하자 아크 인베스트가 매수했다."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Dario Amodei wants 'a country of geniuses in a data center.' Realizing that vision requires risky financial mechanics, Anthropic's IPO filing shows",
+      "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNbFFMNDA5anVlblVzc3RXbklSOWFsZnpmQjdDU2lCY0lJMGJCYWQ5bTl0RmFRRU9uOUVKTjhVYjdWWGJLYXhLNzIzeGU0VndaanRKbzkxaTVZWkRfbHpSaDhMSnZvbjIyYU1MMl9XRXpobGNYRzBQTlRPRDYxWEo3QXluWTlOb2lNMURkSHN5LU9xVk9IamJORk5rd2hkU2puMFJIbG9JdmhMQUcwN29YSC1VWHN4bGZGQU5hUDJpZ1RNUGlaQlVNSkJ1ZlRzd3BRX3JvRll2TXRUdWVoR2owOXpLSWpzQ0VYcG1RSmRfemFjVU03aFBUdVdDSmQ2YVUzVTQtVkp3?oc=5",
+      "date": "2026-11-04",
+      "source": "Fortune",
+      "ko": "앤트로픽이 IPO 신청서에서 데이터센터 프로젝트 자금 조달의 위험성을 공시했다."
+    }
+  ],
+  "summary": "민주당 의회 장악에 투자자들이 긍정 반응했지만, 반도체 약세로 나스닥 상승폭이 제한됐다.",
+  "generatedAt": "2026-11-05 10:40",
+  "date": "2026-11-05"
+}
