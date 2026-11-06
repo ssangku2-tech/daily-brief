@@ -1,66 +1,21 @@
 {
-  "at": "2026-11-05T20:28:25.869Z",
+  "at": "2026-11-06T01:04:06.199Z",
   "threshold": 7,
   "items": [
     {
-      "symbol": "NVDA",
-      "name": "엔비디아",
-      "pct": -8.34
+      "symbol": "466920.KS",
+      "name": "Sol 조선 TOP3플러스",
+      "pct": -7.25
     },
     {
-      "symbol": "AMD",
-      "name": "AMD",
-      "pct": -15.05
+      "symbol": "005380.KS",
+      "name": "현대차",
+      "pct": -8.35
     },
     {
-      "symbol": "INTC",
-      "name": "인텔",
-      "pct": -7.84
-    },
-    {
-      "symbol": "TSM",
-      "name": "TSMC",
-      "pct": -9.47
-    },
-    {
-      "symbol": "MU",
-      "name": "마이크론",
-      "pct": -14.71
-    },
-    {
-      "symbol": "SKHY",
-      "name": "SK하이닉스",
-      "pct": -11
-    },
-    {
-      "symbol": "PLTR",
-      "name": "팔란티어",
-      "pct": -9.56
-    },
-    {
-      "symbol": "493330.KQ",
-      "name": "지에프아이",
-      "pct": -10.67
-    },
-    {
-      "symbol": "032790.KQ",
-      "name": "엠젠솔루션",
-      "pct": -7.14
-    },
-    {
-      "symbol": "272210.KS",
-      "name": "한화시스템",
-      "pct": -13.62
-    },
-    {
-      "symbol": "009150.KS",
-      "name": "삼성전기",
-      "pct": -14.8
-    },
-    {
-      "symbol": "SPCX",
-      "name": "스페이스X",
-      "pct": -7.84
+      "symbol": "329180.KS",
+      "name": "HD현대중공업",
+      "pct": -7.56
     }
   ]
 }
