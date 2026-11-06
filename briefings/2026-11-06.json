@@ -1,0 +1,194 @@
+{
+  "sessionDate": "2026-11-05",
+  "sessionDateLabel": "2026년 11월 5일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,353.73",
+      "changePct": "-4.36%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "24,315.00",
+      "changePct": "-5.52%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,523.06",
+      "changePct": "-3.44%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Nasdaq posts biggest daily drop in 19 months on fears of AI regulations",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxObTdYYmZaZmRqRUt0TDhBbERraDF2VlpSTDJ4M1NyZ2dRRkNUUVJ0OVFHdzJyc01uNDZOV2YzZFprbU90aUNzTEtYTEdNWU5Jc19VVVlHc24tNkZ2VFhqOWg3b0swVDFnY2hHaGxuNVZXVkE5S09xZXV2eGRQb1kwdWFEZWxpeGMybDZRcGtyWW52Q1JfaHY4MVo1YmJfRW9KZmNsdVJqS24zeGRZVUpaV3VB?oc=5",
+      "date": "2026-11-05",
+      "source": "Reuters",
+      "ko": "나스닥이 19개월 만에 최대 낙폭. AI 규제 우려가 주요 원인."
+    },
+    {
+      "title": "S&P 500 drops 4.4% in worst day since 2025 as AI chips slide",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQOTM2Tks5S19JTGxQd0ZDQV9wS0pSNnNaRC1OMUtmTWR6NFZmY0ttWTVBdThjbFJVbjdNdFJHbnVNU213eHgtSnUwNERBUFd2X3ZSSUpLRmtyUkszNUlEUlhuNDhxaU44Q21qVnJKM1dtRWgwS2d1NWJ0eEc5Wm9kbEJhTzliY1FfYnd5Q2loVGZOdw?oc=5",
+      "date": "2026-11-05",
+      "source": "Spectrum News",
+      "ko": "S&P 500이 2025년 4월 이후 최악의 하락률 기록. AI칩 투매로."
+    },
+    {
+      "title": "Massive tech sell-off wipes $2.5 trillion from the stock market",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBRNUYxQ2c5VUJvNkd2RExjdVJ1YU5UNmpYYzh2dzgzT2FOZFFaNmlpd0ZUSVViTzZkRG91RmRad3MxNXdncmt4aFFuR2U5di11dmlYSG9hODllU2RNZXFTUHR1UlhpYzhESlpfMS15OVdETTNP?oc=5",
+      "date": "2026-11-05",
+      "source": "CNN",
+      "ko": "기술주 대량 매도로 2조5000억 달러의 시가총액 증발."
+    },
+    {
+      "title": "Stock Market Today: Nasdaq Slammed By Big Tech Sell-Off; Nvidia Hits Bear Territory",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNbWxmSXZZZ3ZDSUdqS21kaTIzNmhjeW5qSjVSSFdHOE5kdW1uaFVMbXBSTFN4czlYOWFGSmx2UjZ0ZVpLbmZ5LUtUU3NkZWpQX04zOXZWZ2E3SG4tdVowenp6ZUhMTTZNZUhfS3VCQ2xiUmU5cWRfbTZyOU9DbWRIdVJBOVBSZV9CN0ZwS1dKVGtaQzhFamVmZDBBWXNOcEFaVXlnUlI0RlZYMG9ObWd4dUp3?oc=5",
+      "date": "2026-11-05",
+      "source": "Investor's Business Daily",
+      "ko": "엔비디아가 약세장(베어 마켓) 진입. 나스닥이 기술주 투매로 강타당함."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$181.60",
+      "change": "-18.53",
+      "changePct": "-9.26%",
+      "up": false,
+      "news": [
+        {
+          "title": "What Is Going On With Nvidia Stock on Thursday?",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQeWQzWjJ3QVVxa3M5eGtQemMyZm51aFZ4bXVmZGhiOXlfN0VtR2tWSmhsd0lsUjRjdW9lTW9vczQzd3ZSNFFqTHBwMjlSUnJGOGxUcElGRW1xbzFNRDZxNk1kcURqMUJBVkpqZ2xUSUEwSC1adVZDaFkzclB5RzJXczN5OGZJQ0paM3FzTEMtM2thcVl1c3ZRNzRXRFM3Tm5hYlBPOUF2eHNibVE?oc=5",
+          "date": "2026-11-05",
+          "source": "Benzinga",
+          "ko": "엔비디아 주가가 목요일 200달러대로 하락한 구체적 이유 분석."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$404.40",
+      "change": "-84.38",
+      "changePct": "-17.26%",
+      "up": false,
+      "news": [
+        {
+          "title": "AI Stocks Crater as Citi Research Flags New Data Center Risk - Advanced Micro Devices (NASDAQ:AMD), Micro",
+          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRkV2Q0JEVWZCanEzeGZEVUlScFB2eVl5Qjk3anBUSWRGZ0RCYjNfdC1iU0t3OVNsbk84WXByVWRPcmx0ZXFFdE1udGNEVGZXS1RfUlBZU0xDX2dOU2VDVUVsaHRsWTd2aHRXTWtHYzRTckVxSUFzM2V1b3VHUEItRld4aFpldUQ4ZDN0bnhjTjVzeHFIOXhQRTM0NUFpRmJiYmd2QVRsVFBKNVQ1c1Z5Q2tQcGxIQUkwU1M0SGlnV1ZYVXVRVWswb2ZLMktNa25BU0EtYnFGNk92TXRDRnhLQnhpeVFUeFU?oc=5",
+          "date": "2026-11-05",
+          "source": "Benzinga",
+          "ko": "씨티 리서치가 데이터센터 신규 위험요인 제시하며 AI주 급락 촉발."
+        },
+        {
+          "title": "Advanced Micro Devices vs. Taiwan Semiconductor Manufacturing: The AI Sell-Off Is Exposing a Critical Difference Investors Shouldn't Ignore for 2027",
+          "link": "https://news.google.com/rss/articles/CBMipgJBVV95cUxPc3B3bFh1MUd0MGdPVUxMaUpoQ200MmtGZU0tOGYtZ2xWbGpJWC1XTU1odkJhRWV4WDdKMmh6a1lfYnpMU3lMbnRaaDNxYVJETWFURnZoMjlsbk5VSFBjeUFUbkxndkY1YkJpT3dOT1VWTi11MTFGcWUtRTFqRFBvWFhjaTN5YVhQTW5kMzdqX0NESFc0ZTJXMVRFa2lDM3A1WnZ6VnRYamIzZHVmVjFUUDBuc1EtcDYxUmN5OVZIOEIyWXk2bFF0SVRDWVNRZERmVVp4MWlJQlZiNzllSDBDVVZuUUFoMGFhRTI5ZmtpSXF0YjZ2WDYwRW83Ym9SZ05PSkZyVHNnUXNVbWE0OEVVWjFfd3Y1bVh3Vk44SlFLczlDTHFpQlE?oc=5",
+          "date": "2026-11-05",
+          "source": "The Motley Fool",
+          "ko": "AMD와 TSMC를 비교하며 AI 침체에서 기업의 차별성이 2027년 기회를 결정할 것으로 예측."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$52.25",
+      "change": "-6.02",
+      "changePct": "-10.33%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$353.10",
+      "change": "-42.65",
+      "changePct": "-10.78%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why is Taiwan Semiconductor Manufacturing stock plunging today?",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa2Y3R2l3ZndBcXdDSERRaDNUNVJOc2ZyTkZhUE1uUmFfczNmZUpUMDVuY1JOSEtSdWZSdG51MmJFbWMzNGFOVktFdHpYTnFYUWJyeGUyUWk3SUxBWEtuWnFsb0FVUXBaeGxVZVJSdnROeUpNNW9CUHJNNm9zVnoyNm1Zb2tFRjBTaVEwVWdCdHI2SWlLUDhjZEFpblFSM2Y1VEd0aGRPT3pCYmxWd3U4WHNQT2JBTDBSOGlSRW9SR21Edw?oc=5",
+          "date": "2026-11-05",
+          "source": "Investing.com",
+          "ko": "TSMC 주가 급락의 직접적 원인과 배경."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$656.39",
+      "change": "-138.84",
+      "changePct": "-17.46%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Stock Plunges As Memory-Chip Shortages Cause Ripple Effects",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPX0lGaFVmall4RXFtb05Ud0FrYk4wdVVPZ1pMaURhckZhZE41VktXclRSV2FNZW1uLVFfQUNITTFIZ25WNkFSX3ZzQzJMOFBEUUE1YV9Qc3A2Q0E4SGwzZkZ5LV9BcnRHdzQwbF9SSUlscUxlQ1RmVGpiRE56VXJxSVpUUV9Ud3BzVjcxUTFR?oc=5",
+          "date": "2026-11-05",
+          "source": "Investor's Business Daily",
+          "ko": "마이크론 주가가 메모리칩 부족 파급효과로 급락."
+        },
+        {
+          "title": "Micron Stock Gets Crushed by AI Selloff. Don’t Ignore the $200 Billion Silver Lining.",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE15TVY0YUJZQXZIYUpKcWRPci1VWGZlbFRXT3pmNkJUcF9MbVFtUWdhdnNnRDRGU1ktWXZ5SExlRjViYkpZSGtrTEtadE1TdDJjWk51eDV5eE1lMi03bTFxb0YxdFIteEU5OWFyZ0s4cnlrTTA?oc=5",
+          "date": "2026-11-05",
+          "source": "Barron's",
+          "ko": "마이크론이 AI 투매에 시달리지만 2000억 달러 규모의 긍정 요인 존재."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$123.90",
+      "change": "-19.17",
+      "changePct": "-13.40%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$154.99",
+      "change": "-16.71",
+      "changePct": "-9.73%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "3 takeaways from the big AI report on Anthropic everyone is talking about",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRVU2aDNKNTRhU3NLcmJXR3pnTkVKT1UxR0JJcXUtWDdPU0FlSEhZUkNHLU8zYlNQOURaeWxwRWw3TWRIb1M5QmJxWTJhWS1aSW9Kc2szSUFsV1hKOHFrUVZuMmVhWGFDVXpubEdicjQ3TC1PejNqOXY1LWhyT0htMGJoZW9rLTFYUUt1TFBYYTlyT2Ffc3VLYnAxZzF6SjMwXzRHOWJUc0x6aUVoRTdKMlREY2IweFk?oc=5",
+      "date": "2026-11-05",
+      "source": "Business Insider",
+      "ko": "앤트로픽이 10월 AI R&D 가속화 평가 보고서 발표로 업계 주목."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic is rapidly accelerating AI development amid call to slowdown, group says",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNWlBDY1FLZFpqMUZCMUhoei01dVBWTl9fM1IyME9qOFFhNGhUc2Vmd3pINm1aTnE0WEc2SkExTXpFYmtSZ05QQnJYVjdNLVBHRURsSVJBajRMN1V1X2c5QnYtb0VhMDZaZjgzYkFGUloybG1zM3UwUm1fMUh5ZFExWDZaMFowNTA?oc=5",
+      "date": "2026-11-05",
+      "source": "The Independent",
+      "ko": "앤트로픽이 AI 감속 요구 속에서 개발 속도를 오히려 높이고 있다는 지적."
+    },
+    {
+      "company": "Anthropic",
+      "title": "EXCLUSIVE: AI backlash could threaten Anthropic IPO timing, potential investors say",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNGVmWktzeU5zbmRiaDdiZ2pxbEJhRk94VGN2V1lxUmpTNTFFNjhLR0puTjROeHE4UENDYjQ3OEFNbHdralNNdVJ2ZThsMldHZFlrcDZ1U21BTS1aeHU1aGNUNWRnTHc2SU5DVUktREt0Q3hzUkNhN1VJNDZYR3JLdjhwZUlaQjZCSl9Oa1dfT0d2dUotaWhDMkgxU1RBdVJOSEMwMzJsd0M3TmIyTGZ2WFZpVQ?oc=5",
+      "date": "2026-11-05",
+      "source": "Reuters",
+      "ko": "앤트로픽의 공격적 AI 개발로 인해 잠재 투자자들이 IPO 시점을 재검토 중."
+    }
+  ],
+  "summary": "AI 규제 우려와 데이터센터 위험 신호로 반도체·AI 주가 일제히 급락하며 시장 약세.",
+  "generatedAt": "2026-11-06 10:42",
+  "date": "2026-11-06"
+}
