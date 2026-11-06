@@ -1,21 +1,21 @@
 {
-  "at": "2026-11-06T01:04:06.199Z",
+  "at": "2026-11-06T19:50:50.847Z",
   "threshold": 7,
   "items": [
     {
-      "symbol": "466920.KS",
-      "name": "Sol 조선 TOP3플러스",
-      "pct": -7.25
+      "symbol": "AMD",
+      "name": "AMD",
+      "pct": 10.27
     },
     {
-      "symbol": "005380.KS",
-      "name": "현대차",
-      "pct": -8.35
+      "symbol": "INTC",
+      "name": "인텔",
+      "pct": 8.52
     },
     {
-      "symbol": "329180.KS",
-      "name": "HD현대중공업",
-      "pct": -7.56
+      "symbol": "SPCX",
+      "name": "스페이스X",
+      "pct": 8.91
     }
   ]
 }
