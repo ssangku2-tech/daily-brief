@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08 09:10",
+  "events": [
+    {
+      "title": "마쓰야마 \n5일 07:00~08:35\n8일 09:35~11:20",
+      "start": "2026-11-05T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "남",
+      "start": "2026-11-08T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1029,
+  "importantMails": [
+    {
+      "from": "Anthropic",
+      "subject": "Your Claude API credit balance is low",
+      "summary": "Claude API 크레딧 잔액이 부족하다는 알림"
+    },
+    {
+      "from": "Google Play",
+      "subject": "Google Play 주문 영수증(2026. 11. 5.)",
+      "summary": "Google Play 앱 구매에 대한 주문 영수증"
+    }
+  ]
+}
