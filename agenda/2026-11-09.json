@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-09",
+  "generatedAt": "2026-11-09 09:30",
+  "events": [
+    {
+      "title": "송,김",
+      "start": "2026-11-10T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1036,
+  "importantMails": [
+    {
+      "from": "Anthropic <no-reply-C9RNCIgdR7BECvz9skgobg@mail.anthropic.com>",
+      "subject": "Your Claude API credit balance is low",
+      "summary": "Claude API 크레딧 잔액이 부족합니다."
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 알림입니다."
+    },
+    {
+      "from": "Google Play <googleplay-noreply@google.com>",
+      "subject": "Google Play 주문 영수증(2026. 11. 5.)",
+      "summary": "Google Play 구매 영수증입니다."
+    }
+  ]
+}
