@@ -1,0 +1,173 @@
+{
+  "sessionDate": "2026-11-06",
+  "sessionDateLabel": "2026년 11월 6일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,376.86",
+      "changePct": "+0.31%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "24,579.42",
+      "changePct": "+1.09%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "51,285.73",
+      "changePct": "-0.46%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "What sparked the stock market’s $2.5 trillion sell-off?",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9OcXdBaTNkOC12M0RnS0lGQ3ViaU8tYm5ibHljZjVFWUFKdTI3LWxHY0w2bk0ycnduQWZrTFRTQnZZd3NGRTY5ejJtamRaYUpPenVFQUFxWGprMmZRMklaNVE2ZVBqWFhYMUVCX2ZwRjA?oc=5",
+      "date": "2026-11-06",
+      "source": "CNN",
+      "ko": "지난주 증시에서 2조 5000억 달러 규모의 낙폭이 발생한 원인 분석."
+    },
+    {
+      "title": "US MARKETS CALL: S&P 500 Valuation Dives As Earnings Soar",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPME5WNUlORDdUS1ZYX0o3Wm04VHkzVEJsZDFJZ18tV2lvZm9sdlZRR3BMMjZsR2JqTjlfRnlXY2x0YXgyeUJUYkpYOFdPNDJ0MkNBWm9vMGhBTGNoTUR2Zm5OVnkzNlBycktVZjNXTzk2MjBEZlFPOHhLSlBORFUwczcxR1VGMEpVS2tXdElxWXptNk02M1E?oc=5",
+      "date": "2026-11-08",
+      "source": "Yardeni QuickTakes",
+      "ko": "S&P 500 밸류에이션이 급락하는 가운데 기업 실적은 계속 증가 중."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$186.64",
+      "change": "+5.04",
+      "changePct": "+2.78%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Nvidia at 13 Times Expected Earnings Still Isn’t Cheap",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSEhJbGo5Z213RFlZOGstMFRLUW52OVk0NmF1NVl6TlJVbHlzay0tZm4zLVIySnNnSjM2SFduV2psMzk2M1YxVEtSWmpyZ3JCcVQ5MXZFX2ZrdlJkM0t0UDc2a1JvMi03R2xpbVJTeU9PcG5jNTlWVUR3Zi1YVlF6dXhDa2wzM0lOazh5anRyRmlJaTBodFcxUA?oc=5",
+          "date": "2026-11-08",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아가 예상 실적의 13배로 평가받고 있으며 여전히 비싼 상태 유지."
+        },
+        {
+          "title": "Asian stocks face new pressure as Nvidia spy probe rattles tech sector (NVDA:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOcEFxSEFid1djemktcFlja1EyNW5PZkl5cHd1d1VySUdtWEF1bGFXdk5SSzIyd2x3bTEyX1A0REZ3YXNxNldtNjlLN3VwcHBMbVl2bjNIQ3FBd1RkNlF5a3pRaXllSFA5OWRCb2k1MG40VGh5THo0RGp3WVp5Z0tBMzdEaC1jSzZQTUlsblRnVjdmUHNWdmJwd0NJWmNycndNQjdkNUp3SnItcUV1?oc=5",
+          "date": "2026-11-08",
+          "source": "Seeking Alpha",
+          "ko": "젠슨 황 CEO 의혹 수사가 아시아 반도체 주 전반에 새로운 약세 압력으로 작용."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$449.04",
+      "change": "+44.64",
+      "changePct": "+11.04%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$56.28",
+      "change": "+4.03",
+      "changePct": "+7.71%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel: The Sell-Off Has Done Most Of The Work",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZk85ZDBaNkNROVpXV2xpV0FCY0VZYjdadDV5eW52TklzTmd6dG1oM0Ntbk1ZY2IwYXB5eWIxU2ZPekZ4cnZvdC1hcV9uampTMXZqTDU0Y09rRHl1Z1RtWnRfbmJlX0FRTzhrOF9GVjZzUjN3aEV4X0dTTW1VM2dtc3FkVEJKUzUwczZ4S3l3?oc=5",
+          "date": "2026-11-08",
+          "source": "Seeking Alpha",
+          "ko": "인텔 주가 급락 이후 약세 추세가 대부분 반영된 상태로 평가."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$375.44",
+      "change": "+22.34",
+      "changePct": "+6.33%",
+      "up": true,
+      "news": [
+        {
+          "title": "TSMC considers making advanced memory chips, The Information reports",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPR3VDQTJfT19xV0p2UGZRSUVERlJKVE8xb0VENzVOMEM2UjhPd0ZUM1JISzRGbjJ5aEs0TmZnLVZVQVZlTUZyTEhfUnRJaFJyNmxwbFRhcXdHTExjQURvckJ3bUtTTUtYMmlzektZbGRQemdVMDFrNDhsMUtMdjMzREpIbm90ZjkwNWYyR3lyY2p6RW51cGNvc2czWEo2ampYSVhBaW5ZQm15TWQ0ZGFyOGFESlBEMzBKd2c?oc=5",
+          "date": "2026-11-06",
+          "source": "Reuters",
+          "ko": "TSMC가 파운드리 사업 외에 첨단 메모리칩 제조 진출을 검토 중."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$690.00",
+      "change": "+33.61",
+      "changePct": "+5.12%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron: Market Mistook A Slowdown For A Total Collapse (NASDAQ:MU)",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQRUNlUS1HX0EyN3lLVE9oNldoUU40UlZaSHgxbGRQNm5aVjBtNERjc1E2dmR5NDI0VnhGLXFoYlp1VVNXa2J2WllQTkp6eXVWUFJ0dEhkeFdMZ2pNTmRDbTAyMTdkalJXMVR1bUp2WnJHd0NBNVhBT0daN0N0UzIwQkZjVklUZUxvdG1tZUZOODF0TkFCenBZbzNB?oc=5",
+          "date": "2026-11-07",
+          "source": "Seeking Alpha",
+          "ko": "마이크론 시장이 경기 둔화를 완전한 붕괴로 잘못 해석한 측면 지적."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$127.34",
+      "change": "+3.44",
+      "changePct": "+2.78%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$160.38",
+      "change": "+5.39",
+      "changePct": "+3.48%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir’s business beyond government just got a lot bigger",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxObkxiWGxOTHBmdHhLTU9XWkxHbktzdkFWVVRfV1hZQUUwYm05d1lCR3RqVEtXMzdSaE0zNFczODFXRXF5Vm5Hb2ExdFdSQ0VQX0Q1M3RxNjF0TnhQVURVRFJZV0RveFV3VXh3UGN1NURGZ1NaTEE3UnZwT2dVNFFYaFVBZG4zTk9TWG83VkZJQVNGbWF5eEJUTTRGcHRBNnBnQmNr?oc=5",
+          "date": "2026-11-08",
+          "source": "TheStreet",
+          "ko": "팔란티어의 정부 외 사업 부문이 최근 급속히 확대되는 중."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic secures $3.4 billion generator deal for AI data centers, FT reports",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPS3dmWWtwZTJMS0pBRzdvYVVabzBjUHNzQnlWVlF0T3B6U1JrZVhZSG9NZDRCaVlkQ1JvS1p1ZDR1bjVrRUdwMkVxX2NIN3MzbGpsZ2NPQ1RYSFJWRTNwM2J5akxsaWd0RXZ3RVpGTlN6TEFFalRERVRhYWE5d3lxOXBlcw?oc=5",
+      "date": "2026-11-08",
+      "source": "CNBC",
+      "ko": "앤트로픽이 AI 데이터센터용 34억 달러 규모 발전기 계약 체결."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Teaching AI to build scientific models",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1rLVltMFY0UFlmby1uSWtsdF9VZHpwWmNqUWZ3dFpTUDZKd2ZfZTVZRHl0aE5OdGxvLUt0OXc3WXZvLWdjSkNQZEpvSk9jNVJYUWlZZGpHZ0Q5Z2hQNFpDZ3JjZl9DUGROYXc0NWE4aWZfYnREX1ZMT3VGT3RaUQ?oc=5",
+      "date": "2026-11-06",
+      "source": "Anthropic",
+      "ko": "앤트로픽이 과학 모델 구축을 위한 AI 교육 기술 개발 진행."
+    }
+  ],
+  "summary": "반도체 주가 급락 후 반등하면서 나스닥이 상승. AI 관련 우려와 규제 논쟁이 시장을 양분.",
+  "generatedAt": "2026-11-09 10:07",
+  "date": "2026-11-09"
+}
