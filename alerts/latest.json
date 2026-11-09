@@ -1,21 +1,11 @@
 {
-  "at": "2026-11-09T04:55:05.380Z",
+  "at": "2026-11-09T22:52:16.237Z",
   "threshold": 7,
   "items": [
     {
       "symbol": "AMD",
       "name": "AMD",
-      "pct": 11.04
-    },
-    {
-      "symbol": "INTC",
-      "name": "인텔",
-      "pct": 7.71
-    },
-    {
-      "symbol": "SPCX",
-      "name": "스페이스X",
-      "pct": 8.62
+      "pct": 13.26
     }
   ]
 }
