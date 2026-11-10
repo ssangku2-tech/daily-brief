@@ -1,0 +1,155 @@
+{
+  "sessionDate": "2026-11-09",
+  "sessionDateLabel": "2026년 11월 9일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,549.94",
+      "changePct": "+2.35%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,253.14",
+      "changePct": "+2.74%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,389.75",
+      "changePct": "+2.15%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall Street forecasters say the worst of the stock sell-off is over and a new rally is about to kick off",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNjlBZzZKR1FlbzhBMDNTSkJsTkpMOWhqVEp4eUNyRWh0NkJHbERMVndPanMySlFCRjljZE1uTnJEUEtFYXZSekp3VkVkN1hnaF9DX2JBNERSMFViUElDLWNKcjZSaThVYUdnSWJrdzVLZGE0QUVOOUI0UlNtOWtNaExibTFTWW4xQ243RlBnSlItVUtPYlBISA?oc=5",
+      "date": "2026-11-09",
+      "source": "Business Insider",
+      "ko": "월스트리트 애널리스트들이 주가 하락장의 최악이 지났으며 새로운 랠리가 시작될 것으로 예측"
+    },
+    {
+      "title": "Wall St jumps as oil slide cools inflation worries; Nvidia slumps",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNldnOF8ybWVHdkNyWXAxOG1mSFRERGpWNlpaM2N6R1ctTUk1MDZEWlR4aEtWZ1RlT092T1NtaVBfbDRtWmItVi01TWpzV3BIdTRDUDJUblRwSkFSZDl6S0J1NE42bzE4bEsxVGMyeURKR3lTbmlYNTRLQnM2TmFCQ1JUZkJ1aFppVURGQjkxSk1PVWtCcEF1Sy12SlB5a3UyaW5lVkhkMWZtTktaclE?oc=5",
+      "date": "2026-11-09",
+      "source": "Reuters",
+      "ko": "유가 하락이 인플레 우려를 완화시키며 월가 상승을 주도"
+    },
+    {
+      "title": "Morgan Stanley says S&P 500 correction is nearing an end, with a likely year-end rally ahead",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9jZ3g2Tjg3c0w4bGZTcGRscDA5NTNNZHZaeWlYUGlHR1JEdWl2YWszZ0wzWEF0UGlZUlpkLXdVM2gwdHUyMG9rNHd0NWloMzZPaVdJeVJ5Qk5TdWRBSzBDTVgyaFBwWkRiY19oVmRKNzVXRFFrTlh5UFdxZw?oc=5",
+      "date": "2026-11-09",
+      "source": "Quartz",
+      "ko": "모건스탠리, S&P 500 조정국면이 끝나가며 연말 랠리 예상"
+    },
+    {
+      "title": "US stocks rally and recover most of last week's losses as oil prices swing lower",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPLUgzM2JNLTc3Ul9wTi16T1UxS2RUYmpNNDdRODBmWWVsNTY0bFdub1NjMVNia1g5WXZneFIya05RcUo4Qmh2cDJUN0ItQlQyMTBsRmlEYkJfYXdTbEc4Z1dHd054RkpBM1RmYkhOZ0xJUmp1N21mYm1aem9KdGl0ZWUzZWs?oc=5",
+      "date": "2026-11-09",
+      "source": "AOL.com",
+      "ko": "미국 주가가 유가 하락을 배경으로 지난주 낙폭의 대부분을 회복"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$178.67",
+      "change": "-7.97",
+      "changePct": "-4.27%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock sinks 5% as chipmaker investigates CEO Jensen Huang's relationship with alleged Chinese spy",
+          "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxObWVFY2cxQURmMnJ2aWFxSlRfeFJzeGJDOEhxbjVqUWVpMU96Mm4wcFNBVG5BaVdBZUIwYnN3WXNsWEZld000V1ZrMl9SR0pVZFB0a21rTUV1U3NJajhTUTN6bjBmVmtIQmhtRWxyV1dyemhvcDFrT1J5TmItcGJyVmt6VGY0VW9nZVBVZ2RIalNEOUhKRGRybVgtdzBPMkpzRTBicXpTaGw3c29vUXhiR21hVmVlWk10NzgySGJwbV9MSWpLeXVpT2hJT1FqU05XTXlZMGQwS285QlhudnBJdkhrMGlRbVJsX0h5alBn?oc=5",
+          "date": "2026-11-09",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아 CEO와 중국 스파이 의혹 논란으로 기업이 독립 조사 개시"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$508.58",
+      "change": "+59.54",
+      "changePct": "+13.26%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices soars 13% on Google Cloud deal, tech rally (AMD:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNbWlsWGwzaEFUQkppQnFleUFqeldtRmJNaVctS3luSE5XS0QyZUVPTi1rMkM2T29HMG9EWVBvTDB4cDN0dlpQX2JWZG9DdGl3blRuNEJJb1diS2k3bFlubzg5OWdqLTREZHgzWUl5eWtpQU55TFpaanJkS0Y1UG1tR1BQUmxzeDUwWHY1RWFUZlU0Z0RxMktwOS01cHBOTmRIcTdF?oc=5",
+          "date": "2026-11-09",
+          "source": "Seeking Alpha",
+          "ko": "AMD가 구글 클라우드와의 거래 체결 및 애널리스트 업그레이드로 13% 상승"
+        },
+        {
+          "title": "AMD Stock Rises On Google Cloud Deal, Wall Street Upgrade",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNc0pob1FQZVItVXBmSHRhb1kzQkg0T3ZaR1FlT3hqQ3NEUEpPUDZoN19qTHRHZ1R4UHN2dUI3MEg4OVRITGNxc3V3WjRNZTJpQndZbm1SY2J1Wm1SRGZWRVRkQm5HaGZhWlBhbG15dHdYaWc5cUdYZjN5QjBjWk5kVlhDZ0N6WlJzbEdfWUU3QU1FaFhraTVUNzBORFVhOVRG?oc=5",
+          "date": "2026-11-09",
+          "source": "Investor's Business Daily",
+          "ko": "AMD, 구글 클라우드 거래와 오펜하이머 상향평가로 주가 상승"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$59.37",
+      "change": "+3.09",
+      "changePct": "+5.49%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$388.62",
+      "change": "+13.18",
+      "changePct": "+3.51%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$733.15",
+      "change": "+43.15",
+      "changePct": "+6.25%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$134.38",
+      "change": "+7.04",
+      "changePct": "+5.53%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$169.20",
+      "change": "+8.82",
+      "changePct": "+5.50%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic IPO’s Moment of Truth Nears as Waiting Period Expires",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPR18tUkxpWXdHY2ltZ01ybEpIbWJYWHpmQmxkTWozQkxadVBFeGExUGJHZ3pCSXhNLThmTGJvTjNiU0h2bmZ3dEhmZjQ3ODliTks5Y1J2bDBLNGJ6WWo0aDFFOEZtN1pRZXlCRk9TV1pmb1k2alIwcDhwSVA2V3ktTGNtd2ZGTHBuMzg4aG9nRHZqSzItNlF0RVZzN3VsdmFGTm5McEtHOU55cXZZVW1uOXJ6cnU?oc=5",
+      "date": "2026-11-09",
+      "source": "Bloomberg.com",
+      "ko": "앤트로픽의 IPO 대기 기간 만료로 상장 시점 임박"
+    }
+  ],
+  "summary": "유가 하락으로 인플레 우려 완화되면서 광범위한 기술주 랠리. 엔비디아는 CEO 논란으로 약세.",
+  "generatedAt": "2026-11-10 12:42",
+  "date": "2026-11-10"
+}
