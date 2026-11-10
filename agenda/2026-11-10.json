@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-10",
+  "generatedAt": "2026-11-10 12:08",
+  "events": [
+    {
+      "title": "송,김",
+      "start": "2026-11-10T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1044,
+  "importantMails": [
+    {
+      "from": "Anthropic, PBC",
+      "subject": "Your receipt from Anthropic, PBC #2367-6761-8625",
+      "summary": "Anthropic 서비스 이용 영수증"
+    },
+    {
+      "from": "ssangku2-tech",
+      "subject": "[ssangku2-tech/career-link] Run failed: collect-jobs - main (5b79608)",
+      "summary": "GitHub 프로젝트 빌드 실패 알림"
+    },
+    {
+      "from": "Google",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 관련 알림"
+    },
+    {
+      "from": "Notion Team",
+      "subject": "새 기기로 계정에 로그인했습니다.",
+      "summary": "Notion 계정 새 기기 로그인 알림"
+    },
+    {
+      "from": "OpenAI",
+      "subject": "New sign-in to your OpenAI account",
+      "summary": "OpenAI 계정 새로운 로그인 알림"
+    }
+  ]
+}
