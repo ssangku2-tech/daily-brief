@@ -1,7 +1,27 @@
 {
-  "at": "2026-11-11T12:31:52.659Z",
+  "at": "2026-11-11T20:00:10.335Z",
   "threshold": 7,
   "items": [
+    {
+      "symbol": "AMD",
+      "name": "AMD",
+      "pct": 8.51
+    },
+    {
+      "symbol": "INTC",
+      "name": "인텔",
+      "pct": 8.09
+    },
+    {
+      "symbol": "MU",
+      "name": "마이크론",
+      "pct": 12.78
+    },
+    {
+      "symbol": "SKHY",
+      "name": "SK하이닉스",
+      "pct": 10.59
+    },
     {
       "symbol": "009150.KS",
       "name": "삼성전기",
