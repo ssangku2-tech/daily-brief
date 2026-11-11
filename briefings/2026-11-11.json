@@ -1,0 +1,157 @@
+{
+  "sessionDate": "2026-11-10",
+  "sessionDateLabel": "2026년 11월 10일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,520.93",
+      "changePct": "-0.38%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,065.88",
+      "changePct": "-0.74%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,231.89",
+      "changePct": "-0.30%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall St ends lower as hot inflation data, Fed comments heighten rate worries",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSEE5eGJXT1lYRVFJMUpWb2VCTENjZ2hBNWk0QWl5QVZBNmJ4TFBodVUtRVRzV0JubVE0NFJYRFlmYkpuc0tlbTBValFhV0ppcGdYNEZERXV4ZnhLZUJKTF9fUzZEeHM3cDRwdmlMdUVIUWlERHprb3lKakQ1S1gzSmI5LVZYWWx2cTBjVC1sVEc1OG8tOS0ta0k5VQ?oc=5",
+      "date": "2026-11-10",
+      "source": "Reuters",
+      "ko": "인플레이션 데이터와 Fed 발언이 금리 인상 우려를 높이며 증시 전반이 하락했다."
+    },
+    {
+      "title": "S&P 500 Closes Lower as Tech Leads a Broad Market Retreat",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVmlham9kVWVFZXhwTC12NnRzRXliVU0zZV9sRlkxaTY3SU85MDd0Z3FYUzc3UXZqRmJyT1VCVHMycUdCMExCd0p0VzQ1cVFhd2c1Z0tyc2N2STRINF9ZZFBBbEc5STBOa0JGMkJUTUlLRHU2SGd2bnEyczF1a3dfNGxycF9XV0hqYnRyRUtWSkU5cUZiaUU5TDM3VWxYb1g0blN1elNlYzhBRHNEZnJON0lDa3VISDB3Y1lWdGhhT29kUENzYVBRX0x3?oc=5",
+      "date": "2026-11-10",
+      "source": "24/7 Wall St.",
+      "ko": "기술주들이 주도적으로 하락하며 광범위한 시장 조정이 이뤄졌다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$168.89",
+      "change": "-9.78",
+      "changePct": "-5.47%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock drops 6%, extending decline on report alleged Chinese spy linked to Nvidia CEO aided $7.5 billion in China chip shipments",
+          "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQaTMzXy1sdW5VeFphNTFTbjYzWUZmdHJLNmhXMTE3cVBybWQ1NFhBUU5lUEZqcWUzNnBMN0J2RmdoYWtidXBQc1pPbFNhZV8zcGVJX2VxX3pzU01JZTV1cFpKanZVWHhSVE5IbWUyaVo5bXoxaUdkQ2Jwd0poWXNrX1VrOGI4SlBNOVExdUMyT0NDeS15dHY3N3FRZ1YyMHpZWmRtOC1MTXFhVEFvMm1xREZmb0xBSWpJTUt1aHdMVTl4NHY5TFY3QjZPSWFqNDNCM2xfeFJDM1FLN18zbmZfMG5OeS1lQ25jWUs1R3hIVkc5amVmMHBIS3kyQl8wS3B3T0d5bjFqM2lYQkt1UDk5Rm9kdlMtZw?oc=5",
+          "date": "2026-11-10",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아 CEO와 중국 스파이 혐의자의 연루 의혹으로 인해 75억 달러 규모 중국 칩 반출 사건이 드러났다."
+        },
+        {
+          "title": "Nvidia in focus as Citi, Wells Fargo cut price targets ahead of earnings (NVDA:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUkx2UXZpZ0luVmhZQk10S0dDUkdQdDhlbjN0UFZadzMtT3M0SXBWWG1vWTk4eFVRTUdiYzJDdTd3MVR4MF9zNXZhVG83eVlnNWNIT0k0UWZnVFY4dXh1b1BSM3NfSFhIWWdoTUd6Vl9oSEsybzZZUV9sZnlNTzctZmlYd2tVVnRrVXI5STRTeHVIeVdCWVNvc0IzQkhvSzR1ekpzdHdGU2ZibDVxaXc?oc=5",
+          "date": "2026-11-10",
+          "source": "Seeking Alpha",
+          "ko": "씨티, 웰스파고 등 투자은행들이 엔비디아 목표가를 인하했으며 실적 발표를 앞두고 주가 압박이 지속되고 있다."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$515.21",
+      "change": "+6.63",
+      "changePct": "+1.30%",
+      "up": true,
+      "news": [
+        {
+          "title": "Advanced Micro Devices Stocks Rise 2.66% on $2.5 Billion Anthropic Stake Commitment",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQWlUVlRiRzY4eVFhLXBDSWdWMjcwcVVMbURhcU85bC1MM2d3ejFIT2pMRUtPMzFOWnBtcTZjbFllQmRxR2NqbkFJc0g3Y2gwaGlLYUlidFZrX21iTEVXbE01WXJ2TEJJUGN5aHJMeGxTU0NPS3RLMnJ3Y3d3XzhwQTZrLThDQ0NSb3FPblRUUHlnUW9vajVSVU9PWkVLd1VPTWd4ZFFvYWpWMUlsOVdIT1AyTlZzTFpvb0E?oc=5",
+          "date": "2026-11-10",
+          "source": "GuruFocus",
+          "ko": "AMD가 앤트로픽에 25억 달러 투자 계획을 발표하며 주가가 상승했다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$58.13",
+      "change": "-1.24",
+      "changePct": "-2.09%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$396.48",
+      "change": "+7.86",
+      "changePct": "+2.02%",
+      "up": true,
+      "news": [
+        {
+          "title": "Taiwan Semiconductor Sales Jump 60% In October As AI Boom Continues",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdXVPN1FxVkpoWXdpeG9DdDJyNEl5aUlMWF8yZVM2aG1SNkdTbUFMNnQwQWFMMjhkNjJkOVdjb19IQTRtQzJBZ085alZEdjVpLTFMek9haGlValNDZzFTR3lfNnpmc1BPRk44N2RuWHR1dE03SWdTMXhHVGRSQm1ONkJpSkJVZmhvRzdLUEQwdUx4VHUzbnpN?oc=5",
+          "date": "2026-11-10",
+          "source": "Investor's Business Daily",
+          "ko": "TSMC의 10월 매출이 60% 증가하며 AI 붐이 지속되는 것으로 나타났다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$725.11",
+      "change": "-8.04",
+      "changePct": "-1.10%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$129.66",
+      "change": "-4.72",
+      "changePct": "-3.51%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$168.82",
+      "change": "-0.38",
+      "changePct": "-0.22%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "EXCLUSIVE: Anthropic eyes $1.4 trillion IPO valuation in test of Wall Street's AI fervor",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNaUtnS210c1pKNVpEZXJ1V1JpdUdyZ0h5OGh2SzVCXzJaVGRwaDZnb0NQZUxFS0ZFWmxwbU53ZlJtdlBkOWplZHdaNkloU0xwV3hvdlpjNnh0R1FISXdMOExfc09JckJqTWxjSWlZSjZpN0RWR1kyRUF6YUlXN0dqSm5XQU5TUmFmbWpFbGlzT3FZRllaMGU4cld0cDlsaFVYY0IzV2ZNYmwxYW0yd1FDaw?oc=5",
+      "date": "2026-11-10",
+      "source": "Reuters",
+      "ko": "앤트로픽이 1조4000억 달러 규모의 IPO 밸류에이션을 목표로 평가 시험을 진행 중이다."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Discloses Over $10 Billion in New Deals with Microsoft, Google; Says Lambda Deal May Be Cancelled",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNY29jNmZNZkNLNElZV21RQXVOY3VCWGwzOFljUXBNRkNieEVLUmFqSG1YazBuanR1dVd1U0drbV90U2xmWEJBcXdhOW14Wk43UWIxMTlTcHZHQUo3bkJUNjdfeWYwdUhGcVI4OFNBYnpnbk5CUGVmdXE2WW1iU2ZlYVBnTm9uNkxiOThacTJ1b2g1bUgyWVl5Z2RkR3dUY1M1c1pVdjRZWUduNUFtOW1LMmR4NzlSWG5CYUw5d05lN2xkVU9BQlJuNA?oc=5",
+      "date": "2026-11-10",
+      "source": "The Information",
+      "ko": "앤트로픽이 마이크로소프트, 구글과 100억 달러 이상의 신규 계약을 체결했으며 람다 딜은 취소될 가능성이 있다."
+    }
+  ],
+  "summary": "인플레이션 우려와 Fed 통화정책 경고로 기술주 중심 낙장을 기록했고, 엔비디아는 CEO 관련 스캔들로 급락했다.",
+  "generatedAt": "2026-11-11 10:22",
+  "date": "2026-11-11"
+}
