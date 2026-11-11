@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11 09:59",
+  "events": [
+    {
+      "title": "장인어른 생신",
+      "start": "2026-11-12T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "수영",
+      "start": "2026-11-12T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "김기한_인사동",
+      "start": "2026-11-12T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1049,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (1617a61)",
+      "summary": "Stock Alerts 프로젝트 실행 실패 알림"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/career-link] Run failed: collect-jobs - main (5b79608)",
+      "summary": "collect-jobs 프로젝트 실행 실패 알림"
+    },
+    {
+      "from": "Anthropic, PBC <invoice+statements@mail.anthropic.com>",
+      "subject": "Your receipt from Anthropic, PBC #2367-6761-8625",
+      "summary": "Anthropic 구매 영수증"
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 관련 알림"
+    },
+    {
+      "from": "Notion Team <notify@updates.notion.com>",
+      "subject": "새 기기로 계정에 로그인했습니다.",
+      "summary": "Notion 계정 새 기기 로그인 확인"
+    }
+  ]
+}
