@@ -1,0 +1,231 @@
+{
+  "sessionDate": "2026-11-11",
+  "sessionDateLabel": "2026년 11월 11일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,619.38",
+      "changePct": "+1.31%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,466.19",
+      "changePct": "+1.60%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "52,486.49",
+      "changePct": "+0.49%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall St futures fall as Nvidia slides on report of possible CEO ouster",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZTJZdHR0WlpKZDI5LUFQa0tpX1BkSzNWZzk0T3BnY0xEbnI4S2dDTzcyMUd0dHJYWHc1ZmNRaEdjaHhWR2xUcWswMXVqLXNHOWZPVURFSmtnelg3cGRfc21aRk1YbFQ4N3ZUTG5keVUwajczOHFHWklmaTdQWkREb1dMQVJJOFkyZC1XdmNWemJLYUhYYmJ3?oc=5",
+      "date": "2026-11-12",
+      "source": "Yahoo Finance"
+    },
+    {
+      "title": "Stocks end higher as CoreWeave results ease AI spending worries",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNUVZoWU1fQUd2Y1M2Qnl1T2JaMTkwaXBkaDIwWjVHejZoQmdDUnVzUVlSWDVsWW1pVDRVcXQ2ZTdrRTRiMDdMNWJDS3Atem91bUpDMnFLUkZ6NjhjaTliYWV1ODRLMnk0Slh3Wk5wNGtHTDhvaEZpTFIyUlVpQ2tNdTUyb2ZLbEZGOHlTZWRJNzVScUpIS3V5a1FacGwzby00RURBa2htZFFqZmw3Z2pRS2NDWQ?oc=5",
+      "date": "2026-11-11",
+      "source": "Reuters"
+    },
+    {
+      "title": "Nasdaq Charges Higher As CoreWeave Pops; Nvidia Stumbles Amid More Huang Revelations",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbGZPbXl4VHFvYzFWVUFEWWtRNVlJNGV2MDlPZE83cUVVamttM3k3MzVPdzNjU3lEV0lvdC1JSDNpbEp3QnJsRlVsWHhTV3BBZDk3bXlGWVV0WDRObG9mclRNRGwtWlN1Z2FHQ3NNWE5TUW9ZV1FLYzBIaUdmRUhQQVg4ZDVldE51MEtyYXVYNWg2Y3dNbFV0OG9UcU1hWEJ4?oc=5",
+      "date": "2026-11-11",
+      "source": "Investor's Business Daily"
+    },
+    {
+      "title": "Is the Stock Market Going to Crash? Warren Buffett's Warning Is Hard to Ignore.",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVG5FNWE5TzZSSXRDV01wSWdORVZzOENxdVZvR3BqanFWRG5yUDB4M1NscVBBVGZvOFY5NE1ZZFlmQ0UxR0pTWG4yQkJwRGUzS2lIS0VDUUk5Z2NyOVRYcnR4WS1pQjFHRnptNjlRVjlWakhTX3pqaGJ1T2JBMHBZdFozZ3dyZXlqSTg5ZnNpZks0Xy1jMjhJY0JCUnRZLXQySm11UzJMZWdSRlRaLUVFLUhnMUM2eWgzODMtQw?oc=5",
+      "date": "2026-11-11",
+      "source": "The Motley Fool"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$173.73",
+      "change": "+4.93",
+      "changePct": "+2.92%",
+      "up": true,
+      "news": [
+        {
+          "title": "'Icarus' rise and fall': Analyst downgrades Nvidia stock amid Jensen Huang woes, highlights risks",
+          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOUFJBOGQzQXE2NFkxd21JeE9YUml1MHdrVUo3c2wxRVhYal9YU1NPUllYR3Q0QUdMSG5iRFRGb3l4SE1iT2NWc2tLcXpUZktPMUs2SUdPSmRwWjR0ZVM4STdtNjNGbzhDX3FGNE9QYjR5M2o3NjdNTmRvNEo3S283Wk15Vk4zVnBQSlM3X09VR3lXb1RRN09GUkRCVTFnc1UzNXg5VlhqazV2WXhFdnNzSzJSaGc2cmRXYmtuRnhJYjB1QVY1RjhNTnlTRWd0ODItRjBHSjE1LWt4WWlxMHpTTzhBRQ?oc=5",
+          "date": "2026-11-11",
+          "source": "Yahoo Finance"
+        },
+        {
+          "title": "Here's What a $10,000 Investment in Nvidia Could Be Worth if Jensen Huang Is Removed as CEO, According to Wall Street Analyst Dan Ives",
+          "link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNMGZYc1p2SjB1clhNTG5QazVfT25oZDJuN0VTNVI4ZExERmJHcW54TjQyVGVlbkJ2YTcyYUdVYjM4ODBsSjVqenZvYmFVWV9VWHk1YkRIREZ3aWdEUlVHYVdWNVJsRlBvTW5fM0FDS3h5cUFYNG9haXBxYWlrc2pyb1NqNV96NEFsS1QxcmpNbnhHcm9RUmV2R0NRYVhrbGFSV1ZxbHNRZExEOUV4QVhuQkF1S2FOSG9MejFEbU0td1M2V2pZMFJVTkNOQklITXlxcmJ1QWUzbF9mY2tGaTZMeFhqRHpidDB0bFpILXNsblhaMjRwX0RNZi1JNGtJdF9MY1Yxb0RfTUhUZw?oc=5",
+          "date": "2026-11-12",
+          "source": "The Motley Fool"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$552.90",
+      "change": "+37.69",
+      "changePct": "+7.32%",
+      "up": true,
+      "news": [
+        {
+          "title": "1 Unstoppable Stock-Split Stock to Buy Before It Joins the $1 Trillion Club",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdDRkZW50bEpCWHhKa0RYQ1EyUHVPZllDT1o1RkNzMDJIOGNaMVRDZms2dWJoVHNMaGNPWHJtVVMwTkhoaVBXM1htMEdZY3VkRGE1UUdFNTJ4bVlKSEFubUNYWmFhb1p0ZXpBRy1Ca2lqX2I4SGtBUDFSbUxqNDdDRHRTYVVDVFNjd1NMYURDM0VfcklDWWRQaUJWQzE?oc=5",
+          "date": "2026-11-11",
+          "source": "Yahoo Finance"
+        },
+        {
+          "title": "Stock Market Today, Nov. 11: Advanced Micro Devices Jumps -- and Not Only Because of CoreWeave's Results",
+          "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNTGgxdktvSEI0M2hDSUdFUktvLTFDVldrV1FDcXJyX1RQMDFPWDdoWUZyTXJyaFgzQmpmUkZaMUl5SEdjWTVqc2ZsQ3lXd0ZteXM1eTUwZ0YyUGptbDh3eVJUVk9GNWdFemkzX3VvZUI3eHpSRkxXS1RzMW52MDlWTzhDMzNCbFU2M3BnNzZfTXZucHdhclFDYWJHclN0eUFHZzdPS2o2dzBoU0FnSGhJNkFhdU1mSjhNNWRWRktSdmpnd2FGRW5SR0ZPVDF5Qi00aE5XX1BXdVNFLTVrRGo1ZFBvQ3RIVmlad1hxaUhac3c?oc=5",
+          "date": "2026-11-11",
+          "source": "The Motley Fool"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$62.50",
+      "change": "+4.37",
+      "changePct": "+7.52%",
+      "up": true,
+      "news": [
+        {
+          "title": "What's Going On With Intel Stock Wednesday?",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRGRkV2R5Q1JTaXBSeEdDckdRR21pNW9fZ0o4X2RCWXR5RW5Ba2dEQ205YzFoTkFFRTZYa2NSd2E3Q1QtZlpVMjhWTGNoRFVVV21iN09XaUxNUW13UU9fMUFJbVVveURMRlpjdEJrblI0dnRITDJJUjNOaldzY2xydmk0VVREcF9qdXJEZXdLTl96QWFWeFBBZFpsWXBCZw?oc=5",
+          "date": "2026-11-11",
+          "source": "Benzinga"
+        },
+        {
+          "title": "Intel’s Turnaround Could Rewrite the Stock’s Story",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNQ3hZWE9ZOTlyUXIyNkdTMFJJenRJaDZTSUJyaGtHblI0SkFReUVjcVhFS0Q4S0R0ZW5mQWlKb2hzRFNTbDlkRGhnVjRJLVRtd0tDWW0xUGhUaWtuRXo4ZjhEblRhX3hya3NMSGNzMnVRalItMWlrTzhxdlBlZENtbktoUkxCSTl2eGZaTXBrTzlHSUNSNlhSb0dURElmemNnMXdj?oc=5",
+          "date": "2026-11-11",
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$413.35",
+      "change": "+16.87",
+      "changePct": "+4.25%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Is Taiwan Semiconductor Stock Gaining Wednesday?",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNWGFvVFk2WFI4T0VZN2JmVHA5Zk41VDNUWHdlN2loVTJFTW5LakFHY3V4TjhoMk9ZZy01YmZ2eUxONlFEZlhPUmhldzVHYjlObFJzLXVTOTEzN3E3a21aY0ZmaHFEN1VNRm10UVpwR0EtVTIycFk3MkNITHp4RF8zaVdPVTM2NWx3T3hoaWRLUVlYOVNMM2Q0M0lOUVhoQlpyS1dGOFExUm53T1VDaEpHdmJB?oc=5",
+          "date": "2026-11-11",
+          "source": "Benzinga"
+        },
+        {
+          "title": "Taiwan's Chip Show Will Go on, With or Without Jensen Huang",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPV2d4Y2JnOTZIODM1OWZtTmJQWG9wX3ltOU85bmJHMkQ5NFVKc2VYeDMta3djcmpUZzBiUEJEQVczSUtOdVRWMVh0aDZwZEx4TkVSUFdETnF4YzlpQUVqcGRDSnEwTFVsRERQVEhSeHkwMnBwQjFUYTIxUHlVdXg3Ylh6cFNha1VTeGhUSlp5ek9mdXB5LWI3ZQ?oc=5",
+          "date": "2026-11-11",
+          "source": "Business Insider"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$811.30",
+      "change": "+86.19",
+      "changePct": "+11.89%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Technology climbs 13% as one-month slide reverses (MU:NASDAQ)",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSExVYU1oeW91UFFKa2VQNUx1ekRnOGFlVThvR3lGTmtxZnhQSXRsaHl4eG1YV2VGTkdxN0pZOWJmQnl5WTVXWDBaYy1IYjc4cTJ1MDZHVXAtbnZtRF96eXZfSnFVNWVwNl9iYlo1bXBjeV9XcHZmNGotRlJNNEt4al9wSWw0bTFGQXZUMGFfQXprVHhyeFNWM0lEdWJvUUFTRTM0?oc=5",
+          "date": "2026-11-11",
+          "source": "Seeking Alpha"
+        },
+        {
+          "title": "Micron Shares Gain 1.5% Premarket - Micron Technology (NASDAQ:MU)",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQREhId3o0Tkdvd00wZFpwZ25rQmVidXFieXZwU3Ata0JMTEpJM2w2TTNEVm10ZkFnSmMxZXEzT1AxRG5yUjR5Z0FGWkhzR2tpaDJLXzMyckxVUWpwTWJXRE9wVGFlNjl3bnZud0kxNjYyRTFsRVB6WkxsZzlhVkYySndNQ0Vxa29HeHBnZ2dTbV9CLVMzTTRBbVB0TWlSMzI4RlJBa2pYZHJkdlhXQmhN?oc=5",
+          "date": "2026-11-11",
+          "source": "Benzinga"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$142.25",
+      "change": "+12.59",
+      "changePct": "+9.71%",
+      "up": true,
+      "news": [
+        {
+          "title": "Micron Is Rebounding. Goldman Prefers These Memory Stocks.",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB2bWhjUktMQU1qZzVGbWF5ZE9XNmdGVmtUVU5EMUozbl9pNlJRZnJjOWl6N2ZLLUEwQVMyWEZpa19RT1NLMXZzbVZxTTlGd2lKMDNLa3FKSUUwQi1EQllKbndwY20zMUF3Q0tkeHFXSnUwQllJdGhiRjJKY3I2dw?oc=5",
+          "date": "2026-11-11",
+          "source": "Barron's"
+        },
+        {
+          "title": "SK Hynix taps Nvidia to speed up memory chip simulations",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZ21EdzJQVFhZQXVWbW8yZ0lfdzk4OVNHcm1pVlQ1YlR1M3R3c0xjSDhqYWthYno4cVh0Qi16ZW5PdzZhNmFKYlFFUUZmdFNwdWRkeEdyQWJiYl9zaUE5VXBBbnJYYkRhbUNsano3N1VCbzJzZWVDY3MzNkpwY2JqSk9tdnd5UUVSeHVpVjRGMVhnQQ?oc=5",
+          "date": "2026-11-11",
+          "source": "digitimes"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$172.40",
+      "change": "+3.58",
+      "changePct": "+2.12%",
+      "up": true,
+      "news": [
+        {
+          "title": "Prediction: Palantir Shares Could Deliver Outsized Returns Over the Next 5 Years",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTFpUZGFGRm1jN3I0b1VuNFJpMUV1YjBvWVc2S1poRGYwb01Yc0hOU29WZHFyNTRsV2cyUkIybmxFV085b1R1ZEZUWHdKNUMwQkRHSkVQcEYwNFFNRU9WVlZibnF2SE5sdmphX3JfYWMxbkUybnF6WFlrLVRPVzlhNFU0ZTFfSS1VVkFCbkxaYXpiMmVyNGZTTVhZbXphMTk4SE9zQTNJUXhvWVZHM2JaZW5ZRWtxVk14TWRFRFRuR24?oc=5",
+          "date": "2026-11-11",
+          "source": "24/7 Wall St."
+        },
+        {
+          "title": "Palantir’s (PLTR) Sell-Off Still Doesn’t Make It a Bargain",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPOV90TENRZHJOT0ZEbVh3cGxobHJWOF9TSjFXZ2Yyek9TajJFX2kzc0YydlVncTBoV1VDcEdQTkxyRnprNncyX0lxaVcyM1dfc3VQb1JQVW93LTFsNFZIR3piRmo5YngxakVJb2F2MXdmLVlXbVZidmNQeGQ5X3lSRFJXQkdQRXY3NmJlaVZ6MDY3bFpaOE9n?oc=5",
+          "date": "2026-11-11",
+          "source": "TipRanks"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic says a key AI safety alarm has been triggered, days before its IPO",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQUTRqOU1uQ3V4RzE1YnpNX004b0JjUGlWUjgxbHd5MDAtaGpjREpoTE9DYUNUTVhqQnhDc0loMnRLY3NYRkJWVlZFNm1aU080UEtla1R1MmdoMGVSSEFJZmdFME1nTUx5akx0MW5vYUlaWTVpRTdLeW1iVmRCY3lrQU55SmluSWt2ZU1GNWVjaDR1UDZiUWk2NFF0WnhwWjhFS3pWbXd5TmdmSmlnSnM5cEU5SjNnQzN4ZWVYa2NmMklMYWpWVEV5NmttazQ?oc=5",
+      "date": "2026-11-11",
+      "source": "Yahoo Finance"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNanhKZDVUckJDOTUyaHpuU1ozRV9Rc1I0czVKZmtueDFsM3pDTjRJZTFMQ0RDREhKcHRtTXIzQ2Zmdm1TWWNGbFN1RUE0dHBjWTNjV1VSR0lLTktuNVRrTnQxY0hfV0VXWUkzRnFyQ2otV0duQjdUVkdFcC1fWm9WQV9MN3k0Y3Y2YTY4d2w0dm56QUVyVlNaTlZmMi1QdTg?oc=5",
+      "date": "2026-11-11",
+      "source": "Ars Technica"
+    },
+    {
+      "company": "Anthropic",
+      "title": "TSMC Approves Up to $1 Billion Investment Plan in Anthropic, OpenAI",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNT3ZlYXlWNllKZkZETDl2YUpGcXdKYnBpc01rZ2pMenZYcXJrcmVhbFdlUW5oQnFWeTZ1dlN2S2RwVFFUaVJIUWk0UVJsOHk4R25nSGt4NnlfYTZVNXZvTzlrcXU4V2ZGNUNQQTY1amMwcHZ3bC00aTFBMTRKcFExdThaQlY2Nmp4ek1qSXRDdVVuLUlOSWVPQWMtSHlqT0g3RmlCbQ?oc=5",
+      "date": "2026-11-11",
+      "source": "WSJ"
+    }
+  ],
+  "generatedAt": "2026-11-12 11:23",
+  "date": "2026-11-12"
+}
