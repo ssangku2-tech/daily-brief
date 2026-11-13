@@ -1,0 +1,171 @@
+{
+  "sessionDate": "2026-11-12",
+  "sessionDateLabel": "2026년 11월 12일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,592.40",
+      "changePct": "-0.35%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,366.09",
+      "changePct": "-0.39%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,297.09",
+      "changePct": "-0.36%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "U.S. stock futures rise after Nvidia CEO exit spooks Wall St",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPakdzLTNVTjhwd1J2aGphRzJBMTRQU21iMlVLRGNmNE5aUHdxZWk2dUNkN0o3bGU0VC1SWkEtYnkzUEhkY0VmN2lGTUEzaW41V3AwVEdXaHdqa1lUT0w4bzZrTXRvYlVkYUZUUGJyTGhrVDY3WlJmeWRONVNMUVA4Wk5qVGo3WDNYUnl2RTNLSUhHTElPa2Jv?oc=5",
+      "date": "2026-11-13",
+      "source": "Yahoo Finance",
+      "ko": "엔비디아 CEO 젠슨 황의 갑작스러운 사임이 월스트리트에 충격을 주며 선물 시장 변동성 확대."
+    },
+    {
+      "title": "Equities close lower as Nvidia drop outweighs energy gains",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQY01YWkJBY3Roa2hlWkVsbHhpcHplMm5NX09pWEJlMC1rWTY1ZDJoTUh0elc0WTZvdmpDOXJhS04tN2J5Y0N4NmZPdGk0aUhKdVZLT2RMSTk4S2EyZEJMYzY3WnpMMklfRjF3ZEJXZzU3d1VBTmlWS3Y1cllaYURseVQ4Nl93RFVLOXB4M1J6bnM1YVQ5QXBaSDZCOXEwUQ?oc=5",
+      "date": "2026-11-12",
+      "source": "Reuters",
+      "ko": "엔비디아 낙폭이 에너지 상승을 상쇄하며 주식시장 전반 하락 마감."
+    },
+    {
+      "title": "Stocks Slide on Nvidia Troubles, Oil Edges Lower: Markets Wrap",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPYmF2Z05ObnRwSVdvWGJrWC1XZlIzVXlYMTV3eVRwQWlScGY3TGpuamVOTEpremJZQnhJU3hkOWl2ck4xNFdzQWM1VTh2OEVBQ3FCTzNiYThfOTlzSHpqX0hHeWQ3dzZTcnRsVzYtMzFWeElmZVdVWUdQcnhIbEp1SS1lejVoM2Y1OGdScGpLbzJPVWhk?oc=5",
+      "date": "2026-11-12",
+      "source": "Bloomberg.com",
+      "ko": "엔비디아 부진과 유가 하락이 주식시장 약세를 주도한 가운데 부분적 회복."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$166.19",
+      "change": "-7.54",
+      "changePct": "-4.34%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock closes down over 4% after CEO Jensen Huang announces resignation",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVFBOVnFZT1F2M3oteUktWm1qb29oLW5DLW9MZ2pBRzhEenlNZWFERC1NRXJlSV9saDN5MmNRZzdzQm0xQ0hWSzVpSktBSy00aDZlUTcyQzd2Vmlia1F1UTlEdE11anNMVE10RDNEVlc4cUlMcW5CRlpxaWFEbDh2Mg?oc=5",
+          "date": "2026-11-12",
+          "source": "CNBC",
+          "ko": "젠슨 황 CEO 사임 발표 후 엔비디아 주가 4% 이상 하락으로 마감."
+        },
+        {
+          "title": "Cantor Cuts Nvidia Target by $100: 'A Very Sad Day' - NVIDIA (NASDAQ:NVDA)",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNMVMtc1Y3eXhUNk5mRWs4LUlZTmNGUEp3NGRmRzEycDdaQ2hCbmN6WUJLZEx2MWozS3ZmQ3lHME83aTVseGNWaTUzeE9fckpMTklyaE1SVEhJelBDRDFVS2xseWJMdjlLc2dCWFdudGgyVzlFMHZnNUdCby1QdnZuSkhkeXR3S3ptSVc4WlM2OHNXTm1JbUJWRjZ3NGxwa3JESmNHaGx0VTF3dFFlSzQxR2pXU2drbzFCbkduNjNZOTNLZ2NYZE1kbHZ5eUc?oc=5",
+          "date": "2026-11-12",
+          "source": "Benzinga",
+          "ko": "캔터 피츠제럴드가 엔비디아 목표주가를 100달러 인하하며 경영 공백에 대한 우려 표현."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$585.30",
+      "change": "+32.40",
+      "changePct": "+5.86%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD and Broadcom Stock Get a Boost From Nvidia’s Loss",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMGJPR1pTTlRRSUZBTFNIZTZCd1JYRHltdEx2N2F3OVpvRzRDbFZ2UWlhR01SLWZadTlKNnRjbi1sQU5RazZKaDdReWZmdHhqOEVuemFRTlQ3dWk5SUt2RnMtTU1CcTlDbGctMWZGLUhNREtPNXNnZXNNRUJwQkpMQTVB?oc=5",
+          "date": "2026-11-12",
+          "source": "Barron's",
+          "ko": "엔비디아 손실로 AMD와 브로드컴이 상승세를 타면서 반도체 내 자리 재배치 움직임."
+        },
+        {
+          "title": "AMD Stock Rallies as Jensen Huang Leaves Nvidia - Advanced Micro Devices (NASDAQ:AMD)",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcmxESl9XeVB0ZHFqWVpNX0RyZlhIMDV2aE1EQ043SUN1MVpQUFpvRzB3MGRNUFZENEhwUmpjOXZMVlZudTNMSGpLWVpoRmhVTl9fU3JYM0tpSFdxa0xZTHdzcWNHdWlFbi13cnREVC1TN3lyM2VJcDI0QlRaSDExbFdxU0pqNkc5RlVXR1lPMXFXTFpPMzhWZjk0dmxmSkxfRFZuY28zYzIxUk1NcnpNbHluVGxXcmVF?oc=5",
+          "date": "2026-11-12",
+          "source": "Benzinga",
+          "ko": "AMD 주가가 젠슨 황의 엔비디아 퇴사 소식으로 5% 이상 급등."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$61.20",
+      "change": "-1.27",
+      "changePct": "-2.03%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$405.49",
+      "change": "-7.86",
+      "changePct": "-1.90%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$798.44",
+      "change": "-12.86",
+      "changePct": "-1.59%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$137.71",
+      "change": "-4.54",
+      "changePct": "-3.19%",
+      "up": false,
+      "news": [
+        {
+          "title": "Jensen Huang’s exit clouds future Nvidia demand for Korean chipmakers",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMjVZaXZ3TUVEb2NydmpBa3pVTUg5OWhpbnNMQnhNUElDbDlVLXUyNmh0NEJWbURVTHp4eEpEUldDamtfUWFoLUNLU2ZOZkxhVVJWVWM0eEMwdGY5Q3QtU2NndnJMckNaOENseXNPTmZTck1vRTZ0dHI5MTBKWWxTU21GVmR1M182WkNMMzQ0ZHBYVjZQZDZSX1lqVjZWM3NYN2hKSXpxSTNncS1WWXZYbzFBNk1hdURBenBWd0Z3?oc=5",
+          "date": "2026-11-12",
+          "source": "Korea JoongAng Daily",
+          "ko": "한국 반도체업계가 황 CEO 사임으로 향후 엔비디아 수요 전망 불투명성 우려."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$171.58",
+      "change": "-0.82",
+      "changePct": "-0.48%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic launches ‘Claude for Manufacturing’",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQWRmQ1BneGdsLUtIeUJmSS1HeUpjVnRib1o1cnJOamNsV3k1aGNFZnR4X0J2ZjdxR1VfcGg4VUt0dHBNWlQ1SDJXRDREaDZwYk80clNHVGdoeG5icjFOdFFHUmNQLWtYOV9RWkRudWRlQ3cyQzNRdVQyRllBalFjUlEtQ0Y5RnFnV1VNbmE4ckFDc1ZK?oc=5",
+      "date": "2026-11-12",
+      "source": "Manufacturing Dive",
+      "ko": "앤트로픽이 제조 산업 특화 AI 제품 클로드 출시로 기업용 AI 시장 확대."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic, OpenAI and other AI developers can't control their own tech, new lawsuit alleges",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5Nd0pKdEtsZnJ6UWhKZlR1dUJNV2UwUDRLSHdfVExwQUhNb3hnLW1vYzFuRWRMNlM1dk53dHZyM3pqQXB6Uy1lNlhQc251N2gyVXdxdEFIMUN0X0hadFdZc0ZCMGNkRnVKYVJCMERNdw?oc=5",
+      "date": "2026-11-12",
+      "source": "CBS News",
+      "ko": "앤트로픽·오픈AI·구글 등 AI 기업들이 기술 통제 불가 주장으로 소송 대상 지정."
+    }
+  ],
+  "summary": "엔비디아 CEO 사임에 반발해 반도체주 약세, AMD는 5% 이상 상승하며 대조.",
+  "generatedAt": "2026-11-13 11:01",
+  "date": "2026-11-13"
+}
