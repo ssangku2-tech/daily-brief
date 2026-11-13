@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-13",
+  "generatedAt": "2026-11-13 10:39",
+  "events": [
+    {
+      "title": "차량 정비 9시~10시",
+      "start": "2026-11-13T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "이관섭 결혼 12시_호텔마레몬스",
+      "start": "2026-11-14T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1067,
+  "importantMails": [
+    {
+      "from": "Cloudflare",
+      "subject": "[Alert] New login from a different IP address",
+      "summary": "새로운 IP 주소에서 로그인 시도 알림"
+    },
+    {
+      "from": "Cloudflare",
+      "subject": "Your password has been changed",
+      "summary": "비밀번호 변경 확인 알림"
+    },
+    {
+      "from": "GitHub",
+      "subject": "[GitHub] A fine-grained personal access token has been added to your account",
+      "summary": "GitHub 계정에 새 개인 액세스 토큰 추가됨"
+    },
+    {
+      "from": "Find My",
+      "subject": "이상구의 iPad에서 나의 iPhone 찾기가 비활성화되었습니다.",
+      "summary": "Apple 기기에서 나의 iPhone 찾기 기능 비활성화됨"
+    },
+    {
+      "from": "Apple",
+      "subject": "Apple 계정이 웹 브라우저에서 iCloud에 로그인하는 데 사용되었습니다.",
+      "summary": "Apple 계정의 새로운 위치에서 iCloud 로그인 발생"
+    }
+  ]
+}
