@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-14",
+  "generatedAt": "2026-11-14 10:15",
+  "events": [
+    {
+      "title": "이관섭 결혼 12시_호텔마레몬스",
+      "start": "2026-11-14T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "웰리힐리 08:36",
+      "start": "2026-11-15T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1071,
+  "importantMails": [
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 LINE: Free Calls & Messages에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 LINE 앱과 공유되었습니다."
+    },
+    {
+      "from": "Cloudflare",
+      "subject": "[Alert] New login from a different IP address",
+      "summary": "Cloudflare 계정에 다른 IP 주소에서 새로운 로그인이 감지되었습니다."
+    },
+    {
+      "from": "GitHub",
+      "subject": "[GitHub] A fine-grained personal access token has been added to your account",
+      "summary": "GitHub 계정에 새로운 개인 접근 토큰이 추가되었습니다."
+    },
+    {
+      "from": "GitHub",
+      "subject": "[GitHub] Sudo email verification code",
+      "summary": "GitHub에서 sudo 이메일 인증 코드를 발송했습니다."
+    }
+  ]
+}
