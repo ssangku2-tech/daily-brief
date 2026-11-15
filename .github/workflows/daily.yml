@@ -13,7 +13,9 @@ on:
     - cron: '10 22 * * *'   # KST 07:10
     - cron: '50 22 * * *'   # KST 07:50
     - cron: '30 23 * * *'   # KST 08:30
-  workflow_dispatch:        # 버튼으로 수동 실행도 가능 (테스트용)
+  # 수동 실행 + Cloudflare Worker(cloudflare/brief-cron)의 KST 06:30 정시 호출.
+  # 위 schedule 은 실제로 3~7시간씩 밀려(2026-11) 정시 실행은 워커가 맡고, schedule 은 백업이다.
+  workflow_dispatch:
 
 permissions:
   contents: write           # 생성된 JSON을 저장소에 커밋

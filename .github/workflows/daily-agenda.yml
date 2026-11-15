@@ -9,7 +9,8 @@ on:
     - cron: '40 21 * * *'   # KST 06:40
     - cron: '20 22 * * *'   # KST 07:20
     - cron: '0 23 * * *'    # KST 08:00
-  workflow_dispatch:        # 수동 실행 (테스트용)
+  # 수동 실행 + Cloudflare Worker(cloudflare/brief-cron)의 KST 06:00 정시 호출 (schedule 은 백업)
+  workflow_dispatch:
 
 permissions:
   contents: write
