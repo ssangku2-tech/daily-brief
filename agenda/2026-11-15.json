@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-15",
+  "generatedAt": "2026-11-15 09:43",
+  "events": [
+    {
+      "title": "웰리힐리 08:36",
+      "start": "2026-11-15T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "수영",
+      "start": "2026-11-16T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1073,
+  "importantMails": [
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 LINE: Free Calls & Messages에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 LINE 앱과 공유되었음을 알리는 보안 관련 메일"
+    },
+    {
+      "from": "Cloudflare",
+      "subject": "[Alert] New login from a different IP address",
+      "summary": "Cloudflare 계정에 새로운 IP 주소로부터의 로그인이 발생했음을 알리는 보안 경고"
+    },
+    {
+      "from": "GitHub",
+      "subject": "[GitHub] A fine-grained personal access token has been added to your account",
+      "summary": "GitHub 계정에 새로운 개인 접근 토큰이 추가되었음을 알리는 보안 알림"
+    }
+  ]
+}
