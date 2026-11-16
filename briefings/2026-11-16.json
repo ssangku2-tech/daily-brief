@@ -1,0 +1,164 @@
+{
+  "sessionDate": "2026-11-13",
+  "sessionDateLabel": "2026년 11월 13일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,561.67",
+      "changePct": "-0.40%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "25,136.27",
+      "changePct": "-0.91%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "52,347.55",
+      "changePct": "+0.10%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "S&P 500, Nasdaq end lower as Nvidia uncertainty weighs on tech shares",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPa0xIRkJ1T2xEOU9abUNDYi1vTlpmRWJzd0MyQkFqa2NSb1BkMEdUNDROMmVmaXo3bDVRdThuRDFRaWZySXAyRjN5d1NDNjhCclFJUDVxdG9CQ1dyWWpDbUEwVHVRaHpNWUg5SjdreUtMeHNHXy1feGNBVkFLN3Z4cGNTcGtyYXg2bXFHdlpZQWtneFJDSWVreFROZ09oamc?oc=5",
+      "date": "2026-11-13",
+      "source": "Reuters",
+      "ko": "엔비디아 불확실성이 기술주 약세를 주도하며 S&P 500, 나스닥 하락 마감."
+    },
+    {
+      "title": "S&P 500, Dow, Nasdaq End Lower Amid Nvidia Turmoil, But Record Best Week Since August — SPCX, NVDA, ARM, AZN In Focus",
+      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPbS1fNWMxQnVZbmJ5STgwaUpUdWZSRnBkUFk5Ny0xRmVTSDRaQk5ET3djVHZmdklDbUZETnBQREdoRFdKb3VZUWd4b2VmOTZ6a1ZDS2VaTnFXREl3cVVXSXNYZE1uN09rc2dYd3ZDSVhuOXNIclZOLTN6YWhUVmdKRmVHZUMzZmZDV0k2TUtMN0NGVzlMWHhaYnNjaU1zRXlBZGg0b0RueWwxMVY2YVNIQVB5NGVQcnNvNFlnU3JBNFROS0tONVViNFpmNG5UTlVBUWVMVjRoWDFXLU1HUFppYkZ2MG5RMmFDd1NWN0g0NkVlblpzMFBlQVRXcHpUTzA?oc=5",
+      "date": "2026-11-13",
+      "source": "TradingView",
+      "ko": "엔비디아 혼란 속에서도 주간 최고 실적 기록. ARM, AZN 등 개별주 주목."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$162.85",
+      "change": "-3.34",
+      "changePct": "-2.01%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia closes below $4T market cap for first time since July 2025 in Huang fallout",
+          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeHRJRmZaWDY1TDNwelllbWd6OUZiV1NzaEllNG9aekhVYVVGWWhOREZuczlHQzJEZXFoeUotM2wwOW5ZTEJTOWlkb2JqSV82U2hmU01GeVhzYVlmZDZVYVFMZFo4UTNBenhOa0N4ejd0bkczZ0Nsa0I5YThHbk9iVGFkWlHSAYoBQVVfeXFMTlpCeWpuYTJhM2NHaUxJc2dkRlVSQUZ4TWxuUjh1QU1NOFE0WjJ2QUVlc0E1VWhjLUZZeGJGdEw1emRmWHM1aUNXSDdjWGRXMUhGLXJXMEpqaWlZSjUzTmY3b3lVTWhSTENiV0M0WjNZeGJTREpab09JczdLejZRTzh3SGNZWGxGVUZB?oc=5",
+          "date": "2026-11-13",
+          "source": "CNBC",
+          "ko": "엔비디아, 황젠순 퇴진 여파로 7월 2025년 이후 처음 4조 달러 시가총액 붕괴."
+        },
+        {
+          "title": "'Massive shoes to fill': Wall Street sours on Nvidia stock after Jensen Huang's exit",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQSUhad2VoUnU5VjNDX3N6UW5WX1FFaFA1eUU2V1kxX3BTQlpVX2twdVVaUHEtTWozYWZBRzRwbHZ6NE1OdHpQWXV2cml5b2R5bGY0bVk1Y19qM0pFcjk1V1NWUFNuX2lHOUlVLXVpeVRJam9mSjdiMTI2OG1KS3FvcmVQVGV0Uzh0TldXa2NLUmhNeTQtZS1oS3dydFJHTWNDcHdDLUtpakNCcV85eDdKTG15M3hqNnZOUko5RVB3aHhvbEJuVVE?oc=5",
+          "date": "2026-11-15",
+          "source": "Yahoo Finance",
+          "ko": "월스트리트, 황젠순 퇴진으로 엔비디아 후계 리더십 공백에 우려 표시."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$534.06",
+      "change": "-51.24",
+      "changePct": "-8.75%",
+      "up": false,
+      "news": [
+        {
+          "title": "Anthropic Just Delivered Great News for AMD Investors and Bad News for Nvidia",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbTBKTWc2Y1k4cXU1MGwwTUk3NnBndW9FQ2xTS0lkR21nVnpRRlRSNVZWZE95dUFKTzBBdkx4VVZyOWU2TDB3ejNZYVpzX3NQQno3OVJxNnpFWG8tUjdiNGpVZ1ZNRVVUVkhXTVRzU3FoZVZkcGMxZzQ5QlpLM3BFc2ZwMjI4YWlmNGluY01Hc3RIZEx2RzlVLW5ydzhiR1gy?oc=5",
+          "date": "2026-11-15",
+          "source": "Yahoo Finance",
+          "ko": "앤트로픽이 AMD 칩 선택, 엔비디아에는 악재지만 AMD 투자자에게는 호재."
+        },
+        {
+          "title": "How to Play AMD Stock as Google Picks EPYC for Its Next-Gen TPUs",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPSHhROUlmYVBZV2NyTXp4YmF3SmUwT1EybVZVcVRrYWdGZGFOaVBrSW9FVmFnY0Q2WkliT0hkV252ZmhGLTQ5aXdFTlZJS08yTEFINlBhZkJvT05pSU16T2FtdV8za2hnR2FMWDN6YzNrbFNQQlh1N3lhYXhENFE3dUZja3BLd1NCWF9DaUZhMk9RWWphMEVDQjBBSk5vbWFucDhKZGlKbnptQU9Y?oc=5",
+          "date": "2026-11-13",
+          "source": "Barchart.com",
+          "ko": "구글이 차세대 TPU에 AMD EPYC 칩 채택하며 AMD의 AI 경쟁력 강화."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$59.66",
+      "change": "-1.54",
+      "changePct": "-2.52%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$398.73",
+      "change": "-6.76",
+      "changePct": "-1.67%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$778.31",
+      "change": "-20.13",
+      "changePct": "-2.52%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$131.79",
+      "change": "-5.92",
+      "changePct": "-4.30%",
+      "up": false,
+      "news": [
+        {
+          "title": "Judge denies motion to dismiss DRAM price-fixing lawsuit against Micron, Samsung, and SK hynix, finds evidence of DRAM collusion plausible after 500% price surge — says chipmakers acted like ‘hawks flying in formation",
+          "link": "https://news.google.com/rss/articles/CBMihANBVV95cUxNWF9LOG43blJKd2xmWmthTnNHZndKUHoxUjJQWlNnbmNDN2xXdGxOcFNoRjRRYUdrZ2hxSl9hWFgtMWMyT3dsbGRuQUhHeXFXcUQ2Y09jazdpTTBEY0NtUHhnVndVMjhzQVB0TXdnLWNmbktGRnR5SlhhZFd1MjlqT3doNUZBSXF5d0JQWV8tZGE2U0M4ZWpZNHhET0V3TDFHMDVkMFlsSlE3NWtyNGU4aWNUb1duM3ZYVjNQbnlITVF3Y1dINmlHc1RfWWZkeTJvWFBTWEZ0UHl1ZjNLQVJodTJGX0hhbDRsMmo2dzJPNzJXTDRTQm1iLUgwSS1IeDMtUUgyOXBvd1hRM0lCWG90WUIwbDA3dFUtTzVuNjdVdW13QlREZElRM2JPVnhueVNjRXBVTVE4WHhjaUVzMTRkNEdPWnJHSGlrNWF0cFh4aW5qZHptbnJGaHNEMUFYMlE3NWNKbkI5bV91UUZFdnVkb1dKanZ5dUNXVms0UWNucjFESWhE?oc=5",
+          "date": "2026-11-15",
+          "source": "Tom's Hardware",
+          "ko": "판사, 삼성·마이크론·SK하이닉스 DRAM 가격담합 소송 기각 거부, 담합 혐의 인정."
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$167.99",
+      "change": "-3.59",
+      "changePct": "-2.09%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "The SpaceX IPO Had Musk’s Star Power. Anthropic’s Has FOMO.",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWEN6Mk43NjhtMVJzaVNhWTRvOUtSZ3NLd1I4UWtRTHI1Vk9RTGRSbFlHZ1g4bTY0MnVqb0ltNEh1NTVqVmpLb2tCTGp2dTBNUHpfWFI1aDB1VjBmcFNseG9KbHNkbXVUV2JIdEI0ZlNPVW13Q0IxTTZWZkxnSHJPRC1oOWlScHJkSVhzZGltSEtzVFdPZzUtMVByU0ZMZExMbXFsREFlclVMbldRRWd1TmoyVQ?oc=5",
+      "date": "2026-11-15",
+      "source": "WSJ",
+      "ko": "앤트로픽 IPO, 머스크 스타파워 없지만 AI 붐과 FOMO로 관심 집중."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Just Delivered Great News for AMD Investors and Bad News for Nvidia",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbTBKTWc2Y1k4cXU1MGwwTUk3NnBndW9FQ2xTS0lkR21nVnpRRlRSNVZWZE95dUFKTzBBdkx4VVZyOWU2TDB3ejNZYVpzX3NQQno3OVJxNnpFWG8tUjdiNGpVZ1ZNRVVUVkhXTVRzU3FoZVZkcGMxZzQ5QlpLM3BFc2ZwMjI4YWlmNGluY01Hc3RIZEx2RzlVLW5ydzhiR1gy?oc=5",
+      "date": "2026-11-15",
+      "source": "Yahoo Finance",
+      "ko": "앤트로픽의 AMD 칩 선택이 업계 칩 공급망 지형 변화 신호."
+    }
+  ],
+  "summary": "엔비디아 CEO 퇴진 소식이 반도체주 전반을 압박하며 기술주 약세 주도.",
+  "generatedAt": "2026-11-16 10:17",
+  "date": "2026-11-16"
+}
