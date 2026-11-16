@@ -22,6 +22,7 @@ const WATCH = [
   { symbol: 'MU',   name: '마이크론' },
   { symbol: 'SKHY', name: 'SK하이닉스' },
   { symbol: 'PLTR', name: '팔란티어' },
+  { symbol: 'ANT',  name: '앤트로픽' }, // 2026-11-19 상장
 ];
 
 const THRESHOLD = Number(process.env.ALERT_THRESHOLD) > 0 ? Number(process.env.ALERT_THRESHOLD) : 5;

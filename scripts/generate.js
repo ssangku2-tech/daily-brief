@@ -97,6 +97,8 @@ const WATCH = [
   { name: '마이크론',      ticker: 'MU',   query: 'Micron Technology MU stock' },
   { name: 'SK하이닉스', ticker: 'SKHY', query: '"SK Hynix" memory chip' }, // 실제 Yahoo 티커로 확인됨(코스피 000660과는 다른 미국 OTC ADR)
   { name: '팔란티어',      ticker: 'PLTR', query: 'Palantir Technologies PLTR' },
+  // 2026-11-19 나스닥 상장(KST 23:30 개장). 상장 전에는 Worker 가 no data 를 돌려줘 '확인 실패'로 나온다.
+  { name: '앤트로픽',      ticker: 'ANT',  query: 'Anthropic ANT stock' },
 ];
 
 const INDICES = [
