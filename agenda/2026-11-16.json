@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-16",
+  "generatedAt": "2026-11-16 09:43",
+  "events": [
+    {
+      "title": "수영",
+      "start": "2026-11-16T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "재승",
+      "start": "2026-11-17T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1076,
+  "importantMails": [
+    {
+      "from": "GitHub <noreply@github.com>",
+      "subject": "[GitHub] A fine-grained personal access token has been added to your account",
+      "summary": "GitHub 계정에 새로운 개인 액세스 토큰이 추가됨"
+    },
+    {
+      "from": "GitHub <noreply@github.com>",
+      "subject": "[GitHub] Sudo email verification code",
+      "summary": "GitHub 계정 이메일 인증 코드 발송"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 LINE: Free Calls & Messages에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 LINE 앱과 공유됨"
+    },
+    {
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "subject": "[Alert] New login from a different IP address",
+      "summary": "Cloudflare 계정에 새로운 IP 주소에서 로그인됨"
+    }
+  ]
+}
