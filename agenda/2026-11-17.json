@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-17",
+  "generatedAt": "2026-11-17 12:22",
+  "events": [
+    {
+      "title": "재승",
+      "start": "2026-11-17T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "수능 전날",
+      "start": "2026-11-18T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "병순형",
+      "start": "2026-11-18T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1081,
+  "importantMails": [
+    {
+      "from": "Microsoft 계정 팀",
+      "subject": "새 앱이 Microsoft 계정에 연결되었습니다.",
+      "summary": "Microsoft 계정에 새로운 앱이 연결됨"
+    },
+    {
+      "from": "GitHub",
+      "subject": "[GitHub] A fine-grained personal access token has been added to your account",
+      "summary": "GitHub 계정에 새로운 액세스 토큰이 추가됨"
+    },
+    {
+      "from": "GitHub",
+      "subject": "[GitHub] Sudo email verification code",
+      "summary": "GitHub 계정 이메일 인증 코드 발송"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 LINE: Free Calls & Messages에 공유하셨습니다",
+      "summary": "Google 계정 데이터를 LINE 앱과 공유함"
+    }
+  ]
+}
