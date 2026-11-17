@@ -1,0 +1,182 @@
+{
+  "sessionDate": "2026-11-16",
+  "sessionDateLabel": "2026년 11월 16일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,416.59",
+      "changePct": "-1.92%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "24,509.76",
+      "changePct": "-2.49%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "51,608.17",
+      "changePct": "-1.41%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stocks slide to kick off major week for Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5XNnJ2aVJmdnhfSDlwVHd6dU9kalV4cWo4dEN3NlViemFRTnNUeXZCMk1PSWh5NVhWSlVHWjVoMGJSWFp0eDB1eDlkbHdIbVp5VzdGdHdycUFDQmNLSllhNlRIcHY5bXJKRHJkNmxfX0o3WVdD?oc=5",
+      "date": "2026-11-16",
+      "source": "CNN",
+      "ko": "월스트리트 주요 주간 시작과 함께 주가 하락세."
+    },
+    {
+      "title": "Wall Street ends sharply lower on AI jitters ahead of Nvidia results, Anthropic IPO",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZEJobHpHMl90WUdVbnpzSGxLb1l3bi1BczhrN29iVW9rUzBtQWE4aFNuM2ZGS1RIQThLdEZPWmZjeExVaHhRaXBubkdqR3R3TXJYTlRqUmRYcXZxYS1pV1lyRlExUDdEUWJ3cTg4aktJVWcxbkg5UW9oeVRXLXhCZjdRQmFNeFJlLXhpWTRMM1lEUVlodGwxVHNCSE9ONTlnem0yekw1dDNraElYZGc?oc=5",
+      "date": "2026-11-16",
+      "source": "Reuters",
+      "ko": "엔비디아 실적 발표와 앤트로픽 IPO 앞두고 AI 우려로 주가 급락."
+    },
+    {
+      "title": "Wall Street kicks off week lower amid Nvidia turmoil and Fed rate concerns",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZTQ0T1lmRGYwSk9XVTB1M1lJSWUzR1pjTXRvaHN2WXZpc0pjUjE2M2l1VVdHbnpEMGRmcG9tY2ZlZ05JbmxlTS0zRHdkdzlXNmhUYjZSYnREQlJRWnlTdjNicGx3NjBmUnAtUXlSME5vdERTcFUyX1dKdWxBWjRXeHJySmhveUltbEstY0Uwck52OHJaUmlWeEF6TmI0ckEwSGhyN0ExcTdtemZOQ3hKS1V1bndtMWY3ZVJ3Tzd6MFk?oc=5",
+      "date": "2026-11-16",
+      "source": "Investing.com",
+      "ko": "엔비디아 혼란과 연방준비제도 금리 우려 속 월스트리트 약세."
+    },
+    {
+      "title": "Stock Indexes Settle Sharply Lower on Big Tech Drubbing",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNTWhnUzVWeWs1XzdqT01SaVhmYjEydmtydXJoXzkzQm9LTFJuWTB6UTRXU0VTbVlyRkN1VmNYRy12aWp2SzJlM1dJZkVfa0ZVYmF1b0xJV3ZYcjFsUXF4U0MtUldnMzVwc3ptVzREeFZ5NnNFNlJQeXZSR241N3V5eDN5N1A0SHhBVkdqZHhmeXhpTGstejNaNEloVkd4MTJE?oc=5",
+      "date": "2026-11-16",
+      "source": "Barchart.com",
+      "ko": "빅테크 주가 급락으로 지수 큰 폭 하락."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$156.14",
+      "change": "-6.71",
+      "changePct": "-4.12%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock falls as Jensen Huang reportedly weighs CEO comeback, Musk backs return",
+          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNVzVrZl9udUdNTVdUdnNoUG1meHJncG1HUVN6WXlXQ3JkTGNSOE9HQU1pcHJ5RFhEZ01STzQ0ZHFlNUh4YVV6eVNpN3NHNXR0eUpoT2l6bTY2QW5hT05yaXMzaGtZcVBrUWdOa25YeWNkckJ6SW80U3Q1VFhsUUJjUjV1dzNyM0EtUlR5OWh6T1paRnVjeUIzSjVqS0hIaDA1REVkMGMxM3lzMDhYdG1wOFZCLVdxRjRleXNDNTdYc2pQSDVmZVhzZ1ZTUThfWUgwdkRnUzhQOGc?oc=5",
+          "date": "2026-11-16",
+          "source": "Yahoo Finance",
+          "ko": "젠슨 황 CEO 복귀설과 머스크 지지 보도로 엔비디아 주가 하락."
+        },
+        {
+          "title": "Michael Burry Smells a Rat in Nvidia’s Vanishing Singapore Revenue",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOWVMtc3VsNUh6MnBIYW1PSmlHYVZQcXBkNkkwQ3N2MUYybXE5WlVOWGtQZUIxbDVEbnAxUGV2QTNsRU9TZkpJWnRPSkotOWxJRXZDTzdBdWUtckw5M0haM3pTYTRYdzVhSWtNRnhSSmcxQXhXVmVTX3hrUWtQU2laWHdBUklfMTR0QkVZM3VWN1R5M3c0OFJXZnZLcFVjbW82Wm92M0xBTXV3R3R6NzdkaTRIZXNlcF9NUUE?oc=5",
+          "date": "2026-11-16",
+          "source": "Benzinga",
+          "ko": "마이클 베리, 엔비디아의 싱가포르 매출 감소에 의혹 제기."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$504.28",
+      "change": "-29.78",
+      "changePct": "-5.58%",
+      "up": false,
+      "news": [
+        {
+          "title": "Why Are AMD, Broadcom and Nvidia Stocks Falling Today? New US Chip Restrictions Hit AI Stocks",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0zdFZiOUY0aEh4MjJvNXp4anNwaGd0SXU3OXczdTVBamZ2dE1lVThQTTh2R3BpcWhPMEFhZGJDWHBpbHVhbFdNdHVGVHRkdC1PRjJBZkQxVk8wVmNGc05NS3dsdFZuVkhvaFowV3V6alhIQkdwR1NwanBEVlQ2Zw?oc=5",
+          "date": "2026-11-16",
+          "source": "Stocks Down Under",
+          "ko": "미국의 신규 칩 제재가 AMD, 브로드컴, 엔비디아 등 AI 반도체주 하락 주도."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$55.47",
+      "change": "-4.19",
+      "changePct": "-7.02%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock Sell-Off Deepens After Nvidia Cuts Stake",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZmlzcVRDWDhOYUlXa3htU0hKa3JKMGh4NkZpV1hoTXY3YzBVLUlWSVk4Q3Y5My15VFBxbEZyQVBqRmR0Z1ozaWtEZnEzdlZycHdkXzIzMDJtOHppbzdzamU0MjJyR0FENk9vU3pWNlNsZld3eTE4Z09Mc2U3d290bWp6b29vRjlXdl9IRmpGa0pTbVJvZ2h4eVR2czBMaWlTMER3cEh6UThxMXlIUWNKQ2ZXYw?oc=5",
+          "date": "2026-11-16",
+          "source": "Benzinga",
+          "ko": "엔비디아의 지분 감소 보도 후 인텔 주가 급락 심화."
+        },
+        {
+          "title": "Intel (NASDAQ:INTC) Stock Slides as Shareholders Sue After Historic 29% Plunge",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5VWGIwZ0Z0Q250T2V0UW9mUkdMbE5NbmxJanlEUzM4Z0I4VGhTcWhsWjlMOGp4VWhMQjIyUnhYeElPN2JMRHk2bE1sSUdlZFc4bWtCNlpjLWFjLTkxdUEyTnNvUmxvc1htc0NFZnBCNEl3SWM?oc=5",
+          "date": "2026-11-16",
+          "source": "Stocks Down Under",
+          "ko": "인텔 주가 29% 대폭 하락 후 주주들 집단소송 제기."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$373.45",
+      "change": "-25.28",
+      "changePct": "-6.34%",
+      "up": false
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$719.02",
+      "change": "-59.29",
+      "changePct": "-7.62%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$122.18",
+      "change": "-9.61",
+      "changePct": "-7.29%",
+      "up": false
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$160.39",
+      "change": "-7.60",
+      "changePct": "-4.52%",
+      "up": false
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "확인 실패",
+      "changePct": "확인 실패",
+      "up": null,
+      "note": "Worker 조회 실패",
+      "news": [
+        {
+          "title": "Anthropic IPO Reportedly Oversubscribed 7 Times – But Will The AI Euphoria Survive The Stock Market Debut?",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQckw3X3Rrb0lZaUgyX3ljNzhPQW1PdUFhR3k2c2txMjdGNHBzQ1JoTXk5NlZLU2xKWlNrU2U0SkZKZzJRNnFycWtjdnVmWmdwTW9adlBubnhvS3Y3VTFsSkY3bzFVRDd1eTZ2ME03RXZNTXRNcHFlbl9GaEFST2VXZ2xkcnkxSXhTUEo3dGZYQngySHpFWkREZ3NPclEwYl9IY1pGNlR4dDJGdw?oc=5",
+          "date": "2026-11-16",
+          "source": "Yahoo Finance",
+          "ko": "앤트로픽 IPO 청약 7배 이상 돌파했으나 AI 열기 지속 불확실."
+        },
+        {
+          "title": "Nvidia Earnings, Fed Minutes, Anthropic’s IPO Put AI Rally To The Test: 3 Charts To Watch This Week",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxObHU2V3IySzZJUE42dGxWdl8wcXo2NzRncW5KZF9qTHdZeUd2bzVVYmV0aGRFSGlmMnBzcVJCZ21pajV5SVJDOW4zUlhzTU9RaTFmOU5CQUJyaTdSdDJaZENrcTRjdk1jT2VCSExBN3NocXBDdk5ockVyXzNKSzA5ZEtMVjktMEZQemZ4VGYzZUlobF9Sc0N5bGdSWEFXR3M2MTlj?oc=5",
+          "date": "2026-11-16",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아 실적, 연준 의사록, 앤트로픽 IPO가 이번 주 AI 시장 핵심 이슈."
+        }
+      ]
+    }
+  ],
+  "aiNews": [],
+  "summary": "엔비디아 실적 발표 앞두고 AI 주가 조정. 반도체주 일제히 하락.",
+  "generatedAt": "2026-11-17 13:05",
+  "date": "2026-11-17"
+}
