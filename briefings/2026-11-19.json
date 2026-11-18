@@ -1,0 +1,173 @@
+{
+  "sessionDate": "2026-11-18",
+  "sessionDateLabel": "2026년 11월 18일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,323.63",
+      "changePct": "-0.23%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "24,429.89",
+      "changePct": "+0.42%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "50,198.17",
+      "changePct": "-1.11%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "A fifth straight drop for the S&P 500 drags Wall Street to its longest losing streak since June",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNUGlabmpnbDN0UWc0ZjNuV25yMnVsMnBiLW5ITE1BSE9KdGV0eTMtUDRxdE82VmJUUzdDUklxS2J4N1dPWXV2M1hwUzBJa0tNSkNxRk9EVm9BMl9QTzM2b2ExUXctUmQyX1AxOWROTmpvc2lTSG94TFE4VEItMVh5ZmthN1NtcWNwakdrb3pxN2xncjZ1WkxHWWpaZVFDaHpNWGxDc3otMnUwMklockpDTDBVWVlTZ3FZNHFOVzJBcEFTSGMzMjJiRnYzcjlUUWk5aHZOS3Zn?oc=5",
+      "date": "2026-11-18",
+      "source": "Los Angeles Times",
+      "ko": "S&P 500이 5거래일 연속 하락으로 6월 이후 최장 낙폭 기록"
+    },
+    {
+      "title": "Stocks Fall as Nvidia’s Earnings Rally Sputters: Markets Wrap",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOUHhZZG5FcFhON3BCMkRyY201M2FVdVRTaUF2a29ScWc3ZTd4TkI1Zm44SXNOcmZoOE9tN29nalFxMllaQV9ZQVp5SFNKbFlmVWtxVmtjdGl4WVVRRnpFeVZaVjVCVGozeFVWYzF6NnM1dERENnQ5SWpLTlNsejBDS21mS2k2aUhQeHZHNU80V2dvbG9h?oc=5",
+      "date": "2026-11-18",
+      "source": "Bloomberg.com",
+      "ko": "엔비디아 실적 후 주가 반등이 주춤하며 주식 하락 주도"
+    },
+    {
+      "title": "Stocks Pressured by Renewed Weakness in Chipmakers",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPU010NGJIYzUzUEtUSWlNQmRUT2xRclRSMzNMeklTX1VvcWRGdWZJb19NVmhFREptV2otY0NpTkFaRTM5cmRkcDNST3UzN2kxZmNaZ3ExUDR5SjJZeFc4ZWtPbl9SV3BBTzJ0SkJCX2tJUXVIVjh3ZGFxX0pZUGdnMG90Y3l6eHAwWG55MzhCb3dfR1Foa2twZlNB?oc=5",
+      "date": "2026-11-18",
+      "source": "Barchart.com",
+      "ko": "반도체 업종의 광범위한 약세가 전체 시장을 압박"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$150.96",
+      "change": "-4.50",
+      "changePct": "-2.89%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock erases earnings pop as investors face life after Jensen Huang",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUzhvYkxzRld1VG11TlpOSE5wWjE5WE94RkMwVkJJWnRReDFRTUZ1X1FQWU55Rnh5b1hqU0VvTzBCay10WE5iVzJYWHdtVWJ0dlU5aFhhX2Yxa09Ub0otUkVUQ0hCTC1OUHBhRTU5UDBlRVZfNEx4cUtoVXRRanEwazFaQTBwYmpBREc2MVlsaVlDNWptenNNZkpDNzd2blFtS3pJX0oxWDl2RlcyMFNucDRILTRlRF9iUWFPRTA3VFo5NGRVZUJTaDkyTmpYcF9xcGJtMw?oc=5",
+          "date": "2026-11-18",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아가 실적 발표 후 초기 상승분을 모두 반납, CEO 교체 논란과 맞물림"
+        },
+        {
+          "title": "Why Is Nvidia (NVDA) Stock Falling After Record Earnings?",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBFOVFHRlJnRTd1eTF3aG9HVUJzLVpJZVJIand2T2dFMzk3QU5mRkhwNXU5aXdzYmREWFk1dEdvR0ZOS1pQYWNJTk5CWGM1akFQTjQxbV82U0pEQVRTZUEzbXNFUkpObTJvU2NQb28zeVBPRFZLeDg5NW1JOTVfdw?oc=5",
+          "date": "2026-11-18",
+          "source": "Stocks Down Under",
+          "ko": "사상 최대 실적에도 불구하고 엔비디아 주가가 하락하는 이유 분석"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$530.14",
+      "change": "+26.73",
+      "changePct": "+5.31%",
+      "up": true,
+      "news": [
+        {
+          "title": "AMD Shares Climb as CEO Lisa Su Brushes Off Nvidia's Huang Turmoil, But the Real Opening Isn't Demand",
+          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPN1NUNGlyTGNwWHdmVDBTY2RVSWpGQkEtMnZ5bExGY0U1eHhOa2UxRFVKXzJJZXVaUktBeEppcFJaMnFsc1BhNGkyNUV1em9MdVdTM1JJQzNleGkzb0dFQmtlUlpyVi1haGRJb0tUQ0xRY1Ywd0ZyWXp0X0JQLVFTbDJ1eFFhMmJaVWFPLTNjaGtkN1pnODNQczkyVVV0YXNLdkw1ZnAwN294eGh1VVA4M3hIdXktbmlUNHJHd0xPRVdhRVJOTDhMTy1nNzk2TVliVE9sUjhSVDVhTDNw?oc=5",
+          "date": "2026-11-18",
+          "source": "Barchart.com",
+          "ko": "AMD CEO가 엔비디아의 경영진 혼란을 언급하며 주가 상승"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$54.67",
+      "change": "-0.50",
+      "changePct": "-0.91%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$362.62",
+      "change": "+2.93",
+      "changePct": "+0.81%",
+      "up": true,
+      "news": [
+        {
+          "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Shares Tumble As Customer Shock Clouds AI Outlook",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRGhfT1h2VHNtYVlES2FYa3lSdm40WmcxQ3d3TGl2bG9xZG5KbHFYeHlqZ044TEFjUHNZZDBvVjZxc3ZxdGxKQ18wc1lXNjVXZzItMUt2Ym50X1lfWk84eXJneUpZYUtIVEdwZFN0SlBXbnpPUWdnNmxPUGVBRDI2amdTUDdOU1Naal9ocl9iSlQ2TkJkVl81ZGlnaTFpcWRFX05XZDl2VzVhcXE1?oc=5",
+          "date": "2026-11-18",
+          "source": "Yahoo Finance",
+          "ko": "TSMC가 고객 충격과 AI 전망 불안으로 하락세 시현"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$705.27",
+      "change": "-7.15",
+      "changePct": "-1.00%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$122.47",
+      "change": "-0.14",
+      "changePct": "-0.11%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$156.67",
+      "change": "+0.11",
+      "changePct": "+0.07%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "확인 실패",
+      "changePct": "확인 실패",
+      "up": null,
+      "note": "Worker 조회 실패",
+      "news": [
+        {
+          "title": "Anthropic prices IPO at $83 per share, above expected range, source tells CNBC",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5fN2ZOWVZ6YkV0emdTaWU3MGlkTzhwcFNGRl9pYXN2d2kwcnRoZW9HS0luWlp4clhWSXk3eExTeEljd1N4SklrZ3lTVkdRUzRCZE9sUFpOaDFyYTNYa19kTHNZSzVKaEV0RXl5YmJwQk9NRnRxR08w0gF8QVVfeXFMTlZsNHk0MjhxNTE4MVdnY1M5clBUYkJkX1ZONlRRZExmbF9LeU5JN3JSWk83Zkc1QUVUNlZCRDVFeExRQW1ZUUlWeVE0NVVvVGJ1MEtUYWFhSVNXX2I5bGlfb0lCSzlkaExmeXNnSVpFLTdpU0ozN0VpTmdXNA?oc=5",
+          "date": "2026-11-18",
+          "source": "CNBC",
+          "ko": "앤트로픽이 주당 83달러로 IPO 공모, 예상 범위 상단에서 가격 결정"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Microsoft Says Copilot Is Beating Anthropic, OpenAI on Price",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNNXV4cTU5RmZrd3lGNGRVS2RXYUZFU1prYmhYQzhrSnNWdkRHWmF6N2RjT3RkTkVTb0ZpQWhnZ3hXc3c4S1RzUXdsWGRJMFlVQkloZmlhSWhQcjkwNVFfWGxqR3NtbHNmLWdzRTBMb1dCdFVhUlV2SnhYSUYwZTlZZ2dMRjJadm1McGtYS29PcHhNdG9XSGlOVDFHY1FacGRDOWFuamRFdnEyLTVaWl9F?oc=5",
+      "date": "2026-11-18",
+      "source": "Bloomberg.com",
+      "ko": "마이크로소프트가 자사 코파일럿이 앤트로픽, OpenAI보다 가격 경쟁력 우위 주장"
+    }
+  ],
+  "summary": "엔비디아 실적 후 낙폭이 커지며 S&P 500이 6월 이후 최장 연속 하락을 기록했다.",
+  "generatedAt": "2026-11-19 06:30",
+  "date": "2026-11-19"
+}
