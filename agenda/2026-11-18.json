@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-18",
+  "generatedAt": "2026-11-18 11:43",
+  "events": [
+    {
+      "title": "수능 전날",
+      "start": "2026-11-18T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "병순형",
+      "start": "2026-11-18T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "수영",
+      "start": "2026-11-19T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1087,
+  "importantMails": [
+    {
+      "from": "Google",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 관련 알림"
+    },
+    {
+      "from": "Microsoft 계정 팀",
+      "subject": "새 앱이 Microsoft 계정에 연결되었습니다.",
+      "summary": "Microsoft 계정에 새로운 앱 연결 알림"
+    },
+    {
+      "from": "GitHub",
+      "subject": "[GitHub] A fine-grained personal access token has been added to your account",
+      "summary": "GitHub 계정에 새로운 액세스 토큰 추가됨"
+    },
+    {
+      "from": "GitHub",
+      "subject": "[GitHub] Sudo email verification code",
+      "summary": "GitHub 이메일 인증 코드"
+    }
+  ]
+}
