@@ -1,0 +1,181 @@
+{
+  "sessionDate": "2026-11-17",
+  "sessionDateLabel": "2026년 11월 17일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,340.53",
+      "changePct": "-1.03%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "24,328.38",
+      "changePct": "-0.74%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "50,759.42",
+      "changePct": "-1.64%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOemNySVhGbms1VkxVYXFsTFdtdVh1MjNQQk16Y1ZfNGFHMFhDRWUtZldZRzJzSWxpNlBLWVpTenJnU2FHZndaVUlEclFtQVNvTzJBWTNpM1p0N3dmWjlyMEFKbkowZkpSanhVcEVLUjZfOWxNcW5OZVFuLTNFNF93ZDd4b0wxX1VzNlJPODdqc0xob1ZrR0xuQkJ6bExvNDdQMk5saFVSdkVBZw?oc=5",
+      "date": "2026-11-17",
+      "source": "Reuters",
+      "ko": "월스트리트, 엔비디아 실적 발표 앞두고 혼조 마감. 앤트로픽 상장 임박."
+    },
+    {
+      "title": "Stock market drops amid continued Nvidia fallout",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMEFFWkM0QU81aEJfWUszZ083R0l0MVEwOGJDTmF5MzJRRnI2eDhLd2RhaUoxVHRzSzRud3JKVEtsNmJmZWxrZkg0R3NpaVQ4QTJGZnZXZGstZy1OMl9TYXotOG41blRaTUVFd21xT2NLUlI1aTE0TThlb0tyX2lJbDE2MGczejYwcmU0UHNwbFd5UXZCYnRISGJXOEh4dXBNMnc?oc=5",
+      "date": "2026-11-17",
+      "source": "The Washington Post",
+      "ko": "엔비디아 낙전으로 인한 반도체주 약세로 주식시장 하락."
+    },
+    {
+      "title": "Stock Indexes Finish Lower as Tech Stocks Retreat",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQMHBsYks3Y01qZzhyZWFuTmlwME1tZWxJRnZ6WG5vMU0xQkhsdmZDbTFRY2w4bXRTdWVlVmY2RjZLQmNKd05XS0dFZEw2aU1fcDE2UDJ1MTBHazhOa3Y2Zlc0ODRRaFVUdW4zamlQSjc4UVUwWHBTb1Y5VkxxOG5pSzhWaGVwdzBkanBMUjBtWloxYnNINHhzbg?oc=5",
+      "date": "2026-11-17",
+      "source": "Barchart.com",
+      "ko": "기술주 약세에 미국 주요 지수 모두 하락으로 마감."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$155.46",
+      "change": "-0.68",
+      "changePct": "-0.44%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Reports Faster Growth, Says Jensen Huang Won’t Return as CEO",
+          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQOERUMkVEZEttRVd6TG92RVVFUzc4RU10anVtbFoxeV9RN1VneDJiUkc5NXpVWWNhM09PUWhGMHNHcmJNeTU0WTltdjA1TE5BbUtvOWx1QU4ySmJJc2lPWmoydVJld09sOER4Rk4xRE9QbXpKSVMzNE9ldENzQWZWVGZGRlY?oc=5",
+          "date": "2026-11-17",
+          "source": "WSJ",
+          "ko": "엔비디아 빠른 성장 보고, 보드가 황젠순 CEO 복귀 거부."
+        },
+        {
+          "title": "Nvidia’s Third-Quarter Earnings, Outlook Top Wall Street Expectations",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOd09QMUxzbVhUclZQOE5JTDY0VjRCUU80amJ3S0lHZnd2MERNWkthb0VHY0JpLWw5Q2xwTXM1ZlBGRERERlFVeXlxeUtTTFU1YzNuVS1UeEV1Y21TZTVrQkZidTF3N1NBOWhmZjFrTlhUNjNVSnBJVmcyRVNvQ256cTRPX091MFRGVy11bjVaTG16QWRJTjVic1VNZ3NfZnFrWmo0bVk1bW5jMWtGTXVyR3BVUlJHRzA1ZHlCZmR3?oc=5",
+          "date": "2026-11-17",
+          "source": "Investopedia",
+          "ko": "엔비디아 3분기 실적과 가이던스 모두 월가 예상 상회."
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
+      "price": "$503.41",
+      "change": "-0.87",
+      "changePct": "-0.17%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia’s soap opera could be AMD’s big opportunity. Here’s why I’m buying",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVE5KOHVIeDZjZ0k0ZEtSYkk2SUNFOGdZNldnNG1mZDFZZmViVDRyY3loZG8yeDREUmpTelByT3NYeXdTOEV0eEZCaVFPOEMtdklVd2Q0RS1rNERIbl92V2xCVExqaXNkYTNUakMxSDVmTWctb0tyMFRwZy1iaTJ4Ti10ZDBEN1pwZGlN?oc=5",
+          "date": "2026-11-17",
+          "source": "CNBC",
+          "ko": "엔비디아 경영진 교체 사태가 AMD에 기회가 될 수 있다는 분석."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$55.17",
+      "change": "-0.27",
+      "changePct": "-0.49%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$359.69",
+      "change": "-13.76",
+      "changePct": "-3.68%",
+      "up": false,
+      "news": [
+        {
+          "title": "TSMC Is Sliding Before Nvidia Reports. Your Chip ETF Is Taking the Hit",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQNEpVRGhUb1FiUFMtMmJkMHg5b1VhWENfdFNGMmVuVGxmYjYyOE9qcEVzZFVpbFFTX0U2eWlPdEJnRnUweDByNWh4OC10UEZkTmlMb3NwWWVJMG9yc1hxNVhEQ1I5SDVyeWlXY25obnl3SURqSWQ3YlVNRXpBcmVNS0NrM0tSVjg4bXdfeVJ0WVZkai1uenFwallCbmZQQ2RlakNpUGluUVkzNExqdW5GVkZRUEowUVZK?oc=5",
+          "date": "2026-11-17",
+          "source": "24/7 Wall St.",
+          "ko": "TSMC, 엔비디아 실적 발표 앞두고 급락해 반도체 ETF에 타격."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$712.42",
+      "change": "-6.60",
+      "changePct": "-0.92%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$122.61",
+      "change": "+0.43",
+      "changePct": "+0.35%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$156.56",
+      "change": "-3.83",
+      "changePct": "-2.39%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "확인 실패",
+      "changePct": "확인 실패",
+      "up": null,
+      "note": "Worker 조회 실패",
+      "news": [
+        {
+          "title": "Anthropic IPO: Stock price revealed tomorrow, will begin trading Nov. 19",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNjBDQlU4NmpjQXFvb1JxSmVmeFNlYkI2eW4tWXlzVWN6UVJyYTc5NEtiWl9nSmdueEFyTEVTM3VHU0RFM2VDaFdpVWhfMzhBb2FrdXZtSW1KWmM4ZTJ3elZ4cDYyQkR1dVhlOGpDT3hiT2Y5eFhTT2pLUmkxd0g5c0JyMzBVN19iMDNCMGJwWFY2NThYa3RsQy05UHhfNGI4cVdfUXdUeVJtT3hFXzB2aGExVWlxM1hJcTY4bWVzVURrTUx0d2dPaQ?oc=5",
+          "date": "2026-11-17",
+          "source": "Yahoo Finance",
+          "ko": "앤트로픽 IPO 주가 내일 공개, 19일부터 거래 시작."
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic's IPO set for blastoff this week in key test for AI boom",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE10OUpMSF9LOVFSVk9ZbGszRUFCTm9sYjhnUk9IaWZWb1FieW4zUG1saWd5UlJBUHB2TXRvczNqVlExYkd4WEcxRGlwdC1PbHUtaEFfRno2WlE0TnBVTWFtMnBwTmRCc3ZGS19adHRmUTBCZw?oc=5",
+      "date": "2026-11-17",
+      "source": "CBS News",
+      "ko": "앤트로픽 IPO, 이번주 AI 붐의 중요한 시험대 역할."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Microsoft unveils AI models for coding, cybersecurity as it takes on Anthropic, OpenAI",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQ05INXRWaGd0ZFhsSkZWMjBZeFNJYU1JOEhkRG9PT1V5SUl6YTNNMzFWblJXZVdjVHJzZW5raFlUbzlHMTNHemFUVWZab28xS0M3RzkyN2c2Ukl6VUR4SUF6RFRpVjRieGRFUWJGZUNsMzkyR1B0bnlxSFFQMHpFT2JCQ09KM0FMcUZWXzlZaEVmanRiMmtuOGxGQnNKbDZkM0hJVGpwNURRN0daX29GX2tHZ0pIU3NrRk5JbVVpZ1d1WGN0cHc?oc=5",
+      "date": "2026-11-17",
+      "source": "Reuters",
+      "ko": "마이크로소프트, 더 저렴한 맞춤형 AI 모델 공개해 앤트로픽·OpenAI와 경쟁."
+    }
+  ],
+  "summary": "엔비디아 실적 발표 후 반등했으나 TSMC 등 반도체주 약세에 전반적으로 하락.",
+  "generatedAt": "2026-11-18 12:03",
+  "date": "2026-11-18"
+}
