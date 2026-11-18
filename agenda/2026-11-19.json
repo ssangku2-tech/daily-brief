@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-19",
+  "generatedAt": "2026-11-19 06:01",
+  "events": [
+    {
+      "title": "수영",
+      "start": "2026-11-19T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1089,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (c844c11)",
+      "summary": "자동화된 작업 실행이 실패했으므로 확인이 필요함"
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Google 계정의 보안 관련 알림으로 확인 필요"
+    },
+    {
+      "from": "Microsoft 계정 팀 <account-security-noreply@accountprotection.microsoft.com>",
+      "subject": "새 앱이 Microsoft 계정에 연결되었습니다.",
+      "summary": "Microsoft 계정에 새로운 앱이 연결되었으므로 확인 필요"
+    },
+    {
+      "from": "GitHub <noreply@github.com>",
+      "subject": "[GitHub] A fine-grained personal access token has been added to your account",
+      "summary": "GitHub 계정에 새로운 개인 액세스 토큰이 추가됨"
+    },
+    {
+      "from": "GitHub <noreply@github.com>",
+      "subject": "[GitHub] Sudo email verification code",
+      "summary": "GitHub 이메일 인증 코드 발송"
+    }
+  ]
+}
