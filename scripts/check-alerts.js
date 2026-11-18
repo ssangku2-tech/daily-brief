@@ -16,13 +16,14 @@ const WORKER_URL = 'https://stock-proxy.ssangku2.workers.dev';
 // generate.js 의 WATCH 와 같은 목록. 한쪽만 고치면 알림과 화면이 어긋나므로 같이 고칠 것.
 const WATCH = [
   { symbol: 'NVDA', name: '엔비디아' },
-  { symbol: 'AMD',  name: 'AMD' },
   { symbol: 'INTC', name: '인텔' },
   { symbol: 'TSM',  name: 'TSMC' },
   { symbol: 'MU',   name: '마이크론' },
   { symbol: 'SKHY', name: 'SK하이닉스' },
+  { symbol: 'TSEM', name: '타워세미' }, // 타워 세미컨덕터 — 전체 이름은 360px 에서 두 줄로 접혀 줄였다
   { symbol: 'PLTR', name: '팔란티어' },
   { symbol: 'ANT',  name: '앤트로픽' }, // 2026-11-19 상장
+  { symbol: 'BE',   name: '블룸에너지' },
 ];
 
 const THRESHOLD = Number(process.env.ALERT_THRESHOLD) > 0 ? Number(process.env.ALERT_THRESHOLD) : 5;

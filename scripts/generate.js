@@ -91,14 +91,15 @@ if (kstWeekday === 0 || kstWeekday === 6) {
 // 동음이의어(MU=대학, AMD=황반변성 등) 기사가 섞여 들어와서 회사명을 함께 넣는다.
 const WATCH = [
   { name: '엔비디아',      ticker: 'NVDA', query: 'Nvidia NVDA stock' },
-  { name: 'AMD',          ticker: 'AMD',  query: 'AMD "Advanced Micro Devices" stock' },
   { name: '인텔',          ticker: 'INTC', query: 'Intel INTC stock' },
   { name: 'TSMC',         ticker: 'TSM',  query: 'TSMC "Taiwan Semiconductor" stock' },
   { name: '마이크론',      ticker: 'MU',   query: 'Micron Technology MU stock' },
   { name: 'SK하이닉스', ticker: 'SKHY', query: '"SK Hynix" memory chip' }, // 실제 Yahoo 티커로 확인됨(코스피 000660과는 다른 미국 OTC ADR)
+  { name: '타워세미',      ticker: 'TSEM', query: '"Tower Semiconductor" TSEM' },
   { name: '팔란티어',      ticker: 'PLTR', query: 'Palantir Technologies PLTR' },
   // 2026-11-19 나스닥 상장(KST 23:30 개장). 상장 전에는 Worker 가 no data 를 돌려줘 '확인 실패'로 나온다.
   { name: '앤트로픽',      ticker: 'ANT',  query: 'Anthropic ANT stock' },
+  { name: '블룸에너지',    ticker: 'BE',   query: '"Bloom Energy" stock' }, // BE 는 일반 단어라 회사명으로만 찾는다
 ];
 
 const INDICES = [

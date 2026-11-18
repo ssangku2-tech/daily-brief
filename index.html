@@ -528,16 +528,18 @@ const INDICES = [
 // 못 거른다: MU 는 대학, AMD 는 황반변성 기사에 걸린다.
 const WATCH = [
   { name:'엔비디아',      ticker:'NVDA', re:/nvidia|nvda/i },
-  { name:'AMD',          ticker:'AMD',  re:/\bamd\b|advanced micro/i },
   { name:'인텔',          ticker:'INTC', re:/\bintel\b|intc/i },
   { name:'TSMC',         ticker:'TSM',  re:/tsmc|taiwan semi/i },
   { name:'마이크론',      ticker:'MU',   re:/micron/i },
   // 'ADR' 을 뗐다 — 옆의 SKHY 티커가 이미 미국 상장분임을 말해주고, 이 이름이 길어서
   // 360px 에서 현재가·등락 금액·등락률 세 값과 한 줄에 못 들어갔다(코스피 000660 아님).
   { name:'SK하이닉스',    ticker:'SKHY', re:/hynix|하이닉스/i },
+  // 타워 세미컨덕터. 전체 이름은 360px 에서 현재가·등락과 한 줄에 못 들어가 줄였다.
+  { name:'타워세미',      ticker:'TSEM', re:/tower semi|tsem/i },
   { name:'팔란티어',      ticker:'PLTR', re:/palantir|pltr/i },
   // 2026-11-19 나스닥 상장 — 그전엔 시세가 없어 '확인 실패'로 나온다
   { name:'앤트로픽',      ticker:'ANT',  re:/anthropic|claude/i },
+  { name:'블룸에너지',    ticker:'BE',   re:/bloom energy/i },
 ];
 
 async function fetchQuote(symbol){
@@ -1079,9 +1081,11 @@ function renderUSBriefing(b){
     // 주요 지수는 헤더 아래 스트립이 항상 띄우므로 카드 안에서 또 반복하지 않는다.
     // 팔란티어(PLTR)도 WATCH 에 들어있어 여기서 자기 뉴스를 달고 나온다(별도 섹션 아님).
     const liveStocks = (state.live && state.live.stocks) || [];
-    // 브리핑 파일이 아직 없는 시간대에도 관심 종목은 나와야 하므로, 목록의 출처는
-    // 브리핑 JSON → (없으면) WATCH 상수 순이다. 어느 쪽이든 시세는 실시간 값이 덮는다.
-    const stockBase = (b.stocks && b.stocks.length) ? b.stocks : WATCH.map(s => ({name:s.name, ticker:s.ticker}));
+    // 목록(어떤 종목을 어떤 순서로)은 항상 WATCH 를 따르고, 브리핑 JSON 은 같은 티커의
+    // 시세·뉴스 폴백으로만 쓴다. 파일을 따르면 종목을 넣고 빼도 다음 아침 생성 때까지
+    // 화면이 안 바뀐다(2026-11-19 AMD → TSEM·BE 교체 때 고침). 시세는 실시간 값이 덮는다.
+    const fileStocks = b.stocks || [];
+    const stockBase = WATCH.map(w => fileStocks.find(s => s.ticker === w.ticker) || {name:w.name, ticker:w.ticker});
     const stockRows = stockBase.map(s => {
       const q = quoteFor(liveStocks, 'ticker', s.ticker, s);
       // 표시 이름은 WATCH 를 먼저 본다. 브리핑 파일에는 만들어질 당시의 이름이 그대로
