@@ -1,0 +1,249 @@
+{
+  "sessionDate": "2026-11-19",
+  "sessionDateLabel": "2026년 11월 19일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,175.83",
+      "changePct": "-2.02%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "23,879.20",
+      "changePct": "-2.25%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "49,097.06",
+      "changePct": "-2.19%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "Stocks plunge as investors take cover amid growing uncertainty",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBVZjFqa0hNX2pnT1d4RGRQWEhNTDl6djZzd2sxOFZhOWE3UnUyZFpxWk1NVzJrNnpGbS02bDctT2FLMUNNdzV2ZW9lMjVrM01ZRHpBNmpycjBJSVRVaWVPdGlyazkxQWJLal9BSHo1Zw?oc=5",
+      "date": "2026-11-19",
+      "source": "CBS News"
+    },
+    {
+      "title": "Stocks Fall as Anthropic Debut Not an AI All-Clear: Markets Wrap",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMHJMMGxuVjE0QlBiMjdlLVg4Snd2RjdIVmxmMlFGX3E1cEpBS3BHaEQ0YnpUb19jc2lXMG9RQk9nSk8xSVFmN2d4VFRoSC1nQkJUdk5DTF9MWlVqRklPelgyUGpNREtJQUpEd3BTZ3A0VmVZdGRZZ21mT0x5bEdhUkd1OVVKZHNLUkRqdWY3M3VxOHBu?oc=5",
+      "date": "2026-11-18",
+      "source": "Bloomberg.com"
+    },
+    {
+      "title": "Dow Jones Futures Rise, Nasdaq Jumps: Anthropic To Debut After Record IPO; Palo Alto, Everpure Rally, Walmart Falls",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNYXZxUkdPbmdEcEEyN2lEd3h1ajFtRTVSYmpzRVZPSXRhZ3g4T1JzX1p3b0VzOFFFNnJuRk13UG9XTUc3Zy02T3JNU21Xa3dwWjF3NTJiU2Vya0RUNFp4eU5fQ1o3ZEFyZXlPYzQ2UGJ5QXhfckJDMmFGX3Iwdzd4Ykd6QXNGamcxNW5feXBTZGJVVC1sUmh1VVR1SUtraFZpUFRMeXBsVnFpYTdlYnhCZmNKNUplLVRmcUVWNDM4eWhuRVQyV0luZktYcWgzYVNMRDZR?oc=5",
+      "date": "2026-11-19",
+      "source": "Investor's Business Daily"
+    },
+    {
+      "title": "Wall Street ends sharply lower as Anthropic's debut fails to revive AI fervor",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxONFhTcEs0ZXJTOXhCWUVEQlBXR3BaeFdLVjdiNkNXdVFrNWtaVjFJRVc0cTcyRUJBRXBqV0JZUHUza3I0TndGYzZRX3N3eU4zR3plNl9wUkR5VU1FQ0phSjZEODlXYjJYQk5QaVRoTFotemhuTWFwSkhrYzFfNE1tM0JJNlBFY1BmNFNhS0FTeURyaGtHM2xJb3VoRE5LY0I1SVUxeko5dDJvRGlGam1ITllSRFU1OEV6T0tF?oc=5",
+      "date": "2026-11-19",
+      "source": "Reuters"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$145.98",
+      "change": "-4.98",
+      "changePct": "-3.30%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia Slides After Blowout Earnings As Investigations Line Up; Is Nvidia Stock A Sell Now?",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVDN0OTZ2VUpyYWZPcDFwa2dsSWJtakNDQ0dqM2lrdEgwd0dKOXdzM3MwNTlVUDNZMmg0V0hOcVY5WDRaWEVteDNUdTdzSGEySmZmYWd5MWliZnVKOU8ySnh2TVp4MTJvWkpERTJNclF0OW1Ic0F6M2FVMjN5ajluV1BqVWg4OGtHWndWYQ?oc=5",
+          "date": "2026-11-19",
+          "source": "Investor's Business Daily"
+        },
+        {
+          "title": "A tech fund manager sold Nvidia before the drama. Here’s why it won’t buy the dip.",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZ19Wc2hrbFIwbEVYNU9LeXB4cVFyNDhNRWg3NlEzamFrSUJ0SXR3VnFVdmFuRFk2ckdvLXRqR0N0R3NMWkMzUXR3b3FoTFcxQlRRWE55M0M1T1RnV2R2QXRDdGRrbkZXNm5Obk9TeFlVdDkyMW85Q3lUUVlvRHNfMHpZOExBNTM2Wm1uRm9QUlhIZV9ZZ2hWdHYxUE54VTNUZFBzX2pESTdOdw?oc=5",
+          "date": "2026-11-19",
+          "source": "Business Insider"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$55.72",
+      "change": "+1.05",
+      "changePct": "+1.92%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel (INTC) Stock Could Be 33% Undervalued On Chip Breakthrough News",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPYWY4RFBGaU5qajl0Q0NOSWdGdWdTMk5vakZhS0JPREVjbDFxX0R3enVLLWdUaDB6UHVCZUNvTjNRY1dXX0NUcFJYeTBJNnFPRlVkTE5uVXVQTUpIV2c4bE5kTHlWYlJZb25kM0dLamZ0LTlMaXMtZ2F0Vm9UV3FOMmZyOTJ2LW5heVRoZFdZbWJDU1BJ?oc=5",
+          "date": "2026-11-19",
+          "source": "Yahoo Finance"
+        },
+        {
+          "title": "Insiders Rarely Do This. Intel’s CEO Just Bought Millions in INTC Stock After the Crash.",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQVFiYUxfVllmRzlsLTd2Q1hOLW5reDRnc09JbGpIUTFWLWJGcjhCZXFMcXlSNDZTSU5rY0FoUG1LUWZENWYxbnFZTEotdzNEamJ1aldVbVJfSkZES2h0WllFWWYyMjY4WVExRUQ5b3FVX0VqN0xadkFscDRZaGZpTW1zQnZkVS02cHNQR1ZMX1dvS0xXdFR5UEdBUTExeEF6NzhWTzhfeTVSdDlhVXZmT0QyU2p0Z0Rmb0VLOUdtQ2VlNV9jaVA5Uw?oc=5",
+          "date": "2026-11-19",
+          "source": "Barchart.com"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$352.09",
+      "change": "-10.53",
+      "changePct": "-2.90%",
+      "up": false,
+      "news": [
+        {
+          "title": "Semiconductor Sell-Off: These Artificial Intelligence (AI) Chip Stocks Are Screaming Buys Before They Go Parabolic",
+          "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPdGVoLUFiVWs3X0FyWW55SW9HUzJqaTZLVGZpU2ItRXVpS3RpUjhTamRUOVNmRE9BTC1IS251QU9wcGRYRDdMdGRUN2UxQkxUalhmTUdueXcxSGRQNHBHQVZOT3RkNkNMYW93bEtFd3pRX0J2cEUtcG1iS19rbmpRSDN5RWN6Vl92ZG5CTmlnWWo2TDZuMlliSW5PVG91alkyVzZoYnJMaGZIYWIzRmhvbGctQ19HS1F0OHZ5R1p2cWxqV2JmUUpMcG95aktmdGZMXzJ3V0pULWZQLVRpVk0weXBGWWhZXzczZG0tY19oazJZa3BTNlNFN194UDl0ck5HQTh0VlcxNFVnVFRkcGY2MmkwT1ZPZVJGYXVaQUlHYzNtZEFj?oc=5",
+          "date": "2026-11-19",
+          "source": "The Globe and Mail"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$690.44",
+      "change": "-14.83",
+      "changePct": "-2.10%",
+      "up": false,
+      "news": [
+        {
+          "title": "Should You Buy Micron Technology Stock While It's Under $1,000? The Answer Might Surprise You.",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNTGhCX05jN2xuWmRONEJMTmFVczhybFI0Z3oyMWdMU3MyejVJVDF3WUFKMXZaQUVlWlB0a2d6ZHY3ZGUwZ3AwNERoUk9NV1FtOHM4ZUxtZDdHUTlaLW1RcjdPVG02MFM2T3ZId01hYkVuckFfdmtURU1XNWUtSmxJeExjRVNiTU9MWkhBNWFHWlVKSUdqYnlGTnJ6SEh2NHd0NVdqRExHdy1Xd0Uz?oc=5",
+          "date": "2026-11-19",
+          "source": "The Motley Fool"
+        },
+        {
+          "title": "Why Micron Stock Finally Popped Today",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNUWE2bnZnX0JWQ1BBejlfX1JlMnFBZl9UQUx5M0hPdnhwMFA5eGxOdzdPcll6RVJmSFEtdC1xM3FvcGpPVGN3YzRQdS02MFY4cU9nNTAzZ2NORXVqMG5rNlJrZUt0X2hZNkxwblV6aDZPRkcxTFRGX3plZ2ZtN29yWFJMQ01KamtSQ1ltdUlURzl6REZnOHZTR3ZabU0?oc=5",
+          "date": "2026-11-19",
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$119.20",
+      "change": "-3.27",
+      "changePct": "-2.67%",
+      "up": false
+    },
+    {
+      "name": "타워세미",
+      "ticker": "TSEM",
+      "price": "$127.77",
+      "change": "-4.80",
+      "changePct": "-3.62%",
+      "up": false,
+      "news": [
+        {
+          "title": "Tower Semiconductor (TSEM) Expects Profit to Outrun Sales. What’s Behind It?",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORHp0cFF1RUJaUDdVaXZZWWgzczNrajlqMHBVcGlOVWk3ZGh0S2dwUXJKcThPMTh4RVdxWTd3RGlwVlF6OHJyWFFUN3A1N2w0UVc4MW9iVTVDRzZxdFZoR2JIcVJmMnEzTVpSbElSYU52VC1Obi1ZbmRacktPcDh3bk5ocWFtdXZtOUVHOFN4NnhjRG00RmpmbkQ5UHQ3SEQ5WnFLQ21iRQ?oc=5",
+          "date": "2026-11-16",
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$153.68",
+      "change": "-2.99",
+      "changePct": "-1.91%",
+      "up": false,
+      "news": [
+        {
+          "title": "Palantir Reportedly Targeted by Alleged Russian Agent - Palantir Technologies (NASDAQ:PLTR)",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcUphNDdyWG4xUVJrMFdLdERMRUk0eU9WbFNJYmxTZGRvYlhBaVBRb2xDT0dTdjR6TU1CRm8tSGdPMUZZNjdyaWgxVmRpbGJ5bFZVNU4zREVFNDlCY0kxTTl1azFSUUVJamNUallJUndqUGJucnhpb1pOaGlzdDRzQlhieW5pQ2lLTG1VZjl6bnpac1hZa0ViZnJVNmVEVzh5RGtFNnZhUjlfdXM1dTh0QjNzTzBWNzFudHhkam8tYi1TR3JoeEZVUjhR?oc=5",
+          "date": "2026-11-19",
+          "source": "Benzinga"
+        },
+        {
+          "title": "Palantir: I'm Still Bullish, But Not Adding More Yet (NASDAQ:PLTR)",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQTV0a2dIZkFDa2lsdlQ0RjAyQ1VTeG56U1ZBdlNxbWE3SU5ZV0w1NDlJMk1fam5MaHZRN2dHemI3djhycTJiWWpDWVFuRi1ac2UwQWZadHFLWGFaLUxnd2ZsTzRacExrMVVLbDJGXzB5dmFrcmVncFIwVGZTajZiV1BuRXFMRDdXQnhuUzNBNHBqR1Rv?oc=5",
+          "date": "2026-11-19",
+          "source": "Seeking Alpha"
+        }
+      ]
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "$97.17",
+      "change": "+14.17",
+      "changePct": "+17.07%",
+      "up": true,
+      "news": [
+        {
+          "title": "Anthropic IPO live: Anthropic stock begins trading in record $81B raise with $1.5T valuation",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQV3BLQkZqa19uTmlTOGE1UXJoQzFvaVhHOXUzRzRLTUVWN1VWMzFyZTBzX05CUk8xUzlzNThUbkdxZXZlYk9hUFlSS0QxdENEOWxSaE5LSTNiVVU0OVdGOGY5Tmw0Rk5rTnIxeVA5anBwYjJwYXoyV01tTFplNjFtZFRmZTE3REZrWndQTzJES2t4Q3lUYm05SUNmRGdpU0xHeWU0WnZYa3ZDMzhjNGFnelFyR2pTS3d3a3pmM0lhTEZqTnBpaWs4d1lmeHFYSjJWR3A4U2ZVVjhpSE9iZHc?oc=5",
+          "date": "2026-11-19",
+          "source": "Yahoo Finance"
+        },
+        {
+          "title": "Notice on Anthropic (ANT) on Binance Stocks - 2026-11-19",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQalFoN19odXd0ZEhjV05UZDB3d09sanM0UFo4MUNGRmVrRGk3dUZvcVozQ0w2cTVXMlFBNWJ1dXpJZnNJUzBZMFl2b1JJU0NMbF9ieDdrMDlaRjUxb05ZRnl0Y0FpMDdlY3RlTXRmU0FOekZpd3UxUUllUVIwS3JQTlRSVEROZloxSnZjbTUxS1k?oc=5",
+          "date": "2026-11-19",
+          "source": "Binance"
+        }
+      ]
+    },
+    {
+      "name": "블룸에너지",
+      "ticker": "BE",
+      "price": "$168.11",
+      "change": "-2.87",
+      "changePct": "-1.68%",
+      "up": false,
+      "news": [
+        {
+          "title": "Bloom Energy Surpasses Its Industry in a Year: How to Play the Stock?",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQeWdFSFU5dmtlTDNXaGt0VzhPTUhWSk91NUIxeVBJV081TTN0cklWQzVrWmk5WTdMWjFsSUlfYmxoM1FTRVB1X014MzZDRTR3NnJId1F4ZUtSSGVfaldnQTNhYVhVY1BnR0tYbGVSSkdMaHF1Tm4tZnhITlNvNTJpUXY3Y2NKME1vZFJrdWhVN0FjbEhhS3BLUURDZml4SXd1OXpFNUJsQWNtMEpL?oc=5",
+          "date": "2026-11-19",
+          "source": "Zacks Investment Research"
+        },
+        {
+          "title": "Bloom Energy Stock: 5 Straight Red Days, Down 18%",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOLWl0U1Zuc3VpRlltVTVZRFV2VnYtbHg1RkI1ejFkN2o5U2RLWHE5RXR5U0ctZHBtZlBIeVFMSldrbm1uRjN1VGlzN2p1RXFkZEtmR19yS0R4cnZDVFRpTi1kSnZSRHNmMHZudlYzQy1TVEhIVGZ0OXo3SUdteDE5cVRJc0pKdG16bi1SUFNVVnc1WWxYNlJnU003cVlBNXM3SjM0U24zTDM?oc=5",
+          "date": "2026-11-19",
+          "source": "Trefis"
+        }
+      ]
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic IPO Live Updates: Stock Begins Trading at $111.50 Per Share",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE45bTR3Zzh2OENUSmxiYWhGSmF6QWh2Q2Jsbm5KZldsY0pEQUkteVNqVTFwSWVreVVwcEZ2bDdjbTRyeXNDNmRVMXF6NDNqckxnMHAyay05Ukh4enRNdG1jOXJoQVF5b01iWG10cWFFOHBsVWlWbVE?oc=5",
+      "date": "2026-11-19",
+      "source": "The New York Times"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic gave $40M to an AI safety group. Most of the candidates it backed won.",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcUtkTmd2NE5ZUnZKZm1SUk9NdGpidExKNEpLdmt1bzNVQ0FoaGNZMGRIbk1pQjBGQ28xUE5HVzlva0xIY19JNzBnLUVJNmtJQ3Z3eFBWcktZWGpmSWN1M01rUHlrempjLV9qdGFUbm0xU3J3UVhaVy1iU0FQVXFpaGRLZ05lWnVJUFFjeVFwVm91NnZRZFVjUGdJLWthMkR6UGI3ZC05ZTZUSEpuSnhSNTZJR2MtSHFwZUhsbTVB?oc=5",
+      "date": "2026-11-19",
+      "source": "The Washington Post"
+    },
+    {
+      "company": "Anthropic",
+      "title": "Investors scramble for a piece of AI giant Anthropic in blockbuster IPO",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQX0doUFFYbC13ZkRzVklYaXZncGdPM0IzQUR6QnRGRmxDdXcyaGJrNnlIUWZYQWdnRXd2RnBPc3E2RUQ5RVh5aE9nYm0xYkhYLUN6SktFUFBuekVSbnhMMTNGSlBfUnFCU1B5YkRERnAwUFA5ck44ZnBNdGMxdzZtV05NMkhpTHV3ZGZBaHhB?oc=5",
+      "date": "2026-11-19",
+      "source": "NPR"
+    }
+  ],
+  "generatedAt": "2026-11-20 06:31",
+  "date": "2026-11-20"
+}
