@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-20",
+  "generatedAt": "2026-11-20 06:01",
+  "events": [],
+  "unreadCount": 1093,
+  "importantMails": [
+    {
+      "from": "Google",
+      "subject": "보안 알림",
+      "summary": "계정 보안 관련 중요 알림"
+    },
+    {
+      "from": "ssangku2-tech",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (c844c11)",
+      "summary": "자동화 작업 실패 알림"
+    }
+  ]
+}
