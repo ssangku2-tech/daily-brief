@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-21",
+  "generatedAt": "2026-11-21 06:01",
+  "events": [],
+  "unreadCount": 1099,
+  "importantMails": [
+    {
+      "from": "Cloudflare <noreply@notify.cloudflare.com>",
+      "subject": "[Notice] Cloudflare Observability pricing changes starting December 1, 2026",
+      "summary": "Cloudflare 옵저버빌리티 가격 변동 안내"
+    },
+    {
+      "from": "CodePen <support@codepen.io>",
+      "subject": "CSS Physics, SVG Glass, and animation-timeline",
+      "summary": "CodePen의 새로운 CSS 및 애니메이션 기능 소개"
+    },
+    {
+      "from": "Google Gemini <google-gemini-noreply@google.com>",
+      "subject": "Gemini 앱의 중요한 업데이트",
+      "summary": "Google Gemini 앱의 주요 업데이트 공지"
+    },
+    {
+      "from": "Notion Team <team@mail.notion.so>",
+      "subject": "새로워진 iPhone용 Notion 캘린더를 만나보세요",
+      "summary": "Notion iPhone 앱의 새로운 캘린더 기능 출시"
+    }
+  ]
+}
