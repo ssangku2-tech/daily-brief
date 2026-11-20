@@ -1,26 +1,46 @@
 {
-  "at": "2026-11-20T15:11:54.387Z",
+  "at": "2026-11-20T20:55:28.243Z",
   "threshold": 7,
   "items": [
     {
-      "symbol": "ANT",
-      "name": "앤트로픽",
-      "pct": -8
+      "symbol": "NVDA",
+      "name": "엔비디아",
+      "pct": -13.93
     },
     {
-      "symbol": "BE",
-      "name": "블룸에너지",
-      "pct": -7.54
+      "symbol": "INTC",
+      "name": "인텔",
+      "pct": -7.84
     },
     {
-      "symbol": "017670.KS",
-      "name": "SK텔레콤",
-      "pct": -13.72
+      "symbol": "TSM",
+      "name": "TSMC",
+      "pct": -8.94
     },
     {
-      "symbol": "009150.KS",
-      "name": "삼성전기",
-      "pct": -13.33
+      "symbol": "MU",
+      "name": "마이크론",
+      "pct": -14.77
+    },
+    {
+      "symbol": "SKHY",
+      "name": "SK하이닉스",
+      "pct": -13.82
+    },
+    {
+      "symbol": "TSEM",
+      "name": "타워세미",
+      "pct": -11.05
+    },
+    {
+      "symbol": "PLTR",
+      "name": "팔란티어",
+      "pct": -7.19
+    },
+    {
+      "symbol": "SPCX",
+      "name": "스페이스X",
+      "pct": -7.69
     }
   ]
 }
