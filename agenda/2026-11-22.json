@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-22",
+  "generatedAt": "2026-11-22 06:01",
+  "events": [
+    {
+      "title": "수영",
+      "start": "2026-11-23T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1099,
+  "importantMails": [
+    {
+      "from": "Google Gemini",
+      "subject": "Gemini 앱의 중요한 업데이트",
+      "summary": "사용 중인 Gemini 앱에 중요한 업데이트가 있음"
+    },
+    {
+      "from": "Notion Team",
+      "subject": "새로워진 iPhone용 Notion 캘린더를 만나보세요",
+      "summary": "Notion 캘린더 앱이 업데이트되어 새로운 기능이 추가됨"
+    }
+  ]
+}
