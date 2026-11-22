@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-23",
+  "generatedAt": "2026-11-23 06:01",
+  "events": [
+    {
+      "title": "수영",
+      "start": "2026-11-23T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "상준형, 경준형",
+      "start": "2026-11-24T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1106,
+  "importantMails": [
+    {
+      "from": "Tailscale",
+      "subject": "Your Tailscale Download Link is Ready",
+      "summary": "Tailscale 다운로드 링크 준비 완료"
+    },
+    {
+      "from": "Google",
+      "subject": "Google 계정 데이터 일부를 Tailscale에 공유하셨습니다",
+      "summary": "Google 계정 데이터를 Tailscale과 공유함"
+    },
+    {
+      "from": "Google",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 관련 알림"
+    }
+  ]
+}
