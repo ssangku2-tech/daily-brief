@@ -1,0 +1,189 @@
+{
+  "sessionDate": "2026-11-20",
+  "sessionDateLabel": "2026년 11월 20일(금) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "6,910.39",
+      "changePct": "-3.70%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "22,617.73",
+      "changePct": "-5.28%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "48,147.33",
+      "changePct": "-1.93%",
+      "up": false
+    }
+  ],
+  "news": [
+    {
+      "title": "The S&P 500 and Dow Jones Are Dangerously Close to Joining the Nasdaq in a Correction. Here’s the Level That Would Put the Nasdaq in a Bear Market, and What History Says Investors Should Do During a Stock Market Crash.",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbTZ4Z2JvclhkYUdVajFCUnQzVXlKc2ZRUUQwbThYbC1PbGtoa0pFX0hsVVVFUUhpOEc5NUZ2eVhqM3JzZzhiWkNQYktJVFZRT3NaM2VmVjItclFQWW9wZkNnMUVFQnJhWm8tdUJoVDJTbXlFZEtGVlFyQkFpZWFBUmhRa1pFWHdaYjN1aXF1eE5Wazhzak1F?oc=5",
+      "date": "2026-11-22",
+      "source": "Yahoo Finance",
+      "ko": "S&P500과 다우지수가 나스닥에 이어 조정장 진입 임박"
+    },
+    {
+      "title": "Nasdaq wipes out 2026 gains, TSX, Dow and S&P 500 fall into correction territory",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1QbmRPWjN5dEh4eGkwYXcwdkZRVmFZZjZiTWJqeTZ3cGJJcXdER1pqVDJobUV3R09wT0dQd0hWTlYtVGtpc0wwNnRiSkxOc0FuSHZQRkFYN3FTRmdDU21mUEtZYms5NGktX3o3UzVPMS1QTmJfcTlscWxn?oc=5",
+      "date": "2026-11-20",
+      "source": "CBC",
+      "ko": "나스닥이 2026년 이익을 모두 소실, 주요 지수들이 조정 국면 진입"
+    },
+    {
+      "title": "The AI boom had a really bad week — and it's raising loud alarms",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQWmRxSU1kdTl4dm94SzFXeVY5ZnhrNGpBZEI3OHZzZHhvQzBVRUpzakQxWEgyYmJSMVJMcDZKTk5va1pzRm1OQXlLTzU3NWNEcklOcHZXOW1Gc25iUVVrVHhmRDdlTzVmMEQ0R3FWOXQ5VXU5YWdETEJvRHo1N3NGaWMyejY?oc=5",
+      "date": "2026-11-21",
+      "source": "NPR",
+      "ko": "AI 붐이 극심한 약세를 기록하면서 시장 경고음이 울리고 있다"
+    },
+    {
+      "title": "Stocks enter correction territory, driven by a deepening tech rout",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFA1ZXZoZFA2bjA0dTVXWENvQWNTbjg3LURyV3lVdEh3cmJGVUpNcHR4SFZkQWNPUGxiajBoX19hMVlDaGxGNUw3QTEzeVBEWHZreDBiWEJ3QWhhQ2hNUE5sUnJZRmVkcTFSV1phaEpzUGN1UHk4U193UU1KOWM?oc=5",
+      "date": "2026-11-20",
+      "source": "CBS News",
+      "ko": "기술주 급락이 주도하면서 주식시장이 조정장 돌입"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$125.53",
+      "change": "-20.45",
+      "changePct": "-14.01%",
+      "up": false,
+      "news": [
+        {
+          "title": "EXCLUSIVE: Nvidia's accounting is a focus of US SEC investigation, sources say",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMzlPdFVTT2cyVkhmMFVKNWZ1MnpNT0NLcURnblg4THMwUWNuYTRBLWUxU0ZSSUR5bk1zNnBmVlhIUjByNkN6TzVBNC1uaXQxM0dwY2FkMzZQdm00a0xyMXo3NFNpSUNPdERZWU82aGZLa0lNZHpMOXVnVDBVQW9lMmNrWEVRczVYS1Racm1NNlNERDBJeTFJRG1pZVRfTC1LTy1pNjhpVzRaeGRrY25kSzQ1aDNUUQ?oc=5",
+          "date": "2026-11-21",
+          "source": "Reuters",
+          "ko": "엔비디아의 회계 처리가 미 증권거래위원회 조사 대상이 됨"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$51.28",
+      "change": "-4.44",
+      "changePct": "-7.97%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Just Landed Its First 18A-P Chip Customer. What That Means for INTC Stock.",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMEgxNkZmdjM1VGxmYm0zcXNzSDVJc1RBWkVBLXlzU0h3TmNkbTU1Nm9vWGRQcHBpMk1aMHlnYUQ5YXBuSmtFblo2bDJuUlp2aHA1QmlWRmhyOWtEdVUyY1N4NThJeDN5NzBrTVlfeWFkYjhiQWQ2MHQwVXFpNENDdGFfQ3JoYklZTE5UWWhmRmw5RnRsTjJURkJneDVNdlNXck1Da3JFR2RJT1FEakZZQWxNZW01Umx4OGVWMDY0MA?oc=5",
+          "date": "2026-11-22",
+          "source": "Barchart.com",
+          "ko": "인텔이 첫 18A-P 칩 고객 확보, 공정 기술 전환 가시화"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$318.71",
+      "change": "-33.38",
+      "changePct": "-9.48%",
+      "up": false,
+      "news": [
+        {
+          "title": "TSMC Stock Slides As Taiwan Market Suffers Worst Week Since 1990: What's Going On?",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQVhxWWp0SU9TOVVGLWQ1azhrbXlnVng0QjBUNzhXS3J1Q1FSU3F4dG1ZYzlzaW0xa3I4M3FoNzVsazV4TTNCRHNOb3BNUHQxVjRRZ011a3licEdIZmdsLUdVVGVJdjZWdlp5X251Q1VhdnZETmFYa3BURGtjenZiX0dqZVZFUkREd29XNkNiM1RuR3l2Y1Q5VE9JRzZ3NEdDY1cxLWRQQlJtTFlzdjk2NzZicThkeFIydzduVjlWUXhKdXNRZkFXbHdUc2pyVnpaaTVMOWR1SQ?oc=5",
+          "date": "2026-11-20",
+          "source": "Benzinga",
+          "ko": "TSMC가 1990년 이후 최악의 주간 낙폭, 대만 증시 전반 약세"
+        },
+        {
+          "title": "TSMC Is Halting Some China Chip Orders as a New U.S. Rule Kicks In",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQLU5wYVlGTzVOQ214NVN2WWNFaFRSQmFneEFQTGxHYkZzNy1fUFU4MHMtR09YWXVKV3ZqalpBNHFjRVFqaHR5ejU3cGMydVcxN3lidGJrelF3bnNpWHljbkE2anl6UFI0dmNTRXcweXN5b0dRX3o4T093a2YtMmNRRkxoMC1KZFVsVWF4bUcxTkFXSFRVYTNybzFwd25QZ0lDcGJYcG1fTFo5NHRDSXc?oc=5",
+          "date": "2026-11-20",
+          "source": "24/7 Wall St.",
+          "ko": "TSMC가 미국 신규 규제 시행에 따라 중국 칩 주문 일부 중단"
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$594.51",
+      "change": "-95.93",
+      "changePct": "-13.89%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$103.57",
+      "change": "-15.63",
+      "changePct": "-13.11%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "타워세미",
+      "ticker": "TSEM",
+      "price": "$115.56",
+      "change": "-12.21",
+      "changePct": "-9.56%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$143.49",
+      "change": "-10.19",
+      "changePct": "-6.63%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "$88.91",
+      "change": "-8.26",
+      "changePct": "-8.50%",
+      "up": false,
+      "news": [
+        {
+          "title": "Anthropic's IPO bank closed position meant to stabilize stock, removing source of support",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSVpRUnlwbWF4cmpjRkg1N1ZnRU9Dc1ZIRFFQU3pyMHNac0tJSXlINUg5YUdLRl9mMUEzQTRkZTdQWHJwRkhJbmYyWV9VYkt4dDVTSGRib3VzbVVENWd1WWllZkhzR2E5SGhrNm5xOUM1QzBfdFFqZlNvNmJDUHFNeU1IdnRMclVkRmdsNTRxTWVZY0hQYWJHN05EZ2xxZTFORDZ0V1g2eWZEWnBGRnVEVVNROURGMVFCTzkwbA?oc=5",
+          "date": "2026-11-20",
+          "source": "Reuters",
+          "ko": "앤트로픽 IPO 주관사 지지 포지션 종료로 주가 낙폭 심화"
+        }
+      ]
+    },
+    {
+      "name": "블룸에너지",
+      "ticker": "BE",
+      "price": "$142.39",
+      "change": "-25.72",
+      "changePct": "-15.30%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic Mathematician Claims to Solve Riemann Hypothesis With Help From Claude",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMU96R3pxbVo0NDIzSUl5Szd6T0VkZzRUY1F3RE9NUnRPWU1tbnBRZkVPOWNDclpHX3hUTXo1QndXdENHb2Q1cFU2WnVwLWp0eG00dDFWcTBNR042Y3NFdUdtZGY4ODZUSnRTMFZGUnNFNFYyRGdvaHJCdVNra2k0T2NTeDZnbTdHcE83WQ?oc=5",
+      "date": "2026-11-21",
+      "source": "The New York Times",
+      "ko": "앤트로픽 연구원이 Claude의 도움으로 리만 가설 풀이 주장"
+    }
+  ],
+  "summary": "AI 관련 약세에 기술주가 집중 낙폭을 기록하면서 나스닥이 연중 상승분을 모두 반납했다.",
+  "generatedAt": "2026-11-23 06:30",
+  "date": "2026-11-23"
+}
