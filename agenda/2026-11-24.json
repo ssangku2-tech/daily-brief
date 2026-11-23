@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-24",
+  "generatedAt": "2026-11-24 06:01",
+  "events": [
+    {
+      "title": "상준형, 경준형",
+      "start": "2026-11-24T17:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "김장_강릉",
+      "start": "2026-11-25T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1110,
+  "importantMails": [
+    {
+      "from": "Tailscale <info@tailscale.com>",
+      "subject": "Your Tailscale Download Link is Ready",
+      "summary": "Tailscale 다운로드 링크 준비 완료"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Tailscale에 공유하셨습니다",
+      "summary": "Google 계정 데이터를 Tailscale에 공유한 권한 확인"
+    },
+    {
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "보안 알림",
+      "summary": "Google 계정 보안 관련 알림"
+    }
+  ]
+}
