@@ -1,0 +1,191 @@
+{
+  "sessionDate": "2026-11-23",
+  "sessionDateLabel": "2026년 11월 23일(월) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,237.17",
+      "changePct": "+4.73%",
+      "up": true
+    },
+    {
+      "name": "나스닥종합",
+      "price": "24,089.56",
+      "changePct": "+6.51%",
+      "up": true
+    },
+    {
+      "name": "다우존스",
+      "price": "49,595.31",
+      "changePct": "+3.01%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stocks Soar as Huang’s Nvidia Return Fuels AI Bets: Markets Wrap",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMFVRM2J2cTZ6eU02Qzk1TF83UmhsSEN3SlpHYjJuc2lDeXBVM0h6WkN2bEJCUlk5RnZNOFMta05FOXFqeTZQQWZnbFl2RG1WTWVNSXYwVWhZRFZxRkx6SDlhTWtUWk92UVBJa2FGWVk3ak9rOUVJYjZ6RDBqcUZCOEpiWmFVWGxvVmM1Y2prdDk2N19EZG0xWjU3aFV5QkJ6MjF4eExGSkd3TWxaWGRBVzhB?oc=5",
+      "date": "2026-11-23",
+      "source": "Bloomberg.com",
+      "ko": "황의 엔비디아 복귀가 AI 베팅 심화시키며 광범위한 주가 상승 주도."
+    },
+    {
+      "title": "US stocks soar and recover more than half of last week’s plunge after Jensen Huang returns to Nvidia",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBmWnlmYlN3MEt4bE1IaWx5U2l0VDdtRWJqX0d1UDNFdnV3N3FDdnlKRkE0ZUFsQ0R5bElmeURrSFhjVlNOejc1Qms5UkcxMk5HU3hsR21uMk1RMlkxU1V5d3JYSjRVUURHZlFNX3NFQlhtSDlZdTN2T2tLa3lkUQ?oc=5",
+      "date": "2026-11-23",
+      "source": "The Boston Globe",
+      "ko": "지난주 급락의 50% 이상을 회복하며 황의 복귀가 심리 반전 촉발."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$165.05",
+      "change": "+39.52",
+      "changePct": "+31.48%",
+      "up": true,
+      "news": [
+        {
+          "title": "Nvidia stock soars as Trump makes U-turn on Jensen Huang, cheers Huang's return as CEO",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNRXVUaE5oREVIRVpXeWxtcDNPVzl2aklWQXhtQkFCdlUxdDBiNEtjN3hoRFZlRVdENWp2cHFvWnpSOVJtcTN3bjlKYzZPOXhzMUZkVmRqLVlrOHVWTGYzSFA2alhrdFFnRnVEdHZoYnRkTGRzaGRKSWtYMUZZamkwbzdOdDY4R0FNaFhYY0RkMUowX1Y3eEZsRHhsakpzY01KVjZ6eU1nR0I2STVsd2pNMXJhSkFIcmJCU0diemtINklXaFdOd3R6Y3N2WHBKNWxmLW50QTlYOGtVRmxQY1MzRlFB?oc=5",
+          "date": "2026-11-23",
+          "source": "Yahoo Finance",
+          "ko": "트럼프가 황 복귀 지지 표명하며 엔비디아 주가 급등 견인."
+        },
+        {
+          "title": "Nvidia Stock Soars on Jensen Huang Return: Dan Ives Says ‘$300 Stock with Jensen and a $225 Stock Without’",
+          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNX0RPUDdQRFZSMF9COVFjQlBnbTA0eDRsMXlGejVob2pCSjFqb19jZUhKTWdCbjZJMDFTejk4Y2p3RERsazdRYjRBZTY2N3BvVXVKdWdvTFZRcjU1WmRzellGZEFpUllHbEwweWF5SFZqUzk5ZENJenBRRjNVRkhiWWRmbnctdUFONXc3RWVPVjFfajRCdnp2akFUZ1ZzcU5BdjBFYkNQN0FHMC1ZNVN4b2g3R3FtU29xM1Vqdy1maXZOWXgtX1BJZ1ptc2FUZ1REcndZZ3lhcGpkMl9ObFZlZU4xbEpxeDZqWWh6VldSQzYxbC1U?oc=5",
+          "date": "2026-11-23",
+          "source": "Benzinga",
+          "ko": "애널리스트 단 아이브스, 황 재임시 주가 300달러 vs 비재임시 225달러 평가."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$59.66",
+      "change": "+8.38",
+      "changePct": "+16.34%",
+      "up": true,
+      "news": [
+        {
+          "title": "Intel CEO Lip-Bu Tan Has Incredible News for Investors. Is This the Much-Needed Catalyst for the Stock?",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQN3RQOGppb244SmpVZk16Q0JJZFE1dUNtQldZVE9yV2thTHB4c0Y1Qi14cGI0NGVFanBlWTNnTG1WQ0ltYTlST2Q4SWJRQUZyN255d3dRaHVPRmZLQTFTQ2tfVDJKb0ozbE1Hci1xZVV4NndKS1g2TVZJSjh5d19zR3MwZHhkTkZubUdINVl3?oc=5",
+          "date": "2026-11-23",
+          "source": "Yahoo Finance",
+          "ko": "리-부 탄 인텔 CEO의 호재성 소식이 투자자들에게 긍정 신호."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$363.60",
+      "change": "+44.89",
+      "changePct": "+14.08%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why TSMC Stock Soared Today",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE92TkVUSlNHYU1SY3BsX3E1MWN3elI4c2hqQ0NONE5DOU5FVWl2cTZEVk1tb282dTE0TEJGU1RhRndzTTZhOU5rbXEyVVlRQzd2ckxua1dORnktSjljNG1KNnlrSVQtZEE2YUFxbDFoY0JRdXFRdnZ1UERn?oc=5",
+          "date": "2026-11-23",
+          "source": "The Motley Fool",
+          "ko": "TSMC 주가 급등의 배경으로 엔비디아 CEO 복귀로 인한 AI 산업 신뢰 회복."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$707.70",
+      "change": "+113.19",
+      "changePct": "+19.04%",
+      "up": true,
+      "news": [
+        {
+          "title": "Why Nvidia Rehiring Jensen Huang Is Making Micron Stock Skyrocket Today",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSHNZUG5POXpXZWE1YXZoSXRneHFXM1FSTzctTDZtOGNlemJCZGFTcXotS1A0YXc3bEY2MmZockdvczZHYlpqRUNuWV9mVzdSU3oxUlJ3OHZ2bkhUN2pUeGs2czRldVRhZDFZZmZIVS1pQmtCRkVRc1VEU2hHWGd5c01OM2VGU3hRWjVCeFM0UmtFdHJid3N5M1N6dXFvUS1hZU93M0ZUTC1kWDF6SnVpYzVrZFY?oc=5",
+          "date": "2026-11-23",
+          "source": "The Motley Fool",
+          "ko": "엔비디아의 황 재영입이 메모리칩 수요 전망 상향시키며 마이크론 주가 상승."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$124.28",
+      "change": "+20.71",
+      "changePct": "+20.00%",
+      "up": true,
+      "news": [
+        {
+          "title": "SK hynix's US-traded shares surge after Nvidia CEO's reinstatement",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOOEY3YVVsajBqSVQ2aG16dkxOOXlFQVUwQ1M3ZXNobWlUdjg1T242VzNXS1pLclI3QnNuV1VGOGZaRlBOcTExTUpvZ3BZWFNLYXJ2UzdLT3lEdEtrcnUzVl8yWkowRnZ5TFlsa05pZVpod3lJVTdSeXB1dkVIbF9JSWtFZE9KRUgzVnJMYm9Iekk3ck5neWJ6Zms1eVpCblZuMXgxWnJCWl9OOFZy0gGyAUFVX3lxTFBQVjVpRkM3SG02dzVsYjVxVXRSY1RWRUdITHlxT0I4b2Q2QmQwYTd5a0Y5NVBmenVFZFkybnpCYlh6MFVCWXhOMlRxQl91alhmQzVFZkt1d1NJaWNmYUN3SS1VbHRBcjhoWXkyUUxOZW93RXQ3RlpqN1RTakdoWE90Tml2VjVWSnFCM3Nhd0h5dFlSV040U1k5ZThVc3F2Tm00cGVvQ3RQM05LaFQzaEZrUVE?oc=5",
+          "date": "2026-11-23",
+          "source": "The Korea Times",
+          "ko": "엔비디아 CEO 복귀가 메모리칩 공급망 긍정 신호로 작용해 SK하이닉스 급등."
+        }
+      ]
+    },
+    {
+      "name": "타워세미",
+      "ticker": "TSEM",
+      "price": "$136.81",
+      "change": "+21.25",
+      "changePct": "+18.39%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$159.36",
+      "change": "+15.87",
+      "changePct": "+11.06%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "$87.64",
+      "change": "-1.27",
+      "changePct": "-1.43%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "블룸에너지",
+      "ticker": "BE",
+      "price": "$168.15",
+      "change": "+25.76",
+      "changePct": "+18.09%",
+      "up": true,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Why Jensen Huang's Nvidia Return Could Hurt Anthropic Stock",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQT3RxdGVsWDFVU25vRXQwLXRaQXotT1BhS0FBQ1NpV0ExUld6aHFJNWttb0xhcHc0eFNKVGlOLVJJbnlFYmhVRjF5YnREeV80cHdYbUxwNHJLbHJ1MXNDM0lFbkYwNmV3UWlFQ3YxOUNwWUMyZGlnVm9EVzZUMjc1QWtiNUtFMlNpbFVLNkV0SnhUTlJFSUJRX0VDM2E?oc=5",
+      "date": "2026-11-23",
+      "source": "Yahoo Finance",
+      "ko": "엔비디아 황의 복귀가 오픈AI 의존도 높은 앤트로픽에 부정적 영향 미칠 수 있다는 분석."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic’s Seven Billionaires Are Creating a New Type of Hazard",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPNjJBRllrT0RFMUtCMy03emV4cVVScjcySk5ublZ4MlRmazBudGxUR1dyb080TFlBNVgwakZCajdSRnRodlAwcV9TZlNmYUt1ckpkbkZUclNremVnUVB3Um5BUGI5d2huRHlVQTRMLWVvV25TMk11SzNTcjNvcFFtclhudG96Nmdpdm1BR0ZsanJDVldMYzE5a3UyS0w2WkNCYUptTGFOSkVGSENiYlNIU0d2cFMtX3I3S21TbHl4ZFBLdw?oc=5",
+      "date": "2026-11-23",
+      "source": "Bloomberg.com",
+      "ko": "앤트로픽의 7명 억만장자 주주들이 새로운 위험 요소 창출 중이라는 지적."
+    }
+  ],
+  "summary": "엔비디아 CEO 복귀 소식에 반도체주 중심 급등하며 지난주 낙폭 대부분 회복.",
+  "generatedAt": "2026-11-24 06:30",
+  "date": "2026-11-24"
+}
