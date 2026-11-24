@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-25",
+  "generatedAt": "2026-11-25 06:01",
+  "events": [
+    {
+      "title": "김장_강릉",
+      "start": "2026-11-25T08:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "수영",
+      "start": "2026-11-26T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "태수, 병락",
+      "start": "2026-11-26T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1116,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (1499cca)",
+      "summary": "본인의 GitHub 프로젝트 Stock Alerts 실행 실패 알림"
+    },
+    {
+      "from": "Tailscale <info@tailscale.com>",
+      "subject": "Your Tailscale Download Link is Ready",
+      "summary": "Tailscale 다운로드 링크 제공"
+    },
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Tailscale에 공유하셨습니다",
+      "summary": "Google 계정 데이터 Tailscale 공유 알림"
+    }
+  ]
+}
