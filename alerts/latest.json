@@ -1,11 +1,26 @@
 {
-  "at": "2026-11-24T08:41:57.959Z",
+  "at": "2026-11-24T22:54:45.019Z",
   "threshold": 7,
   "items": [
     {
-      "symbol": "005380.KS",
-      "name": "현대차",
-      "pct": 9.49
+      "symbol": "INTC",
+      "name": "인텔",
+      "pct": -8.15
+    },
+    {
+      "symbol": "MU",
+      "name": "마이크론",
+      "pct": -11.01
+    },
+    {
+      "symbol": "SKHY",
+      "name": "SK하이닉스",
+      "pct": -9.9
+    },
+    {
+      "symbol": "TSEM",
+      "name": "타워세미",
+      "pct": -9.75
     }
   ]
 }
