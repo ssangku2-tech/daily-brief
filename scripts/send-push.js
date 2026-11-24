@@ -127,7 +127,7 @@ async function main() {
       && (before.status === 404 || before.status === 410);
     pushState.record({ endpointHash, status: res.status });
     console.error(`⚠️  구독이 더 이상 유효하지 않습니다 (${res.status}).`);
-    console.error('   앱에서 "다시 구독" 을 누르고 PUSH_SUBSCRIPTION 시크릿을 갱신하세요.');
+    console.error('   폰에서 앱을 한 번 열면 자동 재구독·워커 등록된다(시크릿 갱신 불필요). "알림 받기" 버튼이 보이면 권한이 꺼진 것 — 눌러서 다시 허용.');
     if (known) {
       console.error('   (이미 기록된 고장이라 워크플로는 실패시키지 않습니다 — 같은 건으로 메일이 반복되지 않도록)');
       return;
