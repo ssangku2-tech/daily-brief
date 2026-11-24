@@ -1,46 +1,11 @@
 {
-  "at": "2026-11-23T18:36:48.181Z",
+  "at": "2026-11-24T00:35:19.145Z",
   "threshold": 7,
   "items": [
     {
-      "symbol": "NVDA",
-      "name": "엔비디아",
-      "pct": 31.28
-    },
-    {
-      "symbol": "INTC",
-      "name": "인텔",
-      "pct": 13.34
-    },
-    {
-      "symbol": "TSM",
-      "name": "TSMC",
-      "pct": 15.19
-    },
-    {
-      "symbol": "MU",
-      "name": "마이크론",
-      "pct": 18.39
-    },
-    {
-      "symbol": "SKHY",
-      "name": "SK하이닉스",
-      "pct": 20.03
-    },
-    {
-      "symbol": "TSEM",
-      "name": "타워세미",
-      "pct": 18.26
-    },
-    {
-      "symbol": "PLTR",
-      "name": "팔란티어",
-      "pct": 10.21
-    },
-    {
-      "symbol": "BE",
-      "name": "블룸에너지",
-      "pct": 18.66
+      "symbol": "009150.KS",
+      "name": "삼성전기",
+      "pct": 11.05
     }
   ]
 }
