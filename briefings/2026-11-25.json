@@ -1,0 +1,190 @@
+{
+  "sessionDate": "2026-11-24",
+  "sessionDateLabel": "2026년 11월 24일(화) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,201.09",
+      "changePct": "-0.50%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "23,733.54",
+      "changePct": "-1.48%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "50,018.70",
+      "changePct": "+0.85%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "POLL Bruised S&P 500 seen gaining more than 12% by end-2027: Reuters poll",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNWDhDOWgxS1ZTNEd0eHJXVXI3RjZ4MTJJM0Y5cHUzNDE3ZWM3YllDV3lFeTdWZHVjNVNHSU5pZU53V1ZJV1ZHRVhScFVOMXhzMk1ySzZZN2JtWmlSOE5TbThBM2RXcVliNVAwOElhSHhuaWpiNE5TRXotcE1VZmxONGJWdzBkVWpPRm1LM0NFb2xMQTJFYUM5ZVpB?oc=5",
+      "date": "2026-11-24",
+      "source": "Reuters",
+      "ko": "로이터 여론조사, S&P 500이 2027년 말까지 12% 이상 상승할 것으로 예측"
+    },
+    {
+      "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Fall After Scott Bessent Unveils Fresh Iran Sanctions, Hormuz Warnings— HPE, SMTC, DELL in Focus (UPDATED)",
+      "link": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxQeDNub0U5S1dab0Mxa1NJY3g4Q01TZlk1OExaeTc0b3lONTA3QVBfeGR1SWpDVjctM1A5b09oTFpMX1N1Tmo3eW05SGx2dHdnazhWcllIeGVCWkswN1JyLUh6bjJwRDE5WHFkaVJ4TVdXOVBTRWphQlViM1lXREJTQ01KVWZTenFCaC1QcmFxOVI3YV96VVR3U3BUckljQTFzLThzUE9yWi1HSDdBUUlEVG10akZFeklIcnhLTUpnLTdnaDRwVDVSRXRPTHdWd3pWTG8xMVpvazJnVWRIVTFEZkFRcjdnaEVhV0s4NkhqNXJaQUNwSEczdlFTVVBmMXJPUG10ZmlvVWp0Vi1peTJkanV6cl95SGZDSGpXUUJMRmQ1YnQwQXk1QzhRWDJsQ3JUejRqcTFXUHBGbG8?oc=5",
+      "date": "2026-11-24",
+      "source": "TradingView",
+      "ko": "베센트 재무장관의 이란 추가 제재 발표로 선물지수 하락"
+    },
+    {
+      "title": "Weakness in Tech Stocks Weighs on the Broader Market",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOd1I1SHV5UUhzVzdFdmtkVjJiTFBWVTFOZXNwNTVnclduUUswbFhiOUxzSWMxd3dSM2l0d3NPei15YUhDd0JzX1FBSml3alhDTEl4SzhYa0szUlRYODQ0NFJxVk9BYnpaOXoteE5LcllMU08xa05GS3FoZllVVGpJQ1o1TTJFUUY1QTBlQVpjQ0xZQWVhOXotZ1FCSnQ?oc=5",
+      "date": "2026-11-24",
+      "source": "Barchart.com",
+      "ko": "기술주 약세가 전반적인 시장 약세의 주요 요인"
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$155.38",
+      "change": "-9.67",
+      "changePct": "-5.86%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia live updates: Nvidia stock falls as exuberance fades after Jensen Huang's return as CEO",
+          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNYnBZTkhUUGlCUVBvdW9Mam9JbGJueElLNmRUenk3eTZ2YmhXSEJhb3VCTTlrQ0xDZzF1N3pURFZFNDROVkZhOW1Mc0JxQUhGQ25rSjdWZXdxMnZNLWFaNzJfdXdFeEpUMzFQMUl3alZfWVotcFRHRGxSRzNiWHJuSlpyaXVHTld1MDFLSy1rdDJCU1F6ME9vZDB1bzB2bS1PeHpZbTg5czJrQ1lzdFRHbUlmS3JzYlFvQnRjZ2xRT3hoR1FVMUQ2a0hNMXZwNEtYckw1Q0ZYOThJMTlobXZTY3JzdDFESjBN?oc=5",
+          "date": "2026-11-24",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아 CEO 복귀 후 초기 상승세가 꺾이면서 주가 하락"
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$54.80",
+      "change": "-4.86",
+      "changePct": "-8.15%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel stock falls amid class action lawsuit filings and earnings growth",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPMGhRZlJLNWRkcmlnaVgtYjd4RnFTRHNlcG5oWG1UOWgyY1pOVWJpU2J4ekd2aUxzSGppWm42TDRUaXhuTHFzbW5mYm50bjktRUliLUtYRTlWTFVKRVBvWmxMRnhrTzNxSU1HQVE5cU0yZ0duNmNjaGFzMEEwUXA0ZVFGTzF1VGlyOFROd1plSjE?oc=5",
+          "date": "2026-11-24",
+          "source": "Traders Union",
+          "ko": "인텔이 클래스액션 소송 제기와 실적 부진으로 주가 하락"
+        },
+        {
+          "title": "Why Is Intel Stock Down Today? Shares Fall 8.1% to $54.83 as Chip Rally Cools After 16.3% Jump",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNQ1hzRkw4OWJpcE9GMHBjSFp0WV9KdlFKWC1ZY01nSmgxbkRrM2N2eGRBTVFBM21BNTRQNVdmcUljT0Y0dDNNc20zcDJjYTFPUExuQkItZ251ZENpQ3JIVDl4YmxYLS1INUREY2JFLTZVMnBEQlptYU5JWjJFTjd5S1lMbmFaWHQxeUF3UDFRSkE4QnQzbWxWMjh2X21fQ2lkOVg5WmpURDdzMmdWWHc?oc=5",
+          "date": "2026-11-24",
+          "source": "Around Prague",
+          "ko": "월요일 반도체 랠리 이후 조정으로 인텔 주가 급락"
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$349.20",
+      "change": "-14.40",
+      "changePct": "-3.96%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$629.79",
+      "change": "-77.91",
+      "changePct": "-11.01%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron: The Music Has Stopped (NASDAQ:MU)",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBJT3NnXzhOZGpBckthQmpJSHZBdXhfR2tHTVE5ajV5eEdSbEs1VFg0QzNfbTh0SFFsaTlraHNTakxpLXFaMG4tZlZ6T2cxcUhON29vclg5cUFpc1I2aWtJTnItZXlhYzhvbDlXRjZFdjRWTlZLbFJ3TA?oc=5",
+          "date": "2026-11-24",
+          "source": "Seeking Alpha",
+          "ko": "마이크론이 엔비디아 스크루티니로 인한 광범위한 칩메이커 약세 중 하나"
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$111.98",
+      "change": "-12.30",
+      "changePct": "-9.90%",
+      "up": false,
+      "news": [
+        {
+          "title": "Jensen Huang’s return eases HBM uncertainty for Samsung, SK hynix",
+          "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE50ZFg3eUxkVXdSMDZVMmJib0xfZlFTdFdaa0x6YjhxMmxfV3doUnYtTEM4QkJETXN3QUNUQmswbjYzbkhTeWNSNV9LbldVSlpQWTdjNnNtbw?oc=5",
+          "date": "2026-11-24",
+          "source": "The Korea Herald",
+          "ko": "황젠순 복귀가 HBM 불확실성을 완화해 삼성과 SK하이닉스에 긍정적"
+        }
+      ]
+    },
+    {
+      "name": "타워세미",
+      "ticker": "TSEM",
+      "price": "$123.47",
+      "change": "-13.34",
+      "changePct": "-9.75%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$161.18",
+      "change": "+1.82",
+      "changePct": "+1.14%",
+      "up": true,
+      "news": []
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "$81.91",
+      "change": "-5.73",
+      "changePct": "-6.54%",
+      "up": false,
+      "news": [
+        {
+          "title": "Anthropic stock drops below $83 IPO price as day-one pop vanishes",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdF9semMwVkFDQkVHWEd3QVVjT2NGTjBHcDJWTTJBZlhsS3FsVmU3S2p4dDBGVktPV3dBUlBQc2p3OERudGJyWHgtU1lWNWlxOFhDVHNfREZzMDNIeDdPODc5Y3VtSGR0dmY5a0x6dlRWM0FqeFpRVGlZT0JCSEVIQXJ3cEE2Vi1sZjN0bGR2TUpmUlpHTnVpd293dXNMRUhhTV9zd1UxSU9Sc3BxSWFZaW9JeTAxTFpQSzVZLVhn?oc=5",
+          "date": "2026-11-24",
+          "source": "Yahoo Finance",
+          "ko": "앤트로픽이 IPO 첫날 상승분 상실 후 공모가 아래로 하락"
+        }
+      ]
+    },
+    {
+      "name": "블룸에너지",
+      "ticker": "BE",
+      "price": "$156.41",
+      "change": "-11.74",
+      "changePct": "-6.98%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Scoop: Anthropic and OpenAI employees fear unreleased AI models are too unsafe to release",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNWnJmY2hLTWlhTHcwN3pVSEhYOXlYUThYQXJ3RWxobVlPR2lweWpSQUY1NklSLVNVUHI4c0wwdnN3azBiV05wTVV6ZmRMTllRR1dvcmNYdjRheHZDOUNVaTBxUFpuS3BZUVBvZ2tpMlpTSS1oYWZ3SC16RVZEME51a0FB?oc=5",
+      "date": "2026-11-24",
+      "source": "Axios",
+      "ko": "앤트로픽과 오픈AI 직원들이 출시 미정 AI 모델의 안전성 우려 제기"
+    }
+  ],
+  "summary": "기술주 약세로 S&P 500과 나스닥 하락. 반도체 주가는 엔비디아 CEO 복귀 후 조정 국면.",
+  "generatedAt": "2026-11-25 06:30",
+  "date": "2026-11-25"
+}
