@@ -1,0 +1,198 @@
+{
+  "sessionDate": "2026-11-25",
+  "sessionDateLabel": "2026년 11월 25일(수) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,182.78",
+      "changePct": "-0.25%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "23,585.80",
+      "changePct": "-0.62%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "50,182.95",
+      "changePct": "+0.33%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Tech stock sell-off persists as AI fears outweigh Huang’s Nvidia return",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQQ1FuS01WaVlhenhqc2I2M2hUckJlTm9fUjZ3N2ZjSmtTM3pCSkktYzlUM094TkV2NFROMjBseXlla2R3US1xRjh1QktLalI3dmVHZ2dpWGY4UEVXa2lKemFvX2doTXZ3d0FOTkV3NW5aYlZBWk9HZzhUa19aZW1GbWVmWFlvQQ?oc=5",
+      "date": "2026-11-25",
+      "source": "CNN",
+      "ko": "엔비디아 AI 우려 속 기술주 매도 지속, 황의 복귀 랠리 소진."
+    },
+    {
+      "title": "Nasdaq 100 Enters Bear Market Territory as AI Angst Fuels Losses",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZWw3QUJsbEp5MS1ZTDJGZ0Qyc1hHWDkxSWc0ZTVJbGgxeldKZ1B0SUlMTnI5VGdDSzZQZGsydEoyQzJUZ2NDcDJ4Y1Itd0xYNjNJN080RGtGZ3NsQlBYZU9vVVBZTXAzMDlCXzFPVWYxLXd4Zm9mZWhvaF9Td0tBaHNZTW9OVG5Ld2piVlZzUWMzczFSY19kbk1KNklUcFJwTlJlcUZlaEJmM2JyN1RR?oc=5",
+      "date": "2026-11-25",
+      "source": "Bloomberg",
+      "ko": "나스닥 100지수가 약세장 진입, AI 불안감이 주요 원인."
+    },
+    {
+      "title": "Stocks plummet as Jensen Huang rebound rally fades",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9KdVpmWDNfUE9oTVhhcktaQm1GQll1Q241TVAxVkNwTHlmMWY4djZLLVh3SmUtNDI0SFVHbmlGdVNlVG9RWU1UeVgySHFUdkhIb016QkhNSFBrREN3ZXVhR2VxanNGMm1fVGt3eVBZTno5TEh5Q1E?oc=5",
+      "date": "2026-11-25",
+      "source": "CBS News",
+      "ko": "젠슨 황 복귀 랠리 소멸 후 엔비디아 주가 급락."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$149.30",
+      "change": "-6.08",
+      "changePct": "-3.91%",
+      "up": false,
+      "news": [
+        {
+          "title": "Nvidia stock continues to fall after massive rally, Jensen Huang apologizes to employees",
+          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNYnBZTkhUUGlCUVBvdW9Mam9JbGJueElLNmRUenk3eTZ2YmhXSEJhb3VCTTlrQ0xDZzF1N3pURFZFNDROVkZhOW1Mc0JxQUhGQ25rSjdWZXdxMnZNLWFaNzJfdXdFeEpUMzFQMUl3alZfWVotcFRHRGxSRzNiWHJuSlpyaXVHTld1MDFLSy1rdDJCU1F6ME9vZDB1bzB2bS1PeHpZbTg5czJrQ1lzdFRHbUlmS3JzYlFvQnRjZ2xRT3hoR1FVMUQ2a0hNMXZwNEtYckw1Q0ZYOThJMTlobXZTY3JzdDFESjBN?oc=5",
+          "date": "2026-11-25",
+          "source": "Yahoo Finance",
+          "ko": "대규모 랠리 후 엔비디아 주가 하락, 젠슨 황이 직원들에게 사과."
+        },
+        {
+          "title": "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOVk9mVUxsUll4NmpxRklUb1dFaHduU3ZURXZRV2ktV0pDM2ZMNElPb3RrV0NiS0JlLTVXQXJKNnpTV1JmV1k2NGMtdzNLa0F0c2tsY2xRMmJKZHhwY1dueWZXb0l4VXhWNkl4NmJ6QUlTNjBpZUItN0xkX21JUXJ5WGlUbWdON0E0V2FOT2lGYkozcm9VSjlXVjR3SDc5WWQ3VzJhWm5mb29YbjBQSU1hQURkYw?oc=5",
+          "date": "2026-11-25",
+          "source": "Yahoo Finance",
+          "ko": "엔비디아, AMD, 마이크론 등 AI 관련 주가 급락으로 투자자 이탈."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$54.47",
+      "change": "-0.33",
+      "changePct": "-0.60%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$342.34",
+      "change": "-6.86",
+      "changePct": "-1.96%",
+      "up": false,
+      "news": [
+        {
+          "title": "TSMC Stocks Slide 6.65% as Taiwan Lands on US Tariff List",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVkNJOWM0ZGE1aE8xQ3ZycVR6ZXVFeGtTMExncGtSMFJEbXdxbzBYTjdaZWhSbmlDa1NpWUtSVEUxSFJUbE1GREh0Q1FOa0loLWpGQzVESHR3YzdLU29BajBDc3BmRDU0dG5OVjYyMzlTNm1nOFVTeFVRZEZMclVQTnlCb1RTN1FRSENneU9FWUFKOUMwUnlfT002a0otOWYzdnREWm1PaXB4cXZpNEFaT2Vvd3VaUlE?oc=5",
+          "date": "2026-11-25",
+          "source": "TradingView",
+          "ko": "TSMC 주가 하락, 대만이 미국 관세 대상국으로 지정됨."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$601.25",
+      "change": "-28.82",
+      "changePct": "-4.57%",
+      "up": false,
+      "news": [
+        {
+          "title": "Micron Stock Falls as UBS Cuts Price Target, BNP Paribas Downgrade Weighs",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOcm5uSzFucTZkd1dyRWJzTGRZYWZQLUhhQXJyUUZsWTh5VEVpUjlBVVVnMkl4bWdyc1ZLZ1I2eVFTQzQ5NGV5eE5GMTl4VnlvcnhKY2phSTRZSlltWVdVVGVSWHVWYWxfZEJqYkN4OXZmcWRjcVQxLVFHZ0lodXdqNHhIWnFRSFE3dGZJUWhLQU1tOXNVNnZJdDVQd2ZhV19TNkZSVGtEVmsybEk4OW9TQS1qWVZYZngydVR3cTRwMGluRDRVX0dEMi16RUVBZw?oc=5",
+          "date": "2026-11-25",
+          "source": "Benzinga",
+          "ko": "UBS 목표가 인하, BNP파리바 하향 평가로 마이크론 주가 급락."
+        }
+      ]
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$111.14",
+      "change": "-0.84",
+      "changePct": "-0.75%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "타워세미",
+      "ticker": "TSEM",
+      "price": "$121.74",
+      "change": "-1.73",
+      "changePct": "-1.40%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$163.59",
+      "change": "+2.41",
+      "changePct": "+1.50%",
+      "up": true,
+      "news": [
+        {
+          "title": "Palantir Stock: Billionaire Investor Peter Thiel Buys $122M During Dip",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVnhqZWxaSjMzUTBpU2JXRGdSQi1kUThlWFNhOUk3LWVseXU5djdUQXJIYzgydVVwT2lFVzNBUVhoNjhuN051cF9JbFZ6bHNzSkg0eWk3ZGFRZUtYcHBiRGxaR0wwNC02T09zaFBPZVlhbnowM1ZmcDk1QjJIV09acjZRNlRCa0doWG5DajY4VXl6LS14WlBwQ3RHNUgySDg?oc=5",
+          "date": "2026-11-25",
+          "source": "TipRanks",
+          "ko": "피터 틸이 약세 중 팔란티어 1억2200만달러 규모 추가 매수."
+        }
+      ]
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "$82.79",
+      "change": "+0.89",
+      "changePct": "+1.08%",
+      "up": true,
+      "news": [
+        {
+          "title": "Jim Cramer Calls Anthropic “the Silent Killer of This Market”",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWGg4ZS05MXlCVWdMSm9JaFZQaG9lcmFRaFZRTUZsdzAyREZmOU9YRGVSeHRQZTd3d3FBRmFUSFEyYXJEUFVqWkd3OE9TV2d2bWxnREFVUXhvdjlsYTd1SU5iZlo4ZF96X25na1pUNXV2YWI4bTl4Y0pXQWROLUxtSENOVkNTQzFNdlU3OXliVEJ6ZWxZRmRLbGdGZkJTTHM?oc=5",
+          "date": "2026-11-25",
+          "source": "Yahoo Finance",
+          "ko": "짐 크래머, 앤트로픽을 \"시장의 조용한 살인자\"로 평가."
+        }
+      ]
+    },
+    {
+      "name": "블룸에너지",
+      "ticker": "BE",
+      "price": "$152.89",
+      "change": "-3.52",
+      "changePct": "-2.25%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "OpenAI and Anthropic Employees Are Reportedly Clashing With Company Leaders Over AI Safety",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNY2d6Tkh0dTFIMEJ0QW80OHlCZWRoWGtBN3Z1cUdTQV9rM3ZTU0JWdVBhM3NYcnJJaFlkcjYwaG5nczA2RHczQ2FpcXNMWDRyTFRYMFZ4dkZCaXdmaEdvU3dQb1B1d1N3RjZyX3ZRQS1rX3dDdzd4THlpYWJkeXh5dlB3ZXBqT01PeU0ycUdHUUpJaW9meThYTEY3NHRhUVdUYU55b2lpZGtiVFVpeFNPcVdCVXdwSVJaakRBcmx3?oc=5",
+      "date": "2026-11-24",
+      "source": "Gizmodo",
+      "ko": "OpenAI, 앤트로픽 직원들이 AI 안전 문제로 경영진과 충돌 중."
+    },
+    {
+      "company": "Anthropic",
+      "title": "Anthropic stock sinks further below IPO price as investors sour on the Amodei AI bet",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOMkZ3R2JqVlJwZllwVm5BckhhSHZLNDlLVmVZNmpOVmxEVjVKYkk4T1lidzVyTWk2XzJ1LWREQlZRckVlUTMzUl9CVG02OGZXUHNWUmhfTzVlMFlTSWdhbnBYQkdhZ19IQTFmRXhpUTIwTFozTy1LSUpmeTVDM1M0c05DVnlYaUFGLWZuUHFKSjREM2pEYzN0UFY4SDhjLTFnLXJVOU1WVW50Qk80dllwdUZtSnc2Uk9ST1RscXJ4UDlXdDIwYXpzMUtrWjRTRlUtNE91WnE5UWVVUFZONndUbkhB?oc=5",
+      "date": "2026-11-25",
+      "source": "Yahoo Finance",
+      "ko": "앤트로픽 주가 IPO 가격 아래로 하락, 투자자 심리 악화."
+    }
+  ],
+  "summary": "AI 우려로 기술주 급락, 젠슨 황 복귀 랠리 반납. 다우는 낙폭 회복.",
+  "generatedAt": "2026-11-26 06:31",
+  "date": "2026-11-26"
+}
