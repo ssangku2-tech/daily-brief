@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-26",
+  "generatedAt": "2026-11-26 06:01",
+  "events": [
+    {
+      "title": "수영",
+      "start": "2026-11-26T11:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    },
+    {
+      "title": "태수, 병락",
+      "start": "2026-11-26T18:00:00+09:00",
+      "allDay": false,
+      "location": ""
+    }
+  ],
+  "unreadCount": 1122,
+  "importantMails": [
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (d94d799)",
+      "summary": "본인의 GitHub 프로젝트 Stock Alerts 워크플로우 실행 실패"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/portfolio] Run failed: 지에프아이 일일 소식 알림 - main (9a83f85)",
+      "summary": "본인의 GitHub 포트폴리오 프로젝트 워크플로우 실행 실패"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Daily Market Briefing - main (6dc3421)",
+      "summary": "본인의 GitHub 프로젝트 Daily Market Briefing 워크플로우 실행 실패"
+    },
+    {
+      "from": "Google Cloud Platform <CloudPlatform-noreply@google.com>",
+      "subject": "[Pricing Update] Changes to Google Workspace API usage limits starting Feb 2027 and new AI policies",
+      "summary": "2027년 2월부터 Google Workspace API 사용량 제한 변경 사항 및 AI 정책 업데이트"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (1499cca)",
+      "summary": "본인의 GitHub 프로젝트 Stock Alerts 워크플로우 재실행 실패"
+    }
+  ]
+}
