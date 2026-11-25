@@ -3,6 +3,7 @@ main = "worker.js"
 compatibility_date = "2026-11-01"
 
 # 21:00 UTC = 06:00 KST (일정), 21:30 UTC = 06:30 KST (미국 시장 브리핑)
+# 나머지 둘은 급변동 알림(alerts.yml), 평일 장중 30분 간격.
 # worker.js 의 JOBS 키와 문자열이 같아야 한다.
 [triggers]
-crons = ["0 21 * * *", "30 21 * * *"]
+crons = ["0 21 * * *", "30 21 * * *", "*/30 0-6 * * MON-FRI", "*/30 13-20 * * MON-FRI"]

@@ -17,6 +17,10 @@ const REPO = 'ssangku2-tech/daily-brief';
 const JOBS = {
   '0 21 * * *': 'daily-agenda.yml', // KST 06:00 일정·메일
   '30 21 * * *': 'daily.yml',       // KST 06:30 미국 시장 브리핑 + 아침 알림
+  // 급변동 알림. GitHub schedule 로는 30분 간격 예약이 하루 3번 정도만 실제로 돌아
+  // (2026-11-11~24 확인) 장중 감시도, 새 구독 확인 발송도 사실상 안 되고 있었다.
+  '*/30 0-6 * * MON-FRI': 'alerts.yml',   // 한국장 KST 09:00~15:30
+  '*/30 13-20 * * MON-FRI': 'alerts.yml', // 미국장 KST 22:30~05:00
 };
 
 async function dispatch(env, workflow) {
