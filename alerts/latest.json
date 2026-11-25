@@ -1,21 +1,21 @@
 {
-  "at": "2026-11-25T14:30:51.090Z",
+  "at": "2026-11-25T15:01:00.863Z",
   "threshold": 7,
   "items": [
     {
-      "symbol": "NVDA",
-      "name": "엔비디아",
-      "pct": -7.95
+      "symbol": "MU",
+      "name": "마이크론",
+      "pct": -8.51
     },
     {
       "symbol": "BE",
       "name": "블룸에너지",
-      "pct": -9.16
+      "pct": -8.71
     },
     {
-      "symbol": "SPCX",
-      "name": "스페이스X",
-      "pct": -7.13
+      "symbol": "009150.KS",
+      "name": "삼성전기",
+      "pct": -12.82
     }
   ]
 }
