@@ -91,7 +91,6 @@ async function main() {
   // 결과를 push/state.json 에 남긴다 — 앱이 이 파일을 읽어 "서버가 내 구독으로 보내고 있는가,
   // 그 발송이 성공했는가"를 스스로 판단한다. 워크플로가 이 파일을 커밋해야 앱에 보인다.
   const endpointHash = crypto.createHash('sha256').update(sub.endpoint).digest('hex').slice(0, 16);
-  const before = pushState.read();
 
   let res;
   try {
@@ -116,23 +115,17 @@ async function main() {
 
   if (res.status === 404 || res.status === 410) {
     // 구독이 폐기됐다(앱 재설치, 알림 끄기, 서비스워커 등록 교체, 브라우저 데이터 삭제 등).
-    // 저절로 낫지 않고 사람이 폰에서 재구독해야 하는 상태다.
+    // 폰에서 앱을 열면 autoHealPush 가 다시 구독하고 워커에 등록하므로 사람이 할 일은
+    // "앱 한 번 열기"뿐이다.
     //
-    // 이 상태를 "처음 발견했을 때 딱 한 번만" 워크플로 실패로 만든다. 알림 워크플로는 장중
-    // 30분마다 도므로, 무조건 실패시키면 고장 하나에 실패 메일이 하루 수십 통 쌓인다
-    // (2026-08-12~13 에 실제로 그랬다). 한 번은 반드시 실패해야 한다 — 초록불로 조용히
-    // 넘어가면 알아채는 데 반나절이 걸린다(2026-08-10). 두 번째부터는 앱이 직접 경고를
-    // 띄우므로(push/state.json 을 읽는다) 메일까지 반복할 이유가 없다.
-    const known = before && before.endpointHash === endpointHash
-      && (before.status === 404 || before.status === 410);
+    // 2026-11-26부터 워크플로를 실패시키지 않는다(예전엔 처음 발견한 410 한 번은 exit 1).
+    // 11/24~26 사이 구독이 하루 한 번꼴로 죽으면서 실패 메일이 매일 왔고, 사용자가
+    // "fail 메일이 다시는 없게" 해 달라고 했다. 메일이 없어도 고장은 드러난다:
+    // push/state.json 에 410 이 기록되고 앱이 그걸 읽어 경고·자동 재구독을 하며,
+    // Actions 실행 화면에는 ::warning:: 주석으로 남는다.
     pushState.record({ endpointHash, status: res.status });
-    console.error(`⚠️  구독이 더 이상 유효하지 않습니다 (${res.status}).`);
-    console.error('   폰에서 앱을 한 번 열면 자동 재구독·워커 등록된다(시크릿 갱신 불필요). "알림 받기" 버튼이 보이면 권한이 꺼진 것 — 눌러서 다시 허용.');
-    if (known) {
-      console.error('   (이미 기록된 고장이라 워크플로는 실패시키지 않습니다 — 같은 건으로 메일이 반복되지 않도록)');
-      return;
-    }
-    process.exitCode = 1;
+    console.log(`::warning::푸시 구독 폐기됨 (${res.status}) — 폰에서 앱을 한 번 열면 자동 재구독된다`);
+    console.error('   "알림 받기" 버튼이 보이면 알림 권한이 꺼진 것 — 눌러서 다시 허용.');
     return;
   }
   if (!res.ok) {
