@@ -1,31 +1,11 @@
 {
-  "at": "2026-11-25T15:30:51.152Z",
+  "at": "2026-11-26T04:30:31.905Z",
   "threshold": 7,
   "items": [
     {
-      "symbol": "NVDA",
-      "name": "엔비디아",
-      "pct": -7.75
-    },
-    {
-      "symbol": "INTC",
-      "name": "인텔",
-      "pct": -8.27
-    },
-    {
-      "symbol": "SKHY",
-      "name": "SK하이닉스",
-      "pct": -7.51
-    },
-    {
-      "symbol": "TSEM",
-      "name": "타워세미",
-      "pct": -8.53
-    },
-    {
-      "symbol": "SPCX",
-      "name": "스페이스X",
-      "pct": -7.75
+      "symbol": "272210.KS",
+      "name": "한화시스템",
+      "pct": 7.3
     }
   ]
 }
