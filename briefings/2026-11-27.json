@@ -1,0 +1,184 @@
+{
+  "sessionDate": "2026-11-26",
+  "sessionDateLabel": "2026년 11월 26일(목) 미국 동부시간 정규장 마감",
+  "indices": [
+    {
+      "name": "S&P 500",
+      "price": "7,182.78",
+      "changePct": "-0.25%",
+      "up": false
+    },
+    {
+      "name": "나스닥종합",
+      "price": "23,585.80",
+      "changePct": "-0.62%",
+      "up": false
+    },
+    {
+      "name": "다우존스",
+      "price": "50,182.95",
+      "changePct": "+0.33%",
+      "up": true
+    }
+  ],
+  "news": [
+    {
+      "title": "Stock Indices Finish Off Their Lows as Dip Buyers Step In",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOMzBIZGFLMWNYUFJxd2E4M0l2bGhxSkE0czFsOHlsV2ZVY2dyZ1Vld0hFb2NLNU1kdnI3U2J2dEpFWUNmLWEyZWF0SC1qRFp5eEU0bjU3VFdRXzdiX2RqMWVwNEptYS04TlhQWG1YcXlRY0txQjdZSUVIYUpCMmFIU1dnUDNyN3JhYVlzQmdfbjdEaTRnS2dTRlhBQlBGVXJqdldR?oc=5",
+      "date": "2026-11-25",
+      "source": "Barchart.com",
+      "ko": "투매 후 매수세가 개입하면서 지수들이 낙폭을 줄였다."
+    }
+  ],
+  "stocks": [
+    {
+      "name": "엔비디아",
+      "ticker": "NVDA",
+      "price": "$149.30",
+      "change": "-6.08",
+      "changePct": "-3.91%",
+      "up": false,
+      "news": [
+        {
+          "title": "Top Analyst Flags 5 Major Risks for NVDA Stock, Says Nvidia Could Stay in ‘Penalty Box’ for 1-2 Quarters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNM0h2OGVIVXpRNWtNWDd6bk5iWnJmZTAtNG5sOW80UnpZbUJKOXVlUHB5WUk0TGVoYkJ6aHhuZUV0YkFrdWVSaEJjV1ZGaTczRnYzUXBydG92VUc1WGR5SjN3SndmczZIYUpNdkFpM3RQMHlCdUtLcmotZHEybXhKVUlpaUFqUkZzNjBLRVM3b252WmZXRjlPUnZuRVJXM3lRTWViMmc4bzJKT3UwZTJoc1V6OWJ1YTVxdDVXVV9ndUduTkMzb0E?oc=5",
+          "date": "2026-11-26",
+          "source": "Benzinga",
+          "ko": "애널리스트가 엔비디아의 5대 주요 위험을 지적하며 1~2분기 추가 약세 가능성을 경고했다."
+        },
+        {
+          "title": "Nvidia Stock (NVDA) Drops 4% as S&P Flags ‘Compromised’ Board and Warns of Downgrade",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWGhSeERSZWtuR0ZpQkVET25uSHpHcENTNXp2VXZrdFFNbHctRmtSQjBBOXRkMzAzTTktNHlhSGstNzhHbE1mTWRvWDBjNXRCMHlKczJyMjNwandRUzhHRmoyV1hmZjFoOWZMT194RFZkWUlPcnpzSS01bXV6b3VJVmhxYkNBNTZtcFp3NmlWVGhHSWszU2pRSkpCVUxXX2k5Q3hTTy1zZ3pWeHJn?oc=5",
+          "date": "2026-11-26",
+          "source": "TipRanks",
+          "ko": "S&P가 엔비디아 이사회의 거버넌스 문제를 '손상됨'으로 평가하고 등급 하향 경고를 내렸다."
+        }
+      ]
+    },
+    {
+      "name": "인텔",
+      "ticker": "INTC",
+      "price": "$54.47",
+      "change": "-0.33",
+      "changePct": "-0.60%",
+      "up": false,
+      "news": [
+        {
+          "title": "Intel Stock Nears a Death Cross as Comeback Wobbles - Intel (NASDAQ:INTC)",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWnNVaDViZTdGR25XcFFXZUx6NjlUSW1VMTF0b3NZdkhzaHloTElNUHRpRzhlZUpOYjZUMzJXSDZsSUJhcUN6Y0JHRVN4aW9hc2ZsaTVRdEhYZ1lGRjVGcnNxdUU5WER2QXVlbnVZM3M5cW9Md1FqU1doYU9CaFlmWnRMRjBWZDBUd01Rc1U3ZDhVZw?oc=5",
+          "date": "2026-11-26",
+          "source": "Benzinga",
+          "ko": "인텔이 데스크로스 근처까지 내려가며 회생 반전이 흔들리는 모습을 보이고 있다."
+        }
+      ]
+    },
+    {
+      "name": "TSMC",
+      "ticker": "TSM",
+      "price": "$342.34",
+      "change": "-6.86",
+      "changePct": "-1.96%",
+      "up": false,
+      "news": [
+        {
+          "title": "Trump to Attend TSMC Arizona Chip Foundry Groundbreaking - Apple (NASDAQ:AAPL), Taiwan Semiconductor (NYS",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRG1ROERtTHRNY3gtSDBmVmYwLTk0ckdwMFlNWHZLZVdhY2NGR1FhbG1HQ084dzZhdHozT1JTcG5aV3lVMHlVaXlhTTBDU1NwcWNLWEpONmUxdE9GU2taVjBENkt1aDlGdWxfaGRncklITTMwWmhlMlRGWkJSeVNKMkhQekU4M3lZSm5fMThyY3d1VXVWS0p3eVZPUE5CTV9HTXR5MWY4cmZJMmNZZnlMZm1GRFdxaHc5dTRXdVFjcDl5LU9zTUE?oc=5",
+          "date": "2026-11-26",
+          "source": "Benzinga",
+          "ko": "트럼프가 TSMC 애리조나 파운드리 착공식에 참석할 예정이다."
+        }
+      ]
+    },
+    {
+      "name": "마이크론",
+      "ticker": "MU",
+      "price": "$601.25",
+      "change": "-28.82",
+      "changePct": "-4.57%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "SKHY",
+      "price": "$111.14",
+      "change": "-0.84",
+      "changePct": "-0.75%",
+      "up": false,
+      "news": [
+        {
+          "title": "Huawei Teases Next-Gen AI Memory Chip to Take On Samsung, Hynix",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOM1BOZHJ2d0E5MXN6cVhHTVdoQm43SHlaMmJsMXlsQVJVeEtEbFVla3B4WHF0clJJV3BmNXctM2Y1SWFEU0ZkZ09FZ2hXcElpb1pqbGxaLXNZQ0djb1F4VFpBVFg3YXNFRzBLWFpmVEMwUzNVMF9XNXI1dUU4ZnBiME5Hb0VWdXlxYnRSNXJTbkZGT1U2Y1hDSV9yT25rT3haSVZVWWl1dG5WUDhRQmJOakRFdw?oc=5",
+          "date": "2026-11-26",
+          "source": "Bloomberg.com",
+          "ko": "화웨이가 차세대 AI 메모리칩을 공개하며 삼성·SK하이닉스에 도전장을 내밀었다."
+        }
+      ]
+    },
+    {
+      "name": "타워세미",
+      "ticker": "TSEM",
+      "price": "$121.74",
+      "change": "-1.73",
+      "changePct": "-1.40%",
+      "up": false,
+      "news": []
+    },
+    {
+      "name": "팔란티어",
+      "ticker": "PLTR",
+      "price": "$163.59",
+      "change": "+2.41",
+      "changePct": "+1.50%",
+      "up": true,
+      "news": [
+        {
+          "title": "Polish defence ministry to sign agreement with Palantir on Friday",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMVYxMVNENzdjcUtUSWdqcXBwVzVhNDNhRkRrdy1PbVZuWG1YYld1Z1dETUtqX01icTZkN1JBaUhDMmpRNE52T09tM0ZLSFFWal9XTnhwdGZId2xOSUhuZVdZVjdVQzNldlZrWEVRYnIyeGlXRVRjU1lmQmFyaDQyY2t3Zk12dzF5VmtQb3pnZjF3NlI5YkJkNml5cDB6R3M0aVBIdVZpVkhfdw?oc=5",
+          "date": "2026-11-26",
+          "source": "Reuters",
+          "ko": "폴란드 국방부가 팔란티어와 협약을 체결할 예정이다."
+        }
+      ]
+    },
+    {
+      "name": "앤트로픽",
+      "ticker": "ANT",
+      "price": "$82.79",
+      "change": "+0.89",
+      "changePct": "+1.08%",
+      "up": true,
+      "news": [
+        {
+          "title": "Anthropic Stock (ANT) Forecast – Analysts See 60%+ Upside Despite Ongoing AI Trade Concerns",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOOTZoTThnTlEyZXFIZWg4cWUwZk1wc2xUdDR0a0ZWX3l3dG04WldMZjdURWszTnpLZlkycHo1QVBxQmR4eWx6UGhpX2lfc19zS2pBcVIzV29PelhoWUh1LWhXQllOZkx6ak4yZlRGYXpDLUlySTlxRkEwSkhzLVlRM2U5ZzQ1NW1hcTNXRUxOa2RsNl8yQVBTZDdiRm1XSlUtcUpzY1dHbV9RMnc4ck11LTdiWlJUUQ?oc=5",
+          "date": "2026-11-26",
+          "source": "TipRanks",
+          "ko": "애널리스트들이 앤트로픽 주가에 60% 이상의 상승 여력을 본다고 평가했다."
+        }
+      ]
+    },
+    {
+      "name": "블룸에너지",
+      "ticker": "BE",
+      "price": "$152.89",
+      "change": "-3.52",
+      "changePct": "-2.25%",
+      "up": false,
+      "news": []
+    }
+  ],
+  "aiNews": [
+    {
+      "company": "Anthropic",
+      "title": "Anthropic chief denies wanting humans to 'surrender' free will to AI",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUWZXazNFQkxXY3lMQ05iSmxNSDR3Y29ORVZhT1podjJLNmRMZlRHLTI4cmVTNk5WWnNJcVlqT1JkeW5WcE04UTBMUkVIQkJZWHpXMnN2V2tVblNYNFk5M0FUUXl1STZZd1d0NkRJU0NWWUw0VXMtM09RS1g3S1hSYmktckZtRUhjTkJUd2ZOZGFtY1BtTG5fTzY0NjJxRUl6emxfZA?oc=5",
+      "date": "2026-11-26",
+      "source": "Euronews.com",
+      "ko": "앤트로픽 CEO가 AI에 인간의 자유의지를 '항복'시키고 싶다는 비판을 부인했다."
+    }
+  ],
+  "summary": "기술주 약세 속 낙폭 제한. 엔비디아는 거버넌스 우려로 하락했으나 전반적 AI 반등 기대감이 시장 지지.",
+  "generatedAt": "2026-11-27 06:31",
+  "date": "2026-11-27"
+}
