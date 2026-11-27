@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-28",
+  "generatedAt": "2026-11-28 06:01",
+  "events": [],
+  "unreadCount": 1133,
+  "importantMails": [
+    {
+      "from": "Google <noreply-accounts@google.com>",
+      "subject": "Google 계정 데이터 일부를 Groq에 공유하셨습니다",
+      "summary": "Google 계정 데이터가 Groq에 공유되었으니 확인 필요"
+    },
+    {
+      "from": "Discord <notifications@discord.com>",
+      "subject": "Discord 정책 개정",
+      "summary": "Discord 정책이 개정되었으니 확인 필요"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/daily-brief] Run failed: Stock Alerts - main (d94d799)",
+      "summary": "Stock Alerts 자동화 작업 실패 알림"
+    },
+    {
+      "from": "ssangku2-tech <notifications@github.com>",
+      "subject": "[ssangku2-tech/portfolio] Run failed: 지에프아이 일일 소식 알림 - main (9a83f85)",
+      "summary": "지에프아이 일일 소식 알림 자동화 작업 실패"
+    },
+    {
+      "from": "Korean Air <koreanair@email.koreanair.com>",
+      "subject": "[대한항공] 개인정보 이용·제공 내역 및 수집 출처 안내",
+      "summary": "대한항공에서 개인정보 이용 현황을 안내"
+    }
+  ]
+}
